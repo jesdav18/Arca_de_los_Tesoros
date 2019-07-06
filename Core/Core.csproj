@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\ctlBienvenida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlBienvenida.Designer.cs">
+      <DependentUpon>ctlBienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Folder Include="Pantallas\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controles\ctlBienvenida.resx">
+      <DependentUpon>ctlBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlLogin.resx">
       <DependentUpon>ctlLogin.cs</DependentUpon>
     </EmbeddedResource>
