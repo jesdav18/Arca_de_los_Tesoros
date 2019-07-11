@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CrearConexion.cs" />
+    <Compile Include="Clases\Log_Excepciones.cs" />
     <Compile Include="Controles\ctlBienvenida.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -68,7 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Clases\" />
     <Folder Include="DataSets\" />
     <Folder Include="Pantallas\" />
   </ItemGroup>

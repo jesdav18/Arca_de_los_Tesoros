@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlBienvenida));
             this.pnlBordeDerecho = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,6 +43,8 @@
             this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.tmrBienvenida = new System.Windows.Forms.Timer(this.components);
+            this.bgCrearConexion = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +66,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2, 482);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // panel2
             // 
@@ -154,7 +156,7 @@
             this.lblNombrePrograma.Name = "lblNombrePrograma";
             this.lblNombrePrograma.Size = new System.Drawing.Size(649, 52);
             this.lblNombrePrograma.TabIndex = 11;
-            this.lblNombrePrograma.Text = "FLUCOL";
+            this.lblNombrePrograma.Text = "ARCA DE LOS TESOROS";
             // 
             // lblModulo
             // 
@@ -207,6 +209,17 @@
             this.panel5.Size = new System.Drawing.Size(20, 57);
             this.panel5.TabIndex = 0;
             // 
+            // tmrBienvenida
+            // 
+            this.tmrBienvenida.Interval = 2000;
+            this.tmrBienvenida.Tick += new System.EventHandler(this.TmrBienvenida_Tick);
+            // 
+            // bgCrearConexion
+            // 
+            this.bgCrearConexion.WorkerSupportsCancellation = true;
+            this.bgCrearConexion.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgCrearConexion_DoWork);
+            this.bgCrearConexion.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgCrearConexion_RunWorkerCompleted);
+            // 
             // ctlBienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,5 +259,7 @@
         private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Timer tmrBienvenida;
+        private System.ComponentModel.BackgroundWorker bgCrearConexion;
     }
 }
