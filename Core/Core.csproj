@@ -55,11 +55,18 @@
   <ItemGroup>
     <Compile Include="Clases\CrearConexion.cs" />
     <Compile Include="Clases\Log_Excepciones.cs" />
+    <Compile Include="Clases\Utilidades.cs" />
     <Compile Include="Controles\ctlBienvenida.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controles\ctlBienvenida.Designer.cs">
       <DependentUpon>ctlBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlEncabezado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlEncabezado.Designer.cs">
+      <DependentUpon>ctlEncabezado.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\ctlLogin.cs">
       <SubType>UserControl</SubType>
@@ -68,6 +75,11 @@
       <DependentUpon>ctlLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataSets\" />
@@ -77,10 +89,35 @@
     <EmbeddedResource Include="Controles\ctlBienvenida.resx">
       <DependentUpon>ctlBienvenida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlEncabezado.resx">
+      <DependentUpon>ctlEncabezado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlLogin.resx">
       <DependentUpon>ctlLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_nuevo_usuario_negro_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_calendario_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconListaAsistencia_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_mi_equipo_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_ingresar_solicitudes_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_cerrar_sesion_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

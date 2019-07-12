@@ -83,9 +83,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Anciano\Anciano.csproj">
+      <Project>{9588AD85-848D-49AD-82EF-E22AED27283B}</Project>
+      <Name>Anciano</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Coordinadores_de_Dia\Coordinadores_de_Dia.csproj">
+      <Project>{0ABA534B-1BA5-4DD9-9EEC-66AAC0B74E8B}</Project>
+      <Name>Coordinadores_de_Dia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Coordinadores_de_Edad\Coordinadores_de_Edad.csproj">
+      <Project>{A9C98F5D-1F24-4675-A840-7E6BD983A3D8}</Project>
+      <Name>Coordinadores_de_Edad</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{69CF97AA-9F33-4E58-B95F-4BC334AEBF3A}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diacono\Diacono.csproj">
+      <Project>{B4684BDA-5A56-4D95-9977-D5323B36FF6A}</Project>
+      <Name>Diacono</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
