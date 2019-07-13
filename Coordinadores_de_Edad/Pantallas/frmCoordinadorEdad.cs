@@ -15,6 +15,14 @@ namespace Coordinadores_de_Edad.Pantallas
         public frmCoordinadorEdad()
         {
             InitializeComponent();
+            ctlContenedorPrincipalCoordinadorEdad1.OnClick += ctlContenedorPrincipalCoordinadorEdad1_cLICK;
+        }
+
+        public event EventHandler Presiona;
+
+        private void ctlContenedorPrincipalCoordinadorEdad1_cLICK(object sender, EventArgs e)
+        {
+            Presiona?.Invoke(sender, e);
         }
     }
 }

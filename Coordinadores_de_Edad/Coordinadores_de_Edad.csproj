@@ -104,5 +104,8 @@
   <ItemGroup>
     <None Include="Resources\icon_cerrar_sesion_64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\62218400_2421805074506489_798898671931359232_n.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

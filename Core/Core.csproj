@@ -38,7 +38,11 @@
     <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -68,6 +72,12 @@
     <Compile Include="Controles\ctlEncabezado.Designer.cs">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlIngresoFicha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlIngresoFicha.Designer.cs">
+      <DependentUpon>ctlIngresoFicha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlEncabezado.resx">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlIngresoFicha.resx">
+      <DependentUpon>ctlIngresoFicha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlLogin.resx">
       <DependentUpon>ctlLogin.cs</DependentUpon>
@@ -118,6 +131,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_cerrar_sesion_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_siguiente_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_atras_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_guardar_negro_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\62218400_2421805074506489_798898671931359232_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgEbenezer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

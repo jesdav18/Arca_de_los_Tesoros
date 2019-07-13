@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlLogin));
             this.pnlBordeSuperior = new System.Windows.Forms.Panel();
             this.pnlBordeIzquierdo = new System.Windows.Forms.Panel();
             this.pnlBordeDerecho = new System.Windows.Forms.Panel();
             this.pnlBordeInferior = new System.Windows.Forms.Panel();
-            this.picLogoInstitucion = new DevExpress.XtraEditors.PictureEdit();
             this.pnlSeparador = new System.Windows.Forms.Panel();
             this.lblEtiquetaUsuario = new DevExpress.XtraEditors.LabelControl();
             this.lblEtiquetaContrasenia = new DevExpress.XtraEditors.LabelControl();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.txtContrasenia = new DevExpress.XtraEditors.TextEdit();
             this.cmdAcceder = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).BeginInit();
+            this.picLogoInstitucion = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBordeSuperior
@@ -80,18 +79,6 @@
             this.pnlBordeInferior.Name = "pnlBordeInferior";
             this.pnlBordeInferior.Size = new System.Drawing.Size(666, 2);
             this.pnlBordeInferior.TabIndex = 3;
-            // 
-            // picLogoInstitucion
-            // 
-            this.picLogoInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLogoInstitucion.EditValue = ((object)(resources.GetObject("picLogoInstitucion.EditValue")));
-            this.picLogoInstitucion.Location = new System.Drawing.Point(218, 36);
-            this.picLogoInstitucion.Name = "picLogoInstitucion";
-            this.picLogoInstitucion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picLogoInstitucion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picLogoInstitucion.Size = new System.Drawing.Size(255, 165);
-            this.picLogoInstitucion.TabIndex = 4;
             // 
             // pnlSeparador
             // 
@@ -166,6 +153,19 @@
             this.cmdAcceder.TabIndex = 10;
             this.cmdAcceder.Text = "Acceder";
             // 
+            // picLogoInstitucion
+            // 
+            this.picLogoInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLogoInstitucion.EditValue = global::Core.Properties.Resources.imgEbenezer;
+            this.picLogoInstitucion.Location = new System.Drawing.Point(226, 13);
+            this.picLogoInstitucion.Name = "picLogoInstitucion";
+            this.picLogoInstitucion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picLogoInstitucion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picLogoInstitucion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picLogoInstitucion.Size = new System.Drawing.Size(238, 212);
+            this.picLogoInstitucion.TabIndex = 4;
+            // 
             // ctlLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -187,9 +187,9 @@
             this.Name = "ctlLogin";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(680, 660);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

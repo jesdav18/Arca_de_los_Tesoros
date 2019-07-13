@@ -63,6 +63,26 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _62218400_2421805074506489_798898671931359232_n {
+            get {
+                object obj = ResourceManager.GetObject("62218400_2421805074506489_798898671931359232_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_atras_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_atras_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icon_calendario_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_calendario_64", resourceCulture);
@@ -76,6 +96,16 @@ namespace Core.Properties {
         public static System.Drawing.Bitmap icon_cerrar_sesion_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_cerrar_sesion_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_guardar_negro_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_guardar_negro_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +143,29 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_siguiente_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_siguiente_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap iconListaAsistencia_64 {
             get {
                 object obj = ResourceManager.GetObject("iconListaAsistencia_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap imgEbenezer {
+            get {
+                object obj = ResourceManager.GetObject("imgEbenezer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

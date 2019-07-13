@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlBienvenida));
             this.pnlBordeDerecho = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,7 +36,6 @@
             this.lblBienvenido = new DevExpress.XtraEditors.LabelControl();
             this.lblVersion = new DevExpress.XtraEditors.LabelControl();
             this.lblUltimaActualizacion = new DevExpress.XtraEditors.LabelControl();
-            this.picLogoInstitucion = new DevExpress.XtraEditors.PictureEdit();
             this.lblNombrePrograma = new DevExpress.XtraEditors.LabelControl();
             this.lblModulo = new DevExpress.XtraEditors.LabelControl();
             this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
@@ -45,8 +43,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.tmrBienvenida = new System.Windows.Forms.Timer(this.components);
             this.bgCrearConexion = new System.ComponentModel.BackgroundWorker();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).BeginInit();
+            this.picLogoInstitucion = new DevExpress.XtraEditors.PictureEdit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBordeDerecho
@@ -131,18 +130,6 @@
             this.lblUltimaActualizacion.TabIndex = 8;
             this.lblUltimaActualizacion.Text = "FECHA ÚLTIMA ACTUALIZACIÓN";
             // 
-            // picLogoInstitucion
-            // 
-            this.picLogoInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLogoInstitucion.EditValue = ((object)(resources.GetObject("picLogoInstitucion.EditValue")));
-            this.picLogoInstitucion.Location = new System.Drawing.Point(206, 87);
-            this.picLogoInstitucion.Name = "picLogoInstitucion";
-            this.picLogoInstitucion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picLogoInstitucion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picLogoInstitucion.Size = new System.Drawing.Size(255, 163);
-            this.picLogoInstitucion.TabIndex = 10;
-            // 
             // lblNombrePrograma
             // 
             this.lblNombrePrograma.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,6 +207,19 @@
             this.bgCrearConexion.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgCrearConexion_DoWork);
             this.bgCrearConexion.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgCrearConexion_RunWorkerCompleted);
             // 
+            // picLogoInstitucion
+            // 
+            this.picLogoInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLogoInstitucion.EditValue = global::Core.Properties.Resources.imgEbenezer;
+            this.picLogoInstitucion.Location = new System.Drawing.Point(245, 87);
+            this.picLogoInstitucion.Name = "picLogoInstitucion";
+            this.picLogoInstitucion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picLogoInstitucion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picLogoInstitucion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picLogoInstitucion.Size = new System.Drawing.Size(179, 163);
+            this.picLogoInstitucion.TabIndex = 10;
+            // 
             // ctlBienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,8 +238,8 @@
             this.Name = "ctlBienvenida";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(663, 492);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -16,5 +16,17 @@ namespace Coordinadores_de_Edad.Controles
         {
             InitializeComponent();
         }
+
+        private void PicAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            NavigationCoordinadorEdad.SelectedPage = PageFichaIngreso;
+        }
+
+        public event EventHandler OnClick;
+
+        private void PnlEncabezado_Click(object sender, EventArgs e)
+        {
+            OnClick?.Invoke(sender, e);
+        }
     }
 }

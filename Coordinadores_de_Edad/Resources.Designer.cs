@@ -63,6 +63,16 @@ namespace Coordinadores_de_Edad {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _62218400_2421805074506489_798898671931359232_n {
+            get {
+                object obj = ResourceManager.GetObject("62218400_2421805074506489_798898671931359232_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_calendario_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_calendario_64", resourceCulture);

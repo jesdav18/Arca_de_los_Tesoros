@@ -134,6 +134,8 @@ namespace Arca_de_los_Tesoros
                     frm_CoordinadorEdad = new frmCoordinadorEdad();
                     frm_CoordinadorEdad.MdiParent = this;
                     frm_CoordinadorEdad.StartPosition = FormStartPosition.CenterScreen;
+                    frm_CoordinadorEdad.Presiona += frm_CoordinadorEdad_Presiona;
+                    this.MinimumSize = new Size(986, 795);
                     /*frm_CoordinadorEdad.ConstruirFormulario(Pro_Conexion,
                                                             Pro_ID_AgenciaServicio,
                                                             Pro_ID_ClienteServicio,
@@ -150,6 +152,11 @@ namespace Arca_de_los_Tesoros
             }
            
             ReestablecerFormConstructor();
+        }
+
+        private void frm_CoordinadorEdad_Presiona(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ancho: " + this.Width + " " + "Altura: " + this.Height);
         }
     }
 }
