@@ -37,24 +37,28 @@
             this.ctlContenedorPrincipalCoordinadorEdad1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctlContenedorPrincipalCoordinadorEdad1.Location = new System.Drawing.Point(0, 0);
             this.ctlContenedorPrincipalCoordinadorEdad1.Name = "ctlContenedorPrincipalCoordinadorEdad1";
-            this.ctlContenedorPrincipalCoordinadorEdad1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlContenedorPrincipalCoordinadorEdad1.Size = new System.Drawing.Size(1134, 583);
+            this.ctlContenedorPrincipalCoordinadorEdad1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctlContenedorPrincipalCoordinadorEdad1.Size = new System.Drawing.Size(1146, 709);
             this.ctlContenedorPrincipalCoordinadorEdad1.TabIndex = 0;
             // 
             // frmCoordinadorEdad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1134, 583);
+            this.ClientSize = new System.Drawing.Size(1146, 709);
+            this.ControlBox = false;
             this.Controls.Add(this.ctlContenedorPrincipalCoordinadorEdad1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCoordinadorEdad";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "frmCoordinadorEdad";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 

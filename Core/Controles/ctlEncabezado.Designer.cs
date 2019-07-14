@@ -38,11 +38,11 @@
             // 
             this.pnlUsuario.Controls.Add(this.lblNombreUsuario);
             this.pnlUsuario.Controls.Add(this.lblCargoUsuario);
-            this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlUsuario.Location = new System.Drawing.Point(1, 10);
+            this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUsuario.Location = new System.Drawing.Point(10, 10);
             this.pnlUsuario.Name = "pnlUsuario";
             this.pnlUsuario.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlUsuario.Size = new System.Drawing.Size(584, 103);
+            this.pnlUsuario.Size = new System.Drawing.Size(557, 103);
             this.pnlUsuario.TabIndex = 0;
             // 
             // lblNombreUsuario
@@ -56,7 +56,7 @@
             this.lblNombreUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNombreUsuario.Location = new System.Drawing.Point(5, 5);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(574, 41);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(547, 41);
             this.lblNombreUsuario.TabIndex = 4;
             this.lblNombreUsuario.Text = "Diego Ramirez";
             // 
@@ -71,7 +71,7 @@
             this.lblCargoUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCargoUsuario.Location = new System.Drawing.Point(5, 46);
             this.lblCargoUsuario.Name = "lblCargoUsuario";
-            this.lblCargoUsuario.Size = new System.Drawing.Size(574, 52);
+            this.lblCargoUsuario.Size = new System.Drawing.Size(547, 52);
             this.lblCargoUsuario.TabIndex = 3;
             this.lblCargoUsuario.Text = "Coordinador de Edad";
             // 
@@ -82,10 +82,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnlUsuario);
             this.MaximumSize = new System.Drawing.Size(0, 123);
-            this.MinimumSize = new System.Drawing.Size(459, 123);
+            this.MinimumSize = new System.Drawing.Size(0, 123);
             this.Name = "ctlEncabezado";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(595, 123);
+            this.Size = new System.Drawing.Size(577, 123);
             this.pnlUsuario.ResumeLayout(false);
             this.ResumeLayout(false);
 

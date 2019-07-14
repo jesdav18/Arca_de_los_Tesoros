@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Clases\CrearConexion.cs" />
     <Compile Include="Clases\Log_Excepciones.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Utilidades.cs" />
     <Compile Include="Controles\ctlBienvenida.cs">
       <SubType>UserControl</SubType>
@@ -84,6 +85,23 @@
     <Compile Include="Controles\ctlLogin.Designer.cs">
       <DependentUpon>ctlLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\dsConfiguracion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsConfiguracion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmEspera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmEspera.Designer.cs">
+      <DependentUpon>frmEspera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,8 +110,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataSets\" />
-    <Folder Include="Pantallas\" />
+    <None Include="Resources\iconEspera.gif" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controles\ctlBienvenida.resx">
@@ -108,6 +125,12 @@
     <EmbeddedResource Include="Controles\ctlLogin.resx">
       <DependentUpon>ctlLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmEspera.resx">
+      <DependentUpon>frmEspera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -115,6 +138,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSets\dsConfiguracion.xsc">
+      <DependentUpon>dsConfiguracion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsConfiguracion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsConfiguracion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsConfiguracion.xss">
+      <DependentUpon>dsConfiguracion.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icon_nuevo_usuario_negro_64.png" />
   </ItemGroup>
   <ItemGroup>

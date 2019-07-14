@@ -37,7 +37,6 @@
             this.lblVersion = new DevExpress.XtraEditors.LabelControl();
             this.lblUltimaActualizacion = new DevExpress.XtraEditors.LabelControl();
             this.lblNombrePrograma = new DevExpress.XtraEditors.LabelControl();
-            this.lblModulo = new DevExpress.XtraEditors.LabelControl();
             this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -96,7 +95,7 @@
             this.lblBienvenido.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblBienvenido.Location = new System.Drawing.Point(7, 256);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(649, 74);
+            this.lblBienvenido.Size = new System.Drawing.Size(649, 125);
             this.lblBienvenido.TabIndex = 7;
             this.lblBienvenido.Text = "¡BIENVENIDO!";
             // 
@@ -139,26 +138,11 @@
             this.lblNombrePrograma.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblNombrePrograma.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblNombrePrograma.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblNombrePrograma.Location = new System.Drawing.Point(7, 330);
+            this.lblNombrePrograma.Location = new System.Drawing.Point(7, 381);
             this.lblNombrePrograma.Name = "lblNombrePrograma";
             this.lblNombrePrograma.Size = new System.Drawing.Size(649, 52);
             this.lblNombrePrograma.TabIndex = 11;
             this.lblNombrePrograma.Text = "ARCA DE LOS TESOROS";
-            // 
-            // lblModulo
-            // 
-            this.lblModulo.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModulo.Appearance.Options.UseFont = true;
-            this.lblModulo.Appearance.Options.UseTextOptions = true;
-            this.lblModulo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblModulo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.lblModulo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblModulo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblModulo.Location = new System.Drawing.Point(7, 382);
-            this.lblModulo.Name = "lblModulo";
-            this.lblModulo.Size = new System.Drawing.Size(649, 51);
-            this.lblModulo.TabIndex = 12;
-            this.lblModulo.Text = "NOMBRE DE MÓDULO";
             // 
             // progressPanel1
             // 
@@ -228,7 +212,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.lblNombrePrograma);
-            this.Controls.Add(this.lblModulo);
             this.Controls.Add(this.picLogoInstitucion);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.progressPanel1);
@@ -255,7 +238,6 @@
         private DevExpress.XtraEditors.LabelControl lblUltimaActualizacion;
         private DevExpress.XtraEditors.PictureEdit picLogoInstitucion;
         private DevExpress.XtraEditors.LabelControl lblNombrePrograma;
-        private DevExpress.XtraEditors.LabelControl lblModulo;
         private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;

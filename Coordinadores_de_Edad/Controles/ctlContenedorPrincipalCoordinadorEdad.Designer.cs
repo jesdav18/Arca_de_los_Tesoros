@@ -42,6 +42,7 @@
             this.pnlAgregarUsuario = new System.Windows.Forms.Panel();
             this.picAgregarUsuario = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
+            this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,11 +52,10 @@
             this.PageInicial = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlIngresoFicha1 = new Core.Controles.ctlIngresoFicha();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ctlIngresoFicha1 = new Core.Controles.ctlIngresoFicha();
-            this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
@@ -246,15 +246,26 @@
             this.pnlEncabezado.MaximumSize = new System.Drawing.Size(0, 130);
             this.pnlEncabezado.MinimumSize = new System.Drawing.Size(0, 130);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1306, 130);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1242, 130);
             this.pnlEncabezado.TabIndex = 3;
-            this.pnlEncabezado.Click += new System.EventHandler(this.PnlEncabezado_Click);
+            // 
+            // ctlEncabezado1
+            // 
+            this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
+            this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlEncabezado1.Location = new System.Drawing.Point(546, 3);
+            this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(0, 123);
+            this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 123);
+            this.ctlEncabezado1.Name = "ctlEncabezado1";
+            this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(693, 123);
+            this.ctlEncabezado1.TabIndex = 10;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1303, 3);
+            this.panel4.Location = new System.Drawing.Point(1239, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(3, 124);
             this.panel4.TabIndex = 9;
@@ -274,7 +285,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 127);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1306, 3);
+            this.panel1.Size = new System.Drawing.Size(1242, 3);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -283,7 +294,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1306, 3);
+            this.panel2.Size = new System.Drawing.Size(1242, 3);
             this.panel2.TabIndex = 6;
             // 
             // pnlCuerpo
@@ -295,7 +306,7 @@
             this.pnlCuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCuerpo.Location = new System.Drawing.Point(5, 135);
             this.pnlCuerpo.Name = "pnlCuerpo";
-            this.pnlCuerpo.Size = new System.Drawing.Size(1306, 765);
+            this.pnlCuerpo.Size = new System.Drawing.Size(1242, 765);
             this.pnlCuerpo.TabIndex = 4;
             // 
             // NavigationCoordinadorEdad
@@ -310,7 +321,7 @@
             this.PageInicial,
             this.PageFichaIngreso});
             this.NavigationCoordinadorEdad.SelectedPage = this.PageInicial;
-            this.NavigationCoordinadorEdad.Size = new System.Drawing.Size(1300, 762);
+            this.NavigationCoordinadorEdad.Size = new System.Drawing.Size(1236, 762);
             this.NavigationCoordinadorEdad.TabIndex = 12;
             this.NavigationCoordinadorEdad.TransitionAnimationProperties.FrameCount = 500;
             this.NavigationCoordinadorEdad.TransitionAnimationProperties.FrameInterval = 500;
@@ -320,7 +331,7 @@
             this.PageInicial.Caption = "PageInicial";
             this.PageInicial.Controls.Add(this.pictureEdit6);
             this.PageInicial.Name = "PageInicial";
-            this.PageInicial.Size = new System.Drawing.Size(1300, 762);
+            this.PageInicial.Size = new System.Drawing.Size(1236, 762);
             // 
             // pictureEdit6
             // 
@@ -332,7 +343,7 @@
             this.pictureEdit6.Properties.NullText = "   ";
             this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.pictureEdit6.Size = new System.Drawing.Size(1300, 762);
+            this.pictureEdit6.Size = new System.Drawing.Size(1236, 762);
             this.pictureEdit6.TabIndex = 1;
             // 
             // PageFichaIngreso
@@ -340,7 +351,20 @@
             this.PageFichaIngreso.Caption = "PageFichaIngreso";
             this.PageFichaIngreso.Controls.Add(this.ctlIngresoFicha1);
             this.PageFichaIngreso.Name = "PageFichaIngreso";
-            this.PageFichaIngreso.Size = new System.Drawing.Size(1300, 762);
+            this.PageFichaIngreso.Size = new System.Drawing.Size(1236, 762);
+            // 
+            // ctlIngresoFicha1
+            // 
+            this.ctlIngresoFicha1.BackColor = System.Drawing.Color.White;
+            this.ctlIngresoFicha1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlIngresoFicha1.Location = new System.Drawing.Point(0, 0);
+            this.ctlIngresoFicha1.MinimumSize = new System.Drawing.Size(1166, 751);
+            this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
+            this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlIngresoFicha1.Pro_Conexion = null;
+            this.ctlIngresoFicha1.Pro_Usuario = null;
+            this.ctlIngresoFicha1.Size = new System.Drawing.Size(1236, 762);
+            this.ctlIngresoFicha1.TabIndex = 0;
             // 
             // panel7
             // 
@@ -348,14 +372,14 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(3, 762);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1300, 3);
+            this.panel7.Size = new System.Drawing.Size(1236, 3);
             this.panel7.TabIndex = 11;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1303, 0);
+            this.panel6.Location = new System.Drawing.Point(1239, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(3, 765);
             this.panel6.TabIndex = 10;
@@ -369,29 +393,6 @@
             this.panel5.Size = new System.Drawing.Size(3, 765);
             this.panel5.TabIndex = 9;
             // 
-            // ctlIngresoFicha1
-            // 
-            this.ctlIngresoFicha1.BackColor = System.Drawing.Color.White;
-            this.ctlIngresoFicha1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlIngresoFicha1.Location = new System.Drawing.Point(0, 0);
-            this.ctlIngresoFicha1.MinimumSize = new System.Drawing.Size(1166, 751);
-            this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
-            this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlIngresoFicha1.Size = new System.Drawing.Size(1300, 762);
-            this.ctlIngresoFicha1.TabIndex = 0;
-            // 
-            // ctlEncabezado1
-            // 
-            this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
-            this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ctlEncabezado1.Location = new System.Drawing.Point(844, 3);
-            this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(459, 123);
-            this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(459, 123);
-            this.ctlEncabezado1.Name = "ctlEncabezado1";
-            this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(459, 123);
-            this.ctlEncabezado1.TabIndex = 3;
-            // 
             // ctlContenedorPrincipalCoordinadorEdad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -401,7 +402,7 @@
             this.Controls.Add(this.pnlEncabezado);
             this.Name = "ctlContenedorPrincipalCoordinadorEdad";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(1316, 905);
+            this.Size = new System.Drawing.Size(1252, 905);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
@@ -441,7 +442,6 @@
         private System.Windows.Forms.Panel pnlAgregarUsuario;
         private DevExpress.XtraEditors.PictureEdit picAgregarUsuario;
         private System.Windows.Forms.Panel pnlEncabezado;
-        private Core.Controles.ctlEncabezado ctlEncabezado1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
@@ -455,5 +455,6 @@
         private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
         private Core.Controles.ctlIngresoFicha ctlIngresoFicha1;
+        private Core.Controles.ctlEncabezado ctlEncabezado1;
     }
 }

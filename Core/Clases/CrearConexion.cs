@@ -56,6 +56,7 @@ namespace Core.Clases
             {               
                 if (v_conexion.State != ConnectionState.Open)
                 {
+                    v_conexion.Unicode = true;
                     v_conexion.Open();
                 }
 

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Devart.Data.PostgreSql;
+using Core.Clases;
 
 namespace Coordinadores_de_Edad.Controles
 {
@@ -22,11 +17,9 @@ namespace Coordinadores_de_Edad.Controles
             NavigationCoordinadorEdad.SelectedPage = PageFichaIngreso;
         }
 
-        public event EventHandler OnClick;
-
-        private void PnlEncabezado_Click(object sender, EventArgs e)
+        public void ConstruirControl(PgSqlConnection pConexion, Usuario pUsuario )
         {
-            OnClick?.Invoke(sender, e);
+            ctlEncabezado1.ConstruirControl(pUsuario);
         }
     }
 }

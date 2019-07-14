@@ -1,28 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Devart.Data.PostgreSql;
+using Core.Clases;
 using System.Windows.Forms;
 
 namespace Coordinadores_de_Edad.Pantallas
 {
-    public partial class frmCoordinadorEdad : Form
+    public partial class frmCoordinadorEdad : DevExpress.XtraEditors.XtraForm
     {
-        public frmCoordinadorEdad()
+        public frmCoordinadorEdad(PgSqlConnection pConexion, Usuario pUsuario)
         {
             InitializeComponent();
-            ctlContenedorPrincipalCoordinadorEdad1.OnClick += ctlContenedorPrincipalCoordinadorEdad1_cLICK;
+            ctlContenedorPrincipalCoordinadorEdad1.ConstruirControl(pConexion, pUsuario);
         }
 
-        public event EventHandler Presiona;
-
-        private void ctlContenedorPrincipalCoordinadorEdad1_cLICK(object sender, EventArgs e)
-        {
-            Presiona?.Invoke(sender, e);
-        }
+       
     }
 }

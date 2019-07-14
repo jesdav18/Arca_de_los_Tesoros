@@ -42,7 +42,9 @@ namespace Core.Clases
             catch (Exception Exc)
             {
                 MessageBox.Show("Algo salió mal en el momento de recuperar la hora del servidor. ");
+                Log_Excepciones.CapturadorExcepciones(Exc, "Utilidades.cs", "ObtenerHoraServidor");
                 return Convert.ToDateTime(null);
+               
             }
         }
 

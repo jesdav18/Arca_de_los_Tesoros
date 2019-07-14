@@ -1,8 +1,10 @@
 ﻿using Anciano.Pantallas;
 using Coordinadores_de_Dia.Pantallas;
+using Coordinadores_de_Edad.Controles;
 using Coordinadores_de_Edad.Pantallas;
 using Core.Clases;
 using Core.Controles;
+using Core.Pantallas;
 using Devart.Data.PostgreSql;
 using Diacono.Pantallas;
 using System;
@@ -32,6 +34,7 @@ namespace Arca_de_los_Tesoros
         frmCoordinadorDia frm_CoordinadorDia;
         frmDiacono frm_Diacono;
         frmAnciano frm_Anciano;
+        frmLogin frm_Login;
 
         #endregion
 
@@ -66,6 +69,114 @@ namespace Arca_de_los_Tesoros
 
         #endregion
 
+        public enum ROLES_USUARIO
+        {
+            ANCIANO = 1,
+            DIACONO = 2,
+            COORDINADOR_DIA = 3,
+            COORDINADOR_EDAD = 4
+        }
+
+        private void Construir_Acceso()
+        {
+
+            try
+            {
+                frm_Login = new frmLogin(Pro_Conexion);
+                frm_Login.OnUsuarioLogueado += frm_Login_OnUsuarioLogueado;
+                ReestablecerFormConstructor();
+                frm_Login.MdiParent = this;
+                frm_Login.StartPosition = FormStartPosition.CenterScreen;
+                frm_Login.Show();
+
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc,
+                                                      this.Name,
+                                                      " Construir_Acceso_Para_Operaciones()");
+               
+                MessageBox.Show("Algo salió mal miemtras se cargaba la pantalla de autenticación. ", "Arca de los Tesoros");
+            }
+        }
+
+        private void frm_Login_OnUsuarioLogueado(object sender, EventArgs e)
+        {
+            Usuario c_usuario = new Usuario();
+            c_usuario = (Usuario)sender;
+
+            RedireccionSegunNivelAcceso(c_usuario);
+            c_usuario = null;
+        }
+
+        private void RedireccionSegunNivelAcceso(Usuario pUsuario)
+        {
+            if (frm_Login != null)
+            {
+                frm_Login.Dispose();
+                frm_Login = null;
+            }
+
+            try
+            {
+                switch ((ROLES_USUARIO)pUsuario.Pro_ID_RolUsuario)
+                {
+                    case ROLES_USUARIO.ANCIANO:
+
+                        frm_Anciano = new frmAnciano();
+                        frm_Anciano.MdiParent = this;
+                        frm_Anciano.StartPosition = FormStartPosition.CenterScreen;
+                        frm_Anciano.Show();
+
+                        break;
+                    case ROLES_USUARIO.DIACONO:
+
+                        frm_Diacono = new frmDiacono();
+                        frm_Diacono.MdiParent = this;
+                        frm_Diacono.StartPosition = FormStartPosition.CenterScreen;
+                        frm_Diacono.Show();
+
+                        break;
+                    case ROLES_USUARIO.COORDINADOR_DIA:
+
+                        frm_CoordinadorDia = new frmCoordinadorDia();
+                        frm_CoordinadorDia.MdiParent = this;
+                        frm_CoordinadorDia.Dock = DockStyle.Fill;
+                        frm_CoordinadorDia.SendToBack();
+                        frm_CoordinadorDia.MaximizeBox = false;
+                        frm_CoordinadorDia.StartPosition = FormStartPosition.CenterScreen;
+
+                        break;
+
+                    case ROLES_USUARIO.COORDINADOR_EDAD:
+
+                        ctlContenedorPrincipalCoordinadorEdad ctl = new ctlContenedorPrincipalCoordinadorEdad();
+                        ctl.Parent = this;
+                        ctl.ConstruirControl(Pro_Conexion, pUsuario);
+                        ctl.Dock = DockStyle.Fill;
+                        ctl.BringToFront();
+                        this.MinimumSize = new Size(986, 795);
+                        
+
+                        break;
+                }
+            }
+
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc,
+                                                      this.Name,
+                                                      "RedireccionSegunNivelAcceso(Usuario pUsuario)");
+               
+
+                MessageBox.Show("Algo salió mal mientras se cargaban los niveles de acceso. ", "Arca de los Tesoros");
+            }
+
+
+//ReestablecerFormConstructor();
+
+        }
+
         private void FrmContructor_Load(object sender, EventArgs e)
         {
             if (obj_ctl_bienvenida != null)
@@ -89,74 +200,17 @@ namespace Arca_de_los_Tesoros
                 catch (InvalidCastException Exc)
 
                 {
+                    Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "frmConstructor_Load");
                 }
-
             }
         }
 
         private void obj_ctl_bienvenida_OnTerminaTiempoBienvenida(object sender, EventArgs e)
-        {
-            Pro_Modulo = obj_ctl_bienvenida.Pro_Modulo;
+        {           
             Pro_Conexion = obj_ctl_bienvenida.Pro_Conexion;
-
-            switch (Pro_Modulo)
-            {
-                case MODULOS.ANCIANO:
-                    frm_Anciano = new frmAnciano();
-                    frm_Anciano.MdiParent = this;
-                    frm_Anciano.StartPosition = FormStartPosition.CenterScreen;
-                    frm_Anciano.Show();
-                    break;
-                case MODULOS.DIACONO:
-                    frm_Diacono = new frmDiacono();
-                    frm_Diacono.MdiParent = this;
-                    frm_Diacono.StartPosition = FormStartPosition.CenterScreen;
-                    frm_Diacono.Show();
-                    break;
-                case MODULOS.COORDINADOR_DIA:
-                    frm_CoordinadorDia = new frmCoordinadorDia();
-                    frm_CoordinadorDia.MdiParent = this;
-                    frm_CoordinadorDia.Dock = DockStyle.Fill;
-                    frm_CoordinadorDia.SendToBack();
-                    frm_CoordinadorDia.MaximizeBox = false;
-                    frm_CoordinadorDia.StartPosition = FormStartPosition.CenterScreen;
-                    /*frm_CoordinadorEdad.ConstruirFormulario(Pro_Conexion,
-                                                            Pro_ID_AgenciaServicio,
-                                                            Pro_ID_ClienteServicio,
-                                                            Pro_NombreAgenciaServicio,
-                                                            Pro_IP_Host);*/
-
-                    
-                    frm_CoordinadorDia.Show();
-
-                    break;
-                case MODULOS.COORDINADOR_EDAD:
-                    frm_CoordinadorEdad = new frmCoordinadorEdad();
-                    frm_CoordinadorEdad.MdiParent = this;
-                    frm_CoordinadorEdad.StartPosition = FormStartPosition.CenterScreen;
-                    frm_CoordinadorEdad.Presiona += frm_CoordinadorEdad_Presiona;
-                    this.MinimumSize = new Size(986, 795);
-                    /*frm_CoordinadorEdad.ConstruirFormulario(Pro_Conexion,
-                                                            Pro_ID_AgenciaServicio,
-                                                            Pro_ID_ClienteServicio,
-                                                            Pro_NombreAgenciaServicio,
-                                                            Pro_IP_Host);*/
-                    frm_CoordinadorEdad.Show();
-                 
-                    break;
-                default:
-                    MessageBox.Show("Por favor revise la configuración de Arca de los Tesoros. El módulo configurado es " + Pro_Modulo + " y no fue encontrado.", "Arca de los Tesoros", MessageBoxButtons
-                        .OK, MessageBoxIcon.Error);
-                    break;
-                
-            }
-           
-            ReestablecerFormConstructor();
+            Construir_Acceso();                
         }
 
-        private void frm_CoordinadorEdad_Presiona(object sender, EventArgs e)
-        {
-            MessageBox.Show("Ancho: " + this.Width + " " + "Altura: " + this.Height);
-        }
+       
     }
 }

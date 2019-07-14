@@ -26,13 +26,7 @@ namespace Core.Controles
 
         public PgSqlConnection Pro_Conexion { get; set; }
 
-        public MODULOS Pro_Modulo
-        { 
-            get
-            {
-                return (MODULOS) Convert.ToInt32(ConfigurationSettings.AppSettings["MODULO"]);
-            }
-        }
+       
 
         private string Pro_BaseDatos
         {
@@ -106,23 +100,6 @@ namespace Core.Controles
             DateTime v_ultima_actualizacion = obj_archivo_informacion.LastWriteTime;
             lblUltimaActualizacion.Text = "" + v_ultima_actualizacion.ToShortDateString() + ", " + v_ultima_actualizacion.ToShortTimeString();
             lblVersion.Text = Assembly.GetEntryAssembly().GetName().Version.ToString();
-
-            switch (Pro_Modulo)
-            {
-                case MODULOS.ANCIANO:
-                    lblModulo.Text = "ANCIANO";
-                    break;
-                case MODULOS.DIACONO:
-                    lblModulo.Text = "DIACONO";
-                    break;
-                case MODULOS.COORDINADOR_DIA:
-                    lblModulo.Text = "COORDINADOR DE DIA";
-                    break;
-                case MODULOS.COORDINADOR_EDAD:
-                    lblModulo.Text = "COORDINADOR DE EDAD";
-                    break;       
-            }
-
 
             obj_archivo_informacion = null;
             v_ensamblado = null;

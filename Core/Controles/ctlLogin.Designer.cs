@@ -39,6 +39,7 @@
             this.txtContrasenia = new DevExpress.XtraEditors.TextEdit();
             this.cmdAcceder = new DevExpress.XtraEditors.SimpleButton();
             this.picLogoInstitucion = new DevExpress.XtraEditors.PictureEdit();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Core.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).BeginInit();
@@ -82,8 +83,6 @@
             // 
             // pnlSeparador
             // 
-            this.pnlSeparador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSeparador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.pnlSeparador.Location = new System.Drawing.Point(59, 231);
             this.pnlSeparador.Name = "pnlSeparador";
@@ -112,11 +111,13 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.EnterMoveNextControl = true;
             this.txtUsuario.Location = new System.Drawing.Point(182, 323);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Properties.Appearance.Options.UseFont = true;
             this.txtUsuario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtUsuario.Properties.PasswordChar = '*';
             this.txtUsuario.Size = new System.Drawing.Size(323, 44);
             this.txtUsuario.TabIndex = 8;
             // 
@@ -124,23 +125,24 @@
             // 
             this.txtContrasenia.Location = new System.Drawing.Point(182, 437);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.Properties.Appearance.Options.UseFont = true;
             this.txtContrasenia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtContrasenia.Properties.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(323, 44);
             this.txtContrasenia.TabIndex = 9;
+            this.txtContrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtContrasenia_KeyDown);
             // 
             // cmdAcceder
             // 
             this.cmdAcceder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
-            this.cmdAcceder.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAcceder.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAcceder.Appearance.ForeColor = System.Drawing.Color.White;
             this.cmdAcceder.Appearance.Options.UseBackColor = true;
             this.cmdAcceder.Appearance.Options.UseFont = true;
             this.cmdAcceder.Appearance.Options.UseForeColor = true;
             this.cmdAcceder.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(190)))));
-            this.cmdAcceder.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAcceder.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAcceder.AppearanceHovered.ForeColor = System.Drawing.Color.White;
             this.cmdAcceder.AppearanceHovered.Options.UseBackColor = true;
             this.cmdAcceder.AppearanceHovered.Options.UseFont = true;
@@ -152,19 +154,22 @@
             this.cmdAcceder.Size = new System.Drawing.Size(328, 66);
             this.cmdAcceder.TabIndex = 10;
             this.cmdAcceder.Text = "Acceder";
+            this.cmdAcceder.Click += new System.EventHandler(this.CmdAcceder_Click);
             // 
             // picLogoInstitucion
             // 
-            this.picLogoInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogoInstitucion.EditValue = global::Core.Properties.Resources.imgEbenezer;
-            this.picLogoInstitucion.Location = new System.Drawing.Point(226, 13);
+            this.picLogoInstitucion.Location = new System.Drawing.Point(208, 22);
             this.picLogoInstitucion.Name = "picLogoInstitucion";
             this.picLogoInstitucion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picLogoInstitucion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picLogoInstitucion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.picLogoInstitucion.Size = new System.Drawing.Size(238, 212);
+            this.picLogoInstitucion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picLogoInstitucion.Size = new System.Drawing.Size(270, 190);
             this.picLogoInstitucion.TabIndex = 4;
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
             // 
             // ctlLogin
             // 
@@ -208,5 +213,6 @@
         private DevExpress.XtraEditors.TextEdit txtUsuario;
         private DevExpress.XtraEditors.TextEdit txtContrasenia;
         private DevExpress.XtraEditors.SimpleButton cmdAcceder;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

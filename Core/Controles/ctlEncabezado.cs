@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Core.Clases;
 
 namespace Core.Controles
 {
@@ -17,6 +18,15 @@ namespace Core.Controles
             InitializeComponent();
         }
 
-      
+        public void ConstruirControl(Usuario pUsuario)
+        {
+            lblNombreUsuario.Text = pUsuario.Pro_NombreColaborador;
+            lblCargoUsuario.Text = pUsuario.Pro_DescripcionRolUsuario;
+        }
+
+        private void LblNombreUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="Devart.Data.PostgreSql, Version=7.13.1402.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -48,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controles\ctlContenedorPrincipal.cs">
+    <Compile Include="Controles\ctlContenedorPrincipalCoordinadorEdad.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controles\ctlContenedorPrincipal.Designer.cs">
-      <DependentUpon>ctlContenedorPrincipal.cs</DependentUpon>
+    <Compile Include="Controles\ctlContenedorPrincipalCoordinadorEdad.Designer.cs">
+      <DependentUpon>ctlContenedorPrincipalCoordinadorEdad.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmCoordinadorEdad.cs">
       <SubType>Form</SubType>
@@ -68,8 +69,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controles\ctlContenedorPrincipal.resx">
-      <DependentUpon>ctlContenedorPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Controles\ctlContenedorPrincipalCoordinadorEdad.resx">
+      <DependentUpon>ctlContenedorPrincipalCoordinadorEdad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmCoordinadorEdad.resx">
       <DependentUpon>frmCoordinadorEdad.cs</DependentUpon>
