@@ -56,6 +56,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Edad.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
@@ -393,6 +394,10 @@
             this.panel5.Size = new System.Drawing.Size(3, 765);
             this.panel5.TabIndex = 9;
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // ctlContenedorPrincipalCoordinadorEdad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -456,5 +461,6 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
         private Core.Controles.ctlIngresoFicha ctlIngresoFicha1;
         private Core.Controles.ctlEncabezado ctlEncabezado1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

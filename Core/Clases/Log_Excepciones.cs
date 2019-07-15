@@ -7,25 +7,29 @@ namespace Core.Clases
     {
         public static void CapturadorExcepciones(Exception pExcepcion,
                                          string pNombreControl,
-                                         string pNombreFuncion)
+                                         string pNombreFuncion
+                                       )
         {
             try
             {
                 AlmacenaArchivoExcepciones(pExcepcion,
                                            pNombreControl,
-                                           pNombreFuncion);
+                                           pNombreFuncion
+                                           );
             }
             catch (Exception ex)
             {
                 AlmacenaArchivoExcepciones(ex,
                                            "class DepuradorExcepcion",
-                                           "CapturadorExcepciones");
+                                           "CapturadorExcepciones"
+                                           );
             }
         }
 
         public static void AlmacenaArchivoExcepciones(Exception pExcepcion,
                                                string pNombreControl,
-                                               string pNombreFuncion)
+                                               string pNombreFuncion
+                                               )
         {
             string filepath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             if (!filepath.EndsWith("\\"))

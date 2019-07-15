@@ -28,6 +28,14 @@ namespace Core.Controles
             NavigationFicha.SelectedPage = Page3;
             lblEncabezado.Text = "Datos Generales";
             lblPagina.Text = "3 de 8";
+
+
+            if (radioFemenino.Checked || radioMasculino.Checked)
+            {
+                CargarEstadosCiviles();
+            }
+
+            
         }
 
         private void PicAtrasPag2_Click(object sender, EventArgs e)
@@ -90,10 +98,7 @@ namespace Core.Controles
             lblPagina.Text = "6 de 8";
         }
 
-        private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
-        {
-            GuardarFichaIngreso();
-        }
+      
 
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
@@ -103,16 +108,20 @@ namespace Core.Controles
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
 
-            CargarDatosTipoSangre();
-            CargarEstadosCiviles();
-            CargarEmpresas();
-            CargarDatosEquipoArcaTesoros();
-            CargarDatosAreasAtencion();
-            CargarDatosPaises();
+            txtNombre.Focus();
+
+            if (! bgCargarConfiguraciones.IsBusy)
+            {
+                bgCargarConfiguraciones.RunWorkerAsync();
+            }
+   
         }
 
         private void GuardarFichaIngreso()
         {
+
+            splashScreenManager1.ShowWaitForm();
+
             if (Pro_Conexion.State != ConnectionState.Open)
             {
                 Pro_Conexion.Open();
@@ -192,15 +201,24 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
 
+                splashScreenManager1.CloseWaitForm();
+
                 LimpiarCajasTexto();
+                MessageBox.Show("¡La ficha logró registrarse correctamente!");
             }
             catch (Exception Exc)
             {
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
+
                 pgTrans.Rollback();
                 sentencia = null;
                 pgComando.Dispose();
-                MessageBox.Show("Algo salió mal en el momento de generar la ficha de Ingreso. ", "Arca de los tesoros");
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "GuardarFichaIngreso");
+                MessageBox.Show(Exc.Message, "Arca de los tesoros",MessageBoxButtons.OK,MessageBoxIcon.Error);
+               
             }
         }
 
@@ -209,6 +227,8 @@ namespace Core.Controles
            txtNombre.Text = "";
            txtApellido.Text = "";
            txtIdentidad.Text = "";
+           txtSegundoApellido.Text = "";
+           txtSegundoNombre.Text = "";
            txtEstadoProfesional.Text = "";
            txtNivelEducativo.Text = "";
            txtOtrosEquiposPrivilegio.Text = "";
@@ -217,16 +237,40 @@ namespace Core.Controles
            radioMasculino.Checked = false;
            radioBautismoEspirituSi.Checked = false;
            radioBautismoEspirituNo.Checked = false;
-           dateFechaNacimiento.EditValue = "";
-           dateFechaIngresoIglesia.EditValue  ="";
-           dateFechaCobertura.EditValue = "";
-           dateFechaReconciliacion.EditValue = "";
-           dateFechaBautismoAgua.EditValue = "";
-           dateFechaConversion.EditValue = "";
-           glPaisNacimiento.EditValue = "";
-           glEstadosCiviles.EditValue ="";
-           glTipoSangre.EditValue = "";
+           dateFechaNacimiento.Text = "";
+           dateFechaIngresoIglesia.Text  ="";
+           dateFechaCobertura.Text = "";
+           dateFechaReconciliacion.Text = "";
+           dateFechaBautismoAgua.Text = "";
+           dateFechaConversion.Text = "";
+           glPaisNacimiento.Text = "";
+           glEstadosCiviles.Text ="";
+           glTipoSangre.Text = "";
       
+        }
+
+        private bool ValidacionCajasTexto()
+        {
+
+            if (txtNombre.Text != "" && 
+                txtApellido.Text != "" && 
+                txtIdentidad.Text != "" && 
+                memoDireccion.Text != "" &&
+                (radioFemenino.Checked != false || radioMasculino.Checked != false) &&
+                (radioBautismoEspirituSi.Checked != false || radioBautismoEspirituNo.Checked != false) &&
+                dateFechaNacimiento.Text != "" &&
+                dateFechaIngresoIglesia.Text != "" &&
+                dateFechaConversion.Text != "" &&
+                glPaisNacimiento.Text != "" &&
+                glEstadosCiviles.Text != ""
+            )
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+
         }
 
         private void CargarDatosTipoSangre() {
@@ -263,8 +307,17 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_areas_atencion();";
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_estados_civiles(:p_genero);";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            if (radioFemenino.Checked)
+            {
+                pgComando.Parameters.Add("p_genero", PgSqlType.Boolean).Value = 1;
+            }
+            else if (radioMasculino.Checked)
+            {
+                pgComando.Parameters.Add("p_genero", PgSqlType.Boolean).Value = 2;
+            }
+            
 
             try
             {
@@ -293,7 +346,7 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_areas_atencion();";
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_empresas();";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
 
             try
@@ -322,7 +375,7 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_areas_atencion();";
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_equipo_arca_tesoros();";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
 
             try
@@ -376,7 +429,7 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_areas_atencion();";
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_paises();";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
 
             try
@@ -423,5 +476,36 @@ namespace Core.Controles
             lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
             lblPagina.Text = "8 de 8";
         }
+
+        private void BgCargarConfiguraciones_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            CargarDatosTipoSangre();         
+            CargarEmpresas();
+            CargarDatosEquipoArcaTesoros();
+            CargarDatosAreasAtencion();
+            CargarDatosPaises();
+        }
+
+        private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
+        {
+            if (ValidacionCajasTexto())
+            {
+                GuardarFichaIngreso();
+            }
+            else
+            {
+                MessageBox.Show("¡Hay campos obligatorios que aún no han sido llenados!","Arca de los Tesoros",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }        
+        }
+
+        private void TxtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+      
     }
 }

@@ -46,6 +46,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.Page2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.radioMasculino = new System.Windows.Forms.RadioButton();
+            this.radioFemenino = new System.Windows.Forms.RadioButton();
             this.glPaisNacimiento = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsPaisNacimiento = new System.Windows.Forms.BindingSource(this.components);
             this.dsConfiguracion1 = new Core.DataSets.dsConfiguracion();
@@ -53,8 +55,6 @@
             this.colid_pais = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_pais = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.radioMasculino = new System.Windows.Forms.RadioButton();
-            this.radioFemenino = new System.Windows.Forms.RadioButton();
             this.dateFechaNacimiento = new DevExpress.XtraEditors.DateEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -76,6 +76,9 @@
             this.picAtrasPage3 = new DevExpress.XtraEditors.PictureEdit();
             this.picSiguientePage3 = new DevExpress.XtraEditors.PictureEdit();
             this.Page4 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.radioTipoFamiliaSoltero = new System.Windows.Forms.RadioButton();
+            this.radioTipoMiembroFamilia = new System.Windows.Forms.RadioButton();
             this.glTipoSangre = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsTiposSangre = new System.Windows.Forms.BindingSource(this.components);
             this.gvTiposSangre = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -90,8 +93,6 @@
             this.radioNecesitaTransporteNo = new System.Windows.Forms.RadioButton();
             this.radioNecesitaTransporteSi = new System.Windows.Forms.RadioButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.radioTipoMiembroFamilia = new System.Windows.Forms.RadioButton();
-            this.radioTipoFamiliaSoltero = new System.Windows.Forms.RadioButton();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -130,17 +131,19 @@
             this.picAtrasPag6 = new DevExpress.XtraEditors.PictureEdit();
             this.picSiguientePag6 = new DevExpress.XtraEditors.PictureEdit();
             this.Page7 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.radioCargoCorderitos = new System.Windows.Forms.RadioButton();
+            this.radioCargoIntermedio = new System.Windows.Forms.RadioButton();
+            this.radioCargoOtros = new System.Windows.Forms.RadioButton();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.radioBautismoEspirituSi = new System.Windows.Forms.RadioButton();
+            this.radioBautismoEspirituNo = new System.Windows.Forms.RadioButton();
             this.glEquipoArcaTesoros = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsEquipoArcaTesoros = new System.Windows.Forms.BindingSource(this.components);
             this.gvEquipoArcaTesoros = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_equipo_arca_tesoros = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.radioCargoOtros = new System.Windows.Forms.RadioButton();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
-            this.radioCargoIntermedio = new System.Windows.Forms.RadioButton();
-            this.radioCargoCorderitos = new System.Windows.Forms.RadioButton();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
-            this.radioBautismoEspirituNo = new System.Windows.Forms.RadioButton();
-            this.radioBautismoEspirituSi = new System.Windows.Forms.RadioButton();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.panel8 = new System.Windows.Forms.Panel();
             this.picSiguientePage7 = new DevExpress.XtraEditors.PictureEdit();
@@ -159,6 +162,10 @@
             this.txtOtrosEquiposPrivilegio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.bgCargarConfiguraciones = new System.ComponentModel.BackgroundWorker();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Core.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationFicha)).BeginInit();
             this.NavigationFicha.SuspendLayout();
@@ -189,6 +196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAtrasPage3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSiguientePage3.Properties)).BeginInit();
             this.Page4.SuspendLayout();
+            this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glTipoSangre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTiposSangre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTiposSangre)).BeginInit();
@@ -224,6 +232,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag6.Properties)).BeginInit();
             this.Page7.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glEquipoArcaTesoros.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEquipoArcaTesoros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipoArcaTesoros)).BeginInit();
@@ -239,6 +249,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPrivilegio.Properties)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEncabezado
@@ -460,18 +472,43 @@
             // 
             // Page2
             // 
+            this.Page2.Controls.Add(this.labelControl5);
+            this.Page2.Controls.Add(this.panel14);
             this.Page2.Controls.Add(this.glPaisNacimiento);
             this.Page2.Controls.Add(this.labelControl7);
-            this.Page2.Controls.Add(this.radioMasculino);
-            this.Page2.Controls.Add(this.radioFemenino);
             this.Page2.Controls.Add(this.dateFechaNacimiento);
             this.Page2.Controls.Add(this.labelControl6);
-            this.Page2.Controls.Add(this.labelControl5);
             this.Page2.Controls.Add(this.txtIdentidad);
             this.Page2.Controls.Add(this.labelControl4);
             this.Page2.Controls.Add(this.panel3);
             this.Page2.Name = "Page2";
             this.Page2.Size = new System.Drawing.Size(1156, 656);
+            // 
+            // radioMasculino
+            // 
+            this.radioMasculino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioMasculino.AutoSize = true;
+            this.radioMasculino.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMasculino.Location = new System.Drawing.Point(18, 1);
+            this.radioMasculino.Name = "radioMasculino";
+            this.radioMasculino.Size = new System.Drawing.Size(145, 36);
+            this.radioMasculino.TabIndex = 20;
+            this.radioMasculino.TabStop = true;
+            this.radioMasculino.Text = "Masculino";
+            this.radioMasculino.UseVisualStyleBackColor = true;
+            // 
+            // radioFemenino
+            // 
+            this.radioFemenino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioFemenino.AutoSize = true;
+            this.radioFemenino.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioFemenino.Location = new System.Drawing.Point(20, 41);
+            this.radioFemenino.Name = "radioFemenino";
+            this.radioFemenino.Size = new System.Drawing.Size(143, 36);
+            this.radioFemenino.TabIndex = 19;
+            this.radioFemenino.TabStop = true;
+            this.radioFemenino.Text = "Femenino";
+            this.radioFemenino.UseVisualStyleBackColor = true;
             // 
             // glPaisNacimiento
             // 
@@ -484,9 +521,9 @@
             this.glPaisNacimiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.glPaisNacimiento.Properties.DataSource = this.bsPaisNacimiento;
-            this.glPaisNacimiento.Properties.DisplayMember = "id_pais";
+            this.glPaisNacimiento.Properties.DisplayMember = "nombre_pais";
             this.glPaisNacimiento.Properties.PopupView = this.gvPaises;
-            this.glPaisNacimiento.Properties.ValueMember = "nombre_pais";
+            this.glPaisNacimiento.Properties.ValueMember = "id_pais";
             this.glPaisNacimiento.Size = new System.Drawing.Size(593, 38);
             this.glPaisNacimiento.TabIndex = 22;
             // 
@@ -520,6 +557,8 @@
             this.colid_pais.Name = "colid_pais";
             this.colid_pais.OptionsColumn.AllowEdit = false;
             this.colid_pais.OptionsColumn.AllowFocus = false;
+            this.colid_pais.Visible = true;
+            this.colid_pais.VisibleIndex = 1;
             // 
             // colnombre_pais
             // 
@@ -545,37 +584,11 @@
             this.labelControl7.TabIndex = 42;
             this.labelControl7.Text = "País de Nacimiento";
             // 
-            // radioMasculino
-            // 
-            this.radioMasculino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioMasculino.AutoSize = true;
-            this.radioMasculino.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMasculino.Location = new System.Drawing.Point(537, 212);
-            this.radioMasculino.Name = "radioMasculino";
-            this.radioMasculino.Size = new System.Drawing.Size(145, 36);
-            this.radioMasculino.TabIndex = 20;
-            this.radioMasculino.TabStop = true;
-            this.radioMasculino.Text = "Masculino";
-            this.radioMasculino.UseVisualStyleBackColor = true;
-            // 
-            // radioFemenino
-            // 
-            this.radioFemenino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioFemenino.AutoSize = true;
-            this.radioFemenino.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioFemenino.Location = new System.Drawing.Point(367, 212);
-            this.radioFemenino.Name = "radioFemenino";
-            this.radioFemenino.Size = new System.Drawing.Size(143, 36);
-            this.radioFemenino.TabIndex = 19;
-            this.radioFemenino.TabStop = true;
-            this.radioFemenino.Text = "Femenino";
-            this.radioFemenino.UseVisualStyleBackColor = true;
-            // 
             // dateFechaNacimiento
             // 
             this.dateFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaNacimiento.EditValue = null;
-            this.dateFechaNacimiento.Location = new System.Drawing.Point(367, 337);
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(367, 345);
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaNacimiento.Properties.Appearance.Options.UseFont = true;
@@ -595,7 +608,7 @@
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(367, 277);
+            this.labelControl6.Location = new System.Drawing.Point(367, 294);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(339, 45);
             this.labelControl6.TabIndex = 29;
@@ -610,21 +623,22 @@
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(367, 161);
+            this.labelControl5.Location = new System.Drawing.Point(367, 139);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(271, 45);
             this.labelControl5.TabIndex = 28;
-            this.labelControl5.Text = "Sexo";
+            this.labelControl5.Text = "Género";
             // 
             // txtIdentidad
             // 
             this.txtIdentidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIdentidad.Location = new System.Drawing.Point(367, 103);
+            this.txtIdentidad.Location = new System.Drawing.Point(367, 80);
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentidad.Properties.Appearance.Options.UseFont = true;
             this.txtIdentidad.Size = new System.Drawing.Size(292, 38);
             this.txtIdentidad.TabIndex = 18;
+            this.txtIdentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdentidad_KeyPress);
             // 
             // labelControl4
             // 
@@ -635,7 +649,7 @@
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(367, 52);
+            this.labelControl4.Location = new System.Drawing.Point(367, 29);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(271, 45);
             this.labelControl4.TabIndex = 26;
@@ -681,7 +695,6 @@
             // 
             // Page3
             // 
-            this.Page3.Caption = "Page3";
             this.Page3.Controls.Add(this.memoDireccion);
             this.Page3.Controls.Add(this.txtTelefonoFijo);
             this.Page3.Controls.Add(this.txtCelular);
@@ -834,14 +847,12 @@
             // 
             // Page4
             // 
+            this.Page4.Controls.Add(this.panel13);
+            this.Page4.Controls.Add(this.panel12);
             this.Page4.Controls.Add(this.glTipoSangre);
             this.Page4.Controls.Add(this.glEstadosCiviles);
             this.Page4.Controls.Add(this.labelControl15);
-            this.Page4.Controls.Add(this.radioNecesitaTransporteNo);
-            this.Page4.Controls.Add(this.radioNecesitaTransporteSi);
             this.Page4.Controls.Add(this.labelControl14);
-            this.Page4.Controls.Add(this.radioTipoMiembroFamilia);
-            this.Page4.Controls.Add(this.radioTipoFamiliaSoltero);
             this.Page4.Controls.Add(this.labelControl13);
             this.Page4.Controls.Add(this.labelControl12);
             this.Page4.Controls.Add(this.panel5);
@@ -849,11 +860,47 @@
             this.Page4.Name = "Page4";
             this.Page4.Size = new System.Drawing.Size(1156, 656);
             // 
+            // panel12
+            // 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel12.Controls.Add(this.radioTipoFamiliaSoltero);
+            this.panel12.Controls.Add(this.radioTipoMiembroFamilia);
+            this.panel12.Location = new System.Drawing.Point(339, 171);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(340, 121);
+            this.panel12.TabIndex = 46;
+            // 
+            // radioTipoFamiliaSoltero
+            // 
+            this.radioTipoFamiliaSoltero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioTipoFamiliaSoltero.AutoSize = true;
+            this.radioTipoFamiliaSoltero.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioTipoFamiliaSoltero.Location = new System.Drawing.Point(15, 23);
+            this.radioTipoFamiliaSoltero.Name = "radioTipoFamiliaSoltero";
+            this.radioTipoFamiliaSoltero.Size = new System.Drawing.Size(112, 36);
+            this.radioTipoFamiliaSoltero.TabIndex = 30;
+            this.radioTipoFamiliaSoltero.TabStop = true;
+            this.radioTipoFamiliaSoltero.Text = "Soltero";
+            this.radioTipoFamiliaSoltero.UseVisualStyleBackColor = true;
+            // 
+            // radioTipoMiembroFamilia
+            // 
+            this.radioTipoMiembroFamilia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioTipoMiembroFamilia.AutoSize = true;
+            this.radioTipoMiembroFamilia.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioTipoMiembroFamilia.Location = new System.Drawing.Point(15, 65);
+            this.radioTipoMiembroFamilia.Name = "radioTipoMiembroFamilia";
+            this.radioTipoMiembroFamilia.Size = new System.Drawing.Size(249, 36);
+            this.radioTipoMiembroFamilia.TabIndex = 31;
+            this.radioTipoMiembroFamilia.TabStop = true;
+            this.radioTipoMiembroFamilia.Text = "Miembro de Familia";
+            this.radioTipoMiembroFamilia.UseVisualStyleBackColor = true;
+            // 
             // glTipoSangre
             // 
             this.glTipoSangre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glTipoSangre.EditValue = "[V";
-            this.glTipoSangre.Location = new System.Drawing.Point(339, 483);
+            this.glTipoSangre.Location = new System.Drawing.Point(339, 497);
             this.glTipoSangre.Name = "glTipoSangre";
             this.glTipoSangre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glTipoSangre.Properties.Appearance.Options.UseFont = true;
@@ -905,7 +952,7 @@
             // 
             this.glEstadosCiviles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glEstadosCiviles.EditValue = "[V";
-            this.glEstadosCiviles.Location = new System.Drawing.Point(339, 90);
+            this.glEstadosCiviles.Location = new System.Drawing.Point(339, 76);
             this.glEstadosCiviles.Name = "glEstadosCiviles";
             this.glEstadosCiviles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEstadosCiviles.Properties.Appearance.Options.UseFont = true;
@@ -960,7 +1007,7 @@
             this.labelControl15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl15.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl15.Location = new System.Drawing.Point(339, 432);
+            this.labelControl15.Location = new System.Drawing.Point(339, 446);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(271, 45);
             this.labelControl15.TabIndex = 45;
@@ -971,7 +1018,7 @@
             this.radioNecesitaTransporteNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.radioNecesitaTransporteNo.AutoSize = true;
             this.radioNecesitaTransporteNo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNecesitaTransporteNo.Location = new System.Drawing.Point(358, 383);
+            this.radioNecesitaTransporteNo.Location = new System.Drawing.Point(19, 47);
             this.radioNecesitaTransporteNo.Name = "radioNecesitaTransporteNo";
             this.radioNecesitaTransporteNo.Size = new System.Drawing.Size(68, 36);
             this.radioNecesitaTransporteNo.TabIndex = 33;
@@ -984,7 +1031,7 @@
             this.radioNecesitaTransporteSi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.radioNecesitaTransporteSi.AutoSize = true;
             this.radioNecesitaTransporteSi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNecesitaTransporteSi.Location = new System.Drawing.Point(358, 345);
+            this.radioNecesitaTransporteSi.Location = new System.Drawing.Point(19, 8);
             this.radioNecesitaTransporteSi.Name = "radioNecesitaTransporteSi";
             this.radioNecesitaTransporteSi.Size = new System.Drawing.Size(55, 36);
             this.radioNecesitaTransporteSi.TabIndex = 32;
@@ -1001,37 +1048,11 @@
             this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.Location = new System.Drawing.Point(339, 294);
+            this.labelControl14.Location = new System.Drawing.Point(339, 298);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(271, 45);
             this.labelControl14.TabIndex = 42;
             this.labelControl14.Text = "¿Necesita Transporte?";
-            // 
-            // radioTipoMiembroFamilia
-            // 
-            this.radioTipoMiembroFamilia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioTipoMiembroFamilia.AutoSize = true;
-            this.radioTipoMiembroFamilia.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioTipoMiembroFamilia.Location = new System.Drawing.Point(358, 245);
-            this.radioTipoMiembroFamilia.Name = "radioTipoMiembroFamilia";
-            this.radioTipoMiembroFamilia.Size = new System.Drawing.Size(249, 36);
-            this.radioTipoMiembroFamilia.TabIndex = 31;
-            this.radioTipoMiembroFamilia.TabStop = true;
-            this.radioTipoMiembroFamilia.Text = "Miembro de Familia";
-            this.radioTipoMiembroFamilia.UseVisualStyleBackColor = true;
-            // 
-            // radioTipoFamiliaSoltero
-            // 
-            this.radioTipoFamiliaSoltero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioTipoFamiliaSoltero.AutoSize = true;
-            this.radioTipoFamiliaSoltero.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioTipoFamiliaSoltero.Location = new System.Drawing.Point(358, 207);
-            this.radioTipoFamiliaSoltero.Name = "radioTipoFamiliaSoltero";
-            this.radioTipoFamiliaSoltero.Size = new System.Drawing.Size(112, 36);
-            this.radioTipoFamiliaSoltero.TabIndex = 30;
-            this.radioTipoFamiliaSoltero.TabStop = true;
-            this.radioTipoFamiliaSoltero.Text = "Soltero";
-            this.radioTipoFamiliaSoltero.UseVisualStyleBackColor = true;
             // 
             // labelControl13
             // 
@@ -1042,7 +1063,7 @@
             this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl13.Location = new System.Drawing.Point(339, 156);
+            this.labelControl13.Location = new System.Drawing.Point(339, 120);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(271, 45);
             this.labelControl13.TabIndex = 39;
@@ -1057,7 +1078,7 @@
             this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl12.Location = new System.Drawing.Point(339, 39);
+            this.labelControl12.Location = new System.Drawing.Point(339, 25);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(271, 45);
             this.labelControl12.TabIndex = 38;
@@ -1103,7 +1124,6 @@
             // 
             // Page5
             // 
-            this.Page5.Caption = "Page5";
             this.Page5.Controls.Add(this.glEmpresa);
             this.Page5.Controls.Add(this.txtNivelEducativo);
             this.Page5.Controls.Add(this.labelControl19);
@@ -1325,7 +1345,6 @@
             // 
             // Page6
             // 
-            this.Page6.Caption = "Page6";
             this.Page6.Controls.Add(this.dateFechaBautismoAgua);
             this.Page6.Controls.Add(this.labelControl25);
             this.Page6.Controls.Add(this.dateFechaReconciliacion);
@@ -1530,25 +1549,107 @@
             // 
             // Page7
             // 
-            this.Page7.Caption = "Page7";
+            this.Page7.Controls.Add(this.panel11);
+            this.Page7.Controls.Add(this.panel10);
             this.Page7.Controls.Add(this.glEquipoArcaTesoros);
-            this.Page7.Controls.Add(this.radioCargoOtros);
             this.Page7.Controls.Add(this.labelControl26);
-            this.Page7.Controls.Add(this.radioCargoIntermedio);
-            this.Page7.Controls.Add(this.radioCargoCorderitos);
             this.Page7.Controls.Add(this.labelControl27);
-            this.Page7.Controls.Add(this.radioBautismoEspirituNo);
-            this.Page7.Controls.Add(this.radioBautismoEspirituSi);
             this.Page7.Controls.Add(this.labelControl28);
             this.Page7.Controls.Add(this.panel8);
             this.Page7.Name = "Page7";
             this.Page7.Size = new System.Drawing.Size(1156, 656);
             // 
+            // panel11
+            // 
+            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel11.Controls.Add(this.radioCargoCorderitos);
+            this.panel11.Controls.Add(this.radioCargoIntermedio);
+            this.panel11.Controls.Add(this.radioCargoOtros);
+            this.panel11.Location = new System.Drawing.Point(376, 257);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(302, 180);
+            this.panel11.TabIndex = 60;
+            // 
+            // radioCargoCorderitos
+            // 
+            this.radioCargoCorderitos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioCargoCorderitos.AutoSize = true;
+            this.radioCargoCorderitos.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioCargoCorderitos.Location = new System.Drawing.Point(20, 24);
+            this.radioCargoCorderitos.Name = "radioCargoCorderitos";
+            this.radioCargoCorderitos.Size = new System.Drawing.Size(146, 36);
+            this.radioCargoCorderitos.TabIndex = 50;
+            this.radioCargoCorderitos.TabStop = true;
+            this.radioCargoCorderitos.Text = "Corderitos";
+            this.radioCargoCorderitos.UseVisualStyleBackColor = true;
+            // 
+            // radioCargoIntermedio
+            // 
+            this.radioCargoIntermedio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioCargoIntermedio.AutoSize = true;
+            this.radioCargoIntermedio.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioCargoIntermedio.Location = new System.Drawing.Point(20, 66);
+            this.radioCargoIntermedio.Name = "radioCargoIntermedio";
+            this.radioCargoIntermedio.Size = new System.Drawing.Size(151, 36);
+            this.radioCargoIntermedio.TabIndex = 51;
+            this.radioCargoIntermedio.TabStop = true;
+            this.radioCargoIntermedio.Text = "Intermedia";
+            this.radioCargoIntermedio.UseVisualStyleBackColor = true;
+            // 
+            // radioCargoOtros
+            // 
+            this.radioCargoOtros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioCargoOtros.AutoSize = true;
+            this.radioCargoOtros.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioCargoOtros.Location = new System.Drawing.Point(20, 110);
+            this.radioCargoOtros.Name = "radioCargoOtros";
+            this.radioCargoOtros.Size = new System.Drawing.Size(94, 36);
+            this.radioCargoOtros.TabIndex = 52;
+            this.radioCargoOtros.TabStop = true;
+            this.radioCargoOtros.Text = "Otros";
+            this.radioCargoOtros.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.Controls.Add(this.radioBautismoEspirituSi);
+            this.panel10.Controls.Add(this.radioBautismoEspirituNo);
+            this.panel10.Location = new System.Drawing.Point(376, 79);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(293, 104);
+            this.panel10.TabIndex = 59;
+            // 
+            // radioBautismoEspirituSi
+            // 
+            this.radioBautismoEspirituSi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioBautismoEspirituSi.AutoSize = true;
+            this.radioBautismoEspirituSi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBautismoEspirituSi.Location = new System.Drawing.Point(19, 15);
+            this.radioBautismoEspirituSi.Name = "radioBautismoEspirituSi";
+            this.radioBautismoEspirituSi.Size = new System.Drawing.Size(55, 36);
+            this.radioBautismoEspirituSi.TabIndex = 48;
+            this.radioBautismoEspirituSi.TabStop = true;
+            this.radioBautismoEspirituSi.Text = "Si";
+            this.radioBautismoEspirituSi.UseVisualStyleBackColor = true;
+            // 
+            // radioBautismoEspirituNo
+            // 
+            this.radioBautismoEspirituNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioBautismoEspirituNo.AutoSize = true;
+            this.radioBautismoEspirituNo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBautismoEspirituNo.Location = new System.Drawing.Point(19, 57);
+            this.radioBautismoEspirituNo.Name = "radioBautismoEspirituNo";
+            this.radioBautismoEspirituNo.Size = new System.Drawing.Size(68, 36);
+            this.radioBautismoEspirituNo.TabIndex = 49;
+            this.radioBautismoEspirituNo.TabStop = true;
+            this.radioBautismoEspirituNo.Text = "No";
+            this.radioBautismoEspirituNo.UseVisualStyleBackColor = true;
+            // 
             // glEquipoArcaTesoros
             // 
             this.glEquipoArcaTesoros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glEquipoArcaTesoros.EditValue = "[V";
-            this.glEquipoArcaTesoros.Location = new System.Drawing.Point(376, 441);
+            this.glEquipoArcaTesoros.Location = new System.Drawing.Point(376, 499);
             this.glEquipoArcaTesoros.Name = "glEquipoArcaTesoros";
             this.glEquipoArcaTesoros.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEquipoArcaTesoros.Properties.Appearance.Options.UseFont = true;
@@ -1588,19 +1689,6 @@
             this.colid_equipo_arca_tesoros.Visible = true;
             this.colid_equipo_arca_tesoros.VisibleIndex = 0;
             // 
-            // radioCargoOtros
-            // 
-            this.radioCargoOtros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioCargoOtros.AutoSize = true;
-            this.radioCargoOtros.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCargoOtros.Location = new System.Drawing.Point(395, 330);
-            this.radioCargoOtros.Name = "radioCargoOtros";
-            this.radioCargoOtros.Size = new System.Drawing.Size(94, 36);
-            this.radioCargoOtros.TabIndex = 52;
-            this.radioCargoOtros.TabStop = true;
-            this.radioCargoOtros.Text = "Otros";
-            this.radioCargoOtros.UseVisualStyleBackColor = true;
-            // 
             // labelControl26
             // 
             this.labelControl26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1610,37 +1698,11 @@
             this.labelControl26.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl26.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl26.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl26.Location = new System.Drawing.Point(376, 380);
+            this.labelControl26.Location = new System.Drawing.Point(376, 448);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(362, 45);
             this.labelControl26.TabIndex = 56;
             this.labelControl26.Text = "Equipo Arca de los Tesoros";
-            // 
-            // radioCargoIntermedio
-            // 
-            this.radioCargoIntermedio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioCargoIntermedio.AutoSize = true;
-            this.radioCargoIntermedio.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCargoIntermedio.Location = new System.Drawing.Point(395, 292);
-            this.radioCargoIntermedio.Name = "radioCargoIntermedio";
-            this.radioCargoIntermedio.Size = new System.Drawing.Size(151, 36);
-            this.radioCargoIntermedio.TabIndex = 51;
-            this.radioCargoIntermedio.TabStop = true;
-            this.radioCargoIntermedio.Text = "Intermedia";
-            this.radioCargoIntermedio.UseVisualStyleBackColor = true;
-            // 
-            // radioCargoCorderitos
-            // 
-            this.radioCargoCorderitos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioCargoCorderitos.AutoSize = true;
-            this.radioCargoCorderitos.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCargoCorderitos.Location = new System.Drawing.Point(395, 254);
-            this.radioCargoCorderitos.Name = "radioCargoCorderitos";
-            this.radioCargoCorderitos.Size = new System.Drawing.Size(146, 36);
-            this.radioCargoCorderitos.TabIndex = 50;
-            this.radioCargoCorderitos.TabStop = true;
-            this.radioCargoCorderitos.Text = "Corderitos";
-            this.radioCargoCorderitos.UseVisualStyleBackColor = true;
             // 
             // labelControl27
             // 
@@ -1657,32 +1719,6 @@
             this.labelControl27.TabIndex = 53;
             this.labelControl27.Text = "Cargo";
             // 
-            // radioBautismoEspirituNo
-            // 
-            this.radioBautismoEspirituNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioBautismoEspirituNo.AutoSize = true;
-            this.radioBautismoEspirituNo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBautismoEspirituNo.Location = new System.Drawing.Point(395, 153);
-            this.radioBautismoEspirituNo.Name = "radioBautismoEspirituNo";
-            this.radioBautismoEspirituNo.Size = new System.Drawing.Size(68, 36);
-            this.radioBautismoEspirituNo.TabIndex = 49;
-            this.radioBautismoEspirituNo.TabStop = true;
-            this.radioBautismoEspirituNo.Text = "No";
-            this.radioBautismoEspirituNo.UseVisualStyleBackColor = true;
-            // 
-            // radioBautismoEspirituSi
-            // 
-            this.radioBautismoEspirituSi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioBautismoEspirituSi.AutoSize = true;
-            this.radioBautismoEspirituSi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBautismoEspirituSi.Location = new System.Drawing.Point(395, 115);
-            this.radioBautismoEspirituSi.Name = "radioBautismoEspirituSi";
-            this.radioBautismoEspirituSi.Size = new System.Drawing.Size(55, 36);
-            this.radioBautismoEspirituSi.TabIndex = 48;
-            this.radioBautismoEspirituSi.TabStop = true;
-            this.radioBautismoEspirituSi.Text = "Si";
-            this.radioBautismoEspirituSi.UseVisualStyleBackColor = true;
-            // 
             // labelControl28
             // 
             this.labelControl28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1692,7 +1728,7 @@
             this.labelControl28.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl28.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl28.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl28.Location = new System.Drawing.Point(376, 64);
+            this.labelControl28.Location = new System.Drawing.Point(376, 28);
             this.labelControl28.Name = "labelControl28";
             this.labelControl28.Size = new System.Drawing.Size(271, 45);
             this.labelControl28.TabIndex = 49;
@@ -1738,7 +1774,6 @@
             // 
             // Page8
             // 
-            this.Page8.Caption = "Page8";
             this.Page8.Controls.Add(this.panel9);
             this.Page8.Controls.Add(this.glEdadArea);
             this.Page8.Controls.Add(this.dateInicioPrivilegio);
@@ -1857,6 +1892,7 @@
             this.cmdGuardarFichaIngreso.Size = new System.Drawing.Size(602, 90);
             this.cmdGuardarFichaIngreso.TabIndex = 58;
             this.cmdGuardarFichaIngreso.Text = "Guardar Ficha ";
+            this.cmdGuardarFichaIngreso.Click += new System.EventHandler(this.CmdGuardarFichaIngreso_Click);
             // 
             // labelControl29
             // 
@@ -1913,6 +1949,35 @@
             this.labelControl31.TabIndex = 51;
             this.labelControl31.Text = "Edad / Área";
             // 
+            // bgCargarConfiguraciones
+            // 
+            this.bgCargarConfiguraciones.WorkerSupportsCancellation = true;
+            this.bgCargarConfiguraciones.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgCargarConfiguraciones_DoWork);
+            // 
+            // panel13
+            // 
+            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel13.Controls.Add(this.radioNecesitaTransporteSi);
+            this.panel13.Controls.Add(this.radioNecesitaTransporteNo);
+            this.panel13.Location = new System.Drawing.Point(339, 349);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(340, 91);
+            this.panel13.TabIndex = 47;
+            // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.Controls.Add(this.radioMasculino);
+            this.panel14.Controls.Add(this.radioFemenino);
+            this.panel14.Location = new System.Drawing.Point(367, 190);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(351, 85);
+            this.panel14.TabIndex = 43;
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // ctlIngresoFicha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1936,7 +2001,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtApellido.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             this.Page2.ResumeLayout(false);
-            this.Page2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glPaisNacimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPaisNacimiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsConfiguracion1)).EndInit();
@@ -1956,7 +2020,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAtrasPage3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSiguientePage3.Properties)).EndInit();
             this.Page4.ResumeLayout(false);
-            this.Page4.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glTipoSangre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTiposSangre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTiposSangre)).EndInit();
@@ -1992,7 +2057,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag6.Properties)).EndInit();
             this.Page7.ResumeLayout(false);
-            this.Page7.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glEquipoArcaTesoros.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEquipoArcaTesoros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipoArcaTesoros)).EndInit();
@@ -2008,6 +2076,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPrivilegio.Properties)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2144,5 +2216,12 @@
         private System.Windows.Forms.RadioButton radioBautismoEspirituNo;
         private System.Windows.Forms.RadioButton radioBautismoEspirituSi;
         private DevExpress.XtraEditors.LabelControl labelControl28;
+        private System.ComponentModel.BackgroundWorker bgCargarConfiguraciones;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel13;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }
