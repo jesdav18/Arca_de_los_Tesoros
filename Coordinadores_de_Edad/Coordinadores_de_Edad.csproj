@@ -31,12 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.2194.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
     <Reference Include="Devart.Data.PostgreSql, Version=7.13.1402.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -54,6 +58,12 @@
     </Compile>
     <Compile Include="Controles\ctlContenedorPrincipalCoordinadorEdad.Designer.cs">
       <DependentUpon>ctlContenedorPrincipalCoordinadorEdad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlIngresoSolicitudesCordinadorEdad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlIngresoSolicitudesCordinadorEdad.Designer.cs">
+      <DependentUpon>ctlIngresoSolicitudesCordinadorEdad.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmCoordinadorEdad.cs">
       <SubType>Form</SubType>
@@ -77,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controles\ctlContenedorPrincipalCoordinadorEdad.resx">
       <DependentUpon>ctlContenedorPrincipalCoordinadorEdad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlIngresoSolicitudesCordinadorEdad.resx">
+      <DependentUpon>ctlIngresoSolicitudesCordinadorEdad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmCoordinadorEdad.resx">
       <DependentUpon>frmCoordinadorEdad.cs</DependentUpon>
@@ -119,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconEspera.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_guardar_negro_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

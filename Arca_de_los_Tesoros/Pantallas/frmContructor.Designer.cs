@@ -43,6 +43,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arca de los Tesoros";
             this.Load += new System.EventHandler(this.FrmContructor_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmContructor_KeyDown);
             this.ResumeLayout(false);
 
         }

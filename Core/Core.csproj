@@ -85,10 +85,24 @@
     <Compile Include="Controles\ctlLogin.Designer.cs">
       <DependentUpon>ctlLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlMiEquipo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlMiEquipo.Designer.cs">
+      <DependentUpon>ctlMiEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsConfiguracion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsConfiguracion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsVistas.cs">
+      <DependentUpon>dsVistas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsVistas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVistas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmEspera.cs">
       <SubType>Form</SubType>
@@ -110,6 +124,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSets\dsVistas.xsc">
+      <DependentUpon>dsVistas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsVistas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVistas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsVistas.xss">
+      <DependentUpon>dsVistas.xsd</DependentUpon>
+    </None>
     <None Include="Resources\iconEspera.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlLogin.resx">
       <DependentUpon>ctlLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlMiEquipo.resx">
+      <DependentUpon>ctlMiEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmEspera.resx">
       <DependentUpon>frmEspera.cs</DependentUpon>
@@ -180,6 +208,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgEbenezer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconFiltro_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_visualizar_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

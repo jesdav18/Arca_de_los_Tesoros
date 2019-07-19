@@ -29,5 +29,33 @@ namespace Coordinadores_de_Edad.Controles
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
         }
+
+        private void CmdCerrarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmdIngresarSolicitudes_Click(object sender, EventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            NavigationCoordinadorEdad.SelectedPage = pageIngresoSolicitudes;
+            ctlIngresoSolicitudesCordinadorEdad1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_ID_Colaborador);
+            splashScreenManager1.CloseWaitForm();
+        }
+
+        private void CmdMiEquipo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmdListaAsistencia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmdOrganizadorActividades_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

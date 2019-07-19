@@ -35,17 +35,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.NavigationFicha = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            this.Page1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.txtSegundoApellido = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSegundoNombre = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.picSiguientePag1 = new DevExpress.XtraEditors.PictureEdit();
-            this.txtApellido = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.Page2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.radioMasculino = new System.Windows.Forms.RadioButton();
             this.radioFemenino = new System.Windows.Forms.RadioButton();
             this.glPaisNacimiento = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -57,12 +49,16 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.dateFechaNacimiento = new DevExpress.XtraEditors.DateEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdentidad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.picAtrasPag2 = new DevExpress.XtraEditors.PictureEdit();
-            this.picSiguientePag2 = new DevExpress.XtraEditors.PictureEdit();
+            this.Page1 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.txtSegundoApellido = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSegundoNombre = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtApellido = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.Page3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.memoDireccion = new DevExpress.XtraEditors.MemoEdit();
             this.txtTelefonoFijo = new DevExpress.XtraEditors.TextEdit();
@@ -72,10 +68,10 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txtCorreoElectronico = new DevExpress.XtraEditors.TextEdit();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.picAtrasPage3 = new DevExpress.XtraEditors.PictureEdit();
-            this.picSiguientePage3 = new DevExpress.XtraEditors.PictureEdit();
             this.Page4 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.radioNecesitaTransporteSi = new System.Windows.Forms.RadioButton();
+            this.radioNecesitaTransporteNo = new System.Windows.Forms.RadioButton();
             this.panel12 = new System.Windows.Forms.Panel();
             this.radioTipoFamiliaSoltero = new System.Windows.Forms.RadioButton();
             this.radioTipoMiembroFamilia = new System.Windows.Forms.RadioButton();
@@ -90,14 +86,9 @@
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_estado_civil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.radioNecesitaTransporteNo = new System.Windows.Forms.RadioButton();
-            this.radioNecesitaTransporteSi = new System.Windows.Forms.RadioButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.picAtrasPag4 = new DevExpress.XtraEditors.PictureEdit();
-            this.picSiguientePag4 = new DevExpress.XtraEditors.PictureEdit();
             this.Page5 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.glEmpresa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsEmpresa = new System.Windows.Forms.BindingSource(this.components);
@@ -113,9 +104,6 @@
             this.txtCargoEnEmpresa = new DevExpress.XtraEditors.TextEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.picAtrasPag5 = new DevExpress.XtraEditors.PictureEdit();
-            this.picSiguientePag5 = new DevExpress.XtraEditors.PictureEdit();
             this.Page6 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.dateFechaBautismoAgua = new DevExpress.XtraEditors.DateEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
@@ -127,9 +115,6 @@
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.dateFechaConversion = new DevExpress.XtraEditors.DateEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.picAtrasPag6 = new DevExpress.XtraEditors.PictureEdit();
-            this.picSiguientePag6 = new DevExpress.XtraEditors.PictureEdit();
             this.Page7 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.radioCargoCorderitos = new System.Windows.Forms.RadioButton();
@@ -145,12 +130,7 @@
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.picSiguientePage7 = new DevExpress.XtraEditors.PictureEdit();
-            this.picAtrasPag7 = new DevExpress.XtraEditors.PictureEdit();
             this.Page8 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.picAtrasPage8 = new DevExpress.XtraEditors.PictureEdit();
             this.glEdadArea = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsAreasAtencion = new System.Windows.Forms.BindingSource(this.components);
             this.gvAreasAtencion = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -162,21 +142,16 @@
             this.txtOtrosEquiposPrivilegio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picAtras = new DevExpress.XtraEditors.PictureEdit();
+            this.picSiguiente = new DevExpress.XtraEditors.PictureEdit();
             this.bgCargarConfiguraciones = new System.ComponentModel.BackgroundWorker();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Core.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationFicha)).BeginInit();
             this.NavigationFicha.SuspendLayout();
-            this.Page1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoApellido.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtApellido.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             this.Page2.SuspendLayout();
+            this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glPaisNacimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPaisNacimiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsConfiguracion1)).BeginInit();
@@ -184,18 +159,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdentidad.Properties)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag2.Properties)).BeginInit();
+            this.Page1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoApellido.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtApellido.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             this.Page3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memoDireccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonoFijo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCelular.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCorreoElectronico.Properties)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPage3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePage3.Properties)).BeginInit();
             this.Page4.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glTipoSangre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTiposSangre)).BeginInit();
@@ -203,9 +178,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.glEstadosCiviles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEstadosCiviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEstadosCiviles)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag4.Properties)).BeginInit();
             this.Page5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glEmpresa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpresa)).BeginInit();
@@ -214,9 +186,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEstadoProfesional.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonoEmpresa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCargoEnEmpresa.Properties)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag5.Properties)).BeginInit();
             this.Page6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaBautismoAgua.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaBautismoAgua.Properties)).BeginInit();
@@ -228,29 +197,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaIngresoIglesia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaConversion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaConversion.Properties)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag6.Properties)).BeginInit();
             this.Page7.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glEquipoArcaTesoros.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEquipoArcaTesoros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipoArcaTesoros)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePage7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag7.Properties)).BeginInit();
             this.Page8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPage8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glEdadArea.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAreasAtencion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAreasAtencion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPrivilegio.Properties)).BeginInit();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSiguiente.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEncabezado
@@ -291,7 +253,7 @@
             this.lblPagina.Name = "lblPagina";
             this.lblPagina.Size = new System.Drawing.Size(136, 75);
             this.lblPagina.TabIndex = 10;
-            this.lblPagina.Text = "1 DE 7";
+            this.lblPagina.Text = "1 DE 8";
             // 
             // panel2
             // 
@@ -311,7 +273,7 @@
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(378, 38);
+            this.labelControl2.Location = new System.Drawing.Point(377, 48);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(271, 45);
             this.labelControl2.TabIndex = 12;
@@ -320,8 +282,8 @@
             // NavigationFicha
             // 
             this.NavigationFicha.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
-            this.NavigationFicha.Controls.Add(this.Page1);
             this.NavigationFicha.Controls.Add(this.Page2);
+            this.NavigationFicha.Controls.Add(this.Page1);
             this.NavigationFicha.Controls.Add(this.Page3);
             this.NavigationFicha.Controls.Add(this.Page4);
             this.NavigationFicha.Controls.Add(this.Page5);
@@ -341,137 +303,15 @@
             this.Page7,
             this.Page8});
             this.NavigationFicha.SelectedPage = this.Page1;
-            this.NavigationFicha.Size = new System.Drawing.Size(1156, 656);
+            this.NavigationFicha.Size = new System.Drawing.Size(1156, 589);
             this.NavigationFicha.TabIndex = 13;
             this.NavigationFicha.Text = "navigationFrame1";
             this.NavigationFicha.TransitionAnimationProperties.FrameCount = 500;
             this.NavigationFicha.TransitionAnimationProperties.FrameInterval = 500;
             // 
-            // Page1
-            // 
-            this.Page1.Controls.Add(this.txtSegundoApellido);
-            this.Page1.Controls.Add(this.labelControl32);
-            this.Page1.Controls.Add(this.txtSegundoNombre);
-            this.Page1.Controls.Add(this.labelControl1);
-            this.Page1.Controls.Add(this.panel1);
-            this.Page1.Controls.Add(this.txtApellido);
-            this.Page1.Controls.Add(this.labelControl3);
-            this.Page1.Controls.Add(this.txtNombre);
-            this.Page1.Controls.Add(this.labelControl2);
-            this.Page1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Page1.Name = "Page1";
-            this.Page1.Size = new System.Drawing.Size(1156, 656);
-            // 
-            // txtSegundoApellido
-            // 
-            this.txtSegundoApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSegundoApellido.Location = new System.Drawing.Point(378, 470);
-            this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoApellido.Properties.Appearance.Options.UseFont = true;
-            this.txtSegundoApellido.Size = new System.Drawing.Size(374, 38);
-            this.txtSegundoApellido.TabIndex = 16;
-            // 
-            // labelControl32
-            // 
-            this.labelControl32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl32.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl32.Appearance.Options.UseFont = true;
-            this.labelControl32.Appearance.Options.UseTextOptions = true;
-            this.labelControl32.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.labelControl32.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl32.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl32.Location = new System.Drawing.Point(378, 419);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(271, 45);
-            this.labelControl32.TabIndex = 27;
-            this.labelControl32.Text = "Segundo Apellido";
-            // 
-            // txtSegundoNombre
-            // 
-            this.txtSegundoNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSegundoNombre.Location = new System.Drawing.Point(378, 205);
-            this.txtSegundoNombre.Name = "txtSegundoNombre";
-            this.txtSegundoNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.Properties.Appearance.Options.UseFont = true;
-            this.txtSegundoNombre.Size = new System.Drawing.Size(374, 38);
-            this.txtSegundoNombre.TabIndex = 14;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(378, 154);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(271, 45);
-            this.labelControl1.TabIndex = 25;
-            this.labelControl1.Text = "Segundo Nombre";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.picSiguientePag1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 589);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1156, 67);
-            this.panel1.TabIndex = 24;
-            // 
-            // picSiguientePag1
-            // 
-            this.picSiguientePag1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picSiguientePag1.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
-            this.picSiguientePag1.Location = new System.Drawing.Point(1076, 0);
-            this.picSiguientePag1.Name = "picSiguientePag1";
-            this.picSiguientePag1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picSiguientePag1.Properties.NullText = "   ";
-            this.picSiguientePag1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picSiguientePag1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picSiguientePag1.Size = new System.Drawing.Size(80, 67);
-            this.picSiguientePag1.TabIndex = 17;
-            this.picSiguientePag1.Click += new System.EventHandler(this.PicSiguientePag1_Click);
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtApellido.Location = new System.Drawing.Point(378, 335);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Properties.Appearance.Options.UseFont = true;
-            this.txtApellido.Size = new System.Drawing.Size(368, 38);
-            this.txtApellido.TabIndex = 15;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.labelControl3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(378, 284);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(271, 45);
-            this.labelControl3.TabIndex = 14;
-            this.labelControl3.Text = "Primer Apellido";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombre.Location = new System.Drawing.Point(378, 89);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Properties.Appearance.Options.UseFont = true;
-            this.txtNombre.Size = new System.Drawing.Size(368, 38);
-            this.txtNombre.TabIndex = 13;
-            // 
             // Page2
             // 
+            this.Page2.Caption = "Page2";
             this.Page2.Controls.Add(this.labelControl5);
             this.Page2.Controls.Add(this.panel14);
             this.Page2.Controls.Add(this.glPaisNacimiento);
@@ -480,9 +320,33 @@
             this.Page2.Controls.Add(this.labelControl6);
             this.Page2.Controls.Add(this.txtIdentidad);
             this.Page2.Controls.Add(this.labelControl4);
-            this.Page2.Controls.Add(this.panel3);
             this.Page2.Name = "Page2";
-            this.Page2.Size = new System.Drawing.Size(1156, 656);
+            this.Page2.Size = new System.Drawing.Size(1156, 589);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Location = new System.Drawing.Point(353, 152);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(271, 45);
+            this.labelControl5.TabIndex = 28;
+            this.labelControl5.Text = "Género";
+            // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.Controls.Add(this.radioMasculino);
+            this.panel14.Controls.Add(this.radioFemenino);
+            this.panel14.Location = new System.Drawing.Point(353, 203);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(351, 85);
+            this.panel14.TabIndex = 43;
             // 
             // radioMasculino
             // 
@@ -514,7 +378,7 @@
             // 
             this.glPaisNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glPaisNacimiento.EditValue = "[V";
-            this.glPaisNacimiento.Location = new System.Drawing.Point(367, 463);
+            this.glPaisNacimiento.Location = new System.Drawing.Point(353, 476);
             this.glPaisNacimiento.Name = "glPaisNacimiento";
             this.glPaisNacimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glPaisNacimiento.Properties.Appearance.Options.UseFont = true;
@@ -578,7 +442,7 @@
             this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.Location = new System.Drawing.Point(367, 412);
+            this.labelControl7.Location = new System.Drawing.Point(353, 425);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(271, 45);
             this.labelControl7.TabIndex = 42;
@@ -588,7 +452,7 @@
             // 
             this.dateFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaNacimiento.EditValue = null;
-            this.dateFechaNacimiento.Location = new System.Drawing.Point(367, 345);
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(353, 358);
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaNacimiento.Properties.Appearance.Options.UseFont = true;
@@ -608,31 +472,16 @@
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(367, 294);
+            this.labelControl6.Location = new System.Drawing.Point(353, 307);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(339, 45);
             this.labelControl6.TabIndex = 29;
             this.labelControl6.Text = "Fecha de Nacimiento";
             // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseTextOptions = true;
-            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.labelControl5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(367, 139);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(271, 45);
-            this.labelControl5.TabIndex = 28;
-            this.labelControl5.Text = "Género";
-            // 
             // txtIdentidad
             // 
             this.txtIdentidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIdentidad.Location = new System.Drawing.Point(367, 80);
+            this.txtIdentidad.Location = new System.Drawing.Point(353, 93);
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentidad.Properties.Appearance.Options.UseFont = true;
@@ -649,52 +498,115 @@
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(367, 29);
+            this.labelControl4.Location = new System.Drawing.Point(353, 42);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(271, 45);
             this.labelControl4.TabIndex = 26;
             this.labelControl4.Text = "N° Identidad";
             // 
-            // panel3
+            // Page1
             // 
-            this.panel3.Controls.Add(this.picAtrasPag2);
-            this.panel3.Controls.Add(this.picSiguientePag2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 589);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1156, 67);
-            this.panel3.TabIndex = 25;
+            this.Page1.Caption = "Page1";
+            this.Page1.Controls.Add(this.txtSegundoApellido);
+            this.Page1.Controls.Add(this.labelControl32);
+            this.Page1.Controls.Add(this.txtSegundoNombre);
+            this.Page1.Controls.Add(this.labelControl1);
+            this.Page1.Controls.Add(this.txtApellido);
+            this.Page1.Controls.Add(this.labelControl3);
+            this.Page1.Controls.Add(this.txtNombre);
+            this.Page1.Controls.Add(this.labelControl2);
+            this.Page1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Page1.Name = "Page1";
+            this.Page1.Size = new System.Drawing.Size(1156, 589);
             // 
-            // picAtrasPag2
+            // txtSegundoApellido
             // 
-            this.picAtrasPag2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtrasPag2.EditValue = global::Core.Properties.Resources.icon_atras_64;
-            this.picAtrasPag2.Location = new System.Drawing.Point(0, 0);
-            this.picAtrasPag2.Name = "picAtrasPag2";
-            this.picAtrasPag2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtrasPag2.Properties.NullText = "   ";
-            this.picAtrasPag2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtrasPag2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtrasPag2.Size = new System.Drawing.Size(80, 67);
-            this.picAtrasPag2.TabIndex = 2;
-            this.picAtrasPag2.Click += new System.EventHandler(this.PicAtrasPag2_Click);
+            this.txtSegundoApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSegundoApellido.Location = new System.Drawing.Point(377, 480);
+            this.txtSegundoApellido.Name = "txtSegundoApellido";
+            this.txtSegundoApellido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSegundoApellido.Properties.Appearance.Options.UseFont = true;
+            this.txtSegundoApellido.Size = new System.Drawing.Size(374, 38);
+            this.txtSegundoApellido.TabIndex = 16;
             // 
-            // picSiguientePag2
+            // labelControl32
             // 
-            this.picSiguientePag2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picSiguientePag2.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
-            this.picSiguientePag2.Location = new System.Drawing.Point(1076, 0);
-            this.picSiguientePag2.Name = "picSiguientePag2";
-            this.picSiguientePag2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picSiguientePag2.Properties.NullText = "   ";
-            this.picSiguientePag2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picSiguientePag2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picSiguientePag2.Size = new System.Drawing.Size(80, 67);
-            this.picSiguientePag2.TabIndex = 23;
-            this.picSiguientePag2.Click += new System.EventHandler(this.PicSiguientePag2_Click);
+            this.labelControl32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl32.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl32.Appearance.Options.UseFont = true;
+            this.labelControl32.Appearance.Options.UseTextOptions = true;
+            this.labelControl32.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl32.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl32.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl32.Location = new System.Drawing.Point(377, 429);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(271, 45);
+            this.labelControl32.TabIndex = 27;
+            this.labelControl32.Text = "Segundo Apellido";
+            // 
+            // txtSegundoNombre
+            // 
+            this.txtSegundoNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSegundoNombre.Location = new System.Drawing.Point(377, 215);
+            this.txtSegundoNombre.Name = "txtSegundoNombre";
+            this.txtSegundoNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSegundoNombre.Properties.Appearance.Options.UseFont = true;
+            this.txtSegundoNombre.Size = new System.Drawing.Size(374, 38);
+            this.txtSegundoNombre.TabIndex = 14;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(377, 164);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(271, 45);
+            this.labelControl1.TabIndex = 25;
+            this.labelControl1.Text = "Segundo Nombre";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtApellido.Location = new System.Drawing.Point(377, 345);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Properties.Appearance.Options.UseFont = true;
+            this.txtApellido.Size = new System.Drawing.Size(368, 38);
+            this.txtApellido.TabIndex = 15;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(377, 294);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(271, 45);
+            this.labelControl3.TabIndex = 14;
+            this.labelControl3.Text = "Primer Apellido";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNombre.Location = new System.Drawing.Point(377, 99);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Properties.Appearance.Options.UseFont = true;
+            this.txtNombre.Size = new System.Drawing.Size(368, 38);
+            this.txtNombre.TabIndex = 13;
             // 
             // Page3
             // 
+            this.Page3.Caption = "Page3";
             this.Page3.Controls.Add(this.memoDireccion);
             this.Page3.Controls.Add(this.txtTelefonoFijo);
             this.Page3.Controls.Add(this.txtCelular);
@@ -703,14 +615,13 @@
             this.Page3.Controls.Add(this.labelControl9);
             this.Page3.Controls.Add(this.labelControl8);
             this.Page3.Controls.Add(this.txtCorreoElectronico);
-            this.Page3.Controls.Add(this.panel4);
             this.Page3.Name = "Page3";
-            this.Page3.Size = new System.Drawing.Size(1156, 656);
+            this.Page3.Size = new System.Drawing.Size(1156, 589);
             // 
             // memoDireccion
             // 
             this.memoDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoDireccion.Location = new System.Drawing.Point(313, 402);
+            this.memoDireccion.Location = new System.Drawing.Point(311, 402);
             this.memoDireccion.Name = "memoDireccion";
             this.memoDireccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoDireccion.Properties.Appearance.Options.UseFont = true;
@@ -720,7 +631,7 @@
             // txtTelefonoFijo
             // 
             this.txtTelefonoFijo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefonoFijo.Location = new System.Drawing.Point(313, 106);
+            this.txtTelefonoFijo.Location = new System.Drawing.Point(311, 106);
             this.txtTelefonoFijo.Name = "txtTelefonoFijo";
             this.txtTelefonoFijo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoFijo.Properties.Appearance.Options.UseFont = true;
@@ -730,7 +641,7 @@
             // txtCelular
             // 
             this.txtCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCelular.Location = new System.Drawing.Point(313, 199);
+            this.txtCelular.Location = new System.Drawing.Point(311, 199);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.Properties.Appearance.Options.UseFont = true;
@@ -746,7 +657,7 @@
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Location = new System.Drawing.Point(313, 351);
+            this.labelControl11.Location = new System.Drawing.Point(311, 351);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(271, 45);
             this.labelControl11.TabIndex = 45;
@@ -761,7 +672,7 @@
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Location = new System.Drawing.Point(313, 246);
+            this.labelControl10.Location = new System.Drawing.Point(311, 246);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(271, 45);
             this.labelControl10.TabIndex = 44;
@@ -776,7 +687,7 @@
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl9.Location = new System.Drawing.Point(313, 157);
+            this.labelControl9.Location = new System.Drawing.Point(311, 157);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(271, 45);
             this.labelControl9.TabIndex = 43;
@@ -791,7 +702,7 @@
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(313, 64);
+            this.labelControl8.Location = new System.Drawing.Point(311, 64);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(271, 45);
             this.labelControl8.TabIndex = 42;
@@ -800,53 +711,16 @@
             // txtCorreoElectronico
             // 
             this.txtCorreoElectronico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(313, 297);
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(311, 297);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoElectronico.Properties.Appearance.Options.UseFont = true;
             this.txtCorreoElectronico.Size = new System.Drawing.Size(602, 38);
             this.txtCorreoElectronico.TabIndex = 26;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.picAtrasPage3);
-            this.panel4.Controls.Add(this.picSiguientePage3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 589);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1156, 67);
-            this.panel4.TabIndex = 38;
-            // 
-            // picAtrasPage3
-            // 
-            this.picAtrasPage3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtrasPage3.EditValue = global::Core.Properties.Resources.icon_atras_64;
-            this.picAtrasPage3.Location = new System.Drawing.Point(0, 0);
-            this.picAtrasPage3.Name = "picAtrasPage3";
-            this.picAtrasPage3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtrasPage3.Properties.NullText = "   ";
-            this.picAtrasPage3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtrasPage3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtrasPage3.Size = new System.Drawing.Size(80, 67);
-            this.picAtrasPage3.TabIndex = 2;
-            this.picAtrasPage3.Click += new System.EventHandler(this.PicAtrasPage3_Click);
-            // 
-            // picSiguientePage3
-            // 
-            this.picSiguientePage3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picSiguientePage3.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
-            this.picSiguientePage3.Location = new System.Drawing.Point(1076, 0);
-            this.picSiguientePage3.Name = "picSiguientePage3";
-            this.picSiguientePage3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picSiguientePage3.Properties.NullText = "   ";
-            this.picSiguientePage3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picSiguientePage3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picSiguientePage3.Size = new System.Drawing.Size(80, 67);
-            this.picSiguientePage3.TabIndex = 28;
-            this.picSiguientePage3.Click += new System.EventHandler(this.PicSiguientePage3_Click);
-            // 
             // Page4
             // 
+            this.Page4.Caption = "Page4";
             this.Page4.Controls.Add(this.panel13);
             this.Page4.Controls.Add(this.panel12);
             this.Page4.Controls.Add(this.glTipoSangre);
@@ -855,17 +729,52 @@
             this.Page4.Controls.Add(this.labelControl14);
             this.Page4.Controls.Add(this.labelControl13);
             this.Page4.Controls.Add(this.labelControl12);
-            this.Page4.Controls.Add(this.panel5);
             this.Page4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Page4.Name = "Page4";
-            this.Page4.Size = new System.Drawing.Size(1156, 656);
+            this.Page4.Size = new System.Drawing.Size(1156, 589);
+            // 
+            // panel13
+            // 
+            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel13.Controls.Add(this.radioNecesitaTransporteSi);
+            this.panel13.Controls.Add(this.radioNecesitaTransporteNo);
+            this.panel13.Location = new System.Drawing.Point(329, 348);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(340, 91);
+            this.panel13.TabIndex = 47;
+            // 
+            // radioNecesitaTransporteSi
+            // 
+            this.radioNecesitaTransporteSi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioNecesitaTransporteSi.AutoSize = true;
+            this.radioNecesitaTransporteSi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioNecesitaTransporteSi.Location = new System.Drawing.Point(19, 8);
+            this.radioNecesitaTransporteSi.Name = "radioNecesitaTransporteSi";
+            this.radioNecesitaTransporteSi.Size = new System.Drawing.Size(55, 36);
+            this.radioNecesitaTransporteSi.TabIndex = 32;
+            this.radioNecesitaTransporteSi.TabStop = true;
+            this.radioNecesitaTransporteSi.Text = "Si";
+            this.radioNecesitaTransporteSi.UseVisualStyleBackColor = true;
+            // 
+            // radioNecesitaTransporteNo
+            // 
+            this.radioNecesitaTransporteNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioNecesitaTransporteNo.AutoSize = true;
+            this.radioNecesitaTransporteNo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioNecesitaTransporteNo.Location = new System.Drawing.Point(19, 47);
+            this.radioNecesitaTransporteNo.Name = "radioNecesitaTransporteNo";
+            this.radioNecesitaTransporteNo.Size = new System.Drawing.Size(68, 36);
+            this.radioNecesitaTransporteNo.TabIndex = 33;
+            this.radioNecesitaTransporteNo.TabStop = true;
+            this.radioNecesitaTransporteNo.Text = "No";
+            this.radioNecesitaTransporteNo.UseVisualStyleBackColor = true;
             // 
             // panel12
             // 
             this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.Controls.Add(this.radioTipoFamiliaSoltero);
             this.panel12.Controls.Add(this.radioTipoMiembroFamilia);
-            this.panel12.Location = new System.Drawing.Point(339, 171);
+            this.panel12.Location = new System.Drawing.Point(329, 170);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(340, 121);
             this.panel12.TabIndex = 46;
@@ -900,7 +809,7 @@
             // 
             this.glTipoSangre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glTipoSangre.EditValue = "[V";
-            this.glTipoSangre.Location = new System.Drawing.Point(339, 497);
+            this.glTipoSangre.Location = new System.Drawing.Point(329, 496);
             this.glTipoSangre.Name = "glTipoSangre";
             this.glTipoSangre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glTipoSangre.Properties.Appearance.Options.UseFont = true;
@@ -952,7 +861,7 @@
             // 
             this.glEstadosCiviles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glEstadosCiviles.EditValue = "[V";
-            this.glEstadosCiviles.Location = new System.Drawing.Point(339, 76);
+            this.glEstadosCiviles.Location = new System.Drawing.Point(329, 75);
             this.glEstadosCiviles.Name = "glEstadosCiviles";
             this.glEstadosCiviles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEstadosCiviles.Properties.Appearance.Options.UseFont = true;
@@ -1007,37 +916,11 @@
             this.labelControl15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl15.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl15.Location = new System.Drawing.Point(339, 446);
+            this.labelControl15.Location = new System.Drawing.Point(329, 445);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(271, 45);
             this.labelControl15.TabIndex = 45;
             this.labelControl15.Text = "Tipo de Sangre";
-            // 
-            // radioNecesitaTransporteNo
-            // 
-            this.radioNecesitaTransporteNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioNecesitaTransporteNo.AutoSize = true;
-            this.radioNecesitaTransporteNo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNecesitaTransporteNo.Location = new System.Drawing.Point(19, 47);
-            this.radioNecesitaTransporteNo.Name = "radioNecesitaTransporteNo";
-            this.radioNecesitaTransporteNo.Size = new System.Drawing.Size(68, 36);
-            this.radioNecesitaTransporteNo.TabIndex = 33;
-            this.radioNecesitaTransporteNo.TabStop = true;
-            this.radioNecesitaTransporteNo.Text = "No";
-            this.radioNecesitaTransporteNo.UseVisualStyleBackColor = true;
-            // 
-            // radioNecesitaTransporteSi
-            // 
-            this.radioNecesitaTransporteSi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioNecesitaTransporteSi.AutoSize = true;
-            this.radioNecesitaTransporteSi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNecesitaTransporteSi.Location = new System.Drawing.Point(19, 8);
-            this.radioNecesitaTransporteSi.Name = "radioNecesitaTransporteSi";
-            this.radioNecesitaTransporteSi.Size = new System.Drawing.Size(55, 36);
-            this.radioNecesitaTransporteSi.TabIndex = 32;
-            this.radioNecesitaTransporteSi.TabStop = true;
-            this.radioNecesitaTransporteSi.Text = "Si";
-            this.radioNecesitaTransporteSi.UseVisualStyleBackColor = true;
             // 
             // labelControl14
             // 
@@ -1048,7 +931,7 @@
             this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.Location = new System.Drawing.Point(339, 298);
+            this.labelControl14.Location = new System.Drawing.Point(329, 297);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(271, 45);
             this.labelControl14.TabIndex = 42;
@@ -1063,7 +946,7 @@
             this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl13.Location = new System.Drawing.Point(339, 120);
+            this.labelControl13.Location = new System.Drawing.Point(329, 119);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(271, 45);
             this.labelControl13.TabIndex = 39;
@@ -1078,52 +961,15 @@
             this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl12.Location = new System.Drawing.Point(339, 25);
+            this.labelControl12.Location = new System.Drawing.Point(329, 24);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(271, 45);
             this.labelControl12.TabIndex = 38;
             this.labelControl12.Text = "Estado Civil";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.picAtrasPag4);
-            this.panel5.Controls.Add(this.picSiguientePag4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 589);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1156, 67);
-            this.panel5.TabIndex = 37;
-            // 
-            // picAtrasPag4
-            // 
-            this.picAtrasPag4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtrasPag4.EditValue = global::Core.Properties.Resources.icon_atras_64;
-            this.picAtrasPag4.Location = new System.Drawing.Point(0, 0);
-            this.picAtrasPag4.Name = "picAtrasPag4";
-            this.picAtrasPag4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtrasPag4.Properties.NullText = "   ";
-            this.picAtrasPag4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtrasPag4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtrasPag4.Size = new System.Drawing.Size(80, 67);
-            this.picAtrasPag4.TabIndex = 2;
-            this.picAtrasPag4.Click += new System.EventHandler(this.PicAtrasPag4_Click);
-            // 
-            // picSiguientePag4
-            // 
-            this.picSiguientePag4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picSiguientePag4.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
-            this.picSiguientePag4.Location = new System.Drawing.Point(1076, 0);
-            this.picSiguientePag4.Name = "picSiguientePag4";
-            this.picSiguientePag4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picSiguientePag4.Properties.NullText = "   ";
-            this.picSiguientePag4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picSiguientePag4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picSiguientePag4.Size = new System.Drawing.Size(80, 67);
-            this.picSiguientePag4.TabIndex = 35;
-            this.picSiguientePag4.Click += new System.EventHandler(this.PicSiguientePag4_Click);
-            // 
             // Page5
             // 
+            this.Page5.Caption = "Page5";
             this.Page5.Controls.Add(this.glEmpresa);
             this.Page5.Controls.Add(this.txtNivelEducativo);
             this.Page5.Controls.Add(this.labelControl19);
@@ -1134,15 +980,14 @@
             this.Page5.Controls.Add(this.txtCargoEnEmpresa);
             this.Page5.Controls.Add(this.labelControl17);
             this.Page5.Controls.Add(this.labelControl18);
-            this.Page5.Controls.Add(this.panel6);
             this.Page5.Name = "Page5";
-            this.Page5.Size = new System.Drawing.Size(1156, 656);
+            this.Page5.Size = new System.Drawing.Size(1156, 589);
             // 
             // glEmpresa
             // 
             this.glEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glEmpresa.EditValue = "[V";
-            this.glEmpresa.Location = new System.Drawing.Point(312, 81);
+            this.glEmpresa.Location = new System.Drawing.Point(308, 74);
             this.glEmpresa.Name = "glEmpresa";
             this.glEmpresa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEmpresa.Properties.Appearance.Options.UseFont = true;
@@ -1193,7 +1038,7 @@
             // txtNivelEducativo
             // 
             this.txtNivelEducativo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNivelEducativo.Location = new System.Drawing.Point(312, 502);
+            this.txtNivelEducativo.Location = new System.Drawing.Point(308, 495);
             this.txtNivelEducativo.Name = "txtNivelEducativo";
             this.txtNivelEducativo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNivelEducativo.Properties.Appearance.Options.UseFont = true;
@@ -1209,7 +1054,7 @@
             this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl19.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl19.Location = new System.Drawing.Point(312, 451);
+            this.labelControl19.Location = new System.Drawing.Point(308, 444);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(271, 45);
             this.labelControl19.TabIndex = 46;
@@ -1218,7 +1063,7 @@
             // txtEstadoProfesional
             // 
             this.txtEstadoProfesional.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEstadoProfesional.Location = new System.Drawing.Point(312, 398);
+            this.txtEstadoProfesional.Location = new System.Drawing.Point(308, 391);
             this.txtEstadoProfesional.Name = "txtEstadoProfesional";
             this.txtEstadoProfesional.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoProfesional.Properties.Appearance.Options.UseFont = true;
@@ -1234,7 +1079,7 @@
             this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl20.Location = new System.Drawing.Point(312, 347);
+            this.labelControl20.Location = new System.Drawing.Point(308, 340);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(271, 45);
             this.labelControl20.TabIndex = 44;
@@ -1243,7 +1088,7 @@
             // txtTelefonoEmpresa
             // 
             this.txtTelefonoEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefonoEmpresa.Location = new System.Drawing.Point(312, 288);
+            this.txtTelefonoEmpresa.Location = new System.Drawing.Point(308, 281);
             this.txtTelefonoEmpresa.Name = "txtTelefonoEmpresa";
             this.txtTelefonoEmpresa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoEmpresa.Properties.Appearance.Options.UseFont = true;
@@ -1259,7 +1104,7 @@
             this.labelControl16.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl16.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl16.Location = new System.Drawing.Point(312, 237);
+            this.labelControl16.Location = new System.Drawing.Point(308, 230);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(271, 45);
             this.labelControl16.TabIndex = 42;
@@ -1268,7 +1113,7 @@
             // txtCargoEnEmpresa
             // 
             this.txtCargoEnEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCargoEnEmpresa.Location = new System.Drawing.Point(312, 184);
+            this.txtCargoEnEmpresa.Location = new System.Drawing.Point(308, 177);
             this.txtCargoEnEmpresa.Name = "txtCargoEnEmpresa";
             this.txtCargoEnEmpresa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCargoEnEmpresa.Properties.Appearance.Options.UseFont = true;
@@ -1284,7 +1129,7 @@
             this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl17.Location = new System.Drawing.Point(312, 133);
+            this.labelControl17.Location = new System.Drawing.Point(308, 126);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(271, 45);
             this.labelControl17.TabIndex = 40;
@@ -1299,52 +1144,15 @@
             this.labelControl18.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl18.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl18.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl18.Location = new System.Drawing.Point(312, 30);
+            this.labelControl18.Location = new System.Drawing.Point(308, 23);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(271, 45);
             this.labelControl18.TabIndex = 39;
             this.labelControl18.Text = "Empresa";
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.picAtrasPag5);
-            this.panel6.Controls.Add(this.picSiguientePag5);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 589);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1156, 67);
-            this.panel6.TabIndex = 38;
-            // 
-            // picAtrasPag5
-            // 
-            this.picAtrasPag5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtrasPag5.EditValue = global::Core.Properties.Resources.icon_atras_64;
-            this.picAtrasPag5.Location = new System.Drawing.Point(0, 0);
-            this.picAtrasPag5.Name = "picAtrasPag5";
-            this.picAtrasPag5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtrasPag5.Properties.NullText = "   ";
-            this.picAtrasPag5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtrasPag5.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtrasPag5.Size = new System.Drawing.Size(80, 67);
-            this.picAtrasPag5.TabIndex = 2;
-            this.picAtrasPag5.Click += new System.EventHandler(this.PicAtrasPag5_Click);
-            // 
-            // picSiguientePag5
-            // 
-            this.picSiguientePag5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picSiguientePag5.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
-            this.picSiguientePag5.Location = new System.Drawing.Point(1076, 0);
-            this.picSiguientePag5.Name = "picSiguientePag5";
-            this.picSiguientePag5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picSiguientePag5.Properties.NullText = "   ";
-            this.picSiguientePag5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picSiguientePag5.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picSiguientePag5.Size = new System.Drawing.Size(80, 67);
-            this.picSiguientePag5.TabIndex = 41;
-            this.picSiguientePag5.Click += new System.EventHandler(this.PicSiguientePag5_Click);
-            // 
             // Page6
             // 
+            this.Page6.Caption = "Page6";
             this.Page6.Controls.Add(this.dateFechaBautismoAgua);
             this.Page6.Controls.Add(this.labelControl25);
             this.Page6.Controls.Add(this.dateFechaReconciliacion);
@@ -1355,15 +1163,14 @@
             this.Page6.Controls.Add(this.labelControl22);
             this.Page6.Controls.Add(this.dateFechaConversion);
             this.Page6.Controls.Add(this.labelControl21);
-            this.Page6.Controls.Add(this.panel7);
             this.Page6.Name = "Page6";
-            this.Page6.Size = new System.Drawing.Size(1156, 656);
+            this.Page6.Size = new System.Drawing.Size(1156, 589);
             // 
             // dateFechaBautismoAgua
             // 
             this.dateFechaBautismoAgua.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaBautismoAgua.EditValue = null;
-            this.dateFechaBautismoAgua.Location = new System.Drawing.Point(356, 507);
+            this.dateFechaBautismoAgua.Location = new System.Drawing.Point(358, 503);
             this.dateFechaBautismoAgua.Name = "dateFechaBautismoAgua";
             this.dateFechaBautismoAgua.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaBautismoAgua.Properties.Appearance.Options.UseFont = true;
@@ -1383,7 +1190,7 @@
             this.labelControl25.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl25.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl25.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl25.Location = new System.Drawing.Point(356, 456);
+            this.labelControl25.Location = new System.Drawing.Point(358, 452);
             this.labelControl25.Name = "labelControl25";
             this.labelControl25.Size = new System.Drawing.Size(534, 45);
             this.labelControl25.TabIndex = 56;
@@ -1393,7 +1200,7 @@
             // 
             this.dateFechaReconciliacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaReconciliacion.EditValue = null;
-            this.dateFechaReconciliacion.Location = new System.Drawing.Point(356, 397);
+            this.dateFechaReconciliacion.Location = new System.Drawing.Point(358, 393);
             this.dateFechaReconciliacion.Name = "dateFechaReconciliacion";
             this.dateFechaReconciliacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaReconciliacion.Properties.Appearance.Options.UseFont = true;
@@ -1413,7 +1220,7 @@
             this.labelControl24.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl24.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl24.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl24.Location = new System.Drawing.Point(356, 346);
+            this.labelControl24.Location = new System.Drawing.Point(358, 342);
             this.labelControl24.Name = "labelControl24";
             this.labelControl24.Size = new System.Drawing.Size(534, 45);
             this.labelControl24.TabIndex = 54;
@@ -1423,7 +1230,7 @@
             // 
             this.dateFechaCobertura.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaCobertura.EditValue = null;
-            this.dateFechaCobertura.Location = new System.Drawing.Point(356, 287);
+            this.dateFechaCobertura.Location = new System.Drawing.Point(358, 283);
             this.dateFechaCobertura.Name = "dateFechaCobertura";
             this.dateFechaCobertura.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaCobertura.Properties.Appearance.Options.UseFont = true;
@@ -1443,7 +1250,7 @@
             this.labelControl23.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl23.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl23.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl23.Location = new System.Drawing.Point(356, 236);
+            this.labelControl23.Location = new System.Drawing.Point(358, 232);
             this.labelControl23.Name = "labelControl23";
             this.labelControl23.Size = new System.Drawing.Size(534, 45);
             this.labelControl23.TabIndex = 52;
@@ -1453,7 +1260,7 @@
             // 
             this.dateFechaIngresoIglesia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaIngresoIglesia.EditValue = null;
-            this.dateFechaIngresoIglesia.Location = new System.Drawing.Point(356, 186);
+            this.dateFechaIngresoIglesia.Location = new System.Drawing.Point(358, 182);
             this.dateFechaIngresoIglesia.Name = "dateFechaIngresoIglesia";
             this.dateFechaIngresoIglesia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaIngresoIglesia.Properties.Appearance.Options.UseFont = true;
@@ -1473,7 +1280,7 @@
             this.labelControl22.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl22.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl22.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl22.Location = new System.Drawing.Point(356, 135);
+            this.labelControl22.Location = new System.Drawing.Point(358, 131);
             this.labelControl22.Name = "labelControl22";
             this.labelControl22.Size = new System.Drawing.Size(534, 45);
             this.labelControl22.TabIndex = 50;
@@ -1483,7 +1290,7 @@
             // 
             this.dateFechaConversion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaConversion.EditValue = null;
-            this.dateFechaConversion.Location = new System.Drawing.Point(356, 88);
+            this.dateFechaConversion.Location = new System.Drawing.Point(358, 84);
             this.dateFechaConversion.Name = "dateFechaConversion";
             this.dateFechaConversion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaConversion.Properties.Appearance.Options.UseFont = true;
@@ -1503,61 +1310,23 @@
             this.labelControl21.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl21.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl21.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl21.Location = new System.Drawing.Point(356, 37);
+            this.labelControl21.Location = new System.Drawing.Point(358, 33);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(339, 45);
             this.labelControl21.TabIndex = 48;
             this.labelControl21.Text = "Fecha de Conversión";
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.picAtrasPag6);
-            this.panel7.Controls.Add(this.picSiguientePag6);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 589);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1156, 67);
-            this.panel7.TabIndex = 47;
-            // 
-            // picAtrasPag6
-            // 
-            this.picAtrasPag6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtrasPag6.EditValue = global::Core.Properties.Resources.icon_atras_64;
-            this.picAtrasPag6.Location = new System.Drawing.Point(0, 0);
-            this.picAtrasPag6.Name = "picAtrasPag6";
-            this.picAtrasPag6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtrasPag6.Properties.NullText = "   ";
-            this.picAtrasPag6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtrasPag6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtrasPag6.Size = new System.Drawing.Size(80, 67);
-            this.picAtrasPag6.TabIndex = 2;
-            this.picAtrasPag6.Click += new System.EventHandler(this.PicAtrasPag6_Click);
-            // 
-            // picSiguientePag6
-            // 
-            this.picSiguientePag6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picSiguientePag6.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
-            this.picSiguientePag6.Location = new System.Drawing.Point(1076, 0);
-            this.picSiguientePag6.Name = "picSiguientePag6";
-            this.picSiguientePag6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picSiguientePag6.Properties.NullText = "   ";
-            this.picSiguientePag6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picSiguientePag6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picSiguientePag6.Size = new System.Drawing.Size(80, 67);
-            this.picSiguientePag6.TabIndex = 47;
-            this.picSiguientePag6.Click += new System.EventHandler(this.PicSiguientePag6_Click);
-            // 
             // Page7
             // 
+            this.Page7.Caption = "Page7";
             this.Page7.Controls.Add(this.panel11);
             this.Page7.Controls.Add(this.panel10);
             this.Page7.Controls.Add(this.glEquipoArcaTesoros);
             this.Page7.Controls.Add(this.labelControl26);
             this.Page7.Controls.Add(this.labelControl27);
             this.Page7.Controls.Add(this.labelControl28);
-            this.Page7.Controls.Add(this.panel8);
             this.Page7.Name = "Page7";
-            this.Page7.Size = new System.Drawing.Size(1156, 656);
+            this.Page7.Size = new System.Drawing.Size(1156, 589);
             // 
             // panel11
             // 
@@ -1565,7 +1334,7 @@
             this.panel11.Controls.Add(this.radioCargoCorderitos);
             this.panel11.Controls.Add(this.radioCargoIntermedio);
             this.panel11.Controls.Add(this.radioCargoOtros);
-            this.panel11.Location = new System.Drawing.Point(376, 257);
+            this.panel11.Location = new System.Drawing.Point(399, 261);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(302, 180);
             this.panel11.TabIndex = 60;
@@ -1614,7 +1383,7 @@
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.Controls.Add(this.radioBautismoEspirituSi);
             this.panel10.Controls.Add(this.radioBautismoEspirituNo);
-            this.panel10.Location = new System.Drawing.Point(376, 79);
+            this.panel10.Location = new System.Drawing.Point(399, 83);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(293, 104);
             this.panel10.TabIndex = 59;
@@ -1649,7 +1418,7 @@
             // 
             this.glEquipoArcaTesoros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glEquipoArcaTesoros.EditValue = "[V";
-            this.glEquipoArcaTesoros.Location = new System.Drawing.Point(376, 499);
+            this.glEquipoArcaTesoros.Location = new System.Drawing.Point(399, 503);
             this.glEquipoArcaTesoros.Name = "glEquipoArcaTesoros";
             this.glEquipoArcaTesoros.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEquipoArcaTesoros.Properties.Appearance.Options.UseFont = true;
@@ -1698,7 +1467,7 @@
             this.labelControl26.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl26.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl26.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl26.Location = new System.Drawing.Point(376, 448);
+            this.labelControl26.Location = new System.Drawing.Point(399, 452);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(362, 45);
             this.labelControl26.TabIndex = 56;
@@ -1713,7 +1482,7 @@
             this.labelControl27.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl27.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl27.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl27.Location = new System.Drawing.Point(376, 203);
+            this.labelControl27.Location = new System.Drawing.Point(399, 207);
             this.labelControl27.Name = "labelControl27";
             this.labelControl27.Size = new System.Drawing.Size(271, 45);
             this.labelControl27.TabIndex = 53;
@@ -1728,53 +1497,15 @@
             this.labelControl28.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl28.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl28.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl28.Location = new System.Drawing.Point(376, 28);
+            this.labelControl28.Location = new System.Drawing.Point(399, 32);
             this.labelControl28.Name = "labelControl28";
             this.labelControl28.Size = new System.Drawing.Size(271, 45);
             this.labelControl28.TabIndex = 49;
             this.labelControl28.Text = "Bautismo del Espíritu";
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.picSiguientePage7);
-            this.panel8.Controls.Add(this.picAtrasPag7);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 589);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1156, 67);
-            this.panel8.TabIndex = 48;
-            // 
-            // picSiguientePage7
-            // 
-            this.picSiguientePage7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picSiguientePage7.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
-            this.picSiguientePage7.Location = new System.Drawing.Point(1076, 0);
-            this.picSiguientePage7.Name = "picSiguientePage7";
-            this.picSiguientePage7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picSiguientePage7.Properties.NullText = "   ";
-            this.picSiguientePage7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picSiguientePage7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picSiguientePage7.Size = new System.Drawing.Size(80, 67);
-            this.picSiguientePage7.TabIndex = 54;
-            this.picSiguientePage7.Click += new System.EventHandler(this.PicSiguientePage7_Click);
-            // 
-            // picAtrasPag7
-            // 
-            this.picAtrasPag7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtrasPag7.EditValue = global::Core.Properties.Resources.icon_atras_64;
-            this.picAtrasPag7.Location = new System.Drawing.Point(0, 0);
-            this.picAtrasPag7.Name = "picAtrasPag7";
-            this.picAtrasPag7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtrasPag7.Properties.NullText = "   ";
-            this.picAtrasPag7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtrasPag7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtrasPag7.Size = new System.Drawing.Size(80, 67);
-            this.picAtrasPag7.TabIndex = 2;
-            this.picAtrasPag7.Click += new System.EventHandler(this.PicAtrasPag7_Click);
-            // 
             // Page8
             // 
-            this.Page8.Controls.Add(this.panel9);
+            this.Page8.Caption = "Page8";
             this.Page8.Controls.Add(this.glEdadArea);
             this.Page8.Controls.Add(this.dateInicioPrivilegio);
             this.Page8.Controls.Add(this.cmdGuardarFichaIngreso);
@@ -1783,36 +1514,13 @@
             this.Page8.Controls.Add(this.labelControl30);
             this.Page8.Controls.Add(this.labelControl31);
             this.Page8.Name = "Page8";
-            this.Page8.Size = new System.Drawing.Size(1156, 656);
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.picAtrasPage8);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 589);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1156, 67);
-            this.panel9.TabIndex = 58;
-            // 
-            // picAtrasPage8
-            // 
-            this.picAtrasPage8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtrasPage8.EditValue = global::Core.Properties.Resources.icon_atras_64;
-            this.picAtrasPage8.Location = new System.Drawing.Point(0, 0);
-            this.picAtrasPage8.Name = "picAtrasPage8";
-            this.picAtrasPage8.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtrasPage8.Properties.NullText = "   ";
-            this.picAtrasPage8.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtrasPage8.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtrasPage8.Size = new System.Drawing.Size(80, 67);
-            this.picAtrasPage8.TabIndex = 2;
-            this.picAtrasPage8.Click += new System.EventHandler(this.PicAtrasPage8_Click);
+            this.Page8.Size = new System.Drawing.Size(1156, 589);
             // 
             // glEdadArea
             // 
             this.glEdadArea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glEdadArea.EditValue = "[V";
-            this.glEdadArea.Location = new System.Drawing.Point(316, 97);
+            this.glEdadArea.Location = new System.Drawing.Point(319, 107);
             this.glEdadArea.Name = "glEdadArea";
             this.glEdadArea.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEdadArea.Properties.Appearance.Options.UseFont = true;
@@ -1864,7 +1572,7 @@
             // 
             this.dateInicioPrivilegio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateInicioPrivilegio.EditValue = null;
-            this.dateInicioPrivilegio.Location = new System.Drawing.Point(316, 314);
+            this.dateInicioPrivilegio.Location = new System.Drawing.Point(319, 324);
             this.dateInicioPrivilegio.Name = "dateInicioPrivilegio";
             this.dateInicioPrivilegio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateInicioPrivilegio.Properties.Appearance.Options.UseFont = true;
@@ -1885,7 +1593,7 @@
             this.cmdGuardarFichaIngreso.Appearance.Options.UseFont = true;
             this.cmdGuardarFichaIngreso.Appearance.Options.UseForeColor = true;
             this.cmdGuardarFichaIngreso.ImageOptions.Image = global::Core.Properties.Resources.icon_guardar_negro_64;
-            this.cmdGuardarFichaIngreso.Location = new System.Drawing.Point(316, 391);
+            this.cmdGuardarFichaIngreso.Location = new System.Drawing.Point(319, 401);
             this.cmdGuardarFichaIngreso.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.cmdGuardarFichaIngreso.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cmdGuardarFichaIngreso.Name = "cmdGuardarFichaIngreso";
@@ -1903,7 +1611,7 @@
             this.labelControl29.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl29.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl29.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl29.Location = new System.Drawing.Point(316, 263);
+            this.labelControl29.Location = new System.Drawing.Point(319, 273);
             this.labelControl29.Name = "labelControl29";
             this.labelControl29.Size = new System.Drawing.Size(271, 45);
             this.labelControl29.TabIndex = 54;
@@ -1912,7 +1620,7 @@
             // txtOtrosEquiposPrivilegio
             // 
             this.txtOtrosEquiposPrivilegio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOtrosEquiposPrivilegio.Location = new System.Drawing.Point(316, 210);
+            this.txtOtrosEquiposPrivilegio.Location = new System.Drawing.Point(319, 220);
             this.txtOtrosEquiposPrivilegio.Name = "txtOtrosEquiposPrivilegio";
             this.txtOtrosEquiposPrivilegio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOtrosEquiposPrivilegio.Properties.Appearance.Options.UseFont = true;
@@ -1928,7 +1636,7 @@
             this.labelControl30.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl30.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl30.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl30.Location = new System.Drawing.Point(316, 159);
+            this.labelControl30.Location = new System.Drawing.Point(319, 169);
             this.labelControl30.Name = "labelControl30";
             this.labelControl30.Size = new System.Drawing.Size(387, 45);
             this.labelControl30.TabIndex = 52;
@@ -1943,36 +1651,54 @@
             this.labelControl31.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl31.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl31.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl31.Location = new System.Drawing.Point(316, 56);
+            this.labelControl31.Location = new System.Drawing.Point(319, 66);
             this.labelControl31.Name = "labelControl31";
             this.labelControl31.Size = new System.Drawing.Size(271, 45);
             this.labelControl31.TabIndex = 51;
             this.labelControl31.Text = "Edad / Área";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.picAtras);
+            this.panel1.Controls.Add(this.picSiguiente);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(5, 679);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1156, 67);
+            this.panel1.TabIndex = 24;
+            // 
+            // picAtras
+            // 
+            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAtras.EditValue = global::Core.Properties.Resources.icon_atras_64;
+            this.picAtras.Location = new System.Drawing.Point(0, 0);
+            this.picAtras.Name = "picAtras";
+            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picAtras.Properties.NullText = "   ";
+            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picAtras.Size = new System.Drawing.Size(80, 67);
+            this.picAtras.TabIndex = 18;
+            this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
+            // 
+            // picSiguiente
+            // 
+            this.picSiguiente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picSiguiente.EditValue = global::Core.Properties.Resources.icon_siguiente_64;
+            this.picSiguiente.Location = new System.Drawing.Point(1076, 0);
+            this.picSiguiente.Name = "picSiguiente";
+            this.picSiguiente.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picSiguiente.Properties.NullText = "   ";
+            this.picSiguiente.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picSiguiente.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picSiguiente.Size = new System.Drawing.Size(80, 67);
+            this.picSiguiente.TabIndex = 17;
+            this.picSiguiente.Click += new System.EventHandler(this.PicSiguiente_Click);
+            // 
             // bgCargarConfiguraciones
             // 
             this.bgCargarConfiguraciones.WorkerSupportsCancellation = true;
             this.bgCargarConfiguraciones.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgCargarConfiguraciones_DoWork);
-            // 
-            // panel13
-            // 
-            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel13.Controls.Add(this.radioNecesitaTransporteSi);
-            this.panel13.Controls.Add(this.radioNecesitaTransporteNo);
-            this.panel13.Location = new System.Drawing.Point(339, 349);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(340, 91);
-            this.panel13.TabIndex = 47;
-            // 
-            // panel14
-            // 
-            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel14.Controls.Add(this.radioMasculino);
-            this.panel14.Controls.Add(this.radioFemenino);
-            this.panel14.Location = new System.Drawing.Point(367, 190);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(351, 85);
-            this.panel14.TabIndex = 43;
             // 
             // splashScreenManager1
             // 
@@ -1986,6 +1712,7 @@
             this.Controls.Add(this.NavigationFicha);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlEncabezado);
+            this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(1166, 751);
             this.Name = "ctlIngresoFicha";
             this.Padding = new System.Windows.Forms.Padding(5);
@@ -1993,14 +1720,9 @@
             this.pnlEncabezado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NavigationFicha)).EndInit();
             this.NavigationFicha.ResumeLayout(false);
-            this.Page1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoApellido.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtApellido.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             this.Page2.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glPaisNacimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPaisNacimiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsConfiguracion1)).EndInit();
@@ -2008,18 +1730,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdentidad.Properties)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag2.Properties)).EndInit();
+            this.Page1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoApellido.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtApellido.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             this.Page3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.memoDireccion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonoFijo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCelular.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCorreoElectronico.Properties)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPage3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePage3.Properties)).EndInit();
             this.Page4.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glTipoSangre.Properties)).EndInit();
@@ -2028,9 +1751,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.glEstadosCiviles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEstadosCiviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEstadosCiviles)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag4.Properties)).EndInit();
             this.Page5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.glEmpresa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpresa)).EndInit();
@@ -2039,9 +1759,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEstadoProfesional.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonoEmpresa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCargoEnEmpresa.Properties)).EndInit();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag5.Properties)).EndInit();
             this.Page6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaBautismoAgua.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaBautismoAgua.Properties)).EndInit();
@@ -2053,9 +1770,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaIngresoIglesia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaConversion.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaConversion.Properties)).EndInit();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePag6.Properties)).EndInit();
             this.Page7.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -2064,22 +1778,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.glEquipoArcaTesoros.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEquipoArcaTesoros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipoArcaTesoros)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picSiguientePage7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPag7.Properties)).EndInit();
             this.Page8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtrasPage8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glEdadArea.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAreasAtencion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAreasAtencion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPrivilegio.Properties)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSiguiente.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2103,21 +1811,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtNombre;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.PictureEdit picSiguientePag1;
-        private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraEditors.PictureEdit picAtrasPag2;
-        private DevExpress.XtraEditors.PictureEdit picSiguientePag2;
-        private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraEditors.PictureEdit picAtrasPag4;
-        private DevExpress.XtraEditors.PictureEdit picSiguientePag4;
-        private System.Windows.Forms.Panel panel6;
-        private DevExpress.XtraEditors.PictureEdit picAtrasPag5;
-        private DevExpress.XtraEditors.PictureEdit picSiguientePag5;
-        private System.Windows.Forms.Panel panel7;
-        private DevExpress.XtraEditors.PictureEdit picAtrasPag6;
-        private DevExpress.XtraEditors.PictureEdit picSiguientePag6;
-        private System.Windows.Forms.Panel panel8;
-        private DevExpress.XtraEditors.PictureEdit picAtrasPag7;
+        private DevExpress.XtraEditors.PictureEdit picSiguiente;
         private System.Windows.Forms.BindingSource bsAreasAtencion;
         private DataSets.dsConfiguracion dsConfiguracion1;
         private System.Windows.Forms.BindingSource bsEquipoArcaTesoros;
@@ -2129,13 +1823,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl32;
         private DevExpress.XtraEditors.TextEdit txtSegundoNombre;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraEditors.PictureEdit picAtrasPage3;
-        private DevExpress.XtraEditors.PictureEdit picSiguientePage3;
         private DevExpress.XtraBars.Navigation.NavigationPage Page8;
-        private DevExpress.XtraEditors.PictureEdit picSiguientePage7;
-        private System.Windows.Forms.Panel panel9;
-        private DevExpress.XtraEditors.PictureEdit picAtrasPage8;
         private DevExpress.XtraEditors.GridLookUpEdit glEdadArea;
         private DevExpress.XtraGrid.Views.Grid.GridView gvAreasAtencion;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
@@ -2223,5 +1911,6 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.XtraEditors.PictureEdit picAtras;
     }
 }

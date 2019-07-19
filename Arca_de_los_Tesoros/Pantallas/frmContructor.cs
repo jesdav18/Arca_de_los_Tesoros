@@ -36,6 +36,8 @@ namespace Arca_de_los_Tesoros
         frmAnciano frm_Anciano;
         frmLogin frm_Login;
 
+        ctlContenedorPrincipalCoordinadorEdad ctlCoordinadorEdad;
+
         #endregion
 
         #region PROPIEDADES
@@ -75,6 +77,14 @@ namespace Arca_de_los_Tesoros
             DIACONO = 2,
             COORDINADOR_DIA = 3,
             COORDINADOR_EDAD = 4
+        }
+
+        public  enum MODULOS
+        {
+            MODULO_ANCIANO = 1,
+            MODULO_DIACONO = 2,
+            MODULO_COORDINADOR_DIA = 3,
+            MODULO_COORDINADOR_EDAD = 4
         }
 
         private void Construir_Acceso()
@@ -150,13 +160,13 @@ namespace Arca_de_los_Tesoros
 
                     case ROLES_USUARIO.COORDINADOR_EDAD:
 
-                        ctlContenedorPrincipalCoordinadorEdad ctl = new ctlContenedorPrincipalCoordinadorEdad();
-                        ctl.Parent = this;
-                        ctl.ConstruirControl(Pro_Conexion, pUsuario);
-                        ctl.Dock = DockStyle.Fill;
-                        ctl.BringToFront();
+                        ctlCoordinadorEdad = new ctlContenedorPrincipalCoordinadorEdad();
+                        ctlCoordinadorEdad.Parent = this;
+                        ctlCoordinadorEdad.ConstruirControl(Pro_Conexion, pUsuario);
+                        ctlCoordinadorEdad.Dock = DockStyle.Fill;
+                        ctlCoordinadorEdad.BringToFront();
                         this.MinimumSize = new Size(986, 795);
-                        
+                        Pro_Modulo = MODULOS.MODULO_COORDINADOR_EDAD;
 
                         break;
                 }
@@ -171,9 +181,6 @@ namespace Arca_de_los_Tesoros
 
                 MessageBox.Show("Algo salió mal mientras se cargaban los niveles de acceso. ", "Arca de los Tesoros");
             }
-
-
-//ReestablecerFormConstructor();
 
         }
 
@@ -211,6 +218,40 @@ namespace Arca_de_los_Tesoros
             Construir_Acceso();                
         }
 
-       
+        private void FrmContructor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                switch (Pro_Modulo)
+                {
+                    case MODULOS.MODULO_ANCIANO:
+                        break;
+                    case MODULOS.MODULO_DIACONO:
+                        break;
+                    case MODULOS.MODULO_COORDINADOR_DIA:
+                        break;
+                    case MODULOS.MODULO_COORDINADOR_EDAD:
+                        ctlCoordinadorEdad.ctlIngresoFicha1.IrAtras();
+                        break;
+                    
+                }
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                switch (Pro_Modulo)
+                {
+                    case MODULOS.MODULO_ANCIANO:
+                        break;
+                    case MODULOS.MODULO_DIACONO:
+                        break;
+                    case MODULOS.MODULO_COORDINADOR_DIA:
+                        break;
+                    case MODULOS.MODULO_COORDINADOR_EDAD:
+                        ctlCoordinadorEdad.ctlIngresoFicha1.IrAdelante();
+                        break;
+                    
+                }
+            }
+        }
     }
 }

@@ -13,92 +13,6 @@ namespace Core.Controles
         {
             InitializeComponent();
         }
-        public static System.Text.Encoding UTF8 { get; }
-
-        private void PicSiguientePag1_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page2;
-            lblEncabezado.Text = "Datos Generales";
-            lblPagina.Text = "2 de 8";
-
-        }
-
-        private void PicSiguientePag2_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page3;
-            lblEncabezado.Text = "Datos Generales";
-            lblPagina.Text = "3 de 8";
-
-
-            if (radioFemenino.Checked || radioMasculino.Checked)
-            {
-                CargarEstadosCiviles();
-            }
-
-            
-        }
-
-        private void PicAtrasPag2_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page1;
-            lblEncabezado.Text = "Datos Generales";
-            lblPagina.Text = "1 de 8";
-        }
-
-    
-
-        private void PicAtrasPag4_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page3;
-            lblEncabezado.Text = "Datos Generales";
-            lblPagina.Text = "3 de 8";
-
-        }
-
-        private void PicSiguientePag4_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page5;
-            lblEncabezado.Text = "Datos Laborales y Educativos";
-            lblPagina.Text = "5 de 8";
-        }
-
-        private void PicSiguientePag5_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page6;
-            lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-            lblPagina.Text = "6 de 8";
-        }
-
-        private void PicAtrasPag5_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page4;
-            lblEncabezado.Text = "Datos Generales";
-            lblPagina.Text = "4 de 8";
-        }
-
-        private void PicSiguientePag6_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page7;
-            lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-            lblPagina.Text = "7 de 8";
-
-        }
-
-        private void PicAtrasPag6_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page5;
-            lblEncabezado.Text = "Datos Laborales y Educativos";
-            lblPagina.Text = "5 de 8";
-        }
-
-        private void PicAtrasPag7_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page6;
-            lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-            lblPagina.Text = "6 de 8";
-        }
-
-      
 
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
@@ -114,7 +28,6 @@ namespace Core.Controles
             {
                 bgCargarConfiguraciones.RunWorkerAsync();
             }
-   
         }
 
         private void GuardarFichaIngreso()
@@ -449,34 +362,6 @@ namespace Core.Controles
             }
         }
 
-        private void PicSiguientePage3_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page4;
-            lblEncabezado.Text = "Datos Generales";
-            lblPagina.Text = "4 de 8";
-        }
-
-        private void PicAtrasPage3_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page2;
-            lblEncabezado.Text = "Datos Generales";
-            lblPagina.Text = "2 de 8";
-        }
-
-        private void PicAtrasPage8_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page7;
-            lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-            lblPagina.Text = "7 de 8";
-        }
-
-        private void PicSiguientePage7_Click(object sender, EventArgs e)
-        {
-            NavigationFicha.SelectedPage = Page8;
-            lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-            lblPagina.Text = "8 de 8";
-        }
-
         private void BgCargarConfiguraciones_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             CargarDatosTipoSangre();         
@@ -506,6 +391,116 @@ namespace Core.Controles
             }
         }
 
-      
+        public void IrAtras()
+        {
+
+            if (NavigationFicha.SelectedPage == Page2)
+            {
+                NavigationFicha.SelectedPage = Page1;
+                lblEncabezado.Text = "Datos Generales";
+                lblPagina.Text = "1 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page3)
+            {               
+                NavigationFicha.SelectedPage = Page2;
+                lblEncabezado.Text = "Datos Generales";
+                lblPagina.Text = "2 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page4)
+            {
+                NavigationFicha.SelectedPage = Page3;
+                lblEncabezado.Text = "Datos Generales";
+                lblPagina.Text = "3 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page5)
+            {
+                NavigationFicha.SelectedPage = Page4;
+                lblEncabezado.Text = "Datos Generales";
+                lblPagina.Text = "4 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page6)
+            {
+                NavigationFicha.SelectedPage = Page5;
+                lblEncabezado.Text = "Datos Laborales y Educativos";
+                lblPagina.Text = "5 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page7)
+            {               
+                NavigationFicha.SelectedPage = Page6;
+                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "6 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page8)
+            {               
+                NavigationFicha.SelectedPage = Page7;
+                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "7 de 8";
+            }
+            
+        }
+
+        public void IrAdelante()
+        {
+            if (NavigationFicha.SelectedPage == Page1)
+            {
+                NavigationFicha.SelectedPage = Page2;
+                lblEncabezado.Text = "Datos Generales";
+                lblPagina.Text = "2 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page2)
+            {
+                NavigationFicha.SelectedPage = Page3;
+                lblEncabezado.Text = "Datos Generales";
+                lblPagina.Text = "3 de 8";
+
+                if (radioFemenino.Checked || radioMasculino.Checked)
+                {
+                    CargarEstadosCiviles();
+                }
+
+            }
+            else if (NavigationFicha.SelectedPage == Page3)
+            {
+                NavigationFicha.SelectedPage = Page4;
+                lblEncabezado.Text = "Datos Generales";
+                lblPagina.Text = "4 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page4)
+            {
+                NavigationFicha.SelectedPage = Page5;
+                lblEncabezado.Text = "Datos Laborales y Educativos";
+                lblPagina.Text = "5 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page5)
+            {
+                NavigationFicha.SelectedPage = Page6;
+                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "6 de 8";
+
+            }
+            else if (NavigationFicha.SelectedPage == Page6)
+            {
+                NavigationFicha.SelectedPage = Page7;
+                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "7 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page7)
+            {
+               
+                NavigationFicha.SelectedPage = Page8;
+                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "8 de 8";
+            }
+        }
+
+        private void PicSiguiente_Click(object sender, EventArgs e)
+        {
+            IrAdelante();
+        }
+
+        private void PicAtras_Click(object sender, EventArgs e)
+        {
+            IrAtras();
+        }
     }
 }
