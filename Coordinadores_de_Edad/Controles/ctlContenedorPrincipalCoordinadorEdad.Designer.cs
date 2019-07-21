@@ -55,6 +55,8 @@
             this.ctlIngresoFicha1 = new Core.Controles.ctlIngresoFicha();
             this.pageIngresoSolicitudes = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlIngresoSolicitudesCordinadorEdad1 = new Coordinadores_de_Edad.Controles.ctlIngresoSolicitudesCordinadorEdad();
+            this.PageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlMiEquipo1 = new Core.Controles.ctlMiEquipo();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -80,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             this.PageFichaIngreso.SuspendLayout();
             this.pageIngresoSolicitudes.SuspendLayout();
+            this.PageMiEquipo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEncabezadoCoordinadoresEdad
@@ -348,13 +351,15 @@
             this.NavigationCoordinadorEdad.Controls.Add(this.PageInicial);
             this.NavigationCoordinadorEdad.Controls.Add(this.PageFichaIngreso);
             this.NavigationCoordinadorEdad.Controls.Add(this.pageIngresoSolicitudes);
+            this.NavigationCoordinadorEdad.Controls.Add(this.PageMiEquipo);
             this.NavigationCoordinadorEdad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationCoordinadorEdad.Location = new System.Drawing.Point(3, 0);
             this.NavigationCoordinadorEdad.Name = "NavigationCoordinadorEdad";
             this.NavigationCoordinadorEdad.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageInicial,
             this.PageFichaIngreso,
-            this.pageIngresoSolicitudes});
+            this.pageIngresoSolicitudes,
+            this.PageMiEquipo});
             this.NavigationCoordinadorEdad.SelectedPage = this.PageInicial;
             this.NavigationCoordinadorEdad.Size = new System.Drawing.Size(1290, 762);
             this.NavigationCoordinadorEdad.TabIndex = 12;
@@ -421,6 +426,25 @@
             this.ctlIngresoSolicitudesCordinadorEdad1.Size = new System.Drawing.Size(1290, 815);
             this.ctlIngresoSolicitudesCordinadorEdad1.TabIndex = 0;
             // 
+            // PageMiEquipo
+            // 
+            this.PageMiEquipo.Caption = "PageMiEquipo";
+            this.PageMiEquipo.Controls.Add(this.ctlMiEquipo1);
+            this.PageMiEquipo.Name = "PageMiEquipo";
+            this.PageMiEquipo.Size = new System.Drawing.Size(1290, 762);
+            // 
+            // ctlMiEquipo1
+            // 
+            this.ctlMiEquipo1.BackColor = System.Drawing.Color.White;
+            this.ctlMiEquipo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlMiEquipo1.Location = new System.Drawing.Point(0, 0);
+            this.ctlMiEquipo1.Name = "ctlMiEquipo1";
+            this.ctlMiEquipo1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlMiEquipo1.Pro_Conexion = null;
+            this.ctlMiEquipo1.Pro_Usuario = null;
+            this.ctlMiEquipo1.Size = new System.Drawing.Size(1290, 762);
+            this.ctlMiEquipo1.TabIndex = 0;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
@@ -483,6 +507,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             this.PageFichaIngreso.ResumeLayout(false);
             this.pageIngresoSolicitudes.ResumeLayout(false);
+            this.PageMiEquipo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -519,5 +544,7 @@
         public Core.Controles.ctlIngresoFicha ctlIngresoFicha1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageIngresoSolicitudes;
         private ctlIngresoSolicitudesCordinadorEdad ctlIngresoSolicitudesCordinadorEdad1;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageMiEquipo;
+        private Core.Controles.ctlMiEquipo ctlMiEquipo1;
     }
 }

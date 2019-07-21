@@ -21,7 +21,7 @@ namespace Core.Controles
         public void ConstruirControl(Usuario pUsuario)
         {
             lblNombreUsuario.Text = pUsuario.Pro_NombreColaborador;
-            lblCargoUsuario.Text = pUsuario.Pro_DescripcionRolUsuario;
+            lblCargoUsuario.Text = pUsuario.Pro_DescripcionCargo;
         }
 
         private void LblNombreUsuario_Click(object sender, EventArgs e)

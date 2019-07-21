@@ -67,6 +67,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dtCargos" msprop:Generator_TableClassName="dtCargosDataTable" msprop:Generator_TableVarName="tabledtCargos" msprop:Generator_RowChangedName="dtCargosRowChanged" msprop:Generator_TablePropName="dtCargos" msprop:Generator_RowDeletingName="dtCargosRowDeleting" msprop:Generator_RowChangingName="dtCargosRowChanging" msprop:Generator_RowEvHandlerName="dtCargosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCargosRowDeleted" msprop:Generator_RowClassName="dtCargosRow" msprop:Generator_UserTableName="dtCargos" msprop:Generator_RowEvArgName="dtCargosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_cargo" msprop:Generator_ColumnVarNameInTable="columnid_cargo" msprop:Generator_ColumnPropNameInRow="id_cargo" msprop:Generator_ColumnPropNameInTable="id_cargoColumn" msprop:Generator_UserColumnName="id_cargo" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtEstatusDoctrinal" msprop:Generator_TableClassName="dtEstatusDoctrinalDataTable" msprop:Generator_TableVarName="tabledtEstatusDoctrinal" msprop:Generator_TablePropName="dtEstatusDoctrinal" msprop:Generator_RowDeletingName="dtEstatusDoctrinalRowDeleting" msprop:Generator_RowChangingName="dtEstatusDoctrinalRowChanging" msprop:Generator_RowEvHandlerName="dtEstatusDoctrinalRowChangeEventHandler" msprop:Generator_RowDeletedName="dtEstatusDoctrinalRowDeleted" msprop:Generator_UserTableName="dtEstatusDoctrinal" msprop:Generator_RowChangedName="dtEstatusDoctrinalRowChanged" msprop:Generator_RowEvArgName="dtEstatusDoctrinalRowChangeEvent" msprop:Generator_RowClassName="dtEstatusDoctrinalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_estatus_doctrinal" msprop:Generator_ColumnVarNameInTable="columnid_estatus_doctrinal" msprop:Generator_ColumnPropNameInRow="id_estatus_doctrinal" msprop:Generator_ColumnPropNameInTable="id_estatus_doctrinalColumn" msprop:Generator_UserColumnName="id_estatus_doctrinal" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

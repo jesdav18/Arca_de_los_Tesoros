@@ -41,9 +41,16 @@ namespace Core.Controles
         {
             Pro_Usuario = pUsuario;
             Pro_Conexion = pConexion;
+            lblEncabezado.Text = pUsuario.Pro_NombreEquipo;
 
+            LimpiarBusqueda();
             CargarDatos();
 
+        }
+
+        private void LimpiarBusqueda()
+        {
+            txtBusqueda.Text = "";
         }
 
         private void CargarDatos()
@@ -55,8 +62,9 @@ namespace Core.Controles
 
             splashScreenManager1.ShowWaitForm();
 
-            string sentencia = @"SELECT * FROM arca_tesoros_conf.ft_view_tipo_solicitud();";
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_mi_equipo(:p_id_colaborador);";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_colaborador", PgSqlType.Int).Value = Pro_Usuario.Pro_ID_Colaborador;
 
             try
             {

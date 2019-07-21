@@ -133,6 +133,16 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_no_foto_512 {
+            get {
+                object obj = ResourceManager.GetObject("icon_no_foto_512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icon_nuevo_usuario_negro_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_nuevo_usuario_negro_64", resourceCulture);
@@ -153,9 +163,9 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_visualizar_64 {
+        public static System.Drawing.Bitmap icon_visualizar_24 {
             get {
-                object obj = ResourceManager.GetObject("icon_visualizar_64", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_visualizar_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

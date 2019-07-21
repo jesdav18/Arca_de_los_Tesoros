@@ -15,7 +15,9 @@ namespace Core.Clases
         public string Pro_Usuario { get; set; }
         public int Pro_ID_RolUsuario { get; set; }
         public string Pro_DescripcionRolUsuario { get; set; }
-       
+        public string Pro_DescripcionCargo { get; set; }
+        public int Pro_ID_Cargo { get; set; }
+        public string Pro_NombreEquipo { get; set; }
 
 
         #endregion

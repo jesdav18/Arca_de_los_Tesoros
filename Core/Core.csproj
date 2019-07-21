@@ -91,6 +91,12 @@
     <Compile Include="Controles\ctlMiEquipo.Designer.cs">
       <DependentUpon>ctlMiEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlVistaFichaIngreso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlVistaFichaIngreso.Designer.cs">
+      <DependentUpon>ctlVistaFichaIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsConfiguracion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +159,9 @@
     <EmbeddedResource Include="Controles\ctlMiEquipo.resx">
       <DependentUpon>ctlMiEquipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlVistaFichaIngreso.resx">
+      <DependentUpon>ctlVistaFichaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmEspera.resx">
       <DependentUpon>frmEspera.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,7 +222,10 @@
     <None Include="Resources\iconFiltro_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon_visualizar_64.png" />
+    <None Include="Resources\icon_visualizar_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_no_foto_512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

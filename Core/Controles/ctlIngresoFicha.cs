@@ -61,7 +61,16 @@ namespace Core.Controles
                                                                                               :p_fecha_conversion ,
                                                                                               :p_bautismo_espiritu_santo ,
                                                                                               :p_otros_equipos_privilegio ,
-                                                                                              :p_usuario 
+                                                                                              :p_usuario,
+                                                                                              :p_cargo_arca_tesoros,
+                                                                                              :p_id_area_atencion,
+                                                                                              :p_estatus_doctrinal,
+                                                                                              :p_fecha_inicio_privilegio,
+                                                                                              :p_telefono_fijo,
+                                                                                              :p_celular,
+                                                                                              :p_id_empresa,
+                                                                                              :p_cargo_en_empresa,  
+                                                                                              :p_telefono_empresa
                                                                                             )";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_nombre", PgSqlType.VarChar).Value = txtNombre.Text;
@@ -103,7 +112,15 @@ namespace Core.Controles
 
             pgComando.Parameters.Add("p_otros_equipos_privilegio", PgSqlType.VarChar).Value = txtOtrosEquiposPrivilegio.Text;
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
-
+            pgComando.Parameters.Add("p_cargo_arca_tesoros", PgSqlType.Int).Value = glArcaTesoros.EditValue;
+            pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = glEdadArea.EditValue;
+            pgComando.Parameters.Add("p_estatus_doctrinal", PgSqlType.Int).Value = glStatusDoctrinal.EditValue;
+            pgComando.Parameters.Add("p_fecha_inicio_privilegio", PgSqlType.Date).Value = dateInicioPrivilegio.EditValue;
+            pgComando.Parameters.Add("p_telefono_fijo", PgSqlType.VarChar).Value = txtTelefonoFijo.Text;
+            pgComando.Parameters.Add("p_celular", PgSqlType.VarChar).Value = txtCelular.Text;
+            pgComando.Parameters.Add("p_id_empresa", PgSqlType.Int).Value = glEmpresa.EditValue;
+            pgComando.Parameters.Add("p_cargo_en_empresa", PgSqlType.VarChar).Value = txtCargoEnEmpresa.Text;
+            pgComando.Parameters.Add("p_telefono_empresa", PgSqlType.VarChar).Value = txtTelefonoEmpresa.Text;
 
             PgSqlTransaction pgTrans = Pro_Conexion.BeginTransaction();
             try
@@ -118,6 +135,7 @@ namespace Core.Controles
 
                 LimpiarCajasTexto();
                 MessageBox.Show("¡La ficha logró registrarse correctamente!");
+                NavigationFicha.SelectedPage = Page1;
             }
             catch (Exception Exc)
             {
@@ -145,21 +163,41 @@ namespace Core.Controles
            txtEstadoProfesional.Text = "";
            txtNivelEducativo.Text = "";
            txtOtrosEquiposPrivilegio.Text = "";
+           txtTelefonoEmpresa.Text = "";
+            txtCargoEnEmpresa.Text = "";
            memoDireccion.Text = "";
+            txtTelefonoFijo.Text = "";
+            txtCelular.Text = "";
+            txtCorreoElectronico.Text = "";
+         
+
            radioFemenino.Checked = false;
            radioMasculino.Checked = false;
            radioBautismoEspirituSi.Checked = false;
            radioBautismoEspirituNo.Checked = false;
+            radioTipoFamiliaSoltero.Checked = false;
+            radioTipoMiembroFamilia.Checked = false;
+            radioNecesitaTransporteNo.Checked = false;
+            radioNecesitaTransporteSi.Checked = false;
+
            dateFechaNacimiento.Text = "";
            dateFechaIngresoIglesia.Text  ="";
            dateFechaCobertura.Text = "";
            dateFechaReconciliacion.Text = "";
            dateFechaBautismoAgua.Text = "";
            dateFechaConversion.Text = "";
+           dateInicioPrivilegio.Text = "";
+
+           glEquipoArcaTesoros.Text = "";
            glPaisNacimiento.Text = "";
            glEstadosCiviles.Text ="";
            glTipoSangre.Text = "";
-      
+           glArcaTesoros.Text = "";
+           glEdadArea.Text = "";
+           glStatusDoctrinal.Text = "";
+            glEmpresa.Text = "";
+         
+
         }
 
         private bool ValidacionCajasTexto()
@@ -210,6 +248,63 @@ namespace Core.Controles
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosTipoSangre");
                 MessageBox.Show("Algo salió mal en el momento de Configuracion de Tipos de Sangre ", "Arca de los Tesoros");
+            }
+        }
+
+        private void CargarDatosCargos()
+        {
+
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_cargos();";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+
+            try
+            {
+                dsConfiguracion1.dtCargos.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsConfiguracion1.dtCargos);
+
+                sentencia = null;
+                pgComando.Dispose();
+            }
+            catch (Exception Exc)
+            {
+                sentencia = null;
+                pgComando.Dispose();
+                Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosCargos");
+                MessageBox.Show("Algo salió mal en el momento de Configuracion de Cargos ", "Arca de los Tesoros");
+            }
+        }
+
+
+        private void CargarDatosEstatusDoctrinal()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_estatus_doctrinal();";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+
+            try
+            {
+                dsConfiguracion1.dtEstatusDoctrinal.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsConfiguracion1.dtEstatusDoctrinal);
+
+                sentencia = null;
+                pgComando.Dispose();
+
+            }
+            catch (Exception Exc)
+            {
+                sentencia = null;
+                pgComando.Dispose();
+                Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosEstatusDoctrinal");
+                MessageBox.Show("Algo salió mal en el momento de Configuracion de Estatus Doctrinal ", "Arca de los Tesoros");
             }
         }
 
@@ -369,6 +464,8 @@ namespace Core.Controles
             CargarDatosEquipoArcaTesoros();
             CargarDatosAreasAtencion();
             CargarDatosPaises();
+            CargarDatosCargos();
+            CargarDatosEstatusDoctrinal();
         }
 
         private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
@@ -397,42 +494,50 @@ namespace Core.Controles
             if (NavigationFicha.SelectedPage == Page2)
             {
                 NavigationFicha.SelectedPage = Page1;
+                txtNombre.Focus();
                 lblEncabezado.Text = "Datos Generales";
                 lblPagina.Text = "1 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page3)
             {               
                 NavigationFicha.SelectedPage = Page2;
+                txtIdentidad.Focus();
                 lblEncabezado.Text = "Datos Generales";
                 lblPagina.Text = "2 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page4)
             {
                 NavigationFicha.SelectedPage = Page3;
+                txtTelefonoFijo.Focus();
                 lblEncabezado.Text = "Datos Generales";
                 lblPagina.Text = "3 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page5)
             {
+
                 NavigationFicha.SelectedPage = Page4;
+                glEstadosCiviles.Focus();
                 lblEncabezado.Text = "Datos Generales";
                 lblPagina.Text = "4 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page6)
             {
                 NavigationFicha.SelectedPage = Page5;
+                glEmpresa.Focus();
                 lblEncabezado.Text = "Datos Laborales y Educativos";
                 lblPagina.Text = "5 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page7)
             {               
                 NavigationFicha.SelectedPage = Page6;
+                dateFechaConversion.Focus();
                 lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
                 lblPagina.Text = "6 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page8)
             {               
                 NavigationFicha.SelectedPage = Page7;
+                glStatusDoctrinal.Focus();
                 lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
                 lblPagina.Text = "7 de 8";
             }
@@ -444,12 +549,14 @@ namespace Core.Controles
             if (NavigationFicha.SelectedPage == Page1)
             {
                 NavigationFicha.SelectedPage = Page2;
+                txtIdentidad.Focus();
                 lblEncabezado.Text = "Datos Generales";
                 lblPagina.Text = "2 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page2)
             {
                 NavigationFicha.SelectedPage = Page3;
+                txtTelefonoFijo.Focus();
                 lblEncabezado.Text = "Datos Generales";
                 lblPagina.Text = "3 de 8";
 
@@ -462,18 +569,21 @@ namespace Core.Controles
             else if (NavigationFicha.SelectedPage == Page3)
             {
                 NavigationFicha.SelectedPage = Page4;
+                glEstadosCiviles.Focus();
                 lblEncabezado.Text = "Datos Generales";
                 lblPagina.Text = "4 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page4)
             {
                 NavigationFicha.SelectedPage = Page5;
+                glEmpresa.Focus();
                 lblEncabezado.Text = "Datos Laborales y Educativos";
                 lblPagina.Text = "5 de 8";
             }
             else if (NavigationFicha.SelectedPage == Page5)
             {
                 NavigationFicha.SelectedPage = Page6;
+                dateFechaConversion.Focus();
                 lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
                 lblPagina.Text = "6 de 8";
 
@@ -481,6 +591,7 @@ namespace Core.Controles
             else if (NavigationFicha.SelectedPage == Page6)
             {
                 NavigationFicha.SelectedPage = Page7;
+                glStatusDoctrinal.Focus ();
                 lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
                 lblPagina.Text = "7 de 8";
             }
@@ -488,6 +599,7 @@ namespace Core.Controles
             {
                
                 NavigationFicha.SelectedPage = Page8;
+                glEdadArea.Focus();
                 lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
                 lblPagina.Text = "8 de 8";
             }

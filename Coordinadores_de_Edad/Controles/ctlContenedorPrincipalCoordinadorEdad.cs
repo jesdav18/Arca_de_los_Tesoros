@@ -45,7 +45,10 @@ namespace Coordinadores_de_Edad.Controles
 
         private void CmdMiEquipo_Click(object sender, EventArgs e)
         {
-
+            splashScreenManager1.ShowWaitForm();
+            NavigationCoordinadorEdad.SelectedPage = PageMiEquipo;
+            ctlMiEquipo1.ConstruirControl(Pro_Conexion, Pro_Usuario);
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void CmdListaAsistencia_Click(object sender, EventArgs e)

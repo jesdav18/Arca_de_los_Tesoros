@@ -26,8 +26,10 @@ namespace Core.Controles
         public string Pro_UsuarioColaborador { get; private set; }
         public int Pro_ID_RolUsuario { get; private set; }
         public string Pro_DescripcionRolUsuario { get; private set; }
-        public string Pro_CargoColaborador { get; private set; }
         public int Pro_ID_Colaborador { get; private set; }
+        public string Pro_NombreEquipo { get; set; }
+        public int Pro_ID_Cargo { get; set; }
+        public string Pro_DescripcionCargo { get; set; }
 
         #endregion
 
@@ -58,6 +60,9 @@ namespace Core.Controles
                 c_Usuario.Pro_DescripcionRolUsuario = Pro_DescripcionRolUsuario;
                 c_Usuario.Pro_ID_RolUsuario = Pro_ID_RolUsuario;
                 c_Usuario.Pro_NombreColaborador = Pro_NombreColaborador;
+                c_Usuario.Pro_NombreEquipo = Pro_NombreEquipo;
+                c_Usuario.Pro_ID_Cargo = Pro_ID_Cargo;
+                c_Usuario.Pro_DescripcionCargo = Pro_DescripcionCargo;
               
 
                 OnUsuarioLogueado?.Invoke(c_Usuario, e);
@@ -117,6 +122,9 @@ namespace Core.Controles
                     Pro_DescripcionRolUsuario = pgDr.GetString("descripcion");
                     Pro_ID_RolUsuario = pgDr.GetInt32("id_rol_usuario");
                     Pro_ID_Colaborador = pgDr.GetInt32("id_colaborador");
+                    Pro_ID_Cargo = pgDr.GetInt32("id_cargo");
+                    Pro_DescripcionCargo = pgDr.GetString("descripcion_cargo");
+                    Pro_NombreEquipo = pgDr.GetString("nombre_equipo");
                     v_encontro_usuario = true;
                 }
 
