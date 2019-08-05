@@ -101,6 +101,11 @@
     <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.Designer.cs">
       <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\dsCoordinadoresEdad.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\frmCoordinadorEdad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +169,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet\dsCoordinadoresEdad.xsc">
+      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCoordinadoresEdad.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCoordinadoresEdad.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsCoordinadoresEdad.xss">
+      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icon_nuevo_usuario_negro_64.png" />
   </ItemGroup>
   <ItemGroup>

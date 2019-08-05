@@ -30,6 +30,7 @@ namespace Core.Controles
         public string Pro_NombreEquipo { get; set; }
         public int Pro_ID_Cargo { get; set; }
         public string Pro_DescripcionCargo { get; set; }
+        public int Pro_ID_AreaAtencion { get; set; }
 
         #endregion
 
@@ -63,6 +64,7 @@ namespace Core.Controles
                 c_Usuario.Pro_NombreEquipo = Pro_NombreEquipo;
                 c_Usuario.Pro_ID_Cargo = Pro_ID_Cargo;
                 c_Usuario.Pro_DescripcionCargo = Pro_DescripcionCargo;
+                c_Usuario.Pro_ID_AreaAtencion = Pro_ID_AreaAtencion;
               
 
                 OnUsuarioLogueado?.Invoke(c_Usuario, e);
@@ -125,6 +127,7 @@ namespace Core.Controles
                     Pro_ID_Cargo = pgDr.GetInt32("id_cargo");
                     Pro_DescripcionCargo = pgDr.GetString("descripcion_cargo");
                     Pro_NombreEquipo = pgDr.GetString("nombre_equipo");
+                    Pro_ID_AreaAtencion = pgDr.GetInt32("id_area_atencion");
                     v_encontro_usuario = true;
                 }
 

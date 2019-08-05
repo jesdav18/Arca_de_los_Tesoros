@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Coordinadores_de_Edad.Controles
 {
@@ -12,6 +14,30 @@ namespace Coordinadores_de_Edad.Controles
         public void ConstruirControl(string pFecha)
         {
             lblFecha.Text = pFecha;
+        }
+
+        private void LblDia_MouseLeave(object sender, System.EventArgs e)
+        {
+            lblDia.BackColor = Color.White;
+            lblFecha.BackColor = Color.White;
+            lblFecha.ForeColor = Color.Black;
+            lblDia.ForeColor = Color.Black;
+
+        }
+
+        private void LblFecha_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblDia.BackColor = Color.FromArgb(47, 82, 153);
+            lblFecha.BackColor = Color.FromArgb(47, 82, 153);
+            lblFecha.ForeColor = Color.White;
+            lblDia.ForeColor = Color.White;
+        }
+
+        public event EventHandler OnSeleccionaDia;
+
+        private void LblFecha_Click(object sender, System.EventArgs e)
+        {
+            OnSeleccionaDia?.Invoke(lblFecha.Text,e) ;
         }
     }
 }

@@ -31,22 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlSeleccionMaestros_Ayudas));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
-            this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.picAtras = new DevExpress.XtraEditors.PictureEdit();
+            this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
             this.cmdGuardarSolicitud = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcMaestrosDisponibles = new DevExpress.XtraGrid.GridControl();
+            this.dsCoordinadoresEdad1 = new Coordinadores_de_Edad.DataSet.dsCoordinadoresEdad();
+            this.gvMestrosDisponibles = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_identidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,6 +73,20 @@
             this.pnlEncabezado.Size = new System.Drawing.Size(907, 75);
             this.pnlEncabezado.TabIndex = 12;
             // 
+            // picAtras
+            // 
+            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAtras.EditValue = ((object)(resources.GetObject("picAtras.EditValue")));
+            this.picAtras.Location = new System.Drawing.Point(0, 0);
+            this.picAtras.Name = "picAtras";
+            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picAtras.Properties.NullText = "   ";
+            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picAtras.Size = new System.Drawing.Size(58, 75);
+            this.picAtras.TabIndex = 19;
+            this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
+            // 
             // lblEncabezado
             // 
             this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,19 +101,6 @@
             this.lblEncabezado.Size = new System.Drawing.Size(907, 75);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Seleccion Maestros Día para  X";
-            // 
-            // picAtras
-            // 
-            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtras.EditValue = ((object)(resources.GetObject("picAtras.EditValue")));
-            this.picAtras.Location = new System.Drawing.Point(0, 0);
-            this.picAtras.Name = "picAtras";
-            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtras.Properties.NullText = "   ";
-            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtras.Size = new System.Drawing.Size(58, 75);
-            this.picAtras.TabIndex = 19;
             // 
             // panel1
             // 
@@ -117,6 +123,7 @@
             this.txtBusqueda.Properties.AutoHeight = false;
             this.txtBusqueda.Size = new System.Drawing.Size(643, 44);
             this.txtBusqueda.TabIndex = 31;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged);
             // 
             // cmdGuardarSolicitud
             // 
@@ -147,34 +154,77 @@
             this.panel4.Size = new System.Drawing.Size(907, 26);
             this.panel4.TabIndex = 21;
             // 
-            // gridControl1
+            // gcMaestrosDisponibles
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(5, 200);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(907, 502);
-            this.gridControl1.TabIndex = 22;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcMaestrosDisponibles.DataMember = "dtMaestrosDisponibles";
+            this.gcMaestrosDisponibles.DataSource = this.dsCoordinadoresEdad1;
+            this.gcMaestrosDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcMaestrosDisponibles.Location = new System.Drawing.Point(5, 200);
+            this.gcMaestrosDisponibles.MainView = this.gvMestrosDisponibles;
+            this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
+            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(907, 502);
+            this.gcMaestrosDisponibles.TabIndex = 22;
+            this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvMestrosDisponibles});
             // 
-            // gridView1
+            // dsCoordinadoresEdad1
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.dsCoordinadoresEdad1.DataSetName = "dsCoordinadoresEdad";
+            this.dsCoordinadoresEdad1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ctlSeleccionMaestros
+            // gvMestrosDisponibles
+            // 
+            this.gvMestrosDisponibles.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvMestrosDisponibles.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvMestrosDisponibles.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvMestrosDisponibles.Appearance.Row.Options.UseFont = true;
+            this.gvMestrosDisponibles.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_colaborador,
+            this.colnombre,
+            this.colnumero_identidad});
+            this.gvMestrosDisponibles.GridControl = this.gcMaestrosDisponibles;
+            this.gvMestrosDisponibles.Name = "gvMestrosDisponibles";
+            this.gvMestrosDisponibles.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_colaborador
+            // 
+            this.colid_colaborador.FieldName = "id_colaborador";
+            this.colid_colaborador.MinWidth = 25;
+            this.colid_colaborador.Name = "colid_colaborador";
+            this.colid_colaborador.Width = 94;
+            // 
+            // colnombre
+            // 
+            this.colnombre.Caption = "Nombre";
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.MinWidth = 25;
+            this.colnombre.Name = "colnombre";
+            this.colnombre.Visible = true;
+            this.colnombre.VisibleIndex = 1;
+            this.colnombre.Width = 94;
+            // 
+            // colnumero_identidad
+            // 
+            this.colnumero_identidad.Caption = "Identidad";
+            this.colnumero_identidad.FieldName = "numero_identidad";
+            this.colnumero_identidad.MinWidth = 25;
+            this.colnumero_identidad.Name = "colnumero_identidad";
+            this.colnumero_identidad.Visible = true;
+            this.colnumero_identidad.VisibleIndex = 0;
+            this.colnumero_identidad.Width = 94;
+            // 
+            // ctlSeleccionMaestros_Ayudas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gcMaestrosDisponibles);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlEncabezado);
-            this.Name = "ctlSeleccionMaestros";
+            this.Name = "ctlSeleccionMaestros_Ayudas";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(917, 707);
             this.pnlEncabezado.ResumeLayout(false);
@@ -182,8 +232,9 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,7 +250,11 @@
         private DevExpress.XtraEditors.PictureEdit cmdGuardarSolicitud;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcMaestrosDisponibles;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvMestrosDisponibles;
+        private DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_colaborador;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad;
     }
 }

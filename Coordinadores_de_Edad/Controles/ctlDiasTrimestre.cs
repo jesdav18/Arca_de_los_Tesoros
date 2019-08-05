@@ -26,6 +26,7 @@ namespace Coordinadores_de_Edad.Controles
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
             Pro_NumeroTrimestre = pNumeroTrimestre;
+            Pro_Anio = pAnio;
             lblTituloEncabezado.Text = pDescripcionTrimestre + " del Año " + pAnio;
            
             ObtenerFechasTrimestre();
@@ -40,7 +41,8 @@ namespace Coordinadores_de_Edad.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_dias_trimestre();";
+            string sentencia = @"SELECT * FROM arca_tesoros_conf.ft_view_dias_trimestre(:p_numero_trimestre,
+                                                                                        :p_anio);";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_numero_trimestre", PgSqlType.Int).Value = Pro_NumeroTrimestre;
             pgComando.Parameters.Add("p_anio", PgSqlType.VarChar).Value = Pro_Anio;
@@ -54,6 +56,7 @@ namespace Coordinadores_de_Edad.Controles
                 {
                     ctlItemDiaTrabajo v_item_dia = new ctlItemDiaTrabajo();
                     v_item_dia.ConstruirControl(pgDr.GetString("dia_trimestre"));
+                    v_item_dia.OnSeleccionaDia += v_item_dia_selecciona_dia;
 
                     TileDias.Controls.Add(v_item_dia);
 
@@ -74,6 +77,13 @@ namespace Coordinadores_de_Edad.Controles
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ObtenerFechasTrimestre");
               
             }
+        }
+
+        public event EventHandler OnSeleccionaDia;
+
+        private void v_item_dia_selecciona_dia(object sender, EventArgs e)
+        {
+            OnSeleccionaDia?.Invoke(sender, e);
         }
 
         public event EventHandler OnIrAtras;

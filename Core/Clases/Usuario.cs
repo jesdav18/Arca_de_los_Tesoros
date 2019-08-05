@@ -18,6 +18,7 @@ namespace Core.Clases
         public string Pro_DescripcionCargo { get; set; }
         public int Pro_ID_Cargo { get; set; }
         public string Pro_NombreEquipo { get; set; }
+        public int Pro_ID_AreaAtencion { get; set; }
 
 
         #endregion

@@ -466,6 +466,7 @@
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Anio = null;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Conexion = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_ID_AreaAtencion = 0;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Usuario = null;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Size = new System.Drawing.Size(1262, 762);
             this.ctlPlanificadorTrimestralCoordinadorEdad1.TabIndex = 0;

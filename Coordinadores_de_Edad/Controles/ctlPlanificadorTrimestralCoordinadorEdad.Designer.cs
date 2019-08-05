@@ -43,6 +43,8 @@
             this.PageTrimestres = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pageDias = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlDiasTrimestre1 = new Coordinadores_de_Edad.Controles.ctlDiasTrimestre();
+            this.pageSeleccionMaestros = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlSeleccionMaestros_Ayudas1 = new Coordinadores_de_Edad.Controles.ctlSeleccionMaestros_Ayudas();
             this.pnlEncabezado.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -52,6 +54,7 @@
             this.NavigationPrincipal.SuspendLayout();
             this.PageTrimestres.SuspendLayout();
             this.pageDias.SuspendLayout();
+            this.pageSeleccionMaestros.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -193,12 +196,14 @@
             // 
             this.NavigationPrincipal.Controls.Add(this.PageTrimestres);
             this.NavigationPrincipal.Controls.Add(this.pageDias);
+            this.NavigationPrincipal.Controls.Add(this.pageSeleccionMaestros);
             this.NavigationPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationPrincipal.Location = new System.Drawing.Point(5, 5);
             this.NavigationPrincipal.Name = "NavigationPrincipal";
             this.NavigationPrincipal.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageTrimestres,
-            this.pageDias});
+            this.pageDias,
+            this.pageSeleccionMaestros});
             this.NavigationPrincipal.SelectedPage = this.PageTrimestres;
             this.NavigationPrincipal.Size = new System.Drawing.Size(1414, 742);
             this.NavigationPrincipal.TabIndex = 15;
@@ -234,6 +239,26 @@
             this.ctlDiasTrimestre1.Size = new System.Drawing.Size(1414, 742);
             this.ctlDiasTrimestre1.TabIndex = 0;
             // 
+            // pageSeleccionMaestros
+            // 
+            this.pageSeleccionMaestros.Controls.Add(this.ctlSeleccionMaestros_Ayudas1);
+            this.pageSeleccionMaestros.Name = "pageSeleccionMaestros";
+            this.pageSeleccionMaestros.Size = new System.Drawing.Size(1414, 742);
+            // 
+            // ctlSeleccionMaestros_Ayudas1
+            // 
+            this.ctlSeleccionMaestros_Ayudas1.BackColor = System.Drawing.Color.White;
+            this.ctlSeleccionMaestros_Ayudas1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlSeleccionMaestros_Ayudas1.Location = new System.Drawing.Point(0, 0);
+            this.ctlSeleccionMaestros_Ayudas1.Name = "ctlSeleccionMaestros_Ayudas1";
+            this.ctlSeleccionMaestros_Ayudas1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlSeleccionMaestros_Ayudas1.Pro_Conexion = null;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_Fecha = null;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_ID_AreaAtencion = 0;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_Usuario = null;
+            this.ctlSeleccionMaestros_Ayudas1.Size = new System.Drawing.Size(1414, 742);
+            this.ctlSeleccionMaestros_Ayudas1.TabIndex = 0;
+            // 
             // ctlPlanificadorTrimestralCoordinadorEdad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -243,7 +268,6 @@
             this.Name = "ctlPlanificadorTrimestralCoordinadorEdad";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1424, 752);
-          
             this.pnlEncabezado.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -253,6 +277,7 @@
             this.NavigationPrincipal.ResumeLayout(false);
             this.PageTrimestres.ResumeLayout(false);
             this.pageDias.ResumeLayout(false);
+            this.pageSeleccionMaestros.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -273,5 +298,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageSeleccionMaestros;
+        private ctlSeleccionMaestros_Ayudas ctlSeleccionMaestros_Ayudas1;
     }
 }

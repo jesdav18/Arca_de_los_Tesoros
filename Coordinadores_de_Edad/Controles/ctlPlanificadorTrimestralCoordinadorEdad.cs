@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
-using System.Drawing;
+
 
 namespace Coordinadores_de_Edad.Controles
 {
@@ -12,6 +12,23 @@ namespace Coordinadores_de_Edad.Controles
         {
             InitializeComponent();
             ctlDiasTrimestre1.OnIrAtras += ctlDiasTrimestre1_OnIrAtras;
+            ctlDiasTrimestre1.OnSeleccionaDia += ctlDiasTrimestre1_OnSeleccionaDia;
+            ctlSeleccionMaestros_Ayudas1.OnIrAtras += ctlSeleccionMaestros_Ayudas1_OnIrAtras;
+        }
+
+        private void ctlDiasTrimestre1_OnSeleccionaDia(object sender, EventArgs e)
+        {
+            NavigationPrincipal.SelectedPage = pageSeleccionMaestros;
+            ctlSeleccionMaestros_Ayudas1.ConstruirControl(Pro_Conexion, 
+                                                          Pro_Usuario, 
+                                                          (string)sender,
+                                                          Pro_ID_AreaAtencion);           
+        }
+
+        private void ctlSeleccionMaestros_Ayudas1_OnIrAtras(object sender, EventArgs e)
+        {
+            NavigationPrincipal.SelectedPage = pageDias;
+            
         }
 
         private void ctlDiasTrimestre1_OnIrAtras(object sender, EventArgs e)
@@ -22,12 +39,15 @@ namespace Coordinadores_de_Edad.Controles
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
         public string Pro_Anio { get; set; }
+        public int Pro_ID_AreaAtencion { get; set; }
 
         public void ConstruirControl(PgSqlConnection pConexion,
-                                     string pUsuario)
+                                     string pUsuario,
+                                     int pID_AreaAtencion)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
+            Pro_ID_AreaAtencion = pID_AreaAtencion;
             Pro_Anio = Utilidades.ObtenerAnioServidor(Pro_Conexion);
             lblEncabezado.Text = "Planificador Trimestral Año " + Pro_Anio;
          
