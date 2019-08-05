@@ -174,12 +174,17 @@ namespace Arca_de_los_Tesoros
 
             catch (Exception Exc)
             {
+
+
                 Log_Excepciones.CapturadorExcepciones(Exc,
                                                       this.Name,
                                                       "RedireccionSegunNivelAcceso(Usuario pUsuario)");
                
 
                 MessageBox.Show("Algo salió mal mientras se cargaban los niveles de acceso. ", "Arca de los Tesoros");
+
+
+                Construir_Acceso();
             }
 
         }

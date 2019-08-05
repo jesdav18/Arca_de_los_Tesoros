@@ -61,6 +61,12 @@
     <Compile Include="Clases\Log_Excepciones.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Utilidades.cs" />
+    <Compile Include="Controles\ctlAsistencias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlAsistencias.Designer.cs">
+      <DependentUpon>ctlAsistencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlBienvenida.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="Controles\ctlEncabezado.Designer.cs">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlIngresoAsistencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlIngresoAsistencia.Designer.cs">
+      <DependentUpon>ctlIngresoAsistencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\ctlIngresoFicha.cs">
       <SubType>UserControl</SubType>
@@ -144,11 +156,17 @@
     <None Include="Resources\iconEspera.gif" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controles\ctlAsistencias.resx">
+      <DependentUpon>ctlAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlBienvenida.resx">
       <DependentUpon>ctlBienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlEncabezado.resx">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlIngresoAsistencia.resx">
+      <DependentUpon>ctlIngresoAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlIngresoFicha.resx">
       <DependentUpon>ctlIngresoFicha.cs</DependentUpon>

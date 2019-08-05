@@ -70,7 +70,8 @@ namespace Core.Controles
                                                                                               :p_celular,
                                                                                               :p_id_empresa,
                                                                                               :p_cargo_en_empresa,  
-                                                                                              :p_telefono_empresa
+                                                                                              :p_telefono_empresa,
+                                                                                              :p_equipo_arca_tesoros
                                                                                             )";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_nombre", PgSqlType.VarChar).Value = txtNombre.Text;
@@ -121,6 +122,7 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_id_empresa", PgSqlType.Int).Value = glEmpresa.EditValue;
             pgComando.Parameters.Add("p_cargo_en_empresa", PgSqlType.VarChar).Value = txtCargoEnEmpresa.Text;
             pgComando.Parameters.Add("p_telefono_empresa", PgSqlType.VarChar).Value = txtTelefonoEmpresa.Text;
+            pgComando.Parameters.Add("p_equipo_arca_tesoros", PgSqlType.VarChar).Value = glEquipoArcaTesoros.EditValue;
 
             PgSqlTransaction pgTrans = Pro_Conexion.BeginTransaction();
             try

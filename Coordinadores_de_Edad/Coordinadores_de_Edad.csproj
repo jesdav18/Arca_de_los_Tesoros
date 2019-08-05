@@ -59,11 +59,47 @@
     <Compile Include="Controles\ctlContenedorPrincipalCoordinadorEdad.Designer.cs">
       <DependentUpon>ctlContenedorPrincipalCoordinadorEdad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlCubrirAusencias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlCubrirAusencias.Designer.cs">
+      <DependentUpon>ctlCubrirAusencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlDiasTrimestre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlDiasTrimestre.Designer.cs">
+      <DependentUpon>ctlDiasTrimestre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlIngresoSolicitudesCordinadorEdad.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controles\ctlIngresoSolicitudesCordinadorEdad.Designer.cs">
       <DependentUpon>ctlIngresoSolicitudesCordinadorEdad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlItemDiaTrabajo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlItemDiaTrabajo.Designer.cs">
+      <DependentUpon>ctlItemDiaTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlngresoActividad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlngresoActividad.Designer.cs">
+      <DependentUpon>ctlngresoActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.Designer.cs">
+      <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.Designer.cs">
+      <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmCoordinadorEdad.cs">
       <SubType>Form</SubType>
@@ -88,8 +124,26 @@
     <EmbeddedResource Include="Controles\ctlContenedorPrincipalCoordinadorEdad.resx">
       <DependentUpon>ctlContenedorPrincipalCoordinadorEdad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlCubrirAusencias.resx">
+      <DependentUpon>ctlCubrirAusencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlDiasTrimestre.resx">
+      <DependentUpon>ctlDiasTrimestre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlIngresoSolicitudesCordinadorEdad.resx">
       <DependentUpon>ctlIngresoSolicitudesCordinadorEdad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlItemDiaTrabajo.resx">
+      <DependentUpon>ctlItemDiaTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlngresoActividad.resx">
+      <DependentUpon>ctlngresoActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.resx">
+      <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlSeleccionMaestros_Ayudas.resx">
+      <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmCoordinadorEdad.resx">
       <DependentUpon>frmCoordinadorEdad.cs</DependentUpon>

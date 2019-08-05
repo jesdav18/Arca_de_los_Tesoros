@@ -22,38 +22,80 @@ namespace Core.Clases
             }
 
             return v_ip_host;
-
         }
 
         public static DateTime ObtenerHoraServidor(PgSqlConnection pConexion)
         {
+            DateTime v_resultado = Convert.ToDateTime(null);
 
             if (pConexion.State != System.Data.ConnectionState.Open)
             {
                 pConexion.Open();
             }
-            string sentencia = "SELECT * FROM configuracion.ft_obtener_hora_servidor();";
+
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_variables_tiempo();";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, pConexion);
 
             try
             {
-                return (DateTime)pgComando.ExecuteScalar();
+                PgSqlDataReader pgDr = pgComando.ExecuteReader();
+                if (pgDr.Read())
+                {
+                    v_resultado = pgDr.GetDateTime("fecha_hora_servidor");
+                }
+
+                pgDr.Close();
+
+                sentencia = null;
+                pgComando.Dispose();
+                pgComando = null;
+
+                return v_resultado;
             }
             catch (Exception Exc)
             {
                 MessageBox.Show("Algo salió mal en el momento de recuperar la hora del servidor. ");
                 Log_Excepciones.CapturadorExcepciones(Exc, "Utilidades.cs", "ObtenerHoraServidor");
-                return Convert.ToDateTime(null);
-               
+                return Convert.ToDateTime(null);              
             }
         }
 
-        public static int ObtenerNumeroMes(PgSqlConnection pConexion)
+        public static string ObtenerAnioServidor(PgSqlConnection pConexion)
         {
-            string sentencia = "SELECT * FROM configuracion.ft_proc_obtener_numero_mes();";
+            string v_resultado = null;
+
+            if (pConexion.State != System.Data.ConnectionState.Open)
+            {
+                pConexion.Open();
+            }
+
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_variables_tiempo();";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, pConexion);
 
-            return (int)pgComando.ExecuteScalar();
+            try
+            {
+                PgSqlDataReader pgDr = pgComando.ExecuteReader();
+                if (pgDr.Read())
+                {
+                    v_resultado = pgDr.GetString("anio");
+                }
+
+                pgDr.Close();
+
+                sentencia = null;
+                pgComando.Dispose();
+                pgComando = null;
+
+                return v_resultado;
+            }
+            catch (Exception Exc)
+            {
+                MessageBox.Show("Algo salió mal en el momento de recuperar el año de desde la fecha/hora del servidor. ");
+                Log_Excepciones.CapturadorExcepciones(Exc, "Utilidades.cs", "ObtenerMesServidor");
+                return null;
+            }
         }
+
+
     }
 }

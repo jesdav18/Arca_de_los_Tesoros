@@ -57,6 +57,8 @@
             this.ctlIngresoSolicitudesCordinadorEdad1 = new Coordinadores_de_Edad.Controles.ctlIngresoSolicitudesCordinadorEdad();
             this.PageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlMiEquipo1 = new Core.Controles.ctlMiEquipo();
+            this.pagePlanificadorActividades = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlPlanificadorTrimestralCoordinadorEdad1 = new Coordinadores_de_Edad.Controles.ctlPlanificadorTrimestralCoordinadorEdad();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -83,6 +85,7 @@
             this.PageFichaIngreso.SuspendLayout();
             this.pageIngresoSolicitudes.SuspendLayout();
             this.PageMiEquipo.SuspendLayout();
+            this.pagePlanificadorActividades.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEncabezadoCoordinadoresEdad
@@ -282,7 +285,7 @@
             this.pnlEncabezado.MaximumSize = new System.Drawing.Size(0, 130);
             this.pnlEncabezado.MinimumSize = new System.Drawing.Size(0, 130);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1296, 130);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1268, 130);
             this.pnlEncabezado.TabIndex = 3;
             // 
             // ctlEncabezado1
@@ -294,14 +297,14 @@
             this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 123);
             this.ctlEncabezado1.Name = "ctlEncabezado1";
             this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(747, 123);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(719, 123);
             this.ctlEncabezado1.TabIndex = 10;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1293, 3);
+            this.panel4.Location = new System.Drawing.Point(1265, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(3, 124);
             this.panel4.TabIndex = 9;
@@ -321,7 +324,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 127);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1296, 3);
+            this.panel1.Size = new System.Drawing.Size(1268, 3);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -330,7 +333,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1296, 3);
+            this.panel2.Size = new System.Drawing.Size(1268, 3);
             this.panel2.TabIndex = 6;
             // 
             // pnlCuerpo
@@ -342,7 +345,7 @@
             this.pnlCuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCuerpo.Location = new System.Drawing.Point(5, 135);
             this.pnlCuerpo.Name = "pnlCuerpo";
-            this.pnlCuerpo.Size = new System.Drawing.Size(1296, 765);
+            this.pnlCuerpo.Size = new System.Drawing.Size(1268, 765);
             this.pnlCuerpo.TabIndex = 4;
             // 
             // NavigationCoordinadorEdad
@@ -352,6 +355,7 @@
             this.NavigationCoordinadorEdad.Controls.Add(this.PageFichaIngreso);
             this.NavigationCoordinadorEdad.Controls.Add(this.pageIngresoSolicitudes);
             this.NavigationCoordinadorEdad.Controls.Add(this.PageMiEquipo);
+            this.NavigationCoordinadorEdad.Controls.Add(this.pagePlanificadorActividades);
             this.NavigationCoordinadorEdad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationCoordinadorEdad.Location = new System.Drawing.Point(3, 0);
             this.NavigationCoordinadorEdad.Name = "NavigationCoordinadorEdad";
@@ -359,9 +363,10 @@
             this.PageInicial,
             this.PageFichaIngreso,
             this.pageIngresoSolicitudes,
-            this.PageMiEquipo});
+            this.PageMiEquipo,
+            this.pagePlanificadorActividades});
             this.NavigationCoordinadorEdad.SelectedPage = this.PageInicial;
-            this.NavigationCoordinadorEdad.Size = new System.Drawing.Size(1290, 762);
+            this.NavigationCoordinadorEdad.Size = new System.Drawing.Size(1262, 762);
             this.NavigationCoordinadorEdad.TabIndex = 12;
             this.NavigationCoordinadorEdad.TransitionAnimationProperties.FrameCount = 500;
             this.NavigationCoordinadorEdad.TransitionAnimationProperties.FrameInterval = 500;
@@ -371,7 +376,7 @@
             this.PageInicial.Caption = "PageInicial";
             this.PageInicial.Controls.Add(this.pictureEdit6);
             this.PageInicial.Name = "PageInicial";
-            this.PageInicial.Size = new System.Drawing.Size(1290, 762);
+            this.PageInicial.Size = new System.Drawing.Size(1262, 762);
             // 
             // pictureEdit6
             // 
@@ -383,7 +388,7 @@
             this.pictureEdit6.Properties.NullText = "   ";
             this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.pictureEdit6.Size = new System.Drawing.Size(1290, 762);
+            this.pictureEdit6.Size = new System.Drawing.Size(1262, 762);
             this.pictureEdit6.TabIndex = 1;
             // 
             // PageFichaIngreso
@@ -391,7 +396,7 @@
             this.PageFichaIngreso.Caption = "PageFichaIngreso";
             this.PageFichaIngreso.Controls.Add(this.ctlIngresoFicha1);
             this.PageFichaIngreso.Name = "PageFichaIngreso";
-            this.PageFichaIngreso.Size = new System.Drawing.Size(1290, 762);
+            this.PageFichaIngreso.Size = new System.Drawing.Size(1262, 762);
             // 
             // ctlIngresoFicha1
             // 
@@ -403,7 +408,7 @@
             this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlIngresoFicha1.Pro_Conexion = null;
             this.ctlIngresoFicha1.Pro_Usuario = null;
-            this.ctlIngresoFicha1.Size = new System.Drawing.Size(1290, 762);
+            this.ctlIngresoFicha1.Size = new System.Drawing.Size(1262, 762);
             this.ctlIngresoFicha1.TabIndex = 0;
             // 
             // pageIngresoSolicitudes
@@ -411,7 +416,7 @@
             this.pageIngresoSolicitudes.Caption = "pageIngresoSolicitudes";
             this.pageIngresoSolicitudes.Controls.Add(this.ctlIngresoSolicitudesCordinadorEdad1);
             this.pageIngresoSolicitudes.Name = "pageIngresoSolicitudes";
-            this.pageIngresoSolicitudes.Size = new System.Drawing.Size(1290, 762);
+            this.pageIngresoSolicitudes.Size = new System.Drawing.Size(1262, 762);
             // 
             // ctlIngresoSolicitudesCordinadorEdad1
             // 
@@ -423,7 +428,7 @@
             this.ctlIngresoSolicitudesCordinadorEdad1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlIngresoSolicitudesCordinadorEdad1.Pro_Conexion = null;
             this.ctlIngresoSolicitudesCordinadorEdad1.Pro_ID_Colaborador = 0;
-            this.ctlIngresoSolicitudesCordinadorEdad1.Size = new System.Drawing.Size(1290, 815);
+            this.ctlIngresoSolicitudesCordinadorEdad1.Size = new System.Drawing.Size(1262, 815);
             this.ctlIngresoSolicitudesCordinadorEdad1.TabIndex = 0;
             // 
             // PageMiEquipo
@@ -431,7 +436,7 @@
             this.PageMiEquipo.Caption = "PageMiEquipo";
             this.PageMiEquipo.Controls.Add(this.ctlMiEquipo1);
             this.PageMiEquipo.Name = "PageMiEquipo";
-            this.PageMiEquipo.Size = new System.Drawing.Size(1290, 762);
+            this.PageMiEquipo.Size = new System.Drawing.Size(1262, 762);
             // 
             // ctlMiEquipo1
             // 
@@ -442,8 +447,28 @@
             this.ctlMiEquipo1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlMiEquipo1.Pro_Conexion = null;
             this.ctlMiEquipo1.Pro_Usuario = null;
-            this.ctlMiEquipo1.Size = new System.Drawing.Size(1290, 762);
+            this.ctlMiEquipo1.Size = new System.Drawing.Size(1262, 762);
             this.ctlMiEquipo1.TabIndex = 0;
+            // 
+            // pagePlanificadorActividades
+            // 
+            this.pagePlanificadorActividades.Caption = "pagePlanificadorActividades";
+            this.pagePlanificadorActividades.Controls.Add(this.ctlPlanificadorTrimestralCoordinadorEdad1);
+            this.pagePlanificadorActividades.Name = "pagePlanificadorActividades";
+            this.pagePlanificadorActividades.Size = new System.Drawing.Size(1262, 762);
+            // 
+            // ctlPlanificadorTrimestralCoordinadorEdad1
+            // 
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.BackColor = System.Drawing.Color.White;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Location = new System.Drawing.Point(0, 0);
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Name = "ctlPlanificadorTrimestralCoordinadorEdad1";
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Anio = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Conexion = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Usuario = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Size = new System.Drawing.Size(1262, 762);
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.TabIndex = 0;
             // 
             // panel7
             // 
@@ -451,14 +476,14 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(3, 762);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1290, 3);
+            this.panel7.Size = new System.Drawing.Size(1262, 3);
             this.panel7.TabIndex = 11;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1293, 0);
+            this.panel6.Location = new System.Drawing.Point(1265, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(3, 765);
             this.panel6.TabIndex = 10;
@@ -485,7 +510,7 @@
             this.Controls.Add(this.pnlEncabezado);
             this.Name = "ctlContenedorPrincipalCoordinadorEdad";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(1306, 905);
+            this.Size = new System.Drawing.Size(1278, 905);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).EndInit();
@@ -508,6 +533,7 @@
             this.PageFichaIngreso.ResumeLayout(false);
             this.pageIngresoSolicitudes.ResumeLayout(false);
             this.PageMiEquipo.ResumeLayout(false);
+            this.pagePlanificadorActividades.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -546,5 +572,7 @@
         private ctlIngresoSolicitudesCordinadorEdad ctlIngresoSolicitudesCordinadorEdad1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageMiEquipo;
         private Core.Controles.ctlMiEquipo ctlMiEquipo1;
+        private DevExpress.XtraBars.Navigation.NavigationPage pagePlanificadorActividades;
+        private ctlPlanificadorTrimestralCoordinadorEdad ctlPlanificadorTrimestralCoordinadorEdad1;
     }
 }

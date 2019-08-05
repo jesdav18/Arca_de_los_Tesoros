@@ -10,6 +10,7 @@ namespace Coordinadores_de_Edad.Controles
         public ctlContenedorPrincipalCoordinadorEdad()
         {
             InitializeComponent();
+            
         }
 
         public PgSqlConnection Pro_Conexion { get; set; }
@@ -58,7 +59,10 @@ namespace Coordinadores_de_Edad.Controles
 
         private void CmdOrganizadorActividades_Click(object sender, EventArgs e)
         {
-
+            splashScreenManager1.ShowWaitForm();
+            NavigationCoordinadorEdad.SelectedPage = pagePlanificadorActividades;
+            ctlPlanificadorTrimestralCoordinadorEdad1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
+            splashScreenManager1.CloseWaitForm();
         }
     }
 }

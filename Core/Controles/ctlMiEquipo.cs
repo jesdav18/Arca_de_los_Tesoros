@@ -25,7 +25,8 @@ namespace Core.Controles
             dsVistas.dtMiEquipoRow v_fila = (dsVistas.dtMiEquipoRow)gvMiEquipo.GetFocusedDataRow();
             if (v_fila != null)
             {
-               
+                NavigationMiEquipo.SelectedPage = PageFichaIngreso;
+                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador);
             }
         }
 
@@ -91,5 +92,7 @@ namespace Core.Controles
                 MessageBox.Show(Exc.Message, "Arca de los tesoros", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }
