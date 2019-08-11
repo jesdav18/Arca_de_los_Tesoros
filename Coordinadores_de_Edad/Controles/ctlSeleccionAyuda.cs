@@ -11,18 +11,16 @@ using Devart.Data.PostgreSql;
 
 namespace Coordinadores_de_Edad.Controles
 {
-    public partial class ctlSeleccionMaestros_Ayudas : UserControl
+    public partial class ctlSeleccionAyuda : UserControl
     {
-        public ctlSeleccionMaestros_Ayudas()
+        public ctlSeleccionAyuda()
         {
             InitializeComponent();
         }
 
-        bool v_mostrar_encabezado;
-
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
-        public string  Pro_Fecha { get; set; }
+        public string Pro_Fecha { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
         public bool Pro_MostrarEncabezado {
             get
@@ -39,23 +37,28 @@ namespace Coordinadores_de_Edad.Controles
                 }
                 else
                 {
-                    lblEncabezado.Text = "Selección de Maestros para el día " + Pro_Fecha;
+                    lblEncabezado.Text = "Selección de Ayudas para el día " + Pro_Fecha;
                 }
             }
         }
 
-       
 
-        public void ConstruirControl(PgSqlConnection pConexion, 
-                                      string pUsuario, 
-                                      string pFecha,
-                                      int pID_AreaAtencion,
-                                      bool pMostrarEncabezado = true)
+        bool v_mostrar_encabezado;
+      
+
+
+        public void ConstruirControl(PgSqlConnection pConexion,
+                                   string pUsuario,
+                                   string pFecha,
+                                   int pID_AreaAtencion,
+                                   bool pMostrarEncabezado = true)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
             Pro_Fecha = pFecha;
-            Pro_ID_AreaAtencion = pID_AreaAtencion; 
+            Pro_ID_AreaAtencion = pID_AreaAtencion;
+            Pro_MostrarEncabezado = pMostrarEncabezado;
+
            
             CargarDatos();
         }
@@ -67,14 +70,14 @@ namespace Coordinadores_de_Edad.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros.ft_view_maestros_disponibles(:p_id_area_atencion)";
+            string sentencia = "SELECT * FROM arca_tesoros.ft_view_colaboradores_ayudas_disponibles(:p_id_area_atencion)";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = Pro_ID_AreaAtencion;
 
             try
             {
-                dsCoordinadoresEdad1.dtMaestrosDisponibles.Clear();
-                new PgSqlDataAdapter(pgComando).Fill(dsCoordinadoresEdad1.dtMaestrosDisponibles);
+                dsCoordinadoresEdad1.dtAyudasDisponibles.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsCoordinadoresEdad1.dtAyudasDisponibles);
 
                 sentencia = null;
                 pgComando.Dispose();
@@ -85,11 +88,13 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
+
+
+       
+
         private void TxtBusqueda_TextChanged(object sender, EventArgs e)
         {
             gvMestrosDisponibles.FindFilterText = "\"" + txtBusqueda.Text + "\"";
         }
-
-      
     }
 }

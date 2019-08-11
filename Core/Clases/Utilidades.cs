@@ -17,7 +17,7 @@ namespace Core.Clases
                 if (iterador_ip.AddressFamily.ToString() == "InterNetwork")
                 {
                     v_ip_host = iterador_ip.ToString();
-                    break;
+                    break;                                             
                 }
             }
 

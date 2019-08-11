@@ -28,24 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlngresoActividad));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
-            this.picAtras = new DevExpress.XtraEditors.PictureEdit();
             this.txtSegundoNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.memoDireccion = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdGuardarSolicitud = new DevExpress.XtraEditors.PictureEdit();
+            this.cmdGuardarPlanificacion = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoDireccion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarPlanificacion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -54,17 +51,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(5, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(933, 10);
+            this.panel2.Size = new System.Drawing.Size(957, 10);
             this.panel2.TabIndex = 16;
             // 
             // pnlEncabezado
             // 
-            this.pnlEncabezado.Controls.Add(this.picAtras);
             this.pnlEncabezado.Controls.Add(this.lblEncabezado);
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(933, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(957, 75);
             this.pnlEncabezado.TabIndex = 15;
             // 
             // lblEncabezado
@@ -78,26 +74,12 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(933, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(957, 75);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Ingrese Actividades para dia X";
             // 
-            // picAtras
-            // 
-            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtras.EditValue = ((object)(resources.GetObject("picAtras.EditValue")));
-            this.picAtras.Location = new System.Drawing.Point(0, 0);
-            this.picAtras.Name = "picAtras";
-            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtras.Properties.NullText = "   ";
-            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtras.Size = new System.Drawing.Size(58, 75);
-            this.picAtras.TabIndex = 20;
-            // 
             // txtSegundoNombre
             // 
-            this.txtSegundoNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSegundoNombre.Location = new System.Drawing.Point(189, 528);
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,7 +89,6 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
@@ -122,7 +103,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.Location = new System.Drawing.Point(189, 194);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,7 +112,6 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseTextOptions = true;
@@ -147,7 +126,6 @@
             // 
             // memoDireccion
             // 
-            this.memoDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.memoDireccion.Location = new System.Drawing.Point(189, 309);
             this.memoDireccion.Name = "memoDireccion";
             this.memoDireccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,7 +135,6 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseTextOptions = true;
@@ -170,24 +147,25 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Tema";
             // 
-            // cmdGuardarSolicitud
+            // cmdGuardarPlanificacion
             // 
-            this.cmdGuardarSolicitud.EditValue = global::Coordinadores_de_Edad.Resources.icon_guardar_negro_64;
-            this.cmdGuardarSolicitud.Location = new System.Drawing.Point(697, 605);
-            this.cmdGuardarSolicitud.Name = "cmdGuardarSolicitud";
-            this.cmdGuardarSolicitud.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdGuardarSolicitud.Properties.NullText = "   ";
-            this.cmdGuardarSolicitud.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdGuardarSolicitud.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.cmdGuardarSolicitud.Size = new System.Drawing.Size(94, 96);
-            this.cmdGuardarSolicitud.TabIndex = 32;
+            this.cmdGuardarPlanificacion.EditValue = global::Coordinadores_de_Edad.Resources.icon_guardar_negro_64;
+            this.cmdGuardarPlanificacion.Location = new System.Drawing.Point(697, 605);
+            this.cmdGuardarPlanificacion.Name = "cmdGuardarPlanificacion";
+            this.cmdGuardarPlanificacion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdGuardarPlanificacion.Properties.NullText = "   ";
+            this.cmdGuardarPlanificacion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdGuardarPlanificacion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.cmdGuardarPlanificacion.Size = new System.Drawing.Size(94, 96);
+            this.cmdGuardarPlanificacion.TabIndex = 32;
+            this.cmdGuardarPlanificacion.Click += new System.EventHandler(this.CmdGuardarPlanificacion_Click);
             // 
             // ctlngresoActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.cmdGuardarSolicitud);
+            this.Controls.Add(this.cmdGuardarPlanificacion);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.memoDireccion);
             this.Controls.Add(this.txtSegundoNombre);
@@ -198,13 +176,12 @@
             this.Controls.Add(this.pnlEncabezado);
             this.Name = "ctlngresoActividad";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(943, 746);
+            this.Size = new System.Drawing.Size(967, 767);
             this.pnlEncabezado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoDireccion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarPlanificacion.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,13 +191,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlEncabezado;
         private DevExpress.XtraEditors.LabelControl lblEncabezado;
-        private DevExpress.XtraEditors.PictureEdit picAtras;
         private DevExpress.XtraEditors.TextEdit txtSegundoNombre;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.MemoEdit memoDireccion;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.PictureEdit cmdGuardarSolicitud;
+        private DevExpress.XtraEditors.PictureEdit cmdGuardarPlanificacion;
     }
 }

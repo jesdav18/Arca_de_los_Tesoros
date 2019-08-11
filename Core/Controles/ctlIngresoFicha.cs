@@ -24,6 +24,8 @@ namespace Core.Controles
 
             txtNombre.Focus();
 
+
+
             if (! bgCargarConfiguraciones.IsBusy)
             {
                 bgCargarConfiguraciones.RunWorkerAsync();

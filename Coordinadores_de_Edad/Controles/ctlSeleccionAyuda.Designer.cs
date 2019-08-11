@@ -1,6 +1,6 @@
 ﻿namespace Coordinadores_de_Edad.Controles
 {
-    partial class ctlSeleccionMaestros_Ayudas
+    partial class ctlSeleccionAyuda
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlSeleccionMaestros_Ayudas));
-            this.panel2 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlSeleccionAyuda));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
             this.cmdGuardarSolicitud = new DevExpress.XtraEditors.PictureEdit();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gcMaestrosDisponibles = new DevExpress.XtraGrid.GridControl();
             this.dsCoordinadoresEdad1 = new Coordinadores_de_Edad.DataSet.dsCoordinadoresEdad();
@@ -52,23 +52,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 80);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(907, 10);
-            this.panel2.TabIndex = 13;
-            // 
             // pnlEncabezado
             // 
             this.pnlEncabezado.Controls.Add(this.lblEncabezado);
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(907, 75);
-            this.pnlEncabezado.TabIndex = 12;
+            this.pnlEncabezado.Size = new System.Drawing.Size(875, 75);
+            this.pnlEncabezado.TabIndex = 13;
             // 
             // lblEncabezado
             // 
@@ -81,9 +72,26 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(907, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(875, 75);
             this.lblEncabezado.TabIndex = 9;
-            this.lblEncabezado.Text = "Seleccion Maestros Día para  X";
+            this.lblEncabezado.Text = "Seleccion Ayudas día X";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(5, 80);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(875, 10);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(5, 90);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(875, 30);
+            this.panel3.TabIndex = 21;
             // 
             // panel1
             // 
@@ -93,8 +101,8 @@
             this.panel1.Location = new System.Drawing.Point(5, 120);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(907, 54);
-            this.panel1.TabIndex = 19;
+            this.panel1.Size = new System.Drawing.Size(875, 54);
+            this.panel1.TabIndex = 22;
             // 
             // txtBusqueda
             // 
@@ -121,32 +129,24 @@
             this.cmdGuardarSolicitud.Size = new System.Drawing.Size(63, 44);
             this.cmdGuardarSolicitud.TabIndex = 30;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(5, 90);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(907, 30);
-            this.panel3.TabIndex = 20;
-            // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(5, 174);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(907, 26);
-            this.panel4.TabIndex = 21;
+            this.panel4.Size = new System.Drawing.Size(875, 26);
+            this.panel4.TabIndex = 23;
             // 
             // gcMaestrosDisponibles
             // 
-            this.gcMaestrosDisponibles.DataMember = "dtMaestrosDisponibles";
+            this.gcMaestrosDisponibles.DataMember = "dtAyudasDisponibles";
             this.gcMaestrosDisponibles.DataSource = this.dsCoordinadoresEdad1;
             this.gcMaestrosDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcMaestrosDisponibles.Location = new System.Drawing.Point(5, 200);
             this.gcMaestrosDisponibles.MainView = this.gvMestrosDisponibles;
             this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
-            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(907, 502);
-            this.gcMaestrosDisponibles.TabIndex = 22;
+            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(875, 425);
+            this.gcMaestrosDisponibles.TabIndex = 24;
             this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMestrosDisponibles});
             // 
@@ -196,7 +196,7 @@
             this.colnumero_identidad.VisibleIndex = 0;
             this.colnumero_identidad.Width = 94;
             // 
-            // ctlSeleccionMaestros_Ayudas
+            // ctlSeleccionAyuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,9 +207,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlEncabezado);
-            this.Name = "ctlSeleccionMaestros_Ayudas";
+            this.Name = "ctlSeleccionAyuda";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(917, 707);
+            this.Size = new System.Drawing.Size(885, 630);
             this.pnlEncabezado.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).EndInit();
@@ -223,19 +223,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlEncabezado;
         private DevExpress.XtraEditors.LabelControl lblEncabezado;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.TextEdit txtBusqueda;
         private DevExpress.XtraEditors.PictureEdit cmdGuardarSolicitud;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraGrid.GridControl gcMaestrosDisponibles;
         private DevExpress.XtraGrid.Views.Grid.GridView gvMestrosDisponibles;
-        private DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_colaborador;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre;
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad;
+        private DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
     }
 }

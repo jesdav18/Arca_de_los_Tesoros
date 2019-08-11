@@ -16,5 +16,11 @@ namespace Coordinadores_de_Edad.Controles
         {
             InitializeComponent();
         }
+
+        public event EventHandler OnGuardarPlanificacion;
+        private void CmdGuardarPlanificacion_Click(object sender, EventArgs e)
+        {
+            OnGuardarPlanificacion?.Invoke(sender, e);
+        }
     }
 }

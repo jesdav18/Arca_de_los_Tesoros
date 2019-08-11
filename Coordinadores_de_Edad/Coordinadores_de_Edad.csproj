@@ -95,6 +95,12 @@
     <Compile Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.Designer.cs">
       <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlSeleccionAyuda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionAyuda.Designer.cs">
+      <DependentUpon>ctlSeleccionAyuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.resx">
       <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlSeleccionAyuda.resx">
+      <DependentUpon>ctlSeleccionAyuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlSeleccionMaestros_Ayudas.resx">
       <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>

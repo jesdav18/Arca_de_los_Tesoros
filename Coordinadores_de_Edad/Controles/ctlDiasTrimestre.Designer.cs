@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlDiasTrimestre));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
-            this.picAtras = new DevExpress.XtraEditors.PictureEdit();
             this.lblTituloEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TileDias = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlEncabezado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -52,26 +49,11 @@
             // pnlEncabezado
             // 
             this.pnlEncabezado.Controls.Add(this.lblTituloEncabezado);
-            this.pnlEncabezado.Controls.Add(this.picAtras);
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
             this.pnlEncabezado.Size = new System.Drawing.Size(1075, 75);
             this.pnlEncabezado.TabIndex = 13;
-            // 
-            // picAtras
-            // 
-            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtras.EditValue = ((object)(resources.GetObject("picAtras.EditValue")));
-            this.picAtras.Location = new System.Drawing.Point(0, 0);
-            this.picAtras.Name = "picAtras";
-            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtras.Properties.NullText = "   ";
-            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtras.Size = new System.Drawing.Size(80, 75);
-            this.picAtras.TabIndex = 19;
-            this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
             // 
             // lblTituloEncabezado
             // 
@@ -82,9 +64,9 @@
             this.lblTituloEncabezado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblTituloEncabezado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTituloEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTituloEncabezado.Location = new System.Drawing.Point(80, 0);
+            this.lblTituloEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblTituloEncabezado.Name = "lblTituloEncabezado";
-            this.lblTituloEncabezado.Size = new System.Drawing.Size(995, 75);
+            this.lblTituloEncabezado.Size = new System.Drawing.Size(1075, 75);
             this.lblTituloEncabezado.TabIndex = 9;
             // 
             // panel1
@@ -125,7 +107,6 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1085, 734);
             this.pnlEncabezado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,7 +116,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlEncabezado;
         private DevExpress.XtraEditors.LabelControl lblTituloEncabezado;
-        private DevExpress.XtraEditors.PictureEdit picAtras;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel TileDias;

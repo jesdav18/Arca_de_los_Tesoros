@@ -8,38 +8,36 @@ namespace Coordinadores_de_Edad.Controles
 {
     public partial class ctlPlanificadorTrimestralCoordinadorEdad : UserControl
     {
+
+        #region INICIALIZADOR
+ 
         public ctlPlanificadorTrimestralCoordinadorEdad()
         {
-            InitializeComponent();
-            ctlDiasTrimestre1.OnIrAtras += ctlDiasTrimestre1_OnIrAtras;
+            InitializeComponent();          
             ctlDiasTrimestre1.OnSeleccionaDia += ctlDiasTrimestre1_OnSeleccionaDia;
-            ctlSeleccionMaestros_Ayudas1.OnIrAtras += ctlSeleccionMaestros_Ayudas1_OnIrAtras;
+            ctlngresoActividad1.OnGuardarPlanificacion += ctlngresoActividad1_OnGuardarPlanificacion;  
         }
 
-        private void ctlDiasTrimestre1_OnSeleccionaDia(object sender, EventArgs e)
-        {
-            NavigationPrincipal.SelectedPage = pageSeleccionMaestros;
-            ctlSeleccionMaestros_Ayudas1.ConstruirControl(Pro_Conexion, 
-                                                          Pro_Usuario, 
-                                                          (string)sender,
-                                                          Pro_ID_AreaAtencion);           
-        }
+        #endregion
 
-        private void ctlSeleccionMaestros_Ayudas1_OnIrAtras(object sender, EventArgs e)
-        {
-            NavigationPrincipal.SelectedPage = pageDias;
-            
-        }
-
-        private void ctlDiasTrimestre1_OnIrAtras(object sender, EventArgs e)
-        {
-            NavigationPrincipal.SelectedPage = PageTrimestres;
-        }
-
+        #region PROPIEDADES
+  
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
         public string Pro_Anio { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
+        public int Pro_Trimestre { get; set; }
+
+
+        #endregion
+
+        #region VARIABLES GLOBALES
+
+        string v_dia_seleccionado;
+
+        #endregion
+
+        #region FUNCIONES
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                      string pUsuario,
@@ -52,51 +50,140 @@ namespace Coordinadores_de_Edad.Controles
             lblEncabezado.Text = "Planificador Trimestral Año " + Pro_Anio;
          
             NavigationPrincipal.SelectedPage = PageTrimestres;
+            pnlDesplazamiento.Visible = false;
            
+        }
 
+        private void IrAtras()
+        {
+            if (NavigationPrincipal.SelectedPage == pageDias)
+            {
+                NavigationPrincipal.SelectedPage = PageTrimestres;
+            }
+            else if (NavigationPrincipal.SelectedPage == pageSeleccionMaestros)
+            {
+                NavigationPrincipal.SelectedPage = pageDias;
+            }
+            else if (NavigationPrincipal.SelectedPage == pageSeleccionAyuda)
+            {
+                NavigationPrincipal.SelectedPage = pageSeleccionMaestros;
+            }
+            else if (NavigationPrincipal.SelectedPage == PageIngresoActividades)
+            {
+                NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
+            }
+        }
+
+        private void IrAdelante()
+        {      
+            if (NavigationPrincipal.SelectedPage == pageSeleccionMaestros)
+            {
+                NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
+            }
+            else if (NavigationPrincipal.SelectedPage == pageSeleccionAyuda)
+            {
+                NavigationPrincipal.SelectedPage = PageIngresoActividades;
+            }         
+        }
+
+        #endregion
+
+        #region EVENTOS CONTROLES
+
+        private void ctlngresoActividad1_OnGuardarPlanificacion(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctlDiasTrimestre1_OnSeleccionaDia(object sender, EventArgs e)
+        {
+            v_dia_seleccionado = (string)sender;
+
+            NavigationPrincipal.SelectedPage = pageSeleccionMaestros;
+            ctlSeleccionMaestros_Ayudas1.ConstruirControl(Pro_Conexion,
+                                                          Pro_Usuario,
+                                                          v_dia_seleccionado,
+                                                          Pro_ID_AreaAtencion);
         }
 
         private void CmdPrimerTrimestre_Click(object sender, EventArgs e)
         {
+            Pro_Trimestre = 1;
+
             NavigationPrincipal.SelectedPage = pageDias;
             ctlDiasTrimestre1.ConstruirControl(Pro_Conexion, 
                                                Pro_Usuario, 
                                                Pro_Anio, 
                                                "Primer Trimestre", 
-                                               1);
+                                               Pro_Trimestre);
         }
 
         private void CmdSegundoTrimestre_Click(object sender, EventArgs e)
         {
+            Pro_Trimestre = 2;
+
             NavigationPrincipal.SelectedPage = pageDias;
             ctlDiasTrimestre1.ConstruirControl(Pro_Conexion,
                                                Pro_Usuario,
                                                Pro_Anio,
                                                "Segundo Trimestre",
-                                               2);
+                                               Pro_Trimestre);
         }
 
         private void CmdTercerTrimestre_Click(object sender, EventArgs e)
         {
+            Pro_Trimestre = 3;
+
             NavigationPrincipal.SelectedPage = pageDias;
             ctlDiasTrimestre1.ConstruirControl(Pro_Conexion,
                                                Pro_Usuario,
                                                Pro_Anio,
                                                "Tercer Trimestre",
-                                               3);
+                                               Pro_Trimestre);
         }
 
         private void CmdCuartoTrimestre_Click(object sender, EventArgs e)
         {
+            Pro_Trimestre = 4;
+
             NavigationPrincipal.SelectedPage = pageDias;
             ctlDiasTrimestre1.ConstruirControl(Pro_Conexion,
                                                Pro_Usuario,
                                                Pro_Anio,
                                                "Cuarto Trimestre",
-                                               4);
+                                               Pro_Trimestre);
         }
 
-      
+        private void PicSiguiente_Click(object sender, EventArgs e)
+        {
+            IrAdelante();
+        }
 
+        private void PicAtras_Click(object sender, EventArgs e)
+        {
+            IrAtras();
+        }
+
+        private void NavigationPrincipal_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        {
+            if (NavigationPrincipal.SelectedPage == PageTrimestres)
+            {
+                pnlDesplazamiento.Visible = false;
+            }
+            else
+            {
+                pnlDesplazamiento.Visible = true;
+                if (NavigationPrincipal.SelectedPage == pageDias || NavigationPrincipal.SelectedPage == PageIngresoActividades)
+                {
+                    picSiguiente.Visible = false;
+                }
+                else
+                {
+                    picSiguiente.Visible = true;
+                }
+            }
+        }
+
+        #endregion
     }
 }

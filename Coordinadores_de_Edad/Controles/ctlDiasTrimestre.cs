@@ -7,15 +7,31 @@ namespace Coordinadores_de_Edad.Controles
 {
     public partial class ctlDiasTrimestre : UserControl
     {
+        #region INICIALIZADOR
+
         public ctlDiasTrimestre()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region PROPIEDADES
+
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
         public string Pro_Anio { get; set; }
         public int Pro_NumeroTrimestre { get; set; }
+
+        #endregion
+
+        #region EVENTOS
+
+        public event EventHandler OnSeleccionaDia;
+
+        #endregion
+
+        #region FUNCIONES
 
         public void ConstruirControl(PgSqlConnection pConexion, 
                                       string pUsuario,
@@ -79,17 +95,16 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
-        public event EventHandler OnSeleccionaDia;
+        #endregion
 
+        #region EVENTOS CONTROLES
+ 
         private void v_item_dia_selecciona_dia(object sender, EventArgs e)
         {
             OnSeleccionaDia?.Invoke(sender, e);
         }
 
-        public event EventHandler OnIrAtras;
-        private void PicAtras_Click(object sender, EventArgs e)
-        {
-            OnIrAtras?.Invoke(sender, e);
-        }
+        #endregion
+
     }
 }
