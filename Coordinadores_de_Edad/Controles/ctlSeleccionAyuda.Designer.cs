@@ -43,6 +43,8 @@
             this.colid_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_identidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdGuardarEnListaAsistencia = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.pnlEncabezado.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).BeginInit();
@@ -50,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarEnListaAsistencia)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -75,6 +78,7 @@
             this.lblEncabezado.Size = new System.Drawing.Size(875, 75);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Seleccion Ayudas día X";
+            
             // 
             // panel2
             // 
@@ -145,6 +149,8 @@
             this.gcMaestrosDisponibles.Location = new System.Drawing.Point(5, 200);
             this.gcMaestrosDisponibles.MainView = this.gvMestrosDisponibles;
             this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
+            this.gcMaestrosDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdGuardarEnListaAsistencia});
             this.gcMaestrosDisponibles.Size = new System.Drawing.Size(875, 425);
             this.gcMaestrosDisponibles.TabIndex = 24;
             this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -164,13 +170,17 @@
             this.gvMestrosDisponibles.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid_colaborador,
             this.colnombre,
-            this.colnumero_identidad});
+            this.colnumero_identidad,
+            this.colseleccionar});
             this.gvMestrosDisponibles.GridControl = this.gcMaestrosDisponibles;
             this.gvMestrosDisponibles.Name = "gvMestrosDisponibles";
             this.gvMestrosDisponibles.OptionsView.ShowGroupPanel = false;
+            this.gvMestrosDisponibles.OptionsView.ShowIndicator = false;
             // 
             // colid_colaborador
             // 
+            this.colid_colaborador.AppearanceHeader.Options.UseTextOptions = true;
+            this.colid_colaborador.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colid_colaborador.FieldName = "id_colaborador";
             this.colid_colaborador.MinWidth = 25;
             this.colid_colaborador.Name = "colid_colaborador";
@@ -196,6 +206,27 @@
             this.colnumero_identidad.VisibleIndex = 0;
             this.colnumero_identidad.Width = 94;
             // 
+            // colseleccionar
+            // 
+            this.colseleccionar.Caption = "Seleccionar";
+            this.colseleccionar.ColumnEdit = this.cmdGuardarEnListaAsistencia;
+            this.colseleccionar.FieldName = "seleccionar";
+            this.colseleccionar.MaxWidth = 130;
+            this.colseleccionar.MinWidth = 130;
+            this.colseleccionar.Name = "colseleccionar";
+            this.colseleccionar.Visible = true;
+            this.colseleccionar.VisibleIndex = 2;
+            this.colseleccionar.Width = 130;
+            // 
+            // cmdGuardarEnListaAsistencia
+            // 
+            this.cmdGuardarEnListaAsistencia.AutoHeight = false;
+            this.cmdGuardarEnListaAsistencia.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            this.cmdGuardarEnListaAsistencia.Name = "cmdGuardarEnListaAsistencia";
+            this.cmdGuardarEnListaAsistencia.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdGuardarEnListaAsistencia.Click += new System.EventHandler(this.CmdGuardarEnListaAsistencia_Click);
+            // 
             // ctlSeleccionAyuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarEnListaAsistencia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,5 +269,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnombre;
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad;
         private DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
+        private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdGuardarEnListaAsistencia;
     }
 }

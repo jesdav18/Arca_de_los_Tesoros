@@ -18,15 +18,17 @@
               <xs:element name="id_colaborador" msprop:Generator_ColumnVarNameInTable="columnid_colaborador" msprop:Generator_ColumnPropNameInRow="id_colaborador" msprop:Generator_ColumnPropNameInTable="id_colaboradorColumn" msprop:Generator_UserColumnName="id_colaborador" type="xs:int" minOccurs="0" />
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
               <xs:element name="numero_identidad" msprop:Generator_ColumnVarNameInTable="columnnumero_identidad" msprop:Generator_ColumnPropNameInRow="numero_identidad" msprop:Generator_ColumnPropNameInTable="numero_identidadColumn" msprop:Generator_UserColumnName="numero_identidad" type="xs:string" minOccurs="0" />
+              <xs:element name="seleccionar" msprop:Generator_ColumnVarNameInTable="columnseleccionar" msprop:Generator_ColumnPropNameInRow="seleccionar" msprop:Generator_ColumnPropNameInTable="seleccionarColumn" msprop:Generator_UserColumnName="seleccionar" type="xs:anyType" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="dtAyudasDisponibles" msprop:Generator_TableClassName="dtAyudasDisponiblesDataTable" msprop:Generator_TableVarName="tabledtAyudasDisponibles" msprop:Generator_TablePropName="dtAyudasDisponibles" msprop:Generator_RowDeletingName="dtAyudasDisponiblesRowDeleting" msprop:Generator_RowChangingName="dtAyudasDisponiblesRowChanging" msprop:Generator_RowEvHandlerName="dtAyudasDisponiblesRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAyudasDisponiblesRowDeleted" msprop:Generator_UserTableName="dtAyudasDisponibles" msprop:Generator_RowChangedName="dtAyudasDisponiblesRowChanged" msprop:Generator_RowEvArgName="dtAyudasDisponiblesRowChangeEvent" msprop:Generator_RowClassName="dtAyudasDisponiblesRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_colaborador" msprop:Generator_ColumnVarNameInTable="columnid_colaborador" msprop:Generator_ColumnPropNameInRow="id_colaborador" msprop:Generator_ColumnPropNameInTable="id_colaboradorColumn" msprop:Generator_UserColumnName="id_colaborador" type="xs:string" minOccurs="0" />
+              <xs:element name="id_colaborador" msprop:Generator_ColumnVarNameInTable="columnid_colaborador" msprop:Generator_ColumnPropNameInRow="id_colaborador" msprop:Generator_ColumnPropNameInTable="id_colaboradorColumn" msprop:Generator_UserColumnName="id_colaborador" type="xs:int" minOccurs="0" />
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
               <xs:element name="numero_identidad" msprop:Generator_ColumnVarNameInTable="columnnumero_identidad" msprop:Generator_ColumnPropNameInRow="numero_identidad" msprop:Generator_ColumnPropNameInTable="numero_identidadColumn" msprop:Generator_UserColumnName="numero_identidad" type="xs:string" minOccurs="0" />
+              <xs:element name="seleccionar" msprop:Generator_ColumnVarNameInTable="columnseleccionar" msprop:Generator_ColumnPropNameInRow="seleccionar" msprop:Generator_ColumnPropNameInTable="seleccionarColumn" msprop:Generator_UserColumnName="seleccionar" type="xs:anyType" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

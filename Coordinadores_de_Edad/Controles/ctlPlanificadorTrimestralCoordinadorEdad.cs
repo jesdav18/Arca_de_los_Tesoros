@@ -15,7 +15,7 @@ namespace Coordinadores_de_Edad.Controles
         {
             InitializeComponent();          
             ctlDiasTrimestre1.OnSeleccionaDia += ctlDiasTrimestre1_OnSeleccionaDia;
-            ctlngresoActividad1.OnGuardarPlanificacion += ctlngresoActividad1_OnGuardarPlanificacion;  
+           
         }
 
         #endregion
@@ -27,7 +27,7 @@ namespace Coordinadores_de_Edad.Controles
         public string Pro_Anio { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
         public int Pro_Trimestre { get; set; }
-
+       
 
         #endregion
 
@@ -79,10 +79,20 @@ namespace Coordinadores_de_Edad.Controles
             if (NavigationPrincipal.SelectedPage == pageSeleccionMaestros)
             {
                 NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
-            }
+                ctlSeleccionAyuda1.ConstruirControl(Pro_Conexion,
+                                                    Pro_Usuario,
+                                                    v_dia_seleccionado,
+                                                    ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
+                                                    Pro_ID_AreaAtencion
+                                                    );
+
+            }   
             else if (NavigationPrincipal.SelectedPage == pageSeleccionAyuda)
             {
                 NavigationPrincipal.SelectedPage = PageIngresoActividades;
+                ctlngresoActividad1.ConstruirControl(Pro_Conexion,
+                                                     ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
+                                                     v_dia_seleccionado);
             }         
         }
 
@@ -90,10 +100,7 @@ namespace Coordinadores_de_Edad.Controles
 
         #region EVENTOS CONTROLES
 
-        private void ctlngresoActividad1_OnGuardarPlanificacion(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void ctlDiasTrimestre1_OnSeleccionaDia(object sender, EventArgs e)
         {
@@ -103,6 +110,7 @@ namespace Coordinadores_de_Edad.Controles
             ctlSeleccionMaestros_Ayudas1.ConstruirControl(Pro_Conexion,
                                                           Pro_Usuario,
                                                           v_dia_seleccionado,
+                                                          ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
                                                           Pro_ID_AreaAtencion);
         }
 
@@ -115,7 +123,8 @@ namespace Coordinadores_de_Edad.Controles
                                                Pro_Usuario, 
                                                Pro_Anio, 
                                                "Primer Trimestre", 
-                                               Pro_Trimestre);
+                                               Pro_Trimestre,
+                                               Pro_ID_AreaAtencion);
         }
 
         private void CmdSegundoTrimestre_Click(object sender, EventArgs e)
@@ -127,7 +136,8 @@ namespace Coordinadores_de_Edad.Controles
                                                Pro_Usuario,
                                                Pro_Anio,
                                                "Segundo Trimestre",
-                                               Pro_Trimestre);
+                                               Pro_Trimestre,
+                                               Pro_ID_AreaAtencion);
         }
 
         private void CmdTercerTrimestre_Click(object sender, EventArgs e)
@@ -139,7 +149,8 @@ namespace Coordinadores_de_Edad.Controles
                                                Pro_Usuario,
                                                Pro_Anio,
                                                "Tercer Trimestre",
-                                               Pro_Trimestre);
+                                               Pro_Trimestre,
+                                               Pro_ID_AreaAtencion);
         }
 
         private void CmdCuartoTrimestre_Click(object sender, EventArgs e)
@@ -151,7 +162,8 @@ namespace Coordinadores_de_Edad.Controles
                                                Pro_Usuario,
                                                Pro_Anio,
                                                "Cuarto Trimestre",
-                                               Pro_Trimestre);
+                                               Pro_Trimestre,
+                                               Pro_ID_AreaAtencion);
         }
 
         private void PicSiguiente_Click(object sender, EventArgs e)

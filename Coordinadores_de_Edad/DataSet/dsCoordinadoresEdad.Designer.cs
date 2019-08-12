@@ -320,6 +320,8 @@ namespace Coordinadores_de_Edad.DataSet {
             
             private global::System.Data.DataColumn columnnumero_identidad;
             
+            private global::System.Data.DataColumn columnseleccionar;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtMaestrosDisponiblesDataTable() {
@@ -379,6 +381,14 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionarColumn {
+                get {
+                    return this.columnseleccionar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -414,12 +424,13 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtMaestrosDisponiblesRow AdddtMaestrosDisponiblesRow(int id_colaborador, string nombre, string numero_identidad) {
+            public dtMaestrosDisponiblesRow AdddtMaestrosDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, object seleccionar) {
                 dtMaestrosDisponiblesRow rowdtMaestrosDisponiblesRow = ((dtMaestrosDisponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
                         nombre,
-                        numero_identidad};
+                        numero_identidad,
+                        seleccionar};
                 rowdtMaestrosDisponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtMaestrosDisponiblesRow);
                 return rowdtMaestrosDisponiblesRow;
@@ -445,6 +456,7 @@ namespace Coordinadores_de_Edad.DataSet {
                 this.columnid_colaborador = base.Columns["id_colaborador"];
                 this.columnnombre = base.Columns["nombre"];
                 this.columnnumero_identidad = base.Columns["numero_identidad"];
+                this.columnseleccionar = base.Columns["seleccionar"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,6 +468,8 @@ namespace Coordinadores_de_Edad.DataSet {
                 base.Columns.Add(this.columnnombre);
                 this.columnnumero_identidad = new global::System.Data.DataColumn("numero_identidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_identidad);
+                this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(object), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionar);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -595,6 +609,8 @@ namespace Coordinadores_de_Edad.DataSet {
             
             private global::System.Data.DataColumn columnnumero_identidad;
             
+            private global::System.Data.DataColumn columnseleccionar;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtAyudasDisponiblesDataTable() {
@@ -654,6 +670,14 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionarColumn {
+                get {
+                    return this.columnseleccionar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -689,12 +713,13 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtAyudasDisponiblesRow AdddtAyudasDisponiblesRow(string id_colaborador, string nombre, string numero_identidad) {
+            public dtAyudasDisponiblesRow AdddtAyudasDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, object seleccionar) {
                 dtAyudasDisponiblesRow rowdtAyudasDisponiblesRow = ((dtAyudasDisponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
                         nombre,
-                        numero_identidad};
+                        numero_identidad,
+                        seleccionar};
                 rowdtAyudasDisponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtAyudasDisponiblesRow);
                 return rowdtAyudasDisponiblesRow;
@@ -720,17 +745,20 @@ namespace Coordinadores_de_Edad.DataSet {
                 this.columnid_colaborador = base.Columns["id_colaborador"];
                 this.columnnombre = base.Columns["nombre"];
                 this.columnnumero_identidad = base.Columns["numero_identidad"];
+                this.columnseleccionar = base.Columns["seleccionar"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid_colaborador = new global::System.Data.DataColumn("id_colaborador", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnid_colaborador = new global::System.Data.DataColumn("id_colaborador", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_colaborador);
                 this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre);
                 this.columnnumero_identidad = new global::System.Data.DataColumn("numero_identidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_identidad);
+                this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(object), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionar);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -923,6 +951,23 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public object seleccionar {
+                get {
+                    try {
+                        return ((object)(this[this.tabledtMaestrosDisponibles.seleccionarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionar\' de la tabla \'dtMaestrosDisponibles\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMaestrosDisponibles.seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_colaboradorNull() {
                 return this.IsNull(this.tabledtMaestrosDisponibles.id_colaboradorColumn);
             }
@@ -956,6 +1001,18 @@ namespace Coordinadores_de_Edad.DataSet {
             public void Setnumero_identidadNull() {
                 this[this.tabledtMaestrosDisponibles.numero_identidadColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionarNull() {
+                return this.IsNull(this.tabledtMaestrosDisponibles.seleccionarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionarNull() {
+                this[this.tabledtMaestrosDisponibles.seleccionarColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -974,10 +1031,10 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id_colaborador {
+            public int id_colaborador {
                 get {
                     try {
-                        return ((string)(this[this.tabledtAyudasDisponibles.id_colaboradorColumn]));
+                        return ((int)(this[this.tabledtAyudasDisponibles.id_colaboradorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'id_colaborador\' de la tabla \'dtAyudasDisponibles\' es DBNu" +
@@ -1024,6 +1081,23 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public object seleccionar {
+                get {
+                    try {
+                        return ((object)(this[this.tabledtAyudasDisponibles.seleccionarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionar\' de la tabla \'dtAyudasDisponibles\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtAyudasDisponibles.seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_colaboradorNull() {
                 return this.IsNull(this.tabledtAyudasDisponibles.id_colaboradorColumn);
             }
@@ -1056,6 +1130,18 @@ namespace Coordinadores_de_Edad.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setnumero_identidadNull() {
                 this[this.tabledtAyudasDisponibles.numero_identidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionarNull() {
+                return this.IsNull(this.tabledtAyudasDisponibles.seleccionarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionarNull() {
+                this[this.tabledtAyudasDisponibles.seleccionarColumn] = global::System.Convert.DBNull;
             }
         }
         

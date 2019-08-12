@@ -31,17 +31,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
-            this.txtSegundoNombre = new DevExpress.XtraEditors.TextEdit();
+            this.txtVersiculo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
+            this.txtClase = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.memoDireccion = new DevExpress.XtraEditors.MemoEdit();
+            this.memoTema = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdGuardarPlanificacion = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoDireccion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVersiculo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoTema.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarPlanificacion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,14 +78,14 @@
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Ingrese Actividades para dia X";
             // 
-            // txtSegundoNombre
+            // txtVersiculo
             // 
-            this.txtSegundoNombre.Location = new System.Drawing.Point(189, 528);
-            this.txtSegundoNombre.Name = "txtSegundoNombre";
-            this.txtSegundoNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.Properties.Appearance.Options.UseFont = true;
-            this.txtSegundoNombre.Size = new System.Drawing.Size(374, 38);
-            this.txtSegundoNombre.TabIndex = 28;
+            this.txtVersiculo.Location = new System.Drawing.Point(189, 528);
+            this.txtVersiculo.Name = "txtVersiculo";
+            this.txtVersiculo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVersiculo.Properties.Appearance.Options.UseFont = true;
+            this.txtVersiculo.Size = new System.Drawing.Size(374, 38);
+            this.txtVersiculo.TabIndex = 28;
             // 
             // labelControl1
             // 
@@ -101,14 +101,14 @@
             this.labelControl1.TabIndex = 29;
             this.labelControl1.Text = "Versículo";
             // 
-            // txtNombre
+            // txtClase
             // 
-            this.txtNombre.Location = new System.Drawing.Point(189, 194);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Properties.Appearance.Options.UseFont = true;
-            this.txtNombre.Size = new System.Drawing.Size(368, 38);
-            this.txtNombre.TabIndex = 27;
+            this.txtClase.Location = new System.Drawing.Point(189, 194);
+            this.txtClase.Name = "txtClase";
+            this.txtClase.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClase.Properties.Appearance.Options.UseFont = true;
+            this.txtClase.Size = new System.Drawing.Size(368, 38);
+            this.txtClase.TabIndex = 27;
             // 
             // labelControl2
             // 
@@ -124,14 +124,14 @@
             this.labelControl2.TabIndex = 26;
             this.labelControl2.Text = "Clase";
             // 
-            // memoDireccion
+            // memoTema
             // 
-            this.memoDireccion.Location = new System.Drawing.Point(189, 309);
-            this.memoDireccion.Name = "memoDireccion";
-            this.memoDireccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memoDireccion.Properties.Appearance.Options.UseFont = true;
-            this.memoDireccion.Size = new System.Drawing.Size(602, 147);
-            this.memoDireccion.TabIndex = 30;
+            this.memoTema.Location = new System.Drawing.Point(189, 309);
+            this.memoTema.Name = "memoTema";
+            this.memoTema.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memoTema.Properties.Appearance.Options.UseFont = true;
+            this.memoTema.Size = new System.Drawing.Size(602, 147);
+            this.memoTema.TabIndex = 30;
             // 
             // labelControl3
             // 
@@ -167,10 +167,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cmdGuardarPlanificacion);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.memoDireccion);
-            this.Controls.Add(this.txtSegundoNombre);
+            this.Controls.Add(this.memoTema);
+            this.Controls.Add(this.txtVersiculo);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtClase);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlEncabezado);
@@ -178,9 +178,9 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(967, 767);
             this.pnlEncabezado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSegundoNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoDireccion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVersiculo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoTema.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarPlanificacion.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -191,11 +191,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlEncabezado;
         private DevExpress.XtraEditors.LabelControl lblEncabezado;
-        private DevExpress.XtraEditors.TextEdit txtSegundoNombre;
+        private DevExpress.XtraEditors.TextEdit txtVersiculo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtNombre;
+        private DevExpress.XtraEditors.TextEdit txtClase;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.MemoEdit memoDireccion;
+        private DevExpress.XtraEditors.MemoEdit memoTema;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.PictureEdit cmdGuardarPlanificacion;
     }
