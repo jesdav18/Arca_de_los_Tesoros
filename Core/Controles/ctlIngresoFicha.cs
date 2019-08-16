@@ -3,7 +3,8 @@ using System.Data;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
-
+using System.Configuration;
+using DevExpress.XtraEditors;
 
 namespace Core.Controles
 {
@@ -14,17 +15,56 @@ namespace Core.Controles
             InitializeComponent();
         }
 
-        public PgSqlConnection Pro_Conexion { get; set; }
-        public string Pro_Usuario { get; set; }
+        private PgSqlConnection Pro_Conexion { get; set; }
+        private string Pro_Usuario { get; set; }
+        private bool Pro_UsarUpperCase {
+            get
+            {
+                return v_usar_upper_case;
+            }
+            set
+            {
+                v_usar_upper_case = value;
+                if (v_usar_upper_case)
+                {
+                    txtNombre.Properties.CharacterCasing = CharacterCasing.Upper;
+                    txtSegundoNombre.Properties.CharacterCasing = CharacterCasing.Upper;
+                    txtApellido.Properties.CharacterCasing = CharacterCasing.Upper;
+                    txtSegundoApellido.Properties.CharacterCasing = CharacterCasing.Upper;
+                    memoDireccion.Properties.CharacterCasing = CharacterCasing.Upper;
+                    txtCargoEnEmpresa.Properties.CharacterCasing = CharacterCasing.Upper;
+                    txtEstadoProfesional.Properties.CharacterCasing = CharacterCasing.Upper;
+                    txtNivelEducativo.Properties.CharacterCasing = CharacterCasing.Upper;
+                    txtOtrosEquiposPrivilegio.Properties.CharacterCasing = CharacterCasing.Upper;
+                }
+                else
+                {
+                    txtNombre.Properties.CharacterCasing = CharacterCasing.Normal;
+                    txtSegundoNombre.Properties.CharacterCasing = CharacterCasing.Normal;
+                    txtApellido.Properties.CharacterCasing = CharacterCasing.Normal;
+                    txtSegundoApellido.Properties.CharacterCasing = CharacterCasing.Normal;
+                    memoDireccion.Properties.CharacterCasing = CharacterCasing.Normal;
+                    txtCargoEnEmpresa.Properties.CharacterCasing = CharacterCasing.Normal;
+                    txtEstadoProfesional.Properties.CharacterCasing = CharacterCasing.Normal;
+                    txtNivelEducativo.Properties.CharacterCasing = CharacterCasing.Normal;
+                    txtOtrosEquiposPrivilegio.Properties.CharacterCasing = CharacterCasing.Normal;
+                }
+            }
+        }
 
-        public void ConstruirControl(PgSqlConnection pConexion, string pUsuario)
+        bool v_usar_upper_case;
+
+        public void ConstruirControl(PgSqlConnection pConexion, 
+                                     string pUsuario
+                                     )
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
 
+            Pro_UsarUpperCase = Convert.ToBoolean(ConfigurationSettings.AppSettings["USAR_UPPER_CASE"]);
+
             txtNombre.Focus();
-
-
+            picAtras.Visible = false;
 
             if (! bgCargarConfiguraciones.IsBusy)
             {
@@ -73,7 +113,8 @@ namespace Core.Controles
                                                                                               :p_id_empresa,
                                                                                               :p_cargo_en_empresa,  
                                                                                               :p_telefono_empresa,
-                                                                                              :p_equipo_arca_tesoros
+                                                                                              :p_equipo_arca_tesoros,
+                                                                                              :p_ruta_imagen
                                                                                             )";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_nombre", PgSqlType.VarChar).Value = txtNombre.Text;
@@ -125,6 +166,7 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_cargo_en_empresa", PgSqlType.VarChar).Value = txtCargoEnEmpresa.Text;
             pgComando.Parameters.Add("p_telefono_empresa", PgSqlType.VarChar).Value = txtTelefonoEmpresa.Text;
             pgComando.Parameters.Add("p_equipo_arca_tesoros", PgSqlType.VarChar).Value = glEquipoArcaTesoros.EditValue;
+            pgComando.Parameters.Add("p_ruta_imagen", PgSqlType.VarChar).Value = lnlCargarFotografia.Text;
 
             PgSqlTransaction pgTrans = Pro_Conexion.BeginTransaction();
             try
@@ -168,13 +210,12 @@ namespace Core.Controles
            txtNivelEducativo.Text = "";
            txtOtrosEquiposPrivilegio.Text = "";
            txtTelefonoEmpresa.Text = "";
-            txtCargoEnEmpresa.Text = "";
+           txtCargoEnEmpresa.Text = "";
            memoDireccion.Text = "";
             txtTelefonoFijo.Text = "";
             txtCelular.Text = "";
             txtCorreoElectronico.Text = "";
          
-
            radioFemenino.Checked = false;
            radioMasculino.Checked = false;
            radioBautismoEspirituSi.Checked = false;
@@ -201,33 +242,8 @@ namespace Core.Controles
            glStatusDoctrinal.Text = "";
             glEmpresa.Text = "";
          
-
         }
-
-        private bool ValidacionCajasTexto()
-        {
-
-            if (txtNombre.Text != "" && 
-                txtApellido.Text != "" && 
-                txtIdentidad.Text != "" && 
-                memoDireccion.Text != "" &&
-                (radioFemenino.Checked != false || radioMasculino.Checked != false) &&
-                (radioBautismoEspirituSi.Checked != false || radioBautismoEspirituNo.Checked != false) &&
-                dateFechaNacimiento.Text != "" &&
-                dateFechaIngresoIglesia.Text != "" &&
-                dateFechaConversion.Text != "" &&
-                glPaisNacimiento.Text != "" &&
-                glEstadosCiviles.Text != ""
-            )
-            {
-                return true;
-            }
-            else {
-                return false;
-            }
-
-        }
-
+      
         private void CargarDatosTipoSangre() {
 
             if (Pro_Conexion.State != ConnectionState.Open)
@@ -474,7 +490,7 @@ namespace Core.Controles
 
         private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
         {
-            if (ValidacionCajasTexto())
+            if ((ValidacionCampos()))
             {
                 GuardarFichaIngreso();
             }
@@ -494,129 +510,260 @@ namespace Core.Controles
 
         public void IrAtras()
         {
-
             if (NavigationFicha.SelectedPage == Page2)
             {
-                NavigationFicha.SelectedPage = Page1;
-                txtNombre.Focus();
-                lblEncabezado.Text = "Datos Generales";
-                lblPagina.Text = "1 de 8";
+                NavigationFicha.SelectedPage = Page1;              
             }
             else if (NavigationFicha.SelectedPage == Page3)
             {               
-                NavigationFicha.SelectedPage = Page2;
-                txtIdentidad.Focus();
-                lblEncabezado.Text = "Datos Generales";
-                lblPagina.Text = "2 de 8";
+                NavigationFicha.SelectedPage = Page2;              
             }
             else if (NavigationFicha.SelectedPage == Page4)
             {
-                NavigationFicha.SelectedPage = Page3;
-                txtTelefonoFijo.Focus();
-                lblEncabezado.Text = "Datos Generales";
-                lblPagina.Text = "3 de 8";
+                NavigationFicha.SelectedPage = Page3;               
             }
             else if (NavigationFicha.SelectedPage == Page5)
             {
-
-                NavigationFicha.SelectedPage = Page4;
-                glEstadosCiviles.Focus();
-                lblEncabezado.Text = "Datos Generales";
-                lblPagina.Text = "4 de 8";
+                NavigationFicha.SelectedPage = Page4;              
             }
             else if (NavigationFicha.SelectedPage == Page6)
             {
-                NavigationFicha.SelectedPage = Page5;
-                glEmpresa.Focus();
-                lblEncabezado.Text = "Datos Laborales y Educativos";
-                lblPagina.Text = "5 de 8";
+                NavigationFicha.SelectedPage = Page5;              
             }
             else if (NavigationFicha.SelectedPage == Page7)
             {               
-                NavigationFicha.SelectedPage = Page6;
-                dateFechaConversion.Focus();
-                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-                lblPagina.Text = "6 de 8";
+                NavigationFicha.SelectedPage = Page6;              
             }
             else if (NavigationFicha.SelectedPage == Page8)
             {               
-                NavigationFicha.SelectedPage = Page7;
-                glStatusDoctrinal.Focus();
-                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-                lblPagina.Text = "7 de 8";
-            }
-            
+                NavigationFicha.SelectedPage = Page7;                
+            }           
         }
 
         public void IrAdelante()
         {
+            if (ValidacionCampos())
+            {
+                if (NavigationFicha.SelectedPage == Page1)
+                {
+                    NavigationFicha.SelectedPage = Page2;
+                }
+                else if (NavigationFicha.SelectedPage == Page2)
+                {
+                    NavigationFicha.SelectedPage = Page3;
+                    if (radioFemenino.Checked || radioMasculino.Checked)
+                    {
+                        CargarEstadosCiviles();
+                    }
+                }
+                else if (NavigationFicha.SelectedPage == Page3)
+                {
+                    NavigationFicha.SelectedPage = Page4;
+                }
+                else if (NavigationFicha.SelectedPage == Page4)
+                {
+                    NavigationFicha.SelectedPage = Page5;
+                }
+                else if (NavigationFicha.SelectedPage == Page5)
+                {
+                    NavigationFicha.SelectedPage = Page6;
+                }
+                else if (NavigationFicha.SelectedPage == Page6)
+                {
+                    NavigationFicha.SelectedPage = Page7;
+                }
+                else if (NavigationFicha.SelectedPage == Page7)
+                {
+                    NavigationFicha.SelectedPage = Page8;
+                }
+            }        
+        }
+
+        private bool ValidacionCampos()
+        {
             if (NavigationFicha.SelectedPage == Page1)
             {
-                NavigationFicha.SelectedPage = Page2;
-                txtIdentidad.Focus();
-                lblEncabezado.Text = "Datos Generales";
-                lblPagina.Text = "2 de 8";
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor Ingrese el primer nombre del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else if (string.IsNullOrEmpty(txtApellido.Text))
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor Ingrese el primer apellido del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }            
             }
             else if (NavigationFicha.SelectedPage == Page2)
             {
-                NavigationFicha.SelectedPage = Page3;
-                txtTelefonoFijo.Focus();
-                lblEncabezado.Text = "Datos Generales";
-                lblPagina.Text = "3 de 8";
-
-                if (radioFemenino.Checked || radioMasculino.Checked)
+                if (string.IsNullOrEmpty(txtIdentidad.Text))
                 {
-                    CargarEstadosCiviles();
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor Ingrese el número identidad del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else if (!radioMasculino.Checked && !radioFemenino.Checked)
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor seleccione género del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else if (dateFechaNacimiento.EditValue == null)
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor seleccione fecha nacimiento del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else if (glPaisNacimiento.EditValue == null)
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor seleccione pais nacimiento del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else
+                {
+                    return true;
                 }
 
             }
             else if (NavigationFicha.SelectedPage == Page3)
             {
-                NavigationFicha.SelectedPage = Page4;
-                glEstadosCiviles.Focus();
-                lblEncabezado.Text = "Datos Generales";
-                lblPagina.Text = "4 de 8";
+                if (string.IsNullOrEmpty(memoDireccion.Text))
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor ingrese dirección domicilio del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else if (NavigationFicha.SelectedPage == Page4)
             {
-                NavigationFicha.SelectedPage = Page5;
-                glEmpresa.Focus();
-                lblEncabezado.Text = "Datos Laborales y Educativos";
-                lblPagina.Text = "5 de 8";
+                if (glEstadosCiviles.EditValue == null)
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor seleccione el estado civil del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            else if (NavigationFicha.SelectedPage == Page5)
+            else if (NavigationFicha.SelectedPage == Page8)
             {
-                NavigationFicha.SelectedPage = Page6;
-                dateFechaConversion.Focus();
-                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-                lblPagina.Text = "6 de 8";
-
+                if (lnlCargarFotografia.Text == "Cargar Fotografía")
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor cargue la fotografía del colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            else if (NavigationFicha.SelectedPage == Page6)
+            else
             {
-                NavigationFicha.SelectedPage = Page7;
-                glStatusDoctrinal.Focus ();
-                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-                lblPagina.Text = "7 de 8";
-            }
-            else if (NavigationFicha.SelectedPage == Page7)
-            {
-               
-                NavigationFicha.SelectedPage = Page8;
-                glEdadArea.Focus();
-                lblEncabezado.Text = "Datos de Establecimiento en la Iglesia";
-                lblPagina.Text = "8 de 8";
+                return true;
             }
         }
 
         private void PicSiguiente_Click(object sender, EventArgs e)
-        {
-            IrAdelante();
+        { 
+           IrAdelante();   
         }
 
         private void PicAtras_Click(object sender, EventArgs e)
         {
             IrAtras();
+        }
+
+        private void PicCargarFotografia_Click(object sender, EventArgs e)
+        {
+            fileDialogCargarFotografia.Filter = ConfigurationManager.AppSettings["FILTRO_IMAGENES_COLABORADOR"];
+
+            if (fileDialogCargarFotografia.ShowDialog() == DialogResult.OK)
+            {
+                lnlCargarFotografia.Text = fileDialogCargarFotografia.InitialDirectory + fileDialogCargarFotografia.FileName;
+            }
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }  
+        }
+
+        private void NavigationFicha_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        {
+            picAtras.Visible = true;
+            picSiguiente.Visible = true;
+
+
+            if (NavigationFicha.SelectedPage == Page1)
+            {
+                picAtras.Visible = false;
+                txtNombre.Focus();
+                lblEncabezado.Text = "Ingrese Datos Generales";
+                lblPagina.Text = "1 de 8";
+            } 
+            else if (NavigationFicha.SelectedPage == Page2)
+            {
+                txtIdentidad.Focus();
+                lblEncabezado.Text = "Ingrese Datos Generales";
+                lblPagina.Text = "2 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page3)
+            {
+                txtTelefonoFijo.Focus();
+                lblEncabezado.Text = "Ingrese Datos Generales";
+                lblPagina.Text = "3 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page4)
+            {
+                glEstadosCiviles.Focus();
+                lblEncabezado.Text = "Ingrese Datos Generales";
+                lblPagina.Text = "4 de 8";
+
+            }
+            else if (NavigationFicha.SelectedPage == Page5)
+            {
+                glEmpresa.Focus();
+                lblEncabezado.Text = "Ingrese Datos Laborales y Educativos";
+                lblPagina.Text = "5 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page6)
+            {
+                dateFechaConversion.Focus();
+                lblEncabezado.Text = "Ingrese Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "6 de 8";
+            }
+            else if (NavigationFicha.SelectedPage == Page7)
+            {
+               
+                glStatusDoctrinal.Focus();
+                lblEncabezado.Text = "Ingrese Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "7 de 8";
+
+            }
+            else if (NavigationFicha.SelectedPage == Page8)
+            {
+                glEdadArea.Focus();
+                lblEncabezado.Text = "Ingrese Datos de Establecimiento en la Iglesia";
+                lblPagina.Text = "8 de 8";
+                picSiguiente.Visible = false;
+            }
+
         }
     }
 }

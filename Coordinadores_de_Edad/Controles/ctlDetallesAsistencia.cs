@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Coordinadores_de_Edad.Controles
 {
-    public partial class ctlCubrirAusencias : UserControl
+    public partial class ctlDetallesAsistencia : UserControl
     {
-        public ctlCubrirAusencias()
+        public ctlDetallesAsistencia()
         {
             InitializeComponent();
-        }
-
-        private void PnlBusquedaAyudas_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

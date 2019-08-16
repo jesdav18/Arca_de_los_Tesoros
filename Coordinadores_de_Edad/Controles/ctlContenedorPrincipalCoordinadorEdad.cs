@@ -15,6 +15,8 @@ namespace Coordinadores_de_Edad.Controles
 
         public PgSqlConnection Pro_Conexion { get; set; }
         public Usuario Pro_Usuario { get; set; }
+
+        public event EventHandler OnCerrarSesion;
         
 
         private void PicAgregarUsuario_Click(object sender, EventArgs e)
@@ -37,14 +39,15 @@ namespace Coordinadores_de_Edad.Controles
 
         private void CmdCerrarSesion_Click(object sender, EventArgs e)
         {
-
+            OnCerrarSesion?.Invoke(sender, e);
         }
 
         private void CmdIngresarSolicitudes_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = pageIngresoSolicitudes;
-            ctlIngresoSolicitudesCordinadorEdad1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_ID_Colaborador);
+            ctlIngresoSolicitudesCordinadorEdad1.ConstruirControl(Pro_Conexion, 
+                                                                  Pro_Usuario.Pro_ID_Colaborador);
             splashScreenManager1.CloseWaitForm();
         }
 
@@ -58,7 +61,11 @@ namespace Coordinadores_de_Edad.Controles
 
         private void CmdListaAsistencia_Click(object sender, EventArgs e)
         {
-
+            splashScreenManager1.ShowWaitForm();
+            NavigationCoordinadorEdad.SelectedPage = PageAsistencia;
+            ctlContenedorAsistencias1.ConstruirControl(Pro_Conexion,
+                                                       Pro_Usuario.Pro_Usuario);
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void CmdOrganizadorActividades_Click(object sender, EventArgs e)

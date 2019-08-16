@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcMiEquipo = new DevExpress.XtraGrid.GridControl();
             this.dsVistas1 = new Core.DataSets.dsVistas();
             this.gvMiEquipo = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -45,15 +45,15 @@
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Core.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.NavigationMiEquipo = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
+            this.cmdGuardarSolicitud = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
-            this.cmdGuardarSolicitud = new DevExpress.XtraEditors.PictureEdit();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
             ((System.ComponentModel.ISupportInitialize)(this.gcMiEquipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
@@ -62,11 +62,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.NavigationMiEquipo)).BeginInit();
             this.NavigationMiEquipo.SuspendLayout();
             this.PageMiEquipo.SuspendLayout();
-            this.pnlEncabezado.SuspendLayout();
-            this.PageFichaIngreso.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).BeginInit();
+            this.pnlEncabezado.SuspendLayout();
+            this.PageFichaIngreso.SuspendLayout();
             this.SuspendLayout();
             // 
             // gcMiEquipo
@@ -74,12 +74,12 @@
             this.gcMiEquipo.DataMember = "dtMiEquipo";
             this.gcMiEquipo.DataSource = this.dsVistas1;
             this.gcMiEquipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMiEquipo.Location = new System.Drawing.Point(0, 157);
+            this.gcMiEquipo.Location = new System.Drawing.Point(0, 184);
             this.gcMiEquipo.MainView = this.gvMiEquipo;
             this.gcMiEquipo.Name = "gcMiEquipo";
             this.gcMiEquipo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdVerFicha});
-            this.gcMiEquipo.Size = new System.Drawing.Size(1136, 543);
+            this.gcMiEquipo.Size = new System.Drawing.Size(1136, 516);
             this.gcMiEquipo.TabIndex = 15;
             this.gcMiEquipo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMiEquipo});
@@ -150,9 +150,9 @@
             // cmdVerFicha
             // 
             this.cmdVerFicha.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::Core.Properties.Resources.icon_visualizar_24;
+            editorButtonImageOptions1.Image = global::Core.Properties.Resources.icon_visualizar_24;
             this.cmdVerFicha.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdVerFicha.Name = "cmdVerFicha";
             this.cmdVerFicha.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdVerFicha.Click += new System.EventHandler(this.CmdVerFicha_Click);
@@ -192,14 +192,57 @@
             // PageMiEquipo
             // 
             this.PageMiEquipo.Caption = "PageMiEquipo";
-            this.PageMiEquipo.Controls.Add(this.panel4);
             this.PageMiEquipo.Controls.Add(this.gcMiEquipo);
+            this.PageMiEquipo.Controls.Add(this.panel4);
             this.PageMiEquipo.Controls.Add(this.panel1);
             this.PageMiEquipo.Controls.Add(this.panel3);
             this.PageMiEquipo.Controls.Add(this.panel2);
             this.PageMiEquipo.Controls.Add(this.pnlEncabezado);
             this.PageMiEquipo.Name = "PageMiEquipo";
             this.PageMiEquipo.Size = new System.Drawing.Size(1136, 700);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 157);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1136, 27);
+            this.panel4.TabIndex = 19;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtBusqueda);
+            this.panel1.Controls.Add(this.cmdGuardarSolicitud);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 103);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(1136, 54);
+            this.panel1.TabIndex = 18;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtBusqueda.Location = new System.Drawing.Point(68, 5);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Properties.Appearance.Options.UseFont = true;
+            this.txtBusqueda.Properties.AutoHeight = false;
+            this.txtBusqueda.Size = new System.Drawing.Size(643, 44);
+            this.txtBusqueda.TabIndex = 31;
+            // 
+            // cmdGuardarSolicitud
+            // 
+            this.cmdGuardarSolicitud.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cmdGuardarSolicitud.EditValue = global::Core.Properties.Resources.iconFiltro_64;
+            this.cmdGuardarSolicitud.Location = new System.Drawing.Point(5, 5);
+            this.cmdGuardarSolicitud.Name = "cmdGuardarSolicitud";
+            this.cmdGuardarSolicitud.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdGuardarSolicitud.Properties.NullText = "   ";
+            this.cmdGuardarSolicitud.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdGuardarSolicitud.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdGuardarSolicitud.Size = new System.Drawing.Size(63, 44);
+            this.cmdGuardarSolicitud.TabIndex = 30;
             // 
             // panel3
             // 
@@ -244,52 +287,10 @@
             // 
             // PageFichaIngreso
             // 
+            this.PageFichaIngreso.Caption = "PageFichaIngreso";
             this.PageFichaIngreso.Controls.Add(this.ctlVistaFichaIngreso1);
             this.PageFichaIngreso.Name = "PageFichaIngreso";
             this.PageFichaIngreso.Size = new System.Drawing.Size(1136, 700);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtBusqueda);
-            this.panel1.Controls.Add(this.cmdGuardarSolicitud);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 103);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1136, 54);
-            this.panel1.TabIndex = 18;
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtBusqueda.Location = new System.Drawing.Point(68, 5);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Properties.Appearance.Options.UseFont = true;
-            this.txtBusqueda.Properties.AutoHeight = false;
-            this.txtBusqueda.Size = new System.Drawing.Size(643, 44);
-            this.txtBusqueda.TabIndex = 31;
-            // 
-            // cmdGuardarSolicitud
-            // 
-            this.cmdGuardarSolicitud.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cmdGuardarSolicitud.EditValue = global::Core.Properties.Resources.iconFiltro_64;
-            this.cmdGuardarSolicitud.Location = new System.Drawing.Point(5, 5);
-            this.cmdGuardarSolicitud.Name = "cmdGuardarSolicitud";
-            this.cmdGuardarSolicitud.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdGuardarSolicitud.Properties.NullText = "   ";
-            this.cmdGuardarSolicitud.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdGuardarSolicitud.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdGuardarSolicitud.Size = new System.Drawing.Size(63, 44);
-            this.cmdGuardarSolicitud.TabIndex = 30;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 157);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1136, 27);
-            this.panel4.TabIndex = 19;
             // 
             // ctlVistaFichaIngreso1
             // 
@@ -319,11 +320,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.NavigationMiEquipo)).EndInit();
             this.NavigationMiEquipo.ResumeLayout(false);
             this.PageMiEquipo.ResumeLayout(false);
-            this.pnlEncabezado.ResumeLayout(false);
-            this.PageFichaIngreso.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).EndInit();
+            this.pnlEncabezado.ResumeLayout(false);
+            this.PageFichaIngreso.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

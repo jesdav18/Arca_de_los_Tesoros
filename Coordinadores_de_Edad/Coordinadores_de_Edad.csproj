@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\ctlContenedorAsistencias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlContenedorAsistencias.Designer.cs">
+      <DependentUpon>ctlContenedorAsistencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlContenedorPrincipalCoordinadorEdad.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="Controles\ctlCubrirAusencias.Designer.cs">
       <DependentUpon>ctlCubrirAusencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlDetallesAsistencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlDetallesAsistencia.Designer.cs">
+      <DependentUpon>ctlDetallesAsistencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\ctlDiasTrimestre.cs">
       <SubType>UserControl</SubType>
@@ -82,6 +94,12 @@
     </Compile>
     <Compile Include="Controles\ctlItemDiaTrabajo.Designer.cs">
       <DependentUpon>ctlItemDiaTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlListaAsistencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlListaAsistencia.Designer.cs">
+      <DependentUpon>ctlListaAsistencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\ctlngresoActividad.cs">
       <SubType>UserControl</SubType>
@@ -132,11 +150,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controles\ctlContenedorAsistencias.resx">
+      <DependentUpon>ctlContenedorAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlContenedorPrincipalCoordinadorEdad.resx">
       <DependentUpon>ctlContenedorPrincipalCoordinadorEdad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlCubrirAusencias.resx">
       <DependentUpon>ctlCubrirAusencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlDetallesAsistencia.resx">
+      <DependentUpon>ctlDetallesAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlDiasTrimestre.resx">
       <DependentUpon>ctlDiasTrimestre.cs</DependentUpon>
@@ -146,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlItemDiaTrabajo.resx">
       <DependentUpon>ctlItemDiaTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlListaAsistencia.resx">
+      <DependentUpon>ctlListaAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlngresoActividad.resx">
       <DependentUpon>ctlngresoActividad.cs</DependentUpon>
@@ -214,6 +241,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_guardar_negro_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_cubrir_asistencia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconBusqueda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

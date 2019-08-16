@@ -59,6 +59,8 @@
             this.ctlMiEquipo1 = new Core.Controles.ctlMiEquipo();
             this.pagePlanificadorActividades = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlPlanificadorTrimestralCoordinadorEdad1 = new Coordinadores_de_Edad.Controles.ctlPlanificadorTrimestralCoordinadorEdad();
+            this.PageAsistencia = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlContenedorAsistencias1 = new Coordinadores_de_Edad.Controles.ctlContenedorAsistencias();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -86,6 +88,7 @@
             this.pageIngresoSolicitudes.SuspendLayout();
             this.PageMiEquipo.SuspendLayout();
             this.pagePlanificadorActividades.SuspendLayout();
+            this.PageAsistencia.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEncabezadoCoordinadoresEdad
@@ -356,6 +359,7 @@
             this.NavigationCoordinadorEdad.Controls.Add(this.pageIngresoSolicitudes);
             this.NavigationCoordinadorEdad.Controls.Add(this.PageMiEquipo);
             this.NavigationCoordinadorEdad.Controls.Add(this.pagePlanificadorActividades);
+            this.NavigationCoordinadorEdad.Controls.Add(this.PageAsistencia);
             this.NavigationCoordinadorEdad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationCoordinadorEdad.Location = new System.Drawing.Point(3, 0);
             this.NavigationCoordinadorEdad.Name = "NavigationCoordinadorEdad";
@@ -364,7 +368,8 @@
             this.PageFichaIngreso,
             this.pageIngresoSolicitudes,
             this.PageMiEquipo,
-            this.pagePlanificadorActividades});
+            this.pagePlanificadorActividades,
+            this.PageAsistencia});
             this.NavigationCoordinadorEdad.SelectedPage = this.PageInicial;
             this.NavigationCoordinadorEdad.Size = new System.Drawing.Size(1262, 762);
             this.NavigationCoordinadorEdad.TabIndex = 12;
@@ -406,8 +411,6 @@
             this.ctlIngresoFicha1.MinimumSize = new System.Drawing.Size(1166, 751);
             this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
             this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlIngresoFicha1.Pro_Conexion = null;
-            this.ctlIngresoFicha1.Pro_Usuario = null;
             this.ctlIngresoFicha1.Size = new System.Drawing.Size(1262, 762);
             this.ctlIngresoFicha1.TabIndex = 0;
             // 
@@ -467,9 +470,27 @@
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Anio = null;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Conexion = null;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_ID_AreaAtencion = 0;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Trimestre = 0;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Usuario = null;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Size = new System.Drawing.Size(1262, 762);
             this.ctlPlanificadorTrimestralCoordinadorEdad1.TabIndex = 0;
+            // 
+            // PageAsistencia
+            // 
+            this.PageAsistencia.Caption = "PageAsistencia";
+            this.PageAsistencia.Controls.Add(this.ctlContenedorAsistencias1);
+            this.PageAsistencia.Name = "PageAsistencia";
+            this.PageAsistencia.Size = new System.Drawing.Size(1262, 762);
+            // 
+            // ctlContenedorAsistencias1
+            // 
+            this.ctlContenedorAsistencias1.BackColor = System.Drawing.Color.White;
+            this.ctlContenedorAsistencias1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlContenedorAsistencias1.Location = new System.Drawing.Point(0, 0);
+            this.ctlContenedorAsistencias1.Name = "ctlContenedorAsistencias1";
+            this.ctlContenedorAsistencias1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlContenedorAsistencias1.Size = new System.Drawing.Size(1262, 762);
+            this.ctlContenedorAsistencias1.TabIndex = 0;
             // 
             // panel7
             // 
@@ -535,6 +556,7 @@
             this.pageIngresoSolicitudes.ResumeLayout(false);
             this.PageMiEquipo.ResumeLayout(false);
             this.pagePlanificadorActividades.ResumeLayout(false);
+            this.PageAsistencia.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -575,5 +597,7 @@
         private Core.Controles.ctlMiEquipo ctlMiEquipo1;
         private DevExpress.XtraBars.Navigation.NavigationPage pagePlanificadorActividades;
         private ctlPlanificadorTrimestralCoordinadorEdad ctlPlanificadorTrimestralCoordinadorEdad1;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageAsistencia;
+        private ctlContenedorAsistencias ctlContenedorAsistencias1;
     }
 }

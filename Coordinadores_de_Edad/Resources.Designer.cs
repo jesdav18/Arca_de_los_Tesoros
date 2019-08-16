@@ -93,6 +93,16 @@ namespace Coordinadores_de_Edad {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_cubrir_asistencia {
+            get {
+                object obj = ResourceManager.GetObject("icon_cubrir_asistencia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_guardar_negro_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_guardar_negro_64", resourceCulture);
@@ -126,6 +136,16 @@ namespace Coordinadores_de_Edad {
         internal static System.Drawing.Bitmap icon_nuevo_usuario_negro_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_nuevo_usuario_negro_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconBusqueda {
+            get {
+                object obj = ResourceManager.GetObject("iconBusqueda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

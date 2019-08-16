@@ -21,12 +21,23 @@ namespace Core.Controles
         public PgSqlConnection Pro_Conexion { get; set; }
         public int Pro_ID_Colaborador { get; set; }
 
+        string v_ruta_fotografia = "";
+
         public void ConstruirControl(PgSqlConnection pConexion, int pID_Colaborador)
         {
             Pro_Conexion = pConexion;
             Pro_ID_Colaborador = pID_Colaborador;
 
             CargarDatos();
+            CargarFotografiaColaborador();
+        }
+
+        private void CargarFotografiaColaborador()
+        {
+            if (!string.IsNullOrEmpty(v_ruta_fotografia))
+            {
+                picColaborador.Image = Image.FromFile(v_ruta_fotografia);
+            }          
         }
 
         private void CargarDatos()
@@ -40,6 +51,7 @@ namespace Core.Controles
          
             try
             {
+                
                 string sentencia = @"SELECT * FROM arca_tesoros.ft_view_ficha_ingreso (:p_id_colaborador );";
                 PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
                 pgComando.Parameters.Add("p_id_colaborador", PgSqlType.Int).Value = Pro_ID_Colaborador;
@@ -74,6 +86,8 @@ namespace Core.Controles
                     lblTelefonoEmpresa.Text = pgDr.GetString("telefono_empresa");
                     lblEstadoProfesional.Text = pgDr.GetString("estado_profesional");
                     lblNivelEducativo.Text = pgDr.GetString("nivel_educativo");
+                    v_ruta_fotografia = pgDr.GetString("direccion_fotografia");
+
                 }
 
                 pgDr.Close();

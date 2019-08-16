@@ -163,6 +163,7 @@ namespace Arca_de_los_Tesoros
                         ctlCoordinadorEdad = new ctlContenedorPrincipalCoordinadorEdad();
                         ctlCoordinadorEdad.Parent = this;
                         ctlCoordinadorEdad.ConstruirControl(Pro_Conexion, pUsuario);
+                        ctlCoordinadorEdad.OnCerrarSesion += ctlCoordinadorEdad_OnCerrarSesion;
                         ctlCoordinadorEdad.Dock = DockStyle.Fill;
                         ctlCoordinadorEdad.BringToFront();
                         this.MinimumSize = new Size(986, 795);
@@ -187,6 +188,12 @@ namespace Arca_de_los_Tesoros
                 Construir_Acceso();
             }
 
+        }
+
+        private void ctlCoordinadorEdad_OnCerrarSesion(object sender, EventArgs e)
+        {
+            ctlCoordinadorEdad.Dispose();
+            Construir_Acceso();
         }
 
         private void FrmContructor_Load(object sender, EventArgs e)
