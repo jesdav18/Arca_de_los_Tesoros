@@ -186,6 +186,7 @@ namespace Core.Controles
                 MessageBox.Show("¡La ficha logró registrarse correctamente!");
 
                 OnFichaIngresada?.Invoke(new object(), new EventArgs());
+                NavigationFicha.SelectedPage = Page1;
 
             }
             catch (Exception Exc)

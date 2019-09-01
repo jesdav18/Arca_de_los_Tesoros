@@ -446,7 +446,8 @@
             this.radioMasculino.TabIndex = 20;
             this.radioMasculino.TabStop = true;
             this.radioMasculino.Text = "Masculino";
-            this.radioMasculino.UseVisualStyleBackColor = true;          
+            this.radioMasculino.UseVisualStyleBackColor = true;
+            this.radioMasculino.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioFemenino_KeyDown);
             // 
             // radioFemenino
             // 
@@ -597,6 +598,7 @@
             // 
             // Page1
             // 
+            this.Page1.Caption = "Page1";
             this.Page1.Controls.Add(this.labelControl35);
             this.Page1.Controls.Add(this.labelControl34);
             this.Page1.Controls.Add(this.txtSegundoApellido);
@@ -916,7 +918,8 @@
             this.radioNecesitaTransporteSi.TabIndex = 31;
             this.radioNecesitaTransporteSi.TabStop = true;
             this.radioNecesitaTransporteSi.Text = "Si";
-            this.radioNecesitaTransporteSi.UseVisualStyleBackColor = true;         
+            this.radioNecesitaTransporteSi.UseVisualStyleBackColor = true;
+            this.radioNecesitaTransporteSi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioNecesitaTransporteNo_KeyDown);
             // 
             // radioNecesitaTransporteNo
             // 
@@ -954,7 +957,7 @@
             this.radioTipoFamiliaSoltero.TabStop = true;
             this.radioTipoFamiliaSoltero.Text = "Soltero";
             this.radioTipoFamiliaSoltero.UseVisualStyleBackColor = true;
-         
+            this.radioTipoFamiliaSoltero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioTipoMiembroFamilia_KeyDown);
             // 
             // radioTipoMiembroFamilia
             // 
@@ -1658,6 +1661,7 @@
             this.radioBautismoEspirituSi.TabStop = true;
             this.radioBautismoEspirituSi.Text = "Si";
             this.radioBautismoEspirituSi.UseVisualStyleBackColor = true;
+            this.radioBautismoEspirituSi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioBautismoEspirituNo_KeyDown);
             // 
             // radioBautismoEspirituNo
             // 
