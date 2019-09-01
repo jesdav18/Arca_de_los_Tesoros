@@ -10,7 +10,13 @@ namespace Coordinadores_de_Edad.Controles
         public ctlContenedorPrincipalCoordinadorEdad()
         {
             InitializeComponent();
+            ctlIngresoFicha1.OnFichaIngresada += ctlIngresoFicha1_OnFichaIngresada;
             
+        }
+
+        private void ctlIngresoFicha1_OnFichaIngresada(object sender, EventArgs e)
+        {
+            NavigationCoordinadorEdad.SelectedPage = PageInicial;
         }
 
         public PgSqlConnection Pro_Conexion { get; set; }
@@ -19,7 +25,7 @@ namespace Coordinadores_de_Edad.Controles
         public event EventHandler OnCerrarSesion;
         
 
-        private void PicAgregarUsuario_Click(object sender, EventArgs e)
+        public void PicAgregarUsuario_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = PageFichaIngreso;
@@ -37,12 +43,12 @@ namespace Coordinadores_de_Edad.Controles
             
         }
 
-        private void CmdCerrarSesion_Click(object sender, EventArgs e)
+        public void CmdCerrarSesion_Click(object sender, EventArgs e)
         {
             OnCerrarSesion?.Invoke(sender, e);
         }
 
-        private void CmdIngresarSolicitudes_Click(object sender, EventArgs e)
+        public void CmdIngresarSolicitudes_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = pageIngresoSolicitudes;
@@ -51,7 +57,7 @@ namespace Coordinadores_de_Edad.Controles
             splashScreenManager1.CloseWaitForm();
         }
 
-        private void CmdMiEquipo_Click(object sender, EventArgs e)
+        public void CmdMiEquipo_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = PageMiEquipo;
@@ -59,7 +65,7 @@ namespace Coordinadores_de_Edad.Controles
             splashScreenManager1.CloseWaitForm();
         }
 
-        private void CmdListaAsistencia_Click(object sender, EventArgs e)
+        public void CmdListaAsistencia_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = PageAsistencia;
@@ -70,7 +76,7 @@ namespace Coordinadores_de_Edad.Controles
             splashScreenManager1.CloseWaitForm();
         }
 
-        private void CmdOrganizadorActividades_Click(object sender, EventArgs e)
+        public void CmdOrganizadorActividades_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = pagePlanificadorActividades;

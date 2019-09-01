@@ -1,16 +1,13 @@
-﻿using Anciano.Pantallas;
-using Coordinadores_de_Dia.Pantallas;
+﻿
+using Coordinadores_de_Dia.Controles;
 using Coordinadores_de_Edad.Controles;
-using Coordinadores_de_Edad.Pantallas;
 using Core.Clases;
 using Core.Controles;
 using Core.Pantallas;
 using Devart.Data.PostgreSql;
-using Diacono.Pantallas;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using static Core.Controles.ctlBienvenida;
 
 namespace Arca_de_los_Tesoros
 {
@@ -29,14 +26,11 @@ namespace Arca_de_los_Tesoros
 
         #region VARIABLES Y OBJETOS PUBLICOS
 
-        ctlBienvenida obj_ctl_bienvenida;
-        frmCoordinadorEdad frm_CoordinadorEdad;
-        frmCoordinadorDia frm_CoordinadorDia;
-        frmDiacono frm_Diacono;
-        frmAnciano frm_Anciano;
+        ctlBienvenida obj_ctl_bienvenida;      
         frmLogin frm_Login;
 
-        ctlContenedorPrincipalCoordinadorEdad ctlCoordinadorEdad;
+        ctlContenedorPrincipalCoordinadorEdad ctlCoordinadorEdad = null;
+        ctlContenedorPrincipalCoordinadorDia ctlCoordinadorDia = null;
 
         #endregion
 
@@ -133,28 +127,22 @@ namespace Arca_de_los_Tesoros
                 {
                     case ROLES_USUARIO.ANCIANO:
 
-                        frm_Anciano = new frmAnciano();
-                        frm_Anciano.MdiParent = this;
-                        frm_Anciano.StartPosition = FormStartPosition.CenterScreen;
-                        frm_Anciano.Show();
+                      
 
                         break;
                     case ROLES_USUARIO.DIACONO:
 
-                        frm_Diacono = new frmDiacono();
-                        frm_Diacono.MdiParent = this;
-                        frm_Diacono.StartPosition = FormStartPosition.CenterScreen;
-                        frm_Diacono.Show();
 
                         break;
                     case ROLES_USUARIO.COORDINADOR_DIA:
 
-                        frm_CoordinadorDia = new frmCoordinadorDia();
-                        frm_CoordinadorDia.MdiParent = this;
-                        frm_CoordinadorDia.Dock = DockStyle.Fill;
-                        frm_CoordinadorDia.SendToBack();
-                        frm_CoordinadorDia.MaximizeBox = false;
-                        frm_CoordinadorDia.StartPosition = FormStartPosition.CenterScreen;
+                        ctlCoordinadorDia = new ctlContenedorPrincipalCoordinadorDia();
+                        ctlCoordinadorDia.Parent = this;
+                        ctlCoordinadorDia.ConstruirControl(Pro_Conexion, pUsuario);
+                        ctlCoordinadorDia.Dock = DockStyle.Fill;
+                        ctlCoordinadorDia.BringToFront();
+                        this.MinimumSize = new Size(986, 795);
+                        Pro_Modulo = MODULOS.MODULO_COORDINADOR_DIA;
 
                         break;
 
@@ -193,6 +181,7 @@ namespace Arca_de_los_Tesoros
         private void ctlCoordinadorEdad_OnCerrarSesion(object sender, EventArgs e)
         {
             ctlCoordinadorEdad.Dispose();
+            ctlCoordinadorEdad = null;
             Construir_Acceso();
         }
 
@@ -233,7 +222,7 @@ namespace Arca_de_los_Tesoros
         private void FrmContructor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
-            {
+            {    
                 switch (Pro_Modulo)
                 {
                     case MODULOS.MODULO_ANCIANO:
@@ -243,10 +232,16 @@ namespace Arca_de_los_Tesoros
                     case MODULOS.MODULO_COORDINADOR_DIA:
                         break;
                     case MODULOS.MODULO_COORDINADOR_EDAD:
-                        ctlCoordinadorEdad.ctlIngresoFicha1.IrAtras();
+                        if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageInicial)
+                        {
+                            ctlCoordinadorEdad.PicAgregarUsuario_Click(sender, new EventArgs());
+                        }
+                        else if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageFichaIngreso)
+                        {
+                            ctlCoordinadorEdad.ctlIngresoFicha1.IrAtras();
+                        }                  
                         break;
-                    
-                }
+                }             
             }
             else if (e.KeyCode == Keys.F2)
             {
@@ -259,9 +254,44 @@ namespace Arca_de_los_Tesoros
                     case MODULOS.MODULO_COORDINADOR_DIA:
                         break;
                     case MODULOS.MODULO_COORDINADOR_EDAD:
-                        ctlCoordinadorEdad.ctlIngresoFicha1.IrAdelante();
-                        break;
-                    
+                        if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageInicial)
+                        {
+                            ctlCoordinadorEdad.CmdOrganizadorActividades_Click(sender, new EventArgs());
+                        }
+                        else if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageFichaIngreso)
+                        {
+                            ctlCoordinadorEdad.ctlIngresoFicha1.IrAdelante();
+                        }                 
+                        break;                 
+                }
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageInicial)
+                {
+                    ctlCoordinadorEdad.CmdListaAsistencia_Click(sender, new EventArgs());
+                }
+                
+            }
+            else if (e.KeyCode == Keys.F4)
+            {
+                if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageInicial)
+                {
+                    ctlCoordinadorEdad.CmdMiEquipo_Click(sender, new EventArgs());
+                }
+            }
+            else if (e.KeyCode == Keys.F5)
+            {
+                if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageInicial)
+                {
+                    ctlCoordinadorEdad.CmdIngresarSolicitudes_Click(sender, new EventArgs());
+                }
+            }
+            else if (e.KeyCode == Keys.F6)
+            {
+                if (ctlCoordinadorEdad.NavigationCoordinadorEdad.SelectedPage == ctlCoordinadorEdad.PageInicial)
+                {
+                    ctlCoordinadorEdad.CmdCerrarSesion_Click(sender, new EventArgs());
                 }
             }
         }

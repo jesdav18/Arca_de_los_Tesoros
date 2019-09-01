@@ -433,7 +433,7 @@
             this.panel14.Location = new System.Drawing.Point(353, 203);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(406, 85);
-            this.panel14.TabIndex = 43;
+            this.panel14.TabIndex = 19;
             // 
             // radioMasculino
             // 
@@ -443,10 +443,10 @@
             this.radioMasculino.Location = new System.Drawing.Point(18, 1);
             this.radioMasculino.Name = "radioMasculino";
             this.radioMasculino.Size = new System.Drawing.Size(145, 36);
-            this.radioMasculino.TabIndex = 19;
+            this.radioMasculino.TabIndex = 20;
             this.radioMasculino.TabStop = true;
             this.radioMasculino.Text = "Masculino";
-            this.radioMasculino.UseVisualStyleBackColor = true;
+            this.radioMasculino.UseVisualStyleBackColor = true;          
             // 
             // radioFemenino
             // 
@@ -456,16 +456,16 @@
             this.radioFemenino.Location = new System.Drawing.Point(20, 41);
             this.radioFemenino.Name = "radioFemenino";
             this.radioFemenino.Size = new System.Drawing.Size(143, 36);
-            this.radioFemenino.TabIndex = 19;
+            this.radioFemenino.TabIndex = 21;
             this.radioFemenino.TabStop = true;
             this.radioFemenino.Text = "Femenino";
             this.radioFemenino.UseVisualStyleBackColor = true;
+            this.radioFemenino.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioFemenino_KeyDown);
             // 
             // glPaisNacimiento
             // 
             this.glPaisNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glPaisNacimiento.EditValue = "";
-            this.glPaisNacimiento.EnterMoveNextControl = true;
             this.glPaisNacimiento.Location = new System.Drawing.Point(353, 476);
             this.glPaisNacimiento.Name = "glPaisNacimiento";
             this.glPaisNacimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -477,7 +477,8 @@
             this.glPaisNacimiento.Properties.PopupView = this.gvPaises;
             this.glPaisNacimiento.Properties.ValueMember = "id_pais";
             this.glPaisNacimiento.Size = new System.Drawing.Size(648, 38);
-            this.glPaisNacimiento.TabIndex = 21;
+            this.glPaisNacimiento.TabIndex = 23;
+            this.glPaisNacimiento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             // 
             // bsPaisNacimiento
             // 
@@ -550,7 +551,7 @@
             this.dateFechaNacimiento.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaNacimiento.Size = new System.Drawing.Size(292, 38);
-            this.dateFechaNacimiento.TabIndex = 20;
+            this.dateFechaNacimiento.TabIndex = 22;
             // 
             // labelControl6
             // 
@@ -596,7 +597,6 @@
             // 
             // Page1
             // 
-            this.Page1.Caption = "Page1";
             this.Page1.Controls.Add(this.labelControl35);
             this.Page1.Controls.Add(this.labelControl34);
             this.Page1.Controls.Add(this.txtSegundoApellido);
@@ -640,13 +640,13 @@
             // txtSegundoApellido
             // 
             this.txtSegundoApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSegundoApellido.EnterMoveNextControl = true;
             this.txtSegundoApellido.Location = new System.Drawing.Point(377, 480);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoApellido.Properties.Appearance.Options.UseFont = true;
             this.txtSegundoApellido.Size = new System.Drawing.Size(429, 38);
             this.txtSegundoApellido.TabIndex = 16;
+            this.txtSegundoApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // labelControl32
@@ -762,13 +762,13 @@
             // memoDireccion
             // 
             this.memoDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoDireccion.EnterMoveNextControl = true;
             this.memoDireccion.Location = new System.Drawing.Point(311, 402);
             this.memoDireccion.Name = "memoDireccion";
             this.memoDireccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoDireccion.Properties.Appearance.Options.UseFont = true;
             this.memoDireccion.Size = new System.Drawing.Size(657, 96);
             this.memoDireccion.TabIndex = 25;
+            this.memoDireccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             // 
             // txtTelefonoFijo
             // 
@@ -903,7 +903,7 @@
             this.panel13.Location = new System.Drawing.Point(329, 348);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(395, 91);
-            this.panel13.TabIndex = 47;
+            this.panel13.TabIndex = 30;
             // 
             // radioNecesitaTransporteSi
             // 
@@ -913,10 +913,10 @@
             this.radioNecesitaTransporteSi.Location = new System.Drawing.Point(19, 8);
             this.radioNecesitaTransporteSi.Name = "radioNecesitaTransporteSi";
             this.radioNecesitaTransporteSi.Size = new System.Drawing.Size(55, 36);
-            this.radioNecesitaTransporteSi.TabIndex = 28;
+            this.radioNecesitaTransporteSi.TabIndex = 31;
             this.radioNecesitaTransporteSi.TabStop = true;
             this.radioNecesitaTransporteSi.Text = "Si";
-            this.radioNecesitaTransporteSi.UseVisualStyleBackColor = true;
+            this.radioNecesitaTransporteSi.UseVisualStyleBackColor = true;         
             // 
             // radioNecesitaTransporteNo
             // 
@@ -926,10 +926,11 @@
             this.radioNecesitaTransporteNo.Location = new System.Drawing.Point(19, 47);
             this.radioNecesitaTransporteNo.Name = "radioNecesitaTransporteNo";
             this.radioNecesitaTransporteNo.Size = new System.Drawing.Size(68, 36);
-            this.radioNecesitaTransporteNo.TabIndex = 28;
+            this.radioNecesitaTransporteNo.TabIndex = 32;
             this.radioNecesitaTransporteNo.TabStop = true;
             this.radioNecesitaTransporteNo.Text = "No";
             this.radioNecesitaTransporteNo.UseVisualStyleBackColor = true;
+            this.radioNecesitaTransporteNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioNecesitaTransporteNo_KeyDown);
             // 
             // panel12
             // 
@@ -939,7 +940,7 @@
             this.panel12.Location = new System.Drawing.Point(329, 170);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(395, 121);
-            this.panel12.TabIndex = 46;
+            this.panel12.TabIndex = 27;
             // 
             // radioTipoFamiliaSoltero
             // 
@@ -949,10 +950,11 @@
             this.radioTipoFamiliaSoltero.Location = new System.Drawing.Point(15, 23);
             this.radioTipoFamiliaSoltero.Name = "radioTipoFamiliaSoltero";
             this.radioTipoFamiliaSoltero.Size = new System.Drawing.Size(112, 36);
-            this.radioTipoFamiliaSoltero.TabIndex = 27;
+            this.radioTipoFamiliaSoltero.TabIndex = 28;
             this.radioTipoFamiliaSoltero.TabStop = true;
             this.radioTipoFamiliaSoltero.Text = "Soltero";
             this.radioTipoFamiliaSoltero.UseVisualStyleBackColor = true;
+         
             // 
             // radioTipoMiembroFamilia
             // 
@@ -962,16 +964,16 @@
             this.radioTipoMiembroFamilia.Location = new System.Drawing.Point(15, 65);
             this.radioTipoMiembroFamilia.Name = "radioTipoMiembroFamilia";
             this.radioTipoMiembroFamilia.Size = new System.Drawing.Size(249, 36);
-            this.radioTipoMiembroFamilia.TabIndex = 27;
+            this.radioTipoMiembroFamilia.TabIndex = 29;
             this.radioTipoMiembroFamilia.TabStop = true;
             this.radioTipoMiembroFamilia.Text = "Miembro de Familia";
             this.radioTipoMiembroFamilia.UseVisualStyleBackColor = true;
+            this.radioTipoMiembroFamilia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioTipoMiembroFamilia_KeyDown);
             // 
             // glTipoSangre
             // 
             this.glTipoSangre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glTipoSangre.EditValue = "";
-            this.glTipoSangre.EnterMoveNextControl = true;
             this.glTipoSangre.Location = new System.Drawing.Point(329, 496);
             this.glTipoSangre.Name = "glTipoSangre";
             this.glTipoSangre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -984,6 +986,7 @@
             this.glTipoSangre.Properties.ValueMember = "id_tipo_sangre";
             this.glTipoSangre.Size = new System.Drawing.Size(648, 38);
             this.glTipoSangre.TabIndex = 29;
+            this.glTipoSangre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             // 
             // bsTiposSangre
             // 
@@ -1203,13 +1206,13 @@
             // txtNivelEducativo
             // 
             this.txtNivelEducativo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNivelEducativo.EnterMoveNextControl = true;
             this.txtNivelEducativo.Location = new System.Drawing.Point(308, 495);
             this.txtNivelEducativo.Name = "txtNivelEducativo";
             this.txtNivelEducativo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNivelEducativo.Properties.Appearance.Options.UseFont = true;
             this.txtNivelEducativo.Size = new System.Drawing.Size(657, 38);
             this.txtNivelEducativo.TabIndex = 34;
+            this.txtNivelEducativo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             this.txtNivelEducativo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // labelControl19
@@ -1343,7 +1346,6 @@
             // 
             this.dateFechaBautismoAgua.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateFechaBautismoAgua.EditValue = null;
-            this.dateFechaBautismoAgua.EnterMoveNextControl = true;
             this.dateFechaBautismoAgua.Location = new System.Drawing.Point(358, 503);
             this.dateFechaBautismoAgua.Name = "dateFechaBautismoAgua";
             this.dateFechaBautismoAgua.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1354,6 +1356,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaBautismoAgua.Size = new System.Drawing.Size(272, 38);
             this.dateFechaBautismoAgua.TabIndex = 39;
+            this.dateFechaBautismoAgua.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             // 
             // labelControl25
             // 
@@ -1567,7 +1570,6 @@
             // 
             this.glArcaTesoros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.glArcaTesoros.EditValue = "";
-            this.glArcaTesoros.EnterMoveNextControl = true;
             this.glArcaTesoros.Location = new System.Drawing.Point(401, 462);
             this.glArcaTesoros.Name = "glArcaTesoros";
             this.glArcaTesoros.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1578,8 +1580,9 @@
             this.glArcaTesoros.Properties.DisplayMember = "descripcion";
             this.glArcaTesoros.Properties.PopupView = this.glCargosArcaTesoros;
             this.glArcaTesoros.Properties.ValueMember = "id_cargo";
-            this.glArcaTesoros.Size = new System.Drawing.Size(302, 38);
+            this.glArcaTesoros.Size = new System.Drawing.Size(357, 38);
             this.glArcaTesoros.TabIndex = 43;
+            this.glArcaTesoros.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             // 
             // bsCargos
             // 
@@ -1641,7 +1644,7 @@
             this.panel10.Location = new System.Drawing.Point(401, 202);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(357, 88);
-            this.panel10.TabIndex = 59;
+            this.panel10.TabIndex = 41;
             // 
             // radioBautismoEspirituSi
             // 
@@ -1651,7 +1654,7 @@
             this.radioBautismoEspirituSi.Location = new System.Drawing.Point(19, 7);
             this.radioBautismoEspirituSi.Name = "radioBautismoEspirituSi";
             this.radioBautismoEspirituSi.Size = new System.Drawing.Size(55, 36);
-            this.radioBautismoEspirituSi.TabIndex = 41;
+            this.radioBautismoEspirituSi.TabIndex = 42;
             this.radioBautismoEspirituSi.TabStop = true;
             this.radioBautismoEspirituSi.Text = "Si";
             this.radioBautismoEspirituSi.UseVisualStyleBackColor = true;
@@ -1664,10 +1667,11 @@
             this.radioBautismoEspirituNo.Location = new System.Drawing.Point(19, 49);
             this.radioBautismoEspirituNo.Name = "radioBautismoEspirituNo";
             this.radioBautismoEspirituNo.Size = new System.Drawing.Size(68, 36);
-            this.radioBautismoEspirituNo.TabIndex = 41;
+            this.radioBautismoEspirituNo.TabIndex = 43;
             this.radioBautismoEspirituNo.TabStop = true;
             this.radioBautismoEspirituNo.Text = "No";
             this.radioBautismoEspirituNo.UseVisualStyleBackColor = true;
+            this.radioBautismoEspirituNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioBautismoEspirituNo_KeyDown);
             // 
             // glEquipoArcaTesoros
             // 

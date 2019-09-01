@@ -83,6 +83,12 @@
     <Compile Include="Controles\ctlEncabezado.Designer.cs">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlFusible.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlFusible.Designer.cs">
+      <DependentUpon>ctlFusible.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlIngresoAsistencia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <EmbeddedResource Include="Controles\ctlEncabezado.resx">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlFusible.resx">
+      <DependentUpon>ctlFusible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlIngresoAsistencia.resx">
       <DependentUpon>ctlIngresoAsistencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +260,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconAvatarHombre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fusible_vacio_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fusible_rojo_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fusible_blanco_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

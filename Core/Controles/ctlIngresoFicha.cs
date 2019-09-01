@@ -15,6 +15,9 @@ namespace Core.Controles
             InitializeComponent();
         }
 
+
+        public event EventHandler OnFichaIngresada;
+
         private PgSqlConnection Pro_Conexion { get; set; }
         private string Pro_Usuario { get; set; }
         private bool Pro_UsarUpperCase {
@@ -181,7 +184,9 @@ namespace Core.Controles
 
                 LimpiarCajasTexto();
                 MessageBox.Show("¡La ficha logró registrarse correctamente!");
-                NavigationFicha.SelectedPage = Page1;
+
+                OnFichaIngresada?.Invoke(new object(), new EventArgs());
+
             }
             catch (Exception Exc)
             {
@@ -191,11 +196,10 @@ namespace Core.Controles
                 }
 
                 pgTrans.Rollback();
-                sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "GuardarFichaIngreso");
                 MessageBox.Show(Exc.Message, "Arca de los tesoros",MessageBoxButtons.OK,MessageBoxIcon.Error);
-               
+                
             }
         }
 
@@ -690,11 +694,9 @@ namespace Core.Controles
 
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
+            if (char.IsLetter(e.KeyChar) || 
+                char.IsControl(e.KeyChar) || 
+                char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -763,7 +765,49 @@ namespace Core.Controles
                 lblPagina.Text = "8 de 8";
                 picSiguiente.Visible = false;
             }
-
         }
+
+        private void RadioFemenino_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dateFechaNacimiento.Focus();
+            }
+        }
+
+        private void RadioTipoMiembroFamilia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                radioNecesitaTransporteSi.Focus();
+            }
+        }
+
+    
+        private void RadioNecesitaTransporteNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                glTipoSangre.Focus();
+            }
+        }
+
+        private void RadioBautismoEspirituNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                glEquipoArcaTesoros.Focus();
+            }
+        }
+
+        private void TxtSegundoApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PicSiguiente_Click(sender, new EventArgs());
+            }
+        }
+
+        
     }
 }

@@ -44,11 +44,6 @@ namespace Core.Controles
 
         public event EventHandler OnUsuarioLogueado;
 
-        private void CtlLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void CmdAcceder_Click(object sender, EventArgs e)
         {
 

@@ -578,16 +578,12 @@
         private System.Windows.Forms.Panel pnlOrganizador;
         private DevExpress.XtraEditors.PictureEdit cmdOrganizadorActividades;
         private System.Windows.Forms.Panel pnlAgregarUsuario;
-        private DevExpress.XtraEditors.PictureEdit picAgregarUsuario;
         private System.Windows.Forms.Panel pnlEncabezado;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlCuerpo;
-        private DevExpress.XtraBars.Navigation.NavigationFrame NavigationCoordinadorEdad;
-        private DevExpress.XtraBars.Navigation.NavigationPage PageInicial;
-        private DevExpress.XtraBars.Navigation.NavigationPage PageFichaIngreso;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
@@ -603,5 +599,9 @@
         private ctlPlanificadorTrimestralCoordinadorEdad ctlPlanificadorTrimestralCoordinadorEdad1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageAsistencia;
         private ctlContenedorAsistencias ctlContenedorAsistencias1;
+        public DevExpress.XtraBars.Navigation.NavigationFrame NavigationCoordinadorEdad;
+        public DevExpress.XtraBars.Navigation.NavigationPage PageInicial;
+        public DevExpress.XtraBars.Navigation.NavigationPage PageFichaIngreso;
+        private DevExpress.XtraEditors.PictureEdit picAgregarUsuario;
     }
 }

@@ -17,6 +17,8 @@ namespace Coordinadores_de_Dia.Controles
         public ctlContenedorPrincipalCoordinadorDia()
         {
             InitializeComponent();
+            fusibleCumpleanios.Parent = cmdCumpleanieros;
+            fusibleSolicitudes.Parent = cmdSolicitudes;
         }
 
         public PgSqlConnection Pro_Conexion { get; set; }
@@ -27,6 +29,11 @@ namespace Coordinadores_de_Dia.Controles
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
+
+            fusibleCumpleanios.ConstruirControl(99);
+            fusibleSolicitudes.ConstruirControl(99);
         }
+
+      
     }
 }

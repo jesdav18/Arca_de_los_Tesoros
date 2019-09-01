@@ -33,16 +33,18 @@
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.cmdCerrarSesion = new DevExpress.XtraEditors.PictureEdit();
-            this.pnlEnvioSolicitudes = new System.Windows.Forms.Panel();
-            this.cmdIngresarSolicitudes = new DevExpress.XtraEditors.PictureEdit();
+            this.pnlBusqueda = new System.Windows.Forms.Panel();
+            this.cmdBusqueda = new DevExpress.XtraEditors.PictureEdit();
             this.pnlMiEquipo = new System.Windows.Forms.Panel();
             this.cmdMiEquipo = new DevExpress.XtraEditors.PictureEdit();
-            this.pnlListaAsistencia = new System.Windows.Forms.Panel();
-            this.cmdListaAsistencia = new DevExpress.XtraEditors.PictureEdit();
             this.pnlOrganizador = new System.Windows.Forms.Panel();
-            this.cmdOrganizadorActividades = new DevExpress.XtraEditors.PictureEdit();
-            this.pnlAgregarUsuario = new System.Windows.Forms.Panel();
-            this.picAgregarUsuario = new DevExpress.XtraEditors.PictureEdit();
+            this.cmdOrganizador = new DevExpress.XtraEditors.PictureEdit();
+            this.pnlCumpleanios = new System.Windows.Forms.Panel();
+            this.fusibleCumpleanios = new Core.Controles.ctlFusible();
+            this.cmdCumpleanieros = new DevExpress.XtraEditors.PictureEdit();
+            this.pnlSolicitudes = new System.Windows.Forms.Panel();
+            this.fusibleSolicitudes = new Core.Controles.ctlFusible();
+            this.cmdSolicitudes = new DevExpress.XtraEditors.PictureEdit();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,16 +53,16 @@
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).BeginInit();
-            this.pnlEnvioSolicitudes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdIngresarSolicitudes.Properties)).BeginInit();
+            this.pnlBusqueda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdBusqueda.Properties)).BeginInit();
             this.pnlMiEquipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdMiEquipo.Properties)).BeginInit();
-            this.pnlListaAsistencia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdListaAsistencia.Properties)).BeginInit();
             this.pnlOrganizador.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdOrganizadorActividades.Properties)).BeginInit();
-            this.pnlAgregarUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAgregarUsuario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdOrganizador.Properties)).BeginInit();
+            this.pnlCumpleanios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCumpleanieros.Properties)).BeginInit();
+            this.pnlSolicitudes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSolicitudes.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -76,198 +78,232 @@
             this.pnlEncabezado.MaximumSize = new System.Drawing.Size(0, 130);
             this.pnlEncabezado.MinimumSize = new System.Drawing.Size(0, 130);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1196, 130);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1351, 130);
             this.pnlEncabezado.TabIndex = 4;
             // 
             // ctlEncabezado1
             // 
             this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
             this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlEncabezado1.Location = new System.Drawing.Point(546, 3);
+            this.ctlEncabezado1.Location = new System.Drawing.Point(867, 3);
             this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(0, 123);
             this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 123);
             this.ctlEncabezado1.Name = "ctlEncabezado1";
             this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(647, 123);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(481, 123);
             this.ctlEncabezado1.TabIndex = 10;
             // 
             // pnlEncabezadoCoordinadoresEdad
             // 
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlCerrarSesion);
-            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlEnvioSolicitudes);
+            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlBusqueda);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlMiEquipo);
-            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlListaAsistencia);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlOrganizador);
-            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlAgregarUsuario);
+            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlCumpleanios);
+            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlSolicitudes);
             this.pnlEncabezadoCoordinadoresEdad.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlEncabezadoCoordinadoresEdad.Location = new System.Drawing.Point(3, 3);
-            this.pnlEncabezadoCoordinadoresEdad.MaximumSize = new System.Drawing.Size(543, 120);
-            this.pnlEncabezadoCoordinadoresEdad.MinimumSize = new System.Drawing.Size(543, 105);
             this.pnlEncabezadoCoordinadoresEdad.Name = "pnlEncabezadoCoordinadoresEdad";
-            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(543, 120);
+            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(864, 124);
             this.pnlEncabezadoCoordinadoresEdad.TabIndex = 2;
             // 
             // pnlCerrarSesion
             // 
             this.pnlCerrarSesion.Controls.Add(this.cmdCerrarSesion);
             this.pnlCerrarSesion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCerrarSesion.Location = new System.Drawing.Point(450, 0);
+            this.pnlCerrarSesion.Location = new System.Drawing.Point(715, 0);
             this.pnlCerrarSesion.Name = "pnlCerrarSesion";
             this.pnlCerrarSesion.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlCerrarSesion.Size = new System.Drawing.Size(90, 120);
+            this.pnlCerrarSesion.Size = new System.Drawing.Size(143, 124);
             this.pnlCerrarSesion.TabIndex = 5;
             // 
             // cmdCerrarSesion
             // 
             this.cmdCerrarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdCerrarSesion.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_cerrar_sesion_64;
             this.cmdCerrarSesion.Location = new System.Drawing.Point(5, 5);
             this.cmdCerrarSesion.Name = "cmdCerrarSesion";
             this.cmdCerrarSesion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdCerrarSesion.Properties.NullText = "   ";
             this.cmdCerrarSesion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdCerrarSesion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdCerrarSesion.Size = new System.Drawing.Size(80, 110);
+            this.cmdCerrarSesion.Size = new System.Drawing.Size(133, 114);
             this.cmdCerrarSesion.TabIndex = 0;
             this.cmdCerrarSesion.ToolTip = "Cerrar Sesión\r\n";
             this.cmdCerrarSesion.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
             this.cmdCerrarSesion.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.cmdCerrarSesion.ToolTipTitle = "Arca de los Tesoros";
             // 
-            // pnlEnvioSolicitudes
+            // pnlBusqueda
             // 
-            this.pnlEnvioSolicitudes.Controls.Add(this.cmdIngresarSolicitudes);
-            this.pnlEnvioSolicitudes.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlEnvioSolicitudes.Location = new System.Drawing.Point(360, 0);
-            this.pnlEnvioSolicitudes.Name = "pnlEnvioSolicitudes";
-            this.pnlEnvioSolicitudes.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlEnvioSolicitudes.Size = new System.Drawing.Size(90, 120);
-            this.pnlEnvioSolicitudes.TabIndex = 4;
+            this.pnlBusqueda.Controls.Add(this.cmdBusqueda);
+            this.pnlBusqueda.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlBusqueda.Location = new System.Drawing.Point(572, 0);
+            this.pnlBusqueda.Name = "pnlBusqueda";
+            this.pnlBusqueda.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlBusqueda.Size = new System.Drawing.Size(143, 124);
+            this.pnlBusqueda.TabIndex = 4;
             // 
-            // cmdIngresarSolicitudes
+            // cmdBusqueda
             // 
-            this.cmdIngresarSolicitudes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdIngresarSolicitudes.Location = new System.Drawing.Point(5, 5);
-            this.cmdIngresarSolicitudes.Name = "cmdIngresarSolicitudes";
-            this.cmdIngresarSolicitudes.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdIngresarSolicitudes.Properties.NullText = "   ";
-            this.cmdIngresarSolicitudes.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdIngresarSolicitudes.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdIngresarSolicitudes.Size = new System.Drawing.Size(80, 110);
-            this.cmdIngresarSolicitudes.TabIndex = 0;
-            this.cmdIngresarSolicitudes.ToolTip = "Ingresar Solicitudes\r\n";
-            this.cmdIngresarSolicitudes.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.cmdIngresarSolicitudes.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.cmdIngresarSolicitudes.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdBusqueda.EditValue = global::Coordinadores_de_Dia.Properties.Resources.iconBusqueda;
+            this.cmdBusqueda.Location = new System.Drawing.Point(5, 5);
+            this.cmdBusqueda.Name = "cmdBusqueda";
+            this.cmdBusqueda.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdBusqueda.Properties.NullText = "   ";
+            this.cmdBusqueda.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdBusqueda.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdBusqueda.Size = new System.Drawing.Size(133, 114);
+            this.cmdBusqueda.TabIndex = 0;
+            this.cmdBusqueda.ToolTip = "Ingresar Solicitudes\r\n";
+            this.cmdBusqueda.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdBusqueda.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdBusqueda.ToolTipTitle = "Arca de los Tesoros";
             // 
             // pnlMiEquipo
             // 
             this.pnlMiEquipo.Controls.Add(this.cmdMiEquipo);
             this.pnlMiEquipo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMiEquipo.Location = new System.Drawing.Point(270, 0);
+            this.pnlMiEquipo.Location = new System.Drawing.Point(429, 0);
             this.pnlMiEquipo.Name = "pnlMiEquipo";
             this.pnlMiEquipo.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlMiEquipo.Size = new System.Drawing.Size(90, 120);
+            this.pnlMiEquipo.Size = new System.Drawing.Size(143, 124);
             this.pnlMiEquipo.TabIndex = 3;
             // 
             // cmdMiEquipo
             // 
             this.cmdMiEquipo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdMiEquipo.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_mi_equipo_64;
             this.cmdMiEquipo.Location = new System.Drawing.Point(5, 5);
             this.cmdMiEquipo.Name = "cmdMiEquipo";
             this.cmdMiEquipo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdMiEquipo.Properties.NullText = "   ";
             this.cmdMiEquipo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdMiEquipo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdMiEquipo.Size = new System.Drawing.Size(80, 110);
+            this.cmdMiEquipo.Size = new System.Drawing.Size(133, 114);
             this.cmdMiEquipo.TabIndex = 0;
             this.cmdMiEquipo.ToolTip = "Mi Equipo ";
             this.cmdMiEquipo.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
             this.cmdMiEquipo.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.cmdMiEquipo.ToolTipTitle = "Arca de los Tesoros";
             // 
-            // pnlListaAsistencia
-            // 
-            this.pnlListaAsistencia.Controls.Add(this.cmdListaAsistencia);
-            this.pnlListaAsistencia.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlListaAsistencia.Location = new System.Drawing.Point(180, 0);
-            this.pnlListaAsistencia.Name = "pnlListaAsistencia";
-            this.pnlListaAsistencia.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlListaAsistencia.Size = new System.Drawing.Size(90, 120);
-            this.pnlListaAsistencia.TabIndex = 2;
-            // 
-            // cmdListaAsistencia
-            // 
-            this.cmdListaAsistencia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdListaAsistencia.Location = new System.Drawing.Point(5, 5);
-            this.cmdListaAsistencia.Name = "cmdListaAsistencia";
-            this.cmdListaAsistencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdListaAsistencia.Properties.NullText = "   ";
-            this.cmdListaAsistencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdListaAsistencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdListaAsistencia.Size = new System.Drawing.Size(80, 110);
-            this.cmdListaAsistencia.TabIndex = 0;
-            this.cmdListaAsistencia.ToolTip = "Lista de Asistencia\r\n";
-            this.cmdListaAsistencia.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.cmdListaAsistencia.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.cmdListaAsistencia.ToolTipTitle = "Arca de los Tesoros";
-            // 
             // pnlOrganizador
             // 
-            this.pnlOrganizador.Controls.Add(this.cmdOrganizadorActividades);
+            this.pnlOrganizador.Controls.Add(this.cmdOrganizador);
             this.pnlOrganizador.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlOrganizador.Location = new System.Drawing.Point(90, 0);
+            this.pnlOrganizador.Location = new System.Drawing.Point(286, 0);
             this.pnlOrganizador.Name = "pnlOrganizador";
             this.pnlOrganizador.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlOrganizador.Size = new System.Drawing.Size(90, 120);
-            this.pnlOrganizador.TabIndex = 1;
+            this.pnlOrganizador.Size = new System.Drawing.Size(143, 124);
+            this.pnlOrganizador.TabIndex = 2;
             // 
-            // cmdOrganizadorActividades
+            // cmdOrganizador
             // 
-            this.cmdOrganizadorActividades.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdOrganizadorActividades.Location = new System.Drawing.Point(5, 5);
-            this.cmdOrganizadorActividades.Name = "cmdOrganizadorActividades";
-            this.cmdOrganizadorActividades.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdOrganizadorActividades.Properties.NullText = "   ";
-            this.cmdOrganizadorActividades.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdOrganizadorActividades.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdOrganizadorActividades.Size = new System.Drawing.Size(80, 110);
-            this.cmdOrganizadorActividades.TabIndex = 0;
-            this.cmdOrganizadorActividades.ToolTip = "Organizador de Actividades\r\n";
-            this.cmdOrganizadorActividades.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.cmdOrganizadorActividades.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.cmdOrganizadorActividades.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdOrganizador.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdOrganizador.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_calendario_64;
+            this.cmdOrganizador.Location = new System.Drawing.Point(5, 5);
+            this.cmdOrganizador.Name = "cmdOrganizador";
+            this.cmdOrganizador.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdOrganizador.Properties.NullText = "   ";
+            this.cmdOrganizador.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdOrganizador.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdOrganizador.Size = new System.Drawing.Size(133, 114);
+            this.cmdOrganizador.TabIndex = 0;
+            this.cmdOrganizador.ToolTip = "Lista de Asistencia\r\n";
+            this.cmdOrganizador.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdOrganizador.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdOrganizador.ToolTipTitle = "Arca de los Tesoros";
             // 
-            // pnlAgregarUsuario
+            // pnlCumpleanios
             // 
-            this.pnlAgregarUsuario.Controls.Add(this.picAgregarUsuario);
-            this.pnlAgregarUsuario.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAgregarUsuario.Location = new System.Drawing.Point(0, 0);
-            this.pnlAgregarUsuario.Name = "pnlAgregarUsuario";
-            this.pnlAgregarUsuario.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlAgregarUsuario.Size = new System.Drawing.Size(90, 120);
-            this.pnlAgregarUsuario.TabIndex = 0;
+            this.pnlCumpleanios.Controls.Add(this.fusibleCumpleanios);
+            this.pnlCumpleanios.Controls.Add(this.cmdCumpleanieros);
+            this.pnlCumpleanios.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlCumpleanios.Location = new System.Drawing.Point(143, 0);
+            this.pnlCumpleanios.Name = "pnlCumpleanios";
+            this.pnlCumpleanios.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlCumpleanios.Size = new System.Drawing.Size(143, 124);
+            this.pnlCumpleanios.TabIndex = 1;
             // 
-            // picAgregarUsuario
+            // fusibleCumpleanios
             // 
-            this.picAgregarUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picAgregarUsuario.Location = new System.Drawing.Point(5, 5);
-            this.picAgregarUsuario.Name = "picAgregarUsuario";
-            this.picAgregarUsuario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAgregarUsuario.Properties.NullText = "   ";
-            this.picAgregarUsuario.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAgregarUsuario.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAgregarUsuario.Size = new System.Drawing.Size(80, 110);
-            this.picAgregarUsuario.TabIndex = 0;
-            this.picAgregarUsuario.ToolTip = "Crear Ficha de Ingreso";
-            this.picAgregarUsuario.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.picAgregarUsuario.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.picAgregarUsuario.ToolTipTitle = "Arca de los Tesoros";
+            this.fusibleCumpleanios.BackColor = System.Drawing.Color.Transparent;
+            this.fusibleCumpleanios.Location = new System.Drawing.Point(53, 46);
+            this.fusibleCumpleanios.MaximumSize = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.MinimumSize = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.Name = "fusibleCumpleanios";
+            this.fusibleCumpleanios.Pro_EsSecundario = false;
+            this.fusibleCumpleanios.Pro_TipoColor = Core.Controles.ctlFusible.FUSIBLE_COLOR.DEFAULT;
+            this.fusibleCumpleanios.Pro_Valor = 99;
+            this.fusibleCumpleanios.Size = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.TabIndex = 5;
+            // 
+            // cmdCumpleanieros
+            // 
+            this.cmdCumpleanieros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdCumpleanieros.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_Cumpleanieros;
+            this.cmdCumpleanieros.Location = new System.Drawing.Point(5, 5);
+            this.cmdCumpleanieros.Name = "cmdCumpleanieros";
+            this.cmdCumpleanieros.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdCumpleanieros.Properties.NullText = "   ";
+            this.cmdCumpleanieros.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmdCumpleanieros.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdCumpleanieros.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdCumpleanieros.Size = new System.Drawing.Size(133, 114);
+            this.cmdCumpleanieros.TabIndex = 0;
+            this.cmdCumpleanieros.ToolTip = "Organizador de Actividades\r\n";
+            this.cmdCumpleanieros.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdCumpleanieros.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdCumpleanieros.ToolTipTitle = "Arca de los Tesoros";
+            // 
+            // pnlSolicitudes
+            // 
+            this.pnlSolicitudes.Controls.Add(this.fusibleSolicitudes);
+            this.pnlSolicitudes.Controls.Add(this.cmdSolicitudes);
+            this.pnlSolicitudes.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSolicitudes.Location = new System.Drawing.Point(0, 0);
+            this.pnlSolicitudes.Name = "pnlSolicitudes";
+            this.pnlSolicitudes.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlSolicitudes.Size = new System.Drawing.Size(143, 124);
+            this.pnlSolicitudes.TabIndex = 0;
+            // 
+            // fusibleSolicitudes
+            // 
+            this.fusibleSolicitudes.BackColor = System.Drawing.Color.Transparent;
+            this.fusibleSolicitudes.Location = new System.Drawing.Point(60, 46);
+            this.fusibleSolicitudes.MaximumSize = new System.Drawing.Size(62, 57);
+            this.fusibleSolicitudes.MinimumSize = new System.Drawing.Size(62, 57);
+            this.fusibleSolicitudes.Name = "fusibleSolicitudes";
+            this.fusibleSolicitudes.Pro_EsSecundario = false;
+            this.fusibleSolicitudes.Pro_TipoColor = Core.Controles.ctlFusible.FUSIBLE_COLOR.DEFAULT;
+            this.fusibleSolicitudes.Pro_Valor = 99;
+            this.fusibleSolicitudes.Size = new System.Drawing.Size(62, 57);
+            this.fusibleSolicitudes.TabIndex = 6;
+            // 
+            // cmdSolicitudes
+            // 
+            this.cmdSolicitudes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdSolicitudes.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_Solicitudes;
+            this.cmdSolicitudes.Location = new System.Drawing.Point(5, 5);
+            this.cmdSolicitudes.Name = "cmdSolicitudes";
+            this.cmdSolicitudes.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdSolicitudes.Properties.NullText = "   ";
+            this.cmdSolicitudes.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmdSolicitudes.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdSolicitudes.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdSolicitudes.Size = new System.Drawing.Size(133, 114);
+            this.cmdSolicitudes.TabIndex = 0;
+            this.cmdSolicitudes.ToolTip = "Crear Ficha de Ingreso";
+            this.cmdSolicitudes.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdSolicitudes.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdSolicitudes.ToolTipTitle = "Arca de los Tesoros";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1193, 3);
+            this.panel4.Location = new System.Drawing.Point(1348, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(3, 124);
             this.panel4.TabIndex = 9;
@@ -287,7 +323,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 127);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1196, 3);
+            this.panel1.Size = new System.Drawing.Size(1351, 3);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -296,7 +332,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1196, 3);
+            this.panel2.Size = new System.Drawing.Size(1351, 3);
             this.panel2.TabIndex = 6;
             // 
             // ctlContenedorPrincipalCoordinadorDia
@@ -307,21 +343,21 @@
             this.Controls.Add(this.pnlEncabezado);
             this.Name = "ctlContenedorPrincipalCoordinadorDia";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(1206, 645);
+            this.Size = new System.Drawing.Size(1361, 658);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).EndInit();
-            this.pnlEnvioSolicitudes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdIngresarSolicitudes.Properties)).EndInit();
+            this.pnlBusqueda.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdBusqueda.Properties)).EndInit();
             this.pnlMiEquipo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdMiEquipo.Properties)).EndInit();
-            this.pnlListaAsistencia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdListaAsistencia.Properties)).EndInit();
             this.pnlOrganizador.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdOrganizadorActividades.Properties)).EndInit();
-            this.pnlAgregarUsuario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAgregarUsuario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdOrganizador.Properties)).EndInit();
+            this.pnlCumpleanios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCumpleanieros.Properties)).EndInit();
+            this.pnlSolicitudes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSolicitudes.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,19 +369,21 @@
         private System.Windows.Forms.Panel pnlEncabezadoCoordinadoresEdad;
         private System.Windows.Forms.Panel pnlCerrarSesion;
         private DevExpress.XtraEditors.PictureEdit cmdCerrarSesion;
-        private System.Windows.Forms.Panel pnlEnvioSolicitudes;
-        private DevExpress.XtraEditors.PictureEdit cmdIngresarSolicitudes;
+        private System.Windows.Forms.Panel pnlBusqueda;
+        private DevExpress.XtraEditors.PictureEdit cmdBusqueda;
         private System.Windows.Forms.Panel pnlMiEquipo;
         private DevExpress.XtraEditors.PictureEdit cmdMiEquipo;
-        private System.Windows.Forms.Panel pnlListaAsistencia;
-        private DevExpress.XtraEditors.PictureEdit cmdListaAsistencia;
         private System.Windows.Forms.Panel pnlOrganizador;
-        private DevExpress.XtraEditors.PictureEdit cmdOrganizadorActividades;
-        private System.Windows.Forms.Panel pnlAgregarUsuario;
-        private DevExpress.XtraEditors.PictureEdit picAgregarUsuario;
+        private DevExpress.XtraEditors.PictureEdit cmdOrganizador;
+        private System.Windows.Forms.Panel pnlCumpleanios;
+        private DevExpress.XtraEditors.PictureEdit cmdCumpleanieros;
+        private System.Windows.Forms.Panel pnlSolicitudes;
+        private DevExpress.XtraEditors.PictureEdit cmdSolicitudes;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private Core.Controles.ctlFusible fusibleCumpleanios;
+        private Core.Controles.ctlFusible fusibleSolicitudes;
     }
 }

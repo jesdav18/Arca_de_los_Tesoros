@@ -103,6 +103,36 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_fusible_blanco_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_fusible_blanco_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_fusible_rojo_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_fusible_rojo_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_fusible_vacio_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_fusible_vacio_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icon_guardar_negro_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_guardar_negro_64", resourceCulture);
