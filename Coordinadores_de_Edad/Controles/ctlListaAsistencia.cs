@@ -20,9 +20,20 @@ namespace Coordinadores_de_Edad.Controles
             InitializeComponent();
         }
 
+        #region PROPIEDADES
+
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
         public int Pro_ID_Actividad { get; set; }
+
+        #endregion
+
+        #region EVENTOS
+
+        public delegate void GenerarAsistencias(int pID_Colaborador, bool pPresente);
+        public event GenerarAsistencias OnMarcarAsistencia;
+
+        #endregion
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                       string pUsuario,
@@ -43,14 +54,14 @@ namespace Coordinadores_de_Edad.Controles
 
             }
 
-            string sentencia = @"SELECT * FROM arca_tesoros.ft_mant_postear_asistencia (:p_id_actividad)";
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_lista_asistencia ( :p_id_actividad )";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
 
             try
             {
-                pgComando.ExecuteNonQuery();
-
+                dsCoordinadoresEdad1.dtListaAsistencia.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsCoordinadoresEdad1.dtListaAsistencia);
             }
             catch (Exception Exc)
             {
@@ -58,61 +69,19 @@ namespace Coordinadores_de_Edad.Controles
                 MessageBox.Show("Algo salió mal mientras se cargaba lista asistencia.");
             }
         }
-
-        private void MarcarAsistencia(int pID_Colaborador)
+      
+        private void TxtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            if (Pro_Conexion.State != ConnectionState.Open)
-            {
-                Pro_Conexion.Open();
-
-            }
-
-            string sentencia = @"SELECT * FROM arca_tesoros.ft_mant_postear_asistencia (
-                                                                                          :p_id_colaborador,
-                                                                                          :p_presente,
-                                                                                          :p_usando_uniforme,
-                                                                                          :p_usando_carnet,
-                                                                                          :p_id_actividad,
-                                                                                          :p_motivo_inasistencia,
-                                                                                          :p_observaciones,
-                                                                                          :p_id_medio_cubri_ausencia
-                                                                                        )";
-
-            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
-            pgComando.Parameters.Add("p_id_colaborador", PgSqlType.Int).Value = pID_Colaborador;
-            pgComando.Parameters.Add("p_presente", PgSqlType.Int).Value = pID_Colaborador;
-            pgComando.Parameters.Add("p_usando_uniforme", PgSqlType.Int).Value = pID_Colaborador;
-            pgComando.Parameters.Add("p_usando_carnet", PgSqlType.Int).Value = pID_Colaborador;
-            pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = pID_Colaborador;
-            pgComando.Parameters.Add("p_motivo_inasistencia", PgSqlType.Int).Value = pID_Colaborador;
-            pgComando.Parameters.Add("p_observaciones", PgSqlType.Int).Value = pID_Colaborador;
-            pgComando.Parameters.Add("p_id_medio_cubri_ausencia", PgSqlType.Int).Value = pID_Colaborador;
-
-            try
-            {
-                pgComando.ExecuteNonQuery();
-
-            }
-            catch (Exception Exc)
-            {
-                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "MarcarAsistencia");
-                MessageBox.Show("Algo salió mal mientras se marcaba asistencia del colaborador en la lista.");
-            }
-
+            gvListaAsistencia.FindFilterText = "\"" + txtBusqueda.Text + "\"";
         }
 
-        private void CmdAsistencia_Click(object sender, EventArgs e)
+        private void ChkMarcarAsistencia_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             dsCoordinadoresEdad.dtListaAsistenciaRow v_fila = (dsCoordinadoresEdad.dtListaAsistenciaRow)gvListaAsistencia.GetFocusedDataRow();
             if (v_fila != null)
             {
-                MarcarAsistencia(v_fila.id_colaborador);
+                OnMarcarAsistencia?.Invoke(v_fila.id_colaborador,(bool) chkMarcarAsistencia.ValueChecked);
             }
-        }
-
-        private void TxtBusqueda_TextChanged(object sender, EventArgs e)
-        {
-            gvListaAsistencia.FindFilterText = "\"" + txtBusqueda.Text + "\"";
         }
     }
 }

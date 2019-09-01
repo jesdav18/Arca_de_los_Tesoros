@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data.PostgreSql, Version=7.13.1402.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -43,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\ctlContenedorPrincipalCoordinadorDia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlContenedorPrincipalCoordinadorDia.Designer.cs">
+      <DependentUpon>ctlContenedorPrincipalCoordinadorDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\frmCoordinadorDia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,9 +59,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controles\ctlContenedorPrincipalCoordinadorDia.resx">
+      <DependentUpon>ctlContenedorPrincipalCoordinadorDia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmCoordinadorDia.resx">
       <DependentUpon>frmCoordinadorDia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{69CF97AA-9F33-4E58-B95F-4BC334AEBF3A}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

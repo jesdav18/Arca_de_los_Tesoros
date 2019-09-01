@@ -64,7 +64,9 @@ namespace Coordinadores_de_Edad.Controles
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = PageAsistencia;
             ctlContenedorAsistencias1.ConstruirControl(Pro_Conexion,
-                                                       Pro_Usuario.Pro_Usuario);
+                                                       Pro_Usuario.Pro_Usuario,
+                                                       Pro_Usuario.Pro_ID_AreaAtencion
+                                                       );
             splashScreenManager1.CloseWaitForm();
         }
 

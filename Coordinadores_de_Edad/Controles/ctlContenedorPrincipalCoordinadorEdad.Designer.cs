@@ -489,6 +489,10 @@
             this.ctlContenedorAsistencias1.Location = new System.Drawing.Point(0, 0);
             this.ctlContenedorAsistencias1.Name = "ctlContenedorAsistencias1";
             this.ctlContenedorAsistencias1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlContenedorAsistencias1.Pro_Conexion = null;
+            this.ctlContenedorAsistencias1.Pro_ID_Actividad = 0;
+            this.ctlContenedorAsistencias1.Pro_ID_Area_Atencion = 0;
+            this.ctlContenedorAsistencias1.Pro_Usuario = null;
             this.ctlContenedorAsistencias1.Size = new System.Drawing.Size(1262, 762);
             this.ctlContenedorAsistencias1.TabIndex = 0;
             // 

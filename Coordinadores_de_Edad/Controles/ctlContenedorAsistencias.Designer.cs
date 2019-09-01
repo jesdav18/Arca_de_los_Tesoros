@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
+            this.NavegacionAsistencias = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageListaAsistencia = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlListaAsistencia1 = new Coordinadores_de_Edad.Controles.ctlListaAsistencia();
             this.PageDetalleAsistencia = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -37,32 +37,32 @@
             this.ctlCubrirAusencias1 = new Coordinadores_de_Edad.Controles.ctlCubrirAusencias();
             this.PageMensaje = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
-            this.navigationFrame1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NavegacionAsistencias)).BeginInit();
+            this.NavegacionAsistencias.SuspendLayout();
             this.PageListaAsistencia.SuspendLayout();
             this.PageDetalleAsistencia.SuspendLayout();
             this.PageCubrirAusencia.SuspendLayout();
             this.PageMensaje.SuspendLayout();
             this.SuspendLayout();
             // 
-            // navigationFrame1
+            // NavegacionAsistencias
             // 
-            this.navigationFrame1.Controls.Add(this.PageListaAsistencia);
-            this.navigationFrame1.Controls.Add(this.PageDetalleAsistencia);
-            this.navigationFrame1.Controls.Add(this.PageCubrirAusencia);
-            this.navigationFrame1.Controls.Add(this.PageMensaje);
-            this.navigationFrame1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationFrame1.Location = new System.Drawing.Point(5, 5);
-            this.navigationFrame1.Name = "navigationFrame1";
-            this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.NavegacionAsistencias.Controls.Add(this.PageListaAsistencia);
+            this.NavegacionAsistencias.Controls.Add(this.PageDetalleAsistencia);
+            this.NavegacionAsistencias.Controls.Add(this.PageCubrirAusencia);
+            this.NavegacionAsistencias.Controls.Add(this.PageMensaje);
+            this.NavegacionAsistencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NavegacionAsistencias.Location = new System.Drawing.Point(5, 5);
+            this.NavegacionAsistencias.Name = "NavegacionAsistencias";
+            this.NavegacionAsistencias.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageListaAsistencia,
             this.PageDetalleAsistencia,
             this.PageCubrirAusencia,
             this.PageMensaje});
-            this.navigationFrame1.SelectedPage = this.PageListaAsistencia;
-            this.navigationFrame1.Size = new System.Drawing.Size(1098, 652);
-            this.navigationFrame1.TabIndex = 0;
-            this.navigationFrame1.Text = "navigationFrame1";
+            this.NavegacionAsistencias.SelectedPage = this.PageListaAsistencia;
+            this.NavegacionAsistencias.Size = new System.Drawing.Size(1098, 652);
+            this.NavegacionAsistencias.TabIndex = 0;
+            this.NavegacionAsistencias.Text = "navigationFrame1";
             // 
             // PageListaAsistencia
             // 
@@ -119,6 +119,7 @@
             // 
             // PageMensaje
             // 
+            this.PageMensaje.Caption = "PageMensaje";
             this.PageMensaje.Controls.Add(this.lblEncabezado);
             this.PageMensaje.Name = "PageMensaje";
             this.PageMensaje.Size = new System.Drawing.Size(1098, 652);
@@ -143,12 +144,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.navigationFrame1);
+            this.Controls.Add(this.NavegacionAsistencias);
             this.Name = "ctlContenedorAsistencias";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1108, 662);
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
-            this.navigationFrame1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.NavegacionAsistencias)).EndInit();
+            this.NavegacionAsistencias.ResumeLayout(false);
             this.PageListaAsistencia.ResumeLayout(false);
             this.PageDetalleAsistencia.ResumeLayout(false);
             this.PageCubrirAusencia.ResumeLayout(false);
@@ -159,7 +160,7 @@
 
         #endregion
 
-        private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
+        private DevExpress.XtraBars.Navigation.NavigationFrame NavegacionAsistencias;
         private DevExpress.XtraBars.Navigation.NavigationPage PageListaAsistencia;
         private ctlListaAsistencia ctlListaAsistencia1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageDetalleAsistencia;

@@ -17,6 +17,17 @@ namespace Coordinadores_de_Edad.Controles
         public ctlContenedorAsistencias()
         {
             InitializeComponent();
+            ctlListaAsistencia1.OnMarcarAsistencia += ctlListaAsistencia1_OnMarcarAsistencia;
+        }
+
+        private void ctlListaAsistencia1_OnMarcarAsistencia(int pID_Colaborador, bool pPresente)
+        {
+          
+            NavegacionAsistencias.SelectedPage = PageDetalleAsistencia;
+            ctlDetallesAsistencia1.ConstruirControl(Pro_Conexion, 
+                                                    pID_Colaborador,
+                                                    Pro_ID_Actividad,
+                                                    pPresente);
         }
 
         public PgSqlConnection Pro_Conexion { get; set; }
@@ -35,12 +46,14 @@ namespace Coordinadores_de_Edad.Controles
 
             if (Pro_ID_Actividad == 0)
             {
-                navigationFrame1.SelectedPage = PageMensaje;
+                NavegacionAsistencias.SelectedPage = PageMensaje;
             }
             else
             {
-                navigationFrame1.SelectedPage = PageListaAsistencia;
-                ctlListaAsistencia1.ConstruirControl(Pro_Conexion, Pro_Usuario);
+                NavegacionAsistencias.SelectedPage = PageListaAsistencia;
+                ctlListaAsistencia1.ConstruirControl(Pro_Conexion, 
+                                                     Pro_Usuario,
+                                                     Pro_ID_Actividad);
             }
         }
 

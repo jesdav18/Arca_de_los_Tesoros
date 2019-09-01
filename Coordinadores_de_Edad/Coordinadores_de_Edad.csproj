@@ -248,5 +248,29 @@
   <ItemGroup>
     <None Include="Resources\iconBusqueda.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMalo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCheck_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMalo_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconToggleSi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconToggleNo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

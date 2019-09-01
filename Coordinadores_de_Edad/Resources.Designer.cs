@@ -73,6 +73,26 @@ namespace Coordinadores_de_Edad {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap frown {
+            get {
+                object obj = ResourceManager.GetObject("frown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happy {
+            get {
+                object obj = ResourceManager.GetObject("happy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_calendario_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_calendario_64", resourceCulture);
@@ -153,6 +173,26 @@ namespace Coordinadores_de_Edad {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconCheck {
+            get {
+                object obj = ResourceManager.GetObject("iconCheck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconCheck_24 {
+            get {
+                object obj = ResourceManager.GetObject("iconCheck_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconEspera {
             get {
                 object obj = ResourceManager.GetObject("iconEspera", resourceCulture);
@@ -166,6 +206,46 @@ namespace Coordinadores_de_Edad {
         internal static System.Drawing.Bitmap iconListaAsistencia_64 {
             get {
                 object obj = ResourceManager.GetObject("iconListaAsistencia_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMalo {
+            get {
+                object obj = ResourceManager.GetObject("iconMalo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMalo_24 {
+            get {
+                object obj = ResourceManager.GetObject("iconMalo_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconToggleNo {
+            get {
+                object obj = ResourceManager.GetObject("iconToggleNo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconToggleSi {
+            get {
+                object obj = ResourceManager.GetObject("iconToggleSi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
