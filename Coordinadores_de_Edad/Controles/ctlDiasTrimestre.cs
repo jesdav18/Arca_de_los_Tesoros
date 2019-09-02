@@ -145,8 +145,13 @@ namespace Coordinadores_de_Edad.Controles
  
         private void v_item_dia_selecciona_dia(object sender, EventArgs e)
         {
-            Pro_ID_Actividad_Generado = CreacionActividad((string)sender);         
-            OnSeleccionaDia?.Invoke(sender, e);
+
+            Pro_ID_Actividad_Generado = CreacionActividad((string)sender);
+            if (Pro_ID_Actividad_Generado != 0)
+            {
+                OnSeleccionaDia?.Invoke(sender, e);
+            }
+           
         }
 
         #endregion

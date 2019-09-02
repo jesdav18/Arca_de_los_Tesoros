@@ -54,11 +54,11 @@ namespace Coordinadores_de_Edad.Controles
 
                 if (v_uniforme)
                 {
-                    toggleCarnet.Image = Resources.iconToggleSi;
+                    toggleUniforme.Image = Resources.iconToggleSi;
                 }
                 else
                 {
-                    toggleCarnet.Image = Resources.iconToggleNo;
+                    toggleUniforme.Image = Resources.iconToggleNo;
                 }             
             }
         }
@@ -143,6 +143,9 @@ namespace Coordinadores_de_Edad.Controles
             try
             {
                 pgComando.ExecuteNonQuery();
+                Utilidades.MostrarDialogo(FindForm(), "Confirmación de Registros", "¡La asistencia se procesó correctamente!", Utilidades.BotonesDialogo.Ok);
+
+                OnAsistenciaIngresada?.Invoke(new object(), new EventArgs());
 
             }
             catch (Exception Exc)
@@ -161,7 +164,7 @@ namespace Coordinadores_de_Edad.Controles
 
             }
 
-            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_ficha_ingreso (p_id_colaborador)";
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_ficha_ingreso (:p_id_colaborador)";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_id_colaborador", PgSqlType.Int).Value = Pro_ID_Colaborador;
 
@@ -195,6 +198,8 @@ namespace Coordinadores_de_Edad.Controles
         }
 
         #endregion
+
+        public event EventHandler OnAsistenciaIngresada;
 
         private void CmdGuardarAsistencia_Click(object sender, EventArgs e)
         {

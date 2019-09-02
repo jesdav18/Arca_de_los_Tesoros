@@ -18,6 +18,7 @@ namespace Coordinadores_de_Edad.Controles
         public ctlListaAsistencia()
         {
             InitializeComponent();
+            
         }
 
         #region PROPIEDADES
@@ -75,12 +76,21 @@ namespace Coordinadores_de_Edad.Controles
             gvListaAsistencia.FindFilterText = "\"" + txtBusqueda.Text + "\"";
         }
 
-        private void ChkMarcarAsistencia_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        private void CmdAsistio_Click(object sender, EventArgs e)
         {
             dsCoordinadoresEdad.dtListaAsistenciaRow v_fila = (dsCoordinadoresEdad.dtListaAsistenciaRow)gvListaAsistencia.GetFocusedDataRow();
             if (v_fila != null)
             {
-                OnMarcarAsistencia?.Invoke(v_fila.id_colaborador,(bool) chkMarcarAsistencia.ValueChecked);
+                OnMarcarAsistencia?.Invoke(v_fila.id_colaborador, true);
+            }
+        }
+
+        private void CmdNoAsistio_Click(object sender, EventArgs e)
+        {
+            dsCoordinadoresEdad.dtListaAsistenciaRow v_fila = (dsCoordinadoresEdad.dtListaAsistenciaRow)gvListaAsistencia.GetFocusedDataRow();
+            if (v_fila != null)
+            {
+                OnMarcarAsistencia?.Invoke(v_fila.id_colaborador, false);
             }
         }
     }

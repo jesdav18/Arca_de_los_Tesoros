@@ -937,6 +937,8 @@ namespace Coordinadores_de_Edad.DataSet {
             
             private global::System.Data.DataColumn columnclasificacion;
             
+            private global::System.Data.DataColumn columninasistencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtListaAsistenciaDataTable() {
@@ -1012,6 +1014,14 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn inasistenciaColumn {
+                get {
+                    return this.columninasistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1047,14 +1057,15 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtListaAsistenciaRow AdddtListaAsistenciaRow(int id_colaborador, string nombre, string numero_identidad, object asistencia, string clasificacion) {
+            public dtListaAsistenciaRow AdddtListaAsistenciaRow(int id_colaborador, string nombre, string numero_identidad, string asistencia, string clasificacion, string inasistencia) {
                 dtListaAsistenciaRow rowdtListaAsistenciaRow = ((dtListaAsistenciaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
                         nombre,
                         numero_identidad,
                         asistencia,
-                        clasificacion};
+                        clasificacion,
+                        inasistencia};
                 rowdtListaAsistenciaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtListaAsistenciaRow);
                 return rowdtListaAsistenciaRow;
@@ -1082,6 +1093,7 @@ namespace Coordinadores_de_Edad.DataSet {
                 this.columnnumero_identidad = base.Columns["numero_identidad"];
                 this.columnasistencia = base.Columns["asistencia"];
                 this.columnclasificacion = base.Columns["clasificacion"];
+                this.columninasistencia = base.Columns["inasistencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1093,10 +1105,12 @@ namespace Coordinadores_de_Edad.DataSet {
                 base.Columns.Add(this.columnnombre);
                 this.columnnumero_identidad = new global::System.Data.DataColumn("numero_identidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_identidad);
-                this.columnasistencia = new global::System.Data.DataColumn("asistencia", typeof(object), null, global::System.Data.MappingType.Element);
+                this.columnasistencia = new global::System.Data.DataColumn("asistencia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnasistencia);
                 this.columnclasificacion = new global::System.Data.DataColumn("clasificacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclasificacion);
+                this.columninasistencia = new global::System.Data.DataColumn("inasistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninasistencia);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1549,10 +1563,10 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public object asistencia {
+            public string asistencia {
                 get {
                     try {
-                        return ((object)(this[this.tabledtListaAsistencia.asistenciaColumn]));
+                        return ((string)(this[this.tabledtListaAsistencia.asistenciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'asistencia\' de la tabla \'dtListaAsistencia\' es DBNull.", e);
@@ -1577,6 +1591,22 @@ namespace Coordinadores_de_Edad.DataSet {
                 }
                 set {
                     this[this.tabledtListaAsistencia.clasificacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string inasistencia {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtListaAsistencia.inasistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'inasistencia\' de la tabla \'dtListaAsistencia\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.inasistenciaColumn] = value;
                 }
             }
             
@@ -1638,6 +1668,18 @@ namespace Coordinadores_de_Edad.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetclasificacionNull() {
                 this[this.tabledtListaAsistencia.clasificacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsinasistenciaNull() {
+                return this.IsNull(this.tabledtListaAsistencia.inasistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetinasistenciaNull() {
+                this[this.tabledtListaAsistencia.inasistenciaColumn] = global::System.Convert.DBNull;
             }
         }
         

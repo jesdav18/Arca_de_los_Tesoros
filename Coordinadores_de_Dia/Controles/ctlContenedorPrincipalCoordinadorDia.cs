@@ -34,6 +34,10 @@ namespace Coordinadores_de_Dia.Controles
             fusibleSolicitudes.ConstruirControl(99);
         }
 
-      
+        private void CmdMiEquipo_Click(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = pageMiEquipo;
+            ctlMiEquipo1.ConstruirControl(Pro_Conexion, Pro_Usuario);
+        }
     }
 }

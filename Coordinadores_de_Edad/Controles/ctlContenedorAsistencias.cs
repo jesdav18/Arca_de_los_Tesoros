@@ -18,6 +18,14 @@ namespace Coordinadores_de_Edad.Controles
         {
             InitializeComponent();
             ctlListaAsistencia1.OnMarcarAsistencia += ctlListaAsistencia1_OnMarcarAsistencia;
+
+            ctlDetallesAsistencia1.OnAsistenciaIngresada += ctlDetallesAsistencia1_OnAsistenciaIngresada;
+        }
+
+        private void ctlDetallesAsistencia1_OnAsistenciaIngresada(object sender, EventArgs e)
+        {
+            NavegacionAsistencias.SelectedPage = PageListaAsistencia;
+
         }
 
         private void ctlListaAsistencia1_OnMarcarAsistencia(int pID_Colaborador, bool pPresente)

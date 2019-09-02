@@ -38,6 +38,7 @@ namespace Core.Clases
             }
 
             filepath += DateTime.Today.ToString("dd-MM-yyyy") + ".txt";
+
             StreamWriter escritor = File.AppendText(filepath);
             escritor.WriteLine("-------------ARCA DE LOS TESOROS | DEPURACION-------------");
             escritor.WriteLine("Fecha y Hora: " + DateTime.Now.ToString("hh:mm:ss"));
