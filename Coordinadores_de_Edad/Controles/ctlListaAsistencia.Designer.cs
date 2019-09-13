@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlListaAsistencia));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
@@ -52,15 +52,17 @@
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_identidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdAsistio = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.picAsistio = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.colasistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colclasificacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinasistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.picNoAsistio = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.cmdAsistio = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdNoAsistio = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
@@ -68,6 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvListaAsistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAsistio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNoAsistio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAsistio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdNoAsistio)).BeginInit();
             this.panel5.SuspendLayout();
@@ -81,7 +85,7 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1112, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1068, 75);
             this.pnlEncabezado.TabIndex = 16;
             // 
             // lblEncabezado
@@ -95,7 +99,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1112, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(1068, 75);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Lista de Asistencia";
             // 
@@ -105,7 +109,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(5, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1112, 10);
+            this.panel2.Size = new System.Drawing.Size(1068, 10);
             this.panel2.TabIndex = 17;
             // 
             // panel4
@@ -113,21 +117,19 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(5, 90);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1112, 14);
+            this.panel4.Size = new System.Drawing.Size(1068, 14);
             this.panel4.TabIndex = 20;
             // 
             // navigationFrame1
             // 
             this.navigationFrame1.Controls.Add(this.PageListaAsistencia);
-            this.navigationFrame1.Controls.Add(this.navigationPage2);
             this.navigationFrame1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationFrame1.Location = new System.Drawing.Point(5, 104);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.PageListaAsistencia,
-            this.navigationPage2});
+            this.PageListaAsistencia});
             this.navigationFrame1.SelectedPage = this.PageListaAsistencia;
-            this.navigationFrame1.Size = new System.Drawing.Size(1112, 549);
+            this.navigationFrame1.Size = new System.Drawing.Size(1068, 682);
             this.navigationFrame1.TabIndex = 25;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
@@ -138,7 +140,7 @@
             this.PageListaAsistencia.Controls.Add(this.panel1);
             this.PageListaAsistencia.Controls.Add(this.panel5);
             this.PageListaAsistencia.Name = "PageListaAsistencia";
-            this.PageListaAsistencia.Size = new System.Drawing.Size(1112, 549);
+            this.PageListaAsistencia.Size = new System.Drawing.Size(1068, 682);
             // 
             // gcMaestrosDisponibles
             // 
@@ -150,8 +152,10 @@
             this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
             this.gcMaestrosDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdAsistio,
-            this.cmdNoAsistio});
-            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(1112, 469);
+            this.cmdNoAsistio,
+            this.picAsistio,
+            this.picNoAsistio});
+            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(1068, 602);
             this.gcMaestrosDisponibles.TabIndex = 26;
             this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListaAsistencia});
@@ -172,6 +176,7 @@
             this.colnombre,
             this.colnumero_identidad,
             this.colseleccionar,
+            this.colasistencia,
             this.colclasificacion,
             this.colinasistencia});
             this.gvListaAsistencia.GridControl = this.gcMaestrosDisponibles;
@@ -210,25 +215,33 @@
             // 
             this.colseleccionar.AppearanceHeader.Options.UseTextOptions = true;
             this.colseleccionar.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colseleccionar.Caption = "Asistió";
-            this.colseleccionar.ColumnEdit = this.cmdAsistio;
+            this.colseleccionar.ColumnEdit = this.picAsistio;
             this.colseleccionar.FieldName = "seleccionar";
             this.colseleccionar.MaxWidth = 130;
             this.colseleccionar.MinWidth = 130;
             this.colseleccionar.Name = "colseleccionar";
-            this.colseleccionar.Visible = true;
-            this.colseleccionar.VisibleIndex = 3;
             this.colseleccionar.Width = 130;
             // 
-            // cmdAsistio
+            // picAsistio
             // 
-            this.cmdAsistio.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::Coordinadores_de_Edad.Resources.iconCheck_24;
-            this.cmdAsistio.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdAsistio.Name = "cmdAsistio";
-            this.cmdAsistio.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdAsistio.Click += new System.EventHandler(this.CmdAsistio_Click);
+            this.picAsistio.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picAsistio.Name = "picAsistio";
+            this.picAsistio.NullText = " ";
+            this.picAsistio.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picAsistio.Click += new System.EventHandler(this.PicAsistio_Click);
+            // 
+            // colasistencia
+            // 
+            this.colasistencia.AppearanceHeader.Options.UseTextOptions = true;
+            this.colasistencia.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colasistencia.Caption = "Asistió";
+            this.colasistencia.ColumnEdit = this.picAsistio;
+            this.colasistencia.FieldName = "asistencia";
+            this.colasistencia.MinWidth = 25;
+            this.colasistencia.Name = "colasistencia";
+            this.colasistencia.Visible = true;
+            this.colasistencia.VisibleIndex = 3;
+            this.colasistencia.Width = 94;
             // 
             // colclasificacion
             // 
@@ -245,7 +258,7 @@
             this.colinasistencia.AppearanceHeader.Options.UseTextOptions = true;
             this.colinasistencia.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colinasistencia.Caption = "No Asistió";
-            this.colinasistencia.ColumnEdit = this.cmdNoAsistio;
+            this.colinasistencia.ColumnEdit = this.picNoAsistio;
             this.colinasistencia.FieldName = "inasistencia";
             this.colinasistencia.MaxWidth = 120;
             this.colinasistencia.MinWidth = 120;
@@ -254,12 +267,28 @@
             this.colinasistencia.VisibleIndex = 4;
             this.colinasistencia.Width = 120;
             // 
+            // picNoAsistio
+            // 
+            this.picNoAsistio.Name = "picNoAsistio";
+            this.picNoAsistio.NullText = " ";
+            this.picNoAsistio.Click += new System.EventHandler(this.PicNoAsistio_Click);
+            // 
+            // cmdAsistio
+            // 
+            this.cmdAsistio.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::Coordinadores_de_Edad.Resources.iconCheck_24;
+            this.cmdAsistio.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdAsistio.Name = "cmdAsistio";
+            this.cmdAsistio.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdAsistio.Click += new System.EventHandler(this.CmdAsistio_Click);
+            // 
             // cmdNoAsistio
             // 
             this.cmdNoAsistio.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::Coordinadores_de_Edad.Resources.iconMalo_24;
+            editorButtonImageOptions2.Image = global::Coordinadores_de_Edad.Resources.iconMalo_24;
             this.cmdNoAsistio.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdNoAsistio.Name = "cmdNoAsistio";
             this.cmdNoAsistio.NullText = " ";
             this.cmdNoAsistio.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -270,7 +299,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1112, 26);
+            this.panel1.Size = new System.Drawing.Size(1068, 26);
             this.panel1.TabIndex = 25;
             // 
             // panel5
@@ -281,7 +310,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(5);
-            this.panel5.Size = new System.Drawing.Size(1112, 54);
+            this.panel5.Size = new System.Drawing.Size(1068, 54);
             this.panel5.TabIndex = 24;
             // 
             // txtBusqueda
@@ -309,12 +338,6 @@
             this.pictureEdit1.Size = new System.Drawing.Size(63, 44);
             this.pictureEdit1.TabIndex = 30;
             // 
-            // navigationPage2
-            // 
-            this.navigationPage2.Caption = "navigationPage2";
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(1112, 549);
-            // 
             // ctlListaAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -324,9 +347,10 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlEncabezado);
+            this.MinimumSize = new System.Drawing.Size(1078, 791);
             this.Name = "ctlListaAsistencia";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(1122, 658);
+            this.Size = new System.Drawing.Size(1078, 791);
             this.pnlEncabezado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
@@ -334,6 +358,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvListaAsistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAsistio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNoAsistio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAsistio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdNoAsistio)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -354,7 +380,6 @@
         private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraEditors.TextEdit txtBusqueda;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.GridControl gcMaestrosDisponibles;
         private DevExpress.XtraGrid.Views.Grid.GridView gvListaAsistencia;
@@ -367,5 +392,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colinasistencia;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdAsistio;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdNoAsistio;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit picAsistio;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit picNoAsistio;
+        private DevExpress.XtraGrid.Columns.GridColumn colasistencia;
     }
 }

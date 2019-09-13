@@ -19,28 +19,31 @@ namespace Coordinadores_de_Edad.Controles
         public string Pro_Fecha { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
         public int Pro_ID_Actividad { get; set; }
-        public bool Pro_MostrarEncabezado {
+        public bool Pro_MostrarEncabezadoOriginal {
             get
             {
-                return v_mostrar_encabezado;
+                return v_mostrar_encabezado_original;
             }
             set
             {
-                v_mostrar_encabezado = value;
-                if (!v_mostrar_encabezado)
+                v_mostrar_encabezado_original = value;
+                if (!v_mostrar_encabezado_original)
                 {
-                    pnlEncabezado.Visible = false;
-                    panel2.Visible = false;
+                    NavigationEncabezado.SelectedPage = PageEncabezadoApilado;
+
                 }
                 else
                 {
+                    NavigationEncabezado.SelectedPage = PageEncabezadoOriginal;
                     lblEncabezado.Text = "Selección de Ayudas para el día " + Pro_Fecha;
                 }
             }
         }
 
 
-        bool v_mostrar_encabezado;
+        bool v_mostrar_encabezado_original;
+
+        public event EventHandler OnExteder_EncojerControl;
       
 
 
@@ -49,13 +52,13 @@ namespace Coordinadores_de_Edad.Controles
                                    string pFecha,
                                    int pID_Actividad,
                                    int pID_AreaAtencion,
-                                   bool pMostrarEncabezado = true)
+                                   bool pMostrarEncabezadoOriginal = true)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
             Pro_Fecha = pFecha;
             Pro_ID_AreaAtencion = pID_AreaAtencion;
-            Pro_MostrarEncabezado = pMostrarEncabezado;
+            Pro_MostrarEncabezadoOriginal = pMostrarEncabezadoOriginal;
             Pro_ID_Actividad = pID_Actividad;
 
            
@@ -132,10 +135,23 @@ namespace Coordinadores_de_Edad.Controles
             dsCoordinadoresEdad.dtAyudasDisponiblesRow v_fila = (dsCoordinadoresEdad.dtAyudasDisponiblesRow)gvMestrosDisponibles.GetFocusedDataRow();
             if (v_fila != null)
             {
-                GuardarEnListaAsistencia(v_fila.id_colaborador);
+                if (Pro_MostrarEncabezadoOriginal)
+                {
+                    GuardarEnListaAsistencia(v_fila.id_colaborador);
+                }
+                else
+                {
+                    OnSeleccionaAyudaParaCubrir?.Invoke(v_fila.id_colaborador, new EventArgs());
+                }
+
             }
         }
 
-       
+        public event EventHandler OnSeleccionaAyudaParaCubrir;
+
+        private void PicTituloApilado_Click(object sender, EventArgs e)
+        {
+            OnExteder_EncojerControl?.Invoke(sender, e);
+        }
     }
 }

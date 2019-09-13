@@ -14,28 +14,28 @@ namespace Coordinadores_de_Edad.Controles
             InitializeComponent();
         }
 
-        bool v_mostrar_encabezado;
+        bool v_mostrar_encabezado_principal;
 
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
         public string  Pro_Fecha { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
         public int Pro_ID_Actividad { get; set; }
-        public bool Pro_MostrarEncabezado {
+        public bool Pro_MostrarEncabezadoPrincipal{
             get
             {
-                return v_mostrar_encabezado;
+                return v_mostrar_encabezado_principal;
             }
             set
             {
-                v_mostrar_encabezado = value;
-                if (!v_mostrar_encabezado)
+                v_mostrar_encabezado_principal = value;
+                if (!v_mostrar_encabezado_principal)
                 {
-                    pnlEncabezado.Visible = false;
-                    panel2.Visible = false;
+                    NavegacionEncabezado.SelectedPage = PageReducido;
                 }
                 else
                 {
+                    NavegacionEncabezado.SelectedPage = PageEncabezadoPrincipal;
                     lblEncabezado.Text = "Selección de Maestros para el día " + Pro_Fecha;
                 }
             }
@@ -48,13 +48,13 @@ namespace Coordinadores_de_Edad.Controles
                                       string pFecha,
                                       int pID_Actividad,
                                       int pID_AreaAtencion,
-                                      bool pMostrarEncabezado = true)
+                                      bool pMostrarEncabezadoPrincipal = true)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
             Pro_Fecha = pFecha;
             Pro_ID_AreaAtencion = pID_AreaAtencion;
-            Pro_MostrarEncabezado = pMostrarEncabezado;
+            Pro_MostrarEncabezadoPrincipal = pMostrarEncabezadoPrincipal;
             Pro_ID_Actividad = pID_Actividad;
 
             CargarDatos();
@@ -120,6 +120,8 @@ namespace Coordinadores_de_Edad.Controles
           
         }
 
+        public event EventHandler OnPresionaExtender_Encojer;
+
         private void TxtBusqueda_TextChanged(object sender, EventArgs e)
         {
             gvMestrosDisponibles.FindFilterText = "\"" + txtBusqueda.Text + "\"";
@@ -130,8 +132,22 @@ namespace Coordinadores_de_Edad.Controles
             dsCoordinadoresEdad.dtMaestrosDisponiblesRow v_fila = (dsCoordinadoresEdad.dtMaestrosDisponiblesRow) gvMestrosDisponibles.GetFocusedDataRow();
             if (v_fila != null)
             {
-                GuardarEnListaAsistencia(v_fila.id_colaborador);
+                if (Pro_MostrarEncabezadoPrincipal)
+                {
+                    GuardarEnListaAsistencia(v_fila.id_colaborador);
+                }
+                else
+                {
+                    OnSeleccionaMaestroParaCubrir?.Invoke(v_fila.id_colaborador, new EventArgs());
+                }          
             }
+        }
+
+        public event EventHandler OnSeleccionaMaestroParaCubrir;
+
+        private void PicTituloApilado_Click(object sender, EventArgs e)
+        {
+            OnPresionaExtender_Encojer?.Invoke(sender, e);
         }
     }
 }

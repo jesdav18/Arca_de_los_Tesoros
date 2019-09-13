@@ -193,6 +193,16 @@ namespace Coordinadores_de_Edad {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconCheckVerde_24 {
+            get {
+                object obj = ResourceManager.GetObject("iconCheckVerde_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconEspera {
             get {
                 object obj = ResourceManager.GetObject("iconEspera", resourceCulture);
@@ -233,6 +243,16 @@ namespace Coordinadores_de_Edad {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconMaloRojo_24 {
+            get {
+                object obj = ResourceManager.GetObject("iconMaloRojo_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconToggleNo {
             get {
                 object obj = ResourceManager.GetObject("iconToggleNo", resourceCulture);
@@ -246,6 +266,16 @@ namespace Coordinadores_de_Edad {
         internal static System.Drawing.Bitmap iconToggleSi {
             get {
                 object obj = ResourceManager.GetObject("iconToggleSi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconUncheck_32 {
+            get {
+                object obj = ResourceManager.GetObject("iconUncheck_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

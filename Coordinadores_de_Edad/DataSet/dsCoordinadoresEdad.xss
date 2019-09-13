@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:dtMaestrosDisponibles" ZOrder="3" X="496" Y="261" Height="125" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:dtAyudasDisponibles" ZOrder="2" X="763" Y="268" Height="125" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:dtListaAsistencia" ZOrder="1" X="501" Y="401" Height="171" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="190" />
+    <Shape ID="DesignTable:dtListaAsistencia" ZOrder="1" X="501" Y="401" Height="194" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="190" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

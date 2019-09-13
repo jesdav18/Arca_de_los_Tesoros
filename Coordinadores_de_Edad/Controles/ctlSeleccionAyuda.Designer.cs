@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlSeleccionAyuda));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
+            this.NavigationEncabezado = new DevExpress.XtraBars.Navigation.NavigationFrame();
+            this.PageEncabezadoApilado = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.lblTituloApilado = new DevExpress.XtraEditors.LabelControl();
+            this.picTituloApilado = new DevExpress.XtraEditors.PictureEdit();
+            this.PageEncabezadoOriginal = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,6 +51,11 @@
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdGuardarEnListaAsistencia = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.pnlEncabezado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NavigationEncabezado)).BeginInit();
+            this.NavigationEncabezado.SuspendLayout();
+            this.PageEncabezadoApilado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTituloApilado.Properties)).BeginInit();
+            this.PageEncabezadoOriginal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).BeginInit();
@@ -57,12 +67,85 @@
             // 
             // pnlEncabezado
             // 
-            this.pnlEncabezado.Controls.Add(this.lblEncabezado);
+            this.pnlEncabezado.Controls.Add(this.NavigationEncabezado);
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
             this.pnlEncabezado.Size = new System.Drawing.Size(875, 75);
             this.pnlEncabezado.TabIndex = 13;
+            // 
+            // NavigationEncabezado
+            // 
+            this.NavigationEncabezado.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            this.NavigationEncabezado.Controls.Add(this.PageEncabezadoApilado);
+            this.NavigationEncabezado.Controls.Add(this.PageEncabezadoOriginal);
+            this.NavigationEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NavigationEncabezado.Location = new System.Drawing.Point(0, 0);
+            this.NavigationEncabezado.Name = "NavigationEncabezado";
+            this.NavigationEncabezado.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.PageEncabezadoOriginal,
+            this.PageEncabezadoApilado});
+            this.NavigationEncabezado.SelectedPage = this.PageEncabezadoOriginal;
+            this.NavigationEncabezado.Size = new System.Drawing.Size(875, 75);
+            this.NavigationEncabezado.TabIndex = 0;
+            this.NavigationEncabezado.TransitionAnimationProperties.FrameCount = 500;
+            this.NavigationEncabezado.TransitionAnimationProperties.FrameInterval = 500;
+            // 
+            // PageEncabezadoApilado
+            // 
+            this.PageEncabezadoApilado.Caption = "PageEncabezadoApilado";
+            this.PageEncabezadoApilado.Controls.Add(this.lblTituloApilado);
+            this.PageEncabezadoApilado.Controls.Add(this.picTituloApilado);
+            this.PageEncabezadoApilado.Name = "PageEncabezadoApilado";
+            this.PageEncabezadoApilado.Size = new System.Drawing.Size(875, 75);
+            // 
+            // lblTituloApilado
+            // 
+            this.lblTituloApilado.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
+            this.lblTituloApilado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloApilado.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTituloApilado.Appearance.Options.UseBackColor = true;
+            this.lblTituloApilado.Appearance.Options.UseFont = true;
+            this.lblTituloApilado.Appearance.Options.UseForeColor = true;
+            this.lblTituloApilado.Appearance.Options.UseTextOptions = true;
+            this.lblTituloApilado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTituloApilado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.lblTituloApilado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblTituloApilado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTituloApilado.Location = new System.Drawing.Point(63, 0);
+            this.lblTituloApilado.Name = "lblTituloApilado";
+            this.lblTituloApilado.Size = new System.Drawing.Size(812, 75);
+            this.lblTituloApilado.TabIndex = 10;
+            this.lblTituloApilado.Text = "Buscar en Ayudas";
+            this.lblTituloApilado.Click += new System.EventHandler(this.PicTituloApilado_Click);
+            // 
+            // picTituloApilado
+            // 
+            this.picTituloApilado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picTituloApilado.EditValue = global::Coordinadores_de_Edad.Resources.iconBusqueda;
+            this.picTituloApilado.Location = new System.Drawing.Point(0, 0);
+            this.picTituloApilado.Name = "picTituloApilado";
+            this.picTituloApilado.Properties.AllowFocused = false;
+            this.picTituloApilado.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.picTituloApilado.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picTituloApilado.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picTituloApilado.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
+            this.picTituloApilado.Properties.Appearance.Options.UseBackColor = true;
+            this.picTituloApilado.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picTituloApilado.Properties.NullText = "   ";
+            this.picTituloApilado.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picTituloApilado.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picTituloApilado.Size = new System.Drawing.Size(63, 75);
+            this.picTituloApilado.TabIndex = 31;
+            this.picTituloApilado.Click += new System.EventHandler(this.PicTituloApilado_Click);
+            // 
+            // PageEncabezadoOriginal
+            // 
+            this.PageEncabezadoOriginal.Caption = "PageEncabezadoOriginal";
+            this.PageEncabezadoOriginal.Controls.Add(this.lblEncabezado);
+            this.PageEncabezadoOriginal.Controls.Add(this.panel2);
+            this.PageEncabezadoOriginal.Name = "PageEncabezadoOriginal";
+            this.PageEncabezadoOriginal.Size = new System.Drawing.Size(875, 75);
             // 
             // lblEncabezado
             // 
@@ -75,16 +158,15 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(875, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(875, 65);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Seleccion Ayudas día X";
-            
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 80);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 65);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(875, 10);
             this.panel2.TabIndex = 14;
@@ -92,7 +174,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(5, 90);
+            this.panel3.Location = new System.Drawing.Point(5, 80);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(875, 30);
             this.panel3.TabIndex = 21;
@@ -102,7 +184,7 @@
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Controls.Add(this.cmdGuardarSolicitud);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 120);
+            this.panel1.Location = new System.Drawing.Point(5, 110);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(875, 54);
@@ -136,7 +218,7 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 174);
+            this.panel4.Location = new System.Drawing.Point(5, 164);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(875, 26);
             this.panel4.TabIndex = 23;
@@ -146,12 +228,12 @@
             this.gcMaestrosDisponibles.DataMember = "dtAyudasDisponibles";
             this.gcMaestrosDisponibles.DataSource = this.dsCoordinadoresEdad1;
             this.gcMaestrosDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMaestrosDisponibles.Location = new System.Drawing.Point(5, 200);
+            this.gcMaestrosDisponibles.Location = new System.Drawing.Point(5, 190);
             this.gcMaestrosDisponibles.MainView = this.gvMestrosDisponibles;
             this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
             this.gcMaestrosDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdGuardarEnListaAsistencia});
-            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(875, 425);
+            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(875, 435);
             this.gcMaestrosDisponibles.TabIndex = 24;
             this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMestrosDisponibles});
@@ -236,12 +318,16 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlEncabezado);
             this.Name = "ctlSeleccionAyuda";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(885, 630);
             this.pnlEncabezado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.NavigationEncabezado)).EndInit();
+            this.NavigationEncabezado.ResumeLayout(false);
+            this.PageEncabezadoApilado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picTituloApilado.Properties)).EndInit();
+            this.PageEncabezadoOriginal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).EndInit();
@@ -271,5 +357,10 @@
         private DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdGuardarEnListaAsistencia;
+        private DevExpress.XtraBars.Navigation.NavigationFrame NavigationEncabezado;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageEncabezadoApilado;
+        private DevExpress.XtraEditors.LabelControl lblTituloApilado;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageEncabezadoOriginal;
+        private DevExpress.XtraEditors.PictureEdit picTituloApilado;
     }
 }

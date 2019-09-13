@@ -328,7 +328,7 @@
             this.ctlSeleccionMaestros_Ayudas1.Pro_Conexion = null;
             this.ctlSeleccionMaestros_Ayudas1.Pro_Fecha = null;
             this.ctlSeleccionMaestros_Ayudas1.Pro_ID_AreaAtencion = 0;
-            this.ctlSeleccionMaestros_Ayudas1.Pro_MostrarEncabezado = true;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_MostrarEncabezadoPrincipal = true;
             this.ctlSeleccionMaestros_Ayudas1.Pro_Usuario = null;
             this.ctlSeleccionMaestros_Ayudas1.Size = new System.Drawing.Size(1330, 755);
             this.ctlSeleccionMaestros_Ayudas1.TabIndex = 0;
@@ -343,7 +343,7 @@
             this.ctlSeleccionAyuda1.Pro_Conexion = null;
             this.ctlSeleccionAyuda1.Pro_Fecha = null;
             this.ctlSeleccionAyuda1.Pro_ID_AreaAtencion = 0;
-            this.ctlSeleccionAyuda1.Pro_MostrarEncabezado = true;
+            this.ctlSeleccionAyuda1.Pro_MostrarEncabezadoOriginal = true;
             this.ctlSeleccionAyuda1.Pro_Usuario = null;
             this.ctlSeleccionAyuda1.Size = new System.Drawing.Size(1330, 755);
             this.ctlSeleccionAyuda1.TabIndex = 0;

@@ -14,6 +14,12 @@ namespace Coordinadores_de_Edad.Controles
         public ctlDetallesAsistencia()
         {
             InitializeComponent();
+            ctlCubrirAusencias1.OnCubrirAusenciaIngresada += ctlCubrirAusencias1_OnCubrirAusenciaIngresada;
+        }
+
+        private void ctlCubrirAusencias1_OnCubrirAusenciaIngresada(object sender, EventArgs e)
+        {
+            OnAsistenciaIngresada?.Invoke(new object(), new EventArgs());
         }
 
         #endregion
@@ -89,7 +95,7 @@ namespace Coordinadores_de_Edad.Controles
 
         #region VARIABLES GLOBALES
 
-        private bool v_motivo_inasistencia;
+        private string v_motivo_inasistencia;
         private bool v_carnet;
         private bool v_uniforme;
         private bool v_presente;
@@ -113,12 +119,13 @@ namespace Coordinadores_de_Edad.Controles
             CargarFotografiaColaborador();
         }
 
-        private void MarcarAsistencia(int pID_Colaborador)
+        private int MarcarAsistencia(int pID_Colaborador,bool pGenerarEvento = true)
         {
+            int v_id_colaborador_asistencia;
+
             if (Pro_Conexion.State != ConnectionState.Open)
             {
                 Pro_Conexion.Open();
-
             }
 
             string sentencia = @"SELECT * FROM arca_tesoros.ft_mant_postear_asistencia (
@@ -142,16 +149,21 @@ namespace Coordinadores_de_Edad.Controles
          
             try
             {
-                pgComando.ExecuteNonQuery();
-                Utilidades.MostrarDialogo(FindForm(), "Confirmación de Registros", "¡La asistencia se procesó correctamente!", Utilidades.BotonesDialogo.Ok);
+                v_id_colaborador_asistencia = Convert.ToInt32(pgComando.ExecuteScalar());
+               
+                if (pGenerarEvento)
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Confirmación de Registros", "¡La asistencia se procesó correctamente!", Utilidades.BotonesDialogo.Ok);
+                    OnAsistenciaIngresada?.Invoke(new object(), new EventArgs());
+                }
 
-                OnAsistenciaIngresada?.Invoke(new object(), new EventArgs());
-
+                return v_id_colaborador_asistencia;
             }
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "MarcarAsistencia");
                 MessageBox.Show("Algo salió mal mientras se marcaba asistencia del colaborador en la lista.");
+                return 0;
             }
 
         }
@@ -218,10 +230,17 @@ namespace Coordinadores_de_Edad.Controles
 
         private void CmdSeleccionarCubrirAusencia_Click(object sender, EventArgs e)
         {
-            MarcarAsistencia(Pro_ID_Colaborador);
+            
             NavigationPrincipal.SelectedPage = PageCubrirAusencia;
-            ctlCubrirAusencias1.ConstruirControl(Pro_Conexion, Pro_ID_Colaborador);
+            ctlCubrirAusencias1.ConstruirControl(Pro_Conexion, Pro_ID_Colaborador, MarcarAsistencia(Pro_ID_Colaborador, false));
 
+        }
+
+        private void RadioProblemasFamiliares_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton v_radio = (RadioButton)sender;
+            v_motivo_inasistencia = v_radio.Text;
+            
         }
     }
 }

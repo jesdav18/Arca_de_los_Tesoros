@@ -63,11 +63,35 @@ namespace Coordinadores_de_Edad.Controles
             {
                 dsCoordinadoresEdad1.dtListaAsistencia.Clear();
                 new PgSqlDataAdapter(pgComando).Fill(dsCoordinadoresEdad1.dtListaAsistencia);
+
+                CargarImagenesEstadoAsistencia();
             }
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosAsistencia");
                 MessageBox.Show("Algo salió mal mientras se cargaba lista asistencia.");
+            }
+        }
+
+        private void CargarImagenesEstadoAsistencia()
+        {
+            foreach (dsCoordinadoresEdad.dtListaAsistenciaRow iterador in dsCoordinadoresEdad1.dtListaAsistencia)
+            {
+                if (iterador.IsasistioNull())
+                {
+                    iterador.asistencia = Resources.iconCheck_24;
+                    iterador.inasistencia = Resources.iconMalo_24;
+                }
+                else if (iterador.asistio)
+                {
+                    iterador.asistencia = Resources.iconCheckVerde_24;
+                    iterador.inasistencia = null;
+                }
+                else if (!iterador.asistio)
+                {
+                    iterador.asistencia = null;
+                    iterador.inasistencia = Resources.iconMaloRojo_24;
+                }
             }
         }
       
@@ -91,6 +115,24 @@ namespace Coordinadores_de_Edad.Controles
             if (v_fila != null)
             {
                 OnMarcarAsistencia?.Invoke(v_fila.id_colaborador, false);
+            }
+        }
+
+        private void PicNoAsistio_Click(object sender, EventArgs e)
+        {
+            dsCoordinadoresEdad.dtListaAsistenciaRow v_fila = (dsCoordinadoresEdad.dtListaAsistenciaRow)gvListaAsistencia.GetFocusedDataRow();
+            if (v_fila != null)
+            {
+                OnMarcarAsistencia?.Invoke(v_fila.id_colaborador, false);
+            }
+        }
+
+        private void PicAsistio_Click(object sender, EventArgs e)
+        {
+            dsCoordinadoresEdad.dtListaAsistenciaRow v_fila = (dsCoordinadoresEdad.dtListaAsistenciaRow)gvListaAsistencia.GetFocusedDataRow();
+            if (v_fila != null)
+            {
+                OnMarcarAsistencia?.Invoke(v_fila.id_colaborador, true);
             }
         }
     }

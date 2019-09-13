@@ -939,6 +939,8 @@ namespace Coordinadores_de_Edad.DataSet {
             
             private global::System.Data.DataColumn columninasistencia;
             
+            private global::System.Data.DataColumn columnasistio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtListaAsistenciaDataTable() {
@@ -1022,6 +1024,14 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn asistioColumn {
+                get {
+                    return this.columnasistio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1057,7 +1067,7 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtListaAsistenciaRow AdddtListaAsistenciaRow(int id_colaborador, string nombre, string numero_identidad, string asistencia, string clasificacion, string inasistencia) {
+            public dtListaAsistenciaRow AdddtListaAsistenciaRow(int id_colaborador, string nombre, string numero_identidad, object asistencia, string clasificacion, object inasistencia, bool asistio) {
                 dtListaAsistenciaRow rowdtListaAsistenciaRow = ((dtListaAsistenciaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
@@ -1065,7 +1075,8 @@ namespace Coordinadores_de_Edad.DataSet {
                         numero_identidad,
                         asistencia,
                         clasificacion,
-                        inasistencia};
+                        inasistencia,
+                        asistio};
                 rowdtListaAsistenciaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtListaAsistenciaRow);
                 return rowdtListaAsistenciaRow;
@@ -1094,6 +1105,7 @@ namespace Coordinadores_de_Edad.DataSet {
                 this.columnasistencia = base.Columns["asistencia"];
                 this.columnclasificacion = base.Columns["clasificacion"];
                 this.columninasistencia = base.Columns["inasistencia"];
+                this.columnasistio = base.Columns["asistio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1105,12 +1117,14 @@ namespace Coordinadores_de_Edad.DataSet {
                 base.Columns.Add(this.columnnombre);
                 this.columnnumero_identidad = new global::System.Data.DataColumn("numero_identidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_identidad);
-                this.columnasistencia = new global::System.Data.DataColumn("asistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnasistencia = new global::System.Data.DataColumn("asistencia", typeof(object), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnasistencia);
                 this.columnclasificacion = new global::System.Data.DataColumn("clasificacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclasificacion);
-                this.columninasistencia = new global::System.Data.DataColumn("inasistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columninasistencia = new global::System.Data.DataColumn("inasistencia", typeof(object), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columninasistencia);
+                this.columnasistio = new global::System.Data.DataColumn("asistio", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnasistio);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1563,10 +1577,10 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string asistencia {
+            public object asistencia {
                 get {
                     try {
-                        return ((string)(this[this.tabledtListaAsistencia.asistenciaColumn]));
+                        return ((object)(this[this.tabledtListaAsistencia.asistenciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'asistencia\' de la tabla \'dtListaAsistencia\' es DBNull.", e);
@@ -1596,10 +1610,10 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string inasistencia {
+            public object inasistencia {
                 get {
                     try {
-                        return ((string)(this[this.tabledtListaAsistencia.inasistenciaColumn]));
+                        return ((object)(this[this.tabledtListaAsistencia.inasistenciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'inasistencia\' de la tabla \'dtListaAsistencia\' es DBNull.", e);
@@ -1607,6 +1621,22 @@ namespace Coordinadores_de_Edad.DataSet {
                 }
                 set {
                     this[this.tabledtListaAsistencia.inasistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool asistio {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledtListaAsistencia.asistioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'asistio\' de la tabla \'dtListaAsistencia\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.asistioColumn] = value;
                 }
             }
             
@@ -1680,6 +1710,18 @@ namespace Coordinadores_de_Edad.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetinasistenciaNull() {
                 this[this.tabledtListaAsistencia.inasistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsasistioNull() {
+                return this.IsNull(this.tabledtListaAsistencia.asistioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetasistioNull() {
+                this[this.tabledtListaAsistencia.asistioColumn] = global::System.Convert.DBNull;
             }
         }
         

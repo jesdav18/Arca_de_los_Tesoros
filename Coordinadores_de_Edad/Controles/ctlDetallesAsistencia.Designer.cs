@@ -196,11 +196,12 @@
             this.picCaratulaAsistencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picCaratulaAsistencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picCaratulaAsistencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.picCaratulaAsistencia.Size = new System.Drawing.Size(81, 80);
+            this.picCaratulaAsistencia.Size = new System.Drawing.Size(114, 104);
             this.picCaratulaAsistencia.TabIndex = 22;
             // 
             // NavegacionObservaciones
             // 
+            this.NavegacionObservaciones.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             this.NavegacionObservaciones.Controls.Add(this.page);
             this.NavegacionObservaciones.Controls.Add(this.pageInasistencias);
             this.NavegacionObservaciones.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,9 +214,12 @@
             this.NavegacionObservaciones.Size = new System.Drawing.Size(1068, 409);
             this.NavegacionObservaciones.TabIndex = 31;
             this.NavegacionObservaciones.Text = "navigationFrame1";
+            this.NavegacionObservaciones.TransitionAnimationProperties.FrameCount = 500;
+            this.NavegacionObservaciones.TransitionAnimationProperties.FrameInterval = 500;
             // 
             // page
             // 
+            this.page.Caption = "page";
             this.page.Controls.Add(this.toggleCarnet);
             this.page.Controls.Add(this.toggleUniforme);
             this.page.Controls.Add(this.cmdGuardarAsistencia);
@@ -348,6 +352,7 @@
             this.radioSinJustificacion.TabStop = true;
             this.radioSinJustificacion.Text = "Sin Justificación";
             this.radioSinJustificacion.UseVisualStyleBackColor = true;
+            this.radioSinJustificacion.CheckedChanged += new System.EventHandler(this.RadioProblemasFamiliares_CheckedChanged);
             // 
             // radioOtros
             // 
@@ -360,6 +365,7 @@
             this.radioOtros.TabStop = true;
             this.radioOtros.Text = "Otros";
             this.radioOtros.UseVisualStyleBackColor = true;
+            this.radioOtros.CheckedChanged += new System.EventHandler(this.RadioProblemasFamiliares_CheckedChanged);
             // 
             // radioEnfermedad
             // 
@@ -372,6 +378,7 @@
             this.radioEnfermedad.TabStop = true;
             this.radioEnfermedad.Text = "Enfermedad";
             this.radioEnfermedad.UseVisualStyleBackColor = true;
+            this.radioEnfermedad.CheckedChanged += new System.EventHandler(this.RadioProblemasFamiliares_CheckedChanged);
             // 
             // radioPorLabores
             // 
@@ -384,6 +391,7 @@
             this.radioPorLabores.TabStop = true;
             this.radioPorLabores.Text = "Por Labores";
             this.radioPorLabores.UseVisualStyleBackColor = true;
+            this.radioPorLabores.CheckedChanged += new System.EventHandler(this.RadioProblemasFamiliares_CheckedChanged);
             // 
             // radioProblemasFamiliares
             // 
@@ -395,6 +403,7 @@
             this.radioProblemasFamiliares.TabStop = true;
             this.radioProblemasFamiliares.Text = "Problemas Familiares";
             this.radioProblemasFamiliares.UseVisualStyleBackColor = true;
+            this.radioProblemasFamiliares.CheckedChanged += new System.EventHandler(this.RadioProblemasFamiliares_CheckedChanged);
             // 
             // labelControl4
             // 
@@ -412,6 +421,7 @@
             // 
             // NavigationPrincipal
             // 
+            this.NavigationPrincipal.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             this.NavigationPrincipal.Controls.Add(this.PageCubrirAusencia);
             this.NavigationPrincipal.Controls.Add(this.PageDetalles);
             this.NavigationPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -439,11 +449,10 @@
             this.ctlCubrirAusencias1.BackColor = System.Drawing.Color.White;
             this.ctlCubrirAusencias1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctlCubrirAusencias1.Location = new System.Drawing.Point(0, 0);
+            this.ctlCubrirAusencias1.MinimumSize = new System.Drawing.Size(1078, 791);
             this.ctlCubrirAusencias1.Name = "ctlCubrirAusencias1";
-            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlCubrirAusencias1.Pro_Conexion = null;
-            this.ctlCubrirAusencias1.Pro_ID_Colaborador = 0;
-            this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1068, 781);
+            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);           
+            this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1078, 791);
             this.ctlCubrirAusencias1.TabIndex = 0;
             // 
             // PageDetalles
@@ -463,7 +472,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.NavigationPrincipal);
-            this.MinimumSize = new System.Drawing.Size(1078, 791);
             this.Name = "ctlDetallesAsistencia";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1078, 791);

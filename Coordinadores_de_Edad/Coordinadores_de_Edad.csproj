@@ -199,6 +199,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Coordinadores_de_Dia\Coordinadores_de_Dia.csproj">
+      <Project>{0ABA534B-1BA5-4DD9-9EEC-66AAC0B74E8B}</Project>
+      <Name>Coordinadores_de_Dia</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{69CF97AA-9F33-4E58-B95F-4BC334AEBF3A}</Project>
       <Name>Core</Name>
@@ -271,6 +275,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconToggleNo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCheckVerde_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMaloRojo_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconUncheck_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

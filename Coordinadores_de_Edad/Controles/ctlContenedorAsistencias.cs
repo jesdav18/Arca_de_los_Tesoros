@@ -91,7 +91,6 @@ namespace Coordinadores_de_Edad.Controles
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ObtenerActividad");
                 MessageBox.Show("Algo salió mal mientras se obtenía información de la actividad.");
             }
-
         }
     }
 }
