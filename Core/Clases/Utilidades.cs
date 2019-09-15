@@ -35,6 +35,42 @@ namespace Core.Clases
             return v_ip_host;
         }
 
+        public static string ObtenerFechaServidor(PgSqlConnection pConexion)
+        {
+            string v_resultado = null;
+
+            if (pConexion.State != System.Data.ConnectionState.Open)
+            {
+                pConexion.Open();
+            }
+
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_variables_tiempo();";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, pConexion);
+
+            try
+            {
+                PgSqlDataReader pgDr = pgComando.ExecuteReader();
+                if (pgDr.Read())
+                {
+                    v_resultado = pgDr.GetString("fecha");
+                }
+
+                pgDr.Close();
+
+                sentencia = null;
+                pgComando.Dispose();
+                pgComando = null;
+
+                return v_resultado;
+            }
+            catch (Exception Exc)
+            {
+                MessageBox.Show("Algo salió mal en el momento de recuperar la hora del servidor. ");
+                Log_Excepciones.CapturadorExcepciones(Exc, "Utilidades.cs", "ObtenerHoraServidor");
+                return null;
+            }
+        }
+
         public static DateTime ObtenerHoraServidor(PgSqlConnection pConexion)
         {
             DateTime v_resultado = Convert.ToDateTime(null);

@@ -52,16 +52,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.NavegacionPrincipal = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageCumpleanieros = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlContenedorCumpleanieros1 = new Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros();
             this.PageInicial = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.PageOrganizador = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlMiEquipo1 = new Core.Controles.ctlMiEquipo();
             this.pageBusqueda = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
-            this.tmrFusibles = new System.Windows.Forms.Timer(this.components);
             this.PageSolicitudes = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaSolicitudes1 = new Coordinadores_de_Dia.Controles.ctlVistaSolicitudes();
+            this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
+            this.tmrFusibles = new System.Windows.Forms.Timer(this.components);
+            this.ctlBusquedaFichasIngreso1 = new Core.Controles.ctlBusquedaFichasIngreso();
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
@@ -78,9 +80,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdSolicitudes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionPrincipal)).BeginInit();
             this.NavegacionPrincipal.SuspendLayout();
+            this.PageCumpleanieros.SuspendLayout();
             this.PageInicial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             this.pageMiEquipo.SuspendLayout();
+            this.pageBusqueda.SuspendLayout();
             this.PageSolicitudes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -179,6 +183,7 @@
             this.cmdBusqueda.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
             this.cmdBusqueda.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.cmdBusqueda.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdBusqueda.Click += new System.EventHandler(this.CmdBusqueda_Click);
             // 
             // pnlMiEquipo
             // 
@@ -390,11 +395,25 @@
             // PageCumpleanieros
             // 
             this.PageCumpleanieros.Caption = "PageCumpleanieros";
+            this.PageCumpleanieros.Controls.Add(this.ctlContenedorCumpleanieros1);
             this.PageCumpleanieros.Name = "PageCumpleanieros";
             this.PageCumpleanieros.Size = new System.Drawing.Size(1351, 518);
             // 
+            // ctlContenedorCumpleanieros1
+            // 
+            this.ctlContenedorCumpleanieros1.BackColor = System.Drawing.Color.White;
+            this.ctlContenedorCumpleanieros1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlContenedorCumpleanieros1.Location = new System.Drawing.Point(0, 0);
+            this.ctlContenedorCumpleanieros1.Name = "ctlContenedorCumpleanieros1";
+            this.ctlContenedorCumpleanieros1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlContenedorCumpleanieros1.Pro_Conexion = null;
+            this.ctlContenedorCumpleanieros1.Pro_Dia = null;
+            this.ctlContenedorCumpleanieros1.Size = new System.Drawing.Size(1351, 518);
+            this.ctlContenedorCumpleanieros1.TabIndex = 0;
+            // 
             // PageInicial
             // 
+            this.PageInicial.Caption = "PageInicial";
             this.PageInicial.Controls.Add(this.pictureEdit6);
             this.PageInicial.Name = "PageInicial";
             this.PageInicial.Size = new System.Drawing.Size(1351, 518);
@@ -414,7 +433,6 @@
             // 
             // PageOrganizador
             // 
-            this.PageOrganizador.Caption = "PageOrganizador";
             this.PageOrganizador.Name = "PageOrganizador";
             this.PageOrganizador.Size = new System.Drawing.Size(1351, 518);
             // 
@@ -439,22 +457,13 @@
             // 
             // pageBusqueda
             // 
-            this.pageBusqueda.Caption = "pageBusqueda";
+            this.pageBusqueda.Controls.Add(this.ctlBusquedaFichasIngreso1);
             this.pageBusqueda.Name = "pageBusqueda";
             this.pageBusqueda.Size = new System.Drawing.Size(1351, 518);
             // 
-            // bgObtenerFusibles
-            // 
-            this.bgObtenerFusibles.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgObtenerFusibles_DoWork);
-            this.bgObtenerFusibles.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgObtenerFusibles_RunWorkerCompleted);
-            // 
-            // tmrFusibles
-            // 
-            this.tmrFusibles.Interval = 3000;
-            this.tmrFusibles.Tick += new System.EventHandler(this.TmrFusibles_Tick);
-            // 
             // PageSolicitudes
             // 
+            this.PageSolicitudes.Caption = "PageSolicitudes";
             this.PageSolicitudes.Controls.Add(this.ctlVistaSolicitudes1);
             this.PageSolicitudes.Name = "PageSolicitudes";
             this.PageSolicitudes.Size = new System.Drawing.Size(1351, 518);
@@ -467,8 +476,30 @@
             this.ctlVistaSolicitudes1.Name = "ctlVistaSolicitudes1";
             this.ctlVistaSolicitudes1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlVistaSolicitudes1.Pro_Conexion = null;
+            this.ctlVistaSolicitudes1.Pro_Usuario = null;
             this.ctlVistaSolicitudes1.Size = new System.Drawing.Size(1351, 518);
             this.ctlVistaSolicitudes1.TabIndex = 0;
+            // 
+            // bgObtenerFusibles
+            // 
+            this.bgObtenerFusibles.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgObtenerFusibles_DoWork);
+            this.bgObtenerFusibles.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgObtenerFusibles_RunWorkerCompleted);
+            // 
+            // tmrFusibles
+            // 
+            this.tmrFusibles.Interval = 3000;
+            this.tmrFusibles.Tick += new System.EventHandler(this.TmrFusibles_Tick);
+            // 
+            // ctlBusquedaFichasIngreso1
+            // 
+            this.ctlBusquedaFichasIngreso1.BackColor = System.Drawing.Color.White;
+            this.ctlBusquedaFichasIngreso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlBusquedaFichasIngreso1.Location = new System.Drawing.Point(0, 0);
+            this.ctlBusquedaFichasIngreso1.Name = "ctlBusquedaFichasIngreso1";
+            this.ctlBusquedaFichasIngreso1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlBusquedaFichasIngreso1.Pro_Conexion = null;
+            this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1351, 518);
+            this.ctlBusquedaFichasIngreso1.TabIndex = 0;
             // 
             // ctlContenedorPrincipalCoordinadorDia
             // 
@@ -496,9 +527,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdSolicitudes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionPrincipal)).EndInit();
             this.NavegacionPrincipal.ResumeLayout(false);
+            this.PageCumpleanieros.ResumeLayout(false);
             this.PageInicial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             this.pageMiEquipo.ResumeLayout(false);
+            this.pageBusqueda.ResumeLayout(false);
             this.PageSolicitudes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -539,5 +572,7 @@
         private System.Windows.Forms.Timer tmrFusibles;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSolicitudes;
         private ctlVistaSolicitudes ctlVistaSolicitudes1;
+        private Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros ctlContenedorCumpleanieros1;
+        private Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
     }
 }

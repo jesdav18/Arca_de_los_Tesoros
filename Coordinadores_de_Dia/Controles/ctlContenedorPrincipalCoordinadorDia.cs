@@ -94,12 +94,20 @@ namespace Coordinadores_de_Dia.Controles
         private void PnlCumpleanios_Click(object sender, EventArgs e)
         {
             NavegacionPrincipal.SelectedPage = PageCumpleanieros;
+            ctlContenedorCumpleanieros1.ConstruirControl(Pro_Conexion);
+
         }
 
         private void PnlSolicitudes_Click(object sender, EventArgs e)
         {
             NavegacionPrincipal.SelectedPage = PageSolicitudes;
-            ctlVistaSolicitudes1.ConstruirControl(Pro_Conexion);
+            ctlVistaSolicitudes1.ConstruirControl(Pro_Conexion,Pro_Usuario.Pro_Usuario);
+        }
+
+        private void CmdBusqueda_Click(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = pageBusqueda;
+            ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion);
         }
     }
 }

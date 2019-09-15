@@ -213,6 +213,26 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap iconBusqueda {
+            get {
+                object obj = ResourceManager.GetObject("iconBusqueda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap iconBusqueda_32 {
+            get {
+                object obj = ResourceManager.GetObject("iconBusqueda_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap iconEspera {
             get {
                 object obj = ResourceManager.GetObject("iconEspera", resourceCulture);
