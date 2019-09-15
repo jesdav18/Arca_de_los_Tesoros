@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,12 +51,13 @@
             this.colcelular = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBusqueda = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdVerFicha = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdIrAtras = new DevExpress.XtraEditors.PictureEdit();
             this.NavegacionPrincipal = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageBusquedas = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationBusqueda)).BeginInit();
@@ -129,6 +130,7 @@
             // 
             // PageBusqueda
             // 
+            this.PageBusqueda.Caption = "PageBusqueda";
             this.PageBusqueda.Controls.Add(this.picBusqueda);
             this.PageBusqueda.Controls.Add(this.labelControl2);
             this.PageBusqueda.Controls.Add(this.txtBusqueda);
@@ -181,6 +183,7 @@
             // 
             this.PageVistaFichasIngreso.Caption = "PageVistaFichasIngreso";
             this.PageVistaFichasIngreso.Controls.Add(this.gcVistasFichaIngreso);
+            this.PageVistaFichasIngreso.Controls.Add(this.panel4);
             this.PageVistaFichasIngreso.Controls.Add(this.panel1);
             this.PageVistaFichasIngreso.Name = "PageVistaFichasIngreso";
             this.PageVistaFichasIngreso.Size = new System.Drawing.Size(988, 772);
@@ -190,12 +193,12 @@
             this.gcVistasFichaIngreso.DataMember = "dtVistasFichaIngreso";
             this.gcVistasFichaIngreso.DataSource = this.dsVistas1;
             this.gcVistasFichaIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcVistasFichaIngreso.Location = new System.Drawing.Point(0, 78);
+            this.gcVistasFichaIngreso.Location = new System.Drawing.Point(0, 108);
             this.gcVistasFichaIngreso.MainView = this.gvVistasFichaIngreso;
             this.gcVistasFichaIngreso.Name = "gcVistasFichaIngreso";
             this.gcVistasFichaIngreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdVerFicha});
-            this.gcVistasFichaIngreso.Size = new System.Drawing.Size(988, 694);
+            this.gcVistasFichaIngreso.Size = new System.Drawing.Size(988, 664);
             this.gcVistasFichaIngreso.TabIndex = 1;
             this.gcVistasFichaIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVistasFichaIngreso});
@@ -272,12 +275,20 @@
             // cmdVerFicha
             // 
             this.cmdVerFicha.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::Core.Properties.Resources.iconBusqueda_32;
+            editorButtonImageOptions1.Image = global::Core.Properties.Resources.iconBusqueda_32;
             this.cmdVerFicha.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdVerFicha.Name = "cmdVerFicha";
             this.cmdVerFicha.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdVerFicha.Click += new System.EventHandler(this.CmdVerFicha_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 78);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(988, 30);
+            this.panel4.TabIndex = 2;
             // 
             // panel1
             // 
@@ -317,24 +328,19 @@
             this.NavegacionPrincipal.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageBusquedas,
             this.PageFichaIngreso});
-            this.NavegacionPrincipal.SelectedPage = this.PageFichaIngreso;
+            this.NavegacionPrincipal.SelectedPage = this.PageBusquedas;
             this.NavegacionPrincipal.Size = new System.Drawing.Size(988, 772);
             this.NavegacionPrincipal.TabIndex = 21;
             this.NavegacionPrincipal.Text = "navigationFrame1";
             // 
             // PageBusquedas
             // 
+            this.PageBusquedas.Caption = "PageBusquedas";
             this.PageBusquedas.Controls.Add(this.panel3);
             this.PageBusquedas.Controls.Add(this.pnlEncabezado);
             this.PageBusquedas.Controls.Add(this.NavigationBusqueda);
             this.PageBusquedas.Name = "PageBusquedas";
             this.PageBusquedas.Size = new System.Drawing.Size(988, 772);
-            // 
-            // PageFichaIngreso
-            // 
-            this.PageFichaIngreso.Controls.Add(this.ctlVistaFichaIngreso1);
-            this.PageFichaIngreso.Name = "PageFichaIngreso";
-            this.PageFichaIngreso.Size = new System.Drawing.Size(988, 772);
             // 
             // panel3
             // 
@@ -344,6 +350,13 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(988, 10);
             this.panel3.TabIndex = 21;
+            // 
+            // PageFichaIngreso
+            // 
+            this.PageFichaIngreso.Caption = "PageFichaIngreso";
+            this.PageFichaIngreso.Controls.Add(this.ctlVistaFichaIngreso1);
+            this.PageFichaIngreso.Name = "PageFichaIngreso";
+            this.PageFichaIngreso.Size = new System.Drawing.Size(988, 772);
             // 
             // ctlVistaFichaIngreso1
             // 
@@ -414,5 +427,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageFichaIngreso;
         private System.Windows.Forms.Panel panel3;
         private ctlVistaFichaIngreso ctlVistaFichaIngreso1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

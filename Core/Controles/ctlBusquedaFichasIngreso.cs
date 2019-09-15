@@ -50,6 +50,8 @@ namespace Core.Controles
 
         }
 
+        public event EventHandler OnPresionarVerFicha;
+
         private void PicBusqueda_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtBusqueda.Text))
@@ -82,7 +84,8 @@ namespace Core.Controles
             var v_fila = (dsVistas.dtVistasFichaIngresoRow)gvVistasFichaIngreso.GetFocusedDataRow();
             if (v_fila != null)
             {
-
+                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador);
+                NavegacionPrincipal.SelectedPage = PageFichaIngreso;
             }
         }
     }
