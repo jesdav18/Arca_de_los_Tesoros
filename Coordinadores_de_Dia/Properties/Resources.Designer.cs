@@ -93,9 +93,29 @@ namespace Coordinadores_de_Dia.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_check_32 {
+            get {
+                object obj = ResourceManager.GetObject("icon_check_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Cumpleanieros {
             get {
                 object obj = ResourceManager.GetObject("icon_Cumpleanieros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_guardar_negro_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_guardar_negro_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,26 @@ namespace Coordinadores_de_Dia.Properties {
         internal static System.Drawing.Bitmap iconBusqueda {
             get {
                 object obj = ResourceManager.GetObject("iconBusqueda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconCerrar_32 {
+            get {
+                object obj = ResourceManager.GetObject("iconCerrar_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMaloRojo_24 {
+            get {
+                object obj = ResourceManager.GetObject("iconMaloRojo_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

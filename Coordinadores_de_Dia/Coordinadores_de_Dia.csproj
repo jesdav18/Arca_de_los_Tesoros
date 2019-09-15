@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.2194.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
     <Reference Include="Devart.Data.PostgreSql, Version=7.13.1402.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -38,6 +39,9 @@
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -58,6 +62,17 @@
     <Compile Include="Controles\ctlContenedorPrincipalCoordinadorDia.Designer.cs">
       <DependentUpon>ctlContenedorPrincipalCoordinadorDia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlVistaSolicitudes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlVistaSolicitudes.Designer.cs">
+      <DependentUpon>ctlVistaSolicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsCoordinador_Dia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCoordinador_Dia.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\frmCoordinadorDia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +90,9 @@
     <EmbeddedResource Include="Controles\ctlContenedorPrincipalCoordinadorDia.resx">
       <DependentUpon>ctlContenedorPrincipalCoordinadorDia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlVistaSolicitudes.resx">
+      <DependentUpon>ctlVistaSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmCoordinadorDia.resx">
       <DependentUpon>frmCoordinadorDia.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +109,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet\dsCoordinador_Dia.xsc">
+      <DependentUpon>dsCoordinador_Dia.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCoordinador_Dia.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCoordinador_Dia.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsCoordinador_Dia.xss">
+      <DependentUpon>dsCoordinador_Dia.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icon_Solicitudes.png" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +139,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\62218400_2421805074506489_798898671931359232_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_check_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMaloRojo_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCerrar_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_guardar_negro_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,17 +36,11 @@
             this.txtFuerzasEspeciales = new DevExpress.XtraEditors.TextEdit();
             this.txtIdentidadColaborador = new DevExpress.XtraEditors.TextEdit();
             this.txtNombreColaborador = new DevExpress.XtraEditors.TextEdit();
-            this.picFotoColaborador = new DevExpress.XtraEditors.PictureEdit();
-            this.picCaratulaAsistencia = new DevExpress.XtraEditors.PictureEdit();
             this.NavegacionObservaciones = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.page = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.toggleCarnet = new DevExpress.XtraEditors.PictureEdit();
-            this.toggleUniforme = new DevExpress.XtraEditors.PictureEdit();
-            this.cmdGuardarAsistencia = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.pageInasistencias = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.cmdSeleccionarCubrirAusencia = new DevExpress.XtraEditors.PictureEdit();
             this.memoObservacionesInasistencia = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.radioSinJustificacion = new System.Windows.Forms.RadioButton();
@@ -59,26 +53,32 @@
             this.PageCubrirAusencia = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlCubrirAusencias1 = new Coordinadores_de_Edad.Controles.ctlCubrirAusencias();
             this.PageDetalles = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.toggleCarnet = new DevExpress.XtraEditors.PictureEdit();
+            this.toggleUniforme = new DevExpress.XtraEditors.PictureEdit();
+            this.cmdGuardarAsistencia = new DevExpress.XtraEditors.PictureEdit();
+            this.cmdSeleccionarCubrirAusencia = new DevExpress.XtraEditors.PictureEdit();
+            this.picFotoColaborador = new DevExpress.XtraEditors.PictureEdit();
+            this.picCaratulaAsistencia = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado.SuspendLayout();
             this.pnlDatosColaborador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtFuerzasEspeciales.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdentidadColaborador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreColaborador.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCaratulaAsistencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionObservaciones)).BeginInit();
             this.NavegacionObservaciones.SuspendLayout();
             this.page.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleCarnet.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleUniforme.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarAsistencia.Properties)).BeginInit();
             this.pageInasistencias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionarCubrirAusencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservacionesInasistencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationPrincipal)).BeginInit();
             this.NavigationPrincipal.SuspendLayout();
             this.PageCubrirAusencia.SuspendLayout();
             this.PageDetalles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleCarnet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleUniforme.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarAsistencia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionarCubrirAusencia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCaratulaAsistencia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -177,28 +177,6 @@
             this.txtNombreColaborador.Size = new System.Drawing.Size(309, 42);
             this.txtNombreColaborador.TabIndex = 30;
             // 
-            // picFotoColaborador
-            // 
-            this.picFotoColaborador.EditValue = global::Coordinadores_de_Edad.Resources._62218400_2421805074506489_798898671931359232_n;
-            this.picFotoColaborador.Location = new System.Drawing.Point(25, 25);
-            this.picFotoColaborador.Name = "picFotoColaborador";
-            this.picFotoColaborador.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picFotoColaborador.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.picFotoColaborador.Size = new System.Drawing.Size(205, 224);
-            this.picFotoColaborador.TabIndex = 21;
-            // 
-            // picCaratulaAsistencia
-            // 
-            this.picCaratulaAsistencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picCaratulaAsistencia.EditValue = global::Coordinadores_de_Edad.Resources.happy;
-            this.picCaratulaAsistencia.Location = new System.Drawing.Point(894, 49);
-            this.picCaratulaAsistencia.Name = "picCaratulaAsistencia";
-            this.picCaratulaAsistencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picCaratulaAsistencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picCaratulaAsistencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.picCaratulaAsistencia.Size = new System.Drawing.Size(114, 104);
-            this.picCaratulaAsistencia.TabIndex = 22;
-            // 
             // NavegacionObservaciones
             // 
             this.NavegacionObservaciones.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
@@ -227,41 +205,6 @@
             this.page.Controls.Add(this.labelControl6);
             this.page.Name = "page";
             this.page.Size = new System.Drawing.Size(1068, 409);
-            // 
-            // toggleCarnet
-            // 
-            this.toggleCarnet.EditValue = global::Coordinadores_de_Edad.Resources.iconToggleNo;
-            this.toggleCarnet.Location = new System.Drawing.Point(629, 150);
-            this.toggleCarnet.Name = "toggleCarnet";
-            this.toggleCarnet.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.toggleCarnet.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.toggleCarnet.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.toggleCarnet.Size = new System.Drawing.Size(80, 80);
-            this.toggleCarnet.TabIndex = 41;
-            this.toggleCarnet.Click += new System.EventHandler(this.ToggleCarnet_Click);
-            // 
-            // toggleUniforme
-            // 
-            this.toggleUniforme.EditValue = global::Coordinadores_de_Edad.Resources.iconToggleNo;
-            this.toggleUniforme.Location = new System.Drawing.Point(249, 150);
-            this.toggleUniforme.Name = "toggleUniforme";
-            this.toggleUniforme.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.toggleUniforme.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.toggleUniforme.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.toggleUniforme.Size = new System.Drawing.Size(80, 80);
-            this.toggleUniforme.TabIndex = 40;
-            this.toggleUniforme.Click += new System.EventHandler(this.ToggleUniforme_Click);
-            // 
-            // cmdGuardarAsistencia
-            // 
-            this.cmdGuardarAsistencia.EditValue = global::Coordinadores_de_Edad.Resources.icon_guardar_negro_64;
-            this.cmdGuardarAsistencia.Location = new System.Drawing.Point(897, 239);
-            this.cmdGuardarAsistencia.Name = "cmdGuardarAsistencia";
-            this.cmdGuardarAsistencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdGuardarAsistencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.cmdGuardarAsistencia.Size = new System.Drawing.Size(94, 90);
-            this.cmdGuardarAsistencia.TabIndex = 39;
-            this.cmdGuardarAsistencia.Click += new System.EventHandler(this.CmdGuardarAsistencia_Click);
             // 
             // labelControl7
             // 
@@ -305,18 +248,6 @@
             this.pageInasistencias.Controls.Add(this.labelControl4);
             this.pageInasistencias.Name = "pageInasistencias";
             this.pageInasistencias.Size = new System.Drawing.Size(1068, 409);
-            // 
-            // cmdSeleccionarCubrirAusencia
-            // 
-            this.cmdSeleccionarCubrirAusencia.EditValue = global::Coordinadores_de_Edad.Resources.icon_cubrir_asistencia;
-            this.cmdSeleccionarCubrirAusencia.Location = new System.Drawing.Point(921, 309);
-            this.cmdSeleccionarCubrirAusencia.Name = "cmdSeleccionarCubrirAusencia";
-            this.cmdSeleccionarCubrirAusencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdSeleccionarCubrirAusencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdSeleccionarCubrirAusencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.cmdSeleccionarCubrirAusencia.Size = new System.Drawing.Size(75, 74);
-            this.cmdSeleccionarCubrirAusencia.TabIndex = 38;
-            this.cmdSeleccionarCubrirAusencia.Click += new System.EventHandler(this.CmdSeleccionarCubrirAusencia_Click);
             // 
             // memoObservacionesInasistencia
             // 
@@ -451,7 +382,10 @@
             this.ctlCubrirAusencias1.Location = new System.Drawing.Point(0, 0);
             this.ctlCubrirAusencias1.MinimumSize = new System.Drawing.Size(1078, 791);
             this.ctlCubrirAusencias1.Name = "ctlCubrirAusencias1";
-            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);           
+            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlCubrirAusencias1.Pro_ID_Colaborar_Actividad = 0;
+            this.ctlCubrirAusencias1.Pro_SeleccionaNoNecesitaCubrir = false;
+            this.ctlCubrirAusencias1.Pro_SeleccionaServidorEquipo = false;
             this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1078, 791);
             this.ctlCubrirAusencias1.TabIndex = 0;
             // 
@@ -465,6 +399,75 @@
             this.PageDetalles.Controls.Add(this.pnlEncabezado);
             this.PageDetalles.Name = "PageDetalles";
             this.PageDetalles.Size = new System.Drawing.Size(1068, 781);
+            // 
+            // toggleCarnet
+            // 
+            this.toggleCarnet.EditValue = global::Coordinadores_de_Edad.Resources.iconToggleNo;
+            this.toggleCarnet.Location = new System.Drawing.Point(629, 150);
+            this.toggleCarnet.Name = "toggleCarnet";
+            this.toggleCarnet.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.toggleCarnet.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.toggleCarnet.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.toggleCarnet.Size = new System.Drawing.Size(80, 80);
+            this.toggleCarnet.TabIndex = 41;
+            this.toggleCarnet.Click += new System.EventHandler(this.ToggleCarnet_Click);
+            // 
+            // toggleUniforme
+            // 
+            this.toggleUniforme.EditValue = global::Coordinadores_de_Edad.Resources.iconToggleNo;
+            this.toggleUniforme.Location = new System.Drawing.Point(249, 150);
+            this.toggleUniforme.Name = "toggleUniforme";
+            this.toggleUniforme.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.toggleUniforme.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.toggleUniforme.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.toggleUniforme.Size = new System.Drawing.Size(80, 80);
+            this.toggleUniforme.TabIndex = 40;
+            this.toggleUniforme.Click += new System.EventHandler(this.ToggleUniforme_Click);
+            // 
+            // cmdGuardarAsistencia
+            // 
+            this.cmdGuardarAsistencia.EditValue = global::Coordinadores_de_Edad.Resources.icon_guardar_negro_64;
+            this.cmdGuardarAsistencia.Location = new System.Drawing.Point(897, 239);
+            this.cmdGuardarAsistencia.Name = "cmdGuardarAsistencia";
+            this.cmdGuardarAsistencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdGuardarAsistencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.cmdGuardarAsistencia.Size = new System.Drawing.Size(94, 90);
+            this.cmdGuardarAsistencia.TabIndex = 39;
+            this.cmdGuardarAsistencia.Click += new System.EventHandler(this.CmdGuardarAsistencia_Click);
+            // 
+            // cmdSeleccionarCubrirAusencia
+            // 
+            this.cmdSeleccionarCubrirAusencia.EditValue = global::Coordinadores_de_Edad.Resources.icon_cubrir_asistencia;
+            this.cmdSeleccionarCubrirAusencia.Location = new System.Drawing.Point(921, 309);
+            this.cmdSeleccionarCubrirAusencia.Name = "cmdSeleccionarCubrirAusencia";
+            this.cmdSeleccionarCubrirAusencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdSeleccionarCubrirAusencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdSeleccionarCubrirAusencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.cmdSeleccionarCubrirAusencia.Size = new System.Drawing.Size(75, 74);
+            this.cmdSeleccionarCubrirAusencia.TabIndex = 38;
+            this.cmdSeleccionarCubrirAusencia.Click += new System.EventHandler(this.CmdSeleccionarCubrirAusencia_Click);
+            // 
+            // picFotoColaborador
+            // 
+            this.picFotoColaborador.EditValue = global::Coordinadores_de_Edad.Resources._62218400_2421805074506489_798898671931359232_n;
+            this.picFotoColaborador.Location = new System.Drawing.Point(25, 25);
+            this.picFotoColaborador.Name = "picFotoColaborador";
+            this.picFotoColaborador.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picFotoColaborador.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picFotoColaborador.Size = new System.Drawing.Size(205, 224);
+            this.picFotoColaborador.TabIndex = 21;
+            // 
+            // picCaratulaAsistencia
+            // 
+            this.picCaratulaAsistencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picCaratulaAsistencia.EditValue = global::Coordinadores_de_Edad.Resources.happy;
+            this.picCaratulaAsistencia.Location = new System.Drawing.Point(894, 49);
+            this.picCaratulaAsistencia.Name = "picCaratulaAsistencia";
+            this.picCaratulaAsistencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picCaratulaAsistencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picCaratulaAsistencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picCaratulaAsistencia.Size = new System.Drawing.Size(114, 104);
+            this.picCaratulaAsistencia.TabIndex = 22;
             // 
             // ctlDetallesAsistencia
             // 
@@ -480,22 +483,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFuerzasEspeciales.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdentidadColaborador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreColaborador.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCaratulaAsistencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionObservaciones)).EndInit();
             this.NavegacionObservaciones.ResumeLayout(false);
             this.page.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.toggleCarnet.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleUniforme.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarAsistencia.Properties)).EndInit();
             this.pageInasistencias.ResumeLayout(false);
             this.pageInasistencias.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionarCubrirAusencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservacionesInasistencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationPrincipal)).EndInit();
             this.NavigationPrincipal.ResumeLayout(false);
             this.PageCubrirAusencia.ResumeLayout(false);
             this.PageDetalles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.toggleCarnet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleUniforme.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarAsistencia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionarCubrirAusencia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCaratulaAsistencia.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
