@@ -32,6 +32,20 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dtCita_Actividad" msprop:Generator_TableClassName="dtCita_ActividadDataTable" msprop:Generator_TableVarName="tabledtCita_Actividad" msprop:Generator_TablePropName="dtCita_Actividad" msprop:Generator_RowDeletingName="dtCita_ActividadRowDeleting" msprop:Generator_RowChangingName="dtCita_ActividadRowChanging" msprop:Generator_RowEvHandlerName="dtCita_ActividadRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCita_ActividadRowDeleted" msprop:Generator_UserTableName="dtCita_Actividad" msprop:Generator_RowChangedName="dtCita_ActividadRowChanged" msprop:Generator_RowEvArgName="dtCita_ActividadRowChangeEvent" msprop:Generator_RowClassName="dtCita_ActividadRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_cita_actividad" msprop:Generator_ColumnVarNameInTable="columnid_cita_actividad" msprop:Generator_ColumnPropNameInRow="id_cita_actividad" msprop:Generator_ColumnPropNameInTable="id_cita_actividadColumn" msprop:Generator_UserColumnName="id_cita_actividad" type="xs:int" minOccurs="0" />
+              <xs:element name="hora_inicio" msprop:Generator_ColumnVarNameInTable="columnhora_inicio" msprop:Generator_ColumnPropNameInRow="hora_inicio" msprop:Generator_ColumnPropNameInTable="hora_inicioColumn" msprop:Generator_UserColumnName="hora_inicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hora_fin" msprop:Generator_ColumnVarNameInTable="columnhora_fin" msprop:Generator_ColumnPropNameInRow="hora_fin" msprop:Generator_ColumnPropNameInTable="hora_finColumn" msprop:Generator_UserColumnName="hora_fin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="lugar" msprop:Generator_ColumnVarNameInTable="columnlugar" msprop:Generator_ColumnPropNameInRow="lugar" msprop:Generator_ColumnPropNameInTable="lugarColumn" msprop:Generator_UserColumnName="lugar" type="xs:string" minOccurs="0" />
+              <xs:element name="id_color_etiqueta" msprop:Generator_ColumnVarNameInTable="columnid_color_etiqueta" msprop:Generator_ColumnPropNameInRow="id_color_etiqueta" msprop:Generator_ColumnPropNameInTable="id_color_etiquetaColumn" msprop:Generator_UserColumnName="id_color_etiqueta" type="xs:int" minOccurs="0" />
+              <xs:element name="asunto" msprop:Generator_ColumnVarNameInTable="columnasunto" msprop:Generator_ColumnPropNameInRow="asunto" msprop:Generator_ColumnPropNameInTable="asuntoColumn" msprop:Generator_UserColumnName="asunto" type="xs:string" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

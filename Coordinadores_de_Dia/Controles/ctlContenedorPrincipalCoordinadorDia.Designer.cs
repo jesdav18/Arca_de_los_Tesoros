@@ -56,14 +56,15 @@
             this.PageInicial = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.PageOrganizador = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlPlanificadorActividades1 = new Core.Controles.ctlPlanificadorActividades();
             this.pageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlMiEquipo1 = new Core.Controles.ctlMiEquipo();
             this.pageBusqueda = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlBusquedaFichasIngreso1 = new Core.Controles.ctlBusquedaFichasIngreso();
             this.PageSolicitudes = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaSolicitudes1 = new Coordinadores_de_Dia.Controles.ctlVistaSolicitudes();
             this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
             this.tmrFusibles = new System.Windows.Forms.Timer(this.components);
-            this.ctlBusquedaFichasIngreso1 = new Core.Controles.ctlBusquedaFichasIngreso();
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
@@ -83,6 +84,7 @@
             this.PageCumpleanieros.SuspendLayout();
             this.PageInicial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
+            this.PageOrganizador.SuspendLayout();
             this.pageMiEquipo.SuspendLayout();
             this.pageBusqueda.SuspendLayout();
             this.PageSolicitudes.SuspendLayout();
@@ -239,6 +241,7 @@
             this.cmdOrganizador.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
             this.cmdOrganizador.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.cmdOrganizador.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdOrganizador.Click += new System.EventHandler(this.CmdOrganizador_Click);
             // 
             // pnlCumpleanios
             // 
@@ -433,8 +436,23 @@
             // 
             // PageOrganizador
             // 
+            this.PageOrganizador.Caption = "PageOrganizador";
+            this.PageOrganizador.Controls.Add(this.ctlPlanificadorActividades1);
             this.PageOrganizador.Name = "PageOrganizador";
             this.PageOrganizador.Size = new System.Drawing.Size(1351, 518);
+            // 
+            // ctlPlanificadorActividades1
+            // 
+            this.ctlPlanificadorActividades1.BackColor = System.Drawing.Color.White;
+            this.ctlPlanificadorActividades1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlPlanificadorActividades1.Location = new System.Drawing.Point(0, 0);
+            this.ctlPlanificadorActividades1.Name = "ctlPlanificadorActividades1";
+            this.ctlPlanificadorActividades1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlPlanificadorActividades1.Pro_Conexion = null;
+            this.ctlPlanificadorActividades1.Pro_Usuario = null;
+            this.ctlPlanificadorActividades1.ProFechaSeleccionada = new System.DateTime(((long)(0)));
+            this.ctlPlanificadorActividades1.Size = new System.Drawing.Size(1351, 518);
+            this.ctlPlanificadorActividades1.TabIndex = 0;
             // 
             // pageMiEquipo
             // 
@@ -457,9 +475,21 @@
             // 
             // pageBusqueda
             // 
+            this.pageBusqueda.Caption = "pageBusqueda";
             this.pageBusqueda.Controls.Add(this.ctlBusquedaFichasIngreso1);
             this.pageBusqueda.Name = "pageBusqueda";
             this.pageBusqueda.Size = new System.Drawing.Size(1351, 518);
+            // 
+            // ctlBusquedaFichasIngreso1
+            // 
+            this.ctlBusquedaFichasIngreso1.BackColor = System.Drawing.Color.White;
+            this.ctlBusquedaFichasIngreso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlBusquedaFichasIngreso1.Location = new System.Drawing.Point(0, 0);
+            this.ctlBusquedaFichasIngreso1.Name = "ctlBusquedaFichasIngreso1";
+            this.ctlBusquedaFichasIngreso1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlBusquedaFichasIngreso1.Pro_Conexion = null;
+            this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1351, 518);
+            this.ctlBusquedaFichasIngreso1.TabIndex = 0;
             // 
             // PageSolicitudes
             // 
@@ -490,17 +520,6 @@
             this.tmrFusibles.Interval = 3000;
             this.tmrFusibles.Tick += new System.EventHandler(this.TmrFusibles_Tick);
             // 
-            // ctlBusquedaFichasIngreso1
-            // 
-            this.ctlBusquedaFichasIngreso1.BackColor = System.Drawing.Color.White;
-            this.ctlBusquedaFichasIngreso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlBusquedaFichasIngreso1.Location = new System.Drawing.Point(0, 0);
-            this.ctlBusquedaFichasIngreso1.Name = "ctlBusquedaFichasIngreso1";
-            this.ctlBusquedaFichasIngreso1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlBusquedaFichasIngreso1.Pro_Conexion = null;
-            this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1351, 518);
-            this.ctlBusquedaFichasIngreso1.TabIndex = 0;
-            // 
             // ctlContenedorPrincipalCoordinadorDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -530,6 +549,7 @@
             this.PageCumpleanieros.ResumeLayout(false);
             this.PageInicial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
+            this.PageOrganizador.ResumeLayout(false);
             this.pageMiEquipo.ResumeLayout(false);
             this.pageBusqueda.ResumeLayout(false);
             this.PageSolicitudes.ResumeLayout(false);
@@ -574,5 +594,6 @@
         private ctlVistaSolicitudes ctlVistaSolicitudes1;
         private Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros ctlContenedorCumpleanieros1;
         private Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
+        private Core.Controles.ctlPlanificadorActividades ctlPlanificadorActividades1;
     }
 }
