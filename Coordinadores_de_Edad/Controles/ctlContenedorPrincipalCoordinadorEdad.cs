@@ -7,11 +7,40 @@ namespace Coordinadores_de_Edad.Controles
 {
     public partial class ctlContenedorPrincipalCoordinadorEdad : UserControl
     {
+        #region INICIALIZADOR
+
         public ctlContenedorPrincipalCoordinadorEdad()
         {
             InitializeComponent();
             ctlIngresoFicha1.OnFichaIngresada += ctlIngresoFicha1_OnFichaIngresada;
-            
+        }
+
+        #endregion
+
+        #region PROPIEDADES
+
+        public PgSqlConnection Pro_Conexion { get; set; }
+        public Usuario Pro_Usuario { get; set; }
+
+
+        #endregion
+
+        #region EVENTOS
+
+        public event EventHandler OnCerrarSesion;
+
+        #endregion
+
+        #region FUNCIONES  
+
+        public void ConstruirControl(PgSqlConnection pConexion,
+                                   Usuario pUsuario
+                                   )
+        {
+            ctlEncabezado1.ConstruirControl(pUsuario);
+            Pro_Conexion = pConexion;
+            Pro_Usuario = pUsuario;
+
         }
 
         private void ctlIngresoFicha1_OnFichaIngresada(object sender, EventArgs e)
@@ -19,28 +48,17 @@ namespace Coordinadores_de_Edad.Controles
             NavigationCoordinadorEdad.SelectedPage = PageInicial;
         }
 
-        public PgSqlConnection Pro_Conexion { get; set; }
-        public Usuario Pro_Usuario { get; set; }
+ 
+        #endregion
 
-        public event EventHandler OnCerrarSesion;
-        
+        #region EVENTOS CONTROLES
 
         public void PicAgregarUsuario_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             NavigationCoordinadorEdad.SelectedPage = PageFichaIngreso;
-            ctlIngresoFicha1.ConstruirControl(Pro_Conexion,Pro_Usuario.Pro_Usuario);
+            ctlIngresoFicha1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
             splashScreenManager1.CloseWaitForm();
-        }
-
-        public void ConstruirControl(PgSqlConnection pConexion, 
-                                     Usuario pUsuario
-                                     )
-        {
-            ctlEncabezado1.ConstruirControl(pUsuario);
-            Pro_Conexion = pConexion;
-            Pro_Usuario = pUsuario;
-            
         }
 
         public void CmdCerrarSesion_Click(object sender, EventArgs e)
@@ -85,5 +103,7 @@ namespace Coordinadores_de_Edad.Controles
                                                                        Pro_Usuario.Pro_ID_AreaAtencion);
             splashScreenManager1.CloseWaitForm();
         }
+
+        #endregion
     }
 }

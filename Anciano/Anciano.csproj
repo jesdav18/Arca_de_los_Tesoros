@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9588AD85-848D-49AD-82EF-E22AED27283B}</ProjectGuid>
+    <ProjectGuid>{8D59AF01-C8E7-467C-90A3-79534FEF7105}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Anciano</RootNamespace>
@@ -31,6 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.2194.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    <Reference Include="Devart.Data.PostgreSql, Version=7.13.1402.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -43,13 +53,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\ctlContenedorPrincipalAnciano.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlContenedorPrincipalAnciano.Designer.cs">
+      <DependentUpon>ctlContenedorPrincipalAnciano.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\frmAnciano.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantallas\frmAnciano.Designer.cs">
       <DependentUpon>frmAnciano.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\frmEspera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmEspera.Designer.cs">
+      <DependentUpon>frmEspera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controles\ctlContenedorPrincipalAnciano.resx">
+      <DependentUpon>ctlContenedorPrincipalAnciano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmEspera.resx">
+      <DependentUpon>frmEspera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\62218400_2421805074506489_798898671931359232_n.jpg" />
+    <Content Include="Resources\iconBusqueda.png" />
+    <Content Include="Resources\icon_calendario_64.png" />
+    <Content Include="Resources\icon_cerrar_sesion_64.png" />
+    <Content Include="Resources\icon_Cumpleanieros.png" />
+    <Content Include="Resources\icon_nuevo_usuario_negro_64.png" />
+    <Content Include="Resources\icon_Solicitudes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{69cf97aa-9f33-4e58-b95f-4bc334aebf3a}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

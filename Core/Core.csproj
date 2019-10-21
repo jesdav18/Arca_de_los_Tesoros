@@ -133,6 +133,12 @@
     <Compile Include="Controles\ctlVistaFichaIngreso.Designer.cs">
       <DependentUpon>ctlVistaFichaIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlVistaSolicitudes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlVistaSolicitudes.Designer.cs">
+      <DependentUpon>ctlVistaSolicitudes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Cumpleanieros\ctlContenedorCumpleanieros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     <EmbeddedResource Include="Controles\ctlVistaFichaIngreso.resx">
       <DependentUpon>ctlVistaFichaIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlVistaSolicitudes.resx">
+      <DependentUpon>ctlVistaSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\Cumpleanieros\ctlContenedorCumpleanieros.resx">
       <DependentUpon>ctlContenedorCumpleanieros.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +343,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_borrar_negro_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMalo_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCheck_24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -99,7 +99,7 @@ namespace Core.Controles
             {
                
                 pgComando.Dispose();
-                Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "GuardarFichaIngreso");
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "InsertarCita");
                 MessageBox.Show(Exc.Message, "Arca de los tesoros", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
@@ -113,18 +113,13 @@ namespace Core.Controles
             }
 
             string sentencia = @"SELECT * FROM arca_tesoros.ft_view_citas_actividades (:p_usuario);";
-
-
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
-            
-
 
             try
             {
                 dsVistas1.dtCita_Actividad.Clear();
                 new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtCita_Actividad);
-
 
                 sentencia = null;
                 pgComando.Dispose();
@@ -134,9 +129,8 @@ namespace Core.Controles
             {
 
                 pgComando.Dispose();
-                Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "GuardarFichaIngreso");
-                MessageBox.Show(Exc.Message, "Arca de los tesoros", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosCitasActividades");
+              
             }
         }
 

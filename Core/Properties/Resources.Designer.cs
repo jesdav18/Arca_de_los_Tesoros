@@ -243,6 +243,16 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap iconCheck_24 {
+            get {
+                object obj = ResourceManager.GetObject("iconCheck_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap iconEspera {
             get {
                 object obj = ResourceManager.GetObject("iconEspera", resourceCulture);
@@ -266,6 +276,16 @@ namespace Core.Properties {
         public static System.Drawing.Bitmap iconListaAsistencia_64 {
             get {
                 object obj = ResourceManager.GetObject("iconListaAsistencia_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap iconMalo_24 {
+            get {
+                object obj = ResourceManager.GetObject("iconMalo_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

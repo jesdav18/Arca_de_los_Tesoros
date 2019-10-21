@@ -30,6 +30,7 @@
         {
             this.ctlCumpleanierosDia1 = new Core.Controles.Cumpleanieros.ctlCumpleanierosDia();
             this.ctlProximosCumpleanieros1 = new Core.Controles.Cumpleanieros.ctlProximosCumpleanieros();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Core.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.SuspendLayout();
             // 
             // ctlCumpleanierosDia1
@@ -54,6 +55,10 @@
             this.ctlProximosCumpleanieros1.Size = new System.Drawing.Size(993, 306);
             this.ctlProximosCumpleanieros1.TabIndex = 1;
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // ctlContenedorCumpleanieros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -72,5 +77,6 @@
 
         private ctlCumpleanierosDia ctlCumpleanierosDia1;
         private ctlProximosCumpleanieros ctlProximosCumpleanieros1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

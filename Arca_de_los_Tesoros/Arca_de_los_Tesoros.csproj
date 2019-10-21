@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anciano\Anciano.csproj">
-      <Project>{9588AD85-848D-49AD-82EF-E22AED27283B}</Project>
+      <Project>{8D59AF01-C8E7-467C-90A3-79534FEF7105}</Project>
       <Name>Anciano</Name>
     </ProjectReference>
     <ProjectReference Include="..\Coordinadores_de_Dia\Coordinadores_de_Dia.csproj">
@@ -101,7 +101,7 @@
       <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Diacono\Diacono.csproj">
-      <Project>{B4684BDA-5A56-4D95-9977-D5323B36FF6A}</Project>
+      <Project>{5D47BDD6-7F9D-4624-BC7D-A5FE0E8729AF}</Project>
       <Name>Diacono</Name>
     </ProjectReference>
   </ItemGroup>

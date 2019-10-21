@@ -1,10 +1,12 @@
 ﻿
+using Anciano.Controles;
 using Coordinadores_de_Dia.Controles;
 using Coordinadores_de_Edad.Controles;
 using Core.Clases;
 using Core.Controles;
 using Core.Pantallas;
 using Devart.Data.PostgreSql;
+using Diacono.Controles;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -31,6 +33,8 @@ namespace Arca_de_los_Tesoros
 
         ctlContenedorPrincipalCoordinadorEdad ctlCoordinadorEdad = null;
         ctlContenedorPrincipalCoordinadorDia ctlCoordinadorDia = null;
+        ctlContenedorPrincipalAnciano ctlAnciano = null;
+        ctlContenedorPrincipalDiacono ctlDiacono = null;
 
         #endregion
 
@@ -42,44 +46,6 @@ namespace Arca_de_los_Tesoros
         #endregion
 
         #region FUNCIONES
-
-        private void ReestablecerFormConstructor()
-        {
-            try
-            {
-                this.Hide();
-                obj_ctl_bienvenida.Dispose();
-                this.FormBorderStyle = FormBorderStyle.Sizable;
-                this.WindowState = FormWindowState.Maximized;
-                this.Show();
-            }
-            catch (Exception Exc)
-            {
-                Log_Excepciones.CapturadorExcepciones(Exc,
-                                                      this.Name,
-                                                      "ReestablecerFormConstructor()");
-               
-                MessageBox.Show("Algo salió mal en el momento de Reestablecer el MDI Arca de los Tesosros. ", "Arca de Los Tesoros",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-        }
-
-        #endregion
-
-        public enum ROLES_USUARIO
-        {
-            ANCIANO = 1,
-            DIACONO = 2,
-            COORDINADOR_DIA = 3,
-            COORDINADOR_EDAD = 4
-        }
-
-        public  enum MODULOS
-        {
-            MODULO_ANCIANO = 1,
-            MODULO_DIACONO = 2,
-            MODULO_COORDINADOR_DIA = 3,
-            MODULO_COORDINADOR_EDAD = 4
-        }
 
         private void Construir_Acceso()
         {
@@ -99,8 +65,28 @@ namespace Arca_de_los_Tesoros
                 Log_Excepciones.CapturadorExcepciones(Exc,
                                                       this.Name,
                                                       " Construir_Acceso_Para_Operaciones()");
-               
+
                 MessageBox.Show("Algo salió mal miemtras se cargaba la pantalla de autenticación. ", "Arca de los Tesoros");
+            }
+        }
+
+        private void ReestablecerFormConstructor()
+        {
+            try
+            {
+                this.Hide();
+                obj_ctl_bienvenida.Dispose();
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Maximized;
+                this.Show();
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc,
+                                                      this.Name,
+                                                      "ReestablecerFormConstructor()");
+               
+                MessageBox.Show("Algo salió mal en el momento de Reestablecer el MDI Arca de los Tesosros. ", "Arca de Los Tesoros",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -126,12 +112,26 @@ namespace Arca_de_los_Tesoros
                 switch ((ROLES_USUARIO)pUsuario.Pro_ID_RolUsuario)
                 {
                     case ROLES_USUARIO.ANCIANO:
+                        ctlAnciano = new ctlContenedorPrincipalAnciano();
+                        ctlAnciano.Parent = this;
+                        ctlAnciano.ConstruirControl(Pro_Conexion, pUsuario);
+                        ctlAnciano.OnPresionaCerrarSesion += ctlAnciano_CerrarSesion;
+                        ctlAnciano.Dock = DockStyle.Fill;
+                        ctlAnciano.BringToFront();
+                        this.MinimumSize = new Size(986, 795);
+                        Pro_Modulo = MODULOS.MODULO_ANCIANO;
 
-                      
 
                         break;
                     case ROLES_USUARIO.DIACONO:
-
+                        ctlDiacono = new ctlContenedorPrincipalDiacono();
+                        ctlDiacono.Parent = this;
+                        ctlDiacono.ConstruirControl(Pro_Conexion, pUsuario);
+                        ctlDiacono.OnPresionaCerrarSesion += ctlDiacono_CerrarSesion;
+                        ctlDiacono.Dock = DockStyle.Fill;
+                        ctlDiacono.BringToFront();
+                        this.MinimumSize = new Size(986, 795);
+                        Pro_Modulo = MODULOS.MODULO_DIACONO;
 
                         break;
                     case ROLES_USUARIO.COORDINADOR_DIA:
@@ -139,6 +139,7 @@ namespace Arca_de_los_Tesoros
                         ctlCoordinadorDia = new ctlContenedorPrincipalCoordinadorDia();
                         ctlCoordinadorDia.Parent = this;
                         ctlCoordinadorDia.ConstruirControl(Pro_Conexion, pUsuario);
+                        ctlCoordinadorDia.OnPresionaCerrarSesion += ctlCoordinadorDia_CerrarSesion;
                         ctlCoordinadorDia.Dock = DockStyle.Fill;
                         ctlCoordinadorDia.BringToFront();
                         this.MinimumSize = new Size(986, 795);
@@ -163,19 +164,34 @@ namespace Arca_de_los_Tesoros
 
             catch (Exception Exc)
             {
-
-
                 Log_Excepciones.CapturadorExcepciones(Exc,
                                                       this.Name,
                                                       "RedireccionSegunNivelAcceso(Usuario pUsuario)");
-               
 
                 MessageBox.Show("Algo salió mal mientras se cargaban los niveles de acceso. ", "Arca de los Tesoros");
-
-
                 Construir_Acceso();
             }
+        }
 
+        private void ctlCoordinadorDia_CerrarSesion(object sender, EventArgs e)
+        {
+            ctlCoordinadorDia.Dispose();
+            ctlCoordinadorDia = null;
+            Construir_Acceso();
+        }
+
+        private void ctlDiacono_CerrarSesion(object sender, EventArgs e)
+        {
+            ctlAnciano.Dispose();
+            ctlAnciano = null;
+            Construir_Acceso();
+        }
+
+        private void ctlAnciano_CerrarSesion(object sender, EventArgs e)
+        {
+            ctlAnciano.Dispose();
+            ctlAnciano = null;
+            Construir_Acceso();
         }
 
         private void ctlCoordinadorEdad_OnCerrarSesion(object sender, EventArgs e)
@@ -200,9 +216,9 @@ namespace Arca_de_los_Tesoros
 
             {
                 try
-                {         
-                    ctlMDI = (MdiClient)iterador;                 
-                    ctlMDI.BackColor = Color.White; 
+                {
+                    ctlMDI = (MdiClient)iterador;
+                    ctlMDI.BackColor = Color.White;
                 }
 
                 catch (InvalidCastException Exc)
@@ -214,11 +230,37 @@ namespace Arca_de_los_Tesoros
         }
 
         private void obj_ctl_bienvenida_OnTerminaTiempoBienvenida(object sender, EventArgs e)
-        {           
+        {
             Pro_Conexion = obj_ctl_bienvenida.Pro_Conexion;
-            Construir_Acceso();                
+            Construir_Acceso();
         }
 
+        #endregion
+
+        #region ENUMERACIONES
+
+        public enum ROLES_USUARIO
+        {
+            ANCIANO = 1,
+            DIACONO = 2,
+            COORDINADOR_DIA = 3,
+            COORDINADOR_EDAD = 4
+        }
+
+        public enum MODULOS
+        {
+            MODULO_ANCIANO = 1,
+            MODULO_DIACONO = 2,
+            MODULO_COORDINADOR_DIA = 3,
+            MODULO_COORDINADOR_EDAD = 4
+        }
+
+
+        #endregion
+
+        #region EVENTOS CONTROLES
+
+       
         private void FrmContructor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -295,5 +337,7 @@ namespace Arca_de_los_Tesoros
                 }
             }
         }
+
+        #endregion
     }
 }

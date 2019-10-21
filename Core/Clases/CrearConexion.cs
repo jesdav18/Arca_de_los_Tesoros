@@ -93,6 +93,8 @@ namespace Core.Clases
             return v_conexion;
         }
 
+        
+
         #endregion
 
     }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
@@ -89,7 +83,7 @@ namespace Core.Controles
 
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatos");
-                MessageBox.Show(Exc.Message, "Arca de los tesoros", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
 

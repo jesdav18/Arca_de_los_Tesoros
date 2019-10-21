@@ -62,9 +62,10 @@
             this.pageBusqueda = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlBusquedaFichasIngreso1 = new Core.Controles.ctlBusquedaFichasIngreso();
             this.PageSolicitudes = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.ctlVistaSolicitudes1 = new Coordinadores_de_Dia.Controles.ctlVistaSolicitudes();
+            this.ctlVistaSolicitudes1 = new Core.Controles.ctlVistaSolicitudes();
             this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
             this.tmrFusibles = new System.Windows.Forms.Timer(this.components);
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Dia.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
@@ -141,6 +142,7 @@
             this.pnlCerrarSesion.Padding = new System.Windows.Forms.Padding(5);
             this.pnlCerrarSesion.Size = new System.Drawing.Size(143, 124);
             this.pnlCerrarSesion.TabIndex = 5;
+            this.pnlCerrarSesion.Click += new System.EventHandler(this.PnlCerrarSesion_Click);
             // 
             // cmdCerrarSesion
             // 
@@ -158,6 +160,7 @@
             this.cmdCerrarSesion.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
             this.cmdCerrarSesion.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.cmdCerrarSesion.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdCerrarSesion.Click += new System.EventHandler(this.PnlCerrarSesion_Click);
             // 
             // pnlBusqueda
             // 
@@ -267,7 +270,7 @@
             this.fusibleCumpleanios.Pro_Valor = 99;
             this.fusibleCumpleanios.Size = new System.Drawing.Size(62, 57);
             this.fusibleCumpleanios.TabIndex = 5;
-            this.fusibleCumpleanios.Click += new System.EventHandler(this.PnlCumpleanios_Click);
+            this.fusibleCumpleanios.OnClicFusible += new System.EventHandler(this.PnlCumpleanios_Click);
             // 
             // cmdCumpleanieros
             // 
@@ -312,7 +315,7 @@
             this.fusibleSolicitudes.Pro_Valor = 99;
             this.fusibleSolicitudes.Size = new System.Drawing.Size(62, 57);
             this.fusibleSolicitudes.TabIndex = 6;
-            this.fusibleSolicitudes.Click += new System.EventHandler(this.PnlSolicitudes_Click);
+            this.fusibleSolicitudes.OnClicFusible += new System.EventHandler(this.PnlSolicitudes_Click);
             // 
             // cmdSolicitudes
             // 
@@ -520,6 +523,10 @@
             this.tmrFusibles.Interval = 3000;
             this.tmrFusibles.Tick += new System.EventHandler(this.TmrFusibles_Tick);
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // ctlContenedorPrincipalCoordinadorDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -591,9 +598,11 @@
         private System.ComponentModel.BackgroundWorker bgObtenerFusibles;
         private System.Windows.Forms.Timer tmrFusibles;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSolicitudes;
-        private ctlVistaSolicitudes ctlVistaSolicitudes1;
+      
         private Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros ctlContenedorCumpleanieros1;
         private Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
         private Core.Controles.ctlPlanificadorActividades ctlPlanificadorActividades1;
+        private Core.Controles.ctlVistaSolicitudes ctlVistaSolicitudes1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

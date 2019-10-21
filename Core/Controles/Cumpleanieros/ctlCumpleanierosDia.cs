@@ -62,8 +62,7 @@ namespace Core.Controles.Cumpleanieros
             }
             catch (Exception Exc)
             {
-
-                throw;
+  
             }
         }
     }

@@ -114,10 +114,9 @@
             this.txtUsuario.EnterMoveNextControl = true;
             this.txtUsuario.Location = new System.Drawing.Point(182, 323);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Properties.Appearance.Options.UseFont = true;
             this.txtUsuario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtUsuario.Properties.PasswordChar = '*';
             this.txtUsuario.Size = new System.Drawing.Size(323, 44);
             this.txtUsuario.TabIndex = 8;
             // 

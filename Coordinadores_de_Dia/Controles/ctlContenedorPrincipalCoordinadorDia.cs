@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
@@ -15,8 +10,7 @@ namespace Coordinadores_de_Dia.Controles
     public partial class ctlContenedorPrincipalCoordinadorDia : UserControl
     {
 
-        int v_conteo_fusible_solicitudes;
-        int v_conteo_fusible_cumpleanieros;
+        #region INICIALIZADOR
 
         public ctlContenedorPrincipalCoordinadorDia()
         {
@@ -25,32 +19,48 @@ namespace Coordinadores_de_Dia.Controles
             fusibleSolicitudes.Parent = cmdSolicitudes;
         }
 
+        #endregion
+
+        #region VARIABLES GLOBALES
+
+        int v_conteo_fusible_solicitudes;
+        int v_conteo_fusible_cumpleanieros;
+
+        #endregion
+
+        #region PROPIEDADES
+
         public PgSqlConnection Pro_Conexion { get; set; }
         public Usuario Pro_Usuario { get; set; }
 
-        public void ConstruirControl(PgSqlConnection pConexion, 
-                                     Usuario pUsuario)
+        #endregion
+
+        #region FUNCIONES
+
+        public void ConstruirControl(PgSqlConnection pConexion,
+                                   Usuario pUsuario)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
 
+            ctlEncabezado1.ConstruirControl(Pro_Usuario);
             bgObtenerFusibles.RunWorkerAsync();
-            
-            tmrFusibles.Start();
-            
-        }
 
-        private void CmdMiEquipo_Click(object sender, EventArgs e)
-        {
-            NavegacionPrincipal.SelectedPage = pageMiEquipo;
-            ctlMiEquipo1.ConstruirControl(Pro_Conexion, Pro_Usuario);
+            tmrFusibles.Start();
+
         }
 
         private void ObtenerFusiblesIndicadores()
         {
             if (Pro_Conexion.State != ConnectionState.Open)
             {
-                Pro_Conexion.Open();
+                try
+                {
+                    Pro_Conexion.Open();
+                }
+                catch (Exception Exc)
+                {
+                }
             }
 
             string sentencia = "SELECT * FROM arca_tesoros.ft_proc_obtiene_fusibles_indicadores();";
@@ -70,6 +80,24 @@ namespace Coordinadores_de_Dia.Controles
             catch (Exception Exc)
             {
             }
+        }
+
+        #endregion
+
+        #region EVENTOS
+
+        public event EventHandler OnPresionaCerrarSesion;
+
+        #endregion
+
+        #region EVENTOS CONTROLES
+
+        private void CmdMiEquipo_Click(object sender, EventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            NavegacionPrincipal.SelectedPage = pageMiEquipo;
+            ctlMiEquipo1.ConstruirControl(Pro_Conexion, Pro_Usuario);
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void BgObtenerFusibles_DoWork(object sender, DoWorkEventArgs e)
@@ -93,28 +121,41 @@ namespace Coordinadores_de_Dia.Controles
 
         private void PnlCumpleanios_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             NavegacionPrincipal.SelectedPage = PageCumpleanieros;
             ctlContenedorCumpleanieros1.ConstruirControl(Pro_Conexion);
-
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void PnlSolicitudes_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             NavegacionPrincipal.SelectedPage = PageSolicitudes;
             ctlVistaSolicitudes1.ConstruirControl(Pro_Conexion,Pro_Usuario.Pro_Usuario);
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void CmdBusqueda_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             NavegacionPrincipal.SelectedPage = pageBusqueda;
             ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion);
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void CmdOrganizador_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             NavegacionPrincipal.SelectedPage = PageOrganizador;
             ctlPlanificadorActividades1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
-            
+            splashScreenManager1.CloseWaitForm();
         }
+
+        private void PnlCerrarSesion_Click(object sender, EventArgs e)
+        {
+            OnPresionaCerrarSesion?.Invoke(sender, e);
+        }
+
+        #endregion
     }
 }
