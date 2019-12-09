@@ -4,20 +4,38 @@ using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
 using System.Configuration;
-using DevExpress.XtraEditors;
+using System.Drawing;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Drive.v3;
+using System.IO;
+using System.Threading;
+using Google.Apis.Util.Store;
+using Google.Apis.Services;
+using System.Diagnostics;
 
 namespace Core.Controles
 {
     public partial class ctlIngresoFicha : UserControl
     {
+        #region INICIALIZADOR
+
         public ctlIngresoFicha()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region EVENTOS
 
         public event EventHandler OnFichaIngresada;
 
+        #endregion
+
+        #region PROPIEDADES
+
+        public bool Pro_EstaCreandoFicha { get; set; }
+        public UserCredential Pro_Credenciales { get; set; }
         private PgSqlConnection Pro_Conexion { get; set; }
         private string Pro_Usuario { get; set; }
         private bool Pro_UsarUpperCase {
@@ -55,7 +73,18 @@ namespace Core.Controles
             }
         }
 
-        bool v_usar_upper_case;
+        #endregion
+
+        #region VARIABLES GLOBALES
+
+        bool v_usar_upper_case;     
+        static string[] Scopes = { DriveService.Scope.Drive };
+        string v_ruta = "";
+        string v_id_generado = "";
+
+        #endregion
+
+        #region FUNCIONES
 
         public void ConstruirControl(PgSqlConnection pConexion, 
                                      string pUsuario
@@ -64,7 +93,11 @@ namespace Core.Controles
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
 
+            LimpiarCajasTexto();
+            NavigationFicha.SelectedPage = Page1;
+
             Pro_UsarUpperCase = Convert.ToBoolean(ConfigurationSettings.AppSettings["USAR_UPPER_CASE"]);
+            Pro_EstaCreandoFicha = true;
 
             txtNombre.Focus();
             picAtras.Visible = false;
@@ -75,10 +108,9 @@ namespace Core.Controles
             }
         }
 
+
         private void GuardarFichaIngreso()
         {
-
-            splashScreenManager1.ShowWaitForm();
 
             if (Pro_Conexion.State != ConnectionState.Open)
             {
@@ -117,7 +149,8 @@ namespace Core.Controles
                                                                                               :p_cargo_en_empresa,  
                                                                                               :p_telefono_empresa,
                                                                                               :p_equipo_arca_tesoros,
-                                                                                              :p_ruta_imagen
+                                                                                              :p_ruta_imagen,
+                                                                                              :p_correo_electronico
                                                                                             )";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_nombre", PgSqlType.VarChar).Value = txtNombre.Text;
@@ -125,82 +158,63 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_segundo_nombre", PgSqlType.VarChar).Value = txtSegundoNombre.Text;
             pgComando.Parameters.Add("p_segundo_apellido", PgSqlType.VarChar).Value = txtSegundoApellido.Text;
             pgComando.Parameters.Add("p_numero_identidad", PgSqlType.VarChar).Value = txtIdentidad.Text;
-            
-
-            if (radioFemenino.Checked)
-            {
-                pgComando.Parameters.Add("p_genero", PgSqlType.VarChar).Value = radioFemenino.Text;
-            }
-            else if (radioMasculino.Checked) {
-                pgComando.Parameters.Add("p_genero", PgSqlType.VarChar).Value = radioMasculino.Text;
-            }
-
+            pgComando.Parameters.Add("p_genero", PgSqlType.VarChar).Value = radioFemenino.Checked ? radioFemenino.Text : radioMasculino.Text;
             pgComando.Parameters.Add("p_fecha_nacimiento", PgSqlType.Date).Value = dateFechaNacimiento.EditValue;
-            pgComando.Parameters.Add("p_id_pais_nacimiento", PgSqlType.VarChar).Value = glPaisNacimiento.EditValue;
+            pgComando.Parameters.Add("p_id_pais_nacimiento", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glPaisNacimiento.EditValue.ToString()) ? glPaisNacimiento.EditValue : DBNull.Value;
             pgComando.Parameters.Add("p_direccion", PgSqlType.VarChar).Value = memoDireccion.Text;
-            pgComando.Parameters.Add("p_id_estado_civil", PgSqlType.Int).Value = glEstadosCiviles.EditValue;
-            pgComando.Parameters.Add("p_id_tipo_sangre", PgSqlType.Int).Value = glTipoSangre.EditValue;
+            pgComando.Parameters.Add("p_id_estado_civil", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstadosCiviles.EditValue.ToString()) ? glEstadosCiviles.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_tipo_sangre", PgSqlType.Int).Value = !string.IsNullOrEmpty(glTipoSangre.EditValue.ToString()) ? glTipoSangre.EditValue : DBNull.Value;
             pgComando.Parameters.Add("p_estado_profesional", PgSqlType.VarChar).Value = txtEstadoProfesional.Text;
             pgComando.Parameters.Add("p_nivel_educativo", PgSqlType.VarChar).Value = txtNivelEducativo.Text;
-            pgComando.Parameters.Add("p_fecha_ingreso_iglesia", PgSqlType.Date).Value = dateFechaIngresoIglesia.EditValue;
-            pgComando.Parameters.Add("p_fecha_cobertura", PgSqlType.Date).Value = dateFechaCobertura.EditValue;
-            pgComando.Parameters.Add("p_fecha_reconciliacion", PgSqlType.Date).Value = dateFechaReconciliacion.EditValue;
-            pgComando.Parameters.Add("p_fecha_bautismo_agua", PgSqlType.Date).Value = dateFechaBautismoAgua.EditValue;
-            pgComando.Parameters.Add("p_fecha_conversion", PgSqlType.Date).Value = dateFechaConversion.EditValue;
-
-            if (radioBautismoEspirituSi.Checked)
-            {
-                pgComando.Parameters.Add("p_bautismo_espiritu_santo", PgSqlType.Boolean).Value = radioBautismoEspirituSi.Checked;
-            }
-            else if (radioBautismoEspirituNo.Checked)
-            {
-                pgComando.Parameters.Add("p_bautismo_espiritu_santo", PgSqlType.Boolean).Value = radioBautismoEspirituNo.Checked;
-            }
-
+            pgComando.Parameters.Add("p_fecha_ingreso_iglesia", PgSqlType.Date).Value = dateFechaIngresoIglesia.EditValue != null ? dateFechaIngresoIglesia.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_cobertura", PgSqlType.Date).Value = dateFechaCobertura.EditValue != null ? dateFechaCobertura.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_reconciliacion", PgSqlType.Date).Value = dateFechaReconciliacion.EditValue != null ? dateFechaReconciliacion.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_bautismo_agua", PgSqlType.Date).Value = dateFechaBautismoAgua.EditValue != null ? dateFechaBautismoAgua.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_conversion", PgSqlType.Date).Value = dateFechaConversion.EditValue != null ? dateFechaConversion.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_bautismo_espiritu_santo", PgSqlType.Boolean).Value =  radioBautismoEspirituSi.Checked ? radioBautismoEspirituSi.Checked : radioBautismoEspirituNo.Checked;         
             pgComando.Parameters.Add("p_otros_equipos_privilegio", PgSqlType.VarChar).Value = txtOtrosEquiposPrivilegio.Text;
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
-            pgComando.Parameters.Add("p_cargo_arca_tesoros", PgSqlType.Int).Value = glArcaTesoros.EditValue;
-            pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = glEdadArea.EditValue;
-            pgComando.Parameters.Add("p_estatus_doctrinal", PgSqlType.Int).Value = glStatusDoctrinal.EditValue;
-            pgComando.Parameters.Add("p_fecha_inicio_privilegio", PgSqlType.Date).Value = dateInicioPrivilegio.EditValue;
+            pgComando.Parameters.Add("p_cargo_arca_tesoros", PgSqlType.Int).Value = !string.IsNullOrEmpty(glArcaTesoros.EditValue.ToString()) ? glArcaTesoros.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEdadArea.EditValue.ToString()) ? glEdadArea.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_estatus_doctrinal", PgSqlType.Int).Value = !string.IsNullOrEmpty(glStatusDoctrinal.EditValue.ToString()) ? glStatusDoctrinal.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_inicio_privilegio", PgSqlType.Date).Value = dateInicioPrivilegio.EditValue != null ? dateInicioPrivilegio.EditValue : DBNull.Value;
             pgComando.Parameters.Add("p_telefono_fijo", PgSqlType.VarChar).Value = txtTelefonoFijo.Text;
             pgComando.Parameters.Add("p_celular", PgSqlType.VarChar).Value = txtCelular.Text;
-            pgComando.Parameters.Add("p_id_empresa", PgSqlType.Int).Value = glEmpresa.EditValue;
+            pgComando.Parameters.Add("p_id_empresa", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEmpresa.EditValue.ToString()) ? glEmpresa.EditValue : DBNull.Value ;
             pgComando.Parameters.Add("p_cargo_en_empresa", PgSqlType.VarChar).Value = txtCargoEnEmpresa.Text;
             pgComando.Parameters.Add("p_telefono_empresa", PgSqlType.VarChar).Value = txtTelefonoEmpresa.Text;
-            pgComando.Parameters.Add("p_equipo_arca_tesoros", PgSqlType.VarChar).Value = glEquipoArcaTesoros.EditValue;
-            pgComando.Parameters.Add("p_ruta_imagen", PgSqlType.VarChar).Value = lnlCargarFotografia.Text;
+            pgComando.Parameters.Add("p_equipo_arca_tesoros", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glEquipoArcaTesoros.EditValue.ToString()) ? glEquipoArcaTesoros.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_ruta_imagen", PgSqlType.VarChar).Value = v_id_generado;
+            pgComando.Parameters.Add("p_correo_electronico", PgSqlType.VarChar).Value = txtCorreoElectronico.Text;
 
             PgSqlTransaction pgTrans = Pro_Conexion.BeginTransaction();
+
             try
             {
+
                 pgComando.ExecuteNonQuery();
                 pgTrans.Commit();
 
+                Pro_EstaCreandoFicha = false;
+
                 sentencia = null;
                 pgComando.Dispose();
-
-                splashScreenManager1.CloseWaitForm();
-
                 LimpiarCajasTexto();
-                MessageBox.Show("¡La ficha logró registrarse correctamente!");
-
+               
                 OnFichaIngresada?.Invoke(new object(), new EventArgs());
                 NavigationFicha.SelectedPage = Page1;
+
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La ficha fue almacenada!", Utilidades.BotonesDialogo.Ok);
 
             }
             catch (Exception Exc)
             {
-                if (splashScreenManager1.IsSplashFormVisible)
-                {
-                    splashScreenManager1.CloseWaitForm();
-                }
-
                 pgTrans.Rollback();
                 pgComando.Dispose();
+                Pro_EstaCreandoFicha = true;
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "GuardarFichaIngreso");
-                MessageBox.Show(Exc.Message, "Arca de los tesoros",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                
+                Utilidades.MostrarDialogo(FindForm(), "Falla en el ingreso de datos", "¡Algo falló mientras creaba la ficha de ingreso, por favor vuelva a intentarlo!", Utilidades.BotonesDialogo.Ok);
+
             }
         }
 
@@ -248,7 +262,42 @@ namespace Core.Controles
             glEmpresa.Text = "";
          
         }
-      
+
+        private void GuardarImagenEnDirectorio()
+        {
+
+            if (ValidarImagenFueSeleccionada())
+            {
+                Pro_Credenciales = GetCredentials();
+
+                var service = new DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = Pro_Credenciales,
+                    ApplicationName = "Carga_GoogleDrive",
+                });
+
+                CargarImagen(service);
+
+                string pageToken = null;
+
+                do
+                {
+                    ListaArchivos(service, ref pageToken);
+                    if (!string.IsNullOrEmpty(lblID_Generado.Text))
+                    {
+                        pageToken = null;
+                    }
+
+                } while (pageToken != null);
+
+
+                pageToken = null;
+                service = null;
+                Console.WriteLine("Done");
+                Console.Read();
+            }
+        }
+
         private void CargarDatosTipoSangre() {
 
             if (Pro_Conexion.State != ConnectionState.Open)
@@ -272,7 +321,7 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosTipoSangre");
-                MessageBox.Show("Algo salió mal en el momento de Configuracion de Tipos de Sangre ", "Arca de los Tesoros");
+             
             }
         }
 
@@ -300,7 +349,7 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosCargos");
-                MessageBox.Show("Algo salió mal en el momento de Configuracion de Cargos ", "Arca de los Tesoros");
+              
             }
         }
 
@@ -329,7 +378,7 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosEstatusDoctrinal");
-                MessageBox.Show("Algo salió mal en el momento de Configuracion de Estatus Doctrinal ", "Arca de los Tesoros");
+              
             }
         }
 
@@ -366,16 +415,15 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarEstadosCiviles");
-                MessageBox.Show("Algo salió mal en el momento de Configuracion de Estados Civiles ", "Arca de los Tesoros");
+               
             }
         }
-
-    
 
         private void CargarEmpresas()
         {
             if (Pro_Conexion.State != ConnectionState.Open)
             {
+                Pro_Conexion.ConnectionTimeout = 0;
                 Pro_Conexion.Open();
             }
 
@@ -396,7 +444,7 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarEmpresas");
-                MessageBox.Show("Algo salió mal en el momento de cargar Configuracion de Empresas ", "Arca de los Tesoros");
+               
             }
         }
         
@@ -421,7 +469,7 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosEquipoArcaTesoros");
-                MessageBox.Show("Algo salió mal en el momento de Configuracion de Equipo Arca Tesoros ", "Arca de los Tesoros");
+               
             }
         }
         
@@ -450,7 +498,7 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosAreasAtencion");
-                MessageBox.Show("Algo salió mal en el momento de cargar Configuracion de Areas Atención ", "Arca de los Tesoros");
+               
             }
         }
         
@@ -478,38 +526,7 @@ namespace Core.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosPaises");
-                MessageBox.Show("Algo salió mal en el momento de cargar Configuracion de Paises. ", "Arca de los Tesoros");
-            }
-        }
-
-        private void BgCargarConfiguraciones_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            CargarDatosTipoSangre();         
-            CargarEmpresas();
-            CargarDatosEquipoArcaTesoros();
-            CargarDatosAreasAtencion();
-            CargarDatosPaises();
-            CargarDatosCargos();
-            CargarDatosEstatusDoctrinal();
-        }
-
-        private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
-        {
-            if ((ValidacionCampos()))
-            {
-                GuardarFichaIngreso();
-            }
-            else
-            {
-                MessageBox.Show("¡Hay campos obligatorios que aún no han sido llenados!","Arca de los Tesoros",MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }        
-        }
-
-        private void TxtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
+              
             }
         }
 
@@ -517,32 +534,32 @@ namespace Core.Controles
         {
             if (NavigationFicha.SelectedPage == Page2)
             {
-                NavigationFicha.SelectedPage = Page1;              
+                NavigationFicha.SelectedPage = Page1;
             }
             else if (NavigationFicha.SelectedPage == Page3)
-            {               
-                NavigationFicha.SelectedPage = Page2;              
+            {
+                NavigationFicha.SelectedPage = Page2;
             }
             else if (NavigationFicha.SelectedPage == Page4)
             {
-                NavigationFicha.SelectedPage = Page3;               
+                NavigationFicha.SelectedPage = Page3;
             }
             else if (NavigationFicha.SelectedPage == Page5)
             {
-                NavigationFicha.SelectedPage = Page4;              
+                NavigationFicha.SelectedPage = Page4;
             }
             else if (NavigationFicha.SelectedPage == Page6)
             {
-                NavigationFicha.SelectedPage = Page5;              
+                NavigationFicha.SelectedPage = Page5;
             }
             else if (NavigationFicha.SelectedPage == Page7)
-            {               
-                NavigationFicha.SelectedPage = Page6;              
+            {
+                NavigationFicha.SelectedPage = Page6;
             }
             else if (NavigationFicha.SelectedPage == Page8)
-            {               
-                NavigationFicha.SelectedPage = Page7;                
-            }           
+            {
+                NavigationFicha.SelectedPage = Page7;
+            }
         }
 
         public void IrAdelante()
@@ -581,7 +598,7 @@ namespace Core.Controles
                 {
                     NavigationFicha.SelectedPage = Page8;
                 }
-            }        
+            }
         }
 
         private bool ValidacionCampos()
@@ -601,7 +618,7 @@ namespace Core.Controles
                 else
                 {
                     return true;
-                }            
+                }
             }
             else if (NavigationFicha.SelectedPage == Page2)
             {
@@ -673,6 +690,139 @@ namespace Core.Controles
             }
         }
 
+        private bool ValidarImagenFueSeleccionada()
+        {
+            if (string.IsNullOrEmpty(lnlCargarFotografia.Text) || lnlCargarFotografia.Text == "Cargar Fotografía")
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor cargue la fotografía del colaborador!", Utilidades.BotonesDialogo.Ok);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private static void ListaArchivos(DriveService p_servicio, ref string p_token_pagina)
+        {
+            
+            FilesResource.ListRequest listRequest = p_servicio.Files.List();
+            listRequest.PageSize = 1;
+            listRequest.Fields = "nextPageToken, files(name)";
+            listRequest.PageToken = p_token_pagina;
+            listRequest.Q = "mimeType='image/jpeg'";
+
+            var request = listRequest.Execute();
+
+            if (request.Files != null && request.Files.Count > 0)
+            {
+                p_token_pagina = request.NextPageToken;
+               
+            }
+        }
+
+        private static UserCredential GetCredentials()
+        {
+            UserCredential credential;
+
+            using (var stream = new FileStream(@"C:\credentials.json", FileMode.Open, FileAccess.Read))
+            {
+                string credPath = @"C:\";
+
+                credPath = Path.Combine(credPath, ".credentials/drive-dotnet-quickstart.json");
+
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    Scopes,
+                    "user",
+                    CancellationToken.None,
+                    new FileDataStore(credPath, true)).Result;
+               
+            }
+
+            return credential;
+        }
+
+        private void CargarImagen(DriveService pServicio)
+        {
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+            var v_fileMetaData = new Google.Apis.Drive.v3.Data.File();
+            v_fileMetaData.Name = Path.GetFileName(v_ruta);
+            v_fileMetaData.MimeType = "imagen_prueba/jpeg";
+            FilesResource.CreateMediaUpload v_request;
+
+            using (var v_stream = new System.IO.FileStream(v_ruta, System.IO.FileMode.Open))
+            {
+                v_request = pServicio.Files.Create(v_fileMetaData, v_stream, "imagen_prueba/jpeg");
+                v_request.Fields = "id";
+                v_request.Upload();
+                v_stream.Close();
+            }
+
+            var v_archivo = v_request.ResponseBody;
+            v_id_generado = v_archivo.Id;
+            lblID_Generado.Text = "ID Generado: " + v_archivo.Id;
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.CloseWaitForm();
+            }
+        }
+
+        #endregion
+
+        #region EVENTOS CONTROLES
+
+        private void BgCargarConfiguraciones_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            CargarDatosTipoSangre();         
+            CargarEmpresas();
+            CargarDatosEquipoArcaTesoros();
+            CargarDatosAreasAtencion();
+            CargarDatosPaises();
+            CargarDatosCargos();
+            CargarDatosEstatusDoctrinal();
+            CargarEstadosCiviles();
+        }
+
+        private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
+        {
+
+            if ((ValidacionCampos()))
+            {
+                if (!splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.ShowWaitForm();
+                }
+
+                GuardarImagenEnDirectorio();
+                GuardarFichaIngreso();
+
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
+               
+            }
+            else
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Hay campos obligatorios que aún no han sido llenados!", Utilidades.BotonesDialogo.Ok);
+                
+            }        
+        }
+
+        private void TxtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void PicSiguiente_Click(object sender, EventArgs e)
         { 
            IrAdelante();   
@@ -684,13 +834,27 @@ namespace Core.Controles
         }
 
         private void PicCargarFotografia_Click(object sender, EventArgs e)
-        {
-            fileDialogCargarFotografia.Filter = ConfigurationManager.AppSettings["FILTRO_IMAGENES_COLABORADOR"];
-
-            if (fileDialogCargarFotografia.ShowDialog() == DialogResult.OK)
+        {       
+            using (OpenFileDialog file = new OpenFileDialog())
             {
-                lnlCargarFotografia.Text = fileDialogCargarFotografia.InitialDirectory + fileDialogCargarFotografia.FileName;
-            }
+                file.InitialDirectory = ConfigurationManager.AppSettings["DIRECTORIO_INICIAL_CARGA_FOTOS"];
+                file.RestoreDirectory = true;
+                file.Title = "Seleccione Imagen para la Ficha de Ingreso";
+                file.Filter = ConfigurationManager.AppSettings["FILTRO_IMAGENES_COLABORADOR"];
+                file.Multiselect = false;
+
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    v_ruta = file.FileName;
+                    lnlCargarFotografia.Text = file.FileName;
+                   
+                    using (var fs = new System.IO.FileStream(file.FileName, System.IO.FileMode.Open))
+                    {
+                        var bmp = new Bitmap(fs);
+                        picCargarFotografia.Image = (Bitmap)bmp.Clone();
+                    }   
+                }
+            }         
         }
 
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -711,7 +875,6 @@ namespace Core.Controles
         {
             picAtras.Visible = true;
             picSiguiente.Visible = true;
-
 
             if (NavigationFicha.SelectedPage == Page1)
             {
@@ -784,7 +947,6 @@ namespace Core.Controles
             }
         }
 
-    
         private void RadioNecesitaTransporteNo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -809,6 +971,46 @@ namespace Core.Controles
             }
         }
 
-        
+        private void PicCargarFotografia_DoubleClick(object sender, EventArgs e)
+        {
+            if (lnlCargarFotografia.Text != "Cargar Fotografía")
+            {
+                PopupVisualizadorFoto.ShowPopup();
+                picFotoColaborador.Image = Image.FromFile(lnlCargarFotografia.Text);
+            }         
+        }
+
+        private void PicCerrarPopupFoto_Click(object sender, EventArgs e)
+        {
+            PopupVisualizadorFoto.HidePopup();
+            this.Parent.BringToFront();
+        }
+
+        private void CtlIngresoFicha_SizeChanged(object sender, EventArgs e)
+        {
+            int v_tamañoWidth = this.Size.Width - pnlDerecho.Size.Width - pnlCentral.Size.Width;
+
+            NavigationFicha.Size = new Size((v_tamañoWidth / 2), NavigationFicha.Size.Height);
+
+            panel3.Size = new Size((v_tamañoWidth / 2), panel3.Size.Height);
+        }
+
+        private void LnlCargarFotografia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PicCargarFotografia_Click(sender, new KeyEventArgs(Keys.Enter));
+            }
+        }
+
+        private void TxtOtrosEquiposPrivilegio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                lnlCargarFotografia.Focus();
+            }
+        }
+
+        #endregion
     }
 }

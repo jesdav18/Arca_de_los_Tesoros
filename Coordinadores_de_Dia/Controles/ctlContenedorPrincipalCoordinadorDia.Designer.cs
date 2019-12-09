@@ -203,7 +203,7 @@
             // cmdMiEquipo
             // 
             this.cmdMiEquipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdMiEquipo.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_mi_equipo_64;
+            this.cmdMiEquipo.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_equipo;
             this.cmdMiEquipo.Location = new System.Drawing.Point(5, 5);
             this.cmdMiEquipo.Name = "cmdMiEquipo";
             this.cmdMiEquipo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;

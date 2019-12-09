@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContructor));
             this.SuspendLayout();
             // 
             // frmContructor
@@ -37,11 +38,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(663, 492);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "frmContructor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arca de los Tesoros";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmContructor_FormClosing);
             this.Load += new System.EventHandler(this.FrmContructor_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmContructor_KeyDown);
             this.ResumeLayout(false);

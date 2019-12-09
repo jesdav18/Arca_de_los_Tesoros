@@ -24,6 +24,11 @@ namespace Core.Controles
         public void ConstruirControl(PgSqlConnection pConexion)
         {
             Pro_Conexion = pConexion;
+            ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
+            if (!ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
+            {
+                ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.RunWorkerAsync();
+            }
         }
 
         private void RealizarBusqueda()
@@ -84,7 +89,8 @@ namespace Core.Controles
             var v_fila = (dsVistas.dtVistasFichaIngresoRow)gvVistasFichaIngreso.GetFocusedDataRow();
             if (v_fila != null)
             {
-                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador);
+                
+                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador);             
                 NavegacionPrincipal.SelectedPage = PageFichaIngreso;
             }
         }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
+            this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.cmdCerrarSesion = new DevExpress.XtraEditors.PictureEdit();
@@ -42,8 +43,10 @@
             this.pnlOrganizador = new System.Windows.Forms.Panel();
             this.cmdOrganizador = new DevExpress.XtraEditors.PictureEdit();
             this.pnlCumpleanios = new System.Windows.Forms.Panel();
+            this.fusibleCumpleanios = new Core.Controles.ctlFusible();
             this.cmdCumpleanieros = new DevExpress.XtraEditors.PictureEdit();
             this.pnlSolicitudes = new System.Windows.Forms.Panel();
+            this.fusibleSolicitudes = new Core.Controles.ctlFusible();
             this.cmdSolicitudes = new DevExpress.XtraEditors.PictureEdit();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,23 +56,20 @@
             this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
             this.NavegacionPrincipal = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageCumpleanieros = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlContenedorCumpleanieros1 = new Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros();
             this.PageInicial = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.PageOrganizador = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.pageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.pageBusqueda = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.PageSolicitudes = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.PageCrearFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.ctlContenedorCumpleanieros1 = new Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros();
             this.ctlPlanificadorActividades1 = new Core.Controles.ctlPlanificadorActividades();
+            this.pageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlMiEquipo1 = new Core.Controles.ctlMiEquipo();
+            this.pageBusqueda = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlBusquedaFichasIngreso1 = new Core.Controles.ctlBusquedaFichasIngreso();
+            this.PageSolicitudes = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
             this.ctlVistaSolicitudes1 = new Core.Controles.ctlVistaSolicitudes();
+            this.PageCrearFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlIngresoFicha1 = new Core.Controles.ctlIngresoFicha();
-            this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
-            this.fusibleCumpleanios = new Core.Controles.ctlFusible();
-            this.fusibleSolicitudes = new Core.Controles.ctlFusible();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Diacono.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
@@ -114,6 +114,18 @@
             this.pnlEncabezado.Name = "pnlEncabezado";
             this.pnlEncabezado.Size = new System.Drawing.Size(1351, 130);
             this.pnlEncabezado.TabIndex = 5;
+            // 
+            // ctlEncabezado1
+            // 
+            this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
+            this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlEncabezado1.Location = new System.Drawing.Point(1009, 3);
+            this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(0, 123);
+            this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 123);
+            this.ctlEncabezado1.Name = "ctlEncabezado1";
+            this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(339, 123);
+            this.ctlEncabezado1.TabIndex = 10;
             // 
             // pnlEncabezadoCoordinadoresEdad
             // 
@@ -231,7 +243,7 @@
             // cmdMiEquipo
             // 
             this.cmdMiEquipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdMiEquipo.EditValue = global::Diacono.Properties.Resources.icon_mi_equipo_64;
+            this.cmdMiEquipo.EditValue = global::Diacono.Properties.Resources.icon_equipo;
             this.cmdMiEquipo.Location = new System.Drawing.Point(5, 5);
             this.cmdMiEquipo.Name = "cmdMiEquipo";
             this.cmdMiEquipo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -287,6 +299,20 @@
             this.pnlCumpleanios.TabIndex = 1;
             this.pnlCumpleanios.Click += new System.EventHandler(this.PnlCumpleanios_Click);
             // 
+            // fusibleCumpleanios
+            // 
+            this.fusibleCumpleanios.BackColor = System.Drawing.Color.Transparent;
+            this.fusibleCumpleanios.Location = new System.Drawing.Point(56, 48);
+            this.fusibleCumpleanios.MaximumSize = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.MinimumSize = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.Name = "fusibleCumpleanios";
+            this.fusibleCumpleanios.Pro_EsSecundario = false;
+            this.fusibleCumpleanios.Pro_TipoColor = Core.Controles.ctlFusible.FUSIBLE_COLOR.DEFAULT;
+            this.fusibleCumpleanios.Pro_Valor = 99;
+            this.fusibleCumpleanios.Size = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.TabIndex = 6;
+            this.fusibleCumpleanios.OnClicFusible += new System.EventHandler(this.PnlCumpleanios_Click);
+            // 
             // cmdCumpleanieros
             // 
             this.cmdCumpleanieros.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -317,6 +343,20 @@
             this.pnlSolicitudes.Size = new System.Drawing.Size(143, 124);
             this.pnlSolicitudes.TabIndex = 0;
             this.pnlSolicitudes.Click += new System.EventHandler(this.PnlSolicitudes_Click);
+            // 
+            // fusibleSolicitudes
+            // 
+            this.fusibleSolicitudes.BackColor = System.Drawing.Color.Transparent;
+            this.fusibleSolicitudes.Location = new System.Drawing.Point(60, 48);
+            this.fusibleSolicitudes.MaximumSize = new System.Drawing.Size(62, 57);
+            this.fusibleSolicitudes.MinimumSize = new System.Drawing.Size(62, 57);
+            this.fusibleSolicitudes.Name = "fusibleSolicitudes";
+            this.fusibleSolicitudes.Pro_EsSecundario = false;
+            this.fusibleSolicitudes.Pro_TipoColor = Core.Controles.ctlFusible.FUSIBLE_COLOR.DEFAULT;
+            this.fusibleSolicitudes.Pro_Valor = 99;
+            this.fusibleSolicitudes.Size = new System.Drawing.Size(62, 57);
+            this.fusibleSolicitudes.TabIndex = 7;
+            this.fusibleSolicitudes.OnClicFusible += new System.EventHandler(this.PnlSolicitudes_Click);
             // 
             // cmdSolicitudes
             // 
@@ -418,6 +458,18 @@
             this.PageCumpleanieros.Name = "PageCumpleanieros";
             this.PageCumpleanieros.Size = new System.Drawing.Size(1351, 518);
             // 
+            // ctlContenedorCumpleanieros1
+            // 
+            this.ctlContenedorCumpleanieros1.BackColor = System.Drawing.Color.White;
+            this.ctlContenedorCumpleanieros1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlContenedorCumpleanieros1.Location = new System.Drawing.Point(0, 0);
+            this.ctlContenedorCumpleanieros1.Name = "ctlContenedorCumpleanieros1";
+            this.ctlContenedorCumpleanieros1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlContenedorCumpleanieros1.Pro_Conexion = null;
+            this.ctlContenedorCumpleanieros1.Pro_Dia = null;
+            this.ctlContenedorCumpleanieros1.Size = new System.Drawing.Size(1351, 518);
+            this.ctlContenedorCumpleanieros1.TabIndex = 0;
+            // 
             // PageInicial
             // 
             this.PageInicial.Caption = "PageInicial";
@@ -445,47 +497,6 @@
             this.PageOrganizador.Name = "PageOrganizador";
             this.PageOrganizador.Size = new System.Drawing.Size(1351, 518);
             // 
-            // pageMiEquipo
-            // 
-            this.pageMiEquipo.Caption = "pageMiEquipo";
-            this.pageMiEquipo.Controls.Add(this.ctlMiEquipo1);
-            this.pageMiEquipo.Name = "pageMiEquipo";
-            this.pageMiEquipo.Size = new System.Drawing.Size(1351, 518);
-            // 
-            // pageBusqueda
-            // 
-            this.pageBusqueda.Caption = "pageBusqueda";
-            this.pageBusqueda.Controls.Add(this.ctlBusquedaFichasIngreso1);
-            this.pageBusqueda.Name = "pageBusqueda";
-            this.pageBusqueda.Size = new System.Drawing.Size(1351, 518);
-            // 
-            // PageSolicitudes
-            // 
-            this.PageSolicitudes.Caption = "PageSolicitudes";
-            this.PageSolicitudes.Controls.Add(this.ctlVistaFichaIngreso1);
-            this.PageSolicitudes.Controls.Add(this.ctlVistaSolicitudes1);
-            this.PageSolicitudes.Name = "PageSolicitudes";
-            this.PageSolicitudes.Size = new System.Drawing.Size(1351, 518);
-            // 
-            // PageCrearFichaIngreso
-            // 
-            this.PageCrearFichaIngreso.Caption = "PageCrearFichaIngreso";
-            this.PageCrearFichaIngreso.Controls.Add(this.ctlIngresoFicha1);
-            this.PageCrearFichaIngreso.Name = "PageCrearFichaIngreso";
-            this.PageCrearFichaIngreso.Size = new System.Drawing.Size(1351, 518);
-            // 
-            // ctlContenedorCumpleanieros1
-            // 
-            this.ctlContenedorCumpleanieros1.BackColor = System.Drawing.Color.White;
-            this.ctlContenedorCumpleanieros1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlContenedorCumpleanieros1.Location = new System.Drawing.Point(0, 0);
-            this.ctlContenedorCumpleanieros1.Name = "ctlContenedorCumpleanieros1";
-            this.ctlContenedorCumpleanieros1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlContenedorCumpleanieros1.Pro_Conexion = null;
-            this.ctlContenedorCumpleanieros1.Pro_Dia = null;
-            this.ctlContenedorCumpleanieros1.Size = new System.Drawing.Size(1351, 518);
-            this.ctlContenedorCumpleanieros1.TabIndex = 0;
-            // 
             // ctlPlanificadorActividades1
             // 
             this.ctlPlanificadorActividades1.BackColor = System.Drawing.Color.White;
@@ -499,6 +510,13 @@
             this.ctlPlanificadorActividades1.Size = new System.Drawing.Size(1351, 518);
             this.ctlPlanificadorActividades1.TabIndex = 0;
             // 
+            // pageMiEquipo
+            // 
+            this.pageMiEquipo.Caption = "pageMiEquipo";
+            this.pageMiEquipo.Controls.Add(this.ctlMiEquipo1);
+            this.pageMiEquipo.Name = "pageMiEquipo";
+            this.pageMiEquipo.Size = new System.Drawing.Size(1351, 518);
+            // 
             // ctlMiEquipo1
             // 
             this.ctlMiEquipo1.BackColor = System.Drawing.Color.White;
@@ -511,6 +529,13 @@
             this.ctlMiEquipo1.Size = new System.Drawing.Size(1351, 518);
             this.ctlMiEquipo1.TabIndex = 0;
             // 
+            // pageBusqueda
+            // 
+            this.pageBusqueda.Caption = "pageBusqueda";
+            this.pageBusqueda.Controls.Add(this.ctlBusquedaFichasIngreso1);
+            this.pageBusqueda.Name = "pageBusqueda";
+            this.pageBusqueda.Size = new System.Drawing.Size(1351, 518);
+            // 
             // ctlBusquedaFichasIngreso1
             // 
             this.ctlBusquedaFichasIngreso1.BackColor = System.Drawing.Color.White;
@@ -521,6 +546,14 @@
             this.ctlBusquedaFichasIngreso1.Pro_Conexion = null;
             this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1351, 518);
             this.ctlBusquedaFichasIngreso1.TabIndex = 0;
+            // 
+            // PageSolicitudes
+            // 
+            this.PageSolicitudes.Caption = "PageSolicitudes";
+            this.PageSolicitudes.Controls.Add(this.ctlVistaFichaIngreso1);
+            this.PageSolicitudes.Controls.Add(this.ctlVistaSolicitudes1);
+            this.PageSolicitudes.Name = "PageSolicitudes";
+            this.PageSolicitudes.Size = new System.Drawing.Size(1351, 518);
             // 
             // ctlVistaFichaIngreso1
             // 
@@ -545,6 +578,13 @@
             this.ctlVistaSolicitudes1.Size = new System.Drawing.Size(1351, 518);
             this.ctlVistaSolicitudes1.TabIndex = 0;
             // 
+            // PageCrearFichaIngreso
+            // 
+            this.PageCrearFichaIngreso.Caption = "PageCrearFichaIngreso";
+            this.PageCrearFichaIngreso.Controls.Add(this.ctlIngresoFicha1);
+            this.PageCrearFichaIngreso.Name = "PageCrearFichaIngreso";
+            this.PageCrearFichaIngreso.Size = new System.Drawing.Size(1351, 518);
+            // 
             // ctlIngresoFicha1
             // 
             this.ctlIngresoFicha1.BackColor = System.Drawing.Color.White;
@@ -553,48 +593,10 @@
             this.ctlIngresoFicha1.MinimumSize = new System.Drawing.Size(1166, 751);
             this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
             this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlIngresoFicha1.Pro_Credenciales = null;
+            this.ctlIngresoFicha1.Pro_EstaCreandoFicha = false;
             this.ctlIngresoFicha1.Size = new System.Drawing.Size(1351, 751);
             this.ctlIngresoFicha1.TabIndex = 0;
-            // 
-            // ctlEncabezado1
-            // 
-            this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
-            this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlEncabezado1.Location = new System.Drawing.Point(1009, 3);
-            this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(0, 123);
-            this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 123);
-            this.ctlEncabezado1.Name = "ctlEncabezado1";
-            this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(339, 123);
-            this.ctlEncabezado1.TabIndex = 10;
-            // 
-            // fusibleCumpleanios
-            // 
-            this.fusibleCumpleanios.BackColor = System.Drawing.Color.Transparent;
-            this.fusibleCumpleanios.Location = new System.Drawing.Point(56, 48);
-            this.fusibleCumpleanios.MaximumSize = new System.Drawing.Size(62, 57);
-            this.fusibleCumpleanios.MinimumSize = new System.Drawing.Size(62, 57);
-            this.fusibleCumpleanios.Name = "fusibleCumpleanios";
-            this.fusibleCumpleanios.Pro_EsSecundario = false;
-            this.fusibleCumpleanios.Pro_TipoColor = Core.Controles.ctlFusible.FUSIBLE_COLOR.DEFAULT;
-            this.fusibleCumpleanios.Pro_Valor = 99;
-            this.fusibleCumpleanios.Size = new System.Drawing.Size(62, 57);
-            this.fusibleCumpleanios.TabIndex = 6;
-            this.fusibleCumpleanios.OnClicFusible += new System.EventHandler(this.PnlCumpleanios_Click);
-            // 
-            // fusibleSolicitudes
-            // 
-            this.fusibleSolicitudes.BackColor = System.Drawing.Color.Transparent;
-            this.fusibleSolicitudes.Location = new System.Drawing.Point(60, 48);
-            this.fusibleSolicitudes.MaximumSize = new System.Drawing.Size(62, 57);
-            this.fusibleSolicitudes.MinimumSize = new System.Drawing.Size(62, 57);
-            this.fusibleSolicitudes.Name = "fusibleSolicitudes";
-            this.fusibleSolicitudes.Pro_EsSecundario = false;
-            this.fusibleSolicitudes.Pro_TipoColor = Core.Controles.ctlFusible.FUSIBLE_COLOR.DEFAULT;
-            this.fusibleSolicitudes.Pro_Valor = 99;
-            this.fusibleSolicitudes.Size = new System.Drawing.Size(62, 57);
-            this.fusibleSolicitudes.TabIndex = 7;
-            this.fusibleSolicitudes.OnClicFusible += new System.EventHandler(this.PnlSolicitudes_Click);
             // 
             // splashScreenManager1
             // 

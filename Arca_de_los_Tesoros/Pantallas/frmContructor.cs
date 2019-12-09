@@ -339,5 +339,31 @@ namespace Arca_de_los_Tesoros
         }
 
         #endregion
+
+        private void FrmContructor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            switch (Pro_Modulo)
+            {
+                case MODULOS.MODULO_ANCIANO:
+                    break;
+                case MODULOS.MODULO_DIACONO:
+                    break;
+                case MODULOS.MODULO_COORDINADOR_DIA:
+                    break;
+                case MODULOS.MODULO_COORDINADOR_EDAD:
+                    if (ctlCoordinadorEdad.ctlMiEquipo1.ctlVistaFichaIngreso1.Pro_ModoEdicion)
+                    {
+                        if (Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Existen una ficha de ingreso con cambios sin guardar! ¿Desea Guardar los cambios?", Utilidades.BotonesDialogo.YesNo) == DialogResult.Yes)
+                        {
+                            ctlCoordinadorEdad.ctlMiEquipo1.ctlVistaFichaIngreso1.PicGuardarCambios_Click(sender, e);
+                        }
+                       
+                    }
+                   
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

@@ -176,7 +176,7 @@
             // cmdMiEquipo
             // 
             this.cmdMiEquipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdMiEquipo.EditValue = global::Coordinadores_de_Edad.Resources.icon_mi_equipo_64;
+            this.cmdMiEquipo.EditValue = global::Coordinadores_de_Edad.Resources.icon_equipo;
             this.cmdMiEquipo.Location = new System.Drawing.Point(5, 5);
             this.cmdMiEquipo.Name = "cmdMiEquipo";
             this.cmdMiEquipo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -408,9 +408,10 @@
             this.ctlIngresoFicha1.BackColor = System.Drawing.Color.White;
             this.ctlIngresoFicha1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctlIngresoFicha1.Location = new System.Drawing.Point(0, 0);
-            this.ctlIngresoFicha1.MinimumSize = new System.Drawing.Size(1166, 751);
             this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
             this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlIngresoFicha1.Pro_Credenciales = null;
+            this.ctlIngresoFicha1.Pro_EstaCreandoFicha = false;
             this.ctlIngresoFicha1.Size = new System.Drawing.Size(1262, 762);
             this.ctlIngresoFicha1.TabIndex = 0;
             // 
@@ -594,7 +595,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage pageIngresoSolicitudes;
         private ctlIngresoSolicitudesCordinadorEdad ctlIngresoSolicitudesCordinadorEdad1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageMiEquipo;
-        private Core.Controles.ctlMiEquipo ctlMiEquipo1;
         private DevExpress.XtraBars.Navigation.NavigationPage pagePlanificadorActividades;
         private ctlPlanificadorTrimestralCoordinadorEdad ctlPlanificadorTrimestralCoordinadorEdad1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageAsistencia;
@@ -603,5 +603,6 @@
         public DevExpress.XtraBars.Navigation.NavigationPage PageInicial;
         public DevExpress.XtraBars.Navigation.NavigationPage PageFichaIngreso;
         private DevExpress.XtraEditors.PictureEdit picAgregarUsuario;
+        public Core.Controles.ctlMiEquipo ctlMiEquipo1;
     }
 }

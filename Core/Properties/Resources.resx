@@ -121,17 +121,20 @@
   <data name="iconListaAsistencia_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconListaAsistencia_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_visualizar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_visualizar_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_calendario_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_calendario_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_atras_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_atras_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconAvatarHombre" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconAvatarHombre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconCerrar_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconCerrar_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_cerrar_sesion_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_cerrar_sesion_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_fusible_rojo_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_fusible_rojo_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconFiltro_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconFiltro_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,8 +142,17 @@
   <data name="icon_guardar_negro_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_guardar_negro_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconAvatarHombre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconAvatarHombre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_no_foto_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_no_foto_512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconBusqueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconBusqueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconMalo_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconMalo_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_ingresar_solicitudes_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_ingresar_solicitudes_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,8 +166,8 @@
   <data name="iconBusqueda_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBusqueda_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_fusible_rojo_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_fusible_rojo_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_visualizar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_visualizar_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconEspera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconEspera.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,14 +178,14 @@
   <data name="62218400_2421805074506489_798898671931359232_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\62218400_2421805074506489_798898671931359232_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconCheck_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconCheck_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconMaloRojo_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconMaloRojo_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_nuevo_usuario_negro_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_nuevo_usuario_negro_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_cerrar_sesion_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_cerrar_sesion_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconBusqueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconBusqueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_mi_equipo_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_mi_equipo_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,10 +196,7 @@
   <data name="icon_fusible_vacio_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_fusible_vacio_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconMalo_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconMalo_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconCheck_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconCheck_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_deshbailitar_empleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_deshbailitar_empleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

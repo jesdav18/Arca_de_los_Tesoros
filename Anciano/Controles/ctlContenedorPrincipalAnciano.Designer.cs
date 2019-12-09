@@ -549,6 +549,8 @@
             this.ctlIngresoFicha1.MinimumSize = new System.Drawing.Size(1166, 751);
             this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
             this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlIngresoFicha1.Pro_Credenciales = null;
+            this.ctlIngresoFicha1.Pro_EstaCreandoFicha = false;
             this.ctlIngresoFicha1.Size = new System.Drawing.Size(1166, 751);
             this.ctlIngresoFicha1.TabIndex = 0;
             // 

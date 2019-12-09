@@ -22,7 +22,7 @@ namespace Diacono.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Diacono.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Diacono.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Diacono.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _62218400_2421805074506489_798898671931359232_n {
+        public static System.Drawing.Bitmap _62218400_2421805074506489_798898671931359232_n {
             get {
                 object obj = ResourceManager.GetObject("62218400_2421805074506489_798898671931359232_n", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_calendario_64 {
+        public static System.Drawing.Bitmap icon_calendario_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_calendario_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_cerrar_sesion_64 {
+        public static System.Drawing.Bitmap icon_cerrar_sesion_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_cerrar_sesion_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_Cumpleanieros {
+        public static System.Drawing.Bitmap icon_Cumpleanieros {
             get {
                 object obj = ResourceManager.GetObject("icon_Cumpleanieros", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,17 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_mi_equipo_64 {
+        public static System.Drawing.Bitmap icon_equipo {
+            get {
+                object obj = ResourceManager.GetObject("icon_equipo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_mi_equipo_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_mi_equipo_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +123,7 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_nuevo_usuario_negro_64 {
+        public static System.Drawing.Bitmap icon_nuevo_usuario_negro_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_nuevo_usuario_negro_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +133,7 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_Solicitudes {
+        public static System.Drawing.Bitmap icon_Solicitudes {
             get {
                 object obj = ResourceManager.GetObject("icon_Solicitudes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +143,7 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconBusqueda {
+        public static System.Drawing.Bitmap iconBusqueda {
             get {
                 object obj = ResourceManager.GetObject("iconBusqueda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

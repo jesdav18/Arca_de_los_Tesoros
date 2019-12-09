@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcMiEquipo = new DevExpress.XtraGrid.GridControl();
             this.dsVistas1 = new Core.DataSets.dsVistas();
             this.gvMiEquipo = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -150,9 +150,9 @@
             // cmdVerFicha
             // 
             this.cmdVerFicha.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::Core.Properties.Resources.icon_visualizar_24;
+            editorButtonImageOptions2.Image = global::Core.Properties.Resources.icon_visualizar_24;
             this.cmdVerFicha.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdVerFicha.Name = "cmdVerFicha";
             this.cmdVerFicha.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdVerFicha.Click += new System.EventHandler(this.CmdVerFicha_Click);
@@ -188,6 +188,8 @@
             this.NavigationMiEquipo.SelectedPage = this.PageMiEquipo;
             this.NavigationMiEquipo.Size = new System.Drawing.Size(1136, 700);
             this.NavigationMiEquipo.TabIndex = 18;
+            this.NavigationMiEquipo.TransitionAnimationProperties.FrameCount = 500;
+            this.NavigationMiEquipo.TransitionAnimationProperties.FrameInterval = 500;
             // 
             // PageMiEquipo
             // 
@@ -230,6 +232,7 @@
             this.txtBusqueda.Properties.AutoHeight = false;
             this.txtBusqueda.Size = new System.Drawing.Size(643, 44);
             this.txtBusqueda.TabIndex = 31;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged);
             // 
             // cmdGuardarSolicitud
             // 
@@ -300,7 +303,10 @@
             this.ctlVistaFichaIngreso1.Name = "ctlVistaFichaIngreso1";
             this.ctlVistaFichaIngreso1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlVistaFichaIngreso1.Pro_Conexion = null;
+            this.ctlVistaFichaIngreso1.Pro_Credenciales = null;
+            this.ctlVistaFichaIngreso1.Pro_EsCargaDatos = false;
             this.ctlVistaFichaIngreso1.Pro_ID_Colaborador = 0;
+            this.ctlVistaFichaIngreso1.Pro_ModoEdicion = false;
             this.ctlVistaFichaIngreso1.Size = new System.Drawing.Size(1136, 700);
             this.ctlVistaFichaIngreso1.TabIndex = 0;
             // 
@@ -351,6 +357,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.TextEdit txtBusqueda;
         private DevExpress.XtraEditors.PictureEdit cmdGuardarSolicitud;
-        private ctlVistaFichaIngreso ctlVistaFichaIngreso1;
+        public ctlVistaFichaIngreso ctlVistaFichaIngreso1;
     }
 }

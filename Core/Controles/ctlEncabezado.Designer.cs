@@ -42,7 +42,7 @@
             this.pnlUsuario.Location = new System.Drawing.Point(10, 10);
             this.pnlUsuario.Name = "pnlUsuario";
             this.pnlUsuario.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlUsuario.Size = new System.Drawing.Size(376, 103);
+            this.pnlUsuario.Size = new System.Drawing.Size(0, 103);
             this.pnlUsuario.TabIndex = 0;
             // 
             // lblNombreUsuario
@@ -56,7 +56,7 @@
             this.lblNombreUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNombreUsuario.Location = new System.Drawing.Point(5, 5);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(366, 41);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(0, 41);
             this.lblNombreUsuario.TabIndex = 4;
             this.lblNombreUsuario.Text = "Diego Ramirez";
             // 
@@ -71,7 +71,7 @@
             this.lblCargoUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCargoUsuario.Location = new System.Drawing.Point(5, 46);
             this.lblCargoUsuario.Name = "lblCargoUsuario";
-            this.lblCargoUsuario.Size = new System.Drawing.Size(366, 52);
+            this.lblCargoUsuario.Size = new System.Drawing.Size(0, 52);
             this.lblCargoUsuario.TabIndex = 3;
             this.lblCargoUsuario.Text = "Coordinador de Edad";
             // 
@@ -85,7 +85,7 @@
             this.MinimumSize = new System.Drawing.Size(0, 123);
             this.Name = "ctlEncabezado";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(396, 123);
+            this.Size = new System.Drawing.Size(0, 123);
             this.pnlUsuario.ResumeLayout(false);
             this.ResumeLayout(false);
 

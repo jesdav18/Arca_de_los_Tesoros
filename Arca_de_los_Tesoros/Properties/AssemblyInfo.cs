@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Arca_de_los_Tesoros")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Arca de los Tesoros")]
+[assembly: AssemblyDescription("Area de niños Iglesia de Cristo Ebenezer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Iglesia de Cristo Ebenezer")]
 [assembly: AssemblyProduct("Arca_de_los_Tesoros")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

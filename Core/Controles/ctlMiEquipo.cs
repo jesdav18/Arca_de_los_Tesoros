@@ -16,11 +16,22 @@ namespace Core.Controles
 
         private void CmdVerFicha_Click(object sender, EventArgs e)
         {
+
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
             dsVistas.dtMiEquipoRow v_fila = (dsVistas.dtMiEquipoRow)gvMiEquipo.GetFocusedDataRow();
             if (v_fila != null)
             {
                 NavigationMiEquipo.SelectedPage = PageFichaIngreso;
                 ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador);
+            }
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.CloseWaitForm();
             }
         }
 
@@ -37,6 +48,14 @@ namespace Core.Controles
             Pro_Usuario = pUsuario;
             Pro_Conexion = pConexion;
             lblEncabezado.Text = pUsuario.Pro_NombreEquipo;
+            NavigationMiEquipo.SelectedPage = PageMiEquipo;
+
+
+            ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
+            if (!ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
+            {
+                ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.RunWorkerAsync();
+            }
 
             LimpiarBusqueda();
             CargarDatos();
@@ -55,7 +74,11 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+            
 
             string sentencia = @"SELECT * FROM arca_tesoros.ft_view_mi_equipo(:p_id_colaborador);";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
@@ -71,7 +94,12 @@ namespace Core.Controles
                 pgComando.Dispose();
                 pgComando = null;
 
-                splashScreenManager1.CloseWaitForm();
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
+
+              
 
             }
             catch (Exception Exc)
