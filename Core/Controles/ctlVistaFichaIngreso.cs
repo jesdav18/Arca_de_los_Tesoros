@@ -12,6 +12,7 @@ using System.Threading;
 using Google.Apis.Util.Store;
 using Core.Clases;
 using Core.DataSets;
+using Core.Reportes;
 
 namespace Core.Controles
 {
@@ -34,6 +35,7 @@ namespace Core.Controles
         public UserCredential Pro_Credenciales { get; set; }
         public bool Pro_EsCargaDatos { get; set; }
         public bool Pro_ModoEdicion { get; set; }
+        public Usuario Pro_Usuario { get; set; }
 
         #endregion
 
@@ -46,12 +48,13 @@ namespace Core.Controles
 
         #region FUNCIONES
 
-        public void ConstruirControl(PgSqlConnection pConexion, int pID_Colaborador)
+        public void ConstruirControl(PgSqlConnection pConexion, int pID_Colaborador, Usuario pUsuario)
         {
             Pro_Conexion = pConexion;
             Pro_ID_Colaborador = pID_Colaborador;
             Pro_EsCargaDatos = true;
             Pro_ModoEdicion = false;
+            Pro_Usuario = pUsuario;
 
             CargarDatos();
             CargarFotografiaColaborador();
@@ -562,6 +565,16 @@ namespace Core.Controles
             }
         }
 
+        private void ActualizarDatos()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sql = @"SELECT * FROM arca_tesoros.ft_mant_actualizar_datos_ficha_ingreso(:p_id_colaborador)";
+        }
+
         private void ParidacionDatos()
         {
             foreach (dsConfiguracion.dtEstadosCivilesRow item in dsConfiguracion1.dtEstadosCiviles)
@@ -673,6 +686,69 @@ namespace Core.Controles
         public void PicGuardarCambios_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DateFechaConversion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtNumeroIdentidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtGenero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GlEstadoCivil_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCorreoElectronico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCelular_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GlPaisNacimiento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GlTipoSangre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToggleNecesitaTransporte_Toggled(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PicPdf_Click(object sender, EventArgs e)
+        {
+            rptFichaIngreso rptFicha = new rptFichaIngreso();
+            rptFicha.ConstruirControl(Pro_Conexion, Pro_ID_Colaborador, Pro_Usuario);
+            rptFicha.CreateDocument();
+
+            rptFicha.ExportToPdf("c:\\archivito.pdf");
+        }
+
+        private void PicImprimir_Click(object sender, EventArgs e)
+        {
+            rptFichaIngreso rptFicha = new rptFichaIngreso();
+            rptFicha.ConstruirControl(Pro_Conexion, Pro_ID_Colaborador, Pro_Usuario);
+            rptFicha.CreateDocument();
+
+            documentViewer1.DocumentSource = rptFicha;
         }
     }
 }

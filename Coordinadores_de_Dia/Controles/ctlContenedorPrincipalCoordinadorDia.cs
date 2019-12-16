@@ -139,7 +139,7 @@ namespace Coordinadores_de_Dia.Controles
         {
             splashScreenManager1.ShowWaitForm();
             NavegacionPrincipal.SelectedPage = pageBusqueda;
-            ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion);
+            ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion,Pro_Usuario);
             splashScreenManager1.CloseWaitForm();
         }
 

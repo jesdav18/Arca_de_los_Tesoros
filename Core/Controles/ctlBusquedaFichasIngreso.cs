@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.DataSets;
+using Core.Clases;
 
 namespace Core.Controles
 {
@@ -20,11 +21,14 @@ namespace Core.Controles
         }
 
         public PgSqlConnection Pro_Conexion { get; set; }
+        public Usuario Pro_Usuario { get; set; }
 
-        public void ConstruirControl(PgSqlConnection pConexion)
+        public void ConstruirControl(PgSqlConnection pConexion, Usuario pUsuario)
         {
             Pro_Conexion = pConexion;
             ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
+            Pro_Usuario = pUsuario;
+
             if (!ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
             {
                 ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.RunWorkerAsync();
@@ -90,7 +94,7 @@ namespace Core.Controles
             if (v_fila != null)
             {
                 
-                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador);             
+                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador,Pro_Usuario);             
                 NavegacionPrincipal.SelectedPage = PageFichaIngreso;
             }
         }

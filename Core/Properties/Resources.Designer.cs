@@ -163,6 +163,16 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_imprimir_32 {
+            get {
+                object obj = ResourceManager.GetObject("icon_imprimir_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icon_ingresar_solicitudes_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_ingresar_solicitudes_64", resourceCulture);
@@ -196,6 +206,16 @@ namespace Core.Properties {
         public static System.Drawing.Bitmap icon_nuevo_usuario_negro_64 {
             get {
                 object obj = ResourceManager.GetObject("icon_nuevo_usuario_negro_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_pdf {
+            get {
+                object obj = ResourceManager.GetObject("icon_pdf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
