@@ -351,18 +351,21 @@ namespace Arca_de_los_Tesoros
                 case MODULOS.MODULO_COORDINADOR_DIA:
                     break;
                 case MODULOS.MODULO_COORDINADOR_EDAD:
-                    if (ctlCoordinadorEdad.ctlMiEquipo1.ctlVistaFichaIngreso1.Pro_ModoEdicion)
+                    if (ctlCoordinadorEdad != null)
                     {
-                        if (Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Existen una ficha de ingreso con cambios sin guardar! ¿Desea Guardar los cambios?", Utilidades.BotonesDialogo.YesNo) == DialogResult.Yes)
+                        if (ctlCoordinadorEdad.ctlIngresoFicha1.Pro_EstaCreandoFicha)
                         {
-                            ctlCoordinadorEdad.ctlMiEquipo1.ctlVistaFichaIngreso1.PicGuardarCambios_Click(sender, e);
+                            if (Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Existen una ficha de ingreso en proceso de creación! ¿Está seguro que desea cerrar?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
+                            {
+                                e.Cancel = true;
+                            }
+
                         }
-                       
                     }
+                
                    
                     break;
-                default:
-                    break;
+                
             }
         }
     }

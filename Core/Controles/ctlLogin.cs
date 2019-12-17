@@ -94,7 +94,11 @@ namespace Core.Controles
 
         private bool ValidarUsuarioLogueo()
         {
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
 
             bool v_encontro_usuario = false;
 
@@ -132,7 +136,13 @@ namespace Core.Controles
                 pgDr = null;
                 pgComando.Dispose();
 
-                splashScreenManager1.CloseWaitForm();
+
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+
+                    splashScreenManager1.CloseWaitForm();
+                }
+
 
                 if (v_encontro_usuario)
                 {
@@ -153,7 +163,10 @@ namespace Core.Controles
                 {
                     splashScreenManager1.CloseWaitForm();
                 }
-                MessageBox.Show(Exc.Message, "Arca de los Tesoros");
+
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", Exc.Message, Utilidades.BotonesDialogo.Ok);
+
+       
                 txtUsuario.Focus();
                 return false;
             }

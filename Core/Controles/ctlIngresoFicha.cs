@@ -12,6 +12,7 @@ using System.Threading;
 using Google.Apis.Util.Store;
 using Google.Apis.Services;
 using System.Diagnostics;
+using Core.DataSets;
 
 namespace Core.Controles
 {
@@ -22,7 +23,9 @@ namespace Core.Controles
         public ctlIngresoFicha()
         {
             InitializeComponent();
+            ctlIngresoEmpresa1.OnEmpresaRegistrada += ctlIngresoEmpresa1_OnEmpresaRegistrada;
         }
+
 
         #endregion
 
@@ -97,7 +100,7 @@ namespace Core.Controles
             NavigationFicha.SelectedPage = Page1;
 
             Pro_UsarUpperCase = Convert.ToBoolean(ConfigurationSettings.AppSettings["USAR_UPPER_CASE"]);
-            Pro_EstaCreandoFicha = true;
+           
 
             txtNombre.Focus();
             picAtras.Visible = false;
@@ -876,6 +879,12 @@ namespace Core.Controles
             picAtras.Visible = true;
             picSiguiente.Visible = true;
 
+            if (NavigationFicha.SelectedPage != Page1)
+            {
+                Pro_EstaCreandoFicha = true;
+            }
+           
+
             if (NavigationFicha.SelectedPage == Page1)
             {
                 picAtras.Visible = false;
@@ -1009,6 +1018,40 @@ namespace Core.Controles
             {
                 lnlCargarFotografia.Focus();
             }
+        }
+
+       
+        private void CmdAgreagarNuevaEmpresa_Click(object sender, EventArgs e)
+        {
+            popupAgregarNuevaEmpresa.ShowPopup();
+            ctlIngresoEmpresa1.ConstruirControl(Pro_Conexion);
+        }
+
+        private void PopupAgregarNuevaEmpresa_Hidden(object sender, DevExpress.Utils.FlyoutPanelEventArgs e)
+        {
+            this.Parent.Parent.Parent.BringToFront();
+        }
+
+        private void ctlIngresoEmpresa1_OnEmpresaRegistrada(object sender, EventArgs e)
+        {
+            int v_id_empresa = (int)sender;
+
+            CargarEmpresas();
+
+            glEmpresa.EditValue = v_id_empresa;
+
+            popupAgregarNuevaEmpresa.HidePopup();
+
+        }
+
+
+        private void TxtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNombre.Text) || !string.IsNullOrEmpty(txtApellido.Text))
+            {
+                Pro_EstaCreandoFicha = true;
+            }
+
         }
 
         #endregion

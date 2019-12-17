@@ -46,8 +46,6 @@ namespace Coordinadores_de_Dia.Controles
             ctlEncabezado1.ConstruirControl(Pro_Usuario);
             bgObtenerFusibles.RunWorkerAsync();
 
-            tmrFusibles.Start();
-
         }
 
         private void ObtenerFusiblesIndicadores()
@@ -94,10 +92,22 @@ namespace Coordinadores_de_Dia.Controles
 
         private void CmdMiEquipo_Click(object sender, EventArgs e)
         {
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
             NavegacionPrincipal.SelectedPage = pageMiEquipo;
             ctlMiEquipo1.ConstruirControl(Pro_Conexion, Pro_Usuario);
-            splashScreenManager1.CloseWaitForm();
+
+
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         private void BgObtenerFusibles_DoWork(object sender, DoWorkEventArgs e)
@@ -111,44 +121,80 @@ namespace Coordinadores_de_Dia.Controles
             fusibleCumpleanios.ConstruirControl(v_conteo_fusible_cumpleanieros);
         }
 
-        private void TmrFusibles_Tick(object sender, EventArgs e)
-        {
-            if (!bgObtenerFusibles.IsBusy)
-            {
-                bgObtenerFusibles.RunWorkerAsync();
-            }
-        }
-
         private void PnlCumpleanios_Click(object sender, EventArgs e)
         {
-            splashScreenManager1.ShowWaitForm();
+
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+
             NavegacionPrincipal.SelectedPage = PageCumpleanieros;
             ctlContenedorCumpleanieros1.ConstruirControl(Pro_Conexion);
-            splashScreenManager1.CloseWaitForm();
+
+
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         private void PnlSolicitudes_Click(object sender, EventArgs e)
         {
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
             NavegacionPrincipal.SelectedPage = PageSolicitudes;
             ctlVistaSolicitudes1.ConstruirControl(Pro_Conexion,Pro_Usuario.Pro_Usuario);
-            splashScreenManager1.CloseWaitForm();
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         private void CmdBusqueda_Click(object sender, EventArgs e)
         {
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
             NavegacionPrincipal.SelectedPage = pageBusqueda;
             ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion,Pro_Usuario);
-            splashScreenManager1.CloseWaitForm();
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         private void CmdOrganizador_Click(object sender, EventArgs e)
         {
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
             NavegacionPrincipal.SelectedPage = PageOrganizador;
             ctlPlanificadorActividades1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
-            splashScreenManager1.CloseWaitForm();
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         private void PnlCerrarSesion_Click(object sender, EventArgs e)
@@ -156,6 +202,15 @@ namespace Coordinadores_de_Dia.Controles
             OnPresionaCerrarSesion?.Invoke(sender, e);
         }
 
+        private void PnlActualizarFusibles_Click(object sender, EventArgs e)
+        {
+            if (!bgObtenerFusibles.IsBusy)
+            {
+                bgObtenerFusibles.RunWorkerAsync();
+            }
+        }
+
         #endregion
+
     }
 }

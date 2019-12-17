@@ -1,26 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
+using System.Drawing;
 
 namespace Coordinadores_de_Edad.Controles
 {
     public partial class ctlIngresoSolicitudesCordinadorEdad : UserControl
     {
+
+        #region INICIALIZADOR
+
         public ctlIngresoSolicitudesCordinadorEdad()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region PROPIEDADES
+
         public PgSqlConnection Pro_Conexion { get; set; }
         public int Pro_ID_Colaborador { get; set; }
+
+        #endregion
+
+        #region FUNCIONES
 
         public void ConstruirControl(PgSqlConnection pConexion, int pID_Colaborador)
         {
@@ -29,6 +35,8 @@ namespace Coordinadores_de_Edad.Controles
 
             CargarDatosTipoSolicitud();
             LimpiarCajasTexto();
+
+            glTipoSolicitud.Focus();
         }
 
         private void CargarDatosTipoSolicitud()
@@ -38,7 +46,11 @@ namespace Coordinadores_de_Edad.Controles
                 Pro_Conexion.Open();
             }
 
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
 
             string sentencia = @"SELECT * FROM arca_tesoros_conf.ft_view_tipo_solicitud();";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
@@ -53,8 +65,14 @@ namespace Coordinadores_de_Edad.Controles
                 pgComando.Dispose();
                 pgComando = null;
 
-                splashScreenManager1.CloseWaitForm();
-               
+
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+
+                    splashScreenManager1.CloseWaitForm();
+                }
+
+
             }
             catch (Exception Exc)
             {
@@ -65,14 +83,18 @@ namespace Coordinadores_de_Edad.Controles
 
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosTipoSolicitud");
-                MessageBox.Show(Exc.Message, "Arca de los tesoros", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             
         }
 
         private void GuardarSolicitud()
         {
-            splashScreenManager1.ShowWaitForm();
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
 
             if (Pro_Conexion.State != ConnectionState.Open)
             {
@@ -100,10 +122,22 @@ namespace Coordinadores_de_Edad.Controles
                 sentencia = null;
                 pgComando.Dispose();
 
-                splashScreenManager1.CloseWaitForm();
+
+
+
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+
+                    splashScreenManager1.CloseWaitForm();
+                }
+
+              
 
                 LimpiarCajasTexto();
-                MessageBox.Show("¡La solicitud fue enviada al coordinador de día!","Arca de los Tesoros");
+
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La solicitud fue enviada al coordinador de día!", Utilidades.BotonesDialogo.Ok);
+
+             
             }
             catch (Exception Exc)
             {
@@ -116,7 +150,7 @@ namespace Coordinadores_de_Edad.Controles
                 sentencia = null;
                 pgComando.Dispose();
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "GuardarSolicitud");
-                MessageBox.Show(Exc.Message, "Arca de los tesoros", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
 
             }
         }
@@ -128,10 +162,18 @@ namespace Coordinadores_de_Edad.Controles
             glTipoSolicitud.Text = "";
         }
 
+
+        #endregion
+
+        #region EVENTOS CONTROLES
+
         private void CmdGuardarSolicitud_Click(object sender, EventArgs e)
         {
             GuardarSolicitud();
         }
+
+       
+        #endregion
 
     }
 }

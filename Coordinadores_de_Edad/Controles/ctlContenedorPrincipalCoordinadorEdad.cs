@@ -48,14 +48,24 @@ namespace Coordinadores_de_Edad.Controles
             NavigationCoordinadorEdad.SelectedPage = PageInicial;
         }
 
-        private void ValidarCambios()
+        private bool ValidarCambios()
         {
-            if (ctlMiEquipo1.ctlVistaFichaIngreso1.Pro_ModoEdicion)
+            if (ctlIngresoFicha1.Pro_EstaCreandoFicha)
             {
-                if (Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Existen una ficha de ingreso con cambios sin guardar! ¿Desea Guardar los cambios?", Utilidades.BotonesDialogo.YesNo) == DialogResult.Yes)
+                if (Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Existen una ficha de ingreso en proceso de creación! ¿Desea descartar la creación de la ficha?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
                 {
-                    ctlMiEquipo1.ctlVistaFichaIngreso1.PicGuardarCambios_Click(new object(), new EventArgs());
+                   
+                    return true;
                 }
+                else
+                {
+                    ctlIngresoFicha1.Pro_EstaCreandoFicha = false;
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
  
@@ -65,7 +75,10 @@ namespace Coordinadores_de_Edad.Controles
 
         public void PicAgregarUsuario_Click(object sender, EventArgs e)
         {
-            ValidarCambios();
+            if (ValidarCambios())
+            {
+                return;
+            } 
 
 
             if (!splashScreenManager1.IsSplashFormVisible)
@@ -73,70 +86,130 @@ namespace Coordinadores_de_Edad.Controles
                 splashScreenManager1.ShowWaitForm();
             }
 
-            if (ctlIngresoFicha1.Pro_EstaCreandoFicha)
+            NavigationCoordinadorEdad.SelectedPage = PageFichaIngreso;
+            ctlIngresoFicha1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
+
+            if (splashScreenManager1.IsSplashFormVisible)
             {
-                if(Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Hay una ficha en proceso de creación! ¿Desea cancelar la creación de la ficha?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
-                {
-                    return;
-                }
-                else
-                {
-                    NavigationCoordinadorEdad.SelectedPage = PageFichaIngreso;
-                    ctlIngresoFicha1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
-                    splashScreenManager1.CloseWaitForm();
-                }
+
+                splashScreenManager1.CloseWaitForm();
             }
-     
+
         }
 
         public void CmdCerrarSesion_Click(object sender, EventArgs e)
         {
-            ValidarCambios();
+            if (ValidarCambios())
+            {
+                return;
+            }
+
             OnCerrarSesion?.Invoke(sender, e);
         }
 
         public void CmdIngresarSolicitudes_Click(object sender, EventArgs e)
         {
-            ValidarCambios();
-            splashScreenManager1.ShowWaitForm();
+            if (ValidarCambios())
+            {
+                return;
+            }
+
+
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+           
             NavigationCoordinadorEdad.SelectedPage = pageIngresoSolicitudes;
             ctlIngresoSolicitudesCordinadorEdad1.ConstruirControl(Pro_Conexion, 
                                                                   Pro_Usuario.Pro_ID_Colaborador);
-            splashScreenManager1.CloseWaitForm();
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         public void CmdMiEquipo_Click(object sender, EventArgs e)
         {
-            ValidarCambios();
-            splashScreenManager1.ShowWaitForm();
+            if (ValidarCambios())
+            {
+                return;
+            }
+
+
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+
             NavigationCoordinadorEdad.SelectedPage = PageMiEquipo;
             ctlMiEquipo1.ConstruirControl(Pro_Conexion, Pro_Usuario);
-            splashScreenManager1.CloseWaitForm();
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         public void CmdListaAsistencia_Click(object sender, EventArgs e)
         {
-            ValidarCambios();
+            if (ValidarCambios())
+            {
+                return;
+            }
 
-            splashScreenManager1.ShowWaitForm();
+
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+
             NavigationCoordinadorEdad.SelectedPage = PageAsistencia;
             ctlContenedorAsistencias1.ConstruirControl(Pro_Conexion,
                                                        Pro_Usuario.Pro_Usuario,
                                                        Pro_Usuario.Pro_ID_AreaAtencion
                                                        );
-            splashScreenManager1.CloseWaitForm();
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
         public void CmdOrganizadorActividades_Click(object sender, EventArgs e)
         {
-            ValidarCambios();
+            if (ValidarCambios())
+            {
+                return;
+            }
 
-            splashScreenManager1.ShowWaitForm();
+
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
             NavigationCoordinadorEdad.SelectedPage = pagePlanificadorActividades;
             ctlPlanificadorTrimestralCoordinadorEdad1.ConstruirControl(Pro_Conexion, 
                                                                        Pro_Usuario.Pro_Usuario,
                                                                        Pro_Usuario.Pro_ID_AreaAtencion);
-            splashScreenManager1.CloseWaitForm();
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+
         }
 
 

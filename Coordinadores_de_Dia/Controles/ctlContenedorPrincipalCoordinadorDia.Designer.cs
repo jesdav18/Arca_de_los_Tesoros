@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
+            this.pnlActualizarFusibles = new System.Windows.Forms.Panel();
+            this.cmdActualizar = new DevExpress.XtraEditors.PictureEdit();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.cmdCerrarSesion = new DevExpress.XtraEditors.PictureEdit();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
@@ -64,10 +65,11 @@
             this.PageSolicitudes = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaSolicitudes1 = new Core.Controles.ctlVistaSolicitudes();
             this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
-            this.tmrFusibles = new System.Windows.Forms.Timer(this.components);
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Dia.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
+            this.pnlActualizarFusibles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).BeginInit();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).BeginInit();
             this.pnlBusqueda.SuspendLayout();
@@ -111,17 +113,18 @@
             // 
             this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
             this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlEncabezado1.Location = new System.Drawing.Point(867, 3);
+            this.ctlEncabezado1.Location = new System.Drawing.Point(1011, 3);
             this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(0, 123);
             this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 123);
             this.ctlEncabezado1.Name = "ctlEncabezado1";
             this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(481, 123);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(337, 123);
             this.ctlEncabezado1.TabIndex = 10;
             // 
             // pnlEncabezadoCoordinadoresEdad
             // 
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlCerrarSesion);
+            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlActualizarFusibles);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlBusqueda);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlMiEquipo);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlOrganizador);
@@ -130,14 +133,43 @@
             this.pnlEncabezadoCoordinadoresEdad.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlEncabezadoCoordinadoresEdad.Location = new System.Drawing.Point(3, 3);
             this.pnlEncabezadoCoordinadoresEdad.Name = "pnlEncabezadoCoordinadoresEdad";
-            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(864, 124);
+            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(1008, 124);
             this.pnlEncabezadoCoordinadoresEdad.TabIndex = 2;
+            // 
+            // pnlActualizarFusibles
+            // 
+            this.pnlActualizarFusibles.Controls.Add(this.cmdActualizar);
+            this.pnlActualizarFusibles.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlActualizarFusibles.Location = new System.Drawing.Point(715, 0);
+            this.pnlActualizarFusibles.Name = "pnlActualizarFusibles";
+            this.pnlActualizarFusibles.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlActualizarFusibles.Size = new System.Drawing.Size(143, 124);
+            this.pnlActualizarFusibles.TabIndex = 6;
+            this.pnlActualizarFusibles.Click += new System.EventHandler(this.PnlActualizarFusibles_Click);
+            // 
+            // cmdActualizar
+            // 
+            this.cmdActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdActualizar.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_refrescar;
+            this.cmdActualizar.Location = new System.Drawing.Point(5, 5);
+            this.cmdActualizar.Name = "cmdActualizar";
+            this.cmdActualizar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdActualizar.Properties.NullText = "   ";
+            this.cmdActualizar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdActualizar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdActualizar.Size = new System.Drawing.Size(133, 114);
+            this.cmdActualizar.TabIndex = 0;
+            this.cmdActualizar.ToolTip = "Cerrar Sesión\r\n";
+            this.cmdActualizar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdActualizar.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdActualizar.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdActualizar.Click += new System.EventHandler(this.PnlActualizarFusibles_Click);
             // 
             // pnlCerrarSesion
             // 
             this.pnlCerrarSesion.Controls.Add(this.cmdCerrarSesion);
             this.pnlCerrarSesion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCerrarSesion.Location = new System.Drawing.Point(715, 0);
+            this.pnlCerrarSesion.Location = new System.Drawing.Point(858, 0);
             this.pnlCerrarSesion.Name = "pnlCerrarSesion";
             this.pnlCerrarSesion.Padding = new System.Windows.Forms.Padding(5);
             this.pnlCerrarSesion.Size = new System.Drawing.Size(143, 124);
@@ -491,6 +523,7 @@
             this.ctlBusquedaFichasIngreso1.Name = "ctlBusquedaFichasIngreso1";
             this.ctlBusquedaFichasIngreso1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlBusquedaFichasIngreso1.Pro_Conexion = null;
+            this.ctlBusquedaFichasIngreso1.Pro_Usuario = null;
             this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1351, 518);
             this.ctlBusquedaFichasIngreso1.TabIndex = 0;
             // 
@@ -518,11 +551,6 @@
             this.bgObtenerFusibles.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgObtenerFusibles_DoWork);
             this.bgObtenerFusibles.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgObtenerFusibles_RunWorkerCompleted);
             // 
-            // tmrFusibles
-            // 
-            this.tmrFusibles.Interval = 3000;
-            this.tmrFusibles.Tick += new System.EventHandler(this.TmrFusibles_Tick);
-            // 
             // splashScreenManager1
             // 
             this.splashScreenManager1.ClosingDelay = 500;
@@ -539,6 +567,8 @@
             this.Size = new System.Drawing.Size(1361, 658);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
+            this.pnlActualizarFusibles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).EndInit();
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).EndInit();
             this.pnlBusqueda.ResumeLayout(false);
@@ -596,7 +626,6 @@
         private Core.Controles.ctlMiEquipo ctlMiEquipo1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageBusqueda;
         private System.ComponentModel.BackgroundWorker bgObtenerFusibles;
-        private System.Windows.Forms.Timer tmrFusibles;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSolicitudes;
       
         private Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros ctlContenedorCumpleanieros1;
@@ -604,5 +633,7 @@
         private Core.Controles.ctlPlanificadorActividades ctlPlanificadorActividades1;
         private Core.Controles.ctlVistaSolicitudes ctlVistaSolicitudes1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private System.Windows.Forms.Panel pnlActualizarFusibles;
+        private DevExpress.XtraEditors.PictureEdit cmdActualizar;
     }
 }

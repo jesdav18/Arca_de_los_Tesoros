@@ -194,6 +194,12 @@
     <Compile Include="Controles\Cumpleanieros\ctlTarjetaCumpleaniero.Designer.cs">
       <DependentUpon>ctlTarjetaCumpleaniero.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles_Configuracion\ctlIngresoEmpresa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles_Configuracion\ctlIngresoEmpresa.Designer.cs">
+      <DependentUpon>ctlIngresoEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsConfiguracion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Cumpleanieros\ctlTarjetaCumpleaniero.resx">
       <DependentUpon>ctlTarjetaCumpleaniero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles_Configuracion\ctlIngresoEmpresa.resx">
+      <DependentUpon>ctlIngresoEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmEspera.resx">
       <DependentUpon>frmEspera.cs</DependentUpon>
@@ -405,6 +414,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_mas_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_Empresa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

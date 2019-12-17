@@ -32,6 +32,9 @@
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblPagina = new DevExpress.XtraEditors.LabelControl();
+            this.popupAgregarNuevaEmpresa = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl2 = new DevExpress.Utils.FlyoutPanelControl();
+            this.ctlIngresoEmpresa1 = new Core.Controles_Configuracion.ctlIngresoEmpresa();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.NavigationFicha = new DevExpress.XtraBars.Navigation.NavigationFrame();
@@ -98,6 +101,7 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.Page5 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.cmdAgreagarNuevaEmpresa = new DevExpress.XtraEditors.PictureEdit();
             this.glEmpresa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsEmpresa = new System.Windows.Forms.BindingSource(this.components);
             this.gvEmpresa = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -178,6 +182,10 @@
             this.pnlDerecho = new System.Windows.Forms.Panel();
             this.pnlCentral = new System.Windows.Forms.Panel();
             this.pnlEncabezado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupAgregarNuevaEmpresa)).BeginInit();
+            this.popupAgregarNuevaEmpresa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).BeginInit();
+            this.flyoutPanelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationFicha)).BeginInit();
             this.NavigationFicha.SuspendLayout();
             this.Page1.SuspendLayout();
@@ -209,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEstadosCiviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEstadosCiviles)).BeginInit();
             this.Page5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAgreagarNuevaEmpresa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glEmpresa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpresa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEmpresa)).BeginInit();
@@ -258,6 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSiguiente.Properties)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            this.pnlDerecho.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEncabezado
@@ -299,6 +309,49 @@
             this.lblPagina.Size = new System.Drawing.Size(136, 75);
             this.lblPagina.TabIndex = 10;
             this.lblPagina.Text = "1 DE 8";
+            // 
+            // popupAgregarNuevaEmpresa
+            // 
+            this.popupAgregarNuevaEmpresa.Appearance.BackColor = System.Drawing.Color.White;
+            this.popupAgregarNuevaEmpresa.Appearance.Options.UseBackColor = true;
+            this.popupAgregarNuevaEmpresa.Controls.Add(this.flyoutPanelControl2);
+            this.popupAgregarNuevaEmpresa.Location = new System.Drawing.Point(114, 171);
+            this.popupAgregarNuevaEmpresa.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.popupAgregarNuevaEmpresa.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.popupAgregarNuevaEmpresa.MaximumSize = new System.Drawing.Size(839, 351);
+            this.popupAgregarNuevaEmpresa.MinimumSize = new System.Drawing.Size(839, 351);
+            this.popupAgregarNuevaEmpresa.Name = "popupAgregarNuevaEmpresa";
+            this.popupAgregarNuevaEmpresa.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Center;
+            this.popupAgregarNuevaEmpresa.Options.AnimationType = DevExpress.Utils.Win.PopupToolWindowAnimation.Fade;
+            this.popupAgregarNuevaEmpresa.Options.CloseOnOuterClick = true;
+            this.popupAgregarNuevaEmpresa.OptionsBeakPanel.BackColor = System.Drawing.Color.White;
+            this.popupAgregarNuevaEmpresa.OwnerControl = this;
+            this.popupAgregarNuevaEmpresa.Size = new System.Drawing.Size(839, 351);
+            this.popupAgregarNuevaEmpresa.TabIndex = 0;
+            this.popupAgregarNuevaEmpresa.Hidden += new DevExpress.Utils.FlyoutPanelEventHandler(this.PopupAgregarNuevaEmpresa_Hidden);
+            // 
+            // flyoutPanelControl2
+            // 
+            this.flyoutPanelControl2.Controls.Add(this.ctlIngresoEmpresa1);
+            this.flyoutPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl2.FlyoutPanel = this.popupAgregarNuevaEmpresa;
+            this.flyoutPanelControl2.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl2.Name = "flyoutPanelControl2";
+            this.flyoutPanelControl2.Size = new System.Drawing.Size(839, 351);
+            this.flyoutPanelControl2.TabIndex = 0;
+            // 
+            // ctlIngresoEmpresa1
+            // 
+            this.ctlIngresoEmpresa1.BackColor = System.Drawing.Color.White;
+            this.ctlIngresoEmpresa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlIngresoEmpresa1.Location = new System.Drawing.Point(3, 3);
+            this.ctlIngresoEmpresa1.MaximumSize = new System.Drawing.Size(839, 351);
+            this.ctlIngresoEmpresa1.MinimumSize = new System.Drawing.Size(839, 351);
+            this.ctlIngresoEmpresa1.Name = "ctlIngresoEmpresa1";
+            this.ctlIngresoEmpresa1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctlIngresoEmpresa1.Pro_Conexion = null;
+            this.ctlIngresoEmpresa1.Size = new System.Drawing.Size(839, 351);
+            this.ctlIngresoEmpresa1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -454,6 +507,7 @@
             this.txtApellido.Properties.Appearance.Options.UseFont = true;
             this.txtApellido.Size = new System.Drawing.Size(435, 38);
             this.txtApellido.TabIndex = 15;
+            this.txtApellido.TextChanged += new System.EventHandler(this.TxtNombre_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // labelControl3
@@ -479,6 +533,7 @@
             this.txtNombre.Properties.Appearance.Options.UseFont = true;
             this.txtNombre.Size = new System.Drawing.Size(435, 38);
             this.txtNombre.TabIndex = 13;
+            this.txtNombre.TextChanged += new System.EventHandler(this.TxtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // Page2
@@ -1119,6 +1174,7 @@
             // Page5
             // 
             this.Page5.Caption = "Page5";
+            this.Page5.Controls.Add(this.cmdAgreagarNuevaEmpresa);
             this.Page5.Controls.Add(this.glEmpresa);
             this.Page5.Controls.Add(this.txtNivelEducativo);
             this.Page5.Controls.Add(this.labelControl19);
@@ -1132,11 +1188,28 @@
             this.Page5.Name = "Page5";
             this.Page5.Size = new System.Drawing.Size(547, 589);
             // 
+            // cmdAgreagarNuevaEmpresa
+            // 
+            this.cmdAgreagarNuevaEmpresa.EditValue = global::Core.Properties.Resources.icon_mas_64;
+            this.cmdAgreagarNuevaEmpresa.Location = new System.Drawing.Point(194, 41);
+            this.cmdAgreagarNuevaEmpresa.Name = "cmdAgreagarNuevaEmpresa";
+            this.cmdAgreagarNuevaEmpresa.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdAgreagarNuevaEmpresa.Properties.NullText = "   ";
+            this.cmdAgreagarNuevaEmpresa.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdAgreagarNuevaEmpresa.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdAgreagarNuevaEmpresa.Size = new System.Drawing.Size(24, 25);
+            this.cmdAgreagarNuevaEmpresa.TabIndex = 47;
+            this.cmdAgreagarNuevaEmpresa.ToolTip = "Agregar Nueva Empresa";
+            this.cmdAgreagarNuevaEmpresa.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdAgreagarNuevaEmpresa.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdAgreagarNuevaEmpresa.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdAgreagarNuevaEmpresa.Click += new System.EventHandler(this.CmdAgreagarNuevaEmpresa_Click);
+            // 
             // glEmpresa
             // 
             this.glEmpresa.EditValue = "";
             this.glEmpresa.EnterMoveNextControl = true;
-            this.glEmpresa.Location = new System.Drawing.Point(75, 82);
+            this.glEmpresa.Location = new System.Drawing.Point(50, 83);
             this.glEmpresa.Name = "glEmpresa";
             this.glEmpresa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEmpresa.Properties.Appearance.Options.UseFont = true;
@@ -1186,7 +1259,7 @@
             // 
             // txtNivelEducativo
             // 
-            this.txtNivelEducativo.Location = new System.Drawing.Point(75, 503);
+            this.txtNivelEducativo.Location = new System.Drawing.Point(50, 504);
             this.txtNivelEducativo.Name = "txtNivelEducativo";
             this.txtNivelEducativo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNivelEducativo.Properties.Appearance.Options.UseFont = true;
@@ -1203,7 +1276,7 @@
             this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl19.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl19.Location = new System.Drawing.Point(75, 452);
+            this.labelControl19.Location = new System.Drawing.Point(50, 453);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(271, 45);
             this.labelControl19.TabIndex = 46;
@@ -1212,7 +1285,7 @@
             // txtEstadoProfesional
             // 
             this.txtEstadoProfesional.EnterMoveNextControl = true;
-            this.txtEstadoProfesional.Location = new System.Drawing.Point(75, 399);
+            this.txtEstadoProfesional.Location = new System.Drawing.Point(50, 400);
             this.txtEstadoProfesional.Name = "txtEstadoProfesional";
             this.txtEstadoProfesional.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoProfesional.Properties.Appearance.Options.UseFont = true;
@@ -1228,7 +1301,7 @@
             this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl20.Location = new System.Drawing.Point(75, 348);
+            this.labelControl20.Location = new System.Drawing.Point(50, 349);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(168, 45);
             this.labelControl20.TabIndex = 44;
@@ -1237,7 +1310,7 @@
             // txtTelefonoEmpresa
             // 
             this.txtTelefonoEmpresa.EnterMoveNextControl = true;
-            this.txtTelefonoEmpresa.Location = new System.Drawing.Point(75, 289);
+            this.txtTelefonoEmpresa.Location = new System.Drawing.Point(50, 290);
             this.txtTelefonoEmpresa.Name = "txtTelefonoEmpresa";
             this.txtTelefonoEmpresa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoEmpresa.Properties.Appearance.Options.UseFont = true;
@@ -1253,7 +1326,7 @@
             this.labelControl16.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl16.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl16.Location = new System.Drawing.Point(75, 238);
+            this.labelControl16.Location = new System.Drawing.Point(50, 239);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(168, 45);
             this.labelControl16.TabIndex = 42;
@@ -1262,7 +1335,7 @@
             // txtCargoEnEmpresa
             // 
             this.txtCargoEnEmpresa.EnterMoveNextControl = true;
-            this.txtCargoEnEmpresa.Location = new System.Drawing.Point(75, 185);
+            this.txtCargoEnEmpresa.Location = new System.Drawing.Point(50, 186);
             this.txtCargoEnEmpresa.Name = "txtCargoEnEmpresa";
             this.txtCargoEnEmpresa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCargoEnEmpresa.Properties.Appearance.Options.UseFont = true;
@@ -1278,7 +1351,7 @@
             this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl17.Location = new System.Drawing.Point(75, 134);
+            this.labelControl17.Location = new System.Drawing.Point(50, 135);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(168, 45);
             this.labelControl17.TabIndex = 40;
@@ -1292,9 +1365,9 @@
             this.labelControl18.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl18.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl18.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl18.Location = new System.Drawing.Point(75, 31);
+            this.labelControl18.Location = new System.Drawing.Point(50, 32);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(168, 45);
+            this.labelControl18.Size = new System.Drawing.Size(123, 45);
             this.labelControl18.TabIndex = 39;
             this.labelControl18.Text = "Empresa";
             // 
@@ -2102,6 +2175,7 @@
             // 
             // pnlDerecho
             // 
+            this.pnlDerecho.Controls.Add(this.popupAgregarNuevaEmpresa);
             this.pnlDerecho.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlDerecho.Location = new System.Drawing.Point(1238, 90);
             this.pnlDerecho.Name = "pnlDerecho";
@@ -2133,6 +2207,10 @@
             this.Size = new System.Drawing.Size(1361, 751);
             this.SizeChanged += new System.EventHandler(this.CtlIngresoFicha_SizeChanged);
             this.pnlEncabezado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.popupAgregarNuevaEmpresa)).EndInit();
+            this.popupAgregarNuevaEmpresa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).EndInit();
+            this.flyoutPanelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NavigationFicha)).EndInit();
             this.NavigationFicha.ResumeLayout(false);
             this.Page1.ResumeLayout(false);
@@ -2168,6 +2246,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEstadosCiviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEstadosCiviles)).EndInit();
             this.Page5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAgreagarNuevaEmpresa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glEmpresa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEmpresa)).EndInit();
@@ -2219,6 +2298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSiguiente.Properties)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            this.pnlDerecho.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2373,5 +2453,9 @@
         private System.Windows.Forms.Panel pnlCentral;
         private System.Windows.Forms.Panel pnlDerecho;
         private DevExpress.XtraEditors.LabelControl lblID_Generado;
+        private DevExpress.XtraEditors.PictureEdit cmdAgreagarNuevaEmpresa;
+        private DevExpress.Utils.FlyoutPanel popupAgregarNuevaEmpresa;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl2;
+        private Controles_Configuracion.ctlIngresoEmpresa ctlIngresoEmpresa1;
     }
 }
