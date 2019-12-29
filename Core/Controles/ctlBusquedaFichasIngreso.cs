@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.DataSets;
@@ -15,19 +9,44 @@ namespace Core.Controles
 {
     public partial class ctlBusquedaFichasIngreso : UserControl
     {
+
+        #region INICIALIZADOR
+
         public ctlBusquedaFichasIngreso()
         {
             InitializeComponent();
+            ctlVistaFichaIngreso1.OnPresionaIrAtras += ctlVistaFichaIngreso1_OnIrAtras;
         }
+
+   
+        #endregion
+
+        #region PROPIEDADES
+
 
         public PgSqlConnection Pro_Conexion { get; set; }
         public Usuario Pro_Usuario { get; set; }
+
+
+        #endregion
+
+        #region EVENTOS
+
+        public event EventHandler OnPresionarVerFicha;
+        public event EventHandler OnIrAtras;
+
+        #endregion
+
+        #region FUNCIONES
+
 
         public void ConstruirControl(PgSqlConnection pConexion, Usuario pUsuario)
         {
             Pro_Conexion = pConexion;
             ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
             Pro_Usuario = pUsuario;
+
+            txtBusqueda.Focus();
 
             if (!ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
             {
@@ -40,6 +59,7 @@ namespace Core.Controles
             if (Pro_Conexion.State != ConnectionState.Open)
             {
                 Pro_Conexion.Open();
+
             }
 
             string sentencia = @"SELECT * FROM arca_tesoros.ft_proc_busqueda_fichas_ingreso(:p_filtros_busqueda);";
@@ -59,7 +79,11 @@ namespace Core.Controles
 
         }
 
-        public event EventHandler OnPresionarVerFicha;
+
+        #endregion
+
+        #region EVENTOS CONTROLES
+
 
         private void PicBusqueda_Click(object sender, EventArgs e)
         {
@@ -97,6 +121,27 @@ namespace Core.Controles
                 ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador,Pro_Usuario);             
                 NavegacionPrincipal.SelectedPage = PageFichaIngreso;
             }
+        }
+
+        private void TxtBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PicBusqueda_Click(sender, new KeyEventArgs(Keys.Enter));
+            }
+        }
+
+        private void ctlVistaFichaIngreso1_OnIrAtras(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = PageBusquedas;
+            NavigationBusqueda.SelectedPage = PageVistaFichasIngreso;
+        }
+
+        #endregion
+
+        private void CmdAtras_Click(object sender, EventArgs e)
+        {
+            NavigationBusqueda.SelectedPage = PageBusqueda;
         }
     }
 }

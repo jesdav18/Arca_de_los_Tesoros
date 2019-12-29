@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlVistaFichaIngreso));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel42 = new System.Windows.Forms.Panel();
             this.panel43 = new System.Windows.Forms.Panel();
-            this.picPdf = new DevExpress.XtraEditors.PictureEdit();
+            this.cmdActualizar = new DevExpress.XtraEditors.PictureEdit();
+            this.panel55 = new System.Windows.Forms.Panel();
+            this.cmdGuardar = new DevExpress.XtraEditors.PictureEdit();
+            this.panel51 = new System.Windows.Forms.Panel();
+            this.picAtras = new DevExpress.XtraEditors.PictureEdit();
+            this.picCrearUsuario = new DevExpress.XtraEditors.PictureEdit();
             this.panel45 = new System.Windows.Forms.Panel();
-            this.picImprimir = new DevExpress.XtraEditors.PictureEdit();
-            this.panel44 = new System.Windows.Forms.Panel();
-            this.picGuardarCambios = new DevExpress.XtraEditors.PictureEdit();
+            this.picPdf = new DevExpress.XtraEditors.PictureEdit();
             this.toggleHabilitar = new DevExpress.XtraEditors.ToggleSwitch();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -67,18 +71,43 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel50 = new System.Windows.Forms.Panel();
             this.txtCorreoElectronico = new DevExpress.XtraEditors.TextEdit();
+            this.panel49 = new System.Windows.Forms.Panel();
             this.glEstadoCivil = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsEstadosCiviles = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_estado_civil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel48 = new System.Windows.Forms.Panel();
             this.dateFechaNacimiento = new DevExpress.XtraEditors.DateEdit();
+            this.panel47 = new System.Windows.Forms.Panel();
             this.txtGenero = new DevExpress.XtraEditors.TextEdit();
+            this.panel44 = new System.Windows.Forms.Panel();
             this.txtNumeroIdentidad = new DevExpress.XtraEditors.TextEdit();
+            this.panel46 = new System.Windows.Forms.Panel();
             this.txtNombreColaborador = new DevExpress.XtraEditors.TextEdit();
+            this.cmdEditarNombre = new DevExpress.XtraEditors.PictureEdit();
             this.picColaborador = new DevExpress.XtraEditors.PictureEdit();
             this.pnlInformacionEstablecimientoIglesia = new System.Windows.Forms.Panel();
+            this.popupModificarNombre = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl2 = new DevExpress.Utils.FlyoutPanelControl();
+            this.cmdGuardarCambios = new DevExpress.XtraEditors.SimpleButton();
+            this.txtEditarSegundoApellido = new DevExpress.XtraEditors.TextEdit();
+            this.txtEditarPrimerApellido = new DevExpress.XtraEditors.TextEdit();
+            this.txtEditarSegundoNombre = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.panel54 = new System.Windows.Forms.Panel();
+            this.panel53 = new System.Windows.Forms.Panel();
+            this.panel52 = new System.Windows.Forms.Panel();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtEditarPrimerNombre = new DevExpress.XtraEditors.TextEdit();
+            this.popupCreacionUsuario = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
+            this.ctlCrearUsuario1 = new Core.Controles.ctlCrearUsuario();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.txtOtrosEquiposPriviliegio = new DevExpress.XtraEditors.TextEdit();
@@ -105,6 +134,7 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.panel41 = new System.Windows.Forms.Panel();
             this.glEstatusDoctrinal = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsEstatusDoctrinal = new System.Windows.Forms.BindingSource(this.components);
@@ -169,13 +199,14 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Core.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.bgCargarDatosConfigurcion = new System.ComponentModel.BackgroundWorker();
-            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.pnlEncabezado.SuspendLayout();
             this.panel42.SuspendLayout();
             this.panel43.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrearUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPdf.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImprimir.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGuardarCambios.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleHabilitar.Properties)).BeginInit();
             this.pnlDatosGenerales.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -194,17 +225,37 @@
             this.panel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCelular.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel50.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCorreoElectronico.Properties)).BeginInit();
+            this.panel49.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glEstadoCivil.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEstadosCiviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            this.panel48.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties)).BeginInit();
+            this.panel47.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGenero.Properties)).BeginInit();
+            this.panel44.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroIdentidad.Properties)).BeginInit();
+            this.panel46.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreColaborador.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEditarNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picColaborador.Properties)).BeginInit();
             this.pnlInformacionEstablecimientoIglesia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupModificarNombre)).BeginInit();
+            this.popupModificarNombre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).BeginInit();
+            this.flyoutPanelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarSegundoApellido.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarPrimerApellido.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarSegundoNombre.Properties)).BeginInit();
+            this.panel52.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarPrimerNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupCreacionUsuario)).BeginInit();
+            this.popupCreacionUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
+            this.flyoutPanelControl1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPriviliegio.Properties)).BeginInit();
@@ -285,9 +336,9 @@
             this.lblEncabezado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblEncabezado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEncabezado.Location = new System.Drawing.Point(219, 0);
+            this.lblEncabezado.Location = new System.Drawing.Point(281, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(809, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(753, 75);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Ficha de Ingreso";
             // 
@@ -297,27 +348,133 @@
             this.panel42.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel42.Location = new System.Drawing.Point(0, 0);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(219, 75);
+            this.panel42.Size = new System.Drawing.Size(281, 75);
             this.panel42.TabIndex = 20;
             // 
             // panel43
             // 
-            this.panel43.Controls.Add(this.picPdf);
+            this.panel43.Controls.Add(this.cmdActualizar);
+            this.panel43.Controls.Add(this.panel55);
+            this.panel43.Controls.Add(this.cmdGuardar);
+            this.panel43.Controls.Add(this.panel51);
+            this.panel43.Controls.Add(this.picAtras);
+            this.panel43.Controls.Add(this.picCrearUsuario);
             this.panel43.Controls.Add(this.panel45);
-            this.panel43.Controls.Add(this.picImprimir);
-            this.panel43.Controls.Add(this.panel44);
-            this.panel43.Controls.Add(this.picGuardarCambios);
+            this.panel43.Controls.Add(this.picPdf);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel43.Location = new System.Drawing.Point(0, 25);
+            this.panel43.Location = new System.Drawing.Point(0, 23);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(219, 50);
+            this.panel43.Size = new System.Drawing.Size(281, 52);
             this.panel43.TabIndex = 0;
+            // 
+            // cmdActualizar
+            // 
+            this.cmdActualizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdActualizar.EditValue = global::Core.Properties.Resources.icon_refrescar;
+            this.cmdActualizar.Location = new System.Drawing.Point(107, 0);
+            this.cmdActualizar.Name = "cmdActualizar";
+            this.cmdActualizar.Properties.AllowFocused = false;
+            this.cmdActualizar.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdActualizar.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdActualizar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdActualizar.Properties.NullText = " ";
+            this.cmdActualizar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdActualizar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdActualizar.Size = new System.Drawing.Size(36, 52);
+            this.cmdActualizar.TabIndex = 18;
+            this.cmdActualizar.ToolTip = "Actualizar";
+            this.cmdActualizar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdActualizar.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdActualizar.ToolTipTitle = "Arca de los Tesoros";
+            // 
+            // panel55
+            // 
+            this.panel55.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel55.Location = new System.Drawing.Point(143, 0);
+            this.panel55.Name = "panel55";
+            this.panel55.Size = new System.Drawing.Size(10, 52);
+            this.panel55.TabIndex = 19;
+            // 
+            // cmdGuardar
+            // 
+            this.cmdGuardar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdGuardar.EditValue = global::Core.Properties.Resources.icon_guardar_negro_64;
+            this.cmdGuardar.Location = new System.Drawing.Point(153, 0);
+            this.cmdGuardar.Name = "cmdGuardar";
+            this.cmdGuardar.Properties.AllowFocused = false;
+            this.cmdGuardar.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdGuardar.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdGuardar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdGuardar.Properties.NullText = " ";
+            this.cmdGuardar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdGuardar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdGuardar.Size = new System.Drawing.Size(36, 52);
+            this.cmdGuardar.TabIndex = 20;
+            this.cmdGuardar.ToolTip = "Guardar Cambios";
+            this.cmdGuardar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdGuardar.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdGuardar.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdGuardar.Click += new System.EventHandler(this.CmdGuardar_Click);
+            // 
+            // panel51
+            // 
+            this.panel51.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel51.Location = new System.Drawing.Point(189, 0);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(10, 52);
+            this.panel51.TabIndex = 17;
+            // 
+            // picAtras
+            // 
+            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAtras.EditValue = global::Core.Properties.Resources.icon_atras_64;
+            this.picAtras.Location = new System.Drawing.Point(0, 0);
+            this.picAtras.Name = "picAtras";
+            this.picAtras.Properties.AllowFocused = false;
+            this.picAtras.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picAtras.Properties.NullText = " ";
+            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picAtras.Size = new System.Drawing.Size(36, 52);
+            this.picAtras.TabIndex = 16;
+            this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
+            // 
+            // picCrearUsuario
+            // 
+            this.picCrearUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picCrearUsuario.EditValue = global::Core.Properties.Resources.icon_nuevo_usuario_negro_64;
+            this.picCrearUsuario.Location = new System.Drawing.Point(199, 0);
+            this.picCrearUsuario.Name = "picCrearUsuario";
+            this.picCrearUsuario.Properties.AllowFocused = false;
+            this.picCrearUsuario.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.picCrearUsuario.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picCrearUsuario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picCrearUsuario.Properties.NullText = " ";
+            this.picCrearUsuario.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picCrearUsuario.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picCrearUsuario.Size = new System.Drawing.Size(36, 52);
+            this.picCrearUsuario.TabIndex = 11;
+            this.picCrearUsuario.ToolTip = "Crear Usuario";
+            this.picCrearUsuario.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.picCrearUsuario.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.picCrearUsuario.ToolTipTitle = "Arca de los Tesoros";
+            this.picCrearUsuario.Click += new System.EventHandler(this.PicCrearUsuario_Click);
+            // 
+            // panel45
+            // 
+            this.panel45.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel45.Location = new System.Drawing.Point(235, 0);
+            this.panel45.Name = "panel45";
+            this.panel45.Size = new System.Drawing.Size(10, 52);
+            this.panel45.TabIndex = 14;
             // 
             // picPdf
             // 
-            this.picPdf.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picPdf.Dock = System.Windows.Forms.DockStyle.Right;
             this.picPdf.EditValue = global::Core.Properties.Resources.icon_pdf;
-            this.picPdf.Location = new System.Drawing.Point(92, 0);
+            this.picPdf.Location = new System.Drawing.Point(245, 0);
             this.picPdf.Name = "picPdf";
             this.picPdf.Properties.AllowFocused = false;
             this.picPdf.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
@@ -326,76 +483,18 @@
             this.picPdf.Properties.NullText = " ";
             this.picPdf.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picPdf.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picPdf.Size = new System.Drawing.Size(36, 50);
+            this.picPdf.Size = new System.Drawing.Size(36, 52);
             this.picPdf.TabIndex = 15;
-            this.picPdf.ToolTip = "Guardar Cambios\r\n";
+            this.picPdf.ToolTip = "Generar en archivo PDF";
             this.picPdf.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
             this.picPdf.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.picPdf.ToolTipTitle = "Arca de los Tesoros";
             this.picPdf.Click += new System.EventHandler(this.PicPdf_Click);
             // 
-            // panel45
-            // 
-            this.panel45.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel45.Location = new System.Drawing.Point(82, 0);
-            this.panel45.Name = "panel45";
-            this.panel45.Size = new System.Drawing.Size(10, 50);
-            this.panel45.TabIndex = 14;
-            // 
-            // picImprimir
-            // 
-            this.picImprimir.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picImprimir.EditValue = global::Core.Properties.Resources.icon_imprimir_32;
-            this.picImprimir.Location = new System.Drawing.Point(46, 0);
-            this.picImprimir.Name = "picImprimir";
-            this.picImprimir.Properties.AllowFocused = false;
-            this.picImprimir.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.picImprimir.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.picImprimir.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picImprimir.Properties.NullText = " ";
-            this.picImprimir.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picImprimir.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picImprimir.Size = new System.Drawing.Size(36, 50);
-            this.picImprimir.TabIndex = 13;
-            this.picImprimir.ToolTip = "Guardar Cambios\r\n";
-            this.picImprimir.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.picImprimir.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.picImprimir.ToolTipTitle = "Arca de los Tesoros";
-            this.picImprimir.Click += new System.EventHandler(this.PicImprimir_Click);
-            // 
-            // panel44
-            // 
-            this.panel44.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel44.Location = new System.Drawing.Point(36, 0);
-            this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(10, 50);
-            this.panel44.TabIndex = 12;
-            // 
-            // picGuardarCambios
-            // 
-            this.picGuardarCambios.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picGuardarCambios.EditValue = global::Core.Properties.Resources.icon_guardar_negro_64;
-            this.picGuardarCambios.Location = new System.Drawing.Point(0, 0);
-            this.picGuardarCambios.Name = "picGuardarCambios";
-            this.picGuardarCambios.Properties.AllowFocused = false;
-            this.picGuardarCambios.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.picGuardarCambios.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.picGuardarCambios.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picGuardarCambios.Properties.NullText = " ";
-            this.picGuardarCambios.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picGuardarCambios.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picGuardarCambios.Size = new System.Drawing.Size(36, 50);
-            this.picGuardarCambios.TabIndex = 11;
-            this.picGuardarCambios.ToolTip = "Guardar Cambios\r\n";
-            this.picGuardarCambios.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.picGuardarCambios.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.picGuardarCambios.ToolTipTitle = "Arca de los Tesoros";
-            this.picGuardarCambios.Click += new System.EventHandler(this.PicGuardarCambios_Click);
-            // 
             // toggleHabilitar
             // 
             this.toggleHabilitar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.toggleHabilitar.Location = new System.Drawing.Point(1028, 0);
+            this.toggleHabilitar.Location = new System.Drawing.Point(1034, 0);
             this.toggleHabilitar.Name = "toggleHabilitar";
             this.toggleHabilitar.Properties.AllowFocused = false;
             this.toggleHabilitar.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -404,7 +503,7 @@
             this.toggleHabilitar.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.toggleHabilitar.Properties.OffText = "Inactivo";
             this.toggleHabilitar.Properties.OnText = "Activo";
-            this.toggleHabilitar.Size = new System.Drawing.Size(216, 75);
+            this.toggleHabilitar.Size = new System.Drawing.Size(210, 75);
             this.toggleHabilitar.TabIndex = 19;
             this.toggleHabilitar.ToolTip = "Habilitar o Deshabilitar al colaborador";
             this.toggleHabilitar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -464,7 +563,6 @@
             this.memoDireccion.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.memoDireccion.Size = new System.Drawing.Size(490, 81);
             this.memoDireccion.TabIndex = 25;
-            this.memoDireccion.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // panel33
             // 
@@ -487,7 +585,6 @@
             this.toggleNecesitaTransporte.Properties.OnText = "Si";
             this.toggleNecesitaTransporte.Size = new System.Drawing.Size(272, 38);
             this.toggleNecesitaTransporte.TabIndex = 18;
-            this.toggleNecesitaTransporte.Toggled += new System.EventHandler(this.ToggleNecesitaTransporte_Toggled);
             // 
             // labelControl6
             // 
@@ -532,7 +629,6 @@
             this.glTipoSangre.Properties.ValueMember = "id_tipo_sangre";
             this.glTipoSangre.Size = new System.Drawing.Size(272, 32);
             this.glTipoSangre.TabIndex = 46;
-            this.glTipoSangre.TextChanged += new System.EventHandler(this.GlTipoSangre_TextChanged);
             // 
             // bsTiposSangre
             // 
@@ -617,7 +713,6 @@
             this.glPaisNacimiento.Properties.ValueMember = "id_pais";
             this.glPaisNacimiento.Size = new System.Drawing.Size(272, 32);
             this.glPaisNacimiento.TabIndex = 45;
-            this.glPaisNacimiento.TextChanged += new System.EventHandler(this.GlPaisNacimiento_TextChanged);
             // 
             // bsPaisNacimiento
             // 
@@ -692,7 +787,6 @@
             this.txtCelular.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtCelular.Size = new System.Drawing.Size(407, 32);
             this.txtCelular.TabIndex = 22;
-            this.txtCelular.TextChanged += new System.EventHandler(this.TxtCelular_TextChanged);
             // 
             // labelControl8
             // 
@@ -719,38 +813,55 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtCorreoElectronico);
-            this.panel1.Controls.Add(this.glEstadoCivil);
-            this.panel1.Controls.Add(this.dateFechaNacimiento);
-            this.panel1.Controls.Add(this.txtGenero);
-            this.panel1.Controls.Add(this.txtNumeroIdentidad);
-            this.panel1.Controls.Add(this.txtNombreColaborador);
+            this.panel1.Controls.Add(this.panel50);
+            this.panel1.Controls.Add(this.panel49);
+            this.panel1.Controls.Add(this.panel48);
+            this.panel1.Controls.Add(this.panel47);
+            this.panel1.Controls.Add(this.panel44);
+            this.panel1.Controls.Add(this.panel46);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(267, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(469, 215);
             this.panel1.TabIndex = 20;
             // 
+            // panel50
+            // 
+            this.panel50.Controls.Add(this.txtCorreoElectronico);
+            this.panel50.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel50.Location = new System.Drawing.Point(0, 171);
+            this.panel50.Name = "panel50";
+            this.panel50.Size = new System.Drawing.Size(469, 37);
+            this.panel50.TabIndex = 52;
+            // 
             // txtCorreoElectronico
             // 
-            this.txtCorreoElectronico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCorreoElectronico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCorreoElectronico.EditValue = "Correo Electrónico";
             this.txtCorreoElectronico.EnterMoveNextControl = true;
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(0, 166);
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(0, 0);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoElectronico.Properties.Appearance.Options.UseFont = true;
             this.txtCorreoElectronico.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtCorreoElectronico.Size = new System.Drawing.Size(469, 32);
             this.txtCorreoElectronico.TabIndex = 26;
-            this.txtCorreoElectronico.TextChanged += new System.EventHandler(this.TxtCorreoElectronico_TextChanged);
+            // 
+            // panel49
+            // 
+            this.panel49.Controls.Add(this.glEstadoCivil);
+            this.panel49.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel49.Location = new System.Drawing.Point(0, 134);
+            this.panel49.Name = "panel49";
+            this.panel49.Size = new System.Drawing.Size(469, 37);
+            this.panel49.TabIndex = 51;
             // 
             // glEstadoCivil
             // 
-            this.glEstadoCivil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.glEstadoCivil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.glEstadoCivil.EditValue = "";
             this.glEstadoCivil.EnterMoveNextControl = true;
-            this.glEstadoCivil.Location = new System.Drawing.Point(0, 134);
+            this.glEstadoCivil.Location = new System.Drawing.Point(0, 0);
             this.glEstadoCivil.Name = "glEstadoCivil";
             this.glEstadoCivil.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEstadoCivil.Properties.Appearance.Options.UseFont = true;
@@ -761,9 +872,8 @@
             this.glEstadoCivil.Properties.DisplayMember = "descripcion";
             this.glEstadoCivil.Properties.PopupView = this.gridView4;
             this.glEstadoCivil.Properties.ValueMember = "id_estado_civil";
-            this.glEstadoCivil.Size = new System.Drawing.Size(469, 32);
+            this.glEstadoCivil.Size = new System.Drawing.Size(469, 37);
             this.glEstadoCivil.TabIndex = 46;
-            this.glEstadoCivil.TextChanged += new System.EventHandler(this.GlEstadoCivil_TextChanged);
             // 
             // bsEstadosCiviles
             // 
@@ -800,12 +910,21 @@
             this.coldescripcion1.Visible = true;
             this.coldescripcion1.VisibleIndex = 1;
             // 
+            // panel48
+            // 
+            this.panel48.Controls.Add(this.dateFechaNacimiento);
+            this.panel48.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel48.Location = new System.Drawing.Point(0, 96);
+            this.panel48.Name = "panel48";
+            this.panel48.Size = new System.Drawing.Size(469, 38);
+            this.panel48.TabIndex = 50;
+            // 
             // dateFechaNacimiento
             // 
-            this.dateFechaNacimiento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dateFechaNacimiento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateFechaNacimiento.EditValue = null;
             this.dateFechaNacimiento.EnterMoveNextControl = true;
-            this.dateFechaNacimiento.Location = new System.Drawing.Point(0, 96);
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(0, 0);
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaNacimiento.Properties.Appearance.Options.UseFont = true;
@@ -815,49 +934,99 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaNacimiento.Size = new System.Drawing.Size(469, 38);
             this.dateFechaNacimiento.TabIndex = 37;
-            this.dateFechaNacimiento.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
+            // 
+            // panel47
+            // 
+            this.panel47.Controls.Add(this.txtGenero);
+            this.panel47.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel47.Location = new System.Drawing.Point(0, 64);
+            this.panel47.Name = "panel47";
+            this.panel47.Size = new System.Drawing.Size(469, 32);
+            this.panel47.TabIndex = 49;
             // 
             // txtGenero
             // 
-            this.txtGenero.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtGenero.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtGenero.EditValue = "Género";
             this.txtGenero.EnterMoveNextControl = true;
-            this.txtGenero.Location = new System.Drawing.Point(0, 64);
+            this.txtGenero.Location = new System.Drawing.Point(0, 0);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenero.Properties.Appearance.Options.UseFont = true;
             this.txtGenero.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtGenero.Size = new System.Drawing.Size(469, 32);
             this.txtGenero.TabIndex = 25;
-            this.txtGenero.TextChanged += new System.EventHandler(this.TxtGenero_TextChanged);
+            // 
+            // panel44
+            // 
+            this.panel44.Controls.Add(this.txtNumeroIdentidad);
+            this.panel44.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel44.Location = new System.Drawing.Point(0, 32);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(469, 32);
+            this.panel44.TabIndex = 47;
             // 
             // txtNumeroIdentidad
             // 
-            this.txtNumeroIdentidad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtNumeroIdentidad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNumeroIdentidad.EditValue = "Numero de Identidad";
             this.txtNumeroIdentidad.EnterMoveNextControl = true;
-            this.txtNumeroIdentidad.Location = new System.Drawing.Point(0, 32);
+            this.txtNumeroIdentidad.Location = new System.Drawing.Point(0, 0);
             this.txtNumeroIdentidad.Name = "txtNumeroIdentidad";
+            this.txtNumeroIdentidad.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txtNumeroIdentidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroIdentidad.Properties.Appearance.Options.UseBackColor = true;
             this.txtNumeroIdentidad.Properties.Appearance.Options.UseFont = true;
             this.txtNumeroIdentidad.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtNumeroIdentidad.Size = new System.Drawing.Size(469, 32);
             this.txtNumeroIdentidad.TabIndex = 22;
-            this.txtNumeroIdentidad.TextChanged += new System.EventHandler(this.TxtNumeroIdentidad_TextChanged);
+            // 
+            // panel46
+            // 
+            this.panel46.Controls.Add(this.txtNombreColaborador);
+            this.panel46.Controls.Add(this.cmdEditarNombre);
+            this.panel46.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel46.Location = new System.Drawing.Point(0, 0);
+            this.panel46.Name = "panel46";
+            this.panel46.Size = new System.Drawing.Size(469, 32);
+            this.panel46.TabIndex = 48;
             // 
             // txtNombreColaborador
             // 
-            this.txtNombreColaborador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtNombreColaborador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNombreColaborador.EditValue = "Nombre del Colaborador";
             this.txtNombreColaborador.EnterMoveNextControl = true;
             this.txtNombreColaborador.Location = new System.Drawing.Point(0, 0);
             this.txtNombreColaborador.Name = "txtNombreColaborador";
+            this.txtNombreColaborador.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txtNombreColaborador.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreColaborador.Properties.Appearance.Options.UseBackColor = true;
             this.txtNombreColaborador.Properties.Appearance.Options.UseFont = true;
             this.txtNombreColaborador.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtNombreColaborador.Size = new System.Drawing.Size(469, 32);
+            this.txtNombreColaborador.Properties.ReadOnly = true;
+            this.txtNombreColaborador.Size = new System.Drawing.Size(433, 32);
             this.txtNombreColaborador.TabIndex = 21;
-            this.txtNombreColaborador.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
+            // 
+            // cmdEditarNombre
+            // 
+            this.cmdEditarNombre.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdEditarNombre.EditValue = ((object)(resources.GetObject("cmdEditarNombre.EditValue")));
+            this.cmdEditarNombre.Location = new System.Drawing.Point(433, 0);
+            this.cmdEditarNombre.Name = "cmdEditarNombre";
+            this.cmdEditarNombre.Properties.AllowFocused = false;
+            this.cmdEditarNombre.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdEditarNombre.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdEditarNombre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdEditarNombre.Properties.NullText = " ";
+            this.cmdEditarNombre.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdEditarNombre.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdEditarNombre.Size = new System.Drawing.Size(36, 32);
+            this.cmdEditarNombre.TabIndex = 22;
+            this.cmdEditarNombre.ToolTip = "Editar Nombre de Colaborador";
+            this.cmdEditarNombre.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdEditarNombre.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdEditarNombre.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdEditarNombre.Click += new System.EventHandler(this.CmdEditarNombre_Click);
             // 
             // picColaborador
             // 
@@ -875,6 +1044,8 @@
             // 
             // pnlInformacionEstablecimientoIglesia
             // 
+            this.pnlInformacionEstablecimientoIglesia.Controls.Add(this.popupModificarNombre);
+            this.pnlInformacionEstablecimientoIglesia.Controls.Add(this.popupCreacionUsuario);
             this.pnlInformacionEstablecimientoIglesia.Controls.Add(this.panel9);
             this.pnlInformacionEstablecimientoIglesia.Controls.Add(this.panel10);
             this.pnlInformacionEstablecimientoIglesia.Controls.Add(this.panel8);
@@ -885,6 +1056,248 @@
             this.pnlInformacionEstablecimientoIglesia.Name = "pnlInformacionEstablecimientoIglesia";
             this.pnlInformacionEstablecimientoIglesia.Size = new System.Drawing.Size(1244, 611);
             this.pnlInformacionEstablecimientoIglesia.TabIndex = 21;
+            // 
+            // popupModificarNombre
+            // 
+            this.popupModificarNombre.Controls.Add(this.flyoutPanelControl2);
+            this.popupModificarNombre.Location = new System.Drawing.Point(1216, 392);
+            this.popupModificarNombre.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.popupModificarNombre.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.popupModificarNombre.Name = "popupModificarNombre";
+            this.popupModificarNombre.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Center;
+            this.popupModificarNombre.Options.AnimationType = DevExpress.Utils.Win.PopupToolWindowAnimation.Fade;
+            this.popupModificarNombre.Options.CloseOnOuterClick = true;
+            this.popupModificarNombre.OwnerControl = this;
+            this.popupModificarNombre.Size = new System.Drawing.Size(667, 454);
+            this.popupModificarNombre.TabIndex = 21;
+            this.popupModificarNombre.Hidden += new DevExpress.Utils.FlyoutPanelEventHandler(this.PopupModificarNombre_Hidden);
+            // 
+            // flyoutPanelControl2
+            // 
+            this.flyoutPanelControl2.Controls.Add(this.cmdGuardarCambios);
+            this.flyoutPanelControl2.Controls.Add(this.txtEditarSegundoApellido);
+            this.flyoutPanelControl2.Controls.Add(this.txtEditarPrimerApellido);
+            this.flyoutPanelControl2.Controls.Add(this.txtEditarSegundoNombre);
+            this.flyoutPanelControl2.Controls.Add(this.labelControl10);
+            this.flyoutPanelControl2.Controls.Add(this.labelControl7);
+            this.flyoutPanelControl2.Controls.Add(this.labelControl5);
+            this.flyoutPanelControl2.Controls.Add(this.panel54);
+            this.flyoutPanelControl2.Controls.Add(this.panel53);
+            this.flyoutPanelControl2.Controls.Add(this.panel52);
+            this.flyoutPanelControl2.Controls.Add(this.labelControl2);
+            this.flyoutPanelControl2.Controls.Add(this.txtEditarPrimerNombre);
+            this.flyoutPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl2.FlyoutPanel = this.popupModificarNombre;
+            this.flyoutPanelControl2.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl2.Name = "flyoutPanelControl2";
+            this.flyoutPanelControl2.Size = new System.Drawing.Size(667, 454);
+            this.flyoutPanelControl2.TabIndex = 0;
+            // 
+            // cmdGuardarCambios
+            // 
+            this.cmdGuardarCambios.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
+            this.cmdGuardarCambios.Appearance.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGuardarCambios.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cmdGuardarCambios.Appearance.Options.UseBackColor = true;
+            this.cmdGuardarCambios.Appearance.Options.UseFont = true;
+            this.cmdGuardarCambios.Appearance.Options.UseForeColor = true;
+            this.cmdGuardarCambios.ImageOptions.Image = global::Core.Properties.Resources.icon_guardar_negro_64;
+            this.cmdGuardarCambios.Location = new System.Drawing.Point(227, 323);
+            this.cmdGuardarCambios.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.cmdGuardarCambios.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cmdGuardarCambios.Name = "cmdGuardarCambios";
+            this.cmdGuardarCambios.Size = new System.Drawing.Size(405, 90);
+            this.cmdGuardarCambios.TabIndex = 54;
+            this.cmdGuardarCambios.Text = "Guardar Cambios";
+            this.cmdGuardarCambios.Click += new System.EventHandler(this.CmdGuardar_Click);
+            // 
+            // txtEditarSegundoApellido
+            // 
+            this.txtEditarSegundoApellido.EditValue = "";
+            this.txtEditarSegundoApellido.EnterMoveNextControl = true;
+            this.txtEditarSegundoApellido.Location = new System.Drawing.Point(227, 249);
+            this.txtEditarSegundoApellido.Name = "txtEditarSegundoApellido";
+            this.txtEditarSegundoApellido.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtEditarSegundoApellido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarSegundoApellido.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditarSegundoApellido.Properties.Appearance.Options.UseFont = true;
+            this.txtEditarSegundoApellido.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtEditarSegundoApellido.Size = new System.Drawing.Size(405, 32);
+            this.txtEditarSegundoApellido.TabIndex = 33;
+            // 
+            // txtEditarPrimerApellido
+            // 
+            this.txtEditarPrimerApellido.EditValue = "";
+            this.txtEditarPrimerApellido.EnterMoveNextControl = true;
+            this.txtEditarPrimerApellido.Location = new System.Drawing.Point(227, 197);
+            this.txtEditarPrimerApellido.Name = "txtEditarPrimerApellido";
+            this.txtEditarPrimerApellido.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtEditarPrimerApellido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarPrimerApellido.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditarPrimerApellido.Properties.Appearance.Options.UseFont = true;
+            this.txtEditarPrimerApellido.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtEditarPrimerApellido.Size = new System.Drawing.Size(405, 32);
+            this.txtEditarPrimerApellido.TabIndex = 32;
+            // 
+            // txtEditarSegundoNombre
+            // 
+            this.txtEditarSegundoNombre.EditValue = "";
+            this.txtEditarSegundoNombre.EnterMoveNextControl = true;
+            this.txtEditarSegundoNombre.Location = new System.Drawing.Point(227, 152);
+            this.txtEditarSegundoNombre.Name = "txtEditarSegundoNombre";
+            this.txtEditarSegundoNombre.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtEditarSegundoNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarSegundoNombre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditarSegundoNombre.Properties.Appearance.Options.UseFont = true;
+            this.txtEditarSegundoNombre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtEditarSegundoNombre.Size = new System.Drawing.Size(405, 32);
+            this.txtEditarSegundoNombre.TabIndex = 31;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.Location = new System.Drawing.Point(27, 238);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(185, 39);
+            this.labelControl10.TabIndex = 30;
+            this.labelControl10.Text = "Segundo Apellido:";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.Location = new System.Drawing.Point(27, 193);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(185, 39);
+            this.labelControl7.TabIndex = 29;
+            this.labelControl7.Text = "Primer Apellido:";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Location = new System.Drawing.Point(27, 148);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(185, 39);
+            this.labelControl5.TabIndex = 28;
+            this.labelControl5.Text = "Segundo Nombre:";
+            // 
+            // panel54
+            // 
+            this.panel54.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel54.Location = new System.Drawing.Point(3, 66);
+            this.panel54.Name = "panel54";
+            this.panel54.Size = new System.Drawing.Size(661, 10);
+            this.panel54.TabIndex = 27;
+            // 
+            // panel53
+            // 
+            this.panel53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
+            this.panel53.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel53.Location = new System.Drawing.Point(3, 61);
+            this.panel53.Name = "panel53";
+            this.panel53.Size = new System.Drawing.Size(661, 5);
+            this.panel53.TabIndex = 26;
+            // 
+            // panel52
+            // 
+            this.panel52.Controls.Add(this.labelControl3);
+            this.panel52.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel52.Location = new System.Drawing.Point(3, 3);
+            this.panel52.Name = "panel52";
+            this.panel52.Size = new System.Drawing.Size(661, 58);
+            this.panel52.TabIndex = 25;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl3.Location = new System.Drawing.Point(0, 0);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(661, 58);
+            this.labelControl3.TabIndex = 10;
+            this.labelControl3.Text = "Modificar Nombre Colaborador";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Location = new System.Drawing.Point(27, 103);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(185, 39);
+            this.labelControl2.TabIndex = 24;
+            this.labelControl2.Text = "Primer Nombre:";
+            // 
+            // txtEditarPrimerNombre
+            // 
+            this.txtEditarPrimerNombre.EditValue = "";
+            this.txtEditarPrimerNombre.EnterMoveNextControl = true;
+            this.txtEditarPrimerNombre.Location = new System.Drawing.Point(227, 107);
+            this.txtEditarPrimerNombre.Name = "txtEditarPrimerNombre";
+            this.txtEditarPrimerNombre.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtEditarPrimerNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarPrimerNombre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditarPrimerNombre.Properties.Appearance.Options.UseFont = true;
+            this.txtEditarPrimerNombre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtEditarPrimerNombre.Size = new System.Drawing.Size(405, 32);
+            this.txtEditarPrimerNombre.TabIndex = 23;
+            // 
+            // popupCreacionUsuario
+            // 
+            this.popupCreacionUsuario.Controls.Add(this.flyoutPanelControl1);
+            this.popupCreacionUsuario.Location = new System.Drawing.Point(1230, 91);
+            this.popupCreacionUsuario.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.popupCreacionUsuario.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.popupCreacionUsuario.Name = "popupCreacionUsuario";
+            this.popupCreacionUsuario.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Center;
+            this.popupCreacionUsuario.Options.AnimationType = DevExpress.Utils.Win.PopupToolWindowAnimation.Fade;
+            this.popupCreacionUsuario.OwnerControl = this;
+            this.popupCreacionUsuario.Size = new System.Drawing.Size(740, 378);
+            this.popupCreacionUsuario.TabIndex = 47;
+            // 
+            // flyoutPanelControl1
+            // 
+            this.flyoutPanelControl1.Controls.Add(this.ctlCrearUsuario1);
+            this.flyoutPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl1.FlyoutPanel = this.popupCreacionUsuario;
+            this.flyoutPanelControl1.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl1.Name = "flyoutPanelControl1";
+            this.flyoutPanelControl1.Size = new System.Drawing.Size(740, 378);
+            this.flyoutPanelControl1.TabIndex = 0;
+            // 
+            // ctlCrearUsuario1
+            // 
+            this.ctlCrearUsuario1.BackColor = System.Drawing.Color.White;
+            this.ctlCrearUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlCrearUsuario1.Location = new System.Drawing.Point(3, 3);
+            this.ctlCrearUsuario1.Name = "ctlCrearUsuario1";
+            this.ctlCrearUsuario1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctlCrearUsuario1.Pro_ID_Colaborador = 0;
+            this.ctlCrearUsuario1.Pro_Usuario = null;
+            this.ctlCrearUsuario1.Size = new System.Drawing.Size(734, 372);
+            this.ctlCrearUsuario1.TabIndex = 0;
             // 
             // panel9
             // 
@@ -913,17 +1326,19 @@
             // 
             // txtOtrosEquiposPriviliegio
             // 
-            this.txtOtrosEquiposPriviliegio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtOtrosEquiposPriviliegio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOtrosEquiposPriviliegio.EditValue = "Otros";
             this.txtOtrosEquiposPriviliegio.EnterMoveNextControl = true;
             this.txtOtrosEquiposPriviliegio.Location = new System.Drawing.Point(281, 0);
             this.txtOtrosEquiposPriviliegio.Name = "txtOtrosEquiposPriviliegio";
             this.txtOtrosEquiposPriviliegio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOtrosEquiposPriviliegio.Properties.Appearance.Options.UseFont = true;
+            this.txtOtrosEquiposPriviliegio.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtOtrosEquiposPriviliegio.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.txtOtrosEquiposPriviliegio.Properties.AutoHeight = false;
             this.txtOtrosEquiposPriviliegio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtOtrosEquiposPriviliegio.Size = new System.Drawing.Size(238, 32);
+            this.txtOtrosEquiposPriviliegio.Size = new System.Drawing.Size(238, 68);
             this.txtOtrosEquiposPriviliegio.TabIndex = 26;
-            this.txtOtrosEquiposPriviliegio.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl33
             // 
@@ -966,7 +1381,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaInicioPrivilegio.Size = new System.Drawing.Size(238, 38);
             this.dateFechaInicioPrivilegio.TabIndex = 38;
-            this.dateFechaInicioPrivilegio.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl35
             // 
@@ -1010,7 +1424,6 @@
             this.glEdadArea.Properties.ValueMember = "id_area_atencion";
             this.glEdadArea.Size = new System.Drawing.Size(238, 38);
             this.glEdadArea.TabIndex = 45;
-            this.glEdadArea.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // bsAreasAtencion
             // 
@@ -1083,7 +1496,6 @@
             this.toggleBautismoEspiritu.Properties.OnText = "Si";
             this.toggleBautismoEspiritu.Size = new System.Drawing.Size(238, 39);
             this.toggleBautismoEspiritu.TabIndex = 19;
-            this.toggleBautismoEspiritu.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl29
             // 
@@ -1125,7 +1537,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaReconciliacion.Size = new System.Drawing.Size(238, 38);
             this.dateFechaReconciliacion.TabIndex = 37;
-            this.dateFechaReconciliacion.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl24
             // 
@@ -1168,7 +1579,6 @@
             this.dateFechaCobertua.Properties.CalendarTimeProperties.NullText = " ";
             this.dateFechaCobertua.Size = new System.Drawing.Size(238, 38);
             this.dateFechaCobertua.TabIndex = 37;
-            this.dateFechaCobertua.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl22
             // 
@@ -1217,6 +1627,14 @@
             this.panel8.Size = new System.Drawing.Size(549, 572);
             this.panel8.TabIndex = 21;
             // 
+            // documentViewer1
+            // 
+            this.documentViewer1.IsMetric = true;
+            this.documentViewer1.Location = new System.Drawing.Point(366, 382);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(493, 349);
+            this.documentViewer1.TabIndex = 31;
+            // 
             // panel41
             // 
             this.panel41.Controls.Add(this.glEstatusDoctrinal);
@@ -1245,7 +1663,6 @@
             this.glEstatusDoctrinal.Properties.ValueMember = "id_estatus_doctrinal";
             this.glEstatusDoctrinal.Size = new System.Drawing.Size(266, 39);
             this.glEstatusDoctrinal.TabIndex = 44;
-            this.glEstatusDoctrinal.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // bsEstatusDoctrinal
             // 
@@ -1325,7 +1742,6 @@
             this.glCargos.Properties.ValueMember = "id_cargo";
             this.glCargos.Size = new System.Drawing.Size(266, 39);
             this.glCargos.TabIndex = 44;
-            this.glCargos.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // bsCargos
             // 
@@ -1408,7 +1824,6 @@
             this.glEquipoArcaTesoros.Properties.ValueMember = "id_equipo_arca_tesoros";
             this.glEquipoArcaTesoros.Size = new System.Drawing.Size(266, 69);
             this.glEquipoArcaTesoros.TabIndex = 43;
-            this.glEquipoArcaTesoros.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // bsEquipoArcaTesoros
             // 
@@ -1475,7 +1890,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.datFechaBautismoAgua.Size = new System.Drawing.Size(266, 38);
             this.datFechaBautismoAgua.TabIndex = 36;
-            this.datFechaBautismoAgua.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl17
             // 
@@ -1517,7 +1931,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaIngresoIglesia.Size = new System.Drawing.Size(266, 38);
             this.dateFechaIngresoIglesia.TabIndex = 36;
-            this.dateFechaIngresoIglesia.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl15
             // 
@@ -1559,7 +1972,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaConversion.Size = new System.Drawing.Size(266, 38);
             this.dateFechaConversion.TabIndex = 36;
-            this.dateFechaConversion.TextChanged += new System.EventHandler(this.DateFechaConversion_TextChanged);
             // 
             // labelControl19
             // 
@@ -1676,7 +2088,6 @@
             this.txtNivelEducativo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtNivelEducativo.Size = new System.Drawing.Size(338, 39);
             this.txtNivelEducativo.TabIndex = 24;
-            this.txtNivelEducativo.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl55
             // 
@@ -1716,7 +2127,6 @@
             this.txtEstadoProfesional.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtEstadoProfesional.Size = new System.Drawing.Size(338, 39);
             this.txtEstadoProfesional.TabIndex = 23;
-            this.txtEstadoProfesional.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl57
             // 
@@ -1784,7 +2194,6 @@
             this.txtTelefonoEmpresa.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtTelefonoEmpresa.Size = new System.Drawing.Size(347, 39);
             this.txtTelefonoEmpresa.TabIndex = 23;
-            this.txtTelefonoEmpresa.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl41
             // 
@@ -1824,7 +2233,6 @@
             this.txtCargo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtCargo.Size = new System.Drawing.Size(347, 39);
             this.txtCargo.TabIndex = 23;
-            this.txtCargo.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // labelControl43
             // 
@@ -1869,7 +2277,6 @@
             this.glEmpresa.Properties.ValueMember = "id_empresa";
             this.glEmpresa.Size = new System.Drawing.Size(347, 39);
             this.glEmpresa.TabIndex = 46;
-            this.glEmpresa.TextChanged += new System.EventHandler(this.TxtNombreColaborador_TextChanged);
             // 
             // bsEmpresa
             // 
@@ -1971,14 +2378,6 @@
             // 
             this.bgCargarDatosConfigurcion.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgCargarDatosConfigurcion_DoWork);
             // 
-            // documentViewer1
-            // 
-            this.documentViewer1.IsMetric = true;
-            this.documentViewer1.Location = new System.Drawing.Point(366, 382);
-            this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(493, 349);
-            this.documentViewer1.TabIndex = 31;
-            // 
             // ctlVistaFichaIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1996,9 +2395,11 @@
             this.pnlEncabezado.ResumeLayout(false);
             this.panel42.ResumeLayout(false);
             this.panel43.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrearUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPdf.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImprimir.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGuardarCambios.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleHabilitar.Properties)).EndInit();
             this.pnlDatosGenerales.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -2017,17 +2418,37 @@
             this.panel25.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtCelular.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel50.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtCorreoElectronico.Properties)).EndInit();
+            this.panel49.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.glEstadoCivil.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEstadosCiviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            this.panel48.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNacimiento.Properties)).EndInit();
+            this.panel47.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtGenero.Properties)).EndInit();
+            this.panel44.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroIdentidad.Properties)).EndInit();
+            this.panel46.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreColaborador.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEditarNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picColaborador.Properties)).EndInit();
             this.pnlInformacionEstablecimientoIglesia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.popupModificarNombre)).EndInit();
+            this.popupModificarNombre.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).EndInit();
+            this.flyoutPanelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarSegundoApellido.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarPrimerApellido.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarSegundoNombre.Properties)).EndInit();
+            this.panel52.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditarPrimerNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupCreacionUsuario)).EndInit();
+            this.popupCreacionUsuario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).EndInit();
+            this.flyoutPanelControl1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPriviliegio.Properties)).EndInit();
@@ -2172,7 +2593,7 @@
         private DevExpress.XtraEditors.TextEdit txtEstadoProfesional;
         private DevExpress.XtraEditors.TextEdit txtTelefonoEmpresa;
         private DevExpress.XtraEditors.TextEdit txtCargo;
-        private DevExpress.XtraEditors.PictureEdit picGuardarCambios;
+        private DevExpress.XtraEditors.PictureEdit picCrearUsuario;
         private DevExpress.XtraEditors.DateEdit datFechaBautismoAgua;
         private DevExpress.XtraEditors.DateEdit dateFechaIngresoIglesia;
         private DevExpress.XtraEditors.DateEdit dateFechaConversion;
@@ -2230,8 +2651,36 @@
         private System.Windows.Forms.Panel panel43;
         private DevExpress.XtraEditors.PictureEdit picPdf;
         private System.Windows.Forms.Panel panel45;
-        private DevExpress.XtraEditors.PictureEdit picImprimir;
-        private System.Windows.Forms.Panel panel44;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        private DevExpress.XtraEditors.PictureEdit picAtras;
+        private DevExpress.Utils.FlyoutPanel popupCreacionUsuario;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl1;
+        private ctlCrearUsuario ctlCrearUsuario1;
+        private System.Windows.Forms.Panel panel50;
+        private System.Windows.Forms.Panel panel49;
+        private System.Windows.Forms.Panel panel48;
+        private System.Windows.Forms.Panel panel47;
+        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.Panel panel46;
+        private DevExpress.XtraEditors.PictureEdit cmdActualizar;
+        private System.Windows.Forms.Panel panel51;
+        private DevExpress.XtraEditors.PictureEdit cmdEditarNombre;
+        private DevExpress.Utils.FlyoutPanel popupModificarNombre;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtEditarPrimerNombre;
+        private System.Windows.Forms.Panel panel52;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.Panel panel53;
+        private DevExpress.XtraEditors.TextEdit txtEditarSegundoApellido;
+        private DevExpress.XtraEditors.TextEdit txtEditarPrimerApellido;
+        private DevExpress.XtraEditors.TextEdit txtEditarSegundoNombre;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private System.Windows.Forms.Panel panel54;
+        private DevExpress.XtraEditors.SimpleButton cmdGuardarCambios;
+        private System.Windows.Forms.Panel panel55;
+        private DevExpress.XtraEditors.PictureEdit cmdGuardar;
     }
 }

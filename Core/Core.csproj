@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -115,6 +116,12 @@
     </Compile>
     <Compile Include="Controles\ctlBusquedaFichasIngreso.Designer.cs">
       <DependentUpon>ctlBusquedaFichasIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlCrearUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlCrearUsuario.Designer.cs">
+      <DependentUpon>ctlCrearUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\ctlEncabezado.cs">
       <SubType>UserControl</SubType>
@@ -200,6 +207,15 @@
     <Compile Include="Controles_Configuracion\ctlIngresoEmpresa.Designer.cs">
       <DependentUpon>ctlIngresoEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles_Configuracion\ctlPonerModoEdicion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles_Configuracion\ctlPonerModoEdicion.Designer.cs">
+      <DependentUpon>ctlPonerModoEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsConfiguracion.cs">
+      <DependentUpon>dsConfiguracion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsConfiguracion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -263,6 +279,9 @@
     <EmbeddedResource Include="Controles\ctlBusquedaFichasIngreso.resx">
       <DependentUpon>ctlBusquedaFichasIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlCrearUsuario.resx">
+      <DependentUpon>ctlCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlEncabezado.resx">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles_Configuracion\ctlIngresoEmpresa.resx">
       <DependentUpon>ctlIngresoEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles_Configuracion\ctlPonerModoEdicion.resx">
+      <DependentUpon>ctlPonerModoEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmEspera.resx">
       <DependentUpon>frmEspera.cs</DependentUpon>
@@ -420,6 +442,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_Empresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_nuevo_usuario_negro_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_refrescar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -52,6 +52,8 @@
             this.colBusqueda = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdVerFicha = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cmdAtras = new DevExpress.XtraEditors.PictureEdit();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdIrAtras = new DevExpress.XtraEditors.PictureEdit();
             this.NavegacionPrincipal = new DevExpress.XtraBars.Navigation.NavigationFrame();
@@ -59,6 +61,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationBusqueda)).BeginInit();
             this.NavigationBusqueda.SuspendLayout();
@@ -70,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVistasFichaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdVerFicha)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAtras.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtras.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionPrincipal)).BeginInit();
@@ -178,10 +184,12 @@
             this.txtBusqueda.Properties.AutoHeight = false;
             this.txtBusqueda.Size = new System.Drawing.Size(600, 81);
             this.txtBusqueda.TabIndex = 14;
+            this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyDown);
             // 
             // PageVistaFichasIngreso
             // 
             this.PageVistaFichasIngreso.Caption = "PageVistaFichasIngreso";
+            this.PageVistaFichasIngreso.Controls.Add(this.panel6);
             this.PageVistaFichasIngreso.Controls.Add(this.gcVistasFichaIngreso);
             this.PageVistaFichasIngreso.Controls.Add(this.panel4);
             this.PageVistaFichasIngreso.Controls.Add(this.panel1);
@@ -193,12 +201,12 @@
             this.gcVistasFichaIngreso.DataMember = "dtVistasFichaIngreso";
             this.gcVistasFichaIngreso.DataSource = this.dsVistas1;
             this.gcVistasFichaIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcVistasFichaIngreso.Location = new System.Drawing.Point(0, 108);
+            this.gcVistasFichaIngreso.Location = new System.Drawing.Point(0, 159);
             this.gcVistasFichaIngreso.MainView = this.gvVistasFichaIngreso;
             this.gcVistasFichaIngreso.Name = "gcVistasFichaIngreso";
             this.gcVistasFichaIngreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdVerFicha});
-            this.gcVistasFichaIngreso.Size = new System.Drawing.Size(988, 664);
+            this.gcVistasFichaIngreso.Size = new System.Drawing.Size(988, 613);
             this.gcVistasFichaIngreso.TabIndex = 1;
             this.gcVistasFichaIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVistasFichaIngreso});
@@ -284,11 +292,36 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.cmdAtras);
+            this.panel4.Controls.Add(this.flowLayoutPanel1);
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 78);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(988, 30);
+            this.panel4.Size = new System.Drawing.Size(988, 81);
             this.panel4.TabIndex = 2;
+            // 
+            // cmdAtras
+            // 
+            this.cmdAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cmdAtras.EditValue = global::Core.Properties.Resources.icon_atras_64;
+            this.cmdAtras.Location = new System.Drawing.Point(0, 23);
+            this.cmdAtras.Name = "cmdAtras";
+            this.cmdAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdAtras.Properties.NullText = "   ";
+            this.cmdAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdAtras.Size = new System.Drawing.Size(63, 48);
+            this.cmdAtras.TabIndex = 31;
+            this.cmdAtras.Click += new System.EventHandler(this.CmdAtras_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(988, 23);
+            this.panel5.TabIndex = 0;
             // 
             // panel1
             // 
@@ -366,9 +399,28 @@
             this.ctlVistaFichaIngreso1.Name = "ctlVistaFichaIngreso1";
             this.ctlVistaFichaIngreso1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlVistaFichaIngreso1.Pro_Conexion = null;
+            this.ctlVistaFichaIngreso1.Pro_Credenciales = null;
+            this.ctlVistaFichaIngreso1.Pro_EsCargaDatos = false;
             this.ctlVistaFichaIngreso1.Pro_ID_Colaborador = 0;
+            this.ctlVistaFichaIngreso1.Pro_ModoEdicion = false;
+            this.ctlVistaFichaIngreso1.Pro_Usuario = null;
             this.ctlVistaFichaIngreso1.Size = new System.Drawing.Size(988, 772);
             this.ctlVistaFichaIngreso1.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(-24, -24);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 100);
+            this.panel6.TabIndex = 3;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 71);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(988, 10);
+            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // ctlBusquedaFichasIngreso
             // 
@@ -390,6 +442,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVistasFichaIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdVerFicha)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAtras.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtras.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionPrincipal)).EndInit();
@@ -428,5 +482,9 @@
         private System.Windows.Forms.Panel panel3;
         private ctlVistaFichaIngreso ctlVistaFichaIngreso1;
         private System.Windows.Forms.Panel panel4;
+        private DevExpress.XtraEditors.PictureEdit cmdAtras;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

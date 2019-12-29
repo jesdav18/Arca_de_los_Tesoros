@@ -13,6 +13,7 @@ using Google.Apis.Util.Store;
 using Core.Clases;
 using Core.DataSets;
 using Core.Reportes;
+using System.Diagnostics;
 
 namespace Core.Controles
 {
@@ -24,6 +25,18 @@ namespace Core.Controles
         public ctlVistaFichaIngreso()
         {
             InitializeComponent();
+            ctlCrearUsuario1.OnCerrar += ctlCrearUsuario1_OnCerrar;
+            
+        }
+
+        private void ctlPonerModoEdicionNumeroIdentidad_OnClicModoEdicion_ClickModoEdicion(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ctlPonerModoEdicion1_OnClicModoEdicion(object sender, EventArgs e)
+        {
+            
         }
 
         #endregion
@@ -36,6 +49,7 @@ namespace Core.Controles
         public bool Pro_EsCargaDatos { get; set; }
         public bool Pro_ModoEdicion { get; set; }
         public Usuario Pro_Usuario { get; set; }
+        public string Pro_UsuarioColaborador { get; set; }
 
         #endregion
 
@@ -69,7 +83,18 @@ namespace Core.Controles
                     splashScreenManager1.ShowWaitForm();
                 }
 
-                PrepararDescarga();
+                if (File.Exists(v_ruta_fotografia))
+                {
+                    var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
+                    picColaborador.Image = (Bitmap)bmp.Clone();
+                }
+                else
+                {
+                    PrepararDescarga();
+                }
+
+
+               
 
                 if (splashScreenManager1.IsSplashFormVisible)
                 {
@@ -130,6 +155,11 @@ namespace Core.Controles
                     v_ruta_fotografia = pgDr.GetString("direccion_fotografia");
                     lblEncabezado.Text = "Ficha de Ingreso N°" + pgDr.GetString("id_ficha_ingreso");
                     toggleHabilitar.IsOn = pgDr.GetBoolean("habilitado");
+                    txtEditarPrimerNombre.Text = pgDr.GetString("primer_nombre");
+                    txtEditarPrimerApellido.Text = pgDr.GetString("primer_apellido");
+                    txtEditarSegundoNombre.Text = pgDr.GetString("segundo_nombre");
+                    txtEditarSegundoApellido.Text = pgDr.GetString("segundo_apellido");
+                    Pro_UsuarioColaborador = pgDr.GetString("usuario");
                 }
 
                 pgDr.Close();
@@ -158,6 +188,103 @@ namespace Core.Controles
             }
         }
 
+        private void GuardarCambios()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_mant_actualizar_informacion_colaborador (
+                                                                                                          :p_id_colaborador,
+                                                                                                          :p_numero_identidad,
+                                                                                                          :p_genero,
+                                                                                                          :p_id_pais_nacimiento,
+                                                                                                          :p_direccion,
+                                                                                                          :p_id_estado_civil,
+                                                                                                          :p_id_tipo_sangre,
+                                                                                                          :p_estado_profesional,
+                                                                                                          :p_nivel_educativo,
+                                                                                                          :p_fecha_ingreso_iglesia,
+                                                                                                          :p_fecha_cobertura,
+                                                                                                          :p_fecha_reconciliacion,
+                                                                                                          :p_fecha_bautismo_agua,
+                                                                                                          :p_fecha_conversion,
+                                                                                                          :p_bautismo_espiritu,
+                                                                                                          :p_otros_equipos_privilegio,
+                                                                                                          :p_id_estatus_doctrinal,
+                                                                                                          :p_correo_electronico,
+                                                                                                          :p_necesita_transporte,
+                                                                                                          :p_equipo_arca_tesoros,
+                                                                                                          :p_fecha_nacimiento,
+                                                                                                          :p_id_empresa,
+                                                                                                          :p_cargo_empresa,
+                                                                                                          :p_id_cargo,
+                                                                                                          :p_id_area_atencion,
+                                                                                                          :p_usuario,
+                                                                                                          :p_primer_nombre,
+                                                                                                          :p_segundo_nombre,
+                                                                                                          :p_primer_apellido,
+                                                                                                          :p_segundo_apellido,
+                                                                                                          :p_telefono_empresa,
+                                                                                                          :p_celular,
+                                                                                                          :p_fecha_inicio_privilegio
+                                                                                                        );";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_colaborador", PgSqlType.VarChar).Value = Pro_ID_Colaborador;
+            pgComando.Parameters.Add("p_numero_identidad", PgSqlType.VarChar).Value = txtNumeroIdentidad.Text;
+            pgComando.Parameters.Add("p_genero", PgSqlType.VarChar).Value = txtGenero.Text;
+            pgComando.Parameters.Add("p_id_pais_nacimiento", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glPaisNacimiento.EditValue.ToString()) ? glPaisNacimiento.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_direccion", PgSqlType.VarChar).Value = memoDireccion.Text;
+            pgComando.Parameters.Add("p_id_estado_civil", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstadoCivil.EditValue.ToString()) ? glEstadoCivil.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_tipo_sangre", PgSqlType.Int).Value = !string.IsNullOrEmpty(glTipoSangre.EditValue.ToString()) ? glTipoSangre.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_estado_profesional", PgSqlType.VarChar).Value = txtEstadoProfesional.Text;
+            pgComando.Parameters.Add("p_nivel_educativo", PgSqlType.VarChar).Value = txtNivelEducativo.Text;
+            pgComando.Parameters.Add("p_fecha_ingreso_iglesia", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaIngresoIglesia.EditValue.ToString()) ? dateFechaIngresoIglesia.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_cobertura", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaCobertua.EditValue.ToString()) ? dateFechaCobertua.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_reconciliacion", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaReconciliacion.EditValue.ToString()) ? dateFechaReconciliacion.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_bautismo_agua", PgSqlType.Date).Value = !string.IsNullOrEmpty(datFechaBautismoAgua.EditValue.ToString()) ? datFechaBautismoAgua.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_conversion", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaConversion.EditValue.ToString()) ? dateFechaConversion.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_bautismo_espiritu", PgSqlType.Boolean).Value = toggleBautismoEspiritu.IsOn;
+            pgComando.Parameters.Add("p_otros_equipos_privilegio", PgSqlType.VarChar).Value = txtOtrosEquiposPriviliegio.Text;
+            pgComando.Parameters.Add("p_id_estatus_doctrinal", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstatusDoctrinal.EditValue.ToString()) ? glEstatusDoctrinal.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_correo_electronico", PgSqlType.VarChar).Value = txtCorreoElectronico.Text;
+            pgComando.Parameters.Add("p_necesita_transporte", PgSqlType.Boolean).Value = toggleNecesitaTransporte.IsOn;
+            pgComando.Parameters.Add("p_equipo_arca_tesoros", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glEquipoArcaTesoros.EditValue.ToString()) ? glEquipoArcaTesoros.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_nacimiento", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaNacimiento.EditValue.ToString()) ? dateFechaNacimiento.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_empresa", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEmpresa.EditValue.ToString()) ? glEmpresa.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_cargo_empresa", PgSqlType.VarChar).Value = txtCargo.Text;
+            pgComando.Parameters.Add("p_id_cargo", PgSqlType.Int).Value = !string.IsNullOrEmpty(glCargos.EditValue.ToString()) ? glCargos.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEdadArea.EditValue.ToString()) ? glEdadArea.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario.Pro_Usuario;
+            pgComando.Parameters.Add("p_primer_nombre", PgSqlType.VarChar).Value = txtEditarPrimerNombre.Text;
+            pgComando.Parameters.Add("p_segundo_nombre", PgSqlType.VarChar).Value = txtEditarSegundoNombre.Text;
+            pgComando.Parameters.Add("p_primer_apellido", PgSqlType.VarChar).Value = txtEditarPrimerApellido.Text;      
+            pgComando.Parameters.Add("p_segundo_apellido", PgSqlType.VarChar).Value = txtEditarSegundoApellido.Text;
+            pgComando.Parameters.Add("p_telefono_empresa", PgSqlType.VarChar).Value = txtTelefonoEmpresa.Text;
+            pgComando.Parameters.Add("p_celular", PgSqlType.VarChar).Value = txtCelular.Text;
+            pgComando.Parameters.Add("p_fecha_inicio_privilegio", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaInicioPrivilegio.EditValue.ToString()) ? dateFechaInicioPrivilegio.EditValue : DBNull.Value;
+
+            PgSqlTransaction pgTrans = Pro_Conexion.BeginTransaction();
+
+            try
+            {
+
+                pgComando.ExecuteNonQuery();
+                pgTrans.Commit();
+
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Los cambios fueron realizados!", Utilidades.BotonesDialogo.Ok);
+
+            }
+            catch (Exception Exc)
+            {
+                pgTrans.Rollback();
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "GuardarCambios");
+                Utilidades.MostrarDialogo(FindForm(), "Falla en el ingreso de datos", "¡Algo falló mientras se actualizaba datos en la ficha de ingreso, por favor vuelva a intentarlo!", Utilidades.BotonesDialogo.Ok);
+
+            }
+        }
+        
         private void HabilitarDeshabilitarColaborador()
         {
             if (Pro_Conexion.State != ConnectionState.Open)
@@ -260,12 +387,14 @@ namespace Core.Controles
 
         private static void GuardarStreaming(System.IO.MemoryStream pStream, string pGuardarA)
         {
-            using (System.IO.FileStream file = new System.IO.FileStream(pGuardarA, System.IO.FileMode.Create, System.IO.FileAccess.Write))
+            if (!File.Exists(pGuardarA))
             {
-                pStream.WriteTo(file);
-                
-            }
+                using (System.IO.FileStream file = new System.IO.FileStream(pGuardarA, System.IO.FileMode.Create, System.IO.FileAccess.Write))
+                {
+                    pStream.WriteTo(file);
 
+                }
+            }
         }
 
         private static UserCredential GetCredentials()
@@ -577,8 +706,15 @@ namespace Core.Controles
 
         private void ParidacionDatos()
         {
+            Pro_ModoEdicion = true;
+
             foreach (dsConfiguracion.dtEstadosCivilesRow item in dsConfiguracion1.dtEstadosCiviles)
             {
+                if (glEstadoCivil.EditValue == null)
+                {
+                    break;
+                }
+
                 if (item.descripcion == glEstadoCivil.EditValue.ToString() || glEstadoCivil.EditValue.ToString() == "SOLTERA")
                 {
                     glEstadoCivil.EditValue = item.id_estado_civil;
@@ -588,6 +724,11 @@ namespace Core.Controles
 
             foreach (dsConfiguracion.dtAreasAtencionRow item in dsConfiguracion1.dtAreasAtencion)
             {
+                if (glEdadArea.EditValue == null)
+                {
+                    break;
+                }
+
                 if (item.descripcion == glEdadArea.EditValue.ToString())
                 {
                     glEdadArea.EditValue = item.id_area_atencion;
@@ -597,6 +738,11 @@ namespace Core.Controles
 
             foreach (dsConfiguracion.dtPaisesRow item in dsConfiguracion1.dtPaises)
             {
+                if (glPaisNacimiento.EditValue == null)
+                {
+
+                }
+
                 if (item.nombre_pais == glPaisNacimiento.EditValue.ToString())
                 {
                     glPaisNacimiento.EditValue = item.id_pais;
@@ -606,6 +752,12 @@ namespace Core.Controles
 
             foreach (dsConfiguracion.dtTiposSangreRow item in dsConfiguracion1.dtTiposSangre)
             {
+
+                if (glTipoSangre.EditValue == null)
+                {
+                    break;
+                }
+
                 if (item.descripcion == glTipoSangre.EditValue.ToString())
                 {
                     glTipoSangre.EditValue = item.id_tipo_sangre;
@@ -615,6 +767,12 @@ namespace Core.Controles
 
             foreach (dsConfiguracion.dtCargosRow item in dsConfiguracion1.dtCargos)
             {
+
+                if (glCargos.EditValue == null)
+                {
+                    break;
+                }
+
                 if (item.descripcion == glCargos.EditValue.ToString())
                 {
                     glCargos.EditValue = item.id_cargo;
@@ -624,6 +782,11 @@ namespace Core.Controles
 
             foreach (dsConfiguracion.dtEstatusDoctrinalRow item in dsConfiguracion1.dtEstatusDoctrinal)
             {
+                if (glEstatusDoctrinal.EditValue == null)
+                {
+                    break;
+                }
+
                 if (item.descripcion == glEstatusDoctrinal.EditValue.ToString())
                 {
                     glEstatusDoctrinal.EditValue = item.id_estatus_doctrinal;
@@ -633,6 +796,11 @@ namespace Core.Controles
 
             foreach (dsConfiguracion.dtEmpresasRow item in dsConfiguracion1.dtEmpresas)
             {
+                if (glEmpresa.EditValue == null)
+                {
+                    break;
+                }
+
                 if (item.nombre_empresa == glEmpresa.EditValue.ToString())
                 {
                     glEmpresa.EditValue = item.id_empresa;
@@ -642,6 +810,11 @@ namespace Core.Controles
 
             foreach (dsConfiguracion.dtEquipoArcaTesorosRow item in dsConfiguracion1.dtEquipoArcaTesoros)
             {
+                if (glEquipoArcaTesoros.EditValue == null)
+                {
+                    break;
+                }
+
                 if (item.id_equipo_arca_tesoros == glEquipoArcaTesoros.EditValue.ToString())
                 {
                     glEquipoArcaTesoros.EditValue = item.id_equipo_arca_tesoros;
@@ -649,20 +822,24 @@ namespace Core.Controles
                 }
             }
 
+
+
+
+            Pro_ModoEdicion = false;
+
         }
+
+        #endregion
+
+        #region EVENTOS
+
+        public event EventHandler OnPresionaIrAtras;
 
         #endregion
 
         #region EVENTOS CONTROLES
 
-        private void TxtNombreColaborador_TextChanged(object sender, EventArgs e)
-        {
-            if (!Pro_EsCargaDatos)
-            {
-                Pro_ModoEdicion = true;
-            }
-        }
-
+       
         private void BgCargarDatosConfigurcion_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             CargarDatosTipoSangre();
@@ -681,74 +858,64 @@ namespace Core.Controles
             
         }
 
-        #endregion
-
-        public void PicGuardarCambios_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateFechaConversion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtNumeroIdentidad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtGenero_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GlEstadoCivil_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtCorreoElectronico_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtCelular_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GlPaisNacimiento_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GlTipoSangre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToggleNecesitaTransporte_Toggled(object sender, EventArgs e)
-        {
-
-        }
-
         private void PicPdf_Click(object sender, EventArgs e)
         {
+            string v_nombre_documento = "Ficha_";
+
             rptFichaIngreso rptFicha = new rptFichaIngreso();
             rptFicha.ConstruirControl(Pro_Conexion, Pro_ID_Colaborador, Pro_Usuario);
             rptFicha.CreateDocument();
 
-            rptFicha.ExportToPdf("c:\\archivito.pdf");
+            v_nombre_documento = v_nombre_documento + Pro_ID_Colaborador.ToString() + ".pdf";
+
+            rptFicha.ExportToPdf(v_nombre_documento);
+
+
+            ProcessStartInfo startInfo = new ProcessStartInfo( v_nombre_documento);
+            Process.Start(startInfo);
         }
 
-        private void PicImprimir_Click(object sender, EventArgs e)
+        private void ctlCrearUsuario1_OnCerrar(object sender, EventArgs e)
         {
-            rptFichaIngreso rptFicha = new rptFichaIngreso();
-            rptFicha.ConstruirControl(Pro_Conexion, Pro_ID_Colaborador, Pro_Usuario);
-            rptFicha.CreateDocument();
+            popupCreacionUsuario.HidePopup();
+            this.Parent.Parent.BringToFront();
+        }
 
-            documentViewer1.DocumentSource = rptFicha;
+        private void PicAtras_Click(object sender, EventArgs e)
+        {
+            picColaborador.Image = null;
+            OnPresionaIrAtras?.Invoke(sender, e);
+        }
+
+        private void PicCrearUsuario_Click(object sender, EventArgs e)
+        {
+            popupCreacionUsuario.ShowPopup();
+            ctlCrearUsuario1.ConstruirControl(Pro_Conexion,
+                                              txtEditarPrimerNombre.Text,
+                                              txtEditarSegundoNombre.Text,
+                                              txtEditarPrimerApellido.Text,
+                                              txtEditarSegundoApellido.Text,
+                                              Pro_ID_Colaborador,
+                                              Pro_UsuarioColaborador,
+                                              (int)glCargos.EditValue
+                                              );
+        }
+
+        #endregion
+
+        private void CmdEditarNombre_Click(object sender, EventArgs e)
+        {
+            popupModificarNombre.ShowPopup();
+        }
+
+        private void PopupModificarNombre_Hidden(object sender, DevExpress.Utils.FlyoutPanelEventArgs e)
+        {
+            this.BringToFront();
+        }
+
+        private void CmdGuardar_Click(object sender, EventArgs e)
+        {
+            GuardarCambios();
         }
     }
 }

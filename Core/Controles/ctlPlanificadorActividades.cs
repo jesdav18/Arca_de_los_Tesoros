@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraScheduler;
 using Core.DataSets;
 using Devart.Data.PostgreSql;
 using Core.Clases;
+using System.Drawing;
 
 namespace Core.Controles
 {
@@ -40,7 +35,14 @@ namespace Core.Controles
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
+
+
+
+            schedulerControl1.GoToDate(Utilidades.ObtenerHoraServidor(Pro_Conexion));
+
+
             CargarDatosCitasActividades();
+            CargarColores();
             LimpiarCajasTexto();
         }
 
@@ -50,8 +52,7 @@ namespace Core.Controles
             txtLugar.Text = "";
             memoObservaciones.Text = "";
             glColorEtiqueta.Text = "";
-            /*timeHoraFin.Text = "00:00:00";
-            timeHoraInicio.Text = "00:00:00";*/
+           
         }
 
         private void InsertarCita()
@@ -75,9 +76,9 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_asunto", PgSqlType.VarChar).Value = txtAsunto.Text;
             pgComando.Parameters.Add("p_lugar", PgSqlType.VarChar).Value = txtLugar.Text;
             pgComando.Parameters.Add("p_fecha", PgSqlType.Date).Value = ProFechaSeleccionada;
-            pgComando.Parameters.Add("p_hora_inicio", PgSqlType.TimeStamp).Value = dateFechaInicio.EditValue;
-            pgComando.Parameters.Add("p_hora_fin", PgSqlType.TimeStamp).Value = dateFechaFin.EditValue;
-            pgComando.Parameters.Add("p_color_etiqueta", PgSqlType.Int).Value = 1;//glColorEtiqueta.EditValue;
+            pgComando.Parameters.Add("p_hora_inicio", PgSqlType.TimeStamp).Value = timeHoraInicio.EditValue;
+            pgComando.Parameters.Add("p_hora_fin", PgSqlType.TimeStamp).Value = timeHoraFin.EditValue;
+            pgComando.Parameters.Add("p_color_etiqueta", PgSqlType.Int).Value = glColorEtiqueta.EditValue != null ? glColorEtiqueta.EditValue : 1;
             pgComando.Parameters.Add("p_observaciones", PgSqlType.VarChar).Value = memoObservaciones.Text;
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
 
@@ -92,6 +93,7 @@ namespace Core.Controles
      
                 LimpiarCajasTexto();
                 CargarDatosCitasActividades();
+               
                 NavegacionPrincipal.SelectedPage = pageCalendario;
 
             }
@@ -121,6 +123,9 @@ namespace Core.Controles
                 dsVistas1.dtCita_Actividad.Clear();
                 new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtCita_Actividad);
 
+
+                RecargarCitas();
+
                 sentencia = null;
                 pgComando.Dispose();
 
@@ -134,9 +139,40 @@ namespace Core.Controles
             }
         }
 
+
+        private void CargarColores()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros_conf.ft_view_colores_citas ();";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+       
+
+            try
+            {
+                dsVistas1.dtColores.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtColores);
+
+
+                sentencia = null;
+                pgComando.Dispose();
+
+            }
+            catch (Exception Exc)
+            {
+
+                pgComando.Dispose();
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosCitasActividades");
+
+            }
+        }
+
         private void RecargarCitas()
         {
-            schedulerControl1.DataStorage.RefreshData(); ;
+            schedulerControl1.DataStorage.Appointments.Clear();
             foreach (dsVistas.dtCita_ActividadRow iterador in dsVistas1.dtCita_Actividad)
             {
                 Appointment apt = schedulerControl1.DataStorage.CreateAppointment(AppointmentType.Normal);
@@ -144,7 +180,7 @@ namespace Core.Controles
                 apt.End = iterador.hora_fin;
                 apt.Subject = iterador.asunto;
                 apt.Location = iterador.lugar;
-                apt.Description = "Se me olvidó";
+                apt.Description = iterador.observaciones;
                 apt.LabelKey = iterador.id_color_etiqueta;
 
                 schedulerControl1.DataStorage.Appointments.Add(apt);
@@ -153,12 +189,7 @@ namespace Core.Controles
 
         #endregion
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-
-            RecargarCitas();
-        }
+        #region EVENTOS CONTROLES
 
         private void SchedulerControl1_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
         {
@@ -168,9 +199,9 @@ namespace Core.Controles
         private void SchedulerControl1_DoubleClick(object sender, EventArgs e)
         {
             NavegacionPrincipal.SelectedPage = PageIngresoCita;
-            lblSubtitulo.Text = "Crear cita para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.ToString();
+            lblSubtitulo.Text = "Crear cita para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.Date.ToShortDateString();
             ProFechaSeleccionada = schedulerControl1.ActiveView.SelectedInterval.Start;
-            dateFechaFin.EditValue = dateFechaInicio.EditValue = ProFechaSeleccionada;
+            timeHoraInicio.Time = timeHoraFin.Time = ProFechaSeleccionada;
         }
 
         private void PicIrAtras_Click(object sender, EventArgs e)
@@ -187,5 +218,30 @@ namespace Core.Controles
         {
             InsertarCita();
         }
+
+        private void GvColor_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "boton_color")
+            {
+
+                var v_fila = (dsVistas.dtColoresRow)gvColor.GetDataRow(e.RowHandle);
+
+
+                e.Appearance.BackColor = System.Drawing.ColorTranslator.FromHtml(v_fila.argb);
+
+            }
+        }
+
+        private void GlColorEtiqueta_EditValueChanged(object sender, EventArgs e)
+        {
+            var v_fila = (dsVistas.dtColoresRow)gvColor.GetFocusedDataRow();
+            if (v_fila != null)
+            {
+                glColorEtiqueta.BackColor = System.Drawing.ColorTranslator.FromHtml(v_fila.argb);
+            }
+        }
+
+        #endregion
+
     }
 }

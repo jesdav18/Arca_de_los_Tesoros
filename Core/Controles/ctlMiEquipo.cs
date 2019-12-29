@@ -12,6 +12,12 @@ namespace Core.Controles
         public ctlMiEquipo()
         {
             InitializeComponent();
+            ctlVistaFichaIngreso1.OnPresionaIrAtras += ctlVistaFichaIngreso1_OnIrAtras;
+        }
+
+        private void ctlVistaFichaIngreso1_OnIrAtras(object sender, EventArgs e)
+        {
+            NavigationMiEquipo.SelectedPage = PageMiEquipo;
         }
 
         private void CmdVerFicha_Click(object sender, EventArgs e)

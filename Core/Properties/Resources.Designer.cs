@@ -233,9 +233,29 @@ namespace Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_nuevo_usuario_negro_641 {
+            get {
+                object obj = ResourceManager.GetObject("icon_nuevo_usuario_negro_641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icon_pdf {
             get {
                 object obj = ResourceManager.GetObject("icon_pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_refrescar {
+            get {
+                object obj = ResourceManager.GetObject("icon_refrescar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

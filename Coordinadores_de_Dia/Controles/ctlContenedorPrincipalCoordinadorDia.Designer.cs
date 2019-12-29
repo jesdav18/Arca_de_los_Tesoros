@@ -31,10 +31,10 @@
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
-            this.pnlActualizarFusibles = new System.Windows.Forms.Panel();
-            this.cmdActualizar = new DevExpress.XtraEditors.PictureEdit();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.cmdCerrarSesion = new DevExpress.XtraEditors.PictureEdit();
+            this.pnlActualizarFusibles = new System.Windows.Forms.Panel();
+            this.cmdActualizar = new DevExpress.XtraEditors.PictureEdit();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
             this.cmdBusqueda = new DevExpress.XtraEditors.PictureEdit();
             this.pnlMiEquipo = new System.Windows.Forms.Panel();
@@ -68,10 +68,10 @@
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Dia.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
-            this.pnlActualizarFusibles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).BeginInit();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).BeginInit();
+            this.pnlActualizarFusibles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).BeginInit();
             this.pnlBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdBusqueda.Properties)).BeginInit();
             this.pnlMiEquipo.SuspendLayout();
@@ -136,35 +136,6 @@
             this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(1008, 124);
             this.pnlEncabezadoCoordinadoresEdad.TabIndex = 2;
             // 
-            // pnlActualizarFusibles
-            // 
-            this.pnlActualizarFusibles.Controls.Add(this.cmdActualizar);
-            this.pnlActualizarFusibles.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlActualizarFusibles.Location = new System.Drawing.Point(715, 0);
-            this.pnlActualizarFusibles.Name = "pnlActualizarFusibles";
-            this.pnlActualizarFusibles.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlActualizarFusibles.Size = new System.Drawing.Size(143, 124);
-            this.pnlActualizarFusibles.TabIndex = 6;
-            this.pnlActualizarFusibles.Click += new System.EventHandler(this.PnlActualizarFusibles_Click);
-            // 
-            // cmdActualizar
-            // 
-            this.cmdActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdActualizar.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_refrescar;
-            this.cmdActualizar.Location = new System.Drawing.Point(5, 5);
-            this.cmdActualizar.Name = "cmdActualizar";
-            this.cmdActualizar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdActualizar.Properties.NullText = "   ";
-            this.cmdActualizar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdActualizar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdActualizar.Size = new System.Drawing.Size(133, 114);
-            this.cmdActualizar.TabIndex = 0;
-            this.cmdActualizar.ToolTip = "Cerrar Sesión\r\n";
-            this.cmdActualizar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.cmdActualizar.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.cmdActualizar.ToolTipTitle = "Arca de los Tesoros";
-            this.cmdActualizar.Click += new System.EventHandler(this.PnlActualizarFusibles_Click);
-            // 
             // pnlCerrarSesion
             // 
             this.pnlCerrarSesion.Controls.Add(this.cmdCerrarSesion);
@@ -193,6 +164,35 @@
             this.cmdCerrarSesion.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.cmdCerrarSesion.ToolTipTitle = "Arca de los Tesoros";
             this.cmdCerrarSesion.Click += new System.EventHandler(this.PnlCerrarSesion_Click);
+            // 
+            // pnlActualizarFusibles
+            // 
+            this.pnlActualizarFusibles.Controls.Add(this.cmdActualizar);
+            this.pnlActualizarFusibles.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlActualizarFusibles.Location = new System.Drawing.Point(715, 0);
+            this.pnlActualizarFusibles.Name = "pnlActualizarFusibles";
+            this.pnlActualizarFusibles.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlActualizarFusibles.Size = new System.Drawing.Size(143, 124);
+            this.pnlActualizarFusibles.TabIndex = 6;
+            this.pnlActualizarFusibles.Click += new System.EventHandler(this.PnlActualizarFusibles_Click);
+            // 
+            // cmdActualizar
+            // 
+            this.cmdActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdActualizar.EditValue = global::Coordinadores_de_Dia.Properties.Resources.icon_refrescar;
+            this.cmdActualizar.Location = new System.Drawing.Point(5, 5);
+            this.cmdActualizar.Name = "cmdActualizar";
+            this.cmdActualizar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdActualizar.Properties.NullText = "   ";
+            this.cmdActualizar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdActualizar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdActualizar.Size = new System.Drawing.Size(133, 114);
+            this.cmdActualizar.TabIndex = 0;
+            this.cmdActualizar.ToolTip = "Cerrar Sesión\r\n";
+            this.cmdActualizar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdActualizar.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdActualizar.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdActualizar.Click += new System.EventHandler(this.PnlActualizarFusibles_Click);
             // 
             // pnlBusqueda
             // 
@@ -567,10 +567,10 @@
             this.Size = new System.Drawing.Size(1361, 658);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
-            this.pnlActualizarFusibles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).EndInit();
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).EndInit();
+            this.pnlActualizarFusibles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).EndInit();
             this.pnlBusqueda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdBusqueda.Properties)).EndInit();
             this.pnlMiEquipo.ResumeLayout(false);
