@@ -91,8 +91,8 @@ namespace Coordinadores_de_Edad.Controles
             }
             catch (Exception Exc)
             {
-                MessageBox.Show("Algo salió mal en el momento de recuperar fechas extraordinarias. ", "Arca de los Tesoros");
-                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ObtenerFechasTrimestre");
+                //Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Algo salió mal en el momento de recuperar fechas extraordinarias!", Utilidades.BotonesDialogo.Ok);                       
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ObtenerFechasExtraordinarias");
 
             }
         }
@@ -139,7 +139,7 @@ namespace Coordinadores_de_Edad.Controles
             }
             catch (Exception Exc)
             {
-                MessageBox.Show("Algo salió mal en el momento de recuperar fecha del trimestre. ","Arca de los Tesoros");
+                //MessageBox.Show("Algo salió mal en el momento de recuperar fecha del trimestre. ","Arca de los Tesoros");
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ObtenerFechasTrimestre");
               
             }

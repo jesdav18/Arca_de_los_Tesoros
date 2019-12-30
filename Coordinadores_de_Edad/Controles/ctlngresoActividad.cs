@@ -33,11 +33,48 @@ namespace Coordinadores_de_Edad.Controles
             Pro_ID_Actividad = pID_Actividad;
             Pro_Fecha = pFecha;
             Pro_Usuario = pUsuario;
+            CargarDatosActividad();
 
-
-            lblEncabezado.Text = "Ingrese actividades para el día " + Pro_Fecha;
+            lblEncabezado.Text = "Ingrese información para la actividad del día " + Pro_Fecha;
 
         }
+
+        private void CargarDatosActividad()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_datos_actividades (
+                                                                                          :p_id_actividad
+                                                                                        )";
+
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
+
+            try
+            {
+                PgSqlDataReader pgDR = pgComando.ExecuteReader();
+                if (pgDR.Read())
+                {
+                    txtVersiculo.Text = pgDR.GetString("versiculo");
+                    txtClase.Text = pgDR.GetString("clase");
+                    memoTema.Text = pgDR.GetString("tema");
+                }
+
+                pgDR.Close();
+
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosActividad");
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Algo salió mal mientras se obtenian los datos de la actividad!", Utilidades.BotonesDialogo.Ok);
+
+            }
+        }
+
 
         private void ActualizarRegistrosActividad()
         {
