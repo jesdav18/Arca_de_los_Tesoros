@@ -128,6 +128,7 @@
             this.txtObservacionesSolicitud.Name = "txtObservacionesSolicitud";
             this.txtObservacionesSolicitud.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservacionesSolicitud.Properties.Appearance.Options.UseFont = true;
+            this.txtObservacionesSolicitud.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObservacionesSolicitud.Size = new System.Drawing.Size(595, 181);
             this.txtObservacionesSolicitud.TabIndex = 28;
             // 
@@ -275,7 +276,6 @@
             this.Name = "ctlIngresoSolicitudesCordinadorEdad";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1459, 815);
-          
             this.pnlEncabezado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaSolicitud.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaSolicitud.Properties)).EndInit();

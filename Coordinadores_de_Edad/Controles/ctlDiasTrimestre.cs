@@ -49,9 +49,54 @@ namespace Coordinadores_de_Edad.Controles
             Pro_Anio = pAnio;
             Pro_ID_Area_Atencion = pID_AreaAtencion;
             lblTituloEncabezado.Text = pDescripcionTrimestre + " del Año " + pAnio;
-           
-            ObtenerFechasTrimestre();
+
+            ToggleOrdinarias_Toggled(new object(), new EventArgs());
+
         }
+
+        private void ObtenerFechasExtraordinarias()
+        {
+            if (Pro_Conexion.State != System.Data.ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_proc_obtener_fechas_extraordinarias ();";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            
+
+            try
+            {
+                TileDias.Controls.Clear();
+
+                PgSqlDataReader pgDr = pgComando.ExecuteReader();
+                while (pgDr.Read())
+                {
+                    ctlItemDiaTrabajo v_item_dia = new ctlItemDiaTrabajo();
+                    v_item_dia.ConstruirControl(pgDr.GetString("dia"));
+                    v_item_dia.OnSeleccionaDia += v_item_dia_selecciona_dia;
+
+                    TileDias.Controls.Add(v_item_dia);
+
+                    v_item_dia = null;
+                }
+
+                pgDr.Close();
+
+                sentencia = null;
+                pgComando.Dispose();
+                pgComando = null;
+
+
+            }
+            catch (Exception Exc)
+            {
+                MessageBox.Show("Algo salió mal en el momento de recuperar fechas extraordinarias. ", "Arca de los Tesoros");
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ObtenerFechasTrimestre");
+
+            }
+        }
+
 
         private void ObtenerFechasTrimestre()
         {
@@ -100,9 +145,9 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
-        private int CreacionActividad(string pFecha)
+        private int CreacionActividad(string pFecha,bool pEsOrdinaria = true)
         {
-            int v_id_area_atencion;
+            int v_id_actividad;
             
             if (Pro_Conexion.State != ConnectionState.Open)
             {
@@ -113,28 +158,35 @@ namespace Coordinadores_de_Edad.Controles
             string sentencia = @"SELECT * FROM arca_tesoros.ft_mant_creacion_actividad (
                                                                                           :p_fecha_actividad,
                                                                                           :p_id_area_atencion,
-                                                                                          :p_usuario
+                                                                                          :p_usuario,
+                                                                                          :p_es_ordinaria
                                                                                         )";
 
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_fecha_actividad", PgSqlType.Date).Value = Convert.ToDateTime(pFecha);
             pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = Pro_ID_Area_Atencion;
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
-       
+            pgComando.Parameters.Add("p_es_ordinaria", PgSqlType.Boolean).Value = pEsOrdinaria;
             try
             {
-                v_id_area_atencion = Convert.ToInt32 (pgComando.ExecuteScalar());
+                v_id_actividad = Convert.ToInt32 (pgComando.ExecuteScalar());
+
+                if (!pEsOrdinaria)
+                {
+                    Pro_ID_Actividad_Generado = v_id_actividad;
+                }
 
                 sentencia = null;
                 pgComando.Dispose();
 
-                return v_id_area_atencion;
+                return v_id_actividad;
 
             }
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CreacionActividad");
-                MessageBox.Show("Algo salió mal mientras se creaba la actividad.","Arca de los Tesoros");
+                Utilidades.MostrarDialogo(FindForm(), "Falla en el ingreso de datos", "¡Algo falló mientras se creaba la actividad!", Utilidades.BotonesDialogo.Ok);
+               
                 return 0;
             }
         }
@@ -145,16 +197,34 @@ namespace Coordinadores_de_Edad.Controles
  
         private void v_item_dia_selecciona_dia(object sender, EventArgs e)
         {
-
+                   
             Pro_ID_Actividad_Generado = CreacionActividad((string)sender);
             if (Pro_ID_Actividad_Generado != 0)
             {
                 OnSeleccionaDia?.Invoke(sender, e);
             }
-           
+
         }
 
         #endregion
 
+        private void CmCrearActividadHoy_Click(object sender, EventArgs e)
+        {
+            CreacionActividad(Utilidades.ObtenerFechaServidor(Pro_Conexion),false);
+            toggleOrdinarias.IsOn = true;
+            ToggleOrdinarias_Toggled(new object(), new EventArgs());
+        }
+
+        private void ToggleOrdinarias_Toggled(object sender, EventArgs e)
+        {
+            if (toggleOrdinarias.IsOn)
+            {
+                ObtenerFechasExtraordinarias();
+            }
+            else
+            {
+                ObtenerFechasTrimestre();
+            }
+        }
     }
 }

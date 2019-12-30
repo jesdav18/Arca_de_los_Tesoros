@@ -35,6 +35,9 @@ namespace Diacono.Controles
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
 
+            fusibleCumpleanios.Visible = false;
+            fusibleSolicitudes.Visible = false;
+
             ctlEncabezado1.ConstruirControl(Pro_Usuario);
             bgObtenerFusibles.RunWorkerAsync();
 
@@ -59,6 +62,24 @@ namespace Diacono.Controles
                 {
                     v_conteo_fusible_solicitudes = pgDr.GetInt32("conteo_solicitudes");
                     v_conteo_fusible_cumpleanieros = pgDr.GetInt32("conteo_cumpleanieros");
+
+                    if (v_conteo_fusible_cumpleanieros == 0)
+                    {
+                        fusibleCumpleanios.Visible = false;
+                    }
+                    else
+                    {
+                        fusibleCumpleanios.Visible = true;
+                    }
+
+                    if (v_conteo_fusible_solicitudes == 0)
+                    {
+                        fusibleSolicitudes.Visible = false;
+                    }
+                    else
+                    {
+                        fusibleSolicitudes.Visible = true;
+                    }
                 }
 
                 pgDr.Close();

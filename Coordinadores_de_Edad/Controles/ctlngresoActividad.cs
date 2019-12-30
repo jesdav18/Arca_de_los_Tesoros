@@ -22,14 +22,18 @@ namespace Coordinadores_de_Edad.Controles
         public PgSqlConnection Pro_Conexion { get; set; }
         public int Pro_ID_Actividad { get; set; }
         public string Pro_Fecha { get; set; }
+        public string Pro_Usuario { get; set; }
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                      int pID_Actividad, 
-                                     string pFecha)
+                                     string pFecha,
+                                     string pUsuario)
         {
             Pro_Conexion = pConexion;
             Pro_ID_Actividad = pID_Actividad;
             Pro_Fecha = pFecha;
+            Pro_Usuario = pUsuario;
+
 
             lblEncabezado.Text = "Ingrese actividades para el día " + Pro_Fecha;
 
@@ -47,7 +51,8 @@ namespace Coordinadores_de_Edad.Controles
                                                                                                       :p_clase,
                                                                                                       :p_tema,
                                                                                                       :p_versiculo,
-                                                                                                      :p_id_actividad
+                                                                                                      :p_id_actividad,
+                                                                                                      :p_usuario
                                                                                                     )";
 
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
@@ -55,7 +60,7 @@ namespace Coordinadores_de_Edad.Controles
             pgComando.Parameters.Add("p_tema", PgSqlType.VarChar).Value = memoTema.Text;
             pgComando.Parameters.Add("p_versiculo", PgSqlType.VarChar).Value = txtVersiculo.Text;
             pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
-
+            pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
 
             try
             {
@@ -63,11 +68,14 @@ namespace Coordinadores_de_Edad.Controles
                 sentencia = null;
                 pgComando.Dispose();
 
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Actividad Completada!", Utilidades.BotonesDialogo.Ok);
+
             }
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ActualizarRegistrosActividad");
-                MessageBox.Show("Algo salió mal mientras se registraban las actividades para el día ." + Pro_Fecha,"Arca de los Tesoros");
+                Utilidades.MostrarDialogo(FindForm(), "Falla en el ingreso de datos", "¡Algo salió mal mientras se registraban las actividades para el día " + Pro_Fecha + " !", Utilidades.BotonesDialogo.Ok);
+              
             }
 
         }

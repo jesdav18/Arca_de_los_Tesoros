@@ -88,8 +88,9 @@ namespace Core.Controles
                 pgComando.ExecuteNonQuery();
                 CargarDatos();
                 splashScreenManager1.CloseWaitForm();
-                Utilidades.MostrarDialogo(FindForm(),"Solicitud Aprobada","Arca de los Tesoros",Utilidades.BotonesDialogo.Ok);
-                
+                Utilidades.MostrarDialogo(FindForm(),"Arca de los Tesoros", "Solicitud Aprobada",Utilidades.BotonesDialogo.Ok);
+
+
             }
             catch (Exception Exc)
             {

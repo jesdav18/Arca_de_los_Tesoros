@@ -34,7 +34,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TileDias = new System.Windows.Forms.FlowLayoutPanel();
+            this.toggleOrdinarias = new DevExpress.XtraEditors.ToggleSwitch();
+            this.cmCrearActividadHoy = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleOrdinarias.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmCrearActividadHoy.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -71,6 +76,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.toggleOrdinarias);
+            this.panel1.Controls.Add(this.cmCrearActividadHoy);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(5, 90);
             this.panel1.Name = "panel1";
@@ -93,6 +100,46 @@
             this.TileDias.Size = new System.Drawing.Size(1075, 440);
             this.TileDias.TabIndex = 17;
             // 
+            // toggleOrdinarias
+            // 
+            this.toggleOrdinarias.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toggleOrdinarias.Location = new System.Drawing.Point(0, 0);
+            this.toggleOrdinarias.Name = "toggleOrdinarias";
+            this.toggleOrdinarias.Properties.AllowFocused = false;
+            this.toggleOrdinarias.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleOrdinarias.Properties.Appearance.Options.UseFont = true;
+            this.toggleOrdinarias.Properties.Appearance.Options.UseTextOptions = true;
+            this.toggleOrdinarias.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.toggleOrdinarias.Properties.OffText = "Ordinarias";
+            this.toggleOrdinarias.Properties.OnText = "Extraordinarias";
+            this.toggleOrdinarias.Size = new System.Drawing.Size(362, 84);
+            this.toggleOrdinarias.TabIndex = 22;
+            this.toggleOrdinarias.ToolTip = "Ver Actividades Extraordinarias";
+            this.toggleOrdinarias.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.toggleOrdinarias.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.toggleOrdinarias.Toggled += new System.EventHandler(this.ToggleOrdinarias_Toggled);
+            // 
+            // cmCrearActividadHoy
+            // 
+            this.cmCrearActividadHoy.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmCrearActividadHoy.EditValue = global::Coordinadores_de_Edad.Resources.icon_hoy;
+            this.cmCrearActividadHoy.Location = new System.Drawing.Point(1027, 0);
+            this.cmCrearActividadHoy.Name = "cmCrearActividadHoy";
+            this.cmCrearActividadHoy.Properties.AllowFocused = false;
+            this.cmCrearActividadHoy.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.cmCrearActividadHoy.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.cmCrearActividadHoy.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmCrearActividadHoy.Properties.NullText = " ";
+            this.cmCrearActividadHoy.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmCrearActividadHoy.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmCrearActividadHoy.Size = new System.Drawing.Size(48, 84);
+            this.cmCrearActividadHoy.TabIndex = 21;
+            this.cmCrearActividadHoy.ToolTip = "Crear Actividad para hoy";
+            this.cmCrearActividadHoy.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmCrearActividadHoy.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmCrearActividadHoy.ToolTipTitle = "Arca de los Tesoros";
+            this.cmCrearActividadHoy.Click += new System.EventHandler(this.CmCrearActividadHoy_Click);
+            // 
             // ctlDiasTrimestre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -107,6 +154,9 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1085, 734);
             this.pnlEncabezado.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.toggleOrdinarias.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmCrearActividadHoy.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,5 +169,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel TileDias;
+        private DevExpress.XtraEditors.PictureEdit cmCrearActividadHoy;
+        private DevExpress.XtraEditors.ToggleSwitch toggleOrdinarias;
     }
 }

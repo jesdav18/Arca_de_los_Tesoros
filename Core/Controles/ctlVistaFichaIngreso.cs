@@ -14,6 +14,7 @@ using Core.Clases;
 using Core.DataSets;
 using Core.Reportes;
 using System.Diagnostics;
+using System.Configuration;
 
 namespace Core.Controles
 {
@@ -55,6 +56,8 @@ namespace Core.Controles
 
         #region VARIABLES GLOBALES
 
+        string v_ruta_local = "";
+        string v_id_generado = "";
         string v_ruta_fotografia = "";
         static string[] Scopes = { DriveService.Scope.Drive };
 
@@ -228,7 +231,8 @@ namespace Core.Controles
                                                                                                           :p_segundo_apellido,
                                                                                                           :p_telefono_empresa,
                                                                                                           :p_celular,
-                                                                                                          :p_fecha_inicio_privilegio
+                                                                                                          :p_fecha_inicio_privilegio,
+                                                                                                          :p_ruta_fotografia
                                                                                                         );";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_id_colaborador", PgSqlType.VarChar).Value = Pro_ID_Colaborador;
@@ -264,6 +268,7 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_telefono_empresa", PgSqlType.VarChar).Value = txtTelefonoEmpresa.Text;
             pgComando.Parameters.Add("p_celular", PgSqlType.VarChar).Value = txtCelular.Text;
             pgComando.Parameters.Add("p_fecha_inicio_privilegio", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaInicioPrivilegio.EditValue.ToString()) ? dateFechaInicioPrivilegio.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_ruta_fotografia", PgSqlType.VarChar).Value = v_ruta_fotografia;
 
             PgSqlTransaction pgTrans = Pro_Conexion.BeginTransaction();
 
@@ -284,7 +289,114 @@ namespace Core.Controles
 
             }
         }
-        
+
+        private void ModificarFotografia()
+        {
+            using (OpenFileDialog file = new OpenFileDialog())
+            {
+                file.InitialDirectory = ConfigurationManager.AppSettings["DIRECTORIO_INICIAL_CARGA_FOTOS"];
+                file.RestoreDirectory = true;
+                file.Title = "Seleccione Imagen para la Ficha de Ingreso";
+                file.Filter = ConfigurationManager.AppSettings["FILTRO_IMAGENES_COLABORADOR"];
+                file.Multiselect = false;
+
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    v_ruta_local = file.FileName;
+
+                    GuardarImagenEnDirectorio();
+                
+
+                    using (var fs = new System.IO.FileStream(file.FileName, System.IO.FileMode.Open))
+                    {
+                        var bmp = new Bitmap(fs);
+                        picColaborador.Image = (Bitmap)bmp.Clone();
+                    }
+                }
+            }
+        }
+
+        private void GuardarImagenEnDirectorio()
+        {   
+                Pro_Credenciales = GetCredentials();
+
+                var service = new DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = Pro_Credenciales,
+                    ApplicationName = "Carga_GoogleDrive",
+                });
+
+                CargarImagen(service);
+
+                string pageToken = null;
+
+                do
+                {
+                    ListaArchivos(service, ref pageToken);
+                    if (!string.IsNullOrEmpty(lblID_Generado.Text))
+                    {
+                        pageToken = null;
+                    }
+
+                } while (pageToken != null);
+
+
+                pageToken = null;
+                service = null;
+                Console.WriteLine("Done");
+                Console.Read();
+            
+        }
+
+        private static void ListaArchivos(DriveService p_servicio, ref string p_token_pagina)
+        {
+
+            FilesResource.ListRequest listRequest = p_servicio.Files.List();
+            listRequest.PageSize = 1;
+            listRequest.Fields = "nextPageToken, files(name)";
+            listRequest.PageToken = p_token_pagina;
+            listRequest.Q = "mimeType='image/jpeg'";
+
+            var request = listRequest.Execute();
+
+            if (request.Files != null && request.Files.Count > 0)
+            {
+                p_token_pagina = request.NextPageToken;
+
+            }
+        }
+
+        private void CargarImagen(DriveService pServicio)
+        {
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+            var v_fileMetaData = new Google.Apis.Drive.v3.Data.File();
+            v_fileMetaData.Name = Path.GetFileName(v_ruta_local);
+            v_fileMetaData.MimeType = "imagen_prueba/jpeg";
+            FilesResource.CreateMediaUpload v_request;
+
+            using (var v_stream = new System.IO.FileStream(v_ruta_local, System.IO.FileMode.Open))
+            {
+                v_request = pServicio.Files.Create(v_fileMetaData, v_stream, "imagen_prueba/jpeg");
+                v_request.Fields = "id";
+                v_request.Upload();
+                v_stream.Close();
+            }
+
+            var v_archivo = v_request.ResponseBody;
+            v_id_generado = v_archivo.Id;
+            v_ruta_fotografia = v_archivo.Id;
+            lblID_Generado.Text = "ID Generado: " + v_archivo.Id;
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.CloseWaitForm();
+            }
+        }
+
         private void HabilitarDeshabilitarColaborador()
         {
             if (Pro_Conexion.State != ConnectionState.Open)
@@ -916,6 +1028,16 @@ namespace Core.Controles
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
             GuardarCambios();
+        }
+
+        private void CmdActualizar_Click(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+        private void PicColaborador_DoubleClick(object sender, EventArgs e)
+        {
+            ModificarFotografia();
         }
     }
 }

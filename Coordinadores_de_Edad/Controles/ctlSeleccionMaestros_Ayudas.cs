@@ -115,7 +115,8 @@ namespace Coordinadores_de_Edad.Controles
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlSeleccionMestros", "GuardarEnListaAsistencia");
-                MessageBox.Show("Algo salió mal mientras se registraba al colaborador en la lista.");
+                Utilidades.MostrarDialogo(FindForm(), "Falla en el ingreso de datos", Exc.Message, Utilidades.BotonesDialogo.Ok);
+              
             }
           
         }

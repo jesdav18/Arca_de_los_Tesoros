@@ -138,6 +138,35 @@ namespace Core.Controles
 
         }
 
+        private void ReestablecerContrasenia()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sql = @"SELECT * FROM arca_tesoros.ft_mant_reestablecer_clave_usuario (
+                                                                                          :p_usuario,
+                                                                                          :p_nueva_contrasenia
+                                                                                        )";
+            PgSqlCommand pgComando = new PgSqlCommand(sql, Pro_Conexion);
+            pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
+            pgComando.Parameters.Add("p_nueva_contrasenia", PgSqlType.VarChar).Value = txtContraseniaTemporal.Text;
+        
+
+            try
+            {
+                pgComando.ExecuteNonQuery();
+
+            }
+            catch (Exception Exc)
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", Exc.Message, Utilidades.BotonesDialogo.Ok);
+            }
+
+
+        }
+
 
         #endregion
 
@@ -166,15 +195,6 @@ namespace Core.Controles
                                                                txtUsuario.Text);
         }
 
-        private void TxtUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            
-        }
-
         private void PicCerrar_Click(object sender, EventArgs e)
         {
             OnCerrar?.Invoke(sender, e);
@@ -187,7 +207,7 @@ namespace Core.Controles
 
         private void CmdReestablecerContrasenia_Click(object sender, EventArgs e)
         {
-
+            ReestablecerContrasenia();
         }
     }
 }

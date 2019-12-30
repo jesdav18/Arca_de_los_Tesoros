@@ -449,5 +449,8 @@
   <ItemGroup>
     <None Include="Resources\icon_refrescar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_ojo_64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

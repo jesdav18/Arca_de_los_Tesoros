@@ -55,6 +55,8 @@
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
+            this.colcargo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colequipo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcMiEquipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMiEquipo)).BeginInit();
@@ -98,6 +100,8 @@
             this.gvMiEquipo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid_colaborador,
             this.colusuario_colaborador,
+            this.colequipo,
+            this.colcargo,
             this.colnombre_colaborador,
             this.colVerFicha,
             this.colnumero_identidad});
@@ -140,12 +144,12 @@
             this.colVerFicha.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colVerFicha.Caption = "Ver Ficha";
             this.colVerFicha.ColumnEdit = this.cmdVerFicha;
-            this.colVerFicha.MaxWidth = 130;
-            this.colVerFicha.MinWidth = 130;
+            this.colVerFicha.MaxWidth = 120;
+            this.colVerFicha.MinWidth = 120;
             this.colVerFicha.Name = "colVerFicha";
             this.colVerFicha.Visible = true;
-            this.colVerFicha.VisibleIndex = 2;
-            this.colVerFicha.Width = 130;
+            this.colVerFicha.VisibleIndex = 4;
+            this.colVerFicha.Width = 120;
             // 
             // cmdVerFicha
             // 
@@ -307,8 +311,36 @@
             this.ctlVistaFichaIngreso1.Pro_EsCargaDatos = false;
             this.ctlVistaFichaIngreso1.Pro_ID_Colaborador = 0;
             this.ctlVistaFichaIngreso1.Pro_ModoEdicion = false;
+            this.ctlVistaFichaIngreso1.Pro_Usuario = null;
+            this.ctlVistaFichaIngreso1.Pro_UsuarioColaborador = null;
             this.ctlVistaFichaIngreso1.Size = new System.Drawing.Size(1136, 700);
             this.ctlVistaFichaIngreso1.TabIndex = 0;
+            // 
+            // colcargo
+            // 
+            this.colcargo.Caption = "Cargo";
+            this.colcargo.FieldName = "cargo";
+            this.colcargo.MinWidth = 25;
+            this.colcargo.Name = "colcargo";
+            this.colcargo.OptionsColumn.AllowEdit = false;
+            this.colcargo.OptionsColumn.AllowFocus = false;
+            this.colcargo.OptionsColumn.ReadOnly = true;
+            this.colcargo.Visible = true;
+            this.colcargo.VisibleIndex = 3;
+            this.colcargo.Width = 94;
+            // 
+            // colequipo
+            // 
+            this.colequipo.Caption = "Equipo";
+            this.colequipo.FieldName = "equipo";
+            this.colequipo.MinWidth = 25;
+            this.colequipo.Name = "colequipo";
+            this.colequipo.OptionsColumn.AllowEdit = false;
+            this.colequipo.OptionsColumn.AllowFocus = false;
+            this.colequipo.OptionsColumn.ReadOnly = true;
+            this.colequipo.Visible = true;
+            this.colequipo.VisibleIndex = 2;
+            this.colequipo.Width = 94;
             // 
             // ctlMiEquipo
             // 
@@ -358,5 +390,7 @@
         private DevExpress.XtraEditors.TextEdit txtBusqueda;
         private DevExpress.XtraEditors.PictureEdit cmdGuardarSolicitud;
         public ctlVistaFichaIngreso ctlVistaFichaIngreso1;
+        private DevExpress.XtraGrid.Columns.GridColumn colequipo;
+        private DevExpress.XtraGrid.Columns.GridColumn colcargo;
     }
 }

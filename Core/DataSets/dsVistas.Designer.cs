@@ -427,6 +427,10 @@ namespace Core.DataSets {
             
             private global::System.Data.DataColumn columnnumero_identidad;
             
+            private global::System.Data.DataColumn columncargo;
+            
+            private global::System.Data.DataColumn columnequipo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtMiEquipoDataTable() {
@@ -494,6 +498,22 @@ namespace Core.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cargoColumn {
+                get {
+                    return this.columncargo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn equipoColumn {
+                get {
+                    return this.columnequipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -529,13 +549,15 @@ namespace Core.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtMiEquipoRow AdddtMiEquipoRow(int id_colaborador, string usuario_colaborador, string nombre_colaborador, string numero_identidad) {
+            public dtMiEquipoRow AdddtMiEquipoRow(int id_colaborador, string usuario_colaborador, string nombre_colaborador, string numero_identidad, string cargo, string equipo) {
                 dtMiEquipoRow rowdtMiEquipoRow = ((dtMiEquipoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
                         usuario_colaborador,
                         nombre_colaborador,
-                        numero_identidad};
+                        numero_identidad,
+                        cargo,
+                        equipo};
                 rowdtMiEquipoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtMiEquipoRow);
                 return rowdtMiEquipoRow;
@@ -562,6 +584,8 @@ namespace Core.DataSets {
                 this.columnusuario_colaborador = base.Columns["usuario_colaborador"];
                 this.columnnombre_colaborador = base.Columns["nombre_colaborador"];
                 this.columnnumero_identidad = base.Columns["numero_identidad"];
+                this.columncargo = base.Columns["cargo"];
+                this.columnequipo = base.Columns["equipo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +599,10 @@ namespace Core.DataSets {
                 base.Columns.Add(this.columnnombre_colaborador);
                 this.columnnumero_identidad = new global::System.Data.DataColumn("numero_identidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_identidad);
+                this.columncargo = new global::System.Data.DataColumn("cargo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncargo);
+                this.columnequipo = new global::System.Data.DataColumn("equipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnequipo);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2427,6 +2455,38 @@ namespace Core.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cargo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMiEquipo.cargoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cargo\' de la tabla \'dtMiEquipo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMiEquipo.cargoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string equipo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMiEquipo.equipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'equipo\' de la tabla \'dtMiEquipo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMiEquipo.equipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_colaboradorNull() {
                 return this.IsNull(this.tabledtMiEquipo.id_colaboradorColumn);
             }
@@ -2471,6 +2531,30 @@ namespace Core.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setnumero_identidadNull() {
                 this[this.tabledtMiEquipo.numero_identidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscargoNull() {
+                return this.IsNull(this.tabledtMiEquipo.cargoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcargoNull() {
+                this[this.tabledtMiEquipo.cargoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsequipoNull() {
+                return this.IsNull(this.tabledtMiEquipo.equipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetequipoNull() {
+                this[this.tabledtMiEquipo.equipoColumn] = global::System.Convert.DBNull;
             }
         }
         

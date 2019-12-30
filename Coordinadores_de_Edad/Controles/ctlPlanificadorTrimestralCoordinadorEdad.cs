@@ -92,7 +92,8 @@ namespace Coordinadores_de_Edad.Controles
                 NavigationPrincipal.SelectedPage = PageIngresoActividades;
                 ctlngresoActividad1.ConstruirControl(Pro_Conexion,
                                                      ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
-                                                     v_dia_seleccionado);
+                                                     v_dia_seleccionado,
+                                                     Pro_Usuario);
             }         
         }
 

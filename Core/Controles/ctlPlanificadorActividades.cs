@@ -139,6 +139,68 @@ namespace Core.Controles
             }
         }
 
+        private void CargarDatosCitasActividadesPorFecha()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_citas_actividades_por_fecha (
+                                                                                                  :p_fecha
+                                                                                                )";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_fecha", PgSqlType.Date).Value = ProFechaSeleccionada;
+
+            try
+            {
+                dsVistas1.dtCita_Actividad.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtCita_Actividad);
+
+
+                RecargarCitas();
+
+                sentencia = null;
+                pgComando.Dispose();
+
+            }
+            catch (Exception Exc)
+            {
+
+                pgComando.Dispose();
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosCitasActividades");
+
+            }
+        }
+
+
+        private void EliminarCita(int pID_CitaActividad)
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_mant_eliminar_cita (
+                                                                                      :p_id_cita_actividad
+                                                                                    )";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_cita_actividad", PgSqlType.Int).Value = pID_CitaActividad;
+
+            try
+            {
+                pgComando.ExecuteNonQuery();
+                CargarDatosCitasActividadesPorFecha();
+
+            }
+            catch (Exception Exc)
+            {
+
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosCitasActividadesPorFecha");
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Algo salió mal en el momento de eliminar esta cita, por favor intente nuevamente!", Utilidades.BotonesDialogo.Ok);
+                return;
+            }
+        }
 
         private void CargarColores()
         {
@@ -187,6 +249,14 @@ namespace Core.Controles
             }
         }
 
+        private void DescartarCita()
+        {
+            txtAsunto.ResetText();
+            txtLugar.ResetText();
+            memoObservaciones.ResetText();
+
+        }
+
         #endregion
 
         #region EVENTOS CONTROLES
@@ -198,24 +268,45 @@ namespace Core.Controles
 
         private void SchedulerControl1_DoubleClick(object sender, EventArgs e)
         {
-            NavegacionPrincipal.SelectedPage = PageIngresoCita;
+            NavegacionPrincipal.SelectedPage = PageVistaCitas;
+
+            CargarDatosCitasActividadesPorFecha();
+
             lblSubtitulo.Text = "Crear cita para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.Date.ToShortDateString();
+            ltlTituloCitas.Text = "Citas Programadas para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.Date.ToShortDateString();
             ProFechaSeleccionada = schedulerControl1.ActiveView.SelectedInterval.Start;
             timeHoraInicio.Time = timeHoraFin.Time = ProFechaSeleccionada;
         }
 
         private void PicIrAtras_Click(object sender, EventArgs e)
         {
-            NavegacionPrincipal.SelectedPage = pageCalendario;
+            NavegacionPrincipal.SelectedPage = PageVistaCitas;
         }
 
         private void PicBorrar_Click(object sender, EventArgs e)
         {
-
+            DescartarCita();
         }
 
         private void PicGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtAsunto.Text))
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Es necesario que ingrese un Asunto!", Utilidades.BotonesDialogo.Ok);
+                return;
+            }
+            else if (string.IsNullOrEmpty(txtLugar.Text))
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Es necesario que ingrese un Lugar!", Utilidades.BotonesDialogo.Ok);
+                return;
+            }
+            else if (string.IsNullOrEmpty(memoObservaciones.Text))
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Es necesario que ingrese una Observación!", Utilidades.BotonesDialogo.Ok);
+                return;
+            }
+
+
             InsertarCita();
         }
 
@@ -243,5 +334,33 @@ namespace Core.Controles
 
         #endregion
 
+        private void CmdAgregarCita_Click(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = PageIngresoCita;
+        }
+
+        private void CmdIrAtrasCitas_Click(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = pageCalendario;
+            CargarDatosCitasActividades();
+            RecargarCitas();
+        }
+
+        private void TxtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            gvActivdades.FindFilterText = "\"" + txtBusqueda.Text + "\"";
+        }
+
+        private void CmdEliminar_Click(object sender, EventArgs e)
+        {
+            var v_fila = (dsVistas.dtCita_ActividadRow)gvActivdades.GetFocusedDataRow();
+
+            if (v_fila != null)
+            {
+                EliminarCita(v_fila.id_cita_actividad);
+            }
+
+           
+        }
     }
 }

@@ -364,6 +364,7 @@
             this.memoMotivosRechazo.Name = "memoMotivosRechazo";
             this.memoMotivosRechazo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoMotivosRechazo.Properties.Appearance.Options.UseFont = true;
+            this.memoMotivosRechazo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.memoMotivosRechazo.Size = new System.Drawing.Size(683, 232);
             this.memoMotivosRechazo.TabIndex = 31;
             // 

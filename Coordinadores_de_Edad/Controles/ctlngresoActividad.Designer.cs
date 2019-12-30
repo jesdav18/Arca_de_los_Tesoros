@@ -80,12 +80,14 @@
             // 
             // txtVersiculo
             // 
+            this.txtVersiculo.EnterMoveNextControl = true;
             this.txtVersiculo.Location = new System.Drawing.Point(189, 528);
             this.txtVersiculo.Name = "txtVersiculo";
             this.txtVersiculo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVersiculo.Properties.Appearance.Options.UseFont = true;
+            this.txtVersiculo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtVersiculo.Size = new System.Drawing.Size(374, 38);
-            this.txtVersiculo.TabIndex = 28;
+            this.txtVersiculo.TabIndex = 29;
             // 
             // labelControl1
             // 
@@ -103,10 +105,12 @@
             // 
             // txtClase
             // 
+            this.txtClase.EnterMoveNextControl = true;
             this.txtClase.Location = new System.Drawing.Point(189, 194);
             this.txtClase.Name = "txtClase";
             this.txtClase.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClase.Properties.Appearance.Options.UseFont = true;
+            this.txtClase.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClase.Size = new System.Drawing.Size(368, 38);
             this.txtClase.TabIndex = 27;
             // 
@@ -126,12 +130,14 @@
             // 
             // memoTema
             // 
+            this.memoTema.EnterMoveNextControl = true;
             this.memoTema.Location = new System.Drawing.Point(189, 309);
             this.memoTema.Name = "memoTema";
             this.memoTema.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoTema.Properties.Appearance.Options.UseFont = true;
+            this.memoTema.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.memoTema.Size = new System.Drawing.Size(602, 147);
-            this.memoTema.TabIndex = 30;
+            this.memoTema.TabIndex = 28;
             // 
             // labelControl3
             // 

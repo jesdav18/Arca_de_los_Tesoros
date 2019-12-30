@@ -49,7 +49,7 @@
             this.lblEtiquetaUsuario = new DevExpress.XtraEditors.LabelControl();
             this.pageReestablecerContrasenia = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.cmdReestablecerContrasenia = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtContraseniaTemporal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar.Properties)).BeginInit();
@@ -62,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPaises)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             this.pageReestablecerContrasenia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContraseniaTemporal.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -290,7 +290,7 @@
             // 
             this.pageReestablecerContrasenia.Caption = "pageReestablecerContrasenia";
             this.pageReestablecerContrasenia.Controls.Add(this.cmdReestablecerContrasenia);
-            this.pageReestablecerContrasenia.Controls.Add(this.textEdit1);
+            this.pageReestablecerContrasenia.Controls.Add(this.txtContraseniaTemporal);
             this.pageReestablecerContrasenia.Controls.Add(this.labelControl3);
             this.pageReestablecerContrasenia.Name = "pageReestablecerContrasenia";
             this.pageReestablecerContrasenia.Size = new System.Drawing.Size(706, 292);
@@ -313,16 +313,16 @@
             this.cmdReestablecerContrasenia.Text = "Reestablecer Contraseña";
             this.cmdReestablecerContrasenia.Click += new System.EventHandler(this.CmdReestablecerContrasenia_Click);
             // 
-            // textEdit1
+            // txtContraseniaTemporal
             // 
-            this.textEdit1.EnterMoveNextControl = true;
-            this.textEdit1.Location = new System.Drawing.Point(79, 75);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.textEdit1.Size = new System.Drawing.Size(471, 38);
-            this.textEdit1.TabIndex = 52;
+            this.txtContraseniaTemporal.EnterMoveNextControl = true;
+            this.txtContraseniaTemporal.Location = new System.Drawing.Point(79, 75);
+            this.txtContraseniaTemporal.Name = "txtContraseniaTemporal";
+            this.txtContraseniaTemporal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseniaTemporal.Properties.Appearance.Options.UseFont = true;
+            this.txtContraseniaTemporal.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtContraseniaTemporal.Size = new System.Drawing.Size(471, 38);
+            this.txtContraseniaTemporal.TabIndex = 52;
             // 
             // labelControl3
             // 
@@ -361,7 +361,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPaises)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             this.pageReestablecerContrasenia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContraseniaTemporal.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,7 +387,7 @@
         private DevExpress.XtraEditors.TextEdit txtUsuario;
         private DevExpress.XtraEditors.LabelControl lblEtiquetaUsuario;
         private DevExpress.XtraBars.Navigation.NavigationPage pageReestablecerContrasenia;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtContraseniaTemporal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton cmdReestablecerContrasenia;
     }
