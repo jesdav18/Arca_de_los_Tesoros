@@ -72,10 +72,11 @@ namespace Coordinadores_de_Edad.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros.ft_view_colaboradores_ayudas_disponibles(:p_id_area_atencion)";
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_colaboradores_ayudas_disponibles(:p_id_area_atencion,
+                                                                                                     :p_id_actividad)";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = Pro_ID_AreaAtencion;
-
+            pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
             try
             {
                 dsCoordinadoresEdad1.dtAyudasDisponibles.Clear();
@@ -90,8 +91,11 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
-        private void GuardarEnListaAsistencia(int pID_Colaborador)
+        private bool GuardarEnListaAsistencia(int pID_Colaborador, bool pSeleccionar)
         {
+
+            bool v_resultado = false;
+
             if (Pro_Conexion.State != ConnectionState.Open)
             {
                 Pro_Conexion.Open();
@@ -102,7 +106,8 @@ namespace Coordinadores_de_Edad.Controles
                                                                                                   :p_id_colaborador,
                                                                                                   :p_id_actividad,
                                                                                                   :p_usuario,
-                                                                                                  :p_clasificacion
+                                                                                                  :p_clasificacion,
+                                                                                                  :p_seleccionar
                                                                                                 )";
 
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
@@ -110,17 +115,20 @@ namespace Coordinadores_de_Edad.Controles
             pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
             pgComando.Parameters.Add("p_clasificacion", PgSqlType.Int).Value = 2;
+            pgComando.Parameters.Add("p_seleccionar", PgSqlType.Boolean).Value = pSeleccionar;
 
 
             try
             {
-                pgComando.ExecuteNonQuery();
+                v_resultado = Convert.ToBoolean(pgComando.ExecuteScalar());
+                return v_resultado;
 
             }
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "GuardarEnListaAsistencia");
-                MessageBox.Show("Algo salió mal mientras se registraba al colaborador en la lista.");
+                Utilidades.MostrarDialogo(FindForm(), "Falla en el ingreso de datos", Exc.Message, Utilidades.BotonesDialogo.Ok);
+                return v_resultado;
             }
 
         }
@@ -130,14 +138,26 @@ namespace Coordinadores_de_Edad.Controles
             gvMestrosDisponibles.FindFilterText = "\"" + txtBusqueda.Text + "\"";
         }
 
-        private void CmdGuardarEnListaAsistencia_Click(object sender, EventArgs e)
+
+        public event EventHandler OnSeleccionaAyudaParaCubrir;
+
+        private void PicTituloApilado_Click(object sender, EventArgs e)
+        {
+            OnExteder_EncojerControl?.Invoke(sender, e);
+        }
+
+        private void ChkSeleccionar_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             dsCoordinadoresEdad.dtAyudasDisponiblesRow v_fila = (dsCoordinadoresEdad.dtAyudasDisponiblesRow)gvMestrosDisponibles.GetFocusedDataRow();
             if (v_fila != null)
             {
                 if (Pro_MostrarEncabezadoOriginal)
                 {
-                    GuardarEnListaAsistencia(v_fila.id_colaborador);
+                    if (GuardarEnListaAsistencia(v_fila.id_colaborador, v_fila.seleccionar))
+                    {
+                        v_fila.esta_en_lista = !v_fila.esta_en_lista;
+                        v_fila.AcceptChanges();
+                    }
                 }
                 else
                 {
@@ -145,13 +165,6 @@ namespace Coordinadores_de_Edad.Controles
                 }
 
             }
-        }
-
-        public event EventHandler OnSeleccionaAyudaParaCubrir;
-
-        private void PicTituloApilado_Click(object sender, EventArgs e)
-        {
-            OnExteder_EncojerControl?.Invoke(sender, e);
         }
     }
 }

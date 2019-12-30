@@ -49,7 +49,9 @@
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_identidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdGuardarEnListaAsistencia = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colesta_en_lista = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkEstaEnLista = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.chkSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationEncabezado)).BeginInit();
             this.NavigationEncabezado.SuspendLayout();
@@ -62,7 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarEnListaAsistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstaEnLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSeleccionar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -232,7 +235,8 @@
             this.gcMaestrosDisponibles.MainView = this.gvMestrosDisponibles;
             this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
             this.gcMaestrosDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cmdGuardarEnListaAsistencia});
+            this.chkEstaEnLista,
+            this.chkSeleccionar});
             this.gcMaestrosDisponibles.Size = new System.Drawing.Size(875, 435);
             this.gcMaestrosDisponibles.TabIndex = 24;
             this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -253,6 +257,7 @@
             this.colid_colaborador,
             this.colnombre,
             this.colnumero_identidad,
+            this.colesta_en_lista,
             this.colseleccionar});
             this.gvMestrosDisponibles.GridControl = this.gcMaestrosDisponibles;
             this.gvMestrosDisponibles.Name = "gvMestrosDisponibles";
@@ -291,23 +296,48 @@
             // colseleccionar
             // 
             this.colseleccionar.Caption = "Seleccionar";
-            this.colseleccionar.ColumnEdit = this.cmdGuardarEnListaAsistencia;
+            this.colseleccionar.ColumnEdit = this.chkSeleccionar;
             this.colseleccionar.FieldName = "seleccionar";
             this.colseleccionar.MaxWidth = 130;
             this.colseleccionar.MinWidth = 130;
             this.colseleccionar.Name = "colseleccionar";
             this.colseleccionar.Visible = true;
-            this.colseleccionar.VisibleIndex = 2;
+            this.colseleccionar.VisibleIndex = 3;
             this.colseleccionar.Width = 130;
             // 
-            // cmdGuardarEnListaAsistencia
+            // colesta_en_lista
             // 
-            this.cmdGuardarEnListaAsistencia.AutoHeight = false;
-            this.cmdGuardarEnListaAsistencia.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
-            this.cmdGuardarEnListaAsistencia.Name = "cmdGuardarEnListaAsistencia";
-            this.cmdGuardarEnListaAsistencia.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdGuardarEnListaAsistencia.Click += new System.EventHandler(this.CmdGuardarEnListaAsistencia_Click);
+            this.colesta_en_lista.AppearanceHeader.Options.UseTextOptions = true;
+            this.colesta_en_lista.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colesta_en_lista.Caption = "Esta en Lista";
+            this.colesta_en_lista.ColumnEdit = this.chkEstaEnLista;
+            this.colesta_en_lista.FieldName = "esta_en_lista";
+            this.colesta_en_lista.MaxWidth = 150;
+            this.colesta_en_lista.MinWidth = 150;
+            this.colesta_en_lista.Name = "colesta_en_lista";
+            this.colesta_en_lista.OptionsColumn.AllowEdit = false;
+            this.colesta_en_lista.OptionsColumn.AllowFocus = false;
+            this.colesta_en_lista.OptionsColumn.ReadOnly = true;
+            this.colesta_en_lista.Visible = true;
+            this.colesta_en_lista.VisibleIndex = 2;
+            this.colesta_en_lista.Width = 150;
+            // 
+            // chkEstaEnLista
+            // 
+            this.chkEstaEnLista.AutoHeight = false;
+            this.chkEstaEnLista.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEstaEnLista.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("chkEstaEnLista.ImageOptions.ImageChecked")));
+            this.chkEstaEnLista.ImageOptions.ImageUnchecked = ((System.Drawing.Image)(resources.GetObject("chkEstaEnLista.ImageOptions.ImageUnchecked")));
+            this.chkEstaEnLista.Name = "chkEstaEnLista";
+            // 
+            // chkSeleccionar
+            // 
+            this.chkSeleccionar.AutoHeight = false;
+            this.chkSeleccionar.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkSeleccionar.ImageOptions.ImageChecked = global::Coordinadores_de_Edad.Resources.iconCheckVerde_24;
+            this.chkSeleccionar.ImageOptions.ImageUnchecked = global::Coordinadores_de_Edad.Resources.iconMaloRojo_24;
+            this.chkSeleccionar.Name = "chkSeleccionar";
+            this.chkSeleccionar.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ChkSeleccionar_EditValueChanging);
             // 
             // ctlSeleccionAyuda
             // 
@@ -334,7 +364,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarEnListaAsistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstaEnLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSeleccionar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,11 +387,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad;
         private DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdGuardarEnListaAsistencia;
         private DevExpress.XtraBars.Navigation.NavigationFrame NavigationEncabezado;
         private DevExpress.XtraBars.Navigation.NavigationPage PageEncabezadoApilado;
         private DevExpress.XtraEditors.LabelControl lblTituloApilado;
         private DevExpress.XtraBars.Navigation.NavigationPage PageEncabezadoOriginal;
         private DevExpress.XtraEditors.PictureEdit picTituloApilado;
+        private DevExpress.XtraGrid.Columns.GridColumn colesta_en_lista;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit chkEstaEnLista;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit chkSeleccionar;
     }
 }

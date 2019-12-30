@@ -661,6 +661,8 @@ namespace Coordinadores_de_Edad.DataSet {
             
             private global::System.Data.DataColumn columnseleccionar;
             
+            private global::System.Data.DataColumn columnesta_en_lista;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtAyudasDisponiblesDataTable() {
@@ -728,6 +730,14 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn esta_en_listaColumn {
+                get {
+                    return this.columnesta_en_lista;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -763,13 +773,14 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtAyudasDisponiblesRow AdddtAyudasDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, object seleccionar) {
+            public dtAyudasDisponiblesRow AdddtAyudasDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, bool seleccionar, bool esta_en_lista) {
                 dtAyudasDisponiblesRow rowdtAyudasDisponiblesRow = ((dtAyudasDisponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
                         nombre,
                         numero_identidad,
-                        seleccionar};
+                        seleccionar,
+                        esta_en_lista};
                 rowdtAyudasDisponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtAyudasDisponiblesRow);
                 return rowdtAyudasDisponiblesRow;
@@ -796,6 +807,7 @@ namespace Coordinadores_de_Edad.DataSet {
                 this.columnnombre = base.Columns["nombre"];
                 this.columnnumero_identidad = base.Columns["numero_identidad"];
                 this.columnseleccionar = base.Columns["seleccionar"];
+                this.columnesta_en_lista = base.Columns["esta_en_lista"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -807,8 +819,11 @@ namespace Coordinadores_de_Edad.DataSet {
                 base.Columns.Add(this.columnnombre);
                 this.columnnumero_identidad = new global::System.Data.DataColumn("numero_identidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_identidad);
-                this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(object), null, global::System.Data.MappingType.Element);
+                this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseleccionar);
+                this.columnesta_en_lista = new global::System.Data.DataColumn("esta_en_lista", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnesta_en_lista);
+                this.columnseleccionar.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1491,10 +1506,10 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public object seleccionar {
+            public bool seleccionar {
                 get {
                     try {
-                        return ((object)(this[this.tabledtAyudasDisponibles.seleccionarColumn]));
+                        return ((bool)(this[this.tabledtAyudasDisponibles.seleccionarColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionar\' de la tabla \'dtAyudasDisponibles\' es DBNull." +
@@ -1503,6 +1518,23 @@ namespace Coordinadores_de_Edad.DataSet {
                 }
                 set {
                     this[this.tabledtAyudasDisponibles.seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool esta_en_lista {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledtAyudasDisponibles.esta_en_listaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'esta_en_lista\' de la tabla \'dtAyudasDisponibles\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtAyudasDisponibles.esta_en_listaColumn] = value;
                 }
             }
             
@@ -1552,6 +1584,18 @@ namespace Coordinadores_de_Edad.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetseleccionarNull() {
                 this[this.tabledtAyudasDisponibles.seleccionarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isesta_en_listaNull() {
+                return this.IsNull(this.tabledtAyudasDisponibles.esta_en_listaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setesta_en_listaNull() {
+                this[this.tabledtAyudasDisponibles.esta_en_listaColumn] = global::System.Convert.DBNull;
             }
         }
         
