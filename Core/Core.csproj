@@ -48,6 +48,8 @@
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.UI, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.Wizard, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDialogs.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -99,12 +101,6 @@
     <Compile Include="Clases\MantenimientoColaboradores.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Utilidades.cs" />
-    <Compile Include="Controles\ctlAsistencias.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controles\ctlAsistencias.Designer.cs">
-      <DependentUpon>ctlAsistencias.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controles\ctlBienvenida.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +131,12 @@
     <Compile Include="Controles\ctlFusible.Designer.cs">
       <DependentUpon>ctlFusible.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlIndicadores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlIndicadores.Designer.cs">
+      <DependentUpon>ctlIndicadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlIngresoAsistencia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +166,12 @@
     </Compile>
     <Compile Include="Controles\ctlPlanificadorActividades.Designer.cs">
       <DependentUpon>ctlPlanificadorActividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlAsistenciaEquipos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlAsistenciaEquipos.designer.cs">
+      <DependentUpon>ctlAsistenciaEquipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\ctlVistaFichaIngreso.cs">
       <SubType>UserControl</SubType>
@@ -270,8 +278,8 @@
     <None Include="Resources\iconEspera.gif" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controles\ctlAsistencias.resx">
-      <DependentUpon>ctlAsistencias.cs</DependentUpon>
+    <EmbeddedResource Include="Controles\ctlAsistenciaEquipos.resx">
+      <DependentUpon>ctlAsistenciaEquipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlBienvenida.resx">
       <DependentUpon>ctlBienvenida.cs</DependentUpon>
@@ -287,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlFusible.resx">
       <DependentUpon>ctlFusible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlIndicadores.resx">
+      <DependentUpon>ctlIndicadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlIngresoAsistencia.resx">
       <DependentUpon>ctlIngresoAsistencia.cs</DependentUpon>
@@ -451,6 +462,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_ojo_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_guardar_negro_641.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

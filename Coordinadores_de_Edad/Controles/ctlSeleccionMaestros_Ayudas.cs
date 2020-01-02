@@ -173,8 +173,9 @@ namespace Coordinadores_de_Edad.Controles
             {
                 if (Pro_MostrarEncabezadoPrincipal)
                 {
-                    if (GuardarEnListaAsistencia(v_fila.id_colaborador, v_fila.seleccionar))
+                    if (GuardarEnListaAsistencia(v_fila.id_colaborador, !v_fila.esta_en_lista))
                     {
+                       
                         v_fila.esta_en_lista = !v_fila.esta_en_lista;
                         v_fila.AcceptChanges();
                     } 

@@ -148,5 +148,10 @@ namespace Coordinadores_de_Edad.Controles
                 ActualizarRegistrosActividad();
             }          
         }
+
+        private void CmdGuardarPlanificacion_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

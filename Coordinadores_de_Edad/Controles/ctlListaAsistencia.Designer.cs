@@ -41,6 +41,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlListaAsistencia));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
+            this.picAtras = new DevExpress.XtraEditors.PictureEdit();
+            this.cmdVerHistorico = new DevExpress.XtraEditors.PictureEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
@@ -63,7 +65,23 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.pageHistoricoAsistencia = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gvAsistenciaHistorico = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_colaborador1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcargo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_identidad1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colasistio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkAsistio = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.picCargar = new DevExpress.XtraEditors.PictureEdit();
+            this.dateFechaAsistencia = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pnlEncabezado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.PageListaAsistencia.SuspendLayout();
@@ -77,11 +95,21 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            this.pageHistoricoAsistencia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAsistenciaHistorico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAsistio)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
             // 
             this.pnlEncabezado.Controls.Add(this.lblEncabezado);
+            this.pnlEncabezado.Controls.Add(this.picAtras);
+            this.pnlEncabezado.Controls.Add(this.cmdVerHistorico);
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
@@ -97,11 +125,40 @@
             this.lblEncabezado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblEncabezado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
+            this.lblEncabezado.Location = new System.Drawing.Point(49, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1068, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(970, 75);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Lista de Asistencia";
+            // 
+            // picAtras
+            // 
+            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAtras.EditValue = global::Coordinadores_de_Edad.Resources.icon_atras_64;
+            this.picAtras.Location = new System.Drawing.Point(0, 0);
+            this.picAtras.Name = "picAtras";
+            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picAtras.Properties.NullText = "   ";
+            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picAtras.Size = new System.Drawing.Size(49, 75);
+            this.picAtras.TabIndex = 34;
+            this.picAtras.Visible = false;
+            this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
+            // 
+            // cmdVerHistorico
+            // 
+            this.cmdVerHistorico.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdVerHistorico.EditValue = global::Coordinadores_de_Edad.Resources.icon_calendario_64;
+            this.cmdVerHistorico.Location = new System.Drawing.Point(1019, 0);
+            this.cmdVerHistorico.Name = "cmdVerHistorico";
+            this.cmdVerHistorico.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdVerHistorico.Properties.NullText = "   ";
+            this.cmdVerHistorico.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdVerHistorico.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdVerHistorico.Size = new System.Drawing.Size(49, 75);
+            this.cmdVerHistorico.TabIndex = 33;
+            this.cmdVerHistorico.Click += new System.EventHandler(this.CmdVerHistorico_Click);
             // 
             // panel2
             // 
@@ -123,15 +180,19 @@
             // navigationFrame1
             // 
             this.navigationFrame1.Controls.Add(this.PageListaAsistencia);
+            this.navigationFrame1.Controls.Add(this.pageHistoricoAsistencia);
             this.navigationFrame1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationFrame1.Location = new System.Drawing.Point(5, 104);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.PageListaAsistencia});
+            this.PageListaAsistencia,
+            this.pageHistoricoAsistencia});
             this.navigationFrame1.SelectedPage = this.PageListaAsistencia;
             this.navigationFrame1.Size = new System.Drawing.Size(1068, 682);
             this.navigationFrame1.TabIndex = 25;
             this.navigationFrame1.Text = "navigationFrame1";
+            this.navigationFrame1.TransitionAnimationProperties.FrameCount = 500;
+            this.navigationFrame1.TransitionAnimationProperties.FrameInterval = 500;
             // 
             // PageListaAsistencia
             // 
@@ -338,6 +399,185 @@
             this.pictureEdit1.Size = new System.Drawing.Size(63, 44);
             this.pictureEdit1.TabIndex = 30;
             // 
+            // pageHistoricoAsistencia
+            // 
+            this.pageHistoricoAsistencia.Caption = "pageHistoricoAsistencia";
+            this.pageHistoricoAsistencia.Controls.Add(this.gridControl1);
+            this.pageHistoricoAsistencia.Controls.Add(this.panel6);
+            this.pageHistoricoAsistencia.Controls.Add(this.panel3);
+            this.pageHistoricoAsistencia.Name = "pageHistoricoAsistencia";
+            this.pageHistoricoAsistencia.Size = new System.Drawing.Size(1068, 682);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataMember = "dtListaAsistenciaHistorico";
+            this.gridControl1.DataSource = this.dsCoordinadoresEdad1;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 120);
+            this.gridControl1.MainView = this.gvAsistenciaHistorico;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.chkAsistio});
+            this.gridControl1.Size = new System.Drawing.Size(1068, 562);
+            this.gridControl1.TabIndex = 27;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvAsistenciaHistorico});
+            // 
+            // gvAsistenciaHistorico
+            // 
+            this.gvAsistenciaHistorico.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvAsistenciaHistorico.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvAsistenciaHistorico.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvAsistenciaHistorico.Appearance.Row.Options.UseFont = true;
+            this.gvAsistenciaHistorico.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_colaborador1,
+            this.colnombre1,
+            this.colcargo,
+            this.colnumero_identidad1,
+            this.colasistio});
+            this.gvAsistenciaHistorico.GridControl = this.gridControl1;
+            this.gvAsistenciaHistorico.Name = "gvAsistenciaHistorico";
+            this.gvAsistenciaHistorico.OptionsView.ShowGroupPanel = false;
+            this.gvAsistenciaHistorico.OptionsView.ShowIndicator = false;
+            // 
+            // colid_colaborador1
+            // 
+            this.colid_colaborador1.Caption = "ID Colaborador";
+            this.colid_colaborador1.FieldName = "id_colaborador";
+            this.colid_colaborador1.MinWidth = 25;
+            this.colid_colaborador1.Name = "colid_colaborador1";
+            this.colid_colaborador1.OptionsColumn.AllowEdit = false;
+            this.colid_colaborador1.OptionsColumn.AllowFocus = false;
+            this.colid_colaborador1.OptionsColumn.ReadOnly = true;
+            this.colid_colaborador1.Width = 94;
+            // 
+            // colnombre1
+            // 
+            this.colnombre1.Caption = "Nombre";
+            this.colnombre1.FieldName = "nombre";
+            this.colnombre1.MinWidth = 25;
+            this.colnombre1.Name = "colnombre1";
+            this.colnombre1.OptionsColumn.AllowEdit = false;
+            this.colnombre1.OptionsColumn.AllowFocus = false;
+            this.colnombre1.OptionsColumn.ReadOnly = true;
+            this.colnombre1.Visible = true;
+            this.colnombre1.VisibleIndex = 1;
+            this.colnombre1.Width = 321;
+            // 
+            // colcargo
+            // 
+            this.colcargo.Caption = "Cargo";
+            this.colcargo.FieldName = "cargo";
+            this.colcargo.MinWidth = 25;
+            this.colcargo.Name = "colcargo";
+            this.colcargo.OptionsColumn.AllowEdit = false;
+            this.colcargo.OptionsColumn.AllowFocus = false;
+            this.colcargo.OptionsColumn.ReadOnly = true;
+            this.colcargo.Visible = true;
+            this.colcargo.VisibleIndex = 2;
+            this.colcargo.Width = 332;
+            // 
+            // colnumero_identidad1
+            // 
+            this.colnumero_identidad1.Caption = "Identidad";
+            this.colnumero_identidad1.FieldName = "numero_identidad";
+            this.colnumero_identidad1.MinWidth = 25;
+            this.colnumero_identidad1.Name = "colnumero_identidad1";
+            this.colnumero_identidad1.OptionsColumn.AllowEdit = false;
+            this.colnumero_identidad1.OptionsColumn.AllowFocus = false;
+            this.colnumero_identidad1.OptionsColumn.ReadOnly = true;
+            this.colnumero_identidad1.Visible = true;
+            this.colnumero_identidad1.VisibleIndex = 0;
+            this.colnumero_identidad1.Width = 313;
+            // 
+            // colasistio
+            // 
+            this.colasistio.AppearanceCell.Options.UseTextOptions = true;
+            this.colasistio.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colasistio.AppearanceHeader.Options.UseTextOptions = true;
+            this.colasistio.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colasistio.Caption = "Asistió";
+            this.colasistio.ColumnEdit = this.chkAsistio;
+            this.colasistio.FieldName = "asistio";
+            this.colasistio.MaxWidth = 100;
+            this.colasistio.MinWidth = 100;
+            this.colasistio.Name = "colasistio";
+            this.colasistio.OptionsColumn.AllowEdit = false;
+            this.colasistio.OptionsColumn.AllowFocus = false;
+            this.colasistio.OptionsColumn.ReadOnly = true;
+            this.colasistio.Visible = true;
+            this.colasistio.VisibleIndex = 3;
+            this.colasistio.Width = 100;
+            // 
+            // chkAsistio
+            // 
+            this.chkAsistio.AutoHeight = false;
+            this.chkAsistio.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkAsistio.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("chkAsistio.ImageOptions.ImageChecked")));
+            this.chkAsistio.ImageOptions.ImageUnchecked = ((System.Drawing.Image)(resources.GetObject("chkAsistio.ImageOptions.ImageUnchecked")));
+            this.chkAsistio.Name = "chkAsistio";
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 106);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1068, 14);
+            this.panel6.TabIndex = 21;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.picCargar);
+            this.panel3.Controls.Add(this.dateFechaAsistencia);
+            this.panel3.Controls.Add(this.labelControl2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1068, 106);
+            this.panel3.TabIndex = 0;
+            // 
+            // picCargar
+            // 
+            this.picCargar.EditValue = global::Coordinadores_de_Edad.Resources.iconBusqueda;
+            this.picCargar.Location = new System.Drawing.Point(658, 30);
+            this.picCargar.Name = "picCargar";
+            this.picCargar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picCargar.Properties.NullText = "   ";
+            this.picCargar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picCargar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picCargar.Size = new System.Drawing.Size(64, 51);
+            this.picCargar.TabIndex = 37;
+            this.picCargar.Click += new System.EventHandler(this.PicCargar_Click);
+            // 
+            // dateFechaAsistencia
+            // 
+            this.dateFechaAsistencia.EditValue = null;
+            this.dateFechaAsistencia.EnterMoveNextControl = true;
+            this.dateFechaAsistencia.Location = new System.Drawing.Point(333, 36);
+            this.dateFechaAsistencia.Name = "dateFechaAsistencia";
+            this.dateFechaAsistencia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFechaAsistencia.Properties.Appearance.Options.UseFont = true;
+            this.dateFechaAsistencia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFechaAsistencia.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFechaAsistencia.Size = new System.Drawing.Size(267, 38);
+            this.dateFechaAsistencia.TabIndex = 36;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Location = new System.Drawing.Point(71, 30);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(241, 45);
+            this.labelControl2.TabIndex = 27;
+            this.labelControl2.Text = "Fecha de Asistencia:";
+            // 
             // ctlListaAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,6 +592,8 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1078, 791);
             this.pnlEncabezado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
             this.PageListaAsistencia.ResumeLayout(false);
@@ -365,6 +607,14 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            this.pageHistoricoAsistencia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAsistenciaHistorico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAsistio)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,5 +645,21 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit picAsistio;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit picNoAsistio;
         private DevExpress.XtraGrid.Columns.GridColumn colasistencia;
+        private DevExpress.XtraEditors.PictureEdit cmdVerHistorico;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageHistoricoAsistencia;
+        private System.Windows.Forms.Panel panel3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.DateEdit dateFechaAsistencia;
+        private DevExpress.XtraEditors.PictureEdit picAtras;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvAsistenciaHistorico;
+        private System.Windows.Forms.Panel panel6;
+        private DevExpress.XtraEditors.PictureEdit picCargar;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_colaborador1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad1;
+        private DevExpress.XtraGrid.Columns.GridColumn colasistio;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit chkAsistio;
+        private DevExpress.XtraGrid.Columns.GridColumn colcargo;
     }
 }

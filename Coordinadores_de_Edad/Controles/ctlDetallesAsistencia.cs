@@ -4,6 +4,12 @@ using System.Data;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
+using System.IO;
+using Google.Apis.Auth.OAuth2;
+using System.Threading;
+using Google.Apis.Util.Store;
+using Google.Apis.Drive.v3;
+using Google.Apis.Services;
 
 namespace Coordinadores_de_Edad.Controles
 {
@@ -29,6 +35,7 @@ namespace Coordinadores_de_Edad.Controles
         public PgSqlConnection Pro_Conexion { get; set; }
         public int Pro_ID_Colaborador { get; set; }
         public int Pro_ID_Actividad { get; set; }
+        public UserCredential Pro_Credenciales { get; set; }
 
         public bool Pro_Carnet {
             get
@@ -100,6 +107,7 @@ namespace Coordinadores_de_Edad.Controles
         private bool v_uniforme;
         private bool v_presente;
         private string v_ruta_fotografia;
+        static string[] Scopes = { DriveService.Scope.Drive };
 
         #endregion
 
@@ -205,9 +213,157 @@ namespace Coordinadores_de_Edad.Controles
         {
             if (!string.IsNullOrEmpty(v_ruta_fotografia))
             {
-                picFotoColaborador.Image = Image.FromFile(v_ruta_fotografia);
+                if (!splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.ShowWaitForm();
+                }
+
+                if (File.Exists(v_ruta_fotografia))
+                {
+                    var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
+                    picFotoColaborador.Image = (Bitmap)bmp.Clone();
+                }
+                else
+                {
+                    PrepararDescarga();
+                }
+
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
             }
         }
+
+        private static void ListFiles(DriveService service, ref string pageToken)
+        {
+
+            FilesResource.ListRequest listRequest = service.Files.List();
+            listRequest.PageSize = 1;
+
+            listRequest.Fields = "nextPageToken, files(name)";
+            listRequest.PageToken = pageToken;
+            listRequest.Q = "mimeType='image/jpeg'";
+
+
+            var request = listRequest.Execute();
+
+
+            if (request.Files != null && request.Files.Count > 0)
+            {
+
+                pageToken = request.NextPageToken;
+
+                if (request.NextPageToken != null)
+                {
+
+                }
+            }
+        }
+
+        private static void DescargarImagen(Google.Apis.Drive.v3.DriveService pServicio, string pArchivo)
+        {
+            var v_request = pServicio.Files.Get(pArchivo);
+            var v_stream = new System.IO.MemoryStream();
+
+
+            v_request.MediaDownloader.ProgressChanged += (Google.Apis.Download.IDownloadProgress progress) =>
+            {
+                switch (progress.Status)
+                {
+                    case Google.Apis.Download.DownloadStatus.Downloading:
+                        {
+                            Console.WriteLine(progress.BytesDownloaded);
+                            break;
+                        }
+                    case Google.Apis.Download.DownloadStatus.Completed:
+                        {
+                            {
+                                Console.WriteLine("Download complete.");
+
+                                GuardarStreaming(v_stream, pArchivo + ".jpg");
+                                break;
+                            }
+                        }
+                    case Google.Apis.Download.DownloadStatus.Failed:
+                        {
+                            Console.WriteLine("Download failed.");
+                            break;
+                        }
+                }
+            };
+
+            v_request.Download(v_stream);
+
+        }
+
+        private static void GuardarStreaming(System.IO.MemoryStream pStream, string pGuardarA)
+        {
+            if (!File.Exists(pGuardarA))
+            {
+                using (System.IO.FileStream file = new System.IO.FileStream(pGuardarA, System.IO.FileMode.Create, System.IO.FileAccess.Write))
+                {
+                    pStream.WriteTo(file);
+
+                }
+            }
+        }
+
+        private void PrepararDescarga()
+        {
+            Pro_Credenciales = GetCredentials();
+
+            var service = new DriveService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = Pro_Credenciales,
+                ApplicationName = "Carga_GoogleDrive",
+            });
+
+            DescargarImagen(service, v_ruta_fotografia);
+            var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
+            picFotoColaborador.Image = (Bitmap)bmp.Clone();
+
+
+            string pageToken = null;
+
+            do
+            {
+                ListFiles(service, ref pageToken);
+                if (!string.IsNullOrEmpty(v_ruta_fotografia))
+                {
+                    pageToken = null;
+                }
+
+            } while (pageToken != null);
+
+
+            pageToken = null;
+            service = null;
+
+        }
+
+        private static UserCredential GetCredentials()
+        {
+            UserCredential credential;
+
+            using (var stream = new FileStream(@"C:\Users\Homero\Downloads\credentials.json", FileMode.Open, FileAccess.Read))
+            {
+                string credPath = @"C:\Users\Homero\Downloads";
+
+                credPath = Path.Combine(credPath, ".credentials/drive-dotnet-quickstart.json");
+
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    Scopes,
+                    "user",
+                    CancellationToken.None,
+                    new FileDataStore(credPath, true)).Result;
+
+            }
+
+            return credential;
+        }
+
 
         #endregion
 

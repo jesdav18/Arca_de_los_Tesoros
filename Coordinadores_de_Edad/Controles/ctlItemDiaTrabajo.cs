@@ -11,9 +11,10 @@ namespace Coordinadores_de_Edad.Controles
             InitializeComponent();
         }
 
-        public void ConstruirControl(string pFecha)
+        public void ConstruirControl(string pFecha, string pDiaSemana)
         {
             lblFecha.Text = pFecha;
+            lblDia.Text = pDiaSemana;
         }
 
         private void LblDia_MouseLeave(object sender, System.EventArgs e)

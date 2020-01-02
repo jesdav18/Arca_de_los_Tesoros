@@ -75,6 +75,13 @@ namespace Core.Controles
 
             CargarDatos();
             CargarFotografiaColaborador();
+
+            if (Pro_Usuario.Pro_ID_RolUsuario == 4)
+            {
+                PonerModoLectura();
+                cmdGuardar.Visible = false;
+            }
+
         }
 
         private void CargarFotografiaColaborador()
@@ -95,9 +102,6 @@ namespace Core.Controles
                 {
                     PrepararDescarga();
                 }
-
-
-               
 
                 if (splashScreenManager1.IsSplashFormVisible)
                 {
@@ -167,7 +171,6 @@ namespace Core.Controles
 
                 pgDr.Close();
 
-
                 ParidacionDatos();
 
                 sentencia = null;
@@ -235,7 +238,7 @@ namespace Core.Controles
                                                                                                           :p_ruta_fotografia
                                                                                                         );";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
-            pgComando.Parameters.Add("p_id_colaborador", PgSqlType.VarChar).Value = Pro_ID_Colaborador;
+            pgComando.Parameters.Add("p_id_colaborador", PgSqlType.Int).Value = Pro_ID_Colaborador;
             pgComando.Parameters.Add("p_numero_identidad", PgSqlType.VarChar).Value = txtNumeroIdentidad.Text;
             pgComando.Parameters.Add("p_genero", PgSqlType.VarChar).Value = txtGenero.Text;
             pgComando.Parameters.Add("p_id_pais_nacimiento", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glPaisNacimiento.EditValue.ToString()) ? glPaisNacimiento.EditValue : DBNull.Value;
@@ -306,7 +309,6 @@ namespace Core.Controles
 
                     GuardarImagenEnDirectorio();
                 
-
                     using (var fs = new System.IO.FileStream(file.FileName, System.IO.FileMode.Open))
                     {
                         var bmp = new Bitmap(fs);
@@ -934,10 +936,41 @@ namespace Core.Controles
                 }
             }
 
-
-
-
             Pro_ModoEdicion = false;
+
+        }
+
+        private void PonerModoLectura()
+        {
+            cmdEditarNombre.Visible = false;
+            txtNumeroIdentidad.ReadOnly = true;
+            txtGenero.ReadOnly = true;
+            glEstadoCivil.ReadOnly = true;
+            dateFechaNacimiento.ReadOnly = true;
+            glEstadoCivil.ReadOnly = true;
+            txtCorreoElectronico.ReadOnly = true;
+            txtCelular.ReadOnly = true;
+            glPaisNacimiento.ReadOnly = true;
+            glTipoSangre.ReadOnly = true;
+            toggleNecesitaTransporte.ReadOnly = true;
+            memoDireccion.ReadOnly = true;
+            dateFechaConversion.ReadOnly = true;
+            dateFechaIngresoIglesia.ReadOnly = true;
+            datFechaBautismoAgua.ReadOnly = true;
+            glEquipoArcaTesoros.ReadOnly = true;
+            glCargos.ReadOnly = true;
+            glEstatusDoctrinal.ReadOnly = true;
+            dateFechaCobertua.ReadOnly = true;
+            dateFechaReconciliacion.ReadOnly = true;
+            toggleBautismoEspiritu.ReadOnly = true;
+            glEdadArea.ReadOnly = true;
+            dateFechaInicioPrivilegio.ReadOnly = true;
+            txtOtrosEquiposPriviliegio.ReadOnly = true;
+            glEmpresa.ReadOnly = true;
+            txtCargo.ReadOnly = true;
+            txtTelefonoEmpresa.ReadOnly = true;
+            txtEstadoProfesional.ReadOnly = true;
+            txtNivelEducativo.ReadOnly = true;
 
         }
 
@@ -950,7 +983,6 @@ namespace Core.Controles
         #endregion
 
         #region EVENTOS CONTROLES
-
        
         private void BgCargarDatosConfigurcion_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
@@ -1013,8 +1045,6 @@ namespace Core.Controles
                                               );
         }
 
-        #endregion
-
         private void CmdEditarNombre_Click(object sender, EventArgs e)
         {
             popupModificarNombre.ShowPopup();
@@ -1039,5 +1069,7 @@ namespace Core.Controles
         {
             ModificarFotografia();
         }
+
+        #endregion
     }
 }

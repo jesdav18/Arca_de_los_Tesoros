@@ -44,6 +44,9 @@ namespace Coordinadores_de_Edad.Controles
             Pro_Usuario = pUsuario;
             Pro_ID_Actividad = pActividad;
 
+            dateFechaAsistencia.EditValue = Utilidades.ObtenerFechaServidor(Pro_Conexion);
+
+            ObtenerInformacionActividad();
             CargarDatosAsistencia();
         }
 
@@ -73,6 +76,32 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
+        private void CargarDatosAsistenciaHistoricos()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_lista_asistencia_historico (:p_fecha)";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_fecha", PgSqlType.Date).Value = dateFechaAsistencia.EditValue;
+
+            try
+            {
+                dsCoordinadoresEdad1.dtListaAsistenciaHistorico.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsCoordinadoresEdad1.dtListaAsistenciaHistorico);
+
+                CargarImagenesEstadoAsistencia();
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosAsistencia");
+                MessageBox.Show("Algo salió mal mientras se cargaba lista asistencia.");
+            }
+        }
+
         private void CargarImagenesEstadoAsistencia()
         {
             foreach (dsCoordinadoresEdad.dtListaAsistenciaRow iterador in dsCoordinadoresEdad1.dtListaAsistencia)
@@ -92,6 +121,37 @@ namespace Coordinadores_de_Edad.Controles
                     iterador.asistencia = null;
                     iterador.inasistencia = Resources.iconMaloRojo_24;
                 }
+            }
+        }
+
+        private void ObtenerInformacionActividad()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_datos_actividades (
+                                                                                       :p_id_actividad
+                                                                                    )";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
+
+            try
+            {
+                PgSqlDataReader pgDr = pgComando.ExecuteReader();
+                if (pgDr.Read())
+                {
+                    lblEncabezado.Text = "Lista de Asistencia para el día " + pgDr.GetDateTime("fecha").Date.ToShortDateString();
+                }
+
+                pgDr.Close();
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "ObtenerInformacionActividad");
+               
             }
         }
       
@@ -134,6 +194,27 @@ namespace Coordinadores_de_Edad.Controles
             {
                 OnMarcarAsistencia?.Invoke(v_fila.id_colaborador, true);
             }
+        }
+
+        private void CmdVerHistorico_Click(object sender, EventArgs e)
+        {
+            lblEncabezado.Text = "Buscar listado de asistencias";
+            navigationFrame1.SelectedPage = pageHistoricoAsistencia;
+            cmdVerHistorico.Visible = false;
+            picAtras.Visible = true;
+        }
+
+        private void PicAtras_Click(object sender, EventArgs e)
+        {
+            ObtenerInformacionActividad();
+            navigationFrame1.SelectedPage = PageListaAsistencia;
+            cmdVerHistorico.Visible = true;
+            picAtras.Visible = false;
+        }
+
+        private void PicCargar_Click(object sender, EventArgs e)
+        {
+            CargarDatosAsistenciaHistoricos();
         }
     }
 }

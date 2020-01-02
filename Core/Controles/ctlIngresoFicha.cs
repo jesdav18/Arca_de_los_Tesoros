@@ -263,7 +263,8 @@ namespace Core.Controles
            glEdadArea.Text = "";
            glStatusDoctrinal.Text = "";
             glEmpresa.Text = "";
-         
+
+            lnlCargarFotografia.Text = "Cargar Fotografía";
         }
 
         private void GuardarImagenEnDirectorio()

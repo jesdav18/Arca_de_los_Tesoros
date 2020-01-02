@@ -1278,7 +1278,7 @@
             this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl19.Location = new System.Drawing.Point(50, 453);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(271, 45);
+            this.labelControl19.Size = new System.Drawing.Size(466, 45);
             this.labelControl19.TabIndex = 46;
             this.labelControl19.Text = "Nivel Educativo";
             // 
@@ -1303,7 +1303,7 @@
             this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl20.Location = new System.Drawing.Point(50, 349);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(168, 45);
+            this.labelControl20.Size = new System.Drawing.Size(466, 45);
             this.labelControl20.TabIndex = 44;
             this.labelControl20.Text = "Estado Profesional";
             // 
@@ -1353,7 +1353,7 @@
             this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl17.Location = new System.Drawing.Point(50, 135);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(168, 45);
+            this.labelControl17.Size = new System.Drawing.Size(466, 45);
             this.labelControl17.TabIndex = 40;
             this.labelControl17.Text = "Cargo";
             // 

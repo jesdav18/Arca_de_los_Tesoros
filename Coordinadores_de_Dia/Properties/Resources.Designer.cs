@@ -183,6 +183,16 @@ namespace Coordinadores_de_Dia.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconDashboard_64 {
+            get {
+                object obj = ResourceManager.GetObject("iconDashboard_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconMaloRojo_24 {
             get {
                 object obj = ResourceManager.GetObject("iconMaloRojo_24", resourceCulture);

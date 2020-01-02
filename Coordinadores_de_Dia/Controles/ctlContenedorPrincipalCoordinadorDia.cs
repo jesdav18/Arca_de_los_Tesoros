@@ -233,5 +233,10 @@ namespace Coordinadores_de_Dia.Controles
 
         #endregion
 
+        private void PnlIndicadores_Click(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = PageIndicadores;
+            ctlIndicadores1.ConstruirControl(Pro_Conexion);
+        }
     }
 }

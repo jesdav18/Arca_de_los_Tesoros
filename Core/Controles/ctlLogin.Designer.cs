@@ -40,9 +40,29 @@
             this.cmdAcceder = new DevExpress.XtraEditors.SimpleButton();
             this.picLogoInstitucion = new DevExpress.XtraEditors.PictureEdit();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Core.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
+            this.popupCambiarContrasenia = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
+            this.cmdGuardar = new DevExpress.XtraEditors.PictureEdit();
+            this.txtConfirmacionContrasenia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNuevaContrasenia = new DevExpress.XtraEditors.TextEdit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
+            this.picCerrar = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupCambiarContrasenia)).BeginInit();
+            this.popupCambiarContrasenia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
+            this.flyoutPanelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConfirmacionContrasenia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNuevaContrasenia.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCerrar.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBordeSuperior
@@ -170,11 +190,156 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
+            // popupCambiarContrasenia
+            // 
+            this.popupCambiarContrasenia.Appearance.BackColor = System.Drawing.Color.White;
+            this.popupCambiarContrasenia.Appearance.Options.UseBackColor = true;
+            this.popupCambiarContrasenia.Controls.Add(this.flyoutPanelControl1);
+            this.popupCambiarContrasenia.Location = new System.Drawing.Point(103, 48);
+            this.popupCambiarContrasenia.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.popupCambiarContrasenia.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.popupCambiarContrasenia.Name = "popupCambiarContrasenia";
+            this.popupCambiarContrasenia.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Center;
+            this.popupCambiarContrasenia.Options.AnimationType = DevExpress.Utils.Win.PopupToolWindowAnimation.Fade;
+            this.popupCambiarContrasenia.OptionsBeakPanel.BackColor = System.Drawing.Color.White;
+            this.popupCambiarContrasenia.OwnerControl = this;
+            this.popupCambiarContrasenia.Size = new System.Drawing.Size(499, 383);
+            this.popupCambiarContrasenia.TabIndex = 11;
+            // 
+            // flyoutPanelControl1
+            // 
+            this.flyoutPanelControl1.Controls.Add(this.cmdGuardar);
+            this.flyoutPanelControl1.Controls.Add(this.txtConfirmacionContrasenia);
+            this.flyoutPanelControl1.Controls.Add(this.labelControl2);
+            this.flyoutPanelControl1.Controls.Add(this.labelControl1);
+            this.flyoutPanelControl1.Controls.Add(this.txtNuevaContrasenia);
+            this.flyoutPanelControl1.Controls.Add(this.panel2);
+            this.flyoutPanelControl1.Controls.Add(this.panel1);
+            this.flyoutPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl1.FlyoutPanel = this.popupCambiarContrasenia;
+            this.flyoutPanelControl1.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl1.Name = "flyoutPanelControl1";
+            this.flyoutPanelControl1.Size = new System.Drawing.Size(499, 383);
+            this.flyoutPanelControl1.TabIndex = 0;
+            // 
+            // cmdGuardar
+            // 
+            this.cmdGuardar.EditValue = global::Core.Properties.Resources.icon_guardar_negro_64;
+            this.cmdGuardar.Location = new System.Drawing.Point(354, 310);
+            this.cmdGuardar.Name = "cmdGuardar";
+            this.cmdGuardar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdGuardar.Properties.NullText = "   ";
+            this.cmdGuardar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdGuardar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.cmdGuardar.Size = new System.Drawing.Size(48, 47);
+            this.cmdGuardar.TabIndex = 33;
+            this.cmdGuardar.Click += new System.EventHandler(this.CmdGuardar_Click);
+            // 
+            // txtConfirmacionContrasenia
+            // 
+            this.txtConfirmacionContrasenia.EnterMoveNextControl = true;
+            this.txtConfirmacionContrasenia.Location = new System.Drawing.Point(84, 235);
+            this.txtConfirmacionContrasenia.Name = "txtConfirmacionContrasenia";
+            this.txtConfirmacionContrasenia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmacionContrasenia.Properties.Appearance.Options.UseFont = true;
+            this.txtConfirmacionContrasenia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtConfirmacionContrasenia.Properties.PasswordChar = '*';
+            this.txtConfirmacionContrasenia.Size = new System.Drawing.Size(323, 38);
+            this.txtConfirmacionContrasenia.TabIndex = 17;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(56, 198);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(222, 31);
+            this.labelControl2.TabIndex = 18;
+            this.labelControl2.Text = "Confirmar Contraseña";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(56, 89);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(186, 31);
+            this.labelControl1.TabIndex = 17;
+            this.labelControl1.Text = "Nueva Contraseña";
+            // 
+            // txtNuevaContrasenia
+            // 
+            this.txtNuevaContrasenia.EnterMoveNextControl = true;
+            this.txtNuevaContrasenia.Location = new System.Drawing.Point(84, 126);
+            this.txtNuevaContrasenia.Name = "txtNuevaContrasenia";
+            this.txtNuevaContrasenia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNuevaContrasenia.Properties.Appearance.Options.UseFont = true;
+            this.txtNuevaContrasenia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNuevaContrasenia.Properties.PasswordChar = '*';
+            this.txtNuevaContrasenia.Size = new System.Drawing.Size(323, 38);
+            this.txtNuevaContrasenia.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 51);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(493, 5);
+            this.panel2.TabIndex = 15;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblEncabezado);
+            this.panel1.Controls.Add(this.picCerrar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(493, 48);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblEncabezado
+            // 
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Options.UseFont = true;
+            this.lblEncabezado.Appearance.Options.UseTextOptions = true;
+            this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblEncabezado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.lblEncabezado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(426, 48);
+            this.lblEncabezado.TabIndex = 18;
+            this.lblEncabezado.Text = "Cambiar Contraseña";
+            // 
+            // picCerrar
+            // 
+            this.picCerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picCerrar.EditValue = global::Core.Properties.Resources.iconCerrar_32;
+            this.picCerrar.Location = new System.Drawing.Point(426, 0);
+            this.picCerrar.Name = "picCerrar";
+            this.picCerrar.Properties.AllowFocused = false;
+            this.picCerrar.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.picCerrar.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picCerrar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picCerrar.Properties.NullText = " ";
+            this.picCerrar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picCerrar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picCerrar.Size = new System.Drawing.Size(67, 48);
+            this.picCerrar.TabIndex = 17;
+            this.picCerrar.ToolTip = "Guardar Cambios\r\n";
+            this.picCerrar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.picCerrar.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.picCerrar.ToolTipTitle = "Arca de los Tesoros";
+            this.picCerrar.Click += new System.EventHandler(this.PicCerrar_Click);
+            // 
             // ctlLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.popupCambiarContrasenia);
             this.Controls.Add(this.cmdAcceder);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.txtUsuario);
@@ -194,6 +359,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoInstitucion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupCambiarContrasenia)).EndInit();
+            this.popupCambiarContrasenia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).EndInit();
+            this.flyoutPanelControl1.ResumeLayout(false);
+            this.flyoutPanelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConfirmacionContrasenia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNuevaContrasenia.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCerrar.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +388,16 @@
         private DevExpress.XtraEditors.TextEdit txtContrasenia;
         private DevExpress.XtraEditors.SimpleButton cmdAcceder;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.Utils.FlyoutPanel popupCambiarContrasenia;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.PictureEdit picCerrar;
+        private DevExpress.XtraEditors.LabelControl lblEncabezado;
+        private DevExpress.XtraEditors.TextEdit txtConfirmacionContrasenia;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtNuevaContrasenia;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.PictureEdit cmdGuardar;
     }
 }

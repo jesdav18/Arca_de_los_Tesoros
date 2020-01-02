@@ -544,6 +544,7 @@
             this.ctlBusquedaFichasIngreso1.Name = "ctlBusquedaFichasIngreso1";
             this.ctlBusquedaFichasIngreso1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlBusquedaFichasIngreso1.Pro_Conexion = null;
+            this.ctlBusquedaFichasIngreso1.Pro_Usuario = null;
             this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1351, 518);
             this.ctlBusquedaFichasIngreso1.TabIndex = 0;
             // 
@@ -562,7 +563,12 @@
             this.ctlVistaFichaIngreso1.Name = "ctlVistaFichaIngreso1";
             this.ctlVistaFichaIngreso1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlVistaFichaIngreso1.Pro_Conexion = null;
+            this.ctlVistaFichaIngreso1.Pro_Credenciales = null;
+            this.ctlVistaFichaIngreso1.Pro_EsCargaDatos = false;
             this.ctlVistaFichaIngreso1.Pro_ID_Colaborador = 0;
+            this.ctlVistaFichaIngreso1.Pro_ModoEdicion = false;
+            this.ctlVistaFichaIngreso1.Pro_Usuario = null;
+            this.ctlVistaFichaIngreso1.Pro_UsuarioColaborador = null;
             this.ctlVistaFichaIngreso1.Size = new System.Drawing.Size(8, 144);
             this.ctlVistaFichaIngreso1.TabIndex = 1;
             // 

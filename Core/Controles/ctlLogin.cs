@@ -31,6 +31,7 @@ namespace Core.Controles
         public int Pro_ID_Cargo { get; set; }
         public string Pro_DescripcionCargo { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
+        public bool Pro_EsPrimerLogin { get; set; }
 
         #endregion
 
@@ -127,7 +128,20 @@ namespace Core.Controles
                     Pro_DescripcionCargo = pgDr.GetString("descripcion_cargo");
                     Pro_NombreEquipo = pgDr.GetString("nombre_equipo");
                     Pro_ID_AreaAtencion = pgDr.GetInt32("id_area_atencion");
-                    v_encontro_usuario = true;
+                    Pro_EsPrimerLogin = pgDr.GetBoolean("es_primer_login");
+                  
+
+
+                    if (Pro_EsPrimerLogin)
+                    {
+                       
+                        popupCambiarContrasenia.ShowPopup();
+                        txtNuevaContrasenia.Focus();
+                    }
+                    else
+                    {
+                        v_encontro_usuario = true;
+                    }
                 }
 
                 pgDr.Close();
@@ -173,12 +187,66 @@ namespace Core.Controles
 
         }
 
+        private void ResetearContrasenia()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_mant_reestablecer_clave_usuario (
+                                                                                                  :p_usuario,
+                                                                                                  :p_nueva_contrasenia
+                                                                                                )";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_UsuarioColaborador;
+            pgComando.Parameters.Add("p_nueva_contrasenia", PgSqlType.VarChar).Value = txtNuevaContrasenia.Text;
+
+
+            try
+            {
+                pgComando.ExecuteNonQuery();
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La contraseña fue modificada!", Utilidades.BotonesDialogo.Ok);
+                popupCambiarContrasenia.HidePopup();
+                this.BringToFront();
+                txtContrasenia.Focus();
+
+            }
+            catch (Exception Exc)
+            {
+                pgComando.Dispose();
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatos");
+
+            }
+        }
+    
+
         private void TxtContrasenia_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 CmdAcceder_Click(sender, new EventArgs());
             }
+        }
+
+        private void PicCerrar_Click(object sender, EventArgs e)
+        {
+            popupCambiarContrasenia.HidePopup();
+            this.BringToFront();
+        }
+
+        private void CmdGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtNuevaContrasenia.Text == txtConfirmacionContrasenia.Text)
+            {
+                ResetearContrasenia();
+            }
+            else
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Las contraseñas no coinciden!", Utilidades.BotonesDialogo.Ok);               
+            }
+
+            
         }
     }
 }

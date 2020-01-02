@@ -212,13 +212,8 @@ namespace Coordinadores_de_Edad.Controles
 
         }
 
-
-        private void PnlEncabezadoCoordinadoresEdad_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         #endregion
 
+      
     }
 }

@@ -73,7 +73,7 @@ namespace Coordinadores_de_Edad.Controles
                 while (pgDr.Read())
                 {
                     ctlItemDiaTrabajo v_item_dia = new ctlItemDiaTrabajo();
-                    v_item_dia.ConstruirControl(pgDr.GetString("dia"));
+                    v_item_dia.ConstruirControl(pgDr.GetString("dia"), pgDr.GetString("dia_semana"));
                     v_item_dia.OnSeleccionaDia += v_item_dia_selecciona_dia;
 
                     TileDias.Controls.Add(v_item_dia);
@@ -121,7 +121,7 @@ namespace Coordinadores_de_Edad.Controles
                 while (pgDr.Read())
                 {
                     ctlItemDiaTrabajo v_item_dia = new ctlItemDiaTrabajo();
-                    v_item_dia.ConstruirControl(pgDr.GetString("dia_trimestre"));
+                    v_item_dia.ConstruirControl(pgDr.GetString("dia_trimestre"), pgDr.GetString("dia_semana"));
                     v_item_dia.OnSeleccionaDia += v_item_dia_selecciona_dia;
 
                     TileDias.Controls.Add(v_item_dia);

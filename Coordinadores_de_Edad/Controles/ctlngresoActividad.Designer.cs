@@ -164,6 +164,7 @@
             this.cmdGuardarPlanificacion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.cmdGuardarPlanificacion.Size = new System.Drawing.Size(94, 96);
             this.cmdGuardarPlanificacion.TabIndex = 32;
+           
             this.cmdGuardarPlanificacion.Click += new System.EventHandler(this.CmdGuardarPlanificacion_Click);
             // 
             // ctlngresoActividad
