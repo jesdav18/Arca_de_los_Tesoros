@@ -515,9 +515,9 @@ namespace Core.Controles
         {
             UserCredential credential;
 
-            using (var stream = new FileStream(@"C:\Users\Homero\Downloads\credentials.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(@"C:\credentials.json", FileMode.Open, FileAccess.Read))
             {
-                string credPath = @"C:\Users\Homero\Downloads";
+                string credPath = @"C:\";
 
                 credPath = Path.Combine(credPath, ".credentials/drive-dotnet-quickstart.json");
 
@@ -806,16 +806,6 @@ namespace Core.Controles
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "CargarDatosPaises");
 
             }
-        }
-
-        private void ActualizarDatos()
-        {
-            if (Pro_Conexion.State != ConnectionState.Open)
-            {
-                Pro_Conexion.Open();
-            }
-
-            string sql = @"SELECT * FROM arca_tesoros.ft_mant_actualizar_datos_ficha_ingreso(:p_id_colaborador)";
         }
 
         private void ParidacionDatos()

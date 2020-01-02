@@ -346,9 +346,9 @@ namespace Coordinadores_de_Edad.Controles
         {
             UserCredential credential;
 
-            using (var stream = new FileStream(@"C:\Users\Homero\Downloads\credentials.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(@"C:\credentials.json", FileMode.Open, FileAccess.Read))
             {
-                string credPath = @"C:\Users\Homero\Downloads";
+                string credPath = @"C:\";
 
                 credPath = Path.Combine(credPath, ".credentials/drive-dotnet-quickstart.json");
 
