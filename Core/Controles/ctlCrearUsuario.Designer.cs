@@ -42,8 +42,6 @@
             this.cmdReeestablecerContrasenia = new DevExpress.XtraEditors.SimpleButton();
             this.glPerfilUsuario = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gvPaises = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid_pais = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombre_pais = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.lblEtiquetaUsuario = new DevExpress.XtraEditors.LabelControl();
@@ -51,6 +49,8 @@
             this.cmdReestablecerContrasenia = new DevExpress.XtraEditors.SimpleButton();
             this.txtContraseniaTemporal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_cargo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCargos)).BeginInit();
@@ -160,13 +160,13 @@
             // 
             // PageCreacionUsuario
             // 
-            this.PageCreacionUsuario.Caption = "PageCreacionUsuario";
             this.PageCreacionUsuario.Controls.Add(this.cmdGuardarUsuario);
             this.PageCreacionUsuario.Controls.Add(this.cmdReeestablecerContrasenia);
             this.PageCreacionUsuario.Controls.Add(this.glPerfilUsuario);
             this.PageCreacionUsuario.Controls.Add(this.labelControl1);
             this.PageCreacionUsuario.Controls.Add(this.txtUsuario);
             this.PageCreacionUsuario.Controls.Add(this.lblEtiquetaUsuario);
+            this.PageCreacionUsuario.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PageCreacionUsuario.Name = "PageCreacionUsuario";
             this.PageCreacionUsuario.Size = new System.Drawing.Size(706, 292);
             // 
@@ -217,35 +217,19 @@
             // 
             // gvPaises
             // 
+            this.gvPaises.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvPaises.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvPaises.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvPaises.Appearance.Row.Options.UseFont = true;
             this.gvPaises.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid_pais,
-            this.colnombre_pais});
+            this.coldescripcion,
+            this.colid_cargo});
             this.gvPaises.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gvPaises.Name = "gvPaises";
             this.gvPaises.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gvPaises.OptionsView.ShowColumnHeaders = false;
             this.gvPaises.OptionsView.ShowGroupPanel = false;
             this.gvPaises.OptionsView.ShowIndicator = false;
-            // 
-            // colid_pais
-            // 
-            this.colid_pais.FieldName = "id_pais";
-            this.colid_pais.Name = "colid_pais";
-            this.colid_pais.OptionsColumn.AllowEdit = false;
-            this.colid_pais.OptionsColumn.AllowFocus = false;
-            this.colid_pais.Visible = true;
-            this.colid_pais.VisibleIndex = 1;
-            // 
-            // colnombre_pais
-            // 
-            this.colnombre_pais.FieldName = "nombre_pais";
-            this.colnombre_pais.Name = "colnombre_pais";
-            this.colnombre_pais.OptionsColumn.AllowEdit = false;
-            this.colnombre_pais.OptionsColumn.AllowFocus = false;
-            this.colnombre_pais.Visible = true;
-            this.colnombre_pais.VisibleIndex = 0;
             // 
             // labelControl1
             // 
@@ -338,6 +322,26 @@
             this.labelControl3.TabIndex = 51;
             this.labelControl3.Text = "Contraseña Temporal:";
             // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Perfil";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.OptionsColumn.AllowFocus = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 0;
+            // 
+            // colid_cargo
+            // 
+            this.colid_cargo.Caption = "ID Perfil";
+            this.colid_cargo.FieldName = "id_cargo";
+            this.colid_cargo.Name = "colid_cargo";
+            this.colid_cargo.OptionsColumn.AllowEdit = false;
+            this.colid_cargo.OptionsColumn.AllowFocus = false;
+            this.colid_cargo.Visible = true;
+            this.colid_cargo.VisibleIndex = 1;
+            // 
             // ctlCrearUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,8 +385,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdGuardarUsuario;
         private DevExpress.XtraEditors.GridLookUpEdit glPerfilUsuario;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPaises;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_pais;
-        private DevExpress.XtraGrid.Columns.GridColumn colnombre_pais;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtUsuario;
         private DevExpress.XtraEditors.LabelControl lblEtiquetaUsuario;
@@ -390,5 +392,7 @@
         private DevExpress.XtraEditors.TextEdit txtContraseniaTemporal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton cmdReestablecerContrasenia;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_cargo;
     }
 }

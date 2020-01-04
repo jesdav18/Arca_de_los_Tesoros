@@ -26,6 +26,7 @@ namespace Coordinadores_de_Edad.Controles
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
         public int Pro_ID_Actividad { get; set; }
+        public int Pro_ID_AreaAtencion { get; set; }
 
         #endregion
 
@@ -38,11 +39,14 @@ namespace Coordinadores_de_Edad.Controles
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                       string pUsuario,
-                                      int pActividad)
+                                      int pActividad,
+                                      int pID_AreaAtencion)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
             Pro_ID_Actividad = pActividad;
+            Pro_ID_AreaAtencion = pID_AreaAtencion;
+
 
             dateFechaAsistencia.EditValue = Utilidades.ObtenerFechaServidor(Pro_Conexion);
 
@@ -84,14 +88,25 @@ namespace Coordinadores_de_Edad.Controles
 
             }
 
-            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_lista_asistencia_historico (:p_fecha)";
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_lista_asistencia_historico (:p_fecha,
+                                                                                                :p_id_area_atencion)";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_fecha", PgSqlType.Date).Value = dateFechaAsistencia.EditValue;
+            pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = Pro_ID_AreaAtencion;
+
+
 
             try
             {
                 dsCoordinadoresEdad1.dtListaAsistenciaHistorico.Clear();
                 new PgSqlDataAdapter(pgComando).Fill(dsCoordinadoresEdad1.dtListaAsistenciaHistorico);
+
+                if (dsCoordinadoresEdad1.dtListaAsistenciaHistorico.Count == 0)
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡No se encontraron registros para esta fecha!", Utilidades.BotonesDialogo.Ok);
+                }
+
+
 
                 CargarImagenesEstadoAsistencia();
             }
@@ -196,7 +211,7 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
-        private void CmdVerHistorico_Click(object sender, EventArgs e)
+        public void CmdVerHistorico_Click(object sender, EventArgs e)
         {
             lblEncabezado.Text = "Buscar listado de asistencias";
             navigationFrame1.SelectedPage = pageHistoricoAsistencia;

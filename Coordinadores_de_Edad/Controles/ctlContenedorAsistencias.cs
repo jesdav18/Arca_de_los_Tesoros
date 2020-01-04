@@ -42,7 +42,8 @@ namespace Coordinadores_de_Edad.Controles
                 NavegacionAsistencias.SelectedPage = PageListaAsistencia;
                 ctlListaAsistencia1.ConstruirControl(Pro_Conexion,
                                                      Pro_Usuario,
-                                                     Pro_ID_Actividad);
+                                                     Pro_ID_Actividad,
+                                                     Pro_ID_Area_Atencion);
             }
         }
 
@@ -105,9 +106,18 @@ namespace Coordinadores_de_Edad.Controles
         public int Pro_ID_Area_Atencion { get; set; }
         public int Pro_ID_Actividad { get; set; }
 
+
+
         #endregion
 
-
-
+        private void CmdVerHistorico_Click(object sender, EventArgs e)
+        {
+            
+            ctlListaAsistencia1.CmdVerHistorico_Click(sender, e);
+            ctlListaAsistencia1.Pro_Conexion = Pro_Conexion;
+            ctlListaAsistencia1.Pro_ID_AreaAtencion = Pro_ID_Area_Atencion;
+            ctlListaAsistencia1.picAtras.Visible = false;
+            NavegacionAsistencias.SelectedPage = PageListaAsistencia;
+        }
     }
 }

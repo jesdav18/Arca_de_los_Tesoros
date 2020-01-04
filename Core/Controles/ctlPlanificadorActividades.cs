@@ -270,12 +270,15 @@ namespace Core.Controles
         {
             NavegacionPrincipal.SelectedPage = PageVistaCitas;
 
-            CargarDatosCitasActividadesPorFecha();
 
             lblSubtitulo.Text = "Crear cita para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.Date.ToShortDateString();
             ltlTituloCitas.Text = "Citas Programadas para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.Date.ToShortDateString();
             ProFechaSeleccionada = schedulerControl1.ActiveView.SelectedInterval.Start;
             timeHoraInicio.Time = timeHoraFin.Time = ProFechaSeleccionada;
+
+            CargarDatosCitasActividadesPorFecha();
+
+
         }
 
         private void PicIrAtras_Click(object sender, EventArgs e)

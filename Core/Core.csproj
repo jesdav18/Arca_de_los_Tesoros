@@ -137,12 +137,6 @@
     <Compile Include="Controles\ctlIndicadores.Designer.cs">
       <DependentUpon>ctlIndicadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controles\ctlIngresoAsistencia.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controles\ctlIngresoAsistencia.Designer.cs">
-      <DependentUpon>ctlIngresoAsistencia.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controles\ctlIngresoFicha.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -298,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlIndicadores.resx">
       <DependentUpon>ctlIndicadores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controles\ctlIngresoAsistencia.resx">
-      <DependentUpon>ctlIngresoAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlIngresoFicha.resx">
       <DependentUpon>ctlIngresoFicha.cs</DependentUpon>

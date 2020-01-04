@@ -53,11 +53,13 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
+        public DateTime Pro_FechaActividad { get; set; }
+
         #endregion
 
         #region FUNCIONES
 
-       
+
         public void ConstruirControl(PgSqlConnection pConexion, 
                                       string pUsuario, 
                                       string pFecha,
@@ -72,7 +74,9 @@ namespace Coordinadores_de_Edad.Controles
             Pro_MostrarEncabezadoPrincipal = pMostrarEncabezadoPrincipal;
             Pro_ID_Actividad = pID_Actividad;
 
+            CargarDatosActividad();
             CargarDatos();
+            
         }
 
         private void CargarDatos()
@@ -98,6 +102,40 @@ namespace Coordinadores_de_Edad.Controles
             catch (Exception Exc)
             {
                 MessageBox.Show(Exc.Message);
+            }
+        }
+
+        private void CargarDatosActividad()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_datos_actividades (
+                                                                                          :p_id_actividad
+                                                                                        )";
+
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
+
+            try
+            {
+                PgSqlDataReader pgDR = pgComando.ExecuteReader();
+                if (pgDR.Read())
+                {
+                    Pro_FechaActividad = pgDR.GetDateTime("fecha");
+                }
+
+                pgDR.Close();
+
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosActividad");
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Algo salió mal mientras se obtenian los datos de la actividad!", Utilidades.BotonesDialogo.Ok);
+
             }
         }
 
@@ -168,9 +206,27 @@ namespace Coordinadores_de_Edad.Controles
        
         private void ChkSeleccionar_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
+            if (Utilidades.ObtenerHoraServidor(Pro_Conexion) .Date > Pro_FechaActividad)
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La fecha de la actividad ya finalizó!", Utilidades.BotonesDialogo.Ok);
+                e.Cancel = true;
+                return;
+            }
+
+
             dsCoordinadoresEdad.dtMaestrosDisponiblesRow v_fila = (dsCoordinadoresEdad.dtMaestrosDisponiblesRow)gvMestrosDisponibles.GetFocusedDataRow();
             if (v_fila != null)
             {
+
+                if (v_fila.vino_ultima_actividad)
+                {
+                    if (Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", v_fila.nombre + " colaboró en la última actividad, realizada en la fecha " + v_fila.fecha_ultima_actividad + ". ¿Desea siempre registrarlo en la lista de asistencia?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+                }
+
                 if (Pro_MostrarEncabezadoPrincipal)
                 {
                     if (GuardarEnListaAsistencia(v_fila.id_colaborador, !v_fila.esta_en_lista))

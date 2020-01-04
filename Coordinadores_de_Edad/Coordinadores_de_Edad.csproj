@@ -319,5 +319,23 @@
   <ItemGroup>
     <None Include="Resources\icon_atras_64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch%283%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

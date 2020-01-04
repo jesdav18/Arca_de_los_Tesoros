@@ -146,10 +146,10 @@
             // 
             this.pnlCerrarSesion.Controls.Add(this.cmdCerrarSesion);
             this.pnlCerrarSesion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCerrarSesion.Location = new System.Drawing.Point(858, 0);
+            this.pnlCerrarSesion.Location = new System.Drawing.Point(633, 0);
             this.pnlCerrarSesion.Name = "pnlCerrarSesion";
             this.pnlCerrarSesion.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlCerrarSesion.Size = new System.Drawing.Size(143, 124);
+            this.pnlCerrarSesion.Size = new System.Drawing.Size(94, 124);
             this.pnlCerrarSesion.TabIndex = 5;
             this.pnlCerrarSesion.Click += new System.EventHandler(this.PnlCerrarSesion_Click);
             // 
@@ -159,11 +159,14 @@
             this.cmdCerrarSesion.EditValue = global::Diacono.Properties.Resources.icon_cerrar_sesion_64;
             this.cmdCerrarSesion.Location = new System.Drawing.Point(5, 5);
             this.cmdCerrarSesion.Name = "cmdCerrarSesion";
+            this.cmdCerrarSesion.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdCerrarSesion.Properties.AllowFocused = false;
+            this.cmdCerrarSesion.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdCerrarSesion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdCerrarSesion.Properties.NullText = "   ";
             this.cmdCerrarSesion.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdCerrarSesion.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdCerrarSesion.Size = new System.Drawing.Size(133, 114);
+            this.cmdCerrarSesion.Size = new System.Drawing.Size(84, 114);
             this.cmdCerrarSesion.TabIndex = 1;
             this.cmdCerrarSesion.ToolTip = "Cerrar Sesión\r\n";
             this.cmdCerrarSesion.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -175,10 +178,10 @@
             // 
             this.pnlBusqueda.Controls.Add(this.cmdBusqueda);
             this.pnlBusqueda.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlBusqueda.Location = new System.Drawing.Point(715, 0);
+            this.pnlBusqueda.Location = new System.Drawing.Point(543, 0);
             this.pnlBusqueda.Name = "pnlBusqueda";
             this.pnlBusqueda.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlBusqueda.Size = new System.Drawing.Size(143, 124);
+            this.pnlBusqueda.Size = new System.Drawing.Size(90, 124);
             this.pnlBusqueda.TabIndex = 4;
             this.pnlBusqueda.Click += new System.EventHandler(this.PnlBusqueda_Click);
             // 
@@ -188,11 +191,14 @@
             this.cmdBusqueda.EditValue = global::Diacono.Properties.Resources.iconBusqueda;
             this.cmdBusqueda.Location = new System.Drawing.Point(5, 5);
             this.cmdBusqueda.Name = "cmdBusqueda";
+            this.cmdBusqueda.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdBusqueda.Properties.AllowFocused = false;
+            this.cmdBusqueda.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdBusqueda.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdBusqueda.Properties.NullText = "   ";
             this.cmdBusqueda.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdBusqueda.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdBusqueda.Size = new System.Drawing.Size(133, 114);
+            this.cmdBusqueda.Size = new System.Drawing.Size(80, 114);
             this.cmdBusqueda.TabIndex = 1;
             this.cmdBusqueda.ToolTip = "Búsqueda";
             this.cmdBusqueda.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -204,10 +210,10 @@
             // 
             this.pnlAgregarFicha.Controls.Add(this.cmdCrearFichaIngreso);
             this.pnlAgregarFicha.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAgregarFicha.Location = new System.Drawing.Point(572, 0);
+            this.pnlAgregarFicha.Location = new System.Drawing.Point(453, 0);
             this.pnlAgregarFicha.Name = "pnlAgregarFicha";
             this.pnlAgregarFicha.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlAgregarFicha.Size = new System.Drawing.Size(143, 124);
+            this.pnlAgregarFicha.Size = new System.Drawing.Size(90, 124);
             this.pnlAgregarFicha.TabIndex = 6;
             this.pnlAgregarFicha.Click += new System.EventHandler(this.PnlAgregarFicha_Click);
             // 
@@ -217,11 +223,14 @@
             this.cmdCrearFichaIngreso.EditValue = global::Diacono.Properties.Resources.icon_nuevo_usuario_negro_64;
             this.cmdCrearFichaIngreso.Location = new System.Drawing.Point(5, 5);
             this.cmdCrearFichaIngreso.Name = "cmdCrearFichaIngreso";
+            this.cmdCrearFichaIngreso.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdCrearFichaIngreso.Properties.AllowFocused = false;
+            this.cmdCrearFichaIngreso.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdCrearFichaIngreso.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdCrearFichaIngreso.Properties.NullText = "   ";
             this.cmdCrearFichaIngreso.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdCrearFichaIngreso.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdCrearFichaIngreso.Size = new System.Drawing.Size(133, 114);
+            this.cmdCrearFichaIngreso.Size = new System.Drawing.Size(80, 114);
             this.cmdCrearFichaIngreso.TabIndex = 1;
             this.cmdCrearFichaIngreso.ToolTip = "Cerrar Sesión\r\n";
             this.cmdCrearFichaIngreso.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -233,10 +242,10 @@
             // 
             this.pnlMiEquipo.Controls.Add(this.cmdMiEquipo);
             this.pnlMiEquipo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMiEquipo.Location = new System.Drawing.Point(429, 0);
+            this.pnlMiEquipo.Location = new System.Drawing.Point(366, 0);
             this.pnlMiEquipo.Name = "pnlMiEquipo";
             this.pnlMiEquipo.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlMiEquipo.Size = new System.Drawing.Size(143, 124);
+            this.pnlMiEquipo.Size = new System.Drawing.Size(87, 124);
             this.pnlMiEquipo.TabIndex = 3;
             this.pnlMiEquipo.Click += new System.EventHandler(this.PnlMiEquipo_Click);
             // 
@@ -246,11 +255,14 @@
             this.cmdMiEquipo.EditValue = global::Diacono.Properties.Resources.icon_equipo;
             this.cmdMiEquipo.Location = new System.Drawing.Point(5, 5);
             this.cmdMiEquipo.Name = "cmdMiEquipo";
+            this.cmdMiEquipo.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdMiEquipo.Properties.AllowFocused = false;
+            this.cmdMiEquipo.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdMiEquipo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdMiEquipo.Properties.NullText = "   ";
             this.cmdMiEquipo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdMiEquipo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdMiEquipo.Size = new System.Drawing.Size(133, 114);
+            this.cmdMiEquipo.Size = new System.Drawing.Size(77, 114);
             this.cmdMiEquipo.TabIndex = 1;
             this.cmdMiEquipo.ToolTip = "Mi Equipo ";
             this.cmdMiEquipo.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -262,10 +274,10 @@
             // 
             this.pnlOrganizador.Controls.Add(this.cmdOrganizador);
             this.pnlOrganizador.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlOrganizador.Location = new System.Drawing.Point(286, 0);
+            this.pnlOrganizador.Location = new System.Drawing.Point(260, 0);
             this.pnlOrganizador.Name = "pnlOrganizador";
             this.pnlOrganizador.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlOrganizador.Size = new System.Drawing.Size(143, 124);
+            this.pnlOrganizador.Size = new System.Drawing.Size(106, 124);
             this.pnlOrganizador.TabIndex = 2;
             this.pnlOrganizador.Click += new System.EventHandler(this.PnlOrganizador_Click);
             // 
@@ -275,11 +287,14 @@
             this.cmdOrganizador.EditValue = global::Diacono.Properties.Resources.icon_calendario_64;
             this.cmdOrganizador.Location = new System.Drawing.Point(5, 5);
             this.cmdOrganizador.Name = "cmdOrganizador";
+            this.cmdOrganizador.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdOrganizador.Properties.AllowFocused = false;
+            this.cmdOrganizador.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdOrganizador.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdOrganizador.Properties.NullText = "   ";
             this.cmdOrganizador.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdOrganizador.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdOrganizador.Size = new System.Drawing.Size(133, 114);
+            this.cmdOrganizador.Size = new System.Drawing.Size(96, 114);
             this.cmdOrganizador.TabIndex = 1;
             this.cmdOrganizador.ToolTip = "Organizador";
             this.cmdOrganizador.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -292,17 +307,17 @@
             this.pnlCumpleanios.Controls.Add(this.fusibleCumpleanios);
             this.pnlCumpleanios.Controls.Add(this.cmdCumpleanieros);
             this.pnlCumpleanios.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCumpleanios.Location = new System.Drawing.Point(143, 0);
+            this.pnlCumpleanios.Location = new System.Drawing.Point(137, 0);
             this.pnlCumpleanios.Name = "pnlCumpleanios";
             this.pnlCumpleanios.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlCumpleanios.Size = new System.Drawing.Size(143, 124);
+            this.pnlCumpleanios.Size = new System.Drawing.Size(123, 124);
             this.pnlCumpleanios.TabIndex = 1;
             this.pnlCumpleanios.Click += new System.EventHandler(this.PnlCumpleanios_Click);
             // 
             // fusibleCumpleanios
             // 
             this.fusibleCumpleanios.BackColor = System.Drawing.Color.Transparent;
-            this.fusibleCumpleanios.Location = new System.Drawing.Point(56, 48);
+            this.fusibleCumpleanios.Location = new System.Drawing.Point(40, 59);
             this.fusibleCumpleanios.MaximumSize = new System.Drawing.Size(62, 57);
             this.fusibleCumpleanios.MinimumSize = new System.Drawing.Size(62, 57);
             this.fusibleCumpleanios.Name = "fusibleCumpleanios";
@@ -319,12 +334,15 @@
             this.cmdCumpleanieros.EditValue = global::Diacono.Properties.Resources.icon_Cumpleanieros;
             this.cmdCumpleanieros.Location = new System.Drawing.Point(5, 5);
             this.cmdCumpleanieros.Name = "cmdCumpleanieros";
+            this.cmdCumpleanieros.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdCumpleanieros.Properties.AllowFocused = false;
+            this.cmdCumpleanieros.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdCumpleanieros.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdCumpleanieros.Properties.NullText = "   ";
             this.cmdCumpleanieros.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdCumpleanieros.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdCumpleanieros.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdCumpleanieros.Size = new System.Drawing.Size(133, 114);
+            this.cmdCumpleanieros.Size = new System.Drawing.Size(113, 114);
             this.cmdCumpleanieros.TabIndex = 1;
             this.cmdCumpleanieros.ToolTip = "Cumpleañeros";
             this.cmdCumpleanieros.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -340,14 +358,14 @@
             this.pnlSolicitudes.Location = new System.Drawing.Point(0, 0);
             this.pnlSolicitudes.Name = "pnlSolicitudes";
             this.pnlSolicitudes.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSolicitudes.Size = new System.Drawing.Size(143, 124);
+            this.pnlSolicitudes.Size = new System.Drawing.Size(137, 124);
             this.pnlSolicitudes.TabIndex = 0;
             this.pnlSolicitudes.Click += new System.EventHandler(this.PnlSolicitudes_Click);
             // 
             // fusibleSolicitudes
             // 
             this.fusibleSolicitudes.BackColor = System.Drawing.Color.Transparent;
-            this.fusibleSolicitudes.Location = new System.Drawing.Point(60, 48);
+            this.fusibleSolicitudes.Location = new System.Drawing.Point(47, 59);
             this.fusibleSolicitudes.MaximumSize = new System.Drawing.Size(62, 57);
             this.fusibleSolicitudes.MinimumSize = new System.Drawing.Size(62, 57);
             this.fusibleSolicitudes.Name = "fusibleSolicitudes";
@@ -364,12 +382,15 @@
             this.cmdSolicitudes.EditValue = global::Diacono.Properties.Resources.icon_Solicitudes;
             this.cmdSolicitudes.Location = new System.Drawing.Point(5, 5);
             this.cmdSolicitudes.Name = "cmdSolicitudes";
+            this.cmdSolicitudes.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdSolicitudes.Properties.AllowFocused = false;
+            this.cmdSolicitudes.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdSolicitudes.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdSolicitudes.Properties.NullText = "   ";
             this.cmdSolicitudes.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdSolicitudes.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdSolicitudes.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdSolicitudes.Size = new System.Drawing.Size(133, 114);
+            this.cmdSolicitudes.Size = new System.Drawing.Size(127, 114);
             this.cmdSolicitudes.TabIndex = 1;
             this.cmdSolicitudes.ToolTip = "Solicitudes";
             this.cmdSolicitudes.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -483,6 +504,8 @@
             this.pictureEdit6.EditValue = global::Diacono.Properties.Resources._62218400_2421805074506489_798898671931359232_n;
             this.pictureEdit6.Location = new System.Drawing.Point(0, 0);
             this.pictureEdit6.Name = "pictureEdit6";
+            this.pictureEdit6.Properties.AllowFocused = false;
+            this.pictureEdit6.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.pictureEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit6.Properties.NullText = "   ";
             this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;

@@ -25,6 +25,7 @@ namespace Coordinadores_de_Edad.Controles
         public int Pro_NumeroTrimestre { get; set; }
         public int Pro_ID_Area_Atencion { get; set; }
         public int Pro_ID_Actividad_Generado { get; set; }
+        public DateTime Pro_FechaActividad { get; set; }
 
         #endregion
 
@@ -191,17 +192,64 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
+        private void CargarDatosActividad()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_datos_actividades (
+                                                                                          :p_id_actividad
+                                                                                        )";
+
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad_Generado;
+
+            try
+            {
+                PgSqlDataReader pgDR = pgComando.ExecuteReader();
+                if (pgDR.Read())
+                {
+                    Pro_FechaActividad = pgDR.GetDateTime("fecha");
+                }
+
+                pgDR.Close();
+
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosActividad");
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Algo salió mal mientras se obtenian los datos de la actividad!", Utilidades.BotonesDialogo.Ok);
+
+            }
+        }
+
         #endregion
 
         #region EVENTOS CONTROLES
- 
+
         private void v_item_dia_selecciona_dia(object sender, EventArgs e)
         {
                    
             Pro_ID_Actividad_Generado = CreacionActividad((string)sender);
+            CargarDatosActividad();
+
+
             if (Pro_ID_Actividad_Generado != 0)
             {
-                OnSeleccionaDia?.Invoke(sender, e);
+              
+                if (Utilidades.ObtenerHoraServidor(Pro_Conexion).Date > Pro_FechaActividad)
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La fecha de la actividad ya finalizó!", Utilidades.BotonesDialogo.Ok);
+                }
+                else
+                {
+                    OnSeleccionaDia?.Invoke(sender, e);
+                }
+
+        
             }
 
         }

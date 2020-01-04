@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlListaAsistencia));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
@@ -137,6 +137,11 @@
             this.picAtras.EditValue = global::Coordinadores_de_Edad.Resources.icon_atras_64;
             this.picAtras.Location = new System.Drawing.Point(0, 0);
             this.picAtras.Name = "picAtras";
+            this.picAtras.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.AllowFocused = false;
+            this.picAtras.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picAtras.Properties.NullText = "   ";
             this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -149,15 +154,23 @@
             // cmdVerHistorico
             // 
             this.cmdVerHistorico.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cmdVerHistorico.EditValue = global::Coordinadores_de_Edad.Resources.icon_calendario_64;
+            this.cmdVerHistorico.EditValue = global::Coordinadores_de_Edad.Resources.iconBusqueda;
             this.cmdVerHistorico.Location = new System.Drawing.Point(1019, 0);
             this.cmdVerHistorico.Name = "cmdVerHistorico";
+            this.cmdVerHistorico.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdVerHistorico.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdVerHistorico.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdVerHistorico.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.cmdVerHistorico.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdVerHistorico.Properties.NullText = "   ";
             this.cmdVerHistorico.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdVerHistorico.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.cmdVerHistorico.Size = new System.Drawing.Size(49, 75);
             this.cmdVerHistorico.TabIndex = 33;
+            this.cmdVerHistorico.ToolTip = "Buscar en historial de asistencias";
+            this.cmdVerHistorico.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdVerHistorico.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdVerHistorico.ToolTipTitle = "Arca de los Tesoros";
             this.cmdVerHistorico.Click += new System.EventHandler(this.CmdVerHistorico_Click);
             // 
             // panel2
@@ -337,9 +350,9 @@
             // cmdAsistio
             // 
             this.cmdAsistio.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::Coordinadores_de_Edad.Resources.iconCheck_24;
+            editorButtonImageOptions3.Image = global::Coordinadores_de_Edad.Resources.iconCheck_24;
             this.cmdAsistio.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdAsistio.Name = "cmdAsistio";
             this.cmdAsistio.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdAsistio.Click += new System.EventHandler(this.CmdAsistio_Click);
@@ -347,9 +360,9 @@
             // cmdNoAsistio
             // 
             this.cmdNoAsistio.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::Coordinadores_de_Edad.Resources.iconMalo_24;
+            editorButtonImageOptions4.Image = global::Coordinadores_de_Edad.Resources.iconMalo_24;
             this.cmdNoAsistio.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdNoAsistio.Name = "cmdNoAsistio";
             this.cmdNoAsistio.NullText = " ";
             this.cmdNoAsistio.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -392,6 +405,7 @@
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(5, 5);
             this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.AllowFocused = false;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.NullText = "   ";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -541,6 +555,7 @@
             this.picCargar.EditValue = global::Coordinadores_de_Edad.Resources.iconBusqueda;
             this.picCargar.Location = new System.Drawing.Point(658, 30);
             this.picCargar.Name = "picCargar";
+            this.picCargar.Properties.AllowFocused = false;
             this.picCargar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picCargar.Properties.NullText = "   ";
             this.picCargar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -553,7 +568,7 @@
             // 
             this.dateFechaAsistencia.EditValue = null;
             this.dateFechaAsistencia.EnterMoveNextControl = true;
-            this.dateFechaAsistencia.Location = new System.Drawing.Point(333, 36);
+            this.dateFechaAsistencia.Location = new System.Drawing.Point(334, 34);
             this.dateFechaAsistencia.Name = "dateFechaAsistencia";
             this.dateFechaAsistencia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaAsistencia.Properties.Appearance.Options.UseFont = true;
@@ -572,9 +587,9 @@
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(71, 30);
+            this.labelControl2.Location = new System.Drawing.Point(23, 28);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(241, 45);
+            this.labelControl2.Size = new System.Drawing.Size(290, 45);
             this.labelControl2.TabIndex = 27;
             this.labelControl2.Text = "Fecha de Asistencia:";
             // 
@@ -650,7 +665,6 @@
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit dateFechaAsistencia;
-        private DevExpress.XtraEditors.PictureEdit picAtras;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gvAsistenciaHistorico;
         private System.Windows.Forms.Panel panel6;
@@ -661,5 +675,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colasistio;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit chkAsistio;
         private DevExpress.XtraGrid.Columns.GridColumn colcargo;
+        public DevExpress.XtraEditors.PictureEdit picAtras;
     }
 }

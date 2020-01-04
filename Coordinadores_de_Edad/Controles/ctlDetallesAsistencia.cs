@@ -47,11 +47,11 @@ namespace Coordinadores_de_Edad.Controles
                 v_carnet = value;
                 if (v_carnet)
                 {
-                    toggleCarnet.Image = Resources.iconToggleSi;
+                    toggleCarnet.Image = Resources.switch_2_;
                 }
                 else
                 {
-                    toggleCarnet.Image = Resources.iconToggleNo;
+                    toggleCarnet.Image = Resources.switch_3_;
                 }
             }
         }
@@ -67,11 +67,11 @@ namespace Coordinadores_de_Edad.Controles
 
                 if (v_uniforme)
                 {
-                    toggleUniforme.Image = Resources.iconToggleSi;
+                    toggleUniforme.Image = Resources.switch_2_;
                 }
                 else
                 {
-                    toggleUniforme.Image = Resources.iconToggleNo;
+                    toggleUniforme.Image = Resources.switch_3_;
                 }             
             }
         }
@@ -86,12 +86,12 @@ namespace Coordinadores_de_Edad.Controles
                 v_presente = value;
                 if (v_presente)
                 {
-                    picCaratulaAsistencia.Image = Resources.happy;
+                    picCaratulaAsistencia.Image = Resources.happy_1_;
                     NavegacionObservaciones.SelectedPage = page;
                 }
                 else
                 {
-                    picCaratulaAsistencia.Image = Resources.frown;
+                    picCaratulaAsistencia.Image = Resources.sad;
                     NavegacionObservaciones.SelectedPage = pageInasistencias;
                 }
             }

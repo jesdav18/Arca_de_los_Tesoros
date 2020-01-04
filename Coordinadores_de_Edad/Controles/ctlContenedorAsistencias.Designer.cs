@@ -37,12 +37,16 @@
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlCubrirAusencias1 = new Coordinadores_de_Edad.Controles.ctlCubrirAusencias();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmdVerHistorico = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionAsistencias)).BeginInit();
             this.NavegacionAsistencias.SuspendLayout();
             this.PageListaAsistencia.SuspendLayout();
             this.PageDetalleAsistencia.SuspendLayout();
             this.PageMensaje.SuspendLayout();
             this.navigationPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // NavegacionAsistencias
@@ -102,6 +106,7 @@
             this.ctlDetallesAsistencia1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlDetallesAsistencia1.Pro_Carnet = false;
             this.ctlDetallesAsistencia1.Pro_Conexion = null;
+            this.ctlDetallesAsistencia1.Pro_Credenciales = null;
             this.ctlDetallesAsistencia1.Pro_ID_Actividad = 0;
             this.ctlDetallesAsistencia1.Pro_ID_Colaborador = 0;
             this.ctlDetallesAsistencia1.Pro_Presente = false;
@@ -112,6 +117,7 @@
             // PageMensaje
             // 
             this.PageMensaje.Caption = "PageMensaje";
+            this.PageMensaje.Controls.Add(this.panel1);
             this.PageMensaje.Controls.Add(this.lblEncabezado);
             this.PageMensaje.Name = "PageMensaje";
             this.PageMensaje.Size = new System.Drawing.Size(1098, 852);
@@ -146,8 +152,38 @@
             this.ctlCubrirAusencias1.MinimumSize = new System.Drawing.Size(1078, 791);
             this.ctlCubrirAusencias1.Name = "ctlCubrirAusencias1";
             this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlCubrirAusencias1.Pro_ID_Colaborar_Actividad = 0;
+            this.ctlCubrirAusencias1.Pro_SeleccionaNoNecesitaCubrir = false;
+            this.ctlCubrirAusencias1.Pro_SeleccionaServidorEquipo = false;
             this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1098, 852);
             this.ctlCubrirAusencias1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cmdVerHistorico);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1098, 56);
+            this.panel1.TabIndex = 11;
+            // 
+            // cmdVerHistorico
+            // 
+            this.cmdVerHistorico.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdVerHistorico.EditValue = global::Coordinadores_de_Edad.Resources.iconBusqueda;
+            this.cmdVerHistorico.Location = new System.Drawing.Point(1049, 0);
+            this.cmdVerHistorico.Name = "cmdVerHistorico";
+            this.cmdVerHistorico.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdVerHistorico.Properties.NullText = "   ";
+            this.cmdVerHistorico.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdVerHistorico.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdVerHistorico.Size = new System.Drawing.Size(49, 56);
+            this.cmdVerHistorico.TabIndex = 34;
+            this.cmdVerHistorico.ToolTip = "Buscar en historial de asistencias";
+            this.cmdVerHistorico.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdVerHistorico.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdVerHistorico.ToolTipTitle = "Arca de los Tesoros";
+            this.cmdVerHistorico.Click += new System.EventHandler(this.CmdVerHistorico_Click);
             // 
             // ctlContenedorAsistencias
             // 
@@ -164,6 +200,8 @@
             this.PageDetalleAsistencia.ResumeLayout(false);
             this.PageMensaje.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -179,5 +217,7 @@
         private DevExpress.XtraEditors.LabelControl lblEncabezado;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private ctlCubrirAusencias ctlCubrirAusencias1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.PictureEdit cmdVerHistorico;
     }
 }

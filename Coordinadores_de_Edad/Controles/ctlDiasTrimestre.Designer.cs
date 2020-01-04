@@ -32,10 +32,10 @@
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblTituloEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.TileDias = new System.Windows.Forms.FlowLayoutPanel();
             this.toggleOrdinarias = new DevExpress.XtraEditors.ToggleSwitch();
             this.cmCrearActividadHoy = new DevExpress.XtraEditors.PictureEdit();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.TileDias = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlEncabezado.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleOrdinarias.Properties)).BeginInit();
@@ -84,22 +84,6 @@
             this.panel1.Size = new System.Drawing.Size(1075, 84);
             this.panel1.TabIndex = 15;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(5, 614);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1075, 115);
-            this.panel3.TabIndex = 16;
-            // 
-            // TileDias
-            // 
-            this.TileDias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TileDias.Location = new System.Drawing.Point(5, 174);
-            this.TileDias.Name = "TileDias";
-            this.TileDias.Size = new System.Drawing.Size(1075, 440);
-            this.TileDias.TabIndex = 17;
-            // 
             // toggleOrdinarias
             // 
             this.toggleOrdinarias.Dock = System.Windows.Forms.DockStyle.Left;
@@ -134,11 +118,27 @@
             this.cmCrearActividadHoy.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.cmCrearActividadHoy.Size = new System.Drawing.Size(48, 84);
             this.cmCrearActividadHoy.TabIndex = 21;
-            this.cmCrearActividadHoy.ToolTip = "Crear Actividad para hoy";
+            this.cmCrearActividadHoy.ToolTip = "Crear Actividad para el día de hoy";
             this.cmCrearActividadHoy.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
             this.cmCrearActividadHoy.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.cmCrearActividadHoy.ToolTipTitle = "Arca de los Tesoros";
             this.cmCrearActividadHoy.Click += new System.EventHandler(this.CmCrearActividadHoy_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(5, 614);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1075, 115);
+            this.panel3.TabIndex = 16;
+            // 
+            // TileDias
+            // 
+            this.TileDias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TileDias.Location = new System.Drawing.Point(5, 174);
+            this.TileDias.Name = "TileDias";
+            this.TileDias.Size = new System.Drawing.Size(1075, 440);
+            this.TileDias.TabIndex = 17;
             // 
             // ctlDiasTrimestre
             // 

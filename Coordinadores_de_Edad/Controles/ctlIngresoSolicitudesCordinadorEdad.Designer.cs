@@ -195,7 +195,7 @@
             this.glTipoSolicitud.Properties.DisplayMember = "descripcion";
             this.glTipoSolicitud.Properties.PopupView = this.gridLookUpEdit1View;
             this.glTipoSolicitud.Properties.ValueMember = "id_tipo_solicitud";
-            this.glTipoSolicitud.Size = new System.Drawing.Size(454, 38);
+            this.glTipoSolicitud.Size = new System.Drawing.Size(595, 38);
             this.glTipoSolicitud.TabIndex = 32;
             // 
             // bsTipoSolicitud

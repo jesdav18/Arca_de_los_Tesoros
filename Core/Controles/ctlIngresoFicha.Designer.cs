@@ -806,7 +806,7 @@
             this.labelControl42.Appearance.Options.UseFont = true;
             this.labelControl42.Appearance.Options.UseForeColor = true;
             this.labelControl42.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl42.Location = new System.Drawing.Point(71, 343);
+            this.labelControl42.Location = new System.Drawing.Point(34, 323);
             this.labelControl42.Name = "labelControl42";
             this.labelControl42.Size = new System.Drawing.Size(24, 34);
             this.labelControl42.TabIndex = 46;
@@ -814,18 +814,18 @@
             // 
             // memoDireccion
             // 
-            this.memoDireccion.Location = new System.Drawing.Point(71, 383);
+            this.memoDireccion.Location = new System.Drawing.Point(34, 363);
             this.memoDireccion.Name = "memoDireccion";
             this.memoDireccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoDireccion.Properties.Appearance.Options.UseFont = true;
-            this.memoDireccion.Size = new System.Drawing.Size(533, 162);
+            this.memoDireccion.Size = new System.Drawing.Size(450, 162);
             this.memoDireccion.TabIndex = 25;
             this.memoDireccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSegundoApellido_KeyDown);
             // 
             // txtTelefonoFijo
             // 
             this.txtTelefonoFijo.EnterMoveNextControl = true;
-            this.txtTelefonoFijo.Location = new System.Drawing.Point(71, 87);
+            this.txtTelefonoFijo.Location = new System.Drawing.Point(34, 67);
             this.txtTelefonoFijo.Name = "txtTelefonoFijo";
             this.txtTelefonoFijo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoFijo.Properties.Appearance.Options.UseFont = true;
@@ -836,7 +836,7 @@
             // txtCelular
             // 
             this.txtCelular.EnterMoveNextControl = true;
-            this.txtCelular.Location = new System.Drawing.Point(71, 180);
+            this.txtCelular.Location = new System.Drawing.Point(34, 160);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.Properties.Appearance.Options.UseFont = true;
@@ -852,9 +852,9 @@
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Location = new System.Drawing.Point(101, 332);
+            this.labelControl11.Location = new System.Drawing.Point(64, 312);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(503, 45);
+            this.labelControl11.Size = new System.Drawing.Size(409, 45);
             this.labelControl11.TabIndex = 45;
             this.labelControl11.Text = "Dirección";
             // 
@@ -866,7 +866,7 @@
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Location = new System.Drawing.Point(101, 224);
+            this.labelControl10.Location = new System.Drawing.Point(64, 204);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(136, 45);
             this.labelControl10.TabIndex = 44;
@@ -880,7 +880,7 @@
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl9.Location = new System.Drawing.Point(101, 131);
+            this.labelControl9.Location = new System.Drawing.Point(64, 111);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(136, 45);
             this.labelControl9.TabIndex = 43;
@@ -894,7 +894,7 @@
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(101, 36);
+            this.labelControl8.Location = new System.Drawing.Point(64, 16);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(136, 45);
             this.labelControl8.TabIndex = 42;
@@ -903,11 +903,11 @@
             // txtCorreoElectronico
             // 
             this.txtCorreoElectronico.EnterMoveNextControl = true;
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(71, 278);
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(34, 258);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoElectronico.Properties.Appearance.Options.UseFont = true;
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(533, 38);
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(439, 38);
             this.txtCorreoElectronico.TabIndex = 24;
             // 
             // Page4
@@ -933,7 +933,7 @@
             this.labelControl43.Appearance.Options.UseFont = true;
             this.labelControl43.Appearance.Options.UseForeColor = true;
             this.labelControl43.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl43.Location = new System.Drawing.Point(51, 43);
+            this.labelControl43.Location = new System.Drawing.Point(46, 29);
             this.labelControl43.Name = "labelControl43";
             this.labelControl43.Size = new System.Drawing.Size(19, 34);
             this.labelControl43.TabIndex = 48;
@@ -943,7 +943,7 @@
             // 
             this.panel13.Controls.Add(this.radioNecesitaTransporteSi);
             this.panel13.Controls.Add(this.radioNecesitaTransporteNo);
-            this.panel13.Location = new System.Drawing.Point(56, 344);
+            this.panel13.Location = new System.Drawing.Point(51, 330);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(285, 91);
             this.panel13.TabIndex = 30;
@@ -980,7 +980,7 @@
             // 
             this.panel12.Controls.Add(this.radioTipoFamiliaSoltero);
             this.panel12.Controls.Add(this.radioTipoMiembroFamilia);
-            this.panel12.Location = new System.Drawing.Point(56, 178);
+            this.panel12.Location = new System.Drawing.Point(51, 164);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(285, 109);
             this.panel12.TabIndex = 27;
@@ -1016,7 +1016,7 @@
             // glTipoSangre
             // 
             this.glTipoSangre.EditValue = "";
-            this.glTipoSangre.Location = new System.Drawing.Point(56, 504);
+            this.glTipoSangre.Location = new System.Drawing.Point(51, 490);
             this.glTipoSangre.Name = "glTipoSangre";
             this.glTipoSangre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glTipoSangre.Properties.Appearance.Options.UseFont = true;
@@ -1069,7 +1069,7 @@
             // 
             this.glEstadosCiviles.EditValue = "";
             this.glEstadosCiviles.EnterMoveNextControl = true;
-            this.glEstadosCiviles.Location = new System.Drawing.Point(56, 83);
+            this.glEstadosCiviles.Location = new System.Drawing.Point(51, 69);
             this.glEstadosCiviles.Name = "glEstadosCiviles";
             this.glEstadosCiviles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEstadosCiviles.Properties.Appearance.Options.UseFont = true;
@@ -1123,7 +1123,7 @@
             this.labelControl15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl15.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl15.Location = new System.Drawing.Point(76, 453);
+            this.labelControl15.Location = new System.Drawing.Point(71, 439);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(392, 45);
             this.labelControl15.TabIndex = 45;
@@ -1137,7 +1137,7 @@
             this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.Location = new System.Drawing.Point(75, 293);
+            this.labelControl14.Location = new System.Drawing.Point(70, 279);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(424, 45);
             this.labelControl14.TabIndex = 42;
@@ -1151,7 +1151,7 @@
             this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl13.Location = new System.Drawing.Point(76, 127);
+            this.labelControl13.Location = new System.Drawing.Point(71, 113);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(423, 45);
             this.labelControl13.TabIndex = 39;
@@ -1165,7 +1165,7 @@
             this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl12.Location = new System.Drawing.Point(76, 32);
+            this.labelControl12.Location = new System.Drawing.Point(71, 18);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(423, 45);
             this.labelControl12.TabIndex = 38;
@@ -1550,7 +1550,7 @@
             // 
             this.glStatusDoctrinal.EditValue = "";
             this.glStatusDoctrinal.EnterMoveNextControl = true;
-            this.glStatusDoctrinal.Location = new System.Drawing.Point(66, 104);
+            this.glStatusDoctrinal.Location = new System.Drawing.Point(33, 95);
             this.glStatusDoctrinal.Name = "glStatusDoctrinal";
             this.glStatusDoctrinal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glStatusDoctrinal.Properties.Appearance.Options.UseFont = true;
@@ -1603,7 +1603,7 @@
             // glArcaTesoros
             // 
             this.glArcaTesoros.EditValue = "";
-            this.glArcaTesoros.Location = new System.Drawing.Point(66, 478);
+            this.glArcaTesoros.Location = new System.Drawing.Point(33, 469);
             this.glArcaTesoros.Name = "glArcaTesoros";
             this.glArcaTesoros.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glArcaTesoros.Properties.Appearance.Options.UseFont = true;
@@ -1662,7 +1662,7 @@
             this.labelControl33.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl33.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl33.Location = new System.Drawing.Point(66, 427);
+            this.labelControl33.Location = new System.Drawing.Point(33, 418);
             this.labelControl33.Name = "labelControl33";
             this.labelControl33.Size = new System.Drawing.Size(462, 45);
             this.labelControl33.TabIndex = 61;
@@ -1672,7 +1672,7 @@
             // 
             this.panel10.Controls.Add(this.radioBautismoEspirituSi);
             this.panel10.Controls.Add(this.radioBautismoEspirituNo);
-            this.panel10.Location = new System.Drawing.Point(66, 218);
+            this.panel10.Location = new System.Drawing.Point(33, 209);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(309, 88);
             this.panel10.TabIndex = 41;
@@ -1709,7 +1709,7 @@
             // 
             this.glEquipoArcaTesoros.EditValue = "";
             this.glEquipoArcaTesoros.EnterMoveNextControl = true;
-            this.glEquipoArcaTesoros.Location = new System.Drawing.Point(66, 370);
+            this.glEquipoArcaTesoros.Location = new System.Drawing.Point(33, 361);
             this.glEquipoArcaTesoros.Name = "glEquipoArcaTesoros";
             this.glEquipoArcaTesoros.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glEquipoArcaTesoros.Properties.Appearance.Options.UseFont = true;
@@ -1757,7 +1757,7 @@
             this.labelControl26.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl26.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl26.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl26.Location = new System.Drawing.Point(66, 319);
+            this.labelControl26.Location = new System.Drawing.Point(33, 310);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(475, 45);
             this.labelControl26.TabIndex = 56;
@@ -1771,7 +1771,7 @@
             this.labelControl28.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl28.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl28.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl28.Location = new System.Drawing.Point(66, 167);
+            this.labelControl28.Location = new System.Drawing.Point(33, 158);
             this.labelControl28.Name = "labelControl28";
             this.labelControl28.Size = new System.Drawing.Size(278, 45);
             this.labelControl28.TabIndex = 49;
@@ -1785,7 +1785,7 @@
             this.labelControl27.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl27.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl27.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl27.Location = new System.Drawing.Point(66, 43);
+            this.labelControl27.Location = new System.Drawing.Point(33, 34);
             this.labelControl27.Name = "labelControl27";
             this.labelControl27.Size = new System.Drawing.Size(278, 45);
             this.labelControl27.TabIndex = 53;

@@ -15,13 +15,19 @@ namespace Coordinadores_de_Edad.Controles
         {
             InitializeComponent();          
             ctlDiasTrimestre1.OnSeleccionaDia += ctlDiasTrimestre1_OnSeleccionaDia;
-           
+
+            ctlngresoActividad1.OnIngresoActividad += ctlngresoActividad1_OnIngresoActividad;
+        }
+
+        private void ctlngresoActividad1_OnIngresoActividad(object sender, EventArgs e)
+        {
+            NavigationPrincipal.SelectedPage = PageTrimestres;
         }
 
         #endregion
 
         #region PROPIEDADES
-  
+
         public PgSqlConnection Pro_Conexion { get; set; }
         public string Pro_Usuario { get; set; }
         public string Pro_Anio { get; set; }
@@ -53,6 +59,8 @@ namespace Coordinadores_de_Edad.Controles
             pnlDesplazamiento.Visible = false;
            
         }
+
+
 
         private void IrAtras()
         {
@@ -89,11 +97,18 @@ namespace Coordinadores_de_Edad.Controles
             }   
             else if (NavigationPrincipal.SelectedPage == pageSeleccionAyuda)
             {
+               
                 NavigationPrincipal.SelectedPage = PageIngresoActividades;
                 ctlngresoActividad1.ConstruirControl(Pro_Conexion,
                                                      ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
                                                      v_dia_seleccionado,
                                                      Pro_Usuario);
+                if (Utilidades.ObtenerHoraServidor(Pro_Conexion).Date > ctlngresoActividad1.Pro_FechaActividad)
+                {
+                    NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
+                    Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La actividad ya fue finalizada!", Utilidades.BotonesDialogo.Ok);
+                    
+                }
             }         
         }
 

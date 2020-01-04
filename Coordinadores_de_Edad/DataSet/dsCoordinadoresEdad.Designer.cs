@@ -394,6 +394,10 @@ namespace Coordinadores_de_Edad.DataSet {
             
             private global::System.Data.DataColumn columnesta_en_lista;
             
+            private global::System.Data.DataColumn columnvino_ultima_actividad;
+            
+            private global::System.Data.DataColumn columnfecha_ultima_actividad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtMaestrosDisponiblesDataTable() {
@@ -469,6 +473,22 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn vino_ultima_actividadColumn {
+                get {
+                    return this.columnvino_ultima_actividad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ultima_actividadColumn {
+                get {
+                    return this.columnfecha_ultima_actividad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -504,14 +524,16 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtMaestrosDisponiblesRow AdddtMaestrosDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, bool seleccionar, bool esta_en_lista) {
+            public dtMaestrosDisponiblesRow AdddtMaestrosDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, bool seleccionar, bool esta_en_lista, bool vino_ultima_actividad, System.DateTime fecha_ultima_actividad) {
                 dtMaestrosDisponiblesRow rowdtMaestrosDisponiblesRow = ((dtMaestrosDisponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
                         nombre,
                         numero_identidad,
                         seleccionar,
-                        esta_en_lista};
+                        esta_en_lista,
+                        vino_ultima_actividad,
+                        fecha_ultima_actividad};
                 rowdtMaestrosDisponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtMaestrosDisponiblesRow);
                 return rowdtMaestrosDisponiblesRow;
@@ -539,6 +561,8 @@ namespace Coordinadores_de_Edad.DataSet {
                 this.columnnumero_identidad = base.Columns["numero_identidad"];
                 this.columnseleccionar = base.Columns["seleccionar"];
                 this.columnesta_en_lista = base.Columns["esta_en_lista"];
+                this.columnvino_ultima_actividad = base.Columns["vino_ultima_actividad"];
+                this.columnfecha_ultima_actividad = base.Columns["fecha_ultima_actividad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,6 +578,10 @@ namespace Coordinadores_de_Edad.DataSet {
                 base.Columns.Add(this.columnseleccionar);
                 this.columnesta_en_lista = new global::System.Data.DataColumn("esta_en_lista", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnesta_en_lista);
+                this.columnvino_ultima_actividad = new global::System.Data.DataColumn("vino_ultima_actividad", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvino_ultima_actividad);
+                this.columnfecha_ultima_actividad = new global::System.Data.DataColumn("fecha_ultima_actividad", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ultima_actividad);
                 this.columnseleccionar.DefaultValue = ((bool)(false));
             }
             
@@ -698,6 +726,10 @@ namespace Coordinadores_de_Edad.DataSet {
             
             private global::System.Data.DataColumn columnesta_en_lista;
             
+            private global::System.Data.DataColumn columnvino_ultima_actividad;
+            
+            private global::System.Data.DataColumn columnfecha_ultima_actividad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtAyudasDisponiblesDataTable() {
@@ -773,6 +805,22 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn vino_ultima_actividadColumn {
+                get {
+                    return this.columnvino_ultima_actividad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ultima_actividadColumn {
+                get {
+                    return this.columnfecha_ultima_actividad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -808,14 +856,16 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtAyudasDisponiblesRow AdddtAyudasDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, bool seleccionar, bool esta_en_lista) {
+            public dtAyudasDisponiblesRow AdddtAyudasDisponiblesRow(int id_colaborador, string nombre, string numero_identidad, bool seleccionar, bool esta_en_lista, bool vino_ultima_actividad, System.DateTime fecha_ultima_actividad) {
                 dtAyudasDisponiblesRow rowdtAyudasDisponiblesRow = ((dtAyudasDisponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_colaborador,
                         nombre,
                         numero_identidad,
                         seleccionar,
-                        esta_en_lista};
+                        esta_en_lista,
+                        vino_ultima_actividad,
+                        fecha_ultima_actividad};
                 rowdtAyudasDisponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtAyudasDisponiblesRow);
                 return rowdtAyudasDisponiblesRow;
@@ -843,6 +893,8 @@ namespace Coordinadores_de_Edad.DataSet {
                 this.columnnumero_identidad = base.Columns["numero_identidad"];
                 this.columnseleccionar = base.Columns["seleccionar"];
                 this.columnesta_en_lista = base.Columns["esta_en_lista"];
+                this.columnvino_ultima_actividad = base.Columns["vino_ultima_actividad"];
+                this.columnfecha_ultima_actividad = base.Columns["fecha_ultima_actividad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -858,6 +910,10 @@ namespace Coordinadores_de_Edad.DataSet {
                 base.Columns.Add(this.columnseleccionar);
                 this.columnesta_en_lista = new global::System.Data.DataColumn("esta_en_lista", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnesta_en_lista);
+                this.columnvino_ultima_actividad = new global::System.Data.DataColumn("vino_ultima_actividad", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvino_ultima_actividad);
+                this.columnfecha_ultima_actividad = new global::System.Data.DataColumn("fecha_ultima_actividad", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ultima_actividad);
                 this.columnseleccionar.DefaultValue = ((bool)(false));
             }
             
@@ -1733,6 +1789,40 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool vino_ultima_actividad {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledtMaestrosDisponibles.vino_ultima_actividadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'vino_ultima_actividad\' de la tabla \'dtMaestrosDisponibles" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMaestrosDisponibles.vino_ultima_actividadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_ultima_actividad {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledtMaestrosDisponibles.fecha_ultima_actividadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ultima_actividad\' de la tabla \'dtMaestrosDisponible" +
+                                "s\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMaestrosDisponibles.fecha_ultima_actividadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_colaboradorNull() {
                 return this.IsNull(this.tabledtMaestrosDisponibles.id_colaboradorColumn);
             }
@@ -1789,6 +1879,30 @@ namespace Coordinadores_de_Edad.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setesta_en_listaNull() {
                 this[this.tabledtMaestrosDisponibles.esta_en_listaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isvino_ultima_actividadNull() {
+                return this.IsNull(this.tabledtMaestrosDisponibles.vino_ultima_actividadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setvino_ultima_actividadNull() {
+                this[this.tabledtMaestrosDisponibles.vino_ultima_actividadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ultima_actividadNull() {
+                return this.IsNull(this.tabledtMaestrosDisponibles.fecha_ultima_actividadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ultima_actividadNull() {
+                this[this.tabledtMaestrosDisponibles.fecha_ultima_actividadColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1892,6 +2006,40 @@ namespace Coordinadores_de_Edad.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool vino_ultima_actividad {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledtAyudasDisponibles.vino_ultima_actividadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'vino_ultima_actividad\' de la tabla \'dtAyudasDisponibles\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtAyudasDisponibles.vino_ultima_actividadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_ultima_actividad {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledtAyudasDisponibles.fecha_ultima_actividadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ultima_actividad\' de la tabla \'dtAyudasDisponibles\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtAyudasDisponibles.fecha_ultima_actividadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_colaboradorNull() {
                 return this.IsNull(this.tabledtAyudasDisponibles.id_colaboradorColumn);
             }
@@ -1948,6 +2096,30 @@ namespace Coordinadores_de_Edad.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setesta_en_listaNull() {
                 this[this.tabledtAyudasDisponibles.esta_en_listaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isvino_ultima_actividadNull() {
+                return this.IsNull(this.tabledtAyudasDisponibles.vino_ultima_actividadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setvino_ultima_actividadNull() {
+                this[this.tabledtAyudasDisponibles.vino_ultima_actividadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ultima_actividadNull() {
+                return this.IsNull(this.tabledtAyudasDisponibles.fecha_ultima_actividadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ultima_actividadNull() {
+                this[this.tabledtAyudasDisponibles.fecha_ultima_actividadColumn] = global::System.Convert.DBNull;
             }
         }
         

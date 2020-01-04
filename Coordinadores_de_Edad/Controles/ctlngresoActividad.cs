@@ -23,6 +23,10 @@ namespace Coordinadores_de_Edad.Controles
         public int Pro_ID_Actividad { get; set; }
         public string Pro_Fecha { get; set; }
         public string Pro_Usuario { get; set; }
+        public DateTime Pro_FechaActividad { get; set; }
+
+        public event EventHandler OnIngresoActividad;
+
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                      int pID_Actividad, 
@@ -62,6 +66,7 @@ namespace Coordinadores_de_Edad.Controles
                     txtVersiculo.Text = pgDR.GetString("versiculo");
                     txtClase.Text = pgDR.GetString("clase");
                     memoTema.Text = pgDR.GetString("tema");
+                    Pro_FechaActividad = pgDR.GetDateTime("fecha");
                 }
 
                 pgDR.Close();
@@ -106,6 +111,7 @@ namespace Coordinadores_de_Edad.Controles
                 pgComando.Dispose();
 
                 Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Actividad Completada!", Utilidades.BotonesDialogo.Ok);
+                OnIngresoActividad?.Invoke(new object(), new EventArgs());
 
             }
             catch (Exception Exc)
@@ -149,9 +155,6 @@ namespace Coordinadores_de_Edad.Controles
             }          
         }
 
-        private void CmdGuardarPlanificacion_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

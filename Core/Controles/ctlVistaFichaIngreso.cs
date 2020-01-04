@@ -79,7 +79,7 @@ namespace Core.Controles
             if (Pro_Usuario.Pro_ID_RolUsuario == 4)
             {
                 PonerModoLectura();
-                cmdGuardar.Visible = false;
+               
             }
 
         }
@@ -432,34 +432,47 @@ namespace Core.Controles
 
         private void PrepararDescarga()
         {
-            Pro_Credenciales = GetCredentials();
 
-            var service = new DriveService(new BaseClientService.Initializer()
+            try
             {
-                HttpClientInitializer = Pro_Credenciales,
-                ApplicationName = "Carga_GoogleDrive",
-            });
+                Pro_Credenciales = GetCredentials();
 
-            DescargarImagen(service, v_ruta_fotografia);
-            var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
-            picColaborador.Image = (Bitmap)bmp.Clone();
-           
-
-            string pageToken = null;
-
-            do
-            {
-                ListFiles(service, ref pageToken);
-                if (!string.IsNullOrEmpty(v_ruta_fotografia))
+                var service = new DriveService(new BaseClientService.Initializer()
                 {
-                    pageToken = null;
-                }
+                    HttpClientInitializer = Pro_Credenciales,
+                    ApplicationName = "Carga_GoogleDrive",
+                });
 
-            } while (pageToken != null);
 
 
-            pageToken = null;
-            service = null;
+                DescargarImagen(service, v_ruta_fotografia);
+                var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
+                picColaborador.Image = (Bitmap)bmp.Clone();
+
+
+                string pageToken = null;
+
+                do
+                {
+                    ListFiles(service, ref pageToken);
+                    if (!string.IsNullOrEmpty(v_ruta_fotografia))
+                    {
+                        pageToken = null;
+                    }
+
+                } while (pageToken != null);
+
+
+                pageToken = null;
+                service = null;
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "PrepararDescarga");
+                MessageBox.Show(Exc.Message);
+            }
+
+            
            
         }
 
@@ -961,6 +974,10 @@ namespace Core.Controles
             txtTelefonoEmpresa.ReadOnly = true;
             txtEstadoProfesional.ReadOnly = true;
             txtNivelEducativo.ReadOnly = true;
+
+            cmdGuardar.Visible = false;
+            picCrearUsuario.Visible = false;
+            toggleHabilitar.Visible = false;
 
         }
 
