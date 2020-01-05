@@ -42,36 +42,38 @@
             this.pnlUsuario.Location = new System.Drawing.Point(10, 10);
             this.pnlUsuario.Name = "pnlUsuario";
             this.pnlUsuario.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlUsuario.Size = new System.Drawing.Size(0, 103);
+            this.pnlUsuario.Size = new System.Drawing.Size(0, 62);
             this.pnlUsuario.TabIndex = 0;
             // 
             // lblNombreUsuario
             // 
-            this.lblNombreUsuario.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.Appearance.Options.UseFont = true;
             this.lblNombreUsuario.Appearance.Options.UseTextOptions = true;
             this.lblNombreUsuario.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblNombreUsuario.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.lblNombreUsuario.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblNombreUsuario.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblNombreUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNombreUsuario.Location = new System.Drawing.Point(5, 5);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(0, 41);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(0, 31);
             this.lblNombreUsuario.TabIndex = 4;
             this.lblNombreUsuario.Text = "Diego Ramirez";
             // 
             // lblCargoUsuario
             // 
-            this.lblCargoUsuario.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargoUsuario.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCargoUsuario.Appearance.Options.UseFont = true;
             this.lblCargoUsuario.Appearance.Options.UseTextOptions = true;
             this.lblCargoUsuario.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCargoUsuario.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.lblCargoUsuario.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblCargoUsuario.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCargoUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblCargoUsuario.Location = new System.Drawing.Point(5, 46);
+            this.lblCargoUsuario.Location = new System.Drawing.Point(5, 36);
             this.lblCargoUsuario.Name = "lblCargoUsuario";
-            this.lblCargoUsuario.Size = new System.Drawing.Size(0, 52);
+            this.lblCargoUsuario.Size = new System.Drawing.Size(0, 21);
             this.lblCargoUsuario.TabIndex = 3;
             this.lblCargoUsuario.Text = "Coordinador de Edad";
             // 
@@ -81,11 +83,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnlUsuario);
-            this.MaximumSize = new System.Drawing.Size(0, 123);
-            this.MinimumSize = new System.Drawing.Size(0, 123);
+            this.MaximumSize = new System.Drawing.Size(0, 82);
+            this.MinimumSize = new System.Drawing.Size(0, 82);
             this.Name = "ctlEncabezado";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(0, 123);
+            this.Size = new System.Drawing.Size(0, 82);
             this.pnlUsuario.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -42,6 +42,8 @@
             this.cmdReeestablecerContrasenia = new DevExpress.XtraEditors.SimpleButton();
             this.glPerfilUsuario = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gvPaises = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_cargo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.lblEtiquetaUsuario = new DevExpress.XtraEditors.LabelControl();
@@ -49,8 +51,6 @@
             this.cmdReestablecerContrasenia = new DevExpress.XtraEditors.SimpleButton();
             this.txtContraseniaTemporal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_cargo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCargos)).BeginInit();
@@ -72,12 +72,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(706, 58);
+            this.pnlEncabezado.Size = new System.Drawing.Size(706, 52);
             this.pnlEncabezado.TabIndex = 0;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -86,7 +86,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(639, 58);
+            this.lblEncabezado.Size = new System.Drawing.Size(639, 52);
             this.lblEncabezado.TabIndex = 10;
             this.lblEncabezado.Text = "Informacion Usuario";
             // 
@@ -103,7 +103,7 @@
             this.picCerrar.Properties.NullText = " ";
             this.picCerrar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picCerrar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picCerrar.Size = new System.Drawing.Size(67, 58);
+            this.picCerrar.Size = new System.Drawing.Size(67, 52);
             this.picCerrar.TabIndex = 16;
             this.picCerrar.ToolTip = "Guardar Cambios\r\n";
             this.picCerrar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -115,15 +115,15 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 63);
+            this.panel2.Location = new System.Drawing.Point(5, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(706, 5);
+            this.panel2.Size = new System.Drawing.Size(706, 2);
             this.panel2.TabIndex = 15;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 68);
+            this.panel4.Location = new System.Drawing.Point(5, 59);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(706, 10);
             this.panel4.TabIndex = 19;
@@ -145,14 +145,14 @@
             this.NavegacionPrincipal.Controls.Add(this.PageCreacionUsuario);
             this.NavegacionPrincipal.Controls.Add(this.pageReestablecerContrasenia);
             this.NavegacionPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavegacionPrincipal.Location = new System.Drawing.Point(5, 78);
+            this.NavegacionPrincipal.Location = new System.Drawing.Point(5, 69);
             this.NavegacionPrincipal.LookAndFeel.UseDefaultLookAndFeel = false;
             this.NavegacionPrincipal.Name = "NavegacionPrincipal";
             this.NavegacionPrincipal.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageCreacionUsuario,
             this.pageReestablecerContrasenia});
             this.NavegacionPrincipal.SelectedPage = this.PageCreacionUsuario;
-            this.NavegacionPrincipal.Size = new System.Drawing.Size(706, 292);
+            this.NavegacionPrincipal.Size = new System.Drawing.Size(706, 301);
             this.NavegacionPrincipal.TabIndex = 20;
             this.NavegacionPrincipal.Text = "navigationFrame1";
             this.NavegacionPrincipal.TransitionAnimationProperties.FrameCount = 500;
@@ -160,6 +160,7 @@
             // 
             // PageCreacionUsuario
             // 
+            this.PageCreacionUsuario.Caption = "PageCreacionUsuario";
             this.PageCreacionUsuario.Controls.Add(this.cmdGuardarUsuario);
             this.PageCreacionUsuario.Controls.Add(this.cmdReeestablecerContrasenia);
             this.PageCreacionUsuario.Controls.Add(this.glPerfilUsuario);
@@ -168,7 +169,7 @@
             this.PageCreacionUsuario.Controls.Add(this.lblEtiquetaUsuario);
             this.PageCreacionUsuario.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PageCreacionUsuario.Name = "PageCreacionUsuario";
-            this.PageCreacionUsuario.Size = new System.Drawing.Size(706, 292);
+            this.PageCreacionUsuario.Size = new System.Drawing.Size(706, 301);
             // 
             // cmdGuardarUsuario
             // 
@@ -231,6 +232,26 @@
             this.gvPaises.OptionsView.ShowGroupPanel = false;
             this.gvPaises.OptionsView.ShowIndicator = false;
             // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Perfil";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.OptionsColumn.AllowFocus = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 0;
+            // 
+            // colid_cargo
+            // 
+            this.colid_cargo.Caption = "ID Perfil";
+            this.colid_cargo.FieldName = "id_cargo";
+            this.colid_cargo.Name = "colid_cargo";
+            this.colid_cargo.OptionsColumn.AllowEdit = false;
+            this.colid_cargo.OptionsColumn.AllowFocus = false;
+            this.colid_cargo.Visible = true;
+            this.colid_cargo.VisibleIndex = 1;
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,7 +298,7 @@
             this.pageReestablecerContrasenia.Controls.Add(this.txtContraseniaTemporal);
             this.pageReestablecerContrasenia.Controls.Add(this.labelControl3);
             this.pageReestablecerContrasenia.Name = "pageReestablecerContrasenia";
-            this.pageReestablecerContrasenia.Size = new System.Drawing.Size(706, 292);
+            this.pageReestablecerContrasenia.Size = new System.Drawing.Size(706, 301);
             // 
             // cmdReestablecerContrasenia
             // 
@@ -321,26 +342,6 @@
             this.labelControl3.Size = new System.Drawing.Size(305, 45);
             this.labelControl3.TabIndex = 51;
             this.labelControl3.Text = "Contraseña Temporal:";
-            // 
-            // coldescripcion
-            // 
-            this.coldescripcion.Caption = "Perfil";
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.OptionsColumn.AllowEdit = false;
-            this.coldescripcion.OptionsColumn.AllowFocus = false;
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 0;
-            // 
-            // colid_cargo
-            // 
-            this.colid_cargo.Caption = "ID Perfil";
-            this.colid_cargo.FieldName = "id_cargo";
-            this.colid_cargo.Name = "colid_cargo";
-            this.colid_cargo.OptionsColumn.AllowEdit = false;
-            this.colid_cargo.OptionsColumn.AllowFocus = false;
-            this.colid_cargo.Visible = true;
-            this.colid_cargo.VisibleIndex = 1;
             // 
             // ctlCrearUsuario
             // 

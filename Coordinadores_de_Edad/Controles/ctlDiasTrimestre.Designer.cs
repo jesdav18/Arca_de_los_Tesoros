@@ -48,7 +48,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(5, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1075, 10);
+            this.panel2.Size = new System.Drawing.Size(1075, 2);
             this.panel2.TabIndex = 14;
             // 
             // pnlEncabezado
@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.toggleOrdinarias);
             this.panel1.Controls.Add(this.cmCrearActividadHoy);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 90);
+            this.panel1.Location = new System.Drawing.Point(5, 82);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1075, 84);
             this.panel1.TabIndex = 15;
@@ -135,9 +135,9 @@
             // TileDias
             // 
             this.TileDias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TileDias.Location = new System.Drawing.Point(5, 174);
+            this.TileDias.Location = new System.Drawing.Point(5, 166);
             this.TileDias.Name = "TileDias";
-            this.TileDias.Size = new System.Drawing.Size(1075, 440);
+            this.TileDias.Size = new System.Drawing.Size(1075, 448);
             this.TileDias.TabIndex = 17;
             // 
             // ctlDiasTrimestre

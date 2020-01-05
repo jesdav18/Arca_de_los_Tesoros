@@ -42,6 +42,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
             this.PageVistaFichasIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.gcVistasFichaIngreso = new DevExpress.XtraGrid.GridControl();
             this.dsVistas1 = new Core.DataSets.dsVistas();
             this.gvVistasFichaIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,6 +54,7 @@
             this.cmdVerFicha = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cmdAtras = new DevExpress.XtraEditors.PictureEdit();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdIrAtras = new DevExpress.XtraEditors.PictureEdit();
@@ -61,8 +63,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationBusqueda)).BeginInit();
             this.NavigationBusqueda.SuspendLayout();
@@ -91,12 +91,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(988, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(988, 54);
             this.pnlEncabezado.TabIndex = 18;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -105,7 +105,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(988, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(988, 54);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Consulta Fichas de Ingreso";
             // 
@@ -195,6 +195,13 @@
             this.PageVistaFichasIngreso.Controls.Add(this.panel1);
             this.PageVistaFichasIngreso.Name = "PageVistaFichasIngreso";
             this.PageVistaFichasIngreso.Size = new System.Drawing.Size(988, 772);
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(-24, -24);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 100);
+            this.panel6.TabIndex = 3;
             // 
             // gcVistasFichaIngreso
             // 
@@ -315,6 +322,14 @@
             this.cmdAtras.TabIndex = 31;
             this.cmdAtras.Click += new System.EventHandler(this.CmdAtras_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 71);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(988, 10);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -379,9 +394,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 75);
+            this.panel3.Location = new System.Drawing.Point(0, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(988, 10);
+            this.panel3.Size = new System.Drawing.Size(988, 2);
             this.panel3.TabIndex = 21;
             // 
             // PageFichaIngreso
@@ -404,23 +419,9 @@
             this.ctlVistaFichaIngreso1.Pro_ID_Colaborador = 0;
             this.ctlVistaFichaIngreso1.Pro_ModoEdicion = false;
             this.ctlVistaFichaIngreso1.Pro_Usuario = null;
+            this.ctlVistaFichaIngreso1.Pro_UsuarioColaborador = null;
             this.ctlVistaFichaIngreso1.Size = new System.Drawing.Size(988, 772);
             this.ctlVistaFichaIngreso1.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Location = new System.Drawing.Point(-24, -24);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 100);
-            this.panel6.TabIndex = 3;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 71);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(988, 10);
-            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // ctlBusquedaFichasIngreso
             // 

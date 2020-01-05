@@ -14,7 +14,7 @@ namespace Diacono.Controles
         public ctlContenedorPrincipalDiacono()
         {
             InitializeComponent();
-            fusibleCumpleanios.Parent = cmdCumpleanieros;
+            fusibleCumpleanios.Parent = cmdCumpleanios;
             fusibleSolicitudes.Parent = cmdSolicitudes;
         }
 
@@ -39,9 +39,11 @@ namespace Diacono.Controles
             fusibleSolicitudes.Visible = false;
 
             ctlEncabezado1.ConstruirControl(Pro_Usuario);
-            bgObtenerFusibles.RunWorkerAsync();
 
-            tmrFusibles.Start();
+            if (!bgObtenerFusibles.IsBusy)
+            {
+                bgObtenerFusibles.RunWorkerAsync();
+            }
 
         }
 
@@ -107,13 +109,6 @@ namespace Diacono.Controles
 
         #region EVENTOS CONTROLES
 
-        private void TmrFusibles_Tick(object sender, EventArgs e)
-        {
-            if (!bgObtenerFusibles.IsBusy)
-            {
-                bgObtenerFusibles.RunWorkerAsync();
-            }
-        }
 
         private void BgObtenerFusibles_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -184,5 +179,13 @@ namespace Diacono.Controles
 
         #endregion
 
+   
+        private void PnlRefrescar_Click(object sender, EventArgs e)
+        {
+            if (!bgObtenerFusibles.IsBusy)
+            {
+                bgObtenerFusibles.RunWorkerAsync();
+            }
+        }
     }
 }

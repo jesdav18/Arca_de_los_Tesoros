@@ -87,6 +87,8 @@
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colobservaciones = new DevExpress.XtraGrid.Columns.GridColumn();
             this.memoObservacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
@@ -96,8 +98,6 @@
             this.ltlTituloCitas = new DevExpress.XtraEditors.LabelControl();
             this.cmdAgregarCita = new DevExpress.XtraEditors.PictureEdit();
             this.cmdIrAtrasCitas = new DevExpress.XtraEditors.PictureEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdColor)).BeginInit();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
@@ -125,13 +125,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoLugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoAsunto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarCita.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtrasCitas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdColor
@@ -150,12 +150,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1039, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1039, 43);
             this.pnlEncabezado.TabIndex = 17;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -164,7 +164,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1039, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(1039, 43);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Planificador de Actividades";
             // 
@@ -172,15 +172,15 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 80);
+            this.panel2.Location = new System.Drawing.Point(5, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1039, 10);
+            this.panel2.Size = new System.Drawing.Size(1039, 2);
             this.panel2.TabIndex = 18;
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 90);
+            this.panel1.Location = new System.Drawing.Point(5, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1039, 29);
             this.panel1.TabIndex = 19;
@@ -197,7 +197,7 @@
             this.schedulerControl1.OptionsCustomization.AllowDisplayAppointmentDependencyForm = DevExpress.XtraScheduler.AllowDisplayAppointmentDependencyForm.Never;
             this.schedulerControl1.OptionsCustomization.AllowDisplayAppointmentFlyout = false;
             this.schedulerControl1.OptionsCustomization.AllowDisplayAppointmentForm = DevExpress.XtraScheduler.AllowDisplayAppointmentForm.Never;
-            this.schedulerControl1.Size = new System.Drawing.Size(1039, 541);
+            this.schedulerControl1.Size = new System.Drawing.Size(1039, 581);
             this.schedulerControl1.Start = new System.DateTime(2019, 9, 16, 0, 0, 0, 0);
             this.schedulerControl1.TabIndex = 20;
             this.schedulerControl1.Text = "schedulerControl1";
@@ -226,14 +226,14 @@
             this.NavegacionPrincipal.Controls.Add(this.PageIngresoCita);
             this.NavegacionPrincipal.Controls.Add(this.PageVistaCitas);
             this.NavegacionPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavegacionPrincipal.Location = new System.Drawing.Point(5, 119);
+            this.NavegacionPrincipal.Location = new System.Drawing.Point(5, 79);
             this.NavegacionPrincipal.Name = "NavegacionPrincipal";
             this.NavegacionPrincipal.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.pageCalendario,
             this.PageIngresoCita,
             this.PageVistaCitas});
             this.NavegacionPrincipal.SelectedPage = this.pageCalendario;
-            this.NavegacionPrincipal.Size = new System.Drawing.Size(1039, 541);
+            this.NavegacionPrincipal.Size = new System.Drawing.Size(1039, 581);
             this.NavegacionPrincipal.TabIndex = 21;
             this.NavegacionPrincipal.Text = "navigationFrame1";
             this.NavegacionPrincipal.TransitionAnimationProperties.FrameCount = 500;
@@ -244,7 +244,7 @@
             this.pageCalendario.Caption = "pageCalendario";
             this.pageCalendario.Controls.Add(this.schedulerControl1);
             this.pageCalendario.Name = "pageCalendario";
-            this.pageCalendario.Size = new System.Drawing.Size(1039, 541);
+            this.pageCalendario.Size = new System.Drawing.Size(1039, 581);
             // 
             // PageIngresoCita
             // 
@@ -263,7 +263,7 @@
             this.PageIngresoCita.Controls.Add(this.labelControl1);
             this.PageIngresoCita.Controls.Add(this.panel3);
             this.PageIngresoCita.Name = "PageIngresoCita";
-            this.PageIngresoCita.Size = new System.Drawing.Size(1039, 541);
+            this.PageIngresoCita.Size = new System.Drawing.Size(1039, 581);
             // 
             // timeHoraFin
             // 
@@ -585,7 +585,7 @@
             this.PageVistaCitas.Controls.Add(this.panel6);
             this.PageVistaCitas.Controls.Add(this.panel4);
             this.PageVistaCitas.Name = "PageVistaCitas";
-            this.PageVistaCitas.Size = new System.Drawing.Size(1039, 541);
+            this.PageVistaCitas.Size = new System.Drawing.Size(1039, 581);
             // 
             // gcMaestrosDisponibles
             // 
@@ -600,7 +600,7 @@
             this.memoAsunto,
             this.memoObservacion,
             this.cmdEliminar});
-            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(1039, 422);
+            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(1039, 462);
             this.gcMaestrosDisponibles.TabIndex = 23;
             this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvActivdades});
@@ -778,6 +778,27 @@
             this.memoObservacion.Appearance.Options.UseFont = true;
             this.memoObservacion.Name = "memoObservacion";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Eliminar";
+            this.gridColumn1.ColumnEdit = this.cmdEliminar;
+            this.gridColumn1.MaxWidth = 90;
+            this.gridColumn1.MinWidth = 90;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.Width = 90;
+            // 
+            // cmdEliminar
+            // 
+            this.cmdEliminar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdEliminar.Click += new System.EventHandler(this.CmdEliminar_Click);
+            // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -888,27 +909,6 @@
             this.cmdIrAtrasCitas.TabIndex = 31;
             this.cmdIrAtrasCitas.Click += new System.EventHandler(this.CmdIrAtrasCitas_Click);
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Eliminar";
-            this.gridColumn1.ColumnEdit = this.cmdEliminar;
-            this.gridColumn1.MaxWidth = 90;
-            this.gridColumn1.MinWidth = 90;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
-            this.gridColumn1.Width = 90;
-            // 
-            // cmdEliminar
-            // 
-            this.cmdEliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdEliminar.Name = "cmdEliminar";
-            this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdEliminar.Click += new System.EventHandler(this.CmdEliminar_Click);
-            // 
             // ctlPlanificadorActividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -948,13 +948,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoLugar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoAsunto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarCita.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtrasCitas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).EndInit();
             this.ResumeLayout(false);
 
         }

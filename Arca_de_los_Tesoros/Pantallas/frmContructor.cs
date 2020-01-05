@@ -182,8 +182,8 @@ namespace Arca_de_los_Tesoros
 
         private void ctlDiacono_CerrarSesion(object sender, EventArgs e)
         {
-            ctlAnciano.Dispose();
-            ctlAnciano = null;
+            ctlDiacono.Dispose();
+            ctlDiacono = null;
             Construir_Acceso();
         }
 
@@ -353,14 +353,7 @@ namespace Arca_de_los_Tesoros
                 case MODULOS.MODULO_COORDINADOR_EDAD:
                     if (ctlCoordinadorEdad != null)
                     {
-                        if (ctlCoordinadorEdad.ctlIngresoFicha1.Pro_EstaCreandoFicha)
-                        {
-                            if (Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Existen una ficha de ingreso en proceso de creación! ¿Está seguro que desea cerrar?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
-                            {
-                                e.Cancel = true;
-                            }
-
-                        }
+                       
                     }
                 
                    

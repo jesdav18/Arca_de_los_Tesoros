@@ -93,12 +93,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1041, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1041, 49);
             this.pnlEncabezado.TabIndex = 17;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -107,7 +107,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1041, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(1041, 49);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Solicitudes";
             // 
@@ -115,9 +115,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 80);
+            this.panel2.Location = new System.Drawing.Point(5, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1041, 10);
+            this.panel2.Size = new System.Drawing.Size(1041, 2);
             this.panel2.TabIndex = 18;
             // 
             // panel5
@@ -125,7 +125,7 @@
             this.panel5.Controls.Add(this.txtBusqueda);
             this.panel5.Controls.Add(this.pictureEdit1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(5, 90);
+            this.panel5.Location = new System.Drawing.Point(5, 56);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(5);
             this.panel5.Size = new System.Drawing.Size(1041, 54);
@@ -161,13 +161,13 @@
             this.gcVistaSolicitud.DataMember = "dtSolicitudes";
             this.gcVistaSolicitud.DataSource = this.dsVistas1;
             this.gcVistaSolicitud.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcVistaSolicitud.Location = new System.Drawing.Point(5, 144);
+            this.gcVistaSolicitud.Location = new System.Drawing.Point(5, 110);
             this.gcVistaSolicitud.MainView = this.gvVistaSolicitud;
             this.gcVistaSolicitud.Name = "gcVistaSolicitud";
             this.gcVistaSolicitud.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdAceptar,
             this.cmdRechazar});
-            this.gcVistaSolicitud.Size = new System.Drawing.Size(1041, 478);
+            this.gcVistaSolicitud.Size = new System.Drawing.Size(1041, 512);
             this.gcVistaSolicitud.TabIndex = 26;
             this.gcVistaSolicitud.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVistaSolicitud});
@@ -349,7 +349,7 @@
             // cmdGuardarRechazo
             // 
             this.cmdGuardarRechazo.EditValue = global::Core.Properties.Resources.icon_guardar_negro_64;
-            this.cmdGuardarRechazo.Location = new System.Drawing.Point(647, 373);
+            this.cmdGuardarRechazo.Location = new System.Drawing.Point(647, 338);
             this.cmdGuardarRechazo.Name = "cmdGuardarRechazo";
             this.cmdGuardarRechazo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdGuardarRechazo.Properties.NullText = "   ";
@@ -360,9 +360,9 @@
             // 
             // memoMotivosRechazo
             // 
-            this.memoMotivosRechazo.Location = new System.Drawing.Point(57, 120);
+            this.memoMotivosRechazo.Location = new System.Drawing.Point(57, 83);
             this.memoMotivosRechazo.Name = "memoMotivosRechazo";
-            this.memoMotivosRechazo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memoMotivosRechazo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoMotivosRechazo.Properties.Appearance.Options.UseFont = true;
             this.memoMotivosRechazo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.memoMotivosRechazo.Size = new System.Drawing.Size(683, 232);
@@ -372,9 +372,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 78);
+            this.panel3.Location = new System.Drawing.Point(3, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(793, 10);
+            this.panel3.Size = new System.Drawing.Size(793, 2);
             this.panel3.TabIndex = 19;
             // 
             // pnlEncabezadoRechazo
@@ -384,12 +384,12 @@
             this.pnlEncabezadoRechazo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezadoRechazo.Location = new System.Drawing.Point(3, 3);
             this.pnlEncabezadoRechazo.Name = "pnlEncabezadoRechazo";
-            this.pnlEncabezadoRechazo.Size = new System.Drawing.Size(793, 75);
+            this.pnlEncabezadoRechazo.Size = new System.Drawing.Size(793, 51);
             this.pnlEncabezadoRechazo.TabIndex = 18;
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -398,19 +398,20 @@
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(723, 75);
+            this.labelControl1.Size = new System.Drawing.Size(723, 51);
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Ingrese motivo de rechazo";
             // 
             // cmdCerrarPoupRechazo
             // 
             this.cmdCerrarPoupRechazo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdCerrarPoupRechazo.EditValue = global::Core.Properties.Resources.iconCerrar_32;
             this.cmdCerrarPoupRechazo.Location = new System.Drawing.Point(723, 0);
             this.cmdCerrarPoupRechazo.Name = "cmdCerrarPoupRechazo";
             this.cmdCerrarPoupRechazo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdCerrarPoupRechazo.Properties.NullText = "   ";
             this.cmdCerrarPoupRechazo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.cmdCerrarPoupRechazo.Size = new System.Drawing.Size(70, 75);
+            this.cmdCerrarPoupRechazo.Size = new System.Drawing.Size(70, 51);
             this.cmdCerrarPoupRechazo.TabIndex = 31;
             this.cmdCerrarPoupRechazo.Click += new System.EventHandler(this.CmdCerrarPoupRechazo_Click);
             // 

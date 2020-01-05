@@ -93,7 +93,7 @@
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -112,13 +112,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1138, 10);
+            this.panel2.Size = new System.Drawing.Size(1138, 2);
             this.panel2.TabIndex = 17;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 63);
+            this.panel4.Location = new System.Drawing.Point(0, 55);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1138, 14);
             this.panel4.TabIndex = 20;
@@ -131,7 +131,7 @@
             this.pnlDatosColaborador.Controls.Add(this.picFotoColaborador);
             this.pnlDatosColaborador.Controls.Add(this.picCaratulaAsistencia);
             this.pnlDatosColaborador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDatosColaborador.Location = new System.Drawing.Point(0, 77);
+            this.pnlDatosColaborador.Location = new System.Drawing.Point(0, 69);
             this.pnlDatosColaborador.Name = "pnlDatosColaborador";
             this.pnlDatosColaborador.Size = new System.Drawing.Size(1138, 217);
             this.pnlDatosColaborador.TabIndex = 30;
@@ -210,13 +210,13 @@
             this.NavegacionObservaciones.Controls.Add(this.page);
             this.NavegacionObservaciones.Controls.Add(this.pageInasistencias);
             this.NavegacionObservaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavegacionObservaciones.Location = new System.Drawing.Point(0, 294);
+            this.NavegacionObservaciones.Location = new System.Drawing.Point(0, 286);
             this.NavegacionObservaciones.Name = "NavegacionObservaciones";
             this.NavegacionObservaciones.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.page,
             this.pageInasistencias});
             this.NavegacionObservaciones.SelectedPage = this.page;
-            this.NavegacionObservaciones.Size = new System.Drawing.Size(1138, 357);
+            this.NavegacionObservaciones.Size = new System.Drawing.Size(1138, 365);
             this.NavegacionObservaciones.TabIndex = 31;
             this.NavegacionObservaciones.Text = "navigationFrame1";
             this.NavegacionObservaciones.TransitionAnimationProperties.FrameCount = 500;
@@ -231,7 +231,7 @@
             this.page.Controls.Add(this.labelControl7);
             this.page.Controls.Add(this.labelControl6);
             this.page.Name = "page";
-            this.page.Size = new System.Drawing.Size(1138, 357);
+            this.page.Size = new System.Drawing.Size(1138, 365);
             // 
             // toggleCarnet
             // 
@@ -309,7 +309,7 @@
             this.pageInasistencias.Controls.Add(this.radioProblemasFamiliares);
             this.pageInasistencias.Controls.Add(this.labelControl4);
             this.pageInasistencias.Name = "pageInasistencias";
-            this.pageInasistencias.Size = new System.Drawing.Size(1138, 357);
+            this.pageInasistencias.Size = new System.Drawing.Size(1138, 365);
             // 
             // cmdSeleccionarCubrirAusencia
             // 

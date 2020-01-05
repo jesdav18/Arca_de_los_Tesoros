@@ -337,5 +337,8 @@
   <ItemGroup>
     <None Include="Resources\switch%283%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_nuevo_usuario_negro_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

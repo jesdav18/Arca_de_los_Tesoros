@@ -60,9 +60,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 80);
+            this.panel2.Location = new System.Drawing.Point(5, 59);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1068, 10);
+            this.panel2.Size = new System.Drawing.Size(1068, 2);
             this.panel2.TabIndex = 16;
             // 
             // pnlEncabezado
@@ -71,12 +71,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1068, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1068, 54);
             this.pnlEncabezado.TabIndex = 15;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -85,14 +85,14 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1068, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(1068, 54);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Selección para cubrir ausencia";
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 90);
+            this.panel4.Location = new System.Drawing.Point(5, 61);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1068, 14);
             this.panel4.TabIndex = 19;
@@ -105,9 +105,9 @@
             this.xtraScrollableControl1.Controls.Add(this.ctlSeleccionAyuda1);
             this.xtraScrollableControl1.Controls.Add(this.panel6);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(5, 104);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(5, 75);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(1068, 775);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1068, 804);
             this.xtraScrollableControl1.TabIndex = 20;
             // 
             // panel5
@@ -209,6 +209,7 @@
             this.ctlSeleccionMaestros_Ayudas1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlSeleccionMaestros_Ayudas1.Pro_Conexion = null;
             this.ctlSeleccionMaestros_Ayudas1.Pro_Fecha = null;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_FechaActividad = new System.DateTime(((long)(0)));
             this.ctlSeleccionMaestros_Ayudas1.Pro_ID_Actividad = 0;
             this.ctlSeleccionMaestros_Ayudas1.Pro_ID_AreaAtencion = 0;
             this.ctlSeleccionMaestros_Ayudas1.Pro_MostrarEncabezadoPrincipal = false;
@@ -225,6 +226,7 @@
             this.ctlSeleccionAyuda1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlSeleccionAyuda1.Pro_Conexion = null;
             this.ctlSeleccionAyuda1.Pro_Fecha = null;
+            this.ctlSeleccionAyuda1.Pro_FechaActividad = new System.DateTime(((long)(0)));
             this.ctlSeleccionAyuda1.Pro_ID_Actividad = 0;
             this.ctlSeleccionAyuda1.Pro_ID_AreaAtencion = 0;
             this.ctlSeleccionAyuda1.Pro_MostrarEncabezadoOriginal = false;

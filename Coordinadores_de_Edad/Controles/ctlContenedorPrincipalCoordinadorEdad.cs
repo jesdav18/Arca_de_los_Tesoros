@@ -48,26 +48,7 @@ namespace Coordinadores_de_Edad.Controles
             NavigationCoordinadorEdad.SelectedPage = PageInicial;
         }
 
-        private bool ValidarCambios()
-        {
-            if (ctlIngresoFicha1.Pro_EstaCreandoFicha)
-            {
-                if (Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Existen una ficha de ingreso en proceso de creación! ¿Desea descartar la creación de la ficha?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
-                {
-                   
-                    return true;
-                }
-                else
-                {
-                    ctlIngresoFicha1.Pro_EstaCreandoFicha = false;
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
+       
  
         #endregion
 
@@ -75,11 +56,7 @@ namespace Coordinadores_de_Edad.Controles
 
         public void PicAgregarUsuario_Click(object sender, EventArgs e)
         {
-            if (ValidarCambios())
-            {
-                return;
-            } 
-
+           
 
             if (!splashScreenManager1.IsSplashFormVisible)
             {
@@ -87,7 +64,7 @@ namespace Coordinadores_de_Edad.Controles
             }
 
             NavigationCoordinadorEdad.SelectedPage = PageFichaIngreso;
-            ctlIngresoFicha1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
+            ctlIngresoFicha1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario,false);
 
             if (splashScreenManager1.IsSplashFormVisible)
             {
@@ -99,21 +76,14 @@ namespace Coordinadores_de_Edad.Controles
 
         public void CmdCerrarSesion_Click(object sender, EventArgs e)
         {
-            if (ValidarCambios())
-            {
-                return;
-            }
+           
 
             OnCerrarSesion?.Invoke(sender, e);
         }
 
         public void CmdIngresarSolicitudes_Click(object sender, EventArgs e)
         {
-            if (ValidarCambios())
-            {
-                return;
-            }
-
+           
 
             if (!splashScreenManager1.IsSplashFormVisible)
             {
@@ -135,11 +105,7 @@ namespace Coordinadores_de_Edad.Controles
 
         public void CmdMiEquipo_Click(object sender, EventArgs e)
         {
-            if (ValidarCambios())
-            {
-                return;
-            }
-
+           
 
             if (!splashScreenManager1.IsSplashFormVisible)
             {
@@ -160,11 +126,7 @@ namespace Coordinadores_de_Edad.Controles
 
         public void CmdListaAsistencia_Click(object sender, EventArgs e)
         {
-            if (ValidarCambios())
-            {
-                return;
-            }
-
+           
 
             if (!splashScreenManager1.IsSplashFormVisible)
             {
@@ -188,11 +150,7 @@ namespace Coordinadores_de_Edad.Controles
 
         public void CmdOrganizadorActividades_Click(object sender, EventArgs e)
         {
-            if (ValidarCambios())
-            {
-                return;
-            }
-
+           
 
             if (!splashScreenManager1.IsSplashFormVisible)
             {
@@ -212,8 +170,9 @@ namespace Coordinadores_de_Edad.Controles
 
         }
 
+
         #endregion
 
-      
+        
     }
 }

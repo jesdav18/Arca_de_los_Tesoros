@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlSeleccionMaestros_Ayudas));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.NavegacionEncabezado = new DevExpress.XtraBars.Navigation.NavigationFrame();
@@ -51,13 +51,13 @@
             this.dsCoordinadoresEdad1 = new Coordinadores_de_Edad.DataSet.dsCoordinadoresEdad();
             this.gvMestrosDisponibles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colesta_en_lista = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkEstaEnLista = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_identidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chkSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colesta_en_lista = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.chkEstaEnLista = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionEncabezado)).BeginInit();
             this.NavegacionEncabezado.SuspendLayout();
@@ -70,16 +70,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstaEnLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSeleccionar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEstaEnLista)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(907, 10);
             this.panel2.TabIndex = 13;
@@ -90,7 +90,7 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(907, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(907, 50);
             this.pnlEncabezado.TabIndex = 12;
             // 
             // NavegacionEncabezado
@@ -105,7 +105,7 @@
             this.PageEncabezadoPrincipal,
             this.PageReducido});
             this.NavegacionEncabezado.SelectedPage = this.PageReducido;
-            this.NavegacionEncabezado.Size = new System.Drawing.Size(907, 75);
+            this.NavegacionEncabezado.Size = new System.Drawing.Size(907, 50);
             this.NavegacionEncabezado.TabIndex = 0;
             this.NavegacionEncabezado.Text = "navigationFrame1";
             this.NavegacionEncabezado.TransitionAnimationProperties.FrameCount = 500;
@@ -117,7 +117,7 @@
             this.PageEncabezadoPrincipal.Controls.Add(this.lblEncabezado);
             this.PageEncabezadoPrincipal.Controls.Add(this.panel2);
             this.PageEncabezadoPrincipal.Name = "PageEncabezadoPrincipal";
-            this.PageEncabezadoPrincipal.Size = new System.Drawing.Size(907, 75);
+            this.PageEncabezadoPrincipal.Size = new System.Drawing.Size(907, 50);
             // 
             // lblEncabezado
             // 
@@ -130,7 +130,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(907, 65);
+            this.lblEncabezado.Size = new System.Drawing.Size(907, 40);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Seleccion Maestros Día para  X";
             // 
@@ -140,12 +140,12 @@
             this.PageReducido.Controls.Add(this.lblTituloApilado);
             this.PageReducido.Controls.Add(this.picTituloApilado);
             this.PageReducido.Name = "PageReducido";
-            this.PageReducido.Size = new System.Drawing.Size(907, 75);
+            this.PageReducido.Size = new System.Drawing.Size(907, 50);
             // 
             // lblTituloApilado
             // 
             this.lblTituloApilado.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
-            this.lblTituloApilado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloApilado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloApilado.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblTituloApilado.Appearance.Options.UseBackColor = true;
             this.lblTituloApilado.Appearance.Options.UseFont = true;
@@ -155,11 +155,11 @@
             this.lblTituloApilado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblTituloApilado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTituloApilado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTituloApilado.Location = new System.Drawing.Point(63, 0);
+            this.lblTituloApilado.Location = new System.Drawing.Point(93, 0);
             this.lblTituloApilado.Name = "lblTituloApilado";
-            this.lblTituloApilado.Size = new System.Drawing.Size(844, 75);
+            this.lblTituloApilado.Size = new System.Drawing.Size(814, 50);
             this.lblTituloApilado.TabIndex = 32;
-            this.lblTituloApilado.Text = "Buscar en Maestros";
+            this.lblTituloApilado.Text = "Buscar en listado de Maestros";
             this.lblTituloApilado.Click += new System.EventHandler(this.PicTituloApilado_Click);
             // 
             // picTituloApilado
@@ -172,13 +172,11 @@
             this.picTituloApilado.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
             this.picTituloApilado.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.picTituloApilado.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.picTituloApilado.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
-            this.picTituloApilado.Properties.Appearance.Options.UseBackColor = true;
             this.picTituloApilado.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picTituloApilado.Properties.NullText = "   ";
             this.picTituloApilado.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picTituloApilado.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picTituloApilado.Size = new System.Drawing.Size(63, 75);
+            this.picTituloApilado.Size = new System.Drawing.Size(93, 50);
             this.picTituloApilado.TabIndex = 33;
             this.picTituloApilado.Click += new System.EventHandler(this.PicTituloApilado_Click);
             // 
@@ -187,7 +185,7 @@
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Controls.Add(this.cmdGuardarSolicitud);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 110);
+            this.panel1.Location = new System.Drawing.Point(5, 85);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(907, 54);
@@ -221,7 +219,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(5, 80);
+            this.panel3.Location = new System.Drawing.Point(5, 55);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(907, 30);
             this.panel3.TabIndex = 20;
@@ -229,7 +227,7 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 164);
+            this.panel4.Location = new System.Drawing.Point(5, 139);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(907, 26);
             this.panel4.TabIndex = 21;
@@ -239,14 +237,14 @@
             this.gcMaestrosDisponibles.DataMember = "dtMaestrosDisponibles";
             this.gcMaestrosDisponibles.DataSource = this.dsCoordinadoresEdad1;
             this.gcMaestrosDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMaestrosDisponibles.Location = new System.Drawing.Point(5, 190);
+            this.gcMaestrosDisponibles.Location = new System.Drawing.Point(5, 165);
             this.gcMaestrosDisponibles.MainView = this.gvMestrosDisponibles;
             this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
             this.gcMaestrosDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdSeleccionar,
             this.chkSeleccionar,
             this.chkEstaEnLista});
-            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(907, 512);
+            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(907, 537);
             this.gcMaestrosDisponibles.TabIndex = 22;
             this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMestrosDisponibles});
@@ -279,6 +277,31 @@
             this.colid_colaborador.MinWidth = 25;
             this.colid_colaborador.Name = "colid_colaborador";
             this.colid_colaborador.Width = 94;
+            // 
+            // colesta_en_lista
+            // 
+            this.colesta_en_lista.AppearanceHeader.Options.UseTextOptions = true;
+            this.colesta_en_lista.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colesta_en_lista.Caption = "Esta en Lista";
+            this.colesta_en_lista.ColumnEdit = this.chkEstaEnLista;
+            this.colesta_en_lista.FieldName = "esta_en_lista";
+            this.colesta_en_lista.MaxWidth = 162;
+            this.colesta_en_lista.MinWidth = 162;
+            this.colesta_en_lista.Name = "colesta_en_lista";
+            this.colesta_en_lista.OptionsColumn.AllowEdit = false;
+            this.colesta_en_lista.OptionsColumn.AllowFocus = false;
+            this.colesta_en_lista.OptionsColumn.ReadOnly = true;
+            this.colesta_en_lista.Visible = true;
+            this.colesta_en_lista.VisibleIndex = 2;
+            this.colesta_en_lista.Width = 162;
+            // 
+            // chkEstaEnLista
+            // 
+            this.chkEstaEnLista.AutoHeight = false;
+            this.chkEstaEnLista.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEstaEnLista.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("chkEstaEnLista.ImageOptions.ImageChecked")));
+            this.chkEstaEnLista.ImageOptions.ImageUnchecked = ((System.Drawing.Image)(resources.GetObject("chkEstaEnLista.ImageOptions.ImageUnchecked")));
+            this.chkEstaEnLista.Name = "chkEstaEnLista";
             // 
             // colnombre
             // 
@@ -332,36 +355,11 @@
             // cmdSeleccionar
             // 
             this.cmdSeleccionar.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::Coordinadores_de_Edad.Resources.iconCheck_24;
+            editorButtonImageOptions1.Image = global::Coordinadores_de_Edad.Resources.iconCheck_24;
             this.cmdSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdSeleccionar.Name = "cmdSeleccionar";
             this.cmdSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // colesta_en_lista
-            // 
-            this.colesta_en_lista.AppearanceHeader.Options.UseTextOptions = true;
-            this.colesta_en_lista.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colesta_en_lista.Caption = "Esta en Lista";
-            this.colesta_en_lista.ColumnEdit = this.chkEstaEnLista;
-            this.colesta_en_lista.FieldName = "esta_en_lista";
-            this.colesta_en_lista.MaxWidth = 162;
-            this.colesta_en_lista.MinWidth = 162;
-            this.colesta_en_lista.Name = "colesta_en_lista";
-            this.colesta_en_lista.OptionsColumn.AllowEdit = false;
-            this.colesta_en_lista.OptionsColumn.AllowFocus = false;
-            this.colesta_en_lista.OptionsColumn.ReadOnly = true;
-            this.colesta_en_lista.Visible = true;
-            this.colesta_en_lista.VisibleIndex = 2;
-            this.colesta_en_lista.Width = 162;
-            // 
-            // chkEstaEnLista
-            // 
-            this.chkEstaEnLista.AutoHeight = false;
-            this.chkEstaEnLista.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
-            this.chkEstaEnLista.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("repositoryItemCheckEdit1.ImageOptions.ImageChecked")));
-            this.chkEstaEnLista.ImageOptions.ImageUnchecked = ((System.Drawing.Image)(resources.GetObject("repositoryItemCheckEdit1.ImageOptions.ImageUnchecked")));
-            this.chkEstaEnLista.Name = "chkEstaEnLista";
             // 
             // ctlSeleccionMaestros_Ayudas
             // 
@@ -388,9 +386,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCoordinadoresEdad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMestrosDisponibles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstaEnLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSeleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEstaEnLista)).EndInit();
             this.ResumeLayout(false);
 
         }

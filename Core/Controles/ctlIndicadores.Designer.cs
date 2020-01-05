@@ -55,11 +55,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dateDesde = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.picCargar = new DevExpress.XtraEditors.PictureEdit();
             this.dateHasta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.picCargar = new DevExpress.XtraEditors.PictureEdit();
+            this.dateDesde = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gvActividad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -71,11 +71,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleAsistencia)).BeginInit();
             this.pnlEncabezado.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateHasta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gvActividad
@@ -130,14 +130,14 @@
             gridLevelNode1.RelationName = "FK_dtAreasAtencion_dtActividad";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(5, 362);
+            this.gridControl1.Location = new System.Drawing.Point(5, 359);
             this.gridControl1.MainView = this.gvEquipos;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.chkAsistio,
             this.chkUsaCarnet,
             this.chkUsaUniforme});
-            this.gridControl1.Size = new System.Drawing.Size(995, 449);
+            this.gridControl1.Size = new System.Drawing.Size(995, 452);
             this.gridControl1.TabIndex = 16;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEquipos,
@@ -322,7 +322,7 @@
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -341,24 +341,26 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(5, 60);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(995, 5);
+            this.panel2.Size = new System.Drawing.Size(995, 2);
             this.panel2.TabIndex = 12;
             // 
             // ctlAsistenciaEquipos1
             // 
             this.ctlAsistenciaEquipos1.BackColor = System.Drawing.Color.White;
             this.ctlAsistenciaEquipos1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ctlAsistenciaEquipos1.Location = new System.Drawing.Point(5, 163);
+            this.ctlAsistenciaEquipos1.Location = new System.Drawing.Point(5, 160);
             this.ctlAsistenciaEquipos1.Name = "ctlAsistenciaEquipos1";
             this.ctlAsistenciaEquipos1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlAsistenciaEquipos1.Pro_Conexion = null;
+            this.ctlAsistenciaEquipos1.Pro_Desde = new System.DateTime(((long)(0)));
+            this.ctlAsistenciaEquipos1.Pro_Hasta = new System.DateTime(((long)(0)));
             this.ctlAsistenciaEquipos1.Size = new System.Drawing.Size(995, 189);
             this.ctlAsistenciaEquipos1.TabIndex = 13;
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 65);
+            this.panel1.Location = new System.Drawing.Point(5, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 17);
             this.panel1.TabIndex = 14;
@@ -366,7 +368,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(5, 352);
+            this.panel3.Location = new System.Drawing.Point(5, 349);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(995, 10);
             this.panel3.TabIndex = 15;
@@ -379,39 +381,23 @@
             this.panel4.Controls.Add(this.dateDesde);
             this.panel4.Controls.Add(this.labelControl2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 82);
+            this.panel4.Location = new System.Drawing.Point(5, 79);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(995, 71);
             this.panel4.TabIndex = 17;
             // 
-            // dateDesde
+            // picCargar
             // 
-            this.dateDesde.EditValue = null;
-            this.dateDesde.EnterMoveNextControl = true;
-            this.dateDesde.Location = new System.Drawing.Point(106, 19);
-            this.dateDesde.Name = "dateDesde";
-            this.dateDesde.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDesde.Properties.Appearance.Options.UseFont = true;
-            this.dateDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDesde.Size = new System.Drawing.Size(267, 38);
-            this.dateDesde.TabIndex = 36;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseTextOptions = true;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(27, 22);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(73, 31);
-            this.labelControl2.TabIndex = 27;
-            this.labelControl2.Text = "Desde:";
+            this.picCargar.EditValue = global::Core.Properties.Resources.iconBusqueda;
+            this.picCargar.Location = new System.Drawing.Point(788, 6);
+            this.picCargar.Name = "picCargar";
+            this.picCargar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picCargar.Properties.NullText = "   ";
+            this.picCargar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picCargar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picCargar.Size = new System.Drawing.Size(64, 51);
+            this.picCargar.TabIndex = 39;
+            this.picCargar.Click += new System.EventHandler(this.PicCargar_Click);
             // 
             // dateHasta
             // 
@@ -442,23 +428,39 @@
             this.labelControl1.TabIndex = 37;
             this.labelControl1.Text = "Hasta:";
             // 
-            // picCargar
+            // dateDesde
             // 
-            this.picCargar.EditValue = global::Core.Properties.Resources.iconBusqueda;
-            this.picCargar.Location = new System.Drawing.Point(788, 6);
-            this.picCargar.Name = "picCargar";
-            this.picCargar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picCargar.Properties.NullText = "   ";
-            this.picCargar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picCargar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picCargar.Size = new System.Drawing.Size(64, 51);
-            this.picCargar.TabIndex = 39;
-            this.picCargar.Click += new System.EventHandler(this.PicCargar_Click);
+            this.dateDesde.EditValue = null;
+            this.dateDesde.EnterMoveNextControl = true;
+            this.dateDesde.Location = new System.Drawing.Point(106, 19);
+            this.dateDesde.Name = "dateDesde";
+            this.dateDesde.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDesde.Properties.Appearance.Options.UseFont = true;
+            this.dateDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateDesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateDesde.Size = new System.Drawing.Size(267, 38);
+            this.dateDesde.TabIndex = 36;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Location = new System.Drawing.Point(27, 22);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(73, 31);
+            this.labelControl2.TabIndex = 27;
+            this.labelControl2.Text = "Desde:";
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(5, 153);
+            this.panel5.Location = new System.Drawing.Point(5, 150);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(995, 10);
             this.panel5.TabIndex = 18;
@@ -489,11 +491,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleAsistencia)).EndInit();
             this.pnlEncabezado.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateHasta.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateHasta.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDesde.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

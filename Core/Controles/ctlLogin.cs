@@ -178,7 +178,17 @@ namespace Core.Controles
                     splashScreenManager1.CloseWaitForm();
                 }
 
-                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", Exc.Message, Utilidades.BotonesDialogo.Ok);
+                if (Exc.Message == "Unexpected server response.")
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "En este momento hay dificultades en la conexión de red. Por favor vuelva a intentar.", Utilidades.BotonesDialogo.Ok);
+                }
+                else
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", Exc.Message, Utilidades.BotonesDialogo.Ok);
+                }
+
+
+                
 
        
                 txtUsuario.Focus();

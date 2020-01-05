@@ -31,6 +31,8 @@ namespace Coordinadores_de_Edad.Controles
             Pro_Usuario = pUsuario;
             Pro_ID_Area_Atencion = pID_Area_Atencion;
 
+            NavegacionAsistencias.SelectedPage = PageListaAsistencia;
+
             ObtenerActividad();
 
             if (Pro_ID_Actividad == 0)

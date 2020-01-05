@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcMiEquipo = new DevExpress.XtraGrid.GridControl();
             this.dsVistas1 = new Core.DataSets.dsVistas();
             this.gvMiEquipo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusuario_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colequipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcargo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVerFicha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdVerFicha = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -55,8 +57,6 @@
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
-            this.colcargo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colequipo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcMiEquipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMiEquipo)).BeginInit();
@@ -76,12 +76,12 @@
             this.gcMiEquipo.DataMember = "dtMiEquipo";
             this.gcMiEquipo.DataSource = this.dsVistas1;
             this.gcMiEquipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMiEquipo.Location = new System.Drawing.Point(0, 184);
+            this.gcMiEquipo.Location = new System.Drawing.Point(0, 149);
             this.gcMiEquipo.MainView = this.gvMiEquipo;
             this.gcMiEquipo.Name = "gcMiEquipo";
             this.gcMiEquipo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdVerFicha});
-            this.gcMiEquipo.Size = new System.Drawing.Size(1136, 516);
+            this.gcMiEquipo.Size = new System.Drawing.Size(1136, 551);
             this.gcMiEquipo.TabIndex = 15;
             this.gcMiEquipo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMiEquipo});
@@ -126,6 +126,32 @@
             this.colusuario_colaborador.Name = "colusuario_colaborador";
             this.colusuario_colaborador.Width = 94;
             // 
+            // colequipo
+            // 
+            this.colequipo.Caption = "Equipo";
+            this.colequipo.FieldName = "equipo";
+            this.colequipo.MinWidth = 25;
+            this.colequipo.Name = "colequipo";
+            this.colequipo.OptionsColumn.AllowEdit = false;
+            this.colequipo.OptionsColumn.AllowFocus = false;
+            this.colequipo.OptionsColumn.ReadOnly = true;
+            this.colequipo.Visible = true;
+            this.colequipo.VisibleIndex = 2;
+            this.colequipo.Width = 94;
+            // 
+            // colcargo
+            // 
+            this.colcargo.Caption = "Cargo";
+            this.colcargo.FieldName = "cargo";
+            this.colcargo.MinWidth = 25;
+            this.colcargo.Name = "colcargo";
+            this.colcargo.OptionsColumn.AllowEdit = false;
+            this.colcargo.OptionsColumn.AllowFocus = false;
+            this.colcargo.OptionsColumn.ReadOnly = true;
+            this.colcargo.Visible = true;
+            this.colcargo.VisibleIndex = 3;
+            this.colcargo.Width = 94;
+            // 
             // colnombre_colaborador
             // 
             this.colnombre_colaborador.Caption = "Nombre";
@@ -154,9 +180,9 @@
             // cmdVerFicha
             // 
             this.cmdVerFicha.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::Core.Properties.Resources.icon_visualizar_24;
+            editorButtonImageOptions1.Image = global::Core.Properties.Resources.icon_visualizar_24;
             this.cmdVerFicha.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdVerFicha.Name = "cmdVerFicha";
             this.cmdVerFicha.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdVerFicha.Click += new System.EventHandler(this.CmdVerFicha_Click);
@@ -210,7 +236,7 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 157);
+            this.panel4.Location = new System.Drawing.Point(0, 122);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1136, 27);
             this.panel4.TabIndex = 19;
@@ -220,7 +246,7 @@
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Controls.Add(this.cmdGuardarSolicitud);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 103);
+            this.panel1.Location = new System.Drawing.Point(0, 68);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(1136, 54);
@@ -254,7 +280,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 85);
+            this.panel3.Location = new System.Drawing.Point(0, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1136, 18);
             this.panel3.TabIndex = 17;
@@ -263,9 +289,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 75);
+            this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1136, 10);
+            this.panel2.Size = new System.Drawing.Size(1136, 2);
             this.panel2.TabIndex = 14;
             // 
             // pnlEncabezado
@@ -274,12 +300,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1136, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1136, 48);
             this.pnlEncabezado.TabIndex = 13;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -288,7 +314,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1136, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(1136, 48);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Nombre de Equipo";
             // 
@@ -315,32 +341,6 @@
             this.ctlVistaFichaIngreso1.Pro_UsuarioColaborador = null;
             this.ctlVistaFichaIngreso1.Size = new System.Drawing.Size(1136, 700);
             this.ctlVistaFichaIngreso1.TabIndex = 0;
-            // 
-            // colcargo
-            // 
-            this.colcargo.Caption = "Cargo";
-            this.colcargo.FieldName = "cargo";
-            this.colcargo.MinWidth = 25;
-            this.colcargo.Name = "colcargo";
-            this.colcargo.OptionsColumn.AllowEdit = false;
-            this.colcargo.OptionsColumn.AllowFocus = false;
-            this.colcargo.OptionsColumn.ReadOnly = true;
-            this.colcargo.Visible = true;
-            this.colcargo.VisibleIndex = 3;
-            this.colcargo.Width = 94;
-            // 
-            // colequipo
-            // 
-            this.colequipo.Caption = "Equipo";
-            this.colequipo.FieldName = "equipo";
-            this.colequipo.MinWidth = 25;
-            this.colequipo.Name = "colequipo";
-            this.colequipo.OptionsColumn.AllowEdit = false;
-            this.colequipo.OptionsColumn.AllowFocus = false;
-            this.colequipo.OptionsColumn.ReadOnly = true;
-            this.colequipo.Visible = true;
-            this.colequipo.VisibleIndex = 2;
-            this.colequipo.Width = 94;
             // 
             // ctlMiEquipo
             // 

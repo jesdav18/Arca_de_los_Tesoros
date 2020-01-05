@@ -37,7 +37,7 @@ namespace Core.Controles
 
         #region PROPIEDADES
 
-        public bool Pro_EstaCreandoFicha { get; set; }
+        private bool Pro_MostrarTodosCargos { get; set; }
         public UserCredential Pro_Credenciales { get; set; }
         private PgSqlConnection Pro_Conexion { get; set; }
         private string Pro_Usuario { get; set; }
@@ -90,11 +90,13 @@ namespace Core.Controles
         #region FUNCIONES
 
         public void ConstruirControl(PgSqlConnection pConexion, 
-                                     string pUsuario
+                                     string pUsuario,
+                                     bool pMostrarTodosCargos = true
                                      )
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
+            Pro_MostrarTodosCargos = pMostrarTodosCargos;
 
             LimpiarCajasTexto();
             NavigationFicha.SelectedPage = Page1;
@@ -114,6 +116,7 @@ namespace Core.Controles
 
         private void GuardarFichaIngreso()
         {
+           
 
             if (Pro_Conexion.State != ConnectionState.Open)
             {
@@ -195,10 +198,17 @@ namespace Core.Controles
             try
             {
 
+                if (!splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.ShowWaitForm();
+                }
+
+
+
                 pgComando.ExecuteNonQuery();
                 pgTrans.Commit();
 
-                Pro_EstaCreandoFicha = false;
+                
 
                 sentencia = null;
                 pgComando.Dispose();
@@ -207,6 +217,11 @@ namespace Core.Controles
                 OnFichaIngresada?.Invoke(new object(), new EventArgs());
                 NavigationFicha.SelectedPage = Page1;
 
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
+
                 Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La ficha fue almacenada!", Utilidades.BotonesDialogo.Ok);
 
             }
@@ -214,7 +229,7 @@ namespace Core.Controles
             {
                 pgTrans.Rollback();
                 pgComando.Dispose();
-                Pro_EstaCreandoFicha = true;
+                
                 Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "GuardarFichaIngreso");
                 Utilidades.MostrarDialogo(FindForm(), "Falla en el ingreso de datos", "¡Algo falló mientras creaba la ficha de ingreso, por favor vuelva a intentarlo!", Utilidades.BotonesDialogo.Ok);
 
@@ -264,7 +279,7 @@ namespace Core.Controles
            glStatusDoctrinal.Text = "";
             glEmpresa.Text = "";
 
-            lnlCargarFotografia.Text = "Cargar Fotografía";
+            lnlCargarFotografia.Text = "Clic para seleccionar Fotografía";
         }
 
         private void GuardarImagenEnDirectorio()
@@ -272,6 +287,11 @@ namespace Core.Controles
 
             if (ValidarImagenFueSeleccionada())
             {
+                if (!splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.ShowWaitForm();
+                }
+
                 Pro_Credenciales = GetCredentials();
 
                 var service = new DriveService(new BaseClientService.Initializer()
@@ -299,6 +319,11 @@ namespace Core.Controles
                 service = null;
                 Console.WriteLine("Done");
                 Console.Read();
+
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
             }
         }
 
@@ -337,8 +362,9 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_cargos();";
+            string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_cargos(:p_ver_todos);";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_ver_todos", PgSqlType.Boolean).Value = Pro_MostrarTodosCargos;
 
             try
             {
@@ -659,6 +685,11 @@ namespace Core.Controles
                     Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor ingrese dirección domicilio del colaborador!", Utilidades.BotonesDialogo.Ok);
                     return false;
                 }
+                else if (string.IsNullOrEmpty(txtCelular.Text))
+                {
+                    Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor ingrese numero de celular correspondiente al colaborador!", Utilidades.BotonesDialogo.Ok);
+                    return false;
+                }
                 else
                 {
                     return true;
@@ -678,7 +709,7 @@ namespace Core.Controles
             }
             else if (NavigationFicha.SelectedPage == Page8)
             {
-                if (lnlCargarFotografia.Text == "Cargar Fotografía")
+                if (lnlCargarFotografia.Text == "Clic para seleccionar Fotografía")
                 {
                     Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor cargue la fotografía del colaborador!", Utilidades.BotonesDialogo.Ok);
                     return false;
@@ -796,12 +827,14 @@ namespace Core.Controles
         private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
         {
 
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
             if ((ValidacionCampos()))
             {
-                if (!splashScreenManager1.IsSplashFormVisible)
-                {
-                    splashScreenManager1.ShowWaitForm();
-                }
+                
 
                 GuardarImagenEnDirectorio();
                 GuardarFichaIngreso();
@@ -810,10 +843,15 @@ namespace Core.Controles
                 {
                     splashScreenManager1.CloseWaitForm();
                 }
-               
+
             }
             else
             {
+                if (splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.CloseWaitForm();
+                }
+
                 Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Hay campos obligatorios que aún no han sido llenados!", Utilidades.BotonesDialogo.Ok);
                 
             }        
@@ -880,10 +918,6 @@ namespace Core.Controles
             picAtras.Visible = true;
             picSiguiente.Visible = true;
 
-            if (NavigationFicha.SelectedPage != Page1)
-            {
-                Pro_EstaCreandoFicha = true;
-            }
            
 
             if (NavigationFicha.SelectedPage == Page1)
@@ -1045,16 +1079,21 @@ namespace Core.Controles
 
         }
 
-
-        private void TxtNombre_TextChanged(object sender, EventArgs e)
+        private void LblPagina_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtNombre.Text) || !string.IsNullOrEmpty(txtApellido.Text))
+            if (!bgCargarConfiguraciones.IsBusy)
             {
-                Pro_EstaCreandoFicha = true;
-            }
 
+                bgCargarConfiguraciones.RunWorkerAsync();
+            }
+            else
+            {
+                bgCargarConfiguraciones.CancelAsync();
+            }
         }
 
         #endregion
+
+
     }
 }

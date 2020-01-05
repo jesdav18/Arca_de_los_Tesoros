@@ -106,6 +106,7 @@
     <None Include="Resources\icon_equipo.png" />
     <Content Include="Resources\icon_mi_equipo_64.png" />
     <Content Include="Resources\icon_nuevo_usuario_negro_64.png" />
+    <None Include="Resources\icon_refrescar.png" />
     <Content Include="Resources\icon_Solicitudes.png" />
   </ItemGroup>
   <ItemGroup>

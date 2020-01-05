@@ -43,16 +43,16 @@
             this.NavigationPrincipal = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageTrimestres = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pageDias = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlDiasTrimestre1 = new Coordinadores_de_Edad.Controles.ctlDiasTrimestre();
             this.pageSeleccionMaestros = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlSeleccionMaestros_Ayudas1 = new Coordinadores_de_Edad.Controles.ctlSeleccionMaestros_Ayudas();
             this.pageSeleccionAyuda = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlSeleccionAyuda1 = new Coordinadores_de_Edad.Controles.ctlSeleccionAyuda();
             this.PageIngresoActividades = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlngresoActividad1 = new Coordinadores_de_Edad.Controles.ctlngresoActividad();
             this.pnlDesplazamiento = new System.Windows.Forms.Panel();
             this.picAtras = new DevExpress.XtraEditors.PictureEdit();
             this.picSiguiente = new DevExpress.XtraEditors.PictureEdit();
-            this.ctlDiasTrimestre1 = new Coordinadores_de_Edad.Controles.ctlDiasTrimestre();
-            this.ctlSeleccionMaestros_Ayudas1 = new Coordinadores_de_Edad.Controles.ctlSeleccionMaestros_Ayudas();
-            this.ctlSeleccionAyuda1 = new Coordinadores_de_Edad.Controles.ctlSeleccionAyuda();
-            this.ctlngresoActividad1 = new Coordinadores_de_Edad.Controles.ctlngresoActividad();
             this.pnlEncabezado.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,12 +76,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1330, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1330, 51);
             this.pnlEncabezado.TabIndex = 12;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -90,7 +90,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1330, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(1330, 51);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Planificador Trimestral";
             // 
@@ -98,18 +98,18 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 75);
+            this.panel2.Location = new System.Drawing.Point(0, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1330, 10);
+            this.panel2.Size = new System.Drawing.Size(1330, 2);
             this.panel2.TabIndex = 13;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 85);
+            this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1330, 670);
+            this.panel1.Size = new System.Drawing.Size(1330, 702);
             this.panel1.TabIndex = 14;
             // 
             // panel3
@@ -117,7 +117,7 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(200, 91);
+            this.panel3.Location = new System.Drawing.Point(200, 107);
             this.panel3.MaximumSize = new System.Drawing.Size(889, 486);
             this.panel3.MinimumSize = new System.Drawing.Size(889, 486);
             this.panel3.Name = "panel3";
@@ -245,12 +245,46 @@
             this.pageDias.Name = "pageDias";
             this.pageDias.Size = new System.Drawing.Size(1330, 755);
             // 
+            // ctlDiasTrimestre1
+            // 
+            this.ctlDiasTrimestre1.BackColor = System.Drawing.Color.White;
+            this.ctlDiasTrimestre1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlDiasTrimestre1.Location = new System.Drawing.Point(0, 0);
+            this.ctlDiasTrimestre1.Name = "ctlDiasTrimestre1";
+            this.ctlDiasTrimestre1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlDiasTrimestre1.Pro_Anio = null;
+            this.ctlDiasTrimestre1.Pro_Conexion = null;
+            this.ctlDiasTrimestre1.Pro_FechaActividad = new System.DateTime(((long)(0)));
+            this.ctlDiasTrimestre1.Pro_ID_Actividad_Generado = 0;
+            this.ctlDiasTrimestre1.Pro_ID_Area_Atencion = 0;
+            this.ctlDiasTrimestre1.Pro_NumeroTrimestre = 0;
+            this.ctlDiasTrimestre1.Pro_Usuario = null;
+            this.ctlDiasTrimestre1.Size = new System.Drawing.Size(1330, 755);
+            this.ctlDiasTrimestre1.TabIndex = 0;
+            // 
             // pageSeleccionMaestros
             // 
             this.pageSeleccionMaestros.Caption = "pageSeleccionMaestros";
             this.pageSeleccionMaestros.Controls.Add(this.ctlSeleccionMaestros_Ayudas1);
             this.pageSeleccionMaestros.Name = "pageSeleccionMaestros";
             this.pageSeleccionMaestros.Size = new System.Drawing.Size(1330, 755);
+            // 
+            // ctlSeleccionMaestros_Ayudas1
+            // 
+            this.ctlSeleccionMaestros_Ayudas1.BackColor = System.Drawing.Color.White;
+            this.ctlSeleccionMaestros_Ayudas1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlSeleccionMaestros_Ayudas1.Location = new System.Drawing.Point(0, 0);
+            this.ctlSeleccionMaestros_Ayudas1.Name = "ctlSeleccionMaestros_Ayudas1";
+            this.ctlSeleccionMaestros_Ayudas1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlSeleccionMaestros_Ayudas1.Pro_Conexion = null;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_Fecha = null;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_FechaActividad = new System.DateTime(((long)(0)));
+            this.ctlSeleccionMaestros_Ayudas1.Pro_ID_Actividad = 0;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_ID_AreaAtencion = 0;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_MostrarEncabezadoPrincipal = true;
+            this.ctlSeleccionMaestros_Ayudas1.Pro_Usuario = null;
+            this.ctlSeleccionMaestros_Ayudas1.Size = new System.Drawing.Size(1330, 755);
+            this.ctlSeleccionMaestros_Ayudas1.TabIndex = 0;
             // 
             // pageSeleccionAyuda
             // 
@@ -259,12 +293,44 @@
             this.pageSeleccionAyuda.Name = "pageSeleccionAyuda";
             this.pageSeleccionAyuda.Size = new System.Drawing.Size(1330, 755);
             // 
+            // ctlSeleccionAyuda1
+            // 
+            this.ctlSeleccionAyuda1.BackColor = System.Drawing.Color.White;
+            this.ctlSeleccionAyuda1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlSeleccionAyuda1.Location = new System.Drawing.Point(0, 0);
+            this.ctlSeleccionAyuda1.Name = "ctlSeleccionAyuda1";
+            this.ctlSeleccionAyuda1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlSeleccionAyuda1.Pro_Conexion = null;
+            this.ctlSeleccionAyuda1.Pro_Fecha = null;
+            this.ctlSeleccionAyuda1.Pro_FechaActividad = new System.DateTime(((long)(0)));
+            this.ctlSeleccionAyuda1.Pro_ID_Actividad = 0;
+            this.ctlSeleccionAyuda1.Pro_ID_AreaAtencion = 0;
+            this.ctlSeleccionAyuda1.Pro_MostrarEncabezadoOriginal = true;
+            this.ctlSeleccionAyuda1.Pro_Usuario = null;
+            this.ctlSeleccionAyuda1.Size = new System.Drawing.Size(1330, 755);
+            this.ctlSeleccionAyuda1.TabIndex = 0;
+            // 
             // PageIngresoActividades
             // 
             this.PageIngresoActividades.Caption = "PageIngresoActividades";
             this.PageIngresoActividades.Controls.Add(this.ctlngresoActividad1);
             this.PageIngresoActividades.Name = "PageIngresoActividades";
             this.PageIngresoActividades.Size = new System.Drawing.Size(1330, 755);
+            // 
+            // ctlngresoActividad1
+            // 
+            this.ctlngresoActividad1.BackColor = System.Drawing.Color.White;
+            this.ctlngresoActividad1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlngresoActividad1.Location = new System.Drawing.Point(0, 0);
+            this.ctlngresoActividad1.Name = "ctlngresoActividad1";
+            this.ctlngresoActividad1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlngresoActividad1.Pro_Conexion = null;
+            this.ctlngresoActividad1.Pro_Fecha = null;
+            this.ctlngresoActividad1.Pro_FechaActividad = new System.DateTime(((long)(0)));
+            this.ctlngresoActividad1.Pro_ID_Actividad = 0;
+            this.ctlngresoActividad1.Pro_Usuario = null;
+            this.ctlngresoActividad1.Size = new System.Drawing.Size(1330, 755);
+            this.ctlngresoActividad1.TabIndex = 0;
             // 
             // pnlDesplazamiento
             // 
@@ -303,60 +369,6 @@
             this.picSiguiente.Size = new System.Drawing.Size(80, 67);
             this.picSiguiente.TabIndex = 17;
             this.picSiguiente.Click += new System.EventHandler(this.PicSiguiente_Click);
-            // 
-            // ctlDiasTrimestre1
-            // 
-            this.ctlDiasTrimestre1.BackColor = System.Drawing.Color.White;
-            this.ctlDiasTrimestre1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlDiasTrimestre1.Location = new System.Drawing.Point(0, 0);
-            this.ctlDiasTrimestre1.Name = "ctlDiasTrimestre1";
-            this.ctlDiasTrimestre1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlDiasTrimestre1.Pro_Anio = null;
-            this.ctlDiasTrimestre1.Pro_Conexion = null;
-            this.ctlDiasTrimestre1.Pro_NumeroTrimestre = 0;
-            this.ctlDiasTrimestre1.Pro_Usuario = null;
-            this.ctlDiasTrimestre1.Size = new System.Drawing.Size(1330, 755);
-            this.ctlDiasTrimestre1.TabIndex = 0;
-            // 
-            // ctlSeleccionMaestros_Ayudas1
-            // 
-            this.ctlSeleccionMaestros_Ayudas1.BackColor = System.Drawing.Color.White;
-            this.ctlSeleccionMaestros_Ayudas1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlSeleccionMaestros_Ayudas1.Location = new System.Drawing.Point(0, 0);
-            this.ctlSeleccionMaestros_Ayudas1.Name = "ctlSeleccionMaestros_Ayudas1";
-            this.ctlSeleccionMaestros_Ayudas1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlSeleccionMaestros_Ayudas1.Pro_Conexion = null;
-            this.ctlSeleccionMaestros_Ayudas1.Pro_Fecha = null;
-            this.ctlSeleccionMaestros_Ayudas1.Pro_ID_AreaAtencion = 0;
-            this.ctlSeleccionMaestros_Ayudas1.Pro_MostrarEncabezadoPrincipal = true;
-            this.ctlSeleccionMaestros_Ayudas1.Pro_Usuario = null;
-            this.ctlSeleccionMaestros_Ayudas1.Size = new System.Drawing.Size(1330, 755);
-            this.ctlSeleccionMaestros_Ayudas1.TabIndex = 0;
-            // 
-            // ctlSeleccionAyuda1
-            // 
-            this.ctlSeleccionAyuda1.BackColor = System.Drawing.Color.White;
-            this.ctlSeleccionAyuda1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlSeleccionAyuda1.Location = new System.Drawing.Point(0, 0);
-            this.ctlSeleccionAyuda1.Name = "ctlSeleccionAyuda1";
-            this.ctlSeleccionAyuda1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlSeleccionAyuda1.Pro_Conexion = null;
-            this.ctlSeleccionAyuda1.Pro_Fecha = null;
-            this.ctlSeleccionAyuda1.Pro_ID_AreaAtencion = 0;
-            this.ctlSeleccionAyuda1.Pro_MostrarEncabezadoOriginal = true;
-            this.ctlSeleccionAyuda1.Pro_Usuario = null;
-            this.ctlSeleccionAyuda1.Size = new System.Drawing.Size(1330, 755);
-            this.ctlSeleccionAyuda1.TabIndex = 0;
-            // 
-            // ctlngresoActividad1
-            // 
-            this.ctlngresoActividad1.BackColor = System.Drawing.Color.White;
-            this.ctlngresoActividad1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlngresoActividad1.Location = new System.Drawing.Point(0, 0);
-            this.ctlngresoActividad1.Name = "ctlngresoActividad1";
-            this.ctlngresoActividad1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlngresoActividad1.Size = new System.Drawing.Size(1330, 755);
-            this.ctlngresoActividad1.TabIndex = 0;
             // 
             // ctlPlanificadorTrimestralCoordinadorEdad
             // 

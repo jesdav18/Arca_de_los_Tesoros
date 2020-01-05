@@ -76,7 +76,7 @@ namespace Coordinadores_de_Edad.Controles
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosAsistencia");
-                MessageBox.Show("Algo salió mal mientras se cargaba lista asistencia.");
+                
             }
         }
 
@@ -113,7 +113,7 @@ namespace Coordinadores_de_Edad.Controles
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosAsistencia");
-                MessageBox.Show("Algo salió mal mientras se cargaba lista asistencia.");
+      
             }
         }
 

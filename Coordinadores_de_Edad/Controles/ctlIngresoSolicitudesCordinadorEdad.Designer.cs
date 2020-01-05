@@ -66,12 +66,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1449, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1449, 53);
             this.pnlEncabezado.TabIndex = 11;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -80,7 +80,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1449, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(1449, 53);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Ingreso de Solicitudes";
             // 
@@ -88,9 +88,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 80);
+            this.panel2.Location = new System.Drawing.Point(5, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1449, 10);
+            this.panel2.Size = new System.Drawing.Size(1449, 2);
             this.panel2.TabIndex = 12;
             // 
             // labelControl2
@@ -235,13 +235,13 @@
             // 
             this.cmdOrganizadorActividades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmdOrganizadorActividades.EditValue = global::Coordinadores_de_Edad.Resources.img_solicitud;
-            this.cmdOrganizadorActividades.Location = new System.Drawing.Point(5, 90);
+            this.cmdOrganizadorActividades.Location = new System.Drawing.Point(5, 60);
             this.cmdOrganizadorActividades.Name = "cmdOrganizadorActividades";
             this.cmdOrganizadorActividades.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdOrganizadorActividades.Properties.NullText = "   ";
             this.cmdOrganizadorActividades.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdOrganizadorActividades.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdOrganizadorActividades.Size = new System.Drawing.Size(707, 720);
+            this.cmdOrganizadorActividades.Size = new System.Drawing.Size(707, 750);
             this.cmdOrganizadorActividades.TabIndex = 33;
             this.cmdOrganizadorActividades.ToolTip = "Organizador de Actividades\r\n";
             this.cmdOrganizadorActividades.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -258,9 +258,9 @@
             this.pnlCentral.Controls.Add(this.labelControl1);
             this.pnlCentral.Controls.Add(this.dateFechaSolicitud);
             this.pnlCentral.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlCentral.Location = new System.Drawing.Point(712, 90);
+            this.pnlCentral.Location = new System.Drawing.Point(712, 60);
             this.pnlCentral.Name = "pnlCentral";
-            this.pnlCentral.Size = new System.Drawing.Size(742, 720);
+            this.pnlCentral.Size = new System.Drawing.Size(742, 750);
             this.pnlCentral.TabIndex = 34;
             // 
             // ctlIngresoSolicitudesCordinadorEdad

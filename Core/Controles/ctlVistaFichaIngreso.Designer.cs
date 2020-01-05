@@ -327,12 +327,12 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1244, 75);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1244, 52);
             this.pnlEncabezado.TabIndex = 13;
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.Appearance.Options.UseFont = true;
             this.lblEncabezado.Appearance.Options.UseTextOptions = true;
             this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -341,7 +341,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(281, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(753, 75);
+            this.lblEncabezado.Size = new System.Drawing.Size(753, 52);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Ficha de Ingreso";
             // 
@@ -351,7 +351,7 @@
             this.panel42.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel42.Location = new System.Drawing.Point(0, 0);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(281, 75);
+            this.panel42.Size = new System.Drawing.Size(281, 52);
             this.panel42.TabIndex = 20;
             // 
             // panel43
@@ -365,7 +365,7 @@
             this.panel43.Controls.Add(this.panel45);
             this.panel43.Controls.Add(this.picPdf);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel43.Location = new System.Drawing.Point(0, 23);
+            this.panel43.Location = new System.Drawing.Point(0, 0);
             this.panel43.Name = "panel43";
             this.panel43.Size = new System.Drawing.Size(281, 52);
             this.panel43.TabIndex = 0;
@@ -507,7 +507,7 @@
             this.toggleHabilitar.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.toggleHabilitar.Properties.OffText = "Inactivo";
             this.toggleHabilitar.Properties.OnText = "Activo";
-            this.toggleHabilitar.Size = new System.Drawing.Size(210, 75);
+            this.toggleHabilitar.Size = new System.Drawing.Size(210, 52);
             this.toggleHabilitar.TabIndex = 19;
             this.toggleHabilitar.ToolTip = "Habilitar o Deshabilitar al colaborador";
             this.toggleHabilitar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -518,7 +518,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 80);
+            this.panel2.Location = new System.Drawing.Point(5, 57);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1244, 5);
             this.panel2.TabIndex = 14;
@@ -526,7 +526,7 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 85);
+            this.panel4.Location = new System.Drawing.Point(5, 62);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1244, 10);
             this.panel4.TabIndex = 18;
@@ -538,7 +538,7 @@
             this.pnlDatosGenerales.Controls.Add(this.panel1);
             this.pnlDatosGenerales.Controls.Add(this.picColaborador);
             this.pnlDatosGenerales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDatosGenerales.Location = new System.Drawing.Point(5, 95);
+            this.pnlDatosGenerales.Location = new System.Drawing.Point(5, 72);
             this.pnlDatosGenerales.Name = "pnlDatosGenerales";
             this.pnlDatosGenerales.Size = new System.Drawing.Size(1244, 215);
             this.pnlDatosGenerales.TabIndex = 20;
@@ -1056,9 +1056,9 @@
             this.pnlInformacionEstablecimientoIglesia.Controls.Add(this.panel34);
             this.pnlInformacionEstablecimientoIglesia.Controls.Add(this.panel6);
             this.pnlInformacionEstablecimientoIglesia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInformacionEstablecimientoIglesia.Location = new System.Drawing.Point(5, 310);
+            this.pnlInformacionEstablecimientoIglesia.Location = new System.Drawing.Point(5, 287);
             this.pnlInformacionEstablecimientoIglesia.Name = "pnlInformacionEstablecimientoIglesia";
-            this.pnlInformacionEstablecimientoIglesia.Size = new System.Drawing.Size(1244, 611);
+            this.pnlInformacionEstablecimientoIglesia.Size = new System.Drawing.Size(1244, 634);
             this.pnlInformacionEstablecimientoIglesia.TabIndex = 21;
             // 
             // popupCreacionUsuario
@@ -1106,9 +1106,9 @@
             this.panel9.Controls.Add(this.panel18);
             this.panel9.Controls.Add(this.panel17);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(691, 39);
+            this.panel9.Location = new System.Drawing.Point(691, 33);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(519, 572);
+            this.panel9.Size = new System.Drawing.Size(519, 601);
             this.panel9.TabIndex = 22;
             // 
             // panel22
@@ -1404,9 +1404,9 @@
             // 
             this.panel10.Controls.Add(this.popupModificarNombre);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(653, 39);
+            this.panel10.Location = new System.Drawing.Point(653, 33);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(38, 572);
+            this.panel10.Size = new System.Drawing.Size(38, 601);
             this.panel10.TabIndex = 23;
             // 
             // popupModificarNombre
@@ -1631,9 +1631,9 @@
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.panel12);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(104, 39);
+            this.panel8.Location = new System.Drawing.Point(104, 33);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(549, 572);
+            this.panel8.Size = new System.Drawing.Size(549, 601);
             this.panel8.TabIndex = 21;
             // 
             // documentViewer1
@@ -2009,9 +2009,9 @@
             // 
             this.panel34.Controls.Add(this.lblID_Generado);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel34.Location = new System.Drawing.Point(0, 39);
+            this.panel34.Location = new System.Drawing.Point(0, 33);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(104, 572);
+            this.panel34.Size = new System.Drawing.Size(104, 601);
             this.panel34.TabIndex = 24;
             // 
             // lblID_Generado
@@ -2032,12 +2032,12 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1244, 39);
+            this.panel6.Size = new System.Drawing.Size(1244, 33);
             this.panel6.TabIndex = 15;
             // 
             // labelControl12
             // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Appearance.Options.UseForeColor = true;
@@ -2049,7 +2049,7 @@
             this.labelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl12.Location = new System.Drawing.Point(0, 0);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(1244, 39);
+            this.labelControl12.Size = new System.Drawing.Size(1244, 33);
             this.labelControl12.TabIndex = 10;
             this.labelControl12.Text = "Información de Establecimiento en la Iglesia";
             // 
@@ -2070,9 +2070,9 @@
             this.panel39.Controls.Add(this.panel24);
             this.panel39.Controls.Add(this.panel35);
             this.panel39.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel39.Location = new System.Drawing.Point(0, 41);
+            this.panel39.Location = new System.Drawing.Point(0, 35);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(1244, 142);
+            this.panel39.Size = new System.Drawing.Size(1244, 148);
             this.panel39.TabIndex = 24;
             // 
             // panel31
@@ -2083,7 +2083,7 @@
             this.panel31.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel31.Location = new System.Drawing.Point(725, 0);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(516, 142);
+            this.panel31.Size = new System.Drawing.Size(516, 148);
             this.panel31.TabIndex = 23;
             // 
             // panel36
@@ -2177,7 +2177,7 @@
             this.panel40.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel40.Location = new System.Drawing.Point(687, 0);
             this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(38, 142);
+            this.panel40.Size = new System.Drawing.Size(38, 148);
             this.panel40.TabIndex = 26;
             // 
             // panel24
@@ -2189,7 +2189,7 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel24.Location = new System.Drawing.Point(104, 0);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(583, 142);
+            this.panel24.Size = new System.Drawing.Size(583, 148);
             this.panel24.TabIndex = 22;
             // 
             // panel27
@@ -2360,7 +2360,7 @@
             this.panel35.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel35.Location = new System.Drawing.Point(0, 0);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(104, 142);
+            this.panel35.Size = new System.Drawing.Size(104, 148);
             this.panel35.TabIndex = 25;
             // 
             // panel7
@@ -2370,12 +2370,12 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1244, 41);
+            this.panel7.Size = new System.Drawing.Size(1244, 35);
             this.panel7.TabIndex = 15;
             // 
             // labelControl13
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
@@ -2387,7 +2387,7 @@
             this.labelControl13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl13.Location = new System.Drawing.Point(0, 0);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(1244, 41);
+            this.labelControl13.Size = new System.Drawing.Size(1244, 35);
             this.labelControl13.TabIndex = 11;
             this.labelControl13.Text = "Información Laboral";
             // 

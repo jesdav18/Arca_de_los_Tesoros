@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
@@ -66,7 +67,7 @@
             this.PageCrearFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlIngresoFicha1 = new Core.Controles.ctlIngresoFicha();
             this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
-            this.tmrFusibles = new System.Windows.Forms.Timer();
+            this.tmrFusibles = new System.Windows.Forms.Timer(this.components);
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Anciano.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
@@ -578,8 +579,7 @@
             this.ctlIngresoFicha1.MinimumSize = new System.Drawing.Size(1166, 751);
             this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
             this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlIngresoFicha1.Pro_Credenciales = null;
-            this.ctlIngresoFicha1.Pro_EstaCreandoFicha = false;
+            this.ctlIngresoFicha1.Pro_Credenciales = null;           
             this.ctlIngresoFicha1.Size = new System.Drawing.Size(1166, 751);
             this.ctlIngresoFicha1.TabIndex = 0;
             // 

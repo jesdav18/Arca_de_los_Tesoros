@@ -49,9 +49,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 74);
+            this.panel2.Location = new System.Drawing.Point(5, 61);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(957, 10);
+            this.panel2.Size = new System.Drawing.Size(957, 2);
             this.panel2.TabIndex = 16;
             // 
             // pnlEncabezado
@@ -60,7 +60,7 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(957, 69);
+            this.pnlEncabezado.Size = new System.Drawing.Size(957, 56);
             this.pnlEncabezado.TabIndex = 15;
             // 
             // lblEncabezado
@@ -74,7 +74,7 @@
             this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(957, 69);
+            this.lblEncabezado.Size = new System.Drawing.Size(957, 56);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Ingrese Actividades para dia X";
             // 
