@@ -153,8 +153,8 @@
             this.ctlCubrirAusencias1.Name = "ctlCubrirAusencias1";
             this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlCubrirAusencias1.Pro_ID_Colaborar_Actividad = 0;
-            this.ctlCubrirAusencias1.Pro_SeleccionaNoNecesitaCubrir = false;
-            this.ctlCubrirAusencias1.Pro_SeleccionaServidorEquipo = false;
+          
+         
             this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1098, 852);
             this.ctlCubrirAusencias1.TabIndex = 0;
             // 

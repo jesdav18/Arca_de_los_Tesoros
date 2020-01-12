@@ -97,6 +97,9 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
+        public Usuario Pro_Usuario { get; set; }
+        public int Pro_ID_AreaAtencion { get; set; }
+
 
         #endregion
 
@@ -116,12 +119,16 @@ namespace Coordinadores_de_Edad.Controles
         public void ConstruirControl(PgSqlConnection pConexion, 
                                     int pID_Colaborador,
                                     int pID_Actividad,
-                                    bool pPresente)
+                                    bool pPresente,
+                                    Usuario pUsuario,
+                                    int pID_AreaAtencion)
         {
             Pro_Conexion = pConexion;
             Pro_ID_Colaborador = pID_Colaborador;
             Pro_ID_Actividad = pID_Actividad;
             Pro_Presente = pPresente;
+            Pro_Usuario = pUsuario;
+            Pro_ID_AreaAtencion = pID_AreaAtencion;
 
             CargarDatosColaborador();
             CargarFotografiaColaborador();
@@ -388,7 +395,12 @@ namespace Coordinadores_de_Edad.Controles
         {
             
             NavigationPrincipal.SelectedPage = PageCubrirAusencia;
-            ctlCubrirAusencias1.ConstruirControl(Pro_Conexion, Pro_ID_Colaborador, MarcarAsistencia(Pro_ID_Colaborador, false));
+            ctlCubrirAusencias1.ConstruirControl(Pro_Conexion, 
+                                                 Pro_ID_Colaborador, 
+                                                 Pro_Usuario,
+                                                 Pro_ID_Actividad,
+                                                 Pro_ID_AreaAtencion,
+                                                 MarcarAsistencia(Pro_ID_Colaborador, false));
 
         }
 

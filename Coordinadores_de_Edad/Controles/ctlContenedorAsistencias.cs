@@ -24,7 +24,7 @@ namespace Coordinadores_de_Edad.Controles
         #region FUNCIONES
 
         public void ConstruirControl(PgSqlConnection pConexion,
-                                     string pUsuario,
+                                     Usuario pUsuario,
                                      int pID_Area_Atencion)
         {
             Pro_Conexion = pConexion;
@@ -84,6 +84,10 @@ namespace Coordinadores_de_Edad.Controles
 
         private void ctlDetallesAsistencia1_OnAsistenciaIngresada(object sender, EventArgs e)
         {
+            ctlListaAsistencia1.ConstruirControl(Pro_Conexion,
+                                                    Pro_Usuario,
+                                                    Pro_ID_Actividad,
+                                                    Pro_ID_Area_Atencion);
             NavegacionAsistencias.SelectedPage = PageListaAsistencia;
 
         }
@@ -95,7 +99,9 @@ namespace Coordinadores_de_Edad.Controles
             ctlDetallesAsistencia1.ConstruirControl(Pro_Conexion, 
                                                     pID_Colaborador,
                                                     Pro_ID_Actividad,
-                                                    pPresente);
+                                                    pPresente,
+                                                    Pro_Usuario,
+                                                    Pro_ID_Area_Atencion);
         }
 
         #endregion
@@ -104,7 +110,7 @@ namespace Coordinadores_de_Edad.Controles
 
 
         public PgSqlConnection Pro_Conexion { get; set; }
-        public string Pro_Usuario { get; set; }
+        public Usuario Pro_Usuario { get; set; }
         public int Pro_ID_Area_Atencion { get; set; }
         public int Pro_ID_Actividad { get; set; }
 

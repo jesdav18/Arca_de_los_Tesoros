@@ -113,6 +113,16 @@ namespace Anciano.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_refrescar {
+            get {
+                object obj = ResourceManager.GetObject("icon_refrescar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Solicitudes {
             get {
                 object obj = ResourceManager.GetObject("icon_Solicitudes", resourceCulture);

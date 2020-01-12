@@ -90,7 +90,11 @@
       <DependentUpon>frmEspera.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controles\ctlContenedorPrincipalAnciano.resx">
@@ -100,7 +104,10 @@
       <DependentUpon>frmEspera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\62218400_2421805074506489_798898671931359232_n.jpg" />
@@ -109,6 +116,7 @@
     <Content Include="Resources\icon_cerrar_sesion_64.png" />
     <Content Include="Resources\icon_Cumpleanieros.png" />
     <Content Include="Resources\icon_nuevo_usuario_negro_64.png" />
+    <None Include="Resources\icon_refrescar.png" />
     <Content Include="Resources\icon_Solicitudes.png" />
   </ItemGroup>
   <ItemGroup>

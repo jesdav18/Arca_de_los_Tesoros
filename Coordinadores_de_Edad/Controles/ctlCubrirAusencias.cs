@@ -133,8 +133,9 @@ namespace Coordinadores_de_Edad.Controles
         private PgSqlConnection Pro_Conexion { get; set; }
         private int Pro_ID_Colaborador { get; set; }
         private int Pro_AlturaOriginal { get; set; }
+        public Usuario Pro_Usuario { get; set; }
+        public int Pro_ID_Actividad { get; set; }
 
-        
         private bool Pro_ExtenderAyuda {
             get
             {
@@ -149,7 +150,7 @@ namespace Coordinadores_de_Edad.Controles
                 }
                 else
                 {
-                    ctlSeleccionAyuda1.Height = 85;
+                    ctlSeleccionAyuda1.Height = 53;
                 }
 
             }
@@ -168,93 +169,144 @@ namespace Coordinadores_de_Edad.Controles
                 }
                 else
                 {
-                    ctlSeleccionMaestros_Ayudas1.Height = 85;
+                    ctlSeleccionMaestros_Ayudas1.Height = 50;
                 }
             }
         }
 
-        public bool Pro_SeleccionaServidorEquipo {
+        public bool Pro_NoNecesitaCubrir {
             get
             {
-                return v_selecciona_servidor;
+                return v_no_necesita_cubrir;
             }
             set
             {
-                v_selecciona_servidor = value;
-                if (value)
+                v_no_necesita_cubrir = value;
+                if (v_no_necesita_cubrir)
                 {
-                    v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.SERVIDOR_EQUIPO;
-                    picReemplazarConServidorEquipo.Image = Resources.iconCheck;
+                    picNoEsNecesarioCubrir.Image = Coordinadores_de_Edad.Resources.iconCheckVerde_24;
                 }
                 else
                 {
-                    picReemplazarConServidorEquipo.Image = Resources.iconUncheck_32;
-                    v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.NINGUNO;
+                    picNoEsNecesarioCubrir.Image = Coordinadores_de_Edad.Resources.iconUncheck_32;
                 }
             }
         }
-        public bool Pro_SeleccionaNoNecesitaCubrir {
+        public bool Pro_CubrirConServidor {
             get
             {
-                return v_seleccion_no_necesita_cubrir;
+                return v_cubrir_con_servidor;
             }
             set
             {
-                v_seleccion_no_necesita_cubrir = value;
-                if (value)
+                v_cubrir_con_servidor = value;
+                if (v_cubrir_con_servidor)
                 {
-                    v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.NO_NECESITA_CUBRIR;
-                    picReemplazarConServidorEquipo.Image = Resources.iconCheck;
+                    picReemplazar.Image = Coordinadores_de_Edad.Resources.iconCheckVerde_24;
                 }
                 else
                 {
-                    picReemplazarConServidorEquipo.Image = Resources.iconUncheck_32;
-                    v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.NINGUNO;
+                    picReemplazar.Image = Coordinadores_de_Edad.Resources.iconUncheck_32;
                 }
             }
         }
+
+
 
         public int Pro_ID_Colaborar_Actividad { get; set; }
+        public int Pro_ID_AreaAtencion { get; set; }
 
         #endregion
 
-        bool v_selecciona_servidor;
-        bool v_seleccion_no_necesita_cubrir;
+        bool v_no_necesita_cubrir;
+        bool v_cubrir_con_servidor;
         bool v_extender_ayuda;
         bool v_extender_maestros;
 
         #region FUNCIONES
 
-        public void ConstruirControl(PgSqlConnection pConexion, int pID_Colaborador, int pID_Colaborador_Actividad = 0)
+        public void ConstruirControl(PgSqlConnection pConexion,
+                                     int pID_Colaborador,
+                                     Usuario pUsuario,
+                                     int pID_Actividad,
+                                     int pID_AreaAtencion,
+                                     int pID_Colaborador_Actividad = 0)
         {
             Pro_Conexion = pConexion;
             Pro_ID_Colaborador = pID_Colaborador;
             Pro_ID_Colaborar_Actividad = pID_Colaborador_Actividad;
+            Pro_Usuario = pUsuario;
+            Pro_ID_Actividad = pID_Actividad;
+            Pro_ID_AreaAtencion = pID_AreaAtencion;
 
             Pro_ExtenderAyuda = false;
             Pro_ExtenderMaestros = false;
-            Pro_SeleccionaNoNecesitaCubrir = false;
-            Pro_SeleccionaServidorEquipo = false;
+            Pro_NoNecesitaCubrir = false;
+            Pro_CubrirConServidor = false;
+           
 
+
+
+            ctlSeleccionAyuda1.ConstruirControl(Pro_Conexion,
+                                                Pro_Usuario.Pro_Usuario,
+                                                Pro_ID_Actividad,
+                                                Pro_ID_AreaAtencion,
+                                                false
+                                                );
         }
 
 
         #endregion
 
-       
-        private void PicReemplazarConServidorEquipo_Click(object sender, EventArgs e)
+    
+        private void PicNoEsNecesarioCubrir_Click(object sender, EventArgs e)
         {
-            Pro_SeleccionaServidorEquipo = !Pro_SeleccionaServidorEquipo;
+            Pro_NoNecesitaCubrir = !Pro_NoNecesitaCubrir;
+            if (Pro_NoNecesitaCubrir)
+            {
+                v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.NO_NECESITA_CUBRIR;
+            }
+            else {
+                v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.NINGUNO;
+            }
+
+
+            if (Pro_CubrirConServidor)
+            {
+                
+                Pro_CubrirConServidor = false;
+            }
         }
 
-        private void PicNoEsNecsarioCubrirAusencia_Click(object sender, EventArgs e)
+        private void PicReemplazar_Click(object sender, EventArgs e)
         {
-            Pro_SeleccionaNoNecesitaCubrir = !Pro_SeleccionaNoNecesitaCubrir;
+            Pro_CubrirConServidor = !Pro_CubrirConServidor;
+            if (Pro_CubrirConServidor)
+            {
+                v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.SERVIDOR_EQUIPO;
+            }
+            else
+            {
+                v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.NINGUNO;
+            }
+
+            if (Pro_NoNecesitaCubrir)
+            {
+                Pro_NoNecesitaCubrir = false;
+            }
         }
 
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
-            GuardarCubrirAusencia();
+            if (v_tipo_cubrir_ausencia != TIPOS_CUBRIR_AUSENCIA.NINGUNO)
+            {
+                GuardarCubrirAusencia();
+            }
+            else
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "Es necesario que seleccione algún medio para cubrir la ausencia, puede buscar entre las ayudas, los maestros, marcar ausencia con servidor de otro equipo o marcar que no necesita cubrir.",Utilidades.BotonesDialogo.Ok);
+            }
+            
         }
     }
 }

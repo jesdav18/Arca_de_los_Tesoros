@@ -117,12 +117,14 @@ namespace Core.Controles
             string sentencia = @"SELECT * FROM arca_tesoros.ft_view_citas_actividades (:p_usuario);";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario;
+            
+          
 
             try
             {
+               
                 dsVistas1.dtCita_Actividad.Clear();
                 new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtCita_Actividad);
-
 
                 RecargarCitas();
 
@@ -146,16 +148,23 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_citas_actividades_por_fecha (
-                                                                                                  :p_fecha
-                                                                                                )";
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_citas_actividades_por_fecha (:p_fecha )";
+
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
             pgComando.Parameters.Add("p_fecha", PgSqlType.Date).Value = ProFechaSeleccionada;
 
+            string sentenciaDetalle = @"SELECT * FROM arca_tesoros.ft_view_lista_asistencia_pendientes(:p_fecha)";
+            PgSqlCommand pgComandoDetalle = new PgSqlCommand(sentenciaDetalle, Pro_Conexion);
+            pgComandoDetalle.Parameters.Add("p_fecha", PgSqlType.Date).Value = ProFechaSeleccionada;
+
+
             try
             {
+
+                dsVistas1.dtListaAsistencia.Clear();
                 dsVistas1.dtCita_Actividad.Clear();
-                new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtCita_Actividad);
+                new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtCita_Actividad);       
+                new PgSqlDataAdapter(pgComandoDetalle).Fill(dsVistas1.dtListaAsistencia);
 
 
                 RecargarCitas();
@@ -243,7 +252,11 @@ namespace Core.Controles
                 apt.Subject = iterador.asunto;
                 apt.Location = iterador.lugar;
                 apt.Description = iterador.observaciones;
-                apt.LabelKey = iterador.id_color_etiqueta;
+                if (!iterador.Isid_color_etiquetaNull())
+                {
+                    apt.LabelKey = iterador.id_color_etiqueta;
+                }
+               
 
                 schedulerControl1.DataStorage.Appointments.Add(apt);
             }
@@ -364,6 +377,13 @@ namespace Core.Controles
             }
 
            
+        }
+
+        private void GvActivdades_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+
+            gvActivdades.SetMasterRowExpanded(e.RowHandle, !gvActivdades.GetMasterRowExpanded(e.RowHandle));
+        
         }
     }
 }

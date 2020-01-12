@@ -136,7 +136,7 @@ namespace Coordinadores_de_Edad.Controles
 
             NavigationCoordinadorEdad.SelectedPage = PageAsistencia;
             ctlContenedorAsistencias1.ConstruirControl(Pro_Conexion,
-                                                       Pro_Usuario.Pro_Usuario,
+                                                       Pro_Usuario,
                                                        Pro_Usuario.Pro_ID_AreaAtencion
                                                        );
 

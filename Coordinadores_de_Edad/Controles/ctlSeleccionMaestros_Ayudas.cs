@@ -220,7 +220,7 @@ namespace Coordinadores_de_Edad.Controles
 
                 if (v_fila.vino_ultima_actividad)
                 {
-                    if (Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", v_fila.nombre + " colaboró en la última actividad, realizada en la fecha " + v_fila.fecha_ultima_actividad + ". ¿Desea siempre registrarlo en la lista de asistencia?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
+                    if (Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", v_fila.nombre + " colaboró en la última actividad, realizada en la fecha " + v_fila.fecha_ultima_actividad.ToShortDateString() + ". ¿Desea siempre registrarlo en la lista de asistencia?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
                     {
                         e.Cancel = true;
                         return;

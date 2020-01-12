@@ -50,14 +50,13 @@ namespace Coordinadores_de_Edad.Controles
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                    string pUsuario,
-                                   string pFecha,
                                    int pID_Actividad,
                                    int pID_AreaAtencion,
                                    bool pMostrarEncabezadoOriginal = true)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
-            Pro_Fecha = pFecha;
+           
             Pro_ID_AreaAtencion = pID_AreaAtencion;
             Pro_MostrarEncabezadoOriginal = pMostrarEncabezadoOriginal;
             Pro_ID_Actividad = pID_Actividad;
@@ -113,7 +112,7 @@ namespace Coordinadores_de_Edad.Controles
             {
                 PgSqlDataReader pgDR = pgComando.ExecuteReader();
                 if (pgDR.Read())
-                {                  
+                {
                     Pro_FechaActividad = pgDR.GetDateTime("fecha");
                 }
 
@@ -128,6 +127,7 @@ namespace Coordinadores_de_Edad.Controles
             }
         }
 
+       
 
         private bool GuardarEnListaAsistencia(int pID_Colaborador, bool pSeleccionar)
         {
@@ -198,7 +198,7 @@ namespace Coordinadores_de_Edad.Controles
             {
                 if (v_fila.vino_ultima_actividad)
                 {
-                    if (Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", v_fila.nombre + " colaboró en la última actividad, realizada en la fecha " + v_fila.fecha_ultima_actividad + ". ¿Desea siempre registrarlo en la lista de asistencia?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
+                    if (Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", v_fila.nombre + " colaboró en la última actividad, realizada en la fecha " + v_fila.fecha_ultima_actividad.ToShortDateString() + ". ¿Desea siempre registrarlo en la lista de asistencia?", Utilidades.BotonesDialogo.YesNo) == DialogResult.No)
                     {
                         e.Cancel = true;
                         return;

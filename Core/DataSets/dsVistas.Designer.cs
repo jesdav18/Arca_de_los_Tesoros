@@ -42,9 +42,13 @@ namespace Core.DataSets {
         
         private dtActividadDataTable tabledtActividad;
         
+        private dtListaAsistenciaDataTable tabledtListaAsistencia;
+        
         private global::System.Data.DataRelation relationFK_dtActividad_dtDetalleAsistencias;
         
         private global::System.Data.DataRelation relationFK_dtAreasAtencion_dtActividad;
+        
+        private global::System.Data.DataRelation relationFK_dtCita_Actividad_dtListaAsistencia;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -100,6 +104,9 @@ namespace Core.DataSets {
                 }
                 if ((ds.Tables["dtActividad"] != null)) {
                     base.Tables.Add(new dtActividadDataTable(ds.Tables["dtActividad"]));
+                }
+                if ((ds.Tables["dtListaAsistencia"] != null)) {
+                    base.Tables.Add(new dtListaAsistenciaDataTable(ds.Tables["dtListaAsistencia"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -211,6 +218,16 @@ namespace Core.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public dtListaAsistenciaDataTable dtListaAsistencia {
+            get {
+                return this.tabledtListaAsistencia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -303,6 +320,9 @@ namespace Core.DataSets {
                 if ((ds.Tables["dtActividad"] != null)) {
                     base.Tables.Add(new dtActividadDataTable(ds.Tables["dtActividad"]));
                 }
+                if ((ds.Tables["dtListaAsistencia"] != null)) {
+                    base.Tables.Add(new dtListaAsistenciaDataTable(ds.Tables["dtListaAsistencia"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -390,8 +410,15 @@ namespace Core.DataSets {
                     this.tabledtActividad.InitVars();
                 }
             }
+            this.tabledtListaAsistencia = ((dtListaAsistenciaDataTable)(base.Tables["dtListaAsistencia"]));
+            if ((initTable == true)) {
+                if ((this.tabledtListaAsistencia != null)) {
+                    this.tabledtListaAsistencia.InitVars();
+                }
+            }
             this.relationFK_dtActividad_dtDetalleAsistencias = this.Relations["FK_dtActividad_dtDetalleAsistencias"];
             this.relationFK_dtAreasAtencion_dtActividad = this.Relations["FK_dtAreasAtencion_dtActividad"];
+            this.relationFK_dtCita_Actividad_dtListaAsistencia = this.Relations["FK_dtCita_Actividad_dtListaAsistencia"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -420,6 +447,8 @@ namespace Core.DataSets {
             base.Tables.Add(this.tabledtDetalleAsistencias);
             this.tabledtActividad = new dtActividadDataTable();
             base.Tables.Add(this.tabledtActividad);
+            this.tabledtListaAsistencia = new dtListaAsistenciaDataTable();
+            base.Tables.Add(this.tabledtListaAsistencia);
             global::System.Data.ForeignKeyConstraint fkc;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_dtActividad_dtDetalleAsistencias", new global::System.Data.DataColumn[] {
                         this.tabledtActividad.id_actividadColumn}, new global::System.Data.DataColumn[] {
@@ -435,6 +464,13 @@ namespace Core.DataSets {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_dtCita_Actividad_dtListaAsistencia", new global::System.Data.DataColumn[] {
+                        this.tabledtCita_Actividad.id_actividadColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtListaAsistencia.id_actividadColumn});
+            this.tabledtListaAsistencia.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_dtActividad_dtDetalleAsistencias = new global::System.Data.DataRelation("FK_dtActividad_dtDetalleAsistencias", new global::System.Data.DataColumn[] {
                         this.tabledtActividad.id_actividadColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtDetalleAsistencias.id_actividadColumn}, false);
@@ -443,6 +479,10 @@ namespace Core.DataSets {
                         this.tabledtAreasAtencion.id_area_atencionColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtActividad.id_area_atencionColumn}, false);
             this.Relations.Add(this.relationFK_dtAreasAtencion_dtActividad);
+            this.relationFK_dtCita_Actividad_dtListaAsistencia = new global::System.Data.DataRelation("FK_dtCita_Actividad_dtListaAsistencia", new global::System.Data.DataColumn[] {
+                        this.tabledtCita_Actividad.id_actividadColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtListaAsistencia.id_actividadColumn}, false);
+            this.Relations.Add(this.relationFK_dtCita_Actividad_dtListaAsistencia);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -496,6 +536,12 @@ namespace Core.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializedtActividad() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedtListaAsistencia() {
             return false;
         }
         
@@ -580,6 +626,9 @@ namespace Core.DataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void dtActividadRowChangeEventHandler(object sender, dtActividadRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void dtListaAsistenciaRowChangeEventHandler(object sender, dtListaAsistenciaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1576,6 +1625,12 @@ namespace Core.DataSets {
             
             private global::System.Data.DataColumn columnobservaciones;
             
+            private global::System.Data.DataColumn columnid_actividad;
+            
+            private global::System.Data.DataColumn columnnombre_area_atencion;
+            
+            private global::System.Data.DataColumn columnid_area_atencion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtCita_ActividadDataTable() {
@@ -1683,6 +1738,30 @@ namespace Core.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_actividadColumn {
+                get {
+                    return this.columnid_actividad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombre_area_atencionColumn {
+                get {
+                    return this.columnnombre_area_atencion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_area_atencionColumn {
+                get {
+                    return this.columnid_area_atencion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1718,7 +1797,7 @@ namespace Core.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtCita_ActividadRow AdddtCita_ActividadRow(int id_cita_actividad, System.DateTime hora_inicio, System.DateTime hora_fin, System.DateTime fecha, string lugar, int id_color_etiqueta, string asunto, string usuario, string observaciones) {
+            public dtCita_ActividadRow AdddtCita_ActividadRow(int id_cita_actividad, System.DateTime hora_inicio, System.DateTime hora_fin, System.DateTime fecha, string lugar, int id_color_etiqueta, string asunto, string usuario, string observaciones, int id_actividad, string nombre_area_atencion, string id_area_atencion) {
                 dtCita_ActividadRow rowdtCita_ActividadRow = ((dtCita_ActividadRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_cita_actividad,
@@ -1729,7 +1808,10 @@ namespace Core.DataSets {
                         id_color_etiqueta,
                         asunto,
                         usuario,
-                        observaciones};
+                        observaciones,
+                        id_actividad,
+                        nombre_area_atencion,
+                        id_area_atencion};
                 rowdtCita_ActividadRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtCita_ActividadRow);
                 return rowdtCita_ActividadRow;
@@ -1761,6 +1843,9 @@ namespace Core.DataSets {
                 this.columnasunto = base.Columns["asunto"];
                 this.columnusuario = base.Columns["usuario"];
                 this.columnobservaciones = base.Columns["observaciones"];
+                this.columnid_actividad = base.Columns["id_actividad"];
+                this.columnnombre_area_atencion = base.Columns["nombre_area_atencion"];
+                this.columnid_area_atencion = base.Columns["id_area_atencion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1784,6 +1869,19 @@ namespace Core.DataSets {
                 base.Columns.Add(this.columnusuario);
                 this.columnobservaciones = new global::System.Data.DataColumn("observaciones", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnobservaciones);
+                this.columnid_actividad = new global::System.Data.DataColumn("id_actividad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_actividad);
+                this.columnnombre_area_atencion = new global::System.Data.DataColumn("nombre_area_atencion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_area_atencion);
+                this.columnid_area_atencion = new global::System.Data.DataColumn("id_area_atencion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_area_atencion);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_cita_actividad}, false));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnid_actividad}, false));
+                this.columnid_cita_actividad.Unique = true;
+                this.columnid_actividad.Unique = true;
+                this.columnid_actividad.DefaultValue = ((int)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3727,6 +3825,326 @@ namespace Core.DataSets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dtListaAsistenciaDataTable : global::System.Data.TypedTableBase<dtListaAsistenciaRow> {
+            
+            private global::System.Data.DataColumn columnid_colaborador;
+            
+            private global::System.Data.DataColumn columnnombre_colaborador;
+            
+            private global::System.Data.DataColumn columnid_actividad;
+            
+            private global::System.Data.DataColumn columnid_area_atencion;
+            
+            private global::System.Data.DataColumn columncargo;
+            
+            private global::System.Data.DataColumn columnnumero_identidad;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtListaAsistenciaDataTable() {
+                this.TableName = "dtListaAsistencia";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal dtListaAsistenciaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected dtListaAsistenciaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_colaboradorColumn {
+                get {
+                    return this.columnid_colaborador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombre_colaboradorColumn {
+                get {
+                    return this.columnnombre_colaborador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_actividadColumn {
+                get {
+                    return this.columnid_actividad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_area_atencionColumn {
+                get {
+                    return this.columnid_area_atencion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cargoColumn {
+                get {
+                    return this.columncargo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_identidadColumn {
+                get {
+                    return this.columnnumero_identidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtListaAsistenciaRow this[int index] {
+                get {
+                    return ((dtListaAsistenciaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtListaAsistenciaRowChangeEventHandler dtListaAsistenciaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtListaAsistenciaRowChangeEventHandler dtListaAsistenciaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtListaAsistenciaRowChangeEventHandler dtListaAsistenciaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtListaAsistenciaRowChangeEventHandler dtListaAsistenciaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AdddtListaAsistenciaRow(dtListaAsistenciaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtListaAsistenciaRow AdddtListaAsistenciaRow(int id_colaborador, string nombre_colaborador, dtCita_ActividadRow parentdtCita_ActividadRowByFK_dtCita_Actividad_dtListaAsistencia, int id_area_atencion, string cargo, string numero_identidad) {
+                dtListaAsistenciaRow rowdtListaAsistenciaRow = ((dtListaAsistenciaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id_colaborador,
+                        nombre_colaborador,
+                        null,
+                        id_area_atencion,
+                        cargo,
+                        numero_identidad};
+                if ((parentdtCita_ActividadRowByFK_dtCita_Actividad_dtListaAsistencia != null)) {
+                    columnValuesArray[2] = parentdtCita_ActividadRowByFK_dtCita_Actividad_dtListaAsistencia[9];
+                }
+                rowdtListaAsistenciaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtListaAsistenciaRow);
+                return rowdtListaAsistenciaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dtListaAsistenciaDataTable cln = ((dtListaAsistenciaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dtListaAsistenciaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid_colaborador = base.Columns["id_colaborador"];
+                this.columnnombre_colaborador = base.Columns["nombre_colaborador"];
+                this.columnid_actividad = base.Columns["id_actividad"];
+                this.columnid_area_atencion = base.Columns["id_area_atencion"];
+                this.columncargo = base.Columns["cargo"];
+                this.columnnumero_identidad = base.Columns["numero_identidad"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid_colaborador = new global::System.Data.DataColumn("id_colaborador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_colaborador);
+                this.columnnombre_colaborador = new global::System.Data.DataColumn("nombre_colaborador", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_colaborador);
+                this.columnid_actividad = new global::System.Data.DataColumn("id_actividad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_actividad);
+                this.columnid_area_atencion = new global::System.Data.DataColumn("id_area_atencion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_area_atencion);
+                this.columncargo = new global::System.Data.DataColumn("cargo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncargo);
+                this.columnnumero_identidad = new global::System.Data.DataColumn("numero_identidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_identidad);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtListaAsistenciaRow NewdtListaAsistenciaRow() {
+                return ((dtListaAsistenciaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dtListaAsistenciaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dtListaAsistenciaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dtListaAsistenciaRowChanged != null)) {
+                    this.dtListaAsistenciaRowChanged(this, new dtListaAsistenciaRowChangeEvent(((dtListaAsistenciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dtListaAsistenciaRowChanging != null)) {
+                    this.dtListaAsistenciaRowChanging(this, new dtListaAsistenciaRowChangeEvent(((dtListaAsistenciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dtListaAsistenciaRowDeleted != null)) {
+                    this.dtListaAsistenciaRowDeleted(this, new dtListaAsistenciaRowChangeEvent(((dtListaAsistenciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dtListaAsistenciaRowDeleting != null)) {
+                    this.dtListaAsistenciaRowDeleting(this, new dtListaAsistenciaRowChangeEvent(((dtListaAsistenciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovedtListaAsistenciaRow(dtListaAsistenciaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsVistas ds = new dsVistas();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dtListaAsistenciaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class dtMiEquipoRow : global::System.Data.DataRow {
@@ -4894,6 +5312,56 @@ namespace Core.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_actividad {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtCita_Actividad.id_actividadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_actividad\' de la tabla \'dtCita_Actividad\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtCita_Actividad.id_actividadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre_area_atencion {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtCita_Actividad.nombre_area_atencionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_area_atencion\' de la tabla \'dtCita_Actividad\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtCita_Actividad.nombre_area_atencionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string id_area_atencion {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtCita_Actividad.id_area_atencionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_area_atencion\' de la tabla \'dtCita_Actividad\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtCita_Actividad.id_area_atencionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_cita_actividadNull() {
                 return this.IsNull(this.tabledtCita_Actividad.id_cita_actividadColumn);
             }
@@ -4998,6 +5466,53 @@ namespace Core.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetobservacionesNull() {
                 this[this.tabledtCita_Actividad.observacionesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_actividadNull() {
+                return this.IsNull(this.tabledtCita_Actividad.id_actividadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_actividadNull() {
+                this[this.tabledtCita_Actividad.id_actividadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnombre_area_atencionNull() {
+                return this.IsNull(this.tabledtCita_Actividad.nombre_area_atencionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnombre_area_atencionNull() {
+                this[this.tabledtCita_Actividad.nombre_area_atencionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_area_atencionNull() {
+                return this.IsNull(this.tabledtCita_Actividad.id_area_atencionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_area_atencionNull() {
+                this[this.tabledtCita_Actividad.id_area_atencionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtListaAsistenciaRow[] GetdtListaAsistenciaRows() {
+                if ((this.Table.ChildRelations["FK_dtCita_Actividad_dtListaAsistencia"] == null)) {
+                    return new dtListaAsistenciaRow[0];
+                }
+                else {
+                    return ((dtListaAsistenciaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dtCita_Actividad_dtListaAsistencia"])));
+                }
             }
         }
         
@@ -5965,6 +6480,204 @@ namespace Core.DataSets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dtListaAsistenciaRow : global::System.Data.DataRow {
+            
+            private dtListaAsistenciaDataTable tabledtListaAsistencia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal dtListaAsistenciaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledtListaAsistencia = ((dtListaAsistenciaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_colaborador {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtListaAsistencia.id_colaboradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_colaborador\' de la tabla \'dtListaAsistencia\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.id_colaboradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre_colaborador {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtListaAsistencia.nombre_colaboradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_colaborador\' de la tabla \'dtListaAsistencia\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.nombre_colaboradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_actividad {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtListaAsistencia.id_actividadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_actividad\' de la tabla \'dtListaAsistencia\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.id_actividadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_area_atencion {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtListaAsistencia.id_area_atencionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_area_atencion\' de la tabla \'dtListaAsistencia\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.id_area_atencionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cargo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtListaAsistencia.cargoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cargo\' de la tabla \'dtListaAsistencia\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.cargoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string numero_identidad {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtListaAsistencia.numero_identidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_identidad\' de la tabla \'dtListaAsistencia\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtListaAsistencia.numero_identidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtCita_ActividadRow dtCita_ActividadRow {
+                get {
+                    return ((dtCita_ActividadRow)(this.GetParentRow(this.Table.ParentRelations["FK_dtCita_Actividad_dtListaAsistencia"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_dtCita_Actividad_dtListaAsistencia"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_colaboradorNull() {
+                return this.IsNull(this.tabledtListaAsistencia.id_colaboradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_colaboradorNull() {
+                this[this.tabledtListaAsistencia.id_colaboradorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnombre_colaboradorNull() {
+                return this.IsNull(this.tabledtListaAsistencia.nombre_colaboradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnombre_colaboradorNull() {
+                this[this.tabledtListaAsistencia.nombre_colaboradorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_actividadNull() {
+                return this.IsNull(this.tabledtListaAsistencia.id_actividadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_actividadNull() {
+                this[this.tabledtListaAsistencia.id_actividadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_area_atencionNull() {
+                return this.IsNull(this.tabledtListaAsistencia.id_area_atencionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_area_atencionNull() {
+                this[this.tabledtListaAsistencia.id_area_atencionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscargoNull() {
+                return this.IsNull(this.tabledtListaAsistencia.cargoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcargoNull() {
+                this[this.tabledtListaAsistencia.cargoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_identidadNull() {
+                return this.IsNull(this.tabledtListaAsistencia.numero_identidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_identidadNull() {
+                this[this.tabledtListaAsistencia.numero_identidadColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -6256,6 +6969,40 @@ namespace Core.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtActividadRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class dtListaAsistenciaRowChangeEvent : global::System.EventArgs {
+            
+            private dtListaAsistenciaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtListaAsistenciaRowChangeEvent(dtListaAsistenciaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtListaAsistenciaRow Row {
                 get {
                     return this.eventRow;
                 }

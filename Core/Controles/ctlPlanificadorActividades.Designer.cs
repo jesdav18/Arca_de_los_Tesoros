@@ -29,15 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlPlanificadorActividades));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            this.gvListaAsistencia = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colnombre_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_identidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcargo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcMaestrosDisponibles = new DevExpress.XtraGrid.GridControl();
+            this.dsVistas1 = new Core.DataSets.dsVistas();
+            this.gvActivdades = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_cita_actividad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhora_inicio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhora_fin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collugar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.memoLugar = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.colid_color_etiqueta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colasunto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.memoAsunto = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colobservaciones = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.memoObservacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdColor = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
@@ -53,7 +76,6 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.glColorEtiqueta = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsColores = new System.Windows.Forms.BindingSource(this.components);
-            this.dsVistas1 = new Core.DataSets.dsVistas();
             this.gvColor = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_color = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,22 +95,6 @@
             this.picGuardar = new DevExpress.XtraEditors.PictureEdit();
             this.picIrAtras = new DevExpress.XtraEditors.PictureEdit();
             this.PageVistaCitas = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gcMaestrosDisponibles = new DevExpress.XtraGrid.GridControl();
-            this.gvActivdades = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid_cita_actividad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhora_inicio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhora_fin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collugar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.memoLugar = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.colid_color_etiqueta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colasunto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.memoAsunto = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colobservaciones = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.memoObservacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new DevExpress.XtraEditors.TextEdit();
@@ -98,6 +104,14 @@
             this.ltlTituloCitas = new DevExpress.XtraEditors.LabelControl();
             this.cmdAgregarCita = new DevExpress.XtraEditors.PictureEdit();
             this.cmdIrAtrasCitas = new DevExpress.XtraEditors.PictureEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvListaAsistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvActivdades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoLugar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoAsunto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoObservacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdColor)).BeginInit();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
@@ -110,7 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeHoraInicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glColorEtiqueta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsColores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLugar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).BeginInit();
@@ -120,12 +133,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGuardar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIrAtras.Properties)).BeginInit();
             this.PageVistaCitas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvActivdades)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoLugar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoAsunto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoObservacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).BeginInit();
@@ -133,6 +140,303 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarCita.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtrasCitas.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gvListaAsistencia
+            // 
+            this.gvListaAsistencia.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvListaAsistencia.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvListaAsistencia.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvListaAsistencia.Appearance.Row.Options.UseFont = true;
+            this.gvListaAsistencia.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colnombre_colaborador,
+            this.colid_colaborador,
+            this.colnumero_identidad,
+            this.colcargo});
+            this.gvListaAsistencia.GridControl = this.gcMaestrosDisponibles;
+            this.gvListaAsistencia.Name = "gvListaAsistencia";
+            this.gvListaAsistencia.OptionsDetail.ShowDetailTabs = false;
+            this.gvListaAsistencia.OptionsView.ShowGroupPanel = false;
+            this.gvListaAsistencia.OptionsView.ShowIndicator = false;
+            // 
+            // colnombre_colaborador
+            // 
+            this.colnombre_colaborador.Caption = "Nombre";
+            this.colnombre_colaborador.FieldName = "nombre_colaborador";
+            this.colnombre_colaborador.MinWidth = 25;
+            this.colnombre_colaborador.Name = "colnombre_colaborador";
+            this.colnombre_colaborador.OptionsColumn.AllowEdit = false;
+            this.colnombre_colaborador.OptionsColumn.AllowFocus = false;
+            this.colnombre_colaborador.OptionsColumn.ReadOnly = true;
+            this.colnombre_colaborador.Visible = true;
+            this.colnombre_colaborador.VisibleIndex = 1;
+            this.colnombre_colaborador.Width = 94;
+            // 
+            // colid_colaborador
+            // 
+            this.colid_colaborador.Caption = "N° Ficha";
+            this.colid_colaborador.FieldName = "id_colaborador";
+            this.colid_colaborador.MaxWidth = 100;
+            this.colid_colaborador.MinWidth = 100;
+            this.colid_colaborador.Name = "colid_colaborador";
+            this.colid_colaborador.OptionsColumn.AllowEdit = false;
+            this.colid_colaborador.OptionsColumn.AllowFocus = false;
+            this.colid_colaborador.OptionsColumn.ReadOnly = true;
+            this.colid_colaborador.Visible = true;
+            this.colid_colaborador.VisibleIndex = 0;
+            this.colid_colaborador.Width = 100;
+            // 
+            // colnumero_identidad
+            // 
+            this.colnumero_identidad.Caption = "N° Identidad";
+            this.colnumero_identidad.FieldName = "numero_identidad";
+            this.colnumero_identidad.MaxWidth = 250;
+            this.colnumero_identidad.MinWidth = 250;
+            this.colnumero_identidad.Name = "colnumero_identidad";
+            this.colnumero_identidad.OptionsColumn.AllowEdit = false;
+            this.colnumero_identidad.OptionsColumn.AllowFocus = false;
+            this.colnumero_identidad.OptionsColumn.ReadOnly = true;
+            this.colnumero_identidad.Visible = true;
+            this.colnumero_identidad.VisibleIndex = 2;
+            this.colnumero_identidad.Width = 250;
+            // 
+            // colcargo
+            // 
+            this.colcargo.Caption = "Cargo";
+            this.colcargo.FieldName = "cargo";
+            this.colcargo.MaxWidth = 250;
+            this.colcargo.MinWidth = 250;
+            this.colcargo.Name = "colcargo";
+            this.colcargo.OptionsColumn.AllowEdit = false;
+            this.colcargo.OptionsColumn.AllowFocus = false;
+            this.colcargo.OptionsColumn.ReadOnly = true;
+            this.colcargo.Visible = true;
+            this.colcargo.VisibleIndex = 3;
+            this.colcargo.Width = 250;
+            // 
+            // gcMaestrosDisponibles
+            // 
+            this.gcMaestrosDisponibles.DataMember = "dtCita_Actividad";
+            this.gcMaestrosDisponibles.DataSource = this.dsVistas1;
+            this.gcMaestrosDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.gvListaAsistencia;
+            gridLevelNode1.RelationName = "FK_dtCita_Actividad_dtListaAsistencia";
+            this.gcMaestrosDisponibles.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gcMaestrosDisponibles.Location = new System.Drawing.Point(0, 119);
+            this.gcMaestrosDisponibles.MainView = this.gvActivdades;
+            this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
+            this.gcMaestrosDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.memoLugar,
+            this.memoAsunto,
+            this.memoObservacion,
+            this.cmdEliminar});
+            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(1039, 462);
+            this.gcMaestrosDisponibles.TabIndex = 23;
+            this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvActivdades,
+            this.gvListaAsistencia});
+            // 
+            // dsVistas1
+            // 
+            this.dsVistas1.DataSetName = "dsVistas";
+            this.dsVistas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gvActivdades
+            // 
+            this.gvActivdades.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvActivdades.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvActivdades.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvActivdades.Appearance.Row.Options.UseFont = true;
+            this.gvActivdades.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_cita_actividad,
+            this.colhora_inicio,
+            this.colhora_fin,
+            this.colfecha,
+            this.collugar,
+            this.colid_color_etiqueta,
+            this.colasunto,
+            this.colusuario,
+            this.colobservaciones,
+            this.gridColumn1});
+            this.gvActivdades.GridControl = this.gcMaestrosDisponibles;
+            this.gvActivdades.Name = "gvActivdades";
+            this.gvActivdades.OptionsDetail.ShowDetailTabs = false;
+            this.gvActivdades.OptionsView.ShowDetailButtons = false;
+            this.gvActivdades.OptionsView.ShowGroupPanel = false;
+            this.gvActivdades.OptionsView.ShowIndicator = false;
+            this.gvActivdades.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GvActivdades_RowClick);
+            // 
+            // colid_cita_actividad
+            // 
+            this.colid_cita_actividad.Caption = "ID Cita";
+            this.colid_cita_actividad.FieldName = "id_cita_actividad";
+            this.colid_cita_actividad.MinWidth = 25;
+            this.colid_cita_actividad.Name = "colid_cita_actividad";
+            this.colid_cita_actividad.OptionsColumn.AllowEdit = false;
+            this.colid_cita_actividad.OptionsColumn.AllowFocus = false;
+            this.colid_cita_actividad.OptionsColumn.ReadOnly = true;
+            this.colid_cita_actividad.Width = 94;
+            // 
+            // colhora_inicio
+            // 
+            this.colhora_inicio.AppearanceCell.Options.UseTextOptions = true;
+            this.colhora_inicio.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colhora_inicio.AppearanceHeader.Options.UseTextOptions = true;
+            this.colhora_inicio.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colhora_inicio.Caption = "Hora Inicio";
+            this.colhora_inicio.DisplayFormat.FormatString = "hh:mm";
+            this.colhora_inicio.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colhora_inicio.FieldName = "hora_inicio";
+            this.colhora_inicio.MaxWidth = 110;
+            this.colhora_inicio.MinWidth = 110;
+            this.colhora_inicio.Name = "colhora_inicio";
+            this.colhora_inicio.OptionsColumn.AllowEdit = false;
+            this.colhora_inicio.OptionsColumn.AllowFocus = false;
+            this.colhora_inicio.OptionsColumn.ReadOnly = true;
+            this.colhora_inicio.Visible = true;
+            this.colhora_inicio.VisibleIndex = 1;
+            this.colhora_inicio.Width = 110;
+            // 
+            // colhora_fin
+            // 
+            this.colhora_fin.AppearanceCell.Options.UseTextOptions = true;
+            this.colhora_fin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colhora_fin.AppearanceHeader.Options.UseTextOptions = true;
+            this.colhora_fin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colhora_fin.Caption = "Hora Fín";
+            this.colhora_fin.DisplayFormat.FormatString = "hh:mm";
+            this.colhora_fin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colhora_fin.FieldName = "hora_fin";
+            this.colhora_fin.MaxWidth = 98;
+            this.colhora_fin.MinWidth = 98;
+            this.colhora_fin.Name = "colhora_fin";
+            this.colhora_fin.OptionsColumn.AllowEdit = false;
+            this.colhora_fin.OptionsColumn.AllowFocus = false;
+            this.colhora_fin.OptionsColumn.ReadOnly = true;
+            this.colhora_fin.Visible = true;
+            this.colhora_fin.VisibleIndex = 2;
+            this.colhora_fin.Width = 98;
+            // 
+            // colfecha
+            // 
+            this.colfecha.AppearanceCell.Options.UseTextOptions = true;
+            this.colfecha.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colfecha.AppearanceHeader.Options.UseTextOptions = true;
+            this.colfecha.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colfecha.Caption = "Fecha";
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.MaxWidth = 111;
+            this.colfecha.MinWidth = 111;
+            this.colfecha.Name = "colfecha";
+            this.colfecha.OptionsColumn.AllowEdit = false;
+            this.colfecha.OptionsColumn.AllowFocus = false;
+            this.colfecha.OptionsColumn.ReadOnly = true;
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 0;
+            this.colfecha.Width = 111;
+            // 
+            // collugar
+            // 
+            this.collugar.Caption = "Lugar";
+            this.collugar.ColumnEdit = this.memoLugar;
+            this.collugar.FieldName = "lugar";
+            this.collugar.MinWidth = 25;
+            this.collugar.Name = "collugar";
+            this.collugar.OptionsColumn.AllowEdit = false;
+            this.collugar.OptionsColumn.AllowFocus = false;
+            this.collugar.OptionsColumn.ReadOnly = true;
+            this.collugar.Visible = true;
+            this.collugar.VisibleIndex = 3;
+            this.collugar.Width = 213;
+            // 
+            // memoLugar
+            // 
+            this.memoLugar.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memoLugar.Appearance.Options.UseFont = true;
+            this.memoLugar.Name = "memoLugar";
+            // 
+            // colid_color_etiqueta
+            // 
+            this.colid_color_etiqueta.Caption = "Color";
+            this.colid_color_etiqueta.FieldName = "id_color_etiqueta";
+            this.colid_color_etiqueta.MinWidth = 25;
+            this.colid_color_etiqueta.Name = "colid_color_etiqueta";
+            this.colid_color_etiqueta.OptionsColumn.AllowEdit = false;
+            this.colid_color_etiqueta.OptionsColumn.AllowFocus = false;
+            this.colid_color_etiqueta.OptionsColumn.ReadOnly = true;
+            this.colid_color_etiqueta.Width = 94;
+            // 
+            // colasunto
+            // 
+            this.colasunto.Caption = "Asunto";
+            this.colasunto.ColumnEdit = this.memoAsunto;
+            this.colasunto.FieldName = "asunto";
+            this.colasunto.MinWidth = 25;
+            this.colasunto.Name = "colasunto";
+            this.colasunto.OptionsColumn.AllowEdit = false;
+            this.colasunto.OptionsColumn.AllowFocus = false;
+            this.colasunto.OptionsColumn.ReadOnly = true;
+            this.colasunto.Visible = true;
+            this.colasunto.VisibleIndex = 4;
+            this.colasunto.Width = 213;
+            // 
+            // memoAsunto
+            // 
+            this.memoAsunto.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memoAsunto.Appearance.Options.UseFont = true;
+            this.memoAsunto.Name = "memoAsunto";
+            // 
+            // colusuario
+            // 
+            this.colusuario.Caption = "Usuario";
+            this.colusuario.FieldName = "usuario";
+            this.colusuario.MinWidth = 25;
+            this.colusuario.Name = "colusuario";
+            this.colusuario.OptionsColumn.AllowEdit = false;
+            this.colusuario.OptionsColumn.AllowFocus = false;
+            this.colusuario.OptionsColumn.ReadOnly = true;
+            this.colusuario.Width = 94;
+            // 
+            // colobservaciones
+            // 
+            this.colobservaciones.Caption = "Observaciones";
+            this.colobservaciones.ColumnEdit = this.memoObservacion;
+            this.colobservaciones.FieldName = "observaciones";
+            this.colobservaciones.MinWidth = 25;
+            this.colobservaciones.Name = "colobservaciones";
+            this.colobservaciones.OptionsColumn.AllowEdit = false;
+            this.colobservaciones.OptionsColumn.AllowFocus = false;
+            this.colobservaciones.OptionsColumn.ReadOnly = true;
+            this.colobservaciones.Visible = true;
+            this.colobservaciones.VisibleIndex = 5;
+            this.colobservaciones.Width = 203;
+            // 
+            // memoObservacion
+            // 
+            this.memoObservacion.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memoObservacion.Appearance.Options.UseFont = true;
+            this.memoObservacion.Name = "memoObservacion";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Eliminar";
+            this.gridColumn1.ColumnEdit = this.cmdEliminar;
+            this.gridColumn1.MaxWidth = 90;
+            this.gridColumn1.MinWidth = 90;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.Width = 90;
+            // 
+            // cmdEliminar
+            // 
+            this.cmdEliminar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdEliminar.Click += new System.EventHandler(this.CmdEliminar_Click);
             // 
             // cmdColor
             // 
@@ -335,11 +639,6 @@
             // 
             this.bsColores.DataMember = "dtColores";
             this.bsColores.DataSource = this.dsVistas1;
-            // 
-            // dsVistas1
-            // 
-            this.dsVistas1.DataSetName = "dsVistas";
-            this.dsVistas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvColor
             // 
@@ -587,218 +886,6 @@
             this.PageVistaCitas.Name = "PageVistaCitas";
             this.PageVistaCitas.Size = new System.Drawing.Size(1039, 581);
             // 
-            // gcMaestrosDisponibles
-            // 
-            this.gcMaestrosDisponibles.DataMember = "dtCita_Actividad";
-            this.gcMaestrosDisponibles.DataSource = this.dsVistas1;
-            this.gcMaestrosDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMaestrosDisponibles.Location = new System.Drawing.Point(0, 119);
-            this.gcMaestrosDisponibles.MainView = this.gvActivdades;
-            this.gcMaestrosDisponibles.Name = "gcMaestrosDisponibles";
-            this.gcMaestrosDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.memoLugar,
-            this.memoAsunto,
-            this.memoObservacion,
-            this.cmdEliminar});
-            this.gcMaestrosDisponibles.Size = new System.Drawing.Size(1039, 462);
-            this.gcMaestrosDisponibles.TabIndex = 23;
-            this.gcMaestrosDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvActivdades});
-            // 
-            // gvActivdades
-            // 
-            this.gvActivdades.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gvActivdades.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvActivdades.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gvActivdades.Appearance.Row.Options.UseFont = true;
-            this.gvActivdades.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid_cita_actividad,
-            this.colhora_inicio,
-            this.colhora_fin,
-            this.colfecha,
-            this.collugar,
-            this.colid_color_etiqueta,
-            this.colasunto,
-            this.colusuario,
-            this.colobservaciones,
-            this.gridColumn1});
-            this.gvActivdades.GridControl = this.gcMaestrosDisponibles;
-            this.gvActivdades.Name = "gvActivdades";
-            this.gvActivdades.OptionsView.ShowGroupPanel = false;
-            this.gvActivdades.OptionsView.ShowIndicator = false;
-            // 
-            // colid_cita_actividad
-            // 
-            this.colid_cita_actividad.Caption = "ID Cita";
-            this.colid_cita_actividad.FieldName = "id_cita_actividad";
-            this.colid_cita_actividad.MinWidth = 25;
-            this.colid_cita_actividad.Name = "colid_cita_actividad";
-            this.colid_cita_actividad.OptionsColumn.AllowEdit = false;
-            this.colid_cita_actividad.OptionsColumn.AllowFocus = false;
-            this.colid_cita_actividad.OptionsColumn.ReadOnly = true;
-            this.colid_cita_actividad.Width = 94;
-            // 
-            // colhora_inicio
-            // 
-            this.colhora_inicio.AppearanceCell.Options.UseTextOptions = true;
-            this.colhora_inicio.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhora_inicio.AppearanceHeader.Options.UseTextOptions = true;
-            this.colhora_inicio.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhora_inicio.Caption = "Hora Inicio";
-            this.colhora_inicio.DisplayFormat.FormatString = "hh:mm";
-            this.colhora_inicio.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colhora_inicio.FieldName = "hora_inicio";
-            this.colhora_inicio.MaxWidth = 110;
-            this.colhora_inicio.MinWidth = 110;
-            this.colhora_inicio.Name = "colhora_inicio";
-            this.colhora_inicio.OptionsColumn.AllowEdit = false;
-            this.colhora_inicio.OptionsColumn.AllowFocus = false;
-            this.colhora_inicio.OptionsColumn.ReadOnly = true;
-            this.colhora_inicio.Visible = true;
-            this.colhora_inicio.VisibleIndex = 1;
-            this.colhora_inicio.Width = 110;
-            // 
-            // colhora_fin
-            // 
-            this.colhora_fin.AppearanceCell.Options.UseTextOptions = true;
-            this.colhora_fin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhora_fin.AppearanceHeader.Options.UseTextOptions = true;
-            this.colhora_fin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhora_fin.Caption = "Hora Fín";
-            this.colhora_fin.DisplayFormat.FormatString = "hh:mm";
-            this.colhora_fin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colhora_fin.FieldName = "hora_fin";
-            this.colhora_fin.MaxWidth = 98;
-            this.colhora_fin.MinWidth = 98;
-            this.colhora_fin.Name = "colhora_fin";
-            this.colhora_fin.OptionsColumn.AllowEdit = false;
-            this.colhora_fin.OptionsColumn.AllowFocus = false;
-            this.colhora_fin.OptionsColumn.ReadOnly = true;
-            this.colhora_fin.Visible = true;
-            this.colhora_fin.VisibleIndex = 2;
-            this.colhora_fin.Width = 98;
-            // 
-            // colfecha
-            // 
-            this.colfecha.AppearanceCell.Options.UseTextOptions = true;
-            this.colfecha.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colfecha.AppearanceHeader.Options.UseTextOptions = true;
-            this.colfecha.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colfecha.Caption = "Fecha";
-            this.colfecha.FieldName = "fecha";
-            this.colfecha.MaxWidth = 111;
-            this.colfecha.MinWidth = 111;
-            this.colfecha.Name = "colfecha";
-            this.colfecha.OptionsColumn.AllowEdit = false;
-            this.colfecha.OptionsColumn.AllowFocus = false;
-            this.colfecha.OptionsColumn.ReadOnly = true;
-            this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 0;
-            this.colfecha.Width = 111;
-            // 
-            // collugar
-            // 
-            this.collugar.Caption = "Lugar";
-            this.collugar.ColumnEdit = this.memoLugar;
-            this.collugar.FieldName = "lugar";
-            this.collugar.MinWidth = 25;
-            this.collugar.Name = "collugar";
-            this.collugar.OptionsColumn.AllowEdit = false;
-            this.collugar.OptionsColumn.AllowFocus = false;
-            this.collugar.OptionsColumn.ReadOnly = true;
-            this.collugar.Visible = true;
-            this.collugar.VisibleIndex = 3;
-            this.collugar.Width = 213;
-            // 
-            // memoLugar
-            // 
-            this.memoLugar.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memoLugar.Appearance.Options.UseFont = true;
-            this.memoLugar.Name = "memoLugar";
-            // 
-            // colid_color_etiqueta
-            // 
-            this.colid_color_etiqueta.Caption = "Color";
-            this.colid_color_etiqueta.FieldName = "id_color_etiqueta";
-            this.colid_color_etiqueta.MinWidth = 25;
-            this.colid_color_etiqueta.Name = "colid_color_etiqueta";
-            this.colid_color_etiqueta.OptionsColumn.AllowEdit = false;
-            this.colid_color_etiqueta.OptionsColumn.AllowFocus = false;
-            this.colid_color_etiqueta.OptionsColumn.ReadOnly = true;
-            this.colid_color_etiqueta.Width = 94;
-            // 
-            // colasunto
-            // 
-            this.colasunto.Caption = "Asunto";
-            this.colasunto.ColumnEdit = this.memoAsunto;
-            this.colasunto.FieldName = "asunto";
-            this.colasunto.MinWidth = 25;
-            this.colasunto.Name = "colasunto";
-            this.colasunto.OptionsColumn.AllowEdit = false;
-            this.colasunto.OptionsColumn.AllowFocus = false;
-            this.colasunto.OptionsColumn.ReadOnly = true;
-            this.colasunto.Visible = true;
-            this.colasunto.VisibleIndex = 4;
-            this.colasunto.Width = 213;
-            // 
-            // memoAsunto
-            // 
-            this.memoAsunto.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memoAsunto.Appearance.Options.UseFont = true;
-            this.memoAsunto.Name = "memoAsunto";
-            // 
-            // colusuario
-            // 
-            this.colusuario.Caption = "Usuario";
-            this.colusuario.FieldName = "usuario";
-            this.colusuario.MinWidth = 25;
-            this.colusuario.Name = "colusuario";
-            this.colusuario.OptionsColumn.AllowEdit = false;
-            this.colusuario.OptionsColumn.AllowFocus = false;
-            this.colusuario.OptionsColumn.ReadOnly = true;
-            this.colusuario.Width = 94;
-            // 
-            // colobservaciones
-            // 
-            this.colobservaciones.Caption = "Observaciones";
-            this.colobservaciones.ColumnEdit = this.memoObservacion;
-            this.colobservaciones.FieldName = "observaciones";
-            this.colobservaciones.MinWidth = 25;
-            this.colobservaciones.Name = "colobservaciones";
-            this.colobservaciones.OptionsColumn.AllowEdit = false;
-            this.colobservaciones.OptionsColumn.AllowFocus = false;
-            this.colobservaciones.OptionsColumn.ReadOnly = true;
-            this.colobservaciones.Visible = true;
-            this.colobservaciones.VisibleIndex = 5;
-            this.colobservaciones.Width = 203;
-            // 
-            // memoObservacion
-            // 
-            this.memoObservacion.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memoObservacion.Appearance.Options.UseFont = true;
-            this.memoObservacion.Name = "memoObservacion";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Eliminar";
-            this.gridColumn1.ColumnEdit = this.cmdEliminar;
-            this.gridColumn1.MaxWidth = 90;
-            this.gridColumn1.MinWidth = 90;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
-            this.gridColumn1.Width = 90;
-            // 
-            // cmdEliminar
-            // 
-            this.cmdEliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdEliminar.Name = "cmdEliminar";
-            this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdEliminar.Click += new System.EventHandler(this.CmdEliminar_Click);
-            // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -921,6 +1008,14 @@
             this.Name = "ctlPlanificadorActividades";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1049, 665);
+            ((System.ComponentModel.ISupportInitialize)(this.gvListaAsistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvActivdades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoLugar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoAsunto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoObservacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdColor)).EndInit();
             this.pnlEncabezado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
@@ -933,7 +1028,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeHoraInicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glColorEtiqueta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsColores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLugar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).EndInit();
@@ -943,12 +1037,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGuardar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIrAtras.Properties)).EndInit();
             this.PageVistaCitas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvActivdades)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoLugar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoAsunto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoObservacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBusqueda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).EndInit();
@@ -1021,5 +1109,10 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit memoObservacion;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEliminar;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvListaAsistencia;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre_colaborador;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_colaborador;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colcargo;
     }
 }

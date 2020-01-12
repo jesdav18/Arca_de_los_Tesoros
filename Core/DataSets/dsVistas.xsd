@@ -12,7 +12,7 @@
   <xs:element name="dsVistas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsVistas" msprop:Generator_UserDSName="dsVistas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dtMiEquipo" msprop:Generator_TableClassName="dtMiEquipoDataTable" msprop:Generator_TableVarName="tabledtMiEquipo" msprop:Generator_RowChangedName="dtMiEquipoRowChanged" msprop:Generator_TablePropName="dtMiEquipo" msprop:Generator_RowDeletingName="dtMiEquipoRowDeleting" msprop:Generator_RowChangingName="dtMiEquipoRowChanging" msprop:Generator_RowEvHandlerName="dtMiEquipoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtMiEquipoRowDeleted" msprop:Generator_RowClassName="dtMiEquipoRow" msprop:Generator_UserTableName="dtMiEquipo" msprop:Generator_RowEvArgName="dtMiEquipoRowChangeEvent">
+        <xs:element name="dtMiEquipo" msprop:Generator_TableClassName="dtMiEquipoDataTable" msprop:Generator_TableVarName="tabledtMiEquipo" msprop:Generator_TablePropName="dtMiEquipo" msprop:Generator_RowDeletingName="dtMiEquipoRowDeleting" msprop:Generator_RowChangingName="dtMiEquipoRowChanging" msprop:Generator_RowEvHandlerName="dtMiEquipoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtMiEquipoRowDeleted" msprop:Generator_UserTableName="dtMiEquipo" msprop:Generator_RowChangedName="dtMiEquipoRowChanged" msprop:Generator_RowEvArgName="dtMiEquipoRowChangeEvent" msprop:Generator_RowClassName="dtMiEquipoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_colaborador" msprop:Generator_ColumnVarNameInTable="columnid_colaborador" msprop:Generator_ColumnPropNameInRow="id_colaborador" msprop:Generator_ColumnPropNameInTable="id_colaboradorColumn" msprop:Generator_UserColumnName="id_colaborador" type="xs:int" minOccurs="0" />
@@ -24,7 +24,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtVistasFichaIngreso" msprop:Generator_TableClassName="dtVistasFichaIngresoDataTable" msprop:Generator_TableVarName="tabledtVistasFichaIngreso" msprop:Generator_TablePropName="dtVistasFichaIngreso" msprop:Generator_RowDeletingName="dtVistasFichaIngresoRowDeleting" msprop:Generator_RowChangingName="dtVistasFichaIngresoRowChanging" msprop:Generator_RowEvHandlerName="dtVistasFichaIngresoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtVistasFichaIngresoRowDeleted" msprop:Generator_UserTableName="dtVistasFichaIngreso" msprop:Generator_RowChangedName="dtVistasFichaIngresoRowChanged" msprop:Generator_RowEvArgName="dtVistasFichaIngresoRowChangeEvent" msprop:Generator_RowClassName="dtVistasFichaIngresoRow">
+        <xs:element name="dtVistasFichaIngreso" msprop:Generator_TableClassName="dtVistasFichaIngresoDataTable" msprop:Generator_TableVarName="tabledtVistasFichaIngreso" msprop:Generator_RowChangedName="dtVistasFichaIngresoRowChanged" msprop:Generator_TablePropName="dtVistasFichaIngreso" msprop:Generator_RowDeletingName="dtVistasFichaIngresoRowDeleting" msprop:Generator_RowChangingName="dtVistasFichaIngresoRowChanging" msprop:Generator_RowEvHandlerName="dtVistasFichaIngresoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtVistasFichaIngresoRowDeleted" msprop:Generator_RowClassName="dtVistasFichaIngresoRow" msprop:Generator_UserTableName="dtVistasFichaIngreso" msprop:Generator_RowEvArgName="dtVistasFichaIngresoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_colaborador" msprop:Generator_ColumnVarNameInTable="columnid_colaborador" msprop:Generator_ColumnPropNameInRow="id_colaborador" msprop:Generator_ColumnPropNameInTable="id_colaboradorColumn" msprop:Generator_UserColumnName="id_colaborador" type="xs:int" minOccurs="0" />
@@ -58,7 +58,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtCita_Actividad" msprop:Generator_TableClassName="dtCita_ActividadDataTable" msprop:Generator_TableVarName="tabledtCita_Actividad" msprop:Generator_TablePropName="dtCita_Actividad" msprop:Generator_RowDeletingName="dtCita_ActividadRowDeleting" msprop:Generator_RowChangingName="dtCita_ActividadRowChanging" msprop:Generator_RowEvHandlerName="dtCita_ActividadRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCita_ActividadRowDeleted" msprop:Generator_UserTableName="dtCita_Actividad" msprop:Generator_RowChangedName="dtCita_ActividadRowChanged" msprop:Generator_RowEvArgName="dtCita_ActividadRowChangeEvent" msprop:Generator_RowClassName="dtCita_ActividadRow">
+        <xs:element name="dtCita_Actividad" msprop:Generator_TableClassName="dtCita_ActividadDataTable" msprop:Generator_TableVarName="tabledtCita_Actividad" msprop:Generator_RowChangedName="dtCita_ActividadRowChanged" msprop:Generator_TablePropName="dtCita_Actividad" msprop:Generator_RowDeletingName="dtCita_ActividadRowDeleting" msprop:Generator_RowChangingName="dtCita_ActividadRowChanging" msprop:Generator_RowEvHandlerName="dtCita_ActividadRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCita_ActividadRowDeleted" msprop:Generator_RowClassName="dtCita_ActividadRow" msprop:Generator_UserTableName="dtCita_Actividad" msprop:Generator_RowEvArgName="dtCita_ActividadRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_cita_actividad" msprop:Generator_ColumnVarNameInTable="columnid_cita_actividad" msprop:Generator_ColumnPropNameInRow="id_cita_actividad" msprop:Generator_ColumnPropNameInTable="id_cita_actividadColumn" msprop:Generator_UserColumnName="id_cita_actividad" type="xs:int" minOccurs="0" />
@@ -70,10 +70,13 @@
               <xs:element name="asunto" msprop:Generator_ColumnVarNameInTable="columnasunto" msprop:Generator_ColumnPropNameInRow="asunto" msprop:Generator_ColumnPropNameInTable="asuntoColumn" msprop:Generator_UserColumnName="asunto" type="xs:string" minOccurs="0" />
               <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
               <xs:element name="observaciones" msprop:Generator_ColumnVarNameInTable="columnobservaciones" msprop:Generator_ColumnPropNameInRow="observaciones" msprop:Generator_ColumnPropNameInTable="observacionesColumn" msprop:Generator_UserColumnName="observaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="id_actividad" msprop:Generator_ColumnVarNameInTable="columnid_actividad" msprop:Generator_ColumnPropNameInRow="id_actividad" msprop:Generator_ColumnPropNameInTable="id_actividadColumn" msprop:Generator_UserColumnName="id_actividad" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="nombre_area_atencion" msprop:Generator_ColumnVarNameInTable="columnnombre_area_atencion" msprop:Generator_ColumnPropNameInRow="nombre_area_atencion" msprop:Generator_ColumnPropNameInTable="nombre_area_atencionColumn" msprop:Generator_UserColumnName="nombre_area_atencion" type="xs:string" minOccurs="0" />
+              <xs:element name="id_area_atencion" msprop:Generator_ColumnVarNameInTable="columnid_area_atencion" msprop:Generator_ColumnPropNameInRow="id_area_atencion" msprop:Generator_ColumnPropNameInTable="id_area_atencionColumn" msprop:Generator_UserColumnName="id_area_atencion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtSolicitudes" msprop:Generator_TableClassName="dtSolicitudesDataTable" msprop:Generator_TableVarName="tabledtSolicitudes" msprop:Generator_RowChangedName="dtSolicitudesRowChanged" msprop:Generator_TablePropName="dtSolicitudes" msprop:Generator_RowDeletingName="dtSolicitudesRowDeleting" msprop:Generator_RowChangingName="dtSolicitudesRowChanging" msprop:Generator_RowEvHandlerName="dtSolicitudesRowChangeEventHandler" msprop:Generator_RowDeletedName="dtSolicitudesRowDeleted" msprop:Generator_RowClassName="dtSolicitudesRow" msprop:Generator_UserTableName="dtSolicitudes" msprop:Generator_RowEvArgName="dtSolicitudesRowChangeEvent">
+        <xs:element name="dtSolicitudes" msprop:Generator_TableClassName="dtSolicitudesDataTable" msprop:Generator_TableVarName="tabledtSolicitudes" msprop:Generator_TablePropName="dtSolicitudes" msprop:Generator_RowDeletingName="dtSolicitudesRowDeleting" msprop:Generator_RowChangingName="dtSolicitudesRowChanging" msprop:Generator_RowEvHandlerName="dtSolicitudesRowChangeEventHandler" msprop:Generator_RowDeletedName="dtSolicitudesRowDeleted" msprop:Generator_UserTableName="dtSolicitudes" msprop:Generator_RowChangedName="dtSolicitudesRowChanged" msprop:Generator_RowEvArgName="dtSolicitudesRowChangeEvent" msprop:Generator_RowClassName="dtSolicitudesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombre_solicitante" msprop:Generator_ColumnVarNameInTable="columnnombre_solicitante" msprop:Generator_ColumnPropNameInRow="nombre_solicitante" msprop:Generator_ColumnPropNameInTable="nombre_solicitanteColumn" msprop:Generator_UserColumnName="nombre_solicitante" type="xs:string" minOccurs="0" />
@@ -87,7 +90,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtColores" msprop:Generator_TableClassName="dtColoresDataTable" msprop:Generator_TableVarName="tabledtColores" msprop:Generator_RowChangedName="dtColoresRowChanged" msprop:Generator_TablePropName="dtColores" msprop:Generator_RowDeletingName="dtColoresRowDeleting" msprop:Generator_RowChangingName="dtColoresRowChanging" msprop:Generator_RowEvHandlerName="dtColoresRowChangeEventHandler" msprop:Generator_RowDeletedName="dtColoresRowDeleted" msprop:Generator_RowClassName="dtColoresRow" msprop:Generator_UserTableName="dtColores" msprop:Generator_RowEvArgName="dtColoresRowChangeEvent">
+        <xs:element name="dtColores" msprop:Generator_TableClassName="dtColoresDataTable" msprop:Generator_TableVarName="tabledtColores" msprop:Generator_TablePropName="dtColores" msprop:Generator_RowDeletingName="dtColoresRowDeleting" msprop:Generator_RowChangingName="dtColoresRowChanging" msprop:Generator_RowEvHandlerName="dtColoresRowChangeEventHandler" msprop:Generator_RowDeletedName="dtColoresRowDeleted" msprop:Generator_UserTableName="dtColores" msprop:Generator_RowChangedName="dtColoresRowChanged" msprop:Generator_RowEvArgName="dtColoresRowChangeEvent" msprop:Generator_RowClassName="dtColoresRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_color" msprop:Generator_ColumnVarNameInTable="columnid_color" msprop:Generator_ColumnPropNameInRow="id_color" msprop:Generator_ColumnPropNameInTable="id_colorColumn" msprop:Generator_UserColumnName="id_color" type="xs:string" minOccurs="0" />
@@ -97,7 +100,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtAsistenciasEquipos" msprop:Generator_TableClassName="dtAsistenciasEquiposDataTable" msprop:Generator_TableVarName="tabledtAsistenciasEquipos" msprop:Generator_RowChangedName="dtAsistenciasEquiposRowChanged" msprop:Generator_TablePropName="dtAsistenciasEquipos" msprop:Generator_RowDeletingName="dtAsistenciasEquiposRowDeleting" msprop:Generator_RowChangingName="dtAsistenciasEquiposRowChanging" msprop:Generator_RowEvHandlerName="dtAsistenciasEquiposRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAsistenciasEquiposRowDeleted" msprop:Generator_RowClassName="dtAsistenciasEquiposRow" msprop:Generator_UserTableName="dtAsistenciasEquipos" msprop:Generator_RowEvArgName="dtAsistenciasEquiposRowChangeEvent">
+        <xs:element name="dtAsistenciasEquipos" msprop:Generator_TableClassName="dtAsistenciasEquiposDataTable" msprop:Generator_TableVarName="tabledtAsistenciasEquipos" msprop:Generator_TablePropName="dtAsistenciasEquipos" msprop:Generator_RowDeletingName="dtAsistenciasEquiposRowDeleting" msprop:Generator_RowChangingName="dtAsistenciasEquiposRowChanging" msprop:Generator_RowEvHandlerName="dtAsistenciasEquiposRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAsistenciasEquiposRowDeleted" msprop:Generator_UserTableName="dtAsistenciasEquipos" msprop:Generator_RowChangedName="dtAsistenciasEquiposRowChanged" msprop:Generator_RowEvArgName="dtAsistenciasEquiposRowChangeEvent" msprop:Generator_RowClassName="dtAsistenciasEquiposRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_area_atencion" msprop:Generator_ColumnVarNameInTable="columnid_area_atencion" msprop:Generator_ColumnPropNameInRow="id_area_atencion" msprop:Generator_ColumnPropNameInTable="id_area_atencionColumn" msprop:Generator_UserColumnName="id_area_atencion" type="xs:int" minOccurs="0" />
@@ -107,7 +110,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtAreasAtencion" msprop:Generator_TableClassName="dtAreasAtencionDataTable" msprop:Generator_TableVarName="tabledtAreasAtencion" msprop:Generator_TablePropName="dtAreasAtencion" msprop:Generator_RowDeletingName="dtAreasAtencionRowDeleting" msprop:Generator_RowChangingName="dtAreasAtencionRowChanging" msprop:Generator_RowEvHandlerName="dtAreasAtencionRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAreasAtencionRowDeleted" msprop:Generator_UserTableName="dtAreasAtencion" msprop:Generator_RowChangedName="dtAreasAtencionRowChanged" msprop:Generator_RowEvArgName="dtAreasAtencionRowChangeEvent" msprop:Generator_RowClassName="dtAreasAtencionRow">
+        <xs:element name="dtAreasAtencion" msprop:Generator_TableClassName="dtAreasAtencionDataTable" msprop:Generator_TableVarName="tabledtAreasAtencion" msprop:Generator_RowChangedName="dtAreasAtencionRowChanged" msprop:Generator_TablePropName="dtAreasAtencion" msprop:Generator_RowDeletingName="dtAreasAtencionRowDeleting" msprop:Generator_RowChangingName="dtAreasAtencionRowChanging" msprop:Generator_RowEvHandlerName="dtAreasAtencionRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAreasAtencionRowDeleted" msprop:Generator_RowClassName="dtAreasAtencionRow" msprop:Generator_UserTableName="dtAreasAtencion" msprop:Generator_RowEvArgName="dtAreasAtencionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_area_atencion" msprop:Generator_ColumnVarNameInTable="columnid_area_atencion" msprop:Generator_ColumnPropNameInRow="id_area_atencion" msprop:Generator_ColumnPropNameInTable="id_area_atencionColumn" msprop:Generator_UserColumnName="id_area_atencion" type="xs:int" minOccurs="0" />
@@ -115,7 +118,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtDetalleAsistencias" msprop:Generator_TableClassName="dtDetalleAsistenciasDataTable" msprop:Generator_TableVarName="tabledtDetalleAsistencias" msprop:Generator_TablePropName="dtDetalleAsistencias" msprop:Generator_RowDeletingName="dtDetalleAsistenciasRowDeleting" msprop:Generator_RowChangingName="dtDetalleAsistenciasRowChanging" msprop:Generator_RowEvHandlerName="dtDetalleAsistenciasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDetalleAsistenciasRowDeleted" msprop:Generator_UserTableName="dtDetalleAsistencias" msprop:Generator_RowChangedName="dtDetalleAsistenciasRowChanged" msprop:Generator_RowEvArgName="dtDetalleAsistenciasRowChangeEvent" msprop:Generator_RowClassName="dtDetalleAsistenciasRow">
+        <xs:element name="dtDetalleAsistencias" msprop:Generator_TableClassName="dtDetalleAsistenciasDataTable" msprop:Generator_TableVarName="tabledtDetalleAsistencias" msprop:Generator_RowChangedName="dtDetalleAsistenciasRowChanged" msprop:Generator_TablePropName="dtDetalleAsistencias" msprop:Generator_RowDeletingName="dtDetalleAsistenciasRowDeleting" msprop:Generator_RowChangingName="dtDetalleAsistenciasRowChanging" msprop:Generator_RowEvHandlerName="dtDetalleAsistenciasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDetalleAsistenciasRowDeleted" msprop:Generator_RowClassName="dtDetalleAsistenciasRow" msprop:Generator_UserTableName="dtDetalleAsistencias" msprop:Generator_RowEvArgName="dtDetalleAsistenciasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_area_atencion" msprop:Generator_ColumnVarNameInTable="columnid_area_atencion" msprop:Generator_ColumnPropNameInRow="id_area_atencion" msprop:Generator_ColumnPropNameInTable="id_area_atencionColumn" msprop:Generator_UserColumnName="id_area_atencion" type="xs:int" minOccurs="0" />
@@ -129,7 +132,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtActividad" msprop:Generator_TableClassName="dtActividadDataTable" msprop:Generator_TableVarName="tabledtActividad" msprop:Generator_RowChangedName="dtActividadRowChanged" msprop:Generator_TablePropName="dtActividad" msprop:Generator_RowDeletingName="dtActividadRowDeleting" msprop:Generator_RowChangingName="dtActividadRowChanging" msprop:Generator_RowEvHandlerName="dtActividadRowChangeEventHandler" msprop:Generator_RowDeletedName="dtActividadRowDeleted" msprop:Generator_RowClassName="dtActividadRow" msprop:Generator_UserTableName="dtActividad" msprop:Generator_RowEvArgName="dtActividadRowChangeEvent">
+        <xs:element name="dtActividad" msprop:Generator_TableClassName="dtActividadDataTable" msprop:Generator_TableVarName="tabledtActividad" msprop:Generator_TablePropName="dtActividad" msprop:Generator_RowDeletingName="dtActividadRowDeleting" msprop:Generator_RowChangingName="dtActividadRowChanging" msprop:Generator_RowEvHandlerName="dtActividadRowChangeEventHandler" msprop:Generator_RowDeletedName="dtActividadRowDeleted" msprop:Generator_UserTableName="dtActividad" msprop:Generator_RowChangedName="dtActividadRowChanged" msprop:Generator_RowEvArgName="dtActividadRowChangeEvent" msprop:Generator_RowClassName="dtActividadRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_actividad" msprop:Generator_ColumnVarNameInTable="columnid_actividad" msprop:Generator_ColumnPropNameInRow="id_actividad" msprop:Generator_ColumnPropNameInTable="id_actividadColumn" msprop:Generator_UserColumnName="id_actividad" type="xs:int" minOccurs="0" />
@@ -138,9 +141,29 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dtListaAsistencia" msprop:Generator_TableClassName="dtListaAsistenciaDataTable" msprop:Generator_TableVarName="tabledtListaAsistencia" msprop:Generator_TablePropName="dtListaAsistencia" msprop:Generator_RowDeletingName="dtListaAsistenciaRowDeleting" msprop:Generator_RowChangingName="dtListaAsistenciaRowChanging" msprop:Generator_RowEvHandlerName="dtListaAsistenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="dtListaAsistenciaRowDeleted" msprop:Generator_UserTableName="dtListaAsistencia" msprop:Generator_RowChangedName="dtListaAsistenciaRowChanged" msprop:Generator_RowEvArgName="dtListaAsistenciaRowChangeEvent" msprop:Generator_RowClassName="dtListaAsistenciaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_colaborador" msprop:Generator_ColumnVarNameInTable="columnid_colaborador" msprop:Generator_ColumnPropNameInRow="id_colaborador" msprop:Generator_ColumnPropNameInTable="id_colaboradorColumn" msprop:Generator_UserColumnName="id_colaborador" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre_colaborador" msprop:Generator_ColumnVarNameInTable="columnnombre_colaborador" msprop:Generator_ColumnPropNameInRow="nombre_colaborador" msprop:Generator_ColumnPropNameInTable="nombre_colaboradorColumn" msprop:Generator_UserColumnName="nombre_colaborador" type="xs:string" minOccurs="0" />
+              <xs:element name="id_actividad" msprop:Generator_ColumnVarNameInTable="columnid_actividad" msprop:Generator_ColumnPropNameInRow="id_actividad" msprop:Generator_ColumnPropNameInTable="id_actividadColumn" msprop:Generator_UserColumnName="id_actividad" type="xs:int" minOccurs="0" />
+              <xs:element name="id_area_atencion" msprop:Generator_ColumnVarNameInTable="columnid_area_atencion" msprop:Generator_ColumnPropNameInRow="id_area_atencion" msprop:Generator_ColumnPropNameInTable="id_area_atencionColumn" msprop:Generator_UserColumnName="id_area_atencion" type="xs:int" minOccurs="0" />
+              <xs:element name="cargo" msprop:Generator_ColumnVarNameInTable="columncargo" msprop:Generator_ColumnPropNameInRow="cargo" msprop:Generator_ColumnPropNameInTable="cargoColumn" msprop:Generator_UserColumnName="cargo" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_identidad" msprop:Generator_ColumnVarNameInTable="columnnumero_identidad" msprop:Generator_ColumnPropNameInRow="numero_identidad" msprop:Generator_ColumnPropNameInTable="numero_identidadColumn" msprop:Generator_UserColumnName="numero_identidad" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:dtCita_Actividad" />
+      <xs:field xpath="mstns:id_cita_actividad" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:dtCita_Actividad" />
+      <xs:field xpath="mstns:id_actividad" />
+    </xs:unique>
+    <xs:unique name="dtAreasAtencion_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:dtAreasAtencion" />
       <xs:field xpath="mstns:id_area_atencion" />
     </xs:unique>
@@ -148,11 +171,15 @@
       <xs:selector xpath=".//mstns:dtActividad" />
       <xs:field xpath="mstns:id_actividad" />
     </xs:unique>
-    <xs:keyref name="FK_dtAreasAtencion_dtActividad" refer="Constraint1" msprop:rel_Generator_UserChildTable="dtActividad" msprop:rel_Generator_ChildPropName="GetdtActividadRows" msprop:rel_Generator_UserRelationName="FK_dtAreasAtencion_dtActividad" msprop:rel_Generator_RelationVarName="relationFK_dtAreasAtencion_dtActividad" msprop:rel_Generator_UserParentTable="dtAreasAtencion" msprop:rel_Generator_ParentPropName="dtAreasAtencionRow">
+    <xs:keyref name="FK_dtCita_Actividad_dtListaAsistencia" refer="Constraint2" msprop:rel_Generator_UserChildTable="dtListaAsistencia" msprop:rel_Generator_ChildPropName="GetdtListaAsistenciaRows" msprop:rel_Generator_UserRelationName="FK_dtCita_Actividad_dtListaAsistencia" msprop:rel_Generator_ParentPropName="dtCita_ActividadRow" msprop:rel_Generator_RelationVarName="relationFK_dtCita_Actividad_dtListaAsistencia" msprop:rel_Generator_UserParentTable="dtCita_Actividad">
+      <xs:selector xpath=".//mstns:dtListaAsistencia" />
+      <xs:field xpath="mstns:id_actividad" />
+    </xs:keyref>
+    <xs:keyref name="FK_dtAreasAtencion_dtActividad" refer="dtAreasAtencion_Constraint1" msprop:rel_Generator_UserChildTable="dtActividad" msprop:rel_Generator_ChildPropName="GetdtActividadRows" msprop:rel_Generator_UserRelationName="FK_dtAreasAtencion_dtActividad" msprop:rel_Generator_ParentPropName="dtAreasAtencionRow" msprop:rel_Generator_RelationVarName="relationFK_dtAreasAtencion_dtActividad" msprop:rel_Generator_UserParentTable="dtAreasAtencion">
       <xs:selector xpath=".//mstns:dtActividad" />
       <xs:field xpath="mstns:id_area_atencion" />
     </xs:keyref>
-    <xs:keyref name="FK_dtActividad_dtDetalleAsistencias" refer="dtActividad_Constraint1" msprop:rel_Generator_UserChildTable="dtDetalleAsistencias" msprop:rel_Generator_ChildPropName="GetdtDetalleAsistenciasRows" msprop:rel_Generator_UserRelationName="FK_dtActividad_dtDetalleAsistencias" msprop:rel_Generator_ParentPropName="dtActividadRow" msprop:rel_Generator_RelationVarName="relationFK_dtActividad_dtDetalleAsistencias" msprop:rel_Generator_UserParentTable="dtActividad">
+    <xs:keyref name="FK_dtActividad_dtDetalleAsistencias" refer="dtActividad_Constraint1" msprop:rel_Generator_UserChildTable="dtDetalleAsistencias" msprop:rel_Generator_ChildPropName="GetdtDetalleAsistenciasRows" msprop:rel_Generator_UserRelationName="FK_dtActividad_dtDetalleAsistencias" msprop:rel_Generator_RelationVarName="relationFK_dtActividad_dtDetalleAsistencias" msprop:rel_Generator_UserParentTable="dtActividad" msprop:rel_Generator_ParentPropName="dtActividadRow">
       <xs:selector xpath=".//mstns:dtDetalleAsistencias" />
       <xs:field xpath="mstns:id_actividad" />
     </xs:keyref>

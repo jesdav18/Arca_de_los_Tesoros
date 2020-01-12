@@ -350,7 +350,7 @@
             // 
             this.radioSinJustificacion.AutoSize = true;
             this.radioSinJustificacion.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSinJustificacion.Location = new System.Drawing.Point(750, 80);
+            this.radioSinJustificacion.Location = new System.Drawing.Point(854, 80);
             this.radioSinJustificacion.Name = "radioSinJustificacion";
             this.radioSinJustificacion.Size = new System.Drawing.Size(205, 36);
             this.radioSinJustificacion.TabIndex = 35;
@@ -363,7 +363,7 @@
             // 
             this.radioOtros.AutoSize = true;
             this.radioOtros.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioOtros.Location = new System.Drawing.Point(617, 80);
+            this.radioOtros.Location = new System.Drawing.Point(723, 80);
             this.radioOtros.Name = "radioOtros";
             this.radioOtros.Size = new System.Drawing.Size(94, 36);
             this.radioOtros.TabIndex = 34;
@@ -376,7 +376,7 @@
             // 
             this.radioEnfermedad.AutoSize = true;
             this.radioEnfermedad.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioEnfermedad.Location = new System.Drawing.Point(420, 80);
+            this.radioEnfermedad.Location = new System.Drawing.Point(521, 80);
             this.radioEnfermedad.Name = "radioEnfermedad";
             this.radioEnfermedad.Size = new System.Drawing.Size(165, 36);
             this.radioEnfermedad.TabIndex = 33;
@@ -389,7 +389,7 @@
             // 
             this.radioPorLabores.AutoSize = true;
             this.radioPorLabores.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioPorLabores.Location = new System.Drawing.Point(233, 80);
+            this.radioPorLabores.Location = new System.Drawing.Point(331, 80);
             this.radioPorLabores.Name = "radioPorLabores";
             this.radioPorLabores.Size = new System.Drawing.Size(159, 36);
             this.radioPorLabores.TabIndex = 32;
@@ -403,7 +403,7 @@
             this.radioProblemasFamiliares.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioProblemasFamiliares.Location = new System.Drawing.Point(54, 63);
             this.radioProblemasFamiliares.Name = "radioProblemasFamiliares";
-            this.radioProblemasFamiliares.Size = new System.Drawing.Size(155, 70);
+            this.radioProblemasFamiliares.Size = new System.Drawing.Size(271, 70);
             this.radioProblemasFamiliares.TabIndex = 31;
             this.radioProblemasFamiliares.TabStop = true;
             this.radioProblemasFamiliares.Text = "Problemas Familiares";
@@ -454,12 +454,16 @@
             this.ctlCubrirAusencias1.BackColor = System.Drawing.Color.White;
             this.ctlCubrirAusencias1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctlCubrirAusencias1.Location = new System.Drawing.Point(0, 0);
+            this.ctlCubrirAusencias1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ctlCubrirAusencias1.MinimumSize = new System.Drawing.Size(1078, 791);
             this.ctlCubrirAusencias1.Name = "ctlCubrirAusencias1";
-            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlCubrirAusencias1.Pro_ID_Actividad = 0;
+            this.ctlCubrirAusencias1.Pro_ID_AreaAtencion = 0;
             this.ctlCubrirAusencias1.Pro_ID_Colaborar_Actividad = 0;
-            this.ctlCubrirAusencias1.Pro_SeleccionaNoNecesitaCubrir = false;
-            this.ctlCubrirAusencias1.Pro_SeleccionaServidorEquipo = false;
+          
+           
+            this.ctlCubrirAusencias1.Pro_Usuario = null;
             this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1138, 791);
             this.ctlCubrirAusencias1.TabIndex = 0;
             // 

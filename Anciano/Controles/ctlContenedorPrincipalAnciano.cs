@@ -43,7 +43,7 @@ namespace Anciano.Controles
 
             bgObtenerFusibles.RunWorkerAsync();
 
-            tmrFusibles.Start();
+            
 
         }
 
@@ -108,14 +108,7 @@ namespace Anciano.Controles
 
         #region EVENTOS CONTROLES
 
-        private void TmrFusibles_Tick(object sender, EventArgs e)
-        {
-            if (!bgObtenerFusibles.IsBusy)
-            {
-                bgObtenerFusibles.RunWorkerAsync();
-            }
-        }
-
+       
         private void BgObtenerFusibles_DoWork(object sender, DoWorkEventArgs e)
         {
             ObtenerFusiblesIndicadores();
@@ -173,5 +166,13 @@ namespace Anciano.Controles
         }
 
         #endregion
+
+        private void PnlActualizar_Click(object sender, EventArgs e)
+        {
+            if (!bgObtenerFusibles.IsBusy)
+            {
+                bgObtenerFusibles.RunWorkerAsync();
+            }
+        }
     }
 }

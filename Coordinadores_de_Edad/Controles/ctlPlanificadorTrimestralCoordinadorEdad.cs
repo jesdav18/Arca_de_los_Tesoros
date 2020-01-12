@@ -89,7 +89,6 @@ namespace Coordinadores_de_Edad.Controles
                 NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
                 ctlSeleccionAyuda1.ConstruirControl(Pro_Conexion,
                                                     Pro_Usuario,
-                                                    v_dia_seleccionado,
                                                     ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
                                                     Pro_ID_AreaAtencion
                                                     );

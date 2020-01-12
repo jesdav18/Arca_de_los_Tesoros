@@ -115,9 +115,9 @@
             this.lblTituloApilado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblTituloApilado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTituloApilado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTituloApilado.Location = new System.Drawing.Point(63, 0);
+            this.lblTituloApilado.Location = new System.Drawing.Point(49, 0);
             this.lblTituloApilado.Name = "lblTituloApilado";
-            this.lblTituloApilado.Size = new System.Drawing.Size(812, 53);
+            this.lblTituloApilado.Size = new System.Drawing.Size(826, 53);
             this.lblTituloApilado.TabIndex = 10;
             this.lblTituloApilado.Text = "Buscar en listado de Ayudas";
             this.lblTituloApilado.Click += new System.EventHandler(this.PicTituloApilado_Click);
@@ -125,7 +125,7 @@
             // picTituloApilado
             // 
             this.picTituloApilado.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picTituloApilado.EditValue = global::Coordinadores_de_Edad.Resources.iconBusqueda;
+            this.picTituloApilado.EditValue = global::Coordinadores_de_Edad.Resources.iconBusqueda_32;
             this.picTituloApilado.Location = new System.Drawing.Point(0, 0);
             this.picTituloApilado.Name = "picTituloApilado";
             this.picTituloApilado.Properties.AllowFocused = false;
@@ -136,7 +136,7 @@
             this.picTituloApilado.Properties.NullText = "   ";
             this.picTituloApilado.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picTituloApilado.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picTituloApilado.Size = new System.Drawing.Size(63, 53);
+            this.picTituloApilado.Size = new System.Drawing.Size(49, 53);
             this.picTituloApilado.TabIndex = 31;
             this.picTituloApilado.Click += new System.EventHandler(this.PicTituloApilado_Click);
             // 

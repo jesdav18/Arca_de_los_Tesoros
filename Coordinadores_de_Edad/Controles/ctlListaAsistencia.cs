@@ -24,7 +24,7 @@ namespace Coordinadores_de_Edad.Controles
         #region PROPIEDADES
 
         public PgSqlConnection Pro_Conexion { get; set; }
-        public string Pro_Usuario { get; set; }
+        public Usuario Pro_Usuario { get; set; }
         public int Pro_ID_Actividad { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
 
@@ -38,7 +38,7 @@ namespace Coordinadores_de_Edad.Controles
         #endregion
 
         public void ConstruirControl(PgSqlConnection pConexion,
-                                      string pUsuario,
+                                      Usuario pUsuario,
                                       int pActividad,
                                       int pID_AreaAtencion)
         {
@@ -123,8 +123,8 @@ namespace Coordinadores_de_Edad.Controles
             {
                 if (iterador.IsasistioNull())
                 {
-                    iterador.asistencia = Resources.iconCheck_24;
-                    iterador.inasistencia = Resources.iconMalo_24;
+                    iterador.asistencia = null;
+                    iterador.inasistencia = null;
                 }
                 else if (iterador.asistio)
                 {

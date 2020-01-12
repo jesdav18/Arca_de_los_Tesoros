@@ -340,5 +340,8 @@
   <ItemGroup>
     <None Include="Resources\icon_nuevo_usuario_negro_32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconBusqueda_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
