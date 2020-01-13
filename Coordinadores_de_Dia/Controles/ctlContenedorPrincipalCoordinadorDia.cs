@@ -184,19 +184,12 @@ namespace Coordinadores_de_Dia.Controles
 
         private void CmdBusqueda_Click(object sender, EventArgs e)
         {
-            if (!splashScreenManager1.IsSplashFormVisible)
-            {
-                splashScreenManager1.ShowWaitForm();
-            }
+            Cursor.Current = Cursors.WaitCursor;
 
             NavegacionPrincipal.SelectedPage = pageBusqueda;
             ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion,Pro_Usuario);
 
-            if (splashScreenManager1.IsSplashFormVisible)
-            {
-
-                splashScreenManager1.CloseWaitForm();
-            }
+            Cursor.Current = Cursors.Arrow;
 
         }
 

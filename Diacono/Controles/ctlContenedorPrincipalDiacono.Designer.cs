@@ -642,7 +642,16 @@
             this.ctlVistaFichaIngreso1.Pro_Conexion = null;
             this.ctlVistaFichaIngreso1.Pro_Credenciales = null;
             this.ctlVistaFichaIngreso1.Pro_EsCargaDatos = false;
+            this.ctlVistaFichaIngreso1.Pro_Genero = null;
+            this.ctlVistaFichaIngreso1.Pro_ID_AreaAtencion = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_Cargo = 0;
             this.ctlVistaFichaIngreso1.Pro_ID_Colaborador = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_Empresa = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_EquipoArca = null;
+            this.ctlVistaFichaIngreso1.Pro_ID_EstadoCivil = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_EstatusDoctrinal = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_Pais = null;
+            this.ctlVistaFichaIngreso1.Pro_ID_TipoSangre = 0;
             this.ctlVistaFichaIngreso1.Pro_ModoEdicion = false;
             this.ctlVistaFichaIngreso1.Pro_Usuario = null;
             this.ctlVistaFichaIngreso1.Pro_UsuarioColaborador = null;
@@ -753,7 +762,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage pageMiEquipo;
         private Core.Controles.ctlMiEquipo ctlMiEquipo1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageBusqueda;
-        private Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSolicitudes;
         private Core.Controles.ctlVistaFichaIngreso ctlVistaFichaIngreso1;
         private Core.Controles.ctlVistaSolicitudes ctlVistaSolicitudes1;
@@ -773,5 +781,6 @@
         private Core.Controles.ctlEncabezado ctlEncabezado1;
         private System.Windows.Forms.Panel pnlRefrescar;
         private DevExpress.XtraEditors.ButtonEdit cmdRefrescar;
+        public Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
     }
 }

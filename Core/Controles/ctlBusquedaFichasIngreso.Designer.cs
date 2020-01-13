@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlBusquedaFichasIngreso));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -142,17 +143,19 @@
             this.PageBusqueda.Controls.Add(this.txtBusqueda);
             this.PageBusqueda.Name = "PageBusqueda";
             this.PageBusqueda.Size = new System.Drawing.Size(988, 772);
+            this.PageBusqueda.Paint += new System.Windows.Forms.PaintEventHandler(this.PageBusqueda_Paint);
             // 
             // picBusqueda
             // 
-            this.picBusqueda.EditValue = global::Core.Properties.Resources.iconBusqueda;
+            this.picBusqueda.EditValue = ((object)(resources.GetObject("picBusqueda.EditValue")));
             this.picBusqueda.Location = new System.Drawing.Point(745, 205);
             this.picBusqueda.Name = "picBusqueda";
+            this.picBusqueda.Properties.AllowFocused = false;
             this.picBusqueda.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picBusqueda.Properties.NullText = "   ";
             this.picBusqueda.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picBusqueda.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picBusqueda.Size = new System.Drawing.Size(80, 82);
+            this.picBusqueda.Size = new System.Drawing.Size(54, 45);
             this.picBusqueda.TabIndex = 18;
             this.picBusqueda.ToolTip = "Siguiente Página (F2)\r\n";
             this.picBusqueda.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
@@ -182,7 +185,8 @@
             this.txtBusqueda.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.Properties.Appearance.Options.UseFont = true;
             this.txtBusqueda.Properties.AutoHeight = false;
-            this.txtBusqueda.Size = new System.Drawing.Size(600, 81);
+            this.txtBusqueda.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBusqueda.Size = new System.Drawing.Size(600, 44);
             this.txtBusqueda.TabIndex = 14;
             this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyDown);
             // 
@@ -245,6 +249,9 @@
             this.colid_colaborador.FieldName = "id_colaborador";
             this.colid_colaborador.MinWidth = 25;
             this.colid_colaborador.Name = "colid_colaborador";
+            this.colid_colaborador.OptionsColumn.AllowEdit = false;
+            this.colid_colaborador.OptionsColumn.AllowFocus = false;
+            this.colid_colaborador.OptionsColumn.ReadOnly = true;
             this.colid_colaborador.Width = 94;
             // 
             // colnombre_colaborador
@@ -253,6 +260,9 @@
             this.colnombre_colaborador.FieldName = "nombre_colaborador";
             this.colnombre_colaborador.MinWidth = 25;
             this.colnombre_colaborador.Name = "colnombre_colaborador";
+            this.colnombre_colaborador.OptionsColumn.AllowEdit = false;
+            this.colnombre_colaborador.OptionsColumn.AllowFocus = false;
+            this.colnombre_colaborador.OptionsColumn.ReadOnly = true;
             this.colnombre_colaborador.Visible = true;
             this.colnombre_colaborador.VisibleIndex = 0;
             this.colnombre_colaborador.Width = 421;
@@ -263,6 +273,9 @@
             this.colnumero_identidad.FieldName = "numero_identidad";
             this.colnumero_identidad.MinWidth = 25;
             this.colnumero_identidad.Name = "colnumero_identidad";
+            this.colnumero_identidad.OptionsColumn.AllowEdit = false;
+            this.colnumero_identidad.OptionsColumn.AllowFocus = false;
+            this.colnumero_identidad.OptionsColumn.ReadOnly = true;
             this.colnumero_identidad.Visible = true;
             this.colnumero_identidad.VisibleIndex = 1;
             this.colnumero_identidad.Width = 218;
@@ -273,6 +286,9 @@
             this.colcelular.FieldName = "celular";
             this.colcelular.MinWidth = 25;
             this.colcelular.Name = "colcelular";
+            this.colcelular.OptionsColumn.AllowEdit = false;
+            this.colcelular.OptionsColumn.AllowFocus = false;
+            this.colcelular.OptionsColumn.ReadOnly = true;
             this.colcelular.Visible = true;
             this.colcelular.VisibleIndex = 2;
             this.colcelular.Width = 273;
@@ -290,7 +306,7 @@
             // cmdVerFicha
             // 
             this.cmdVerFicha.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::Core.Properties.Resources.iconBusqueda_32;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.cmdVerFicha.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdVerFicha.Name = "cmdVerFicha";
@@ -311,7 +327,7 @@
             // cmdAtras
             // 
             this.cmdAtras.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cmdAtras.EditValue = global::Core.Properties.Resources.icon_atras_64;
+            this.cmdAtras.EditValue = ((object)(resources.GetObject("cmdAtras.EditValue")));
             this.cmdAtras.Location = new System.Drawing.Point(0, 23);
             this.cmdAtras.Name = "cmdAtras";
             this.cmdAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -350,7 +366,7 @@
             // cmdIrAtras
             // 
             this.cmdIrAtras.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cmdIrAtras.EditValue = global::Core.Properties.Resources.icon_atras_64;
+            this.cmdIrAtras.EditValue = ((object)(resources.GetObject("cmdIrAtras.EditValue")));
             this.cmdIrAtras.Location = new System.Drawing.Point(0, 0);
             this.cmdIrAtras.Name = "cmdIrAtras";
             this.cmdIrAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -416,7 +432,16 @@
             this.ctlVistaFichaIngreso1.Pro_Conexion = null;
             this.ctlVistaFichaIngreso1.Pro_Credenciales = null;
             this.ctlVistaFichaIngreso1.Pro_EsCargaDatos = false;
+            this.ctlVistaFichaIngreso1.Pro_Genero = null;
+            this.ctlVistaFichaIngreso1.Pro_ID_AreaAtencion = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_Cargo = 0;
             this.ctlVistaFichaIngreso1.Pro_ID_Colaborador = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_Empresa = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_EquipoArca = null;
+            this.ctlVistaFichaIngreso1.Pro_ID_EstadoCivil = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_EstatusDoctrinal = 0;
+            this.ctlVistaFichaIngreso1.Pro_ID_Pais = null;
+            this.ctlVistaFichaIngreso1.Pro_ID_TipoSangre = 0;
             this.ctlVistaFichaIngreso1.Pro_ModoEdicion = false;
             this.ctlVistaFichaIngreso1.Pro_Usuario = null;
             this.ctlVistaFichaIngreso1.Pro_UsuarioColaborador = null;
@@ -481,11 +506,11 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageBusquedas;
         private DevExpress.XtraBars.Navigation.NavigationPage PageFichaIngreso;
         private System.Windows.Forms.Panel panel3;
-        private ctlVistaFichaIngreso ctlVistaFichaIngreso1;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.PictureEdit cmdAtras;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public ctlVistaFichaIngreso ctlVistaFichaIngreso1;
     }
 }

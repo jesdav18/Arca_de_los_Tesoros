@@ -28,6 +28,7 @@ namespace Core.Controles
         private string Pro_SegundoApellido { get; set; }
         public int Pro_ID_Colaborador { get; set; }
         public string Pro_Usuario { get; set; }
+       
 
         #endregion
 
@@ -55,10 +56,12 @@ namespace Core.Controles
 
             if (pEsVista)
             {
+                lblEncabezado.Text = "Reestablecer Contraseña";
                 txtUsuario.Text = pUsuario;
                 lblEtiquetaUsuario.Text = "Usuario";
                 cmdGuardarUsuario.Visible = false;
 
+                CargarDatosCargos();
 
                 foreach (dsConfiguracion.dtCargosRow item in dsConfiguracion1.dtCargos)
                 {
@@ -157,7 +160,8 @@ namespace Core.Controles
             try
             {
                 pgComando.ExecuteNonQuery();
-
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La contraseña fue reestablecida!", Utilidades.BotonesDialogo.Ok);
+                OnCerrar?.Invoke(new object(),new EventArgs());
             }
             catch (Exception Exc)
             {
@@ -189,10 +193,15 @@ namespace Core.Controles
                 return;
             }
 
-            MantenimientoColaboradores.CrearUsuarioColaborador(Pro_Conexion,
-                                                               Pro_ID_Colaborador,
-                                                               (int)glPerfilUsuario.EditValue,
-                                                               txtUsuario.Text);
+          
+                MantenimientoColaboradores.CrearUsuarioColaborador(Pro_Conexion,
+                                                              Pro_ID_Colaborador,
+                                                              (int)glPerfilUsuario.EditValue,
+                                                              txtUsuario.Text);
+            
+            
+
+           
         }
 
         private void PicCerrar_Click(object sender, EventArgs e)
@@ -202,6 +211,7 @@ namespace Core.Controles
 
         private void CmdReeestablecerContrasenia_Click(object sender, EventArgs e)
         {
+            txtContraseniaTemporal.ResetText();
             NavegacionPrincipal.SelectedPage = pageReestablecerContrasenia;
         }
 

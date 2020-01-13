@@ -707,7 +707,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageSolicitudes;
       
         private Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros ctlContenedorCumpleanieros1;
-        private Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
         private Core.Controles.ctlPlanificadorActividades ctlPlanificadorActividades1;
         private Core.Controles.ctlVistaSolicitudes ctlVistaSolicitudes1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
@@ -724,5 +723,6 @@
         private DevExpress.XtraEditors.ButtonEdit cmdBusqueda;
         private DevExpress.XtraEditors.ButtonEdit cmdIndicadores;
         private Core.Controles.ctlEncabezado ctlEncabezado1;
+        public Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
     }
 }

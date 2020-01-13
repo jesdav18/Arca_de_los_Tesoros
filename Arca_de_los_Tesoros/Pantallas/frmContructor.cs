@@ -115,6 +115,11 @@ namespace Arca_de_los_Tesoros
                         ctlAnciano = new ctlContenedorPrincipalAnciano();
                         ctlAnciano.Parent = this;
                         ctlAnciano.ConstruirControl(Pro_Conexion, pUsuario);
+                        if (!ctlAnciano.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
+                        {
+                            ctlAnciano.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
+                            ctlAnciano.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.RunWorkerAsync();
+                        }
                         ctlAnciano.OnPresionaCerrarSesion += ctlAnciano_CerrarSesion;
                         ctlAnciano.Dock = DockStyle.Fill;
                         ctlAnciano.BringToFront();
@@ -127,6 +132,11 @@ namespace Arca_de_los_Tesoros
                         ctlDiacono = new ctlContenedorPrincipalDiacono();
                         ctlDiacono.Parent = this;
                         ctlDiacono.ConstruirControl(Pro_Conexion, pUsuario);
+                        if (!ctlDiacono.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
+                        {
+                            ctlDiacono.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
+                            ctlDiacono.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.RunWorkerAsync();
+                        }
                         ctlDiacono.OnPresionaCerrarSesion += ctlDiacono_CerrarSesion;
                         ctlDiacono.Dock = DockStyle.Fill;
                         ctlDiacono.BringToFront();
@@ -139,6 +149,11 @@ namespace Arca_de_los_Tesoros
                         ctlCoordinadorDia = new ctlContenedorPrincipalCoordinadorDia();
                         ctlCoordinadorDia.Parent = this;
                         ctlCoordinadorDia.ConstruirControl(Pro_Conexion, pUsuario);
+                        if (!ctlCoordinadorDia.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
+                        {
+                            ctlCoordinadorDia.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
+                            ctlCoordinadorDia.ctlBusquedaFichasIngreso1.ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.RunWorkerAsync();
+                        }
                         ctlCoordinadorDia.OnPresionaCerrarSesion += ctlCoordinadorDia_CerrarSesion;
                         ctlCoordinadorDia.Dock = DockStyle.Fill;
                         ctlCoordinadorDia.BringToFront();

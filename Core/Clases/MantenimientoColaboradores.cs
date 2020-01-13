@@ -542,6 +542,7 @@ namespace Core.Clases
                     return v_resultado;
                 }
 
+                MessageBox.Show("Usuario creado con éxito");
                 return v_resultado;
 
             }
@@ -550,6 +551,9 @@ namespace Core.Clases
                 return v_resultado;
             }
         }
+
+       
+
 
         public static bool ActualizaCelularColaborador(PgSqlConnection pConexion, int pCodigoColaborador, string pCelular)
         {

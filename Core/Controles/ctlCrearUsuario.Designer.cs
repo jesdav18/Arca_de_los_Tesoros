@@ -88,7 +88,7 @@
             this.lblEncabezado.Name = "lblEncabezado";
             this.lblEncabezado.Size = new System.Drawing.Size(639, 52);
             this.lblEncabezado.TabIndex = 10;
-            this.lblEncabezado.Text = "Informacion Usuario";
+            this.lblEncabezado.Text = "Creación de Usuario";
             // 
             // picCerrar
             // 
@@ -180,22 +180,22 @@
             this.cmdGuardarUsuario.Appearance.Options.UseFont = true;
             this.cmdGuardarUsuario.Appearance.Options.UseForeColor = true;
             this.cmdGuardarUsuario.ImageOptions.Image = global::Core.Properties.Resources.icon_guardar_negro_64;
-            this.cmdGuardarUsuario.Location = new System.Drawing.Point(300, 183);
+            this.cmdGuardarUsuario.Location = new System.Drawing.Point(300, 162);
             this.cmdGuardarUsuario.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.cmdGuardarUsuario.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cmdGuardarUsuario.Name = "cmdGuardarUsuario";
             this.cmdGuardarUsuario.Size = new System.Drawing.Size(373, 90);
             this.cmdGuardarUsuario.TabIndex = 53;
-            this.cmdGuardarUsuario.Text = "Crear Usuario";
+            this.cmdGuardarUsuario.Text = "Guardar";
             this.cmdGuardarUsuario.Click += new System.EventHandler(this.CmdGuardarUsuario_Click);
             // 
             // cmdReeestablecerContrasenia
             // 
             this.cmdReeestablecerContrasenia.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdReeestablecerContrasenia.Appearance.Options.UseFont = true;
-            this.cmdReeestablecerContrasenia.Location = new System.Drawing.Point(300, 214);
+            this.cmdReeestablecerContrasenia.Location = new System.Drawing.Point(300, 211);
             this.cmdReeestablecerContrasenia.Name = "cmdReeestablecerContrasenia";
-            this.cmdReeestablecerContrasenia.Size = new System.Drawing.Size(226, 41);
+            this.cmdReeestablecerContrasenia.Size = new System.Drawing.Size(357, 41);
             this.cmdReeestablecerContrasenia.TabIndex = 54;
             this.cmdReeestablecerContrasenia.Text = "Reestablecer Contraseña";
             this.cmdReeestablecerContrasenia.Click += new System.EventHandler(this.CmdReeestablecerContrasenia_Click);
@@ -246,11 +246,14 @@
             // 
             this.colid_cargo.Caption = "ID Perfil";
             this.colid_cargo.FieldName = "id_cargo";
+            this.colid_cargo.MaxWidth = 50;
+            this.colid_cargo.MinWidth = 50;
             this.colid_cargo.Name = "colid_cargo";
             this.colid_cargo.OptionsColumn.AllowEdit = false;
             this.colid_cargo.OptionsColumn.AllowFocus = false;
             this.colid_cargo.Visible = true;
-            this.colid_cargo.VisibleIndex = 1;
+            this.colid_cargo.VisibleIndex = 0;
+            this.colid_cargo.Width = 50;
             // 
             // labelControl1
             // 
@@ -315,7 +318,7 @@
             this.cmdReestablecerContrasenia.Name = "cmdReestablecerContrasenia";
             this.cmdReestablecerContrasenia.Size = new System.Drawing.Size(471, 90);
             this.cmdReestablecerContrasenia.TabIndex = 54;
-            this.cmdReestablecerContrasenia.Text = "Reestablecer Contraseña";
+            this.cmdReestablecerContrasenia.Text = "Guardar";
             this.cmdReestablecerContrasenia.Click += new System.EventHandler(this.CmdReestablecerContrasenia_Click);
             // 
             // txtContraseniaTemporal

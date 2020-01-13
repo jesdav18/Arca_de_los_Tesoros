@@ -51,6 +51,15 @@ namespace Core.Controles
         public bool Pro_ModoEdicion { get; set; }
         public Usuario Pro_Usuario { get; set; }
         public string Pro_UsuarioColaborador { get; set; }
+        public string Pro_Genero { get; set; }
+        public string Pro_ID_Pais { get; set; }
+        public int Pro_ID_EstadoCivil { get; set; }
+        public int Pro_ID_TipoSangre { get; set; }
+        public int Pro_ID_Cargo { get; set; }
+        public int Pro_ID_AreaAtencion { get; set; }
+        public  int Pro_ID_EstatusDoctrinal { get; set; }
+        public int Pro_ID_Empresa { get; set; }
+        public string Pro_ID_EquipoArca { get; set; }
 
         #endregion
 
@@ -65,35 +74,33 @@ namespace Core.Controles
 
         #region FUNCIONES
 
-        public void ConstruirControl(PgSqlConnection pConexion, int pID_Colaborador, Usuario pUsuario)
+        public void ConstruirControl(PgSqlConnection pConexion, int pID_Colaborador, Usuario pUsuario, string pGenero)
         {
             Pro_Conexion = pConexion;
             Pro_ID_Colaborador = pID_Colaborador;
             Pro_EsCargaDatos = true;
             Pro_ModoEdicion = false;
             Pro_Usuario = pUsuario;
+            Pro_Genero = pGenero;
 
+
+            CargarEstadosCiviles();
             CargarDatos();
             CargarFotografiaColaborador();
 
-            if (Pro_Usuario.Pro_ID_RolUsuario == 4)
+            if (Pro_Usuario.Pro_ID_RolUsuario == 4) //Si es coordinador de edad , poner en modo lectura.
             {
-                PonerModoLectura();
-               
+                PonerModoLectura();              
             }
-
         }
 
         private void CargarFotografiaColaborador()
         {
             if (!string.IsNullOrEmpty(v_ruta_fotografia))
             {
-                if (!splashScreenManager1.IsSplashFormVisible)
-                {
-                    splashScreenManager1.ShowWaitForm();
-                }
+                Cursor.Current = Cursors.WaitCursor;
 
-                if (File.Exists(v_ruta_fotografia))
+                if (File.Exists(v_ruta_fotografia+ ".jpg"))
                 {
                     var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
                     picColaborador.Image = (Bitmap)bmp.Clone();
@@ -103,19 +110,15 @@ namespace Core.Controles
                     PrepararDescarga();
                 }
 
-                if (splashScreenManager1.IsSplashFormVisible)
-                {
-                    splashScreenManager1.CloseWaitForm();
-                }
+                Cursor.Current = Cursors.Arrow;
             }          
         }
 
         private void CargarDatos()
         {
-            if (!splashScreenManager1.IsSplashFormVisible)
-            {
-                splashScreenManager1.ShowWaitForm();
-            }
+          
+            splashScreenManager1.ShowWaitForm();
+            
 
             if (Pro_Conexion.State != ConnectionState.Open)
             {
@@ -135,26 +138,26 @@ namespace Core.Controles
                     txtNombreColaborador.Text = pgDr.GetString("nombre_colaborador");
                     txtNumeroIdentidad.Text = pgDr.GetString("numero_identidad");
                     dateFechaNacimiento.EditValue = pgDr.GetDateTime("fecha_nacimiento") != v_fecha_nulos ? pgDr.GetDateTime("fecha_nacimiento") : dateFechaNacimiento.EditValue = "";
-                    glEstadoCivil.EditValue = pgDr.GetString("estado_civil");
+                    txtEstadoCivil.Text = pgDr.GetString("estado_civil");
                     txtGenero.Text = pgDr.GetString("genero");
                     txtCorreoElectronico.Text = pgDr.GetString("correo_electronico");
                     memoDireccion.Text = pgDr.GetString("direccion");
                     txtCelular.Text = pgDr.GetString("celular");
-                    glPaisNacimiento.EditValue = pgDr.GetString("pais_nacimiento");
-                    glTipoSangre.EditValue = pgDr.GetString("tipo_sangre");
+                    txtPaisNacimiento.Text = pgDr.GetString("pais_nacimiento");
+                    txtTipoSangre.Text = pgDr.GetString("tipo_sangre");
                     toggleNecesitaTransporte.IsOn = pgDr.GetBoolean("necesita_transporte");
                     dateFechaConversion.EditValue = pgDr.GetDateTime("fecha_conversion");
                     dateFechaIngresoIglesia.EditValue = pgDr.GetDateTime("fecha_ingreso_iglesia") != v_fecha_nulos ? pgDr.GetDateTime("fecha_ingreso_iglesia") : dateFechaIngresoIglesia.EditValue = "";
                     datFechaBautismoAgua.EditValue = pgDr.GetDateTime("fecha_bautismo_agua") != v_fecha_nulos ? pgDr.GetDateTime("fecha_bautismo_agua") : datFechaBautismoAgua.EditValue = "";
-                    glEquipoArcaTesoros.EditValue = pgDr.GetString("equipo_arca_tesoros");
-                    glCargos.EditValue = pgDr.GetString("cargo_colaborador");           
+                    txtEquipoArcaTesoros.Text = pgDr.GetString("equipo_arca_tesoros");
+                    txtCargoArcaTesoros.Text = pgDr.GetString("cargo_colaborador");           
                     dateFechaCobertua.EditValue = pgDr.GetDateTime("fecha_cobertura") !=  v_fecha_nulos ? pgDr.GetDateTime("fecha_cobertura") : dateFechaCobertua.EditValue = "";
                     dateFechaReconciliacion.EditValue = pgDr.GetDateTime("fecha_reconciliacion") != v_fecha_nulos ? pgDr.GetDateTime("fecha_reconciliacion") : dateFechaReconciliacion.EditValue = "";
                     toggleBautismoEspiritu.IsOn = pgDr.GetBoolean("bautismo_espiritu");
-                    glEdadArea.EditValue = pgDr.GetString("area_atencion");
+                    txtEdadArea.Text = pgDr.GetInt32("id_area_atencion") != 0 ? pgDr.GetString("area_atencion") : "";
                     dateFechaInicioPrivilegio.EditValue = pgDr.GetDateTime("fecha_inicio_privilegio") != v_fecha_nulos ? pgDr.GetDateTime("fecha_inicio_privilegio") : dateFechaInicioPrivilegio.EditValue = "";
                     txtOtrosEquiposPriviliegio.Text = pgDr.GetString("otros_equipos_privilegio");
-                    glEmpresa.EditValue = pgDr.GetString("empresa");
+                    txtEmpresa.Text = pgDr.GetString("empresa");
                     txtCargo.Text = pgDr.GetString("cargo_en_empresa");
                     txtTelefonoEmpresa.Text = pgDr.GetString("telefono_empresa");
                     txtEstadoProfesional.Text = pgDr.GetString("estado_profesional");
@@ -167,12 +170,21 @@ namespace Core.Controles
                     txtEditarSegundoNombre.Text = pgDr.GetString("segundo_nombre");
                     txtEditarSegundoApellido.Text = pgDr.GetString("segundo_apellido");
                     Pro_UsuarioColaborador = pgDr.GetString("usuario");
+                    Pro_ID_Pais = pgDr.GetString("id_pais_nacimiento");
+                    Pro_ID_EstadoCivil = pgDr.GetInt32("id_estado_civil");
+                    Pro_ID_EstatusDoctrinal = pgDr.GetInt32("id_estatus_doctrinal");
+                    Pro_ID_TipoSangre = pgDr.GetInt32("id_tipo_sangre");
+                    Pro_ID_Empresa = pgDr.GetInt32("id_empresa");
+                    Pro_ID_AreaAtencion = pgDr.GetInt32("id_area_atencion");
+                    Pro_ID_Cargo = pgDr.GetInt32("id_cargo");
+                    Pro_ID_EquipoArca = pgDr.GetString("id_equipo_arca_tesoros");
+                    txtUsuario.Text = pgDr.GetString("usuario");
+
                 }
 
                 pgDr.Close();
 
-                ParidacionDatos();
-
+           
                 sentencia = null;
                 pgDr = null;
                 pgComando.Dispose();
@@ -241,10 +253,10 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_id_colaborador", PgSqlType.Int).Value = Pro_ID_Colaborador;
             pgComando.Parameters.Add("p_numero_identidad", PgSqlType.VarChar).Value = txtNumeroIdentidad.Text;
             pgComando.Parameters.Add("p_genero", PgSqlType.VarChar).Value = txtGenero.Text;
-            pgComando.Parameters.Add("p_id_pais_nacimiento", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glPaisNacimiento.EditValue.ToString()) ? glPaisNacimiento.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_pais_nacimiento", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glPaisNacimiento.Text) ? glPaisNacimiento.EditValue : Pro_ID_Pais;
             pgComando.Parameters.Add("p_direccion", PgSqlType.VarChar).Value = memoDireccion.Text;
-            pgComando.Parameters.Add("p_id_estado_civil", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstadoCivil.EditValue.ToString()) ? glEstadoCivil.EditValue : DBNull.Value;
-            pgComando.Parameters.Add("p_id_tipo_sangre", PgSqlType.Int).Value = !string.IsNullOrEmpty(glTipoSangre.EditValue.ToString()) ? glTipoSangre.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_estado_civil", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstadoCivil.Text) ? glEstadoCivil.EditValue : Pro_ID_EstadoCivil;
+            pgComando.Parameters.Add("p_id_tipo_sangre", PgSqlType.Int).Value = !string.IsNullOrEmpty(glTipoSangre.Text) ? glTipoSangre.EditValue : Pro_ID_TipoSangre;
             pgComando.Parameters.Add("p_estado_profesional", PgSqlType.VarChar).Value = txtEstadoProfesional.Text;
             pgComando.Parameters.Add("p_nivel_educativo", PgSqlType.VarChar).Value = txtNivelEducativo.Text;
             pgComando.Parameters.Add("p_fecha_ingreso_iglesia", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaIngresoIglesia.EditValue.ToString()) ? dateFechaIngresoIglesia.EditValue : DBNull.Value;
@@ -254,15 +266,23 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_fecha_conversion", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaConversion.EditValue.ToString()) ? dateFechaConversion.EditValue : DBNull.Value;
             pgComando.Parameters.Add("p_bautismo_espiritu", PgSqlType.Boolean).Value = toggleBautismoEspiritu.IsOn;
             pgComando.Parameters.Add("p_otros_equipos_privilegio", PgSqlType.VarChar).Value = txtOtrosEquiposPriviliegio.Text;
-            pgComando.Parameters.Add("p_id_estatus_doctrinal", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstatusDoctrinal.EditValue.ToString()) ? glEstatusDoctrinal.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_estatus_doctrinal", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstatusDoctrinal.Text) ? glEstatusDoctrinal.EditValue : Pro_ID_EstatusDoctrinal;
             pgComando.Parameters.Add("p_correo_electronico", PgSqlType.VarChar).Value = txtCorreoElectronico.Text;
             pgComando.Parameters.Add("p_necesita_transporte", PgSqlType.Boolean).Value = toggleNecesitaTransporte.IsOn;
-            pgComando.Parameters.Add("p_equipo_arca_tesoros", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glEquipoArcaTesoros.EditValue.ToString()) ? glEquipoArcaTesoros.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_equipo_arca_tesoros", PgSqlType.VarChar).Value = !string.IsNullOrEmpty(glEquipoArcaTesoros.EditValue.ToString()) ? glEquipoArcaTesoros.EditValue : Pro_ID_EquipoArca;
             pgComando.Parameters.Add("p_fecha_nacimiento", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaNacimiento.EditValue.ToString()) ? dateFechaNacimiento.EditValue : DBNull.Value;
-            pgComando.Parameters.Add("p_id_empresa", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEmpresa.EditValue.ToString()) ? glEmpresa.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_empresa", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEmpresa.Text) ? glEmpresa.EditValue : Pro_ID_Empresa;
             pgComando.Parameters.Add("p_cargo_empresa", PgSqlType.VarChar).Value = txtCargo.Text;
-            pgComando.Parameters.Add("p_id_cargo", PgSqlType.Int).Value = !string.IsNullOrEmpty(glCargos.EditValue.ToString()) ? glCargos.EditValue : DBNull.Value;
-            pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEdadArea.EditValue.ToString()) ? glEdadArea.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_id_cargo", PgSqlType.Int).Value = !string.IsNullOrEmpty(glCargos.Text) ? glCargos.EditValue : Pro_ID_Cargo;
+            if (Pro_ID_Cargo == 1 || Pro_ID_Cargo == 2 || Pro_ID_Cargo == 3)
+            {
+                pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = 0;
+            }
+            else
+            {
+                pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEdadArea.Text) ? glEdadArea.EditValue : Pro_ID_AreaAtencion;
+            }
+                        
             pgComando.Parameters.Add("p_usuario", PgSqlType.VarChar).Value = Pro_Usuario.Pro_Usuario;
             pgComando.Parameters.Add("p_primer_nombre", PgSqlType.VarChar).Value = txtEditarPrimerNombre.Text;
             pgComando.Parameters.Add("p_segundo_nombre", PgSqlType.VarChar).Value = txtEditarSegundoNombre.Text;
@@ -281,7 +301,13 @@ namespace Core.Controles
                 pgComando.ExecuteNonQuery();
                 pgTrans.Commit();
 
+               
+                popupModificarNombre.HidePopup();
+                this.ParentForm.BringToFront();
+
                 Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡Los cambios fueron realizados!", Utilidades.BotonesDialogo.Ok);
+
+                CargarDatos();
 
             }
             catch (Exception Exc)
@@ -446,8 +472,14 @@ namespace Core.Controles
 
 
                 DescargarImagen(service, v_ruta_fotografia);
-                var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
-                picColaborador.Image = (Bitmap)bmp.Clone();
+
+                if (File.Exists(v_ruta_fotografia + ".jpg"))
+                {
+                    var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
+                    picColaborador.Image = (Bitmap)bmp.Clone();
+
+                }
+
 
 
                 string pageToken = null;
@@ -674,7 +706,16 @@ namespace Core.Controles
 
             string sentencia = "SELECT * FROM arca_tesoros_conf.ft_view_estados_civiles(:p_genero);";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, v_conexion);
-            pgComando.Parameters.Add("p_genero", PgSqlType.Boolean).Value = 2; //Masculino por defecto, lo siento feminazis
+
+            if (Pro_Genero == "MASCULINO")
+            {
+                pgComando.Parameters.Add("p_genero", PgSqlType.Boolean).Value = 2; 
+            }
+            else
+            {
+                pgComando.Parameters.Add("p_genero", PgSqlType.Boolean).Value = 1; 
+            }
+           
             
             try
             {
@@ -821,128 +862,6 @@ namespace Core.Controles
             }
         }
 
-        private void ParidacionDatos()
-        {
-            Pro_ModoEdicion = true;
-
-            foreach (dsConfiguracion.dtEstadosCivilesRow item in dsConfiguracion1.dtEstadosCiviles)
-            {
-                if (glEstadoCivil.EditValue == null)
-                {
-                    break;
-                }
-
-                if (item.descripcion == glEstadoCivil.EditValue.ToString() || glEstadoCivil.EditValue.ToString() == "SOLTERA")
-                {
-                    glEstadoCivil.EditValue = item.id_estado_civil;
-                    break;
-                }
-            }
-
-            foreach (dsConfiguracion.dtAreasAtencionRow item in dsConfiguracion1.dtAreasAtencion)
-            {
-                if (glEdadArea.EditValue == null)
-                {
-                    break;
-                }
-
-                if (item.descripcion == glEdadArea.EditValue.ToString())
-                {
-                    glEdadArea.EditValue = item.id_area_atencion;
-                    break;
-                }
-            }
-
-            foreach (dsConfiguracion.dtPaisesRow item in dsConfiguracion1.dtPaises)
-            {
-                if (glPaisNacimiento.EditValue == null)
-                {
-
-                }
-
-                if (item.nombre_pais == glPaisNacimiento.EditValue.ToString())
-                {
-                    glPaisNacimiento.EditValue = item.id_pais;
-                    break;
-                }
-            }
-
-            foreach (dsConfiguracion.dtTiposSangreRow item in dsConfiguracion1.dtTiposSangre)
-            {
-
-                if (glTipoSangre.EditValue == null)
-                {
-                    break;
-                }
-
-                if (item.descripcion == glTipoSangre.EditValue.ToString())
-                {
-                    glTipoSangre.EditValue = item.id_tipo_sangre;
-                    break;
-                }
-            }
-
-            foreach (dsConfiguracion.dtCargosRow item in dsConfiguracion1.dtCargos)
-            {
-
-                if (glCargos.EditValue == null)
-                {
-                    break;
-                }
-
-                if (item.descripcion == glCargos.EditValue.ToString())
-                {
-                    glCargos.EditValue = item.id_cargo;
-                    break;
-                }
-            }
-
-            foreach (dsConfiguracion.dtEstatusDoctrinalRow item in dsConfiguracion1.dtEstatusDoctrinal)
-            {
-                if (glEstatusDoctrinal.EditValue == null)
-                {
-                    break;
-                }
-
-                if (item.descripcion == glEstatusDoctrinal.EditValue.ToString())
-                {
-                    glEstatusDoctrinal.EditValue = item.id_estatus_doctrinal;
-                    break;
-                }
-            }
-
-            foreach (dsConfiguracion.dtEmpresasRow item in dsConfiguracion1.dtEmpresas)
-            {
-                if (glEmpresa.EditValue == null)
-                {
-                    break;
-                }
-
-                if (item.nombre_empresa == glEmpresa.EditValue.ToString())
-                {
-                    glEmpresa.EditValue = item.id_empresa;
-                    break;
-                }
-            }
-
-            foreach (dsConfiguracion.dtEquipoArcaTesorosRow item in dsConfiguracion1.dtEquipoArcaTesoros)
-            {
-                if (glEquipoArcaTesoros.EditValue == null)
-                {
-                    break;
-                }
-
-                if (item.id_equipo_arca_tesoros == glEquipoArcaTesoros.EditValue.ToString())
-                {
-                    glEquipoArcaTesoros.EditValue = item.id_equipo_arca_tesoros;
-                    break;
-                }
-            }
-
-            Pro_ModoEdicion = false;
-
-        }
-
         private void PonerModoLectura()
         {
             cmdEditarNombre.Visible = false;
@@ -974,9 +893,17 @@ namespace Core.Controles
             txtTelefonoEmpresa.ReadOnly = true;
             txtEstadoProfesional.ReadOnly = true;
             txtNivelEducativo.ReadOnly = true;
-
+            txtEstadoCivil.ReadOnly = true;
+            txtPaisNacimiento.ReadOnly = true;
+            txtTipoSangre.ReadOnly = true;
+            txtEdadArea.ReadOnly = true;
+            txtEquipoArcaTesoros.ReadOnly = true;
+            txtCargoArcaTesoros.ReadOnly = true;
+            txtEstatusDoctrinal.ReadOnly = true;
+            txtEmpresa.ReadOnly = true;
             cmdGuardar.Visible = false;
-            picCrearUsuario.Visible = false;
+            cmdAgregarUsuario.Visible = false;
+            txtModificarRolUsuario.Visible = false;
             toggleHabilitar.Visible = false;
 
         }
@@ -1000,7 +927,6 @@ namespace Core.Controles
             CargarDatosPaises();
             CargarDatosCargos();
             CargarDatosEstatusDoctrinal();
-            CargarEstadosCiviles();
         }
 
         private void ToggleHabilitar_Toggled(object sender, EventArgs e)
@@ -1011,6 +937,8 @@ namespace Core.Controles
 
         private void PicPdf_Click(object sender, EventArgs e)
         {
+
+            Cursor.Current = Cursors.WaitCursor;
             string v_nombre_documento = "Ficha_";
 
             rptFichaIngreso rptFicha = new rptFichaIngreso();
@@ -1024,12 +952,14 @@ namespace Core.Controles
 
             ProcessStartInfo startInfo = new ProcessStartInfo( v_nombre_documento);
             Process.Start(startInfo);
+
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void ctlCrearUsuario1_OnCerrar(object sender, EventArgs e)
         {
             popupCreacionUsuario.HidePopup();
-            this.Parent.Parent.BringToFront();
+            this.ParentForm.BringToFront();
         }
 
         private void PicAtras_Click(object sender, EventArgs e)
@@ -1040,6 +970,19 @@ namespace Core.Controles
 
         private void PicCrearUsuario_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Pro_UsuarioColaborador))
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "El colaborador " + txtEditarPrimerNombre.Text + " " + txtEditarPrimerApellido.Text + " ya posee un usuario para el sistema.", Utilidades.BotonesDialogo.Ok);
+                return;
+            }
+            else if (Pro_ID_Cargo == 5)//Si es maestro
+            {
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "No es posible crear un usuario para un colaborador con cargo de Maestro.", Utilidades.BotonesDialogo.Ok);
+                return;
+            }
+
+
+
             popupCreacionUsuario.ShowPopup();
             ctlCrearUsuario1.ConstruirControl(Pro_Conexion,
                                               txtEditarPrimerNombre.Text,
@@ -1048,7 +991,7 @@ namespace Core.Controles
                                               txtEditarSegundoApellido.Text,
                                               Pro_ID_Colaborador,
                                               Pro_UsuarioColaborador,
-                                              (int)glCargos.EditValue
+                                              Pro_ID_Cargo
                                               );
         }
 
@@ -1059,24 +1002,125 @@ namespace Core.Controles
 
         private void PopupModificarNombre_Hidden(object sender, DevExpress.Utils.FlyoutPanelEventArgs e)
         {
-            this.BringToFront();
+            this.ParentForm.BringToFront();
         }
 
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(glCargos.Text))
+            {
+                if ((int)glCargos.EditValue == 4 || (int)glCargos.EditValue == 5)
+                {
+                    if (string.IsNullOrEmpty(glEdadArea.Text))
+                    {
+                        Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "Es necesario que ingrese el Área de Atención para los cargos: Coordinadores de Edad y Maestros.", Utilidades.BotonesDialogo.Ok);
+                        return;
+                    }
+                }
+            }
+
+            Cursor.Current = Cursors.WaitCursor;
+
             GuardarCambios();
+
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void CmdActualizar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             CargarDatos();
+
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void PicColaborador_DoubleClick(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             ModificarFotografia();
+
+            Cursor.Current = Cursors.Arrow;
         }
 
         #endregion
+
+
+        private void GlCargos_EditValueChanged(object sender, EventArgs e)
+        {
+            txtCargoArcaTesoros.Text = glCargos.Text;
+        }
+
+        private void GlEquipoArcaTesoros_EditValueChanged(object sender, EventArgs e)
+        {
+            txtEquipoArcaTesoros.Text = glEquipoArcaTesoros.Text;
+        }
+
+        private void GlEstatusDoctrinal_EditValueChanged(object sender, EventArgs e)
+        {
+            txtEstatusDoctrinal.Text = glEstatusDoctrinal.Text;
+        }
+
+        private void GlEdadArea_EditValueChanged(object sender, EventArgs e)
+        {
+            txtEdadArea.Text = glEdadArea.Text;
+        }
+
+        private void GlEmpresa_EditValueChanged(object sender, EventArgs e)
+        {
+            txtEmpresa.Text = glEmpresa.Text;
+        }
+
+        private void GlPaisNacimiento_EditValueChanged(object sender, EventArgs e)
+        {
+            txtPaisNacimiento.Text = glPaisNacimiento.Text;
+        }
+
+        private void GlTipoSangre_EditValueChanged(object sender, EventArgs e)
+        {
+            txtTipoSangre.Text = glTipoSangre.Text;
+        }
+
+        private void GlEstadoCivil_EditValueChanged(object sender, EventArgs e)
+        {
+            txtEstadoCivil.Text = glEstadoCivil.Text;
+        }
+
+        private void TxtModificarRolUsuario_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            popupCreacionUsuario.ShowPopup();
+
+            Cursor.Current = Cursors.Arrow;
+
+            ctlCrearUsuario1.ConstruirControl(Pro_Conexion,
+                                              txtEditarPrimerNombre.Text,
+                                              txtEditarSegundoNombre.Text,
+                                              txtEditarPrimerApellido.Text,
+                                              txtEditarSegundoApellido.Text,
+                                              Pro_ID_Colaborador,
+                                              Pro_UsuarioColaborador,
+                                              Pro_ID_Cargo,
+                                              true
+                                              );
+        }
+
+        private void PicVerImagen_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            popupVerFoto.ShowPopup();
+            if (File.Exists(v_ruta_fotografia + ".jpg"))
+            {
+                var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
+                picFotoGrande.Image = (Bitmap)bmp.Clone();
+            }
+
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private void PopupVerFoto_Hidden(object sender, DevExpress.Utils.FlyoutPanelEventArgs e)
+        {
+            this.ParentForm.BringToFront();
+        }
     }
 }

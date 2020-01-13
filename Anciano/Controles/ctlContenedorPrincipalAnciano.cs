@@ -154,10 +154,11 @@ namespace Anciano.Controles
 
         private void PnlBusqueda_Click(object sender, EventArgs e)
         {
-            splashScreenManager1.ShowWaitForm();
+            Cursor.Current = Cursors.WaitCursor;
             NavegacionPrincipal.SelectedPage = pageBusqueda;
-            ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion,Pro_Usuario);
-            splashScreenManager1.CloseWaitForm();
+            ctlBusquedaFichasIngreso1.ConstruirControl(Pro_Conexion,
+                                                       Pro_Usuario);
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void PnlCerrarSesion_Click(object sender, EventArgs e)

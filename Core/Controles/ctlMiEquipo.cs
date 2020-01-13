@@ -32,7 +32,7 @@ namespace Core.Controles
             if (v_fila != null)
             {
                 NavigationMiEquipo.SelectedPage = PageFichaIngreso;
-                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador,Pro_Usuario);
+                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador,Pro_Usuario,v_fila.genero);
             }
 
             if (splashScreenManager1.IsSplashFormVisible)

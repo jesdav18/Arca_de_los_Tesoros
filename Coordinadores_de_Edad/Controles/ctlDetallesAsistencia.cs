@@ -225,7 +225,7 @@ namespace Coordinadores_de_Edad.Controles
                     splashScreenManager1.ShowWaitForm();
                 }
 
-                if (File.Exists(v_ruta_fotografia))
+                if (File.Exists(v_ruta_fotografia + ".jpg"))
                 {
                     var bmp = new Bitmap(v_ruta_fotografia + ".jpg");
                     picFotoColaborador.Image = (Bitmap)bmp.Clone();

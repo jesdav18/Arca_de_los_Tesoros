@@ -46,12 +46,12 @@ namespace Core.Controles
             ctlVistaFichaIngreso1.Pro_Conexion = Pro_Conexion;
             Pro_Usuario = pUsuario;
 
-            txtBusqueda.Focus();
+            NavegacionPrincipal.SelectedPage = PageBusquedas;
+            NavigationBusqueda.SelectedPage = PageBusqueda;
+            txtBusqueda.ResetText();
 
-            if (!ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.IsBusy)
-            {
-                ctlVistaFichaIngreso1.bgCargarDatosConfigurcion.RunWorkerAsync();
-            }
+
+            txtBusqueda.Focus();     
         }
 
         private void RealizarBusqueda()
@@ -118,7 +118,7 @@ namespace Core.Controles
             if (v_fila != null)
             {
                 
-                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador,Pro_Usuario);             
+                ctlVistaFichaIngreso1.ConstruirControl(Pro_Conexion, v_fila.id_colaborador,Pro_Usuario,v_fila.genero);             
                 NavegacionPrincipal.SelectedPage = PageFichaIngreso;
             }
         }
@@ -142,6 +142,11 @@ namespace Core.Controles
         private void CmdAtras_Click(object sender, EventArgs e)
         {
             NavigationBusqueda.SelectedPage = PageBusqueda;
+        }
+
+        private void PageBusqueda_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

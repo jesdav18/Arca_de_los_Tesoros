@@ -96,7 +96,7 @@ namespace Core.Controles.Cumpleanieros
 
         private void CargarFotografiaColaborador()
         {      
-            if (!File.Exists(v_ruta_fotografia))
+            if (!File.Exists(v_ruta_fotografia + ".jpg"))
             {
                 PrepararDescarga();
             }
