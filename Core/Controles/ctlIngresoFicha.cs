@@ -198,17 +198,8 @@ namespace Core.Controles
             try
             {
 
-                if (!splashScreenManager1.IsSplashFormVisible)
-                {
-                    splashScreenManager1.ShowWaitForm();
-                }
-
-
-
                 pgComando.ExecuteNonQuery();
-                pgTrans.Commit();
-
-                
+                pgTrans.Commit();                
 
                 sentencia = null;
                 pgComando.Dispose();
@@ -221,7 +212,7 @@ namespace Core.Controles
                 {
                     splashScreenManager1.CloseWaitForm();
                 }
-
+              
                 Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La ficha fue almacenada!", Utilidades.BotonesDialogo.Ok);
 
             }
@@ -287,43 +278,46 @@ namespace Core.Controles
 
             if (ValidarImagenFueSeleccionada())
             {
-                if (!splashScreenManager1.IsSplashFormVisible)
+
+                try
                 {
-                    splashScreenManager1.ShowWaitForm();
-                }
+                    Pro_Credenciales = GetCredentials();
 
-                Pro_Credenciales = GetCredentials();
-
-                var service = new DriveService(new BaseClientService.Initializer()
-                {
-                    HttpClientInitializer = Pro_Credenciales,
-                    ApplicationName = "Carga_GoogleDrive",
-                });
-
-                CargarImagen(service);
-
-                string pageToken = null;
-
-                do
-                {
-                    ListaArchivos(service, ref pageToken);
-                    if (!string.IsNullOrEmpty(lblID_Generado.Text))
+                    var service = new DriveService(new BaseClientService.Initializer()
                     {
-                        pageToken = null;
-                    }
+                        HttpClientInitializer = Pro_Credenciales,
+                        ApplicationName = "Carga_GoogleDrive",
+                    });
 
-                } while (pageToken != null);
+                    CargarImagen(service);
+
+                    string pageToken = null;
+
+                    do
+                    {
+                        ListaArchivos(service, ref pageToken);
+                        if (!string.IsNullOrEmpty(lblID_Generado.Text))
+                        {
+                            pageToken = null;
+                        }
+
+                    } while (pageToken != null);
 
 
-                pageToken = null;
-                service = null;
-                Console.WriteLine("Done");
-                Console.Read();
-
-                if (splashScreenManager1.IsSplashFormVisible)
-                {
-                    splashScreenManager1.CloseWaitForm();
+                    pageToken = null;
+                    service = null;
+                    Console.WriteLine("Done");
+                    Console.Read();
                 }
+                catch (Exception Exc)
+                {
+
+                    Log_Excepciones.CapturadorExcepciones(Exc, "ctlIngresoFicha", "GuardarImagenEnDirectorio");
+                }
+
+               
+
+          
             }
         }
 
@@ -667,7 +661,7 @@ namespace Core.Controles
                     Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor seleccione fecha nacimiento del colaborador!", Utilidades.BotonesDialogo.Ok);
                     return false;
                 }
-                else if (glPaisNacimiento.EditValue == null)
+                else if (string.IsNullOrEmpty(glPaisNacimiento.Text))
                 {
                     Utilidades.MostrarDialogo(FindForm(), "Validación de Registros", "¡Por favor seleccione pais nacimiento del colaborador!", Utilidades.BotonesDialogo.Ok);
                     return false;
@@ -780,11 +774,9 @@ namespace Core.Controles
 
         private void CargarImagen(DriveService pServicio)
         {
-            if (!splashScreenManager1.IsSplashFormVisible)
-            {
-                splashScreenManager1.ShowWaitForm();
-            }
 
+
+         
             var v_fileMetaData = new Google.Apis.Drive.v3.Data.File();
             v_fileMetaData.Name = Path.GetFileName(v_ruta);
             v_fileMetaData.MimeType = "imagen_prueba/jpeg";
@@ -802,10 +794,7 @@ namespace Core.Controles
             v_id_generado = v_archivo.Id;
             lblID_Generado.Text = "ID Generado: " + v_archivo.Id;
 
-            if (splashScreenManager1.IsSplashFormVisible)
-            {
-                splashScreenManager1.CloseWaitForm();
-            }
+           
         }
 
         #endregion
@@ -827,14 +816,13 @@ namespace Core.Controles
         private void CmdGuardarFichaIngreso_Click(object sender, EventArgs e)
         {
 
-            if (!splashScreenManager1.IsSplashFormVisible)
-            {
-                splashScreenManager1.ShowWaitForm();
-            }
-
             if ((ValidacionCampos()))
             {
-                
+                if (!splashScreenManager1.IsSplashFormVisible)
+                {
+                    splashScreenManager1.ShowWaitForm();
+                }
+
 
                 GuardarImagenEnDirectorio();
                 GuardarFichaIngreso();
@@ -1020,7 +1008,11 @@ namespace Core.Controles
             if (lnlCargarFotografia.Text != "Cargar Fotografía")
             {
                 PopupVisualizadorFoto.ShowPopup();
-                picFotoColaborador.Image = Image.FromFile(lnlCargarFotografia.Text);
+                using (var fs = new System.IO.FileStream(lnlCargarFotografia.Text, System.IO.FileMode.Open))
+                {
+                    var bmp = new Bitmap(fs);
+                    picFotoColaborador.Image = (Bitmap)bmp.Clone();
+                }
             }         
         }
 

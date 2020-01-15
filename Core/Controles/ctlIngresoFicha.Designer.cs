@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlIngresoFicha));
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblPagina = new DevExpress.XtraEditors.LabelControl();
@@ -151,11 +152,6 @@
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.Page8 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.PopupVisualizadorFoto = new DevExpress.Utils.FlyoutPanel();
-            this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
-            this.picFotoColaborador = new DevExpress.XtraEditors.PictureEdit();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.picCerrarPopupFoto = new DevExpress.XtraEditors.PictureEdit();
             this.lnlCargarFotografia = new DevExpress.XtraEditors.LabelControl();
             this.picCargarFotografia = new DevExpress.XtraEditors.PictureEdit();
             this.glEdadArea = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -169,6 +165,11 @@
             this.txtOtrosEquiposPrivilegio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.PopupVisualizadorFoto = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
+            this.picFotoColaborador = new DevExpress.XtraEditors.PictureEdit();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.picCerrarPopupFoto = new DevExpress.XtraEditors.PictureEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.picAtras = new DevExpress.XtraEditors.PictureEdit();
@@ -250,13 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEquipoArcaTesoros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipoArcaTesoros)).BeginInit();
             this.Page8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PopupVisualizadorFoto)).BeginInit();
-            this.PopupVisualizadorFoto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
-            this.flyoutPanelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCerrarPopupFoto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCargarFotografia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glEdadArea.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAreasAtencion)).BeginInit();
@@ -264,6 +258,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPrivilegio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopupVisualizadorFoto)).BeginInit();
+            this.PopupVisualizadorFoto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
+            this.flyoutPanelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCerrarPopupFoto.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
@@ -1816,7 +1817,6 @@
             // Page8
             // 
             this.Page8.Caption = "Page8";
-            this.Page8.Controls.Add(this.PopupVisualizadorFoto);
             this.Page8.Controls.Add(this.lnlCargarFotografia);
             this.Page8.Controls.Add(this.picCargarFotografia);
             this.Page8.Controls.Add(this.glEdadArea);
@@ -1828,74 +1828,6 @@
             this.Page8.Controls.Add(this.labelControl31);
             this.Page8.Name = "Page8";
             this.Page8.Size = new System.Drawing.Size(547, 507);
-            // 
-            // PopupVisualizadorFoto
-            // 
-            this.PopupVisualizadorFoto.Controls.Add(this.flyoutPanelControl1);
-            this.PopupVisualizadorFoto.Location = new System.Drawing.Point(758, 108);
-            this.PopupVisualizadorFoto.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.PopupVisualizadorFoto.LookAndFeel.TouchUIMode = DevExpress.Utils.DefaultBoolean.True;
-            this.PopupVisualizadorFoto.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.PopupVisualizadorFoto.Name = "PopupVisualizadorFoto";
-            this.PopupVisualizadorFoto.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Center;
-            this.PopupVisualizadorFoto.Options.AnimationType = DevExpress.Utils.Win.PopupToolWindowAnimation.Fade;
-            this.PopupVisualizadorFoto.OwnerControl = this;
-            this.PopupVisualizadorFoto.Size = new System.Drawing.Size(592, 426);
-            this.PopupVisualizadorFoto.TabIndex = 57;
-            // 
-            // flyoutPanelControl1
-            // 
-            this.flyoutPanelControl1.Controls.Add(this.picFotoColaborador);
-            this.flyoutPanelControl1.Controls.Add(this.panel4);
-            this.flyoutPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flyoutPanelControl1.FlyoutPanel = this.PopupVisualizadorFoto;
-            this.flyoutPanelControl1.Location = new System.Drawing.Point(0, 0);
-            this.flyoutPanelControl1.Name = "flyoutPanelControl1";
-            this.flyoutPanelControl1.Size = new System.Drawing.Size(592, 426);
-            this.flyoutPanelControl1.TabIndex = 0;
-            // 
-            // picFotoColaborador
-            // 
-            this.picFotoColaborador.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFotoColaborador.Location = new System.Drawing.Point(3, 51);
-            this.picFotoColaborador.Name = "picFotoColaborador";
-            this.picFotoColaborador.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.picFotoColaborador.Properties.NullText = "     ";
-            this.picFotoColaborador.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picFotoColaborador.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picFotoColaborador.Size = new System.Drawing.Size(586, 372);
-            this.picFotoColaborador.TabIndex = 20;
-            this.picFotoColaborador.ToolTip = "Página Anterior (F1)\r\n";
-            this.picFotoColaborador.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.picFotoColaborador.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.picFotoColaborador.ToolTipTitle = "Arca de los Tesoros";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.picCerrarPopupFoto);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(586, 48);
-            this.panel4.TabIndex = 0;
-            // 
-            // picCerrarPopupFoto
-            // 
-            this.picCerrarPopupFoto.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picCerrarPopupFoto.EditValue = global::Core.Properties.Resources.iconCerrar_32;
-            this.picCerrarPopupFoto.Location = new System.Drawing.Point(506, 0);
-            this.picCerrarPopupFoto.Name = "picCerrarPopupFoto";
-            this.picCerrarPopupFoto.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picCerrarPopupFoto.Properties.NullText = "   ";
-            this.picCerrarPopupFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picCerrarPopupFoto.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picCerrarPopupFoto.Size = new System.Drawing.Size(80, 48);
-            this.picCerrarPopupFoto.TabIndex = 18;
-            this.picCerrarPopupFoto.ToolTip = "Siguiente Página (F2)\r\n";
-            this.picCerrarPopupFoto.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
-            this.picCerrarPopupFoto.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.picCerrarPopupFoto.ToolTipTitle = "Arca de los Tesoros";
-            this.picCerrarPopupFoto.Click += new System.EventHandler(this.PicCerrarPopupFoto_Click);
             // 
             // lnlCargarFotografia
             // 
@@ -2073,6 +2005,73 @@
             this.labelControl31.TabIndex = 51;
             this.labelControl31.Text = "Edad / Área Atención";
             // 
+            // PopupVisualizadorFoto
+            // 
+            this.PopupVisualizadorFoto.Controls.Add(this.flyoutPanelControl1);
+            this.PopupVisualizadorFoto.Location = new System.Drawing.Point(68, 21);
+            this.PopupVisualizadorFoto.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.PopupVisualizadorFoto.Name = "PopupVisualizadorFoto";
+            this.PopupVisualizadorFoto.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Center;
+            this.PopupVisualizadorFoto.Options.AnimationType = DevExpress.Utils.Win.PopupToolWindowAnimation.Fade;
+            this.PopupVisualizadorFoto.OwnerControl = this;
+            this.PopupVisualizadorFoto.Size = new System.Drawing.Size(592, 426);
+            this.PopupVisualizadorFoto.TabIndex = 57;
+            // 
+            // flyoutPanelControl1
+            // 
+            this.flyoutPanelControl1.Controls.Add(this.picFotoColaborador);
+            this.flyoutPanelControl1.Controls.Add(this.panel4);
+            this.flyoutPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl1.FlyoutPanel = this.PopupVisualizadorFoto;
+            this.flyoutPanelControl1.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl1.Name = "flyoutPanelControl1";
+            this.flyoutPanelControl1.Size = new System.Drawing.Size(592, 426);
+            this.flyoutPanelControl1.TabIndex = 0;
+            // 
+            // picFotoColaborador
+            // 
+            this.picFotoColaborador.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFotoColaborador.Location = new System.Drawing.Point(2, 50);
+            this.picFotoColaborador.Name = "picFotoColaborador";
+            this.picFotoColaborador.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.picFotoColaborador.Properties.NullText = "     ";
+            this.picFotoColaborador.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picFotoColaborador.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picFotoColaborador.Size = new System.Drawing.Size(588, 374);
+            this.picFotoColaborador.TabIndex = 20;
+            this.picFotoColaborador.ToolTip = "Página Anterior (F1)\r\n";
+            this.picFotoColaborador.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.picFotoColaborador.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.picFotoColaborador.ToolTipTitle = "Arca de los Tesoros";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.picCerrarPopupFoto);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(2, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(588, 48);
+            this.panel4.TabIndex = 0;
+            // 
+            // picCerrarPopupFoto
+            // 
+            this.picCerrarPopupFoto.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picCerrarPopupFoto.EditValue = global::Core.Properties.Resources.iconCerrar_32;
+            this.picCerrarPopupFoto.Location = new System.Drawing.Point(508, 0);
+            this.picCerrarPopupFoto.Name = "picCerrarPopupFoto";
+            this.picCerrarPopupFoto.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picCerrarPopupFoto.Properties.NullText = "   ";
+            this.picCerrarPopupFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picCerrarPopupFoto.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picCerrarPopupFoto.Size = new System.Drawing.Size(80, 48);
+            this.picCerrarPopupFoto.TabIndex = 18;
+            this.picCerrarPopupFoto.ToolTip = "Siguiente Página (F2)\r\n";
+            this.picCerrarPopupFoto.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.picCerrarPopupFoto.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.picCerrarPopupFoto.ToolTipTitle = "Arca de los Tesoros";
+            this.picCerrarPopupFoto.Click += new System.EventHandler(this.PicCerrarPopupFoto_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel5);
@@ -2098,7 +2097,7 @@
             // picAtras
             // 
             this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtras.EditValue = global::Core.Properties.Resources.icon_atras_64;
+            this.picAtras.EditValue = ((object)(resources.GetObject("picAtras.EditValue")));
             this.picAtras.Location = new System.Drawing.Point(0, 0);
             this.picAtras.Name = "picAtras";
             this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -2208,6 +2207,7 @@
             // 
             // pnlDerecho
             // 
+            this.pnlDerecho.Controls.Add(this.PopupVisualizadorFoto);
             this.pnlDerecho.Controls.Add(this.popupAgregarNuevaEmpresa);
             this.pnlDerecho.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlDerecho.Location = new System.Drawing.Point(1238, 62);
@@ -2311,13 +2311,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEquipoArcaTesoros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipoArcaTesoros)).EndInit();
             this.Page8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PopupVisualizadorFoto)).EndInit();
-            this.PopupVisualizadorFoto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).EndInit();
-            this.flyoutPanelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picCerrarPopupFoto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCargarFotografia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glEdadArea.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAreasAtencion)).EndInit();
@@ -2325,6 +2318,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicioPrivilegio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtrosEquiposPrivilegio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopupVisualizadorFoto)).EndInit();
+            this.PopupVisualizadorFoto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).EndInit();
+            this.flyoutPanelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoColaborador.Properties)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCerrarPopupFoto.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);

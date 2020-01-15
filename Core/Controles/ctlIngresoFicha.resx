@@ -144,6 +144,32 @@
   <metadata name="bsAreasAtencion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>407, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picAtras.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH4wUHCBkgp06sLQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAPwSURBVHhe
+        3dvJy01xHMfxa8hQZJ4yxca4sjDlvzDtSJKU2GIhFsSGDClliwXKkC1WMi/IGGJhZZZ5gffn5N7u8zzf
+        e+bzO7/f/dSrnu49vzM9Z/hNt+EgE7EKu3Ea9/ASH/D7P/2tz+5Cy+zCSqhskFmKI3iEvwU9xCEsgdcZ
+        hR14ButAyqB1b4e25U3GYz++wNrpKnzGPmjbtaU/1uAdrJ104SO2YgCcZj70MLN2qg53MBdOov/6V1g7
+        Uqfv0NVQWQbiBKyN++Q4Sr8lBuMsrA366CKGopRoRddgbchnV1H4JOhSOgdrAyG4BN26uRPCPZ9Ez4Rc
+        WQ9rhSFai0yZh2+wVhYivbZT1xN03/tUySnLbaR6PW6BtYJusAmxmYBPsAp3A/U7jEPHqFVnFSzDG6hT
+        5HrbZ3XYCzMjUNV//zVmQhmEC7CWc0FNabM/QZ0ZVoGiXmEG2qOq9WVYy7uwDT3SD1X05FgH38xw1NWq
+        fIoeUR+etWARcQev6GH0A1ZZFxahFXVgWgvllXTwet7cgFXWlYNo5TGshfJof+BZ8eHg5QGiTMIfWAtl
+        FcrBi45Z9Z5o0MJaIKsQLvveViCqnFhfZhHSf77dTkRDUdaXaSX954fhJqyydTuJaDzO+jKNpINX9Iot
+        6xlTNrUQo4OwvkyS5uCb0VWg6mdVJuMwrP2MowHZXCM7WQ7eVabB2tc4b9H41fZBWsvgW/RKs/Y1zk/k
+        OgEL4Ftyn4A8t4DG4nTv+ZTct0Deh2CWk6B6QPtDq2xTcBTWfsaJHoJFXoNpTsJqWGV9EL0Gi1aEkk6C
+        XlE601bZukUVIU1Isr7MQt3oY9ApU/EcVtk6RVXhshpDSVfCdPh2JSxH9Pooq6oa0pXQag4rZUxnawrl
+        JNxHK3nq0XGSbge9s+u+HQ6glcWwFioi6SSoNmmVc2UhWqmqWzzuJMyCVcaFJ+gTzcC0Fi7KOgmjUecI
+        dJ+BEUXV1aqGxtofjCOhGpi1nAsaGtM+mNH0U6tQGTTpWZUuXX7W967sQcdo7q2mn1oFu8F7jEVsNsMq
+        3A02IjGaRqIHl7WCkN2CJninSjdOkpqDTFkHa2Uh0gTvXNEkQ2uFITmG3NHzIKRJ0r1pKk6hqbKKJhxr
+        4rG1AZ9dwRCUEs3pOQNrQz46j9Kmyzej2yGEZ4Lu+VQzQvPG55/MbICTaOJxnQ2a3lTJmQ2naf5sTqMr
+        1k65UNvP5tqjxoWmn6qZae1kFdRsV6susWHjMmpjq1Olyuau1q3OjI7teV+iSYiah6epaEW63FVW61AH
+        Zo8+vJCiPgbNxtIozCmopfkCaptraF70tz7Tg1XDVVpWgxYV/za40fgH2sYJhvyTnSIAAAAASUVORK5C
+        YII=
+</value>
+  </data>
   <metadata name="bgCargarConfiguraciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 60</value>
   </metadata>
