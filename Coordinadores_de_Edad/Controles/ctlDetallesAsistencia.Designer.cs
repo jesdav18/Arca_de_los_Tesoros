@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,6 +41,14 @@
             this.picCaratulaAsistencia = new DevExpress.XtraEditors.PictureEdit();
             this.NavegacionObservaciones = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.page = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.glAula = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bsAulas = new System.Windows.Forms.BindingSource(this.components);
+            this.dsVistas1 = new Core.DataSets.dsVistas();
+            this.gvAulas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colaula = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colarea_atencion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_aula = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toggleCarnet = new DevExpress.XtraEditors.PictureEdit();
             this.toggleUniforme = new DevExpress.XtraEditors.PictureEdit();
             this.cmdGuardarAsistencia = new DevExpress.XtraEditors.PictureEdit();
@@ -70,6 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionObservaciones)).BeginInit();
             this.NavegacionObservaciones.SuspendLayout();
             this.page.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glAula.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAulas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAulas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleCarnet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleUniforme.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarAsistencia.Properties)).BeginInit();
@@ -183,6 +196,7 @@
             this.picFotoColaborador.EditValue = global::Coordinadores_de_Edad.Resources._62218400_2421805074506489_798898671931359232_n;
             this.picFotoColaborador.Location = new System.Drawing.Point(42, 25);
             this.picFotoColaborador.Name = "picFotoColaborador";
+            this.picFotoColaborador.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picFotoColaborador.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picFotoColaborador.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.picFotoColaborador.Size = new System.Drawing.Size(149, 159);
@@ -225,6 +239,8 @@
             // page
             // 
             this.page.Caption = "page";
+            this.page.Controls.Add(this.labelControl1);
+            this.page.Controls.Add(this.glAula);
             this.page.Controls.Add(this.toggleCarnet);
             this.page.Controls.Add(this.toggleUniforme);
             this.page.Controls.Add(this.cmdGuardarAsistencia);
@@ -233,10 +249,86 @@
             this.page.Name = "page";
             this.page.Size = new System.Drawing.Size(1138, 365);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(747, 16);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(70, 45);
+            this.labelControl1.TabIndex = 43;
+            this.labelControl1.Text = "Aula";
+            // 
+            // glAula
+            // 
+            this.glAula.EditValue = "";
+            this.glAula.Location = new System.Drawing.Point(640, 93);
+            this.glAula.Name = "glAula";
+            this.glAula.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glAula.Properties.Appearance.Options.UseFont = true;
+            this.glAula.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glAula.Properties.DataSource = this.bsAulas;
+            this.glAula.Properties.DisplayMember = "aula";
+            this.glAula.Properties.PopupView = this.gvAulas;
+            this.glAula.Properties.ValueMember = "id_aula";
+            this.glAula.Size = new System.Drawing.Size(315, 34);
+            this.glAula.TabIndex = 42;
+            // 
+            // bsAulas
+            // 
+            this.bsAulas.DataMember = "dtAulas";
+            this.bsAulas.DataSource = this.dsVistas1;
+            // 
+            // dsVistas1
+            // 
+            this.dsVistas1.DataSetName = "dsVistas";
+            this.dsVistas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gvAulas
+            // 
+            this.gvAulas.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvAulas.Appearance.Row.Options.UseFont = true;
+            this.gvAulas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colaula,
+            this.colarea_atencion,
+            this.colid_aula});
+            this.gvAulas.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gvAulas.Name = "gvAulas";
+            this.gvAulas.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvAulas.OptionsView.ShowColumnHeaders = false;
+            this.gvAulas.OptionsView.ShowGroupPanel = false;
+            this.gvAulas.OptionsView.ShowIndicator = false;
+            // 
+            // colaula
+            // 
+            this.colaula.Caption = "Aula";
+            this.colaula.FieldName = "aula";
+            this.colaula.Name = "colaula";
+            this.colaula.Visible = true;
+            this.colaula.VisibleIndex = 0;
+            // 
+            // colarea_atencion
+            // 
+            this.colarea_atencion.Caption = "Area Atención";
+            this.colarea_atencion.FieldName = "area_atencion";
+            this.colarea_atencion.Name = "colarea_atencion";
+            this.colarea_atencion.Visible = true;
+            this.colarea_atencion.VisibleIndex = 1;
+            // 
+            // colid_aula
+            // 
+            this.colid_aula.FieldName = "id_aula";
+            this.colid_aula.Name = "colid_aula";
+            // 
             // toggleCarnet
             // 
             this.toggleCarnet.EditValue = global::Coordinadores_de_Edad.Resources.switch_3_;
-            this.toggleCarnet.Location = new System.Drawing.Point(639, 79);
+            this.toggleCarnet.Location = new System.Drawing.Point(420, 67);
             this.toggleCarnet.Name = "toggleCarnet";
             this.toggleCarnet.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.toggleCarnet.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -248,7 +340,7 @@
             // toggleUniforme
             // 
             this.toggleUniforme.EditValue = global::Coordinadores_de_Edad.Resources.switch_3_;
-            this.toggleUniforme.Location = new System.Drawing.Point(155, 79);
+            this.toggleUniforme.Location = new System.Drawing.Point(96, 67);
             this.toggleUniforme.Name = "toggleUniforme";
             this.toggleUniforme.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.toggleUniforme.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -260,39 +352,40 @@
             // cmdGuardarAsistencia
             // 
             this.cmdGuardarAsistencia.EditValue = global::Coordinadores_de_Edad.Resources.icon_guardar_negro_64;
-            this.cmdGuardarAsistencia.Location = new System.Drawing.Point(977, 48);
+            this.cmdGuardarAsistencia.Location = new System.Drawing.Point(1024, 86);
             this.cmdGuardarAsistencia.Name = "cmdGuardarAsistencia";
+            this.cmdGuardarAsistencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdGuardarAsistencia.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdGuardarAsistencia.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.cmdGuardarAsistencia.Size = new System.Drawing.Size(94, 90);
+            this.cmdGuardarAsistencia.Size = new System.Drawing.Size(64, 61);
             this.cmdGuardarAsistencia.TabIndex = 39;
             this.cmdGuardarAsistencia.Click += new System.EventHandler(this.CmdGuardarAsistencia_Click);
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseTextOptions = true;
             this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.Location = new System.Drawing.Point(551, 28);
+            this.labelControl7.Location = new System.Drawing.Point(344, 16);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(421, 45);
+            this.labelControl7.Size = new System.Drawing.Size(284, 45);
             this.labelControl7.TabIndex = 38;
             this.labelControl7.Text = "¿Está portando carnet?";
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(32, 28);
+            this.labelControl6.Location = new System.Drawing.Point(13, 16);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(445, 45);
+            this.labelControl6.Size = new System.Drawing.Size(325, 45);
             this.labelControl6.TabIndex = 37;
             this.labelControl6.Text = "¿Se presentó con uniforme?";
             // 
@@ -457,12 +550,12 @@
             this.ctlCubrirAusencias1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ctlCubrirAusencias1.MinimumSize = new System.Drawing.Size(1078, 791);
             this.ctlCubrirAusencias1.Name = "ctlCubrirAusencias1";
-            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlCubrirAusencias1.Pro_CubrirConServidor = false;
             this.ctlCubrirAusencias1.Pro_ID_Actividad = 0;
             this.ctlCubrirAusencias1.Pro_ID_AreaAtencion = 0;
             this.ctlCubrirAusencias1.Pro_ID_Colaborar_Actividad = 0;
-          
-           
+            this.ctlCubrirAusencias1.Pro_NoNecesitaCubrir = false;
             this.ctlCubrirAusencias1.Pro_Usuario = null;
             this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1138, 791);
             this.ctlCubrirAusencias1.TabIndex = 0;
@@ -501,6 +594,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionObservaciones)).EndInit();
             this.NavegacionObservaciones.ResumeLayout(false);
             this.page.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.glAula.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAulas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAulas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleCarnet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleUniforme.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarAsistencia.Properties)).EndInit();
@@ -550,5 +647,13 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageDetalles;
         private ctlCubrirAusencias ctlCubrirAusencias1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GridLookUpEdit glAula;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvAulas;
+        private Core.DataSets.dsVistas dsVistas1;
+        private System.Windows.Forms.BindingSource bsAulas;
+        private DevExpress.XtraGrid.Columns.GridColumn colaula;
+        private DevExpress.XtraGrid.Columns.GridColumn colarea_atencion;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_aula;
     }
 }

@@ -120,9 +120,7 @@ namespace Core.Controles
                 Pro_Conexion.Open();
             }
 
-            string sql = @"SELECT * FROM arca_tesoros_conf.ft_view_cargos ( );";
-
-
+            string sql = @"SELECT * FROM arca_tesoros_conf.ft_view_cargos ();";
             PgSqlCommand pgComando = new PgSqlCommand(sql, Pro_Conexion);
             
 
@@ -177,6 +175,7 @@ namespace Core.Controles
         #region EVENTOS
 
         public event EventHandler OnCerrar;
+      
 
         #endregion
 
@@ -198,9 +197,9 @@ namespace Core.Controles
                                                               Pro_ID_Colaborador,
                                                               (int)glPerfilUsuario.EditValue,
                                                               txtUsuario.Text);
-            
-            
 
+
+            OnCerrar?.Invoke(sender, e);
            
         }
 

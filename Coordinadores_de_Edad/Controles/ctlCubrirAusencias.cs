@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
@@ -19,8 +13,7 @@ namespace Coordinadores_de_Edad.Controles
         public ctlCubrirAusencias()
         {
             InitializeComponent();
-            ctlSeleccionAyuda1.OnExteder_EncojerControl += ctlSeleccionAyuda1_OnSeleccionAyuda;
-            ctlSeleccionAyuda1.OnSeleccionaAyudaParaCubrir += ctlSeleccionAyuda1_OnSeleccionaAyudaParaCubrir;
+         
 
             ctlSeleccionMaestros_Ayudas1.OnPresionaExtender_Encojer += ctlSeleccionMaestros_Ayudas1_OnSeleccionAyuda;
             ctlSeleccionMaestros_Ayudas1.OnSeleccionaMaestroParaCubrir += ctlSeleccionMaestros_Ayudas1_OnSeleccionaAyuda;
@@ -36,7 +29,7 @@ namespace Coordinadores_de_Edad.Controles
 
             if (v_id_colaborador_cubre_ausencia != 0)
             {
-                v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.AYUDA;
+                v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.MAESTROS;
             }
             else
             {
@@ -58,10 +51,7 @@ namespace Coordinadores_de_Edad.Controles
             else
             {
                 v_tipo_cubrir_ausencia = TIPOS_CUBRIR_AUSENCIA.NINGUNO;
-            }
-
-            
-            
+            }        
         }
 
         private void ctlSeleccionMaestros_Ayudas1_OnSeleccionAyuda(object sender, EventArgs e)
@@ -69,53 +59,17 @@ namespace Coordinadores_de_Edad.Controles
             Pro_ExtenderMaestros = !Pro_ExtenderMaestros;
         }
 
-        private void ctlSeleccionAyuda1_OnSeleccionAyuda(object sender, EventArgs e)
-        {
-            Pro_ExtenderAyuda = !Pro_ExtenderAyuda;
-        }
 
         #endregion
 
-        private void GuardarCubrirAusencia()
-        {
-
-            if (Pro_Conexion.State != ConnectionState.Open)
-            {
-                Pro_Conexion.Open();
-            }
-
-            string sentencia = @"SELECT * FROM arca_tesoros.ft_proc_insertar_detalles_cubrir_ausencia (
-                                                                                                        :p_id_colaborar_asistencia_actividades,
-                                                                                                        :p_id_medio_cubrir_ausencia,
-                                                                                                        :p_id_colaborador_cubre_ausencia
-                                                                                                      )";
-                                                                                        
-
-            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
-            pgComando.Parameters.Add("p_id_colaborar_asistencia_actividades", PgSqlType.Int).Value = Pro_ID_Colaborar_Actividad;
-            pgComando.Parameters.Add("p_id_medio_cubrir_ausencia", PgSqlType.Int).Value = (int)v_tipo_cubrir_ausencia;
-            pgComando.Parameters.Add("p_id_colaborador_cubre_ausencia", PgSqlType.Boolean).Value = v_id_colaborador_cubre_ausencia;
-            
-
-            try
-            {
-                pgComando.ExecuteNonQuery();
-
-                
-                Utilidades.MostrarDialogo(FindForm(), "Confirmación de Registros", "¡La asistencia se procesó correctamente!", Utilidades.BotonesDialogo.Ok);
-                OnCubrirAusenciaIngresada?.Invoke(new object(), new EventArgs());
-
-               
-            }
-            catch (Exception Exc)
-            {
-                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "MarcarAsistencia");
-                MessageBox.Show("Algo salió mal mientras se marcaba asistencia del colaborador en la lista.");
-               
-            }
-        }
+        #region EVENTOS
 
         public event EventHandler OnCubrirAusenciaIngresada;
+        public event EventHandler OnIrAtras;
+
+        #endregion
+
+        #region ENUMERACIONES
 
         public enum TIPOS_CUBRIR_AUSENCIA
         {
@@ -126,8 +80,8 @@ namespace Coordinadores_de_Edad.Controles
             NO_NECESITA_CUBRIR = 4
         }
 
-        TIPOS_CUBRIR_AUSENCIA v_tipo_cubrir_ausencia;
-        
+        #endregion
+     
         #region PROPIEDADES
 
         private PgSqlConnection Pro_Conexion { get; set; }
@@ -136,25 +90,7 @@ namespace Coordinadores_de_Edad.Controles
         public Usuario Pro_Usuario { get; set; }
         public int Pro_ID_Actividad { get; set; }
 
-        private bool Pro_ExtenderAyuda {
-            get
-            {
-                return v_extender_ayuda;
-            }
-            set
-            {
-                v_extender_ayuda = value;
-                if (value)
-                {
-                    ctlSeleccionAyuda1.Height = 425;
-                }
-                else
-                {
-                    ctlSeleccionAyuda1.Height = 53;
-                }
-
-            }
-        }
+       
         private bool Pro_ExtenderMaestros {
             get
             {
@@ -218,10 +154,15 @@ namespace Coordinadores_de_Edad.Controles
 
         #endregion
 
+        #region VARIABLES GLOBALES
+
+        TIPOS_CUBRIR_AUSENCIA v_tipo_cubrir_ausencia;
         bool v_no_necesita_cubrir;
         bool v_cubrir_con_servidor;
         bool v_extender_ayuda;
         bool v_extender_maestros;
+
+        #endregion
 
         #region FUNCIONES
 
@@ -239,26 +180,64 @@ namespace Coordinadores_de_Edad.Controles
             Pro_ID_Actividad = pID_Actividad;
             Pro_ID_AreaAtencion = pID_AreaAtencion;
 
-            Pro_ExtenderAyuda = false;
+           
             Pro_ExtenderMaestros = false;
             Pro_NoNecesitaCubrir = false;
             Pro_CubrirConServidor = false;
-           
+
+            ctlSeleccionMaestros_Ayudas1.ConstruirControl(Pro_Conexion,
+                                                         Pro_Usuario.Pro_Usuario,
+                                                         DateTime.Now.ToString(),
+                                                         Pro_ID_Actividad,
+                                                         Pro_ID_AreaAtencion,
+                                                         false);
 
 
-
-            ctlSeleccionAyuda1.ConstruirControl(Pro_Conexion,
-                                                Pro_Usuario.Pro_Usuario,
-                                                Pro_ID_Actividad,
-                                                Pro_ID_AreaAtencion,
-                                                false
-                                                );
         }
 
+        private void GuardarCubrirAusencia()
+        {
+
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_proc_insertar_detalles_cubrir_ausencia (
+                                                                                                        :p_id_colaborar_asistencia_actividades,
+                                                                                                        :p_id_medio_cubrir_ausencia,
+                                                                                                        :p_id_colaborador_cubre_ausencia
+                                                                                                      )";
+
+
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_colaborar_asistencia_actividades", PgSqlType.Int).Value = Pro_ID_Colaborar_Actividad;
+            pgComando.Parameters.Add("p_id_medio_cubrir_ausencia", PgSqlType.Int).Value = (int)v_tipo_cubrir_ausencia;
+            pgComando.Parameters.Add("p_id_colaborador_cubre_ausencia", PgSqlType.Boolean).Value = v_id_colaborador_cubre_ausencia;
+
+
+            try
+            {
+                pgComando.ExecuteNonQuery();
+
+
+                Utilidades.MostrarDialogo(FindForm(), "Confirmación de Registros", "¡La asistencia se procesó correctamente!", Utilidades.BotonesDialogo.Ok);
+                OnCubrirAusenciaIngresada?.Invoke(new object(), new EventArgs());
+
+
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "MarcarAsistencia");
+                MessageBox.Show("Algo salió mal mientras se marcaba asistencia del colaborador en la lista.");
+
+            }
+        }
 
         #endregion
 
-    
+        #region EVENTOS CONTROLES
+
         private void PicNoEsNecesarioCubrir_Click(object sender, EventArgs e)
         {
             Pro_NoNecesitaCubrir = !Pro_NoNecesitaCubrir;
@@ -308,5 +287,15 @@ namespace Coordinadores_de_Edad.Controles
             }
             
         }
+
+
+        private void PicAtras_Click(object sender, EventArgs e)
+        {
+            OnIrAtras?.Invoke(sender, e);   
+        }
+
+        #endregion
+
     }
+
 }

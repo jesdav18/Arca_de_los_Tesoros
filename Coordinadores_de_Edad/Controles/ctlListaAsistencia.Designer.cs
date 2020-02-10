@@ -41,7 +41,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlListaAsistencia));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
-            this.picAtras = new DevExpress.XtraEditors.PictureEdit();
             this.cmdVerHistorico = new DevExpress.XtraEditors.PictureEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -79,8 +78,8 @@
             this.picCargar = new DevExpress.XtraEditors.PictureEdit();
             this.dateFechaAsistencia = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.picAtras = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
@@ -103,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -130,26 +130,6 @@
             this.lblEncabezado.Size = new System.Drawing.Size(970, 53);
             this.lblEncabezado.TabIndex = 9;
             this.lblEncabezado.Text = "Lista de Asistencia";
-            // 
-            // picAtras
-            // 
-            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAtras.EditValue = global::Coordinadores_de_Edad.Resources.icon_atras_64;
-            this.picAtras.Location = new System.Drawing.Point(0, 0);
-            this.picAtras.Name = "picAtras";
-            this.picAtras.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
-            this.picAtras.Properties.AllowFocused = false;
-            this.picAtras.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.picAtras.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.picAtras.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picAtras.Properties.NullText = "   ";
-            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picAtras.Size = new System.Drawing.Size(49, 53);
-            this.picAtras.TabIndex = 34;
-            this.picAtras.Visible = false;
-            this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
             // 
             // cmdVerHistorico
             // 
@@ -593,6 +573,26 @@
             this.labelControl2.TabIndex = 27;
             this.labelControl2.Text = "Fecha de Asistencia:";
             // 
+            // picAtras
+            // 
+            this.picAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAtras.EditValue = global::Coordinadores_de_Edad.Resources.icon_atras_64;
+            this.picAtras.Location = new System.Drawing.Point(0, 0);
+            this.picAtras.Name = "picAtras";
+            this.picAtras.Properties.AllowAnimationOnValueChanged = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.AllowFocused = false;
+            this.picAtras.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.picAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picAtras.Properties.NullText = "   ";
+            this.picAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picAtras.Size = new System.Drawing.Size(49, 53);
+            this.picAtras.TabIndex = 34;
+            this.picAtras.Visible = false;
+            this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
+            // 
             // ctlListaAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -607,7 +607,6 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1078, 791);
             this.pnlEncabezado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
@@ -630,6 +629,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCargar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaAsistencia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

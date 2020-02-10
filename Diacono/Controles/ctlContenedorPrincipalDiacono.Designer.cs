@@ -154,7 +154,7 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1351, 100);
+            this.pnlEncabezado.Size = new System.Drawing.Size(1316, 100);
             this.pnlEncabezado.TabIndex = 5;
             // 
             // ctlEncabezado1
@@ -166,7 +166,7 @@
             this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 82);
             this.ctlEncabezado1.Name = "ctlEncabezado1";
             this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(474, 82);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(439, 82);
             this.ctlEncabezado1.TabIndex = 10;
             // 
             // pnlEncabezadoCoordinadoresEdad
@@ -439,7 +439,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1348, 3);
+            this.panel4.Location = new System.Drawing.Point(1313, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(3, 94);
             this.panel4.TabIndex = 9;
@@ -459,7 +459,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1351, 3);
+            this.panel1.Size = new System.Drawing.Size(1316, 3);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -468,7 +468,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1351, 3);
+            this.panel2.Size = new System.Drawing.Size(1316, 3);
             this.panel2.TabIndex = 6;
             // 
             // bgObtenerFusibles
@@ -498,7 +498,7 @@
             this.PageSolicitudes,
             this.PageCrearFichaIngreso});
             this.NavegacionPrincipal.SelectedPage = this.PageInicial;
-            this.NavegacionPrincipal.Size = new System.Drawing.Size(1351, 548);
+            this.NavegacionPrincipal.Size = new System.Drawing.Size(1316, 548);
             this.NavegacionPrincipal.TabIndex = 6;
             this.NavegacionPrincipal.Text = "navigationFrame1";
             this.NavegacionPrincipal.TransitionAnimationProperties.FrameCount = 500;
@@ -509,7 +509,7 @@
             this.PageCumpleanieros.Caption = "PageCumpleanieros";
             this.PageCumpleanieros.Controls.Add(this.ctlContenedorCumpleanieros1);
             this.PageCumpleanieros.Name = "PageCumpleanieros";
-            this.PageCumpleanieros.Size = new System.Drawing.Size(1351, 548);
+            this.PageCumpleanieros.Size = new System.Drawing.Size(1316, 548);
             // 
             // ctlContenedorCumpleanieros1
             // 
@@ -520,7 +520,7 @@
             this.ctlContenedorCumpleanieros1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlContenedorCumpleanieros1.Pro_Conexion = null;
             this.ctlContenedorCumpleanieros1.Pro_Dia = null;
-            this.ctlContenedorCumpleanieros1.Size = new System.Drawing.Size(1351, 548);
+            this.ctlContenedorCumpleanieros1.Size = new System.Drawing.Size(1316, 548);
             this.ctlContenedorCumpleanieros1.TabIndex = 0;
             // 
             // PageInicial
@@ -529,7 +529,7 @@
             this.PageInicial.Controls.Add(this.cmdCrearFichaIngreso);
             this.PageInicial.Controls.Add(this.cmdSolicitudes1);
             this.PageInicial.Name = "PageInicial";
-            this.PageInicial.Size = new System.Drawing.Size(1351, 548);
+            this.PageInicial.Size = new System.Drawing.Size(1316, 548);
             // 
             // cmdCrearFichaIngreso
             // 
@@ -543,7 +543,7 @@
             this.cmdCrearFichaIngreso.Properties.NullText = "   ";
             this.cmdCrearFichaIngreso.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.cmdCrearFichaIngreso.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.cmdCrearFichaIngreso.Size = new System.Drawing.Size(1351, 548);
+            this.cmdCrearFichaIngreso.Size = new System.Drawing.Size(1316, 548);
             this.cmdCrearFichaIngreso.TabIndex = 2;
             // 
             // cmdSolicitudes1
@@ -572,7 +572,7 @@
             this.PageOrganizador.Caption = "PageOrganizador";
             this.PageOrganizador.Controls.Add(this.ctlPlanificadorActividades1);
             this.PageOrganizador.Name = "PageOrganizador";
-            this.PageOrganizador.Size = new System.Drawing.Size(1351, 548);
+            this.PageOrganizador.Size = new System.Drawing.Size(1316, 548);
             // 
             // ctlPlanificadorActividades1
             // 
@@ -584,7 +584,7 @@
             this.ctlPlanificadorActividades1.Pro_Conexion = null;
             this.ctlPlanificadorActividades1.Pro_Usuario = null;
             this.ctlPlanificadorActividades1.ProFechaSeleccionada = new System.DateTime(((long)(0)));
-            this.ctlPlanificadorActividades1.Size = new System.Drawing.Size(1351, 548);
+            this.ctlPlanificadorActividades1.Size = new System.Drawing.Size(1316, 548);
             this.ctlPlanificadorActividades1.TabIndex = 0;
             // 
             // pageMiEquipo
@@ -592,7 +592,7 @@
             this.pageMiEquipo.Caption = "pageMiEquipo";
             this.pageMiEquipo.Controls.Add(this.ctlMiEquipo1);
             this.pageMiEquipo.Name = "pageMiEquipo";
-            this.pageMiEquipo.Size = new System.Drawing.Size(1351, 548);
+            this.pageMiEquipo.Size = new System.Drawing.Size(1316, 548);
             // 
             // ctlMiEquipo1
             // 
@@ -603,7 +603,7 @@
             this.ctlMiEquipo1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlMiEquipo1.Pro_Conexion = null;
             this.ctlMiEquipo1.Pro_Usuario = null;
-            this.ctlMiEquipo1.Size = new System.Drawing.Size(1351, 548);
+            this.ctlMiEquipo1.Size = new System.Drawing.Size(1316, 548);
             this.ctlMiEquipo1.TabIndex = 0;
             // 
             // pageBusqueda
@@ -611,7 +611,7 @@
             this.pageBusqueda.Caption = "pageBusqueda";
             this.pageBusqueda.Controls.Add(this.ctlBusquedaFichasIngreso1);
             this.pageBusqueda.Name = "pageBusqueda";
-            this.pageBusqueda.Size = new System.Drawing.Size(1351, 548);
+            this.pageBusqueda.Size = new System.Drawing.Size(1316, 548);
             // 
             // ctlBusquedaFichasIngreso1
             // 
@@ -622,7 +622,7 @@
             this.ctlBusquedaFichasIngreso1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlBusquedaFichasIngreso1.Pro_Conexion = null;
             this.ctlBusquedaFichasIngreso1.Pro_Usuario = null;
-            this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1351, 548);
+            this.ctlBusquedaFichasIngreso1.Size = new System.Drawing.Size(1316, 548);
             this.ctlBusquedaFichasIngreso1.TabIndex = 0;
             // 
             // PageSolicitudes
@@ -631,7 +631,7 @@
             this.PageSolicitudes.Controls.Add(this.ctlVistaFichaIngreso1);
             this.PageSolicitudes.Controls.Add(this.ctlVistaSolicitudes1);
             this.PageSolicitudes.Name = "PageSolicitudes";
-            this.PageSolicitudes.Size = new System.Drawing.Size(1351, 548);
+            this.PageSolicitudes.Size = new System.Drawing.Size(1316, 548);
             // 
             // ctlVistaFichaIngreso1
             // 
@@ -667,7 +667,7 @@
             this.ctlVistaSolicitudes1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlVistaSolicitudes1.Pro_Conexion = null;
             this.ctlVistaSolicitudes1.Pro_Usuario = null;
-            this.ctlVistaSolicitudes1.Size = new System.Drawing.Size(1351, 548);
+            this.ctlVistaSolicitudes1.Size = new System.Drawing.Size(1316, 548);
             this.ctlVistaSolicitudes1.TabIndex = 0;
             // 
             // PageCrearFichaIngreso
@@ -675,7 +675,7 @@
             this.PageCrearFichaIngreso.Caption = "PageCrearFichaIngreso";
             this.PageCrearFichaIngreso.Controls.Add(this.ctlIngresoFicha1);
             this.PageCrearFichaIngreso.Name = "PageCrearFichaIngreso";
-            this.PageCrearFichaIngreso.Size = new System.Drawing.Size(1351, 548);
+            this.PageCrearFichaIngreso.Size = new System.Drawing.Size(1316, 548);
             // 
             // ctlIngresoFicha1
             // 
@@ -686,7 +686,7 @@
             this.ctlIngresoFicha1.Name = "ctlIngresoFicha1";
             this.ctlIngresoFicha1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlIngresoFicha1.Pro_Credenciales = null;
-            this.ctlIngresoFicha1.Size = new System.Drawing.Size(1351, 751);
+            this.ctlIngresoFicha1.Size = new System.Drawing.Size(1316, 751);
             this.ctlIngresoFicha1.TabIndex = 0;
             // 
             // splashScreenManager1
@@ -702,7 +702,7 @@
             this.Controls.Add(this.pnlEncabezado);
             this.Name = "ctlContenedorPrincipalDiacono";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(1361, 658);
+            this.Size = new System.Drawing.Size(1326, 658);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);

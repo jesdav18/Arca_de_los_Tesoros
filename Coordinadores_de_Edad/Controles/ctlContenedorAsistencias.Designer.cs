@@ -34,17 +34,14 @@
             this.PageDetalleAsistencia = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlDetallesAsistencia1 = new Coordinadores_de_Edad.Controles.ctlDetallesAsistencia();
             this.PageMensaje = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
-            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.ctlCubrirAusencias1 = new Coordinadores_de_Edad.Controles.ctlCubrirAusencias();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdVerHistorico = new DevExpress.XtraEditors.PictureEdit();
+            this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionAsistencias)).BeginInit();
             this.NavegacionAsistencias.SuspendLayout();
             this.PageListaAsistencia.SuspendLayout();
             this.PageDetalleAsistencia.SuspendLayout();
             this.PageMensaje.SuspendLayout();
-            this.navigationPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).BeginInit();
             this.SuspendLayout();
@@ -55,15 +52,13 @@
             this.NavegacionAsistencias.Controls.Add(this.PageListaAsistencia);
             this.NavegacionAsistencias.Controls.Add(this.PageDetalleAsistencia);
             this.NavegacionAsistencias.Controls.Add(this.PageMensaje);
-            this.NavegacionAsistencias.Controls.Add(this.navigationPage1);
             this.NavegacionAsistencias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavegacionAsistencias.Location = new System.Drawing.Point(5, 5);
             this.NavegacionAsistencias.Name = "NavegacionAsistencias";
             this.NavegacionAsistencias.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageListaAsistencia,
             this.PageDetalleAsistencia,
-            this.PageMensaje,
-            this.navigationPage1});
+            this.PageMensaje});
             this.NavegacionAsistencias.SelectedPage = this.PageListaAsistencia;
             this.NavegacionAsistencias.Size = new System.Drawing.Size(1098, 852);
             this.NavegacionAsistencias.TabIndex = 0;
@@ -86,6 +81,7 @@
             this.ctlListaAsistencia1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlListaAsistencia1.Pro_Conexion = null;
             this.ctlListaAsistencia1.Pro_ID_Actividad = 0;
+            this.ctlListaAsistencia1.Pro_ID_AreaAtencion = 0;
             this.ctlListaAsistencia1.Pro_Usuario = null;
             this.ctlListaAsistencia1.Size = new System.Drawing.Size(1098, 852);
             this.ctlListaAsistencia1.TabIndex = 0;
@@ -108,9 +104,11 @@
             this.ctlDetallesAsistencia1.Pro_Conexion = null;
             this.ctlDetallesAsistencia1.Pro_Credenciales = null;
             this.ctlDetallesAsistencia1.Pro_ID_Actividad = 0;
+            this.ctlDetallesAsistencia1.Pro_ID_AreaAtencion = 0;
             this.ctlDetallesAsistencia1.Pro_ID_Colaborador = 0;
             this.ctlDetallesAsistencia1.Pro_Presente = false;
             this.ctlDetallesAsistencia1.Pro_Uniforme = false;
+            this.ctlDetallesAsistencia1.Pro_Usuario = null;
             this.ctlDetallesAsistencia1.Size = new System.Drawing.Size(1098, 852);
             this.ctlDetallesAsistencia1.TabIndex = 0;
             // 
@@ -121,42 +119,6 @@
             this.PageMensaje.Controls.Add(this.lblEncabezado);
             this.PageMensaje.Name = "PageMensaje";
             this.PageMensaje.Size = new System.Drawing.Size(1098, 852);
-            // 
-            // lblEncabezado
-            // 
-            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncabezado.Appearance.Options.UseFont = true;
-            this.lblEncabezado.Appearance.Options.UseTextOptions = true;
-            this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblEncabezado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.lblEncabezado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
-            this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(1098, 852);
-            this.lblEncabezado.TabIndex = 10;
-            this.lblEncabezado.Text = "No hay actividades programadas para este día";
-            // 
-            // navigationPage1
-            // 
-            this.navigationPage1.Caption = "navigationPage1";
-            this.navigationPage1.Controls.Add(this.ctlCubrirAusencias1);
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(1098, 852);
-            // 
-            // ctlCubrirAusencias1
-            // 
-            this.ctlCubrirAusencias1.BackColor = System.Drawing.Color.White;
-            this.ctlCubrirAusencias1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlCubrirAusencias1.Location = new System.Drawing.Point(0, 0);
-            this.ctlCubrirAusencias1.MinimumSize = new System.Drawing.Size(1078, 791);
-            this.ctlCubrirAusencias1.Name = "ctlCubrirAusencias1";
-            this.ctlCubrirAusencias1.Padding = new System.Windows.Forms.Padding(5);
-            this.ctlCubrirAusencias1.Pro_ID_Colaborar_Actividad = 0;
-          
-         
-            this.ctlCubrirAusencias1.Size = new System.Drawing.Size(1098, 852);
-            this.ctlCubrirAusencias1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -185,6 +147,21 @@
             this.cmdVerHistorico.ToolTipTitle = "Arca de los Tesoros";
             this.cmdVerHistorico.Click += new System.EventHandler(this.CmdVerHistorico_Click);
             // 
+            // lblEncabezado
+            // 
+            this.lblEncabezado.Appearance.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Appearance.Options.UseFont = true;
+            this.lblEncabezado.Appearance.Options.UseTextOptions = true;
+            this.lblEncabezado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblEncabezado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.lblEncabezado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblEncabezado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEncabezado.Location = new System.Drawing.Point(0, 0);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(1098, 852);
+            this.lblEncabezado.TabIndex = 10;
+            this.lblEncabezado.Text = "No hay actividades programadas para este día";
+            // 
             // ctlContenedorAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,7 +176,6 @@
             this.PageListaAsistencia.ResumeLayout(false);
             this.PageDetalleAsistencia.ResumeLayout(false);
             this.PageMensaje.ResumeLayout(false);
-            this.navigationPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdVerHistorico.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -215,8 +191,6 @@
         private ctlDetallesAsistencia ctlDetallesAsistencia1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageMensaje;
         private DevExpress.XtraEditors.LabelControl lblEncabezado;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
-        private ctlCubrirAusencias ctlCubrirAusencias1;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit cmdVerHistorico;
     }

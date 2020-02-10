@@ -21,11 +21,7 @@ namespace Coordinadores_de_Edad.Controles
         {
             InitializeComponent();
             ctlCubrirAusencias1.OnCubrirAusenciaIngresada += ctlCubrirAusencias1_OnCubrirAusenciaIngresada;
-        }
-
-        private void ctlCubrirAusencias1_OnCubrirAusenciaIngresada(object sender, EventArgs e)
-        {
-            OnAsistenciaIngresada?.Invoke(new object(), new EventArgs());
+            ctlCubrirAusencias1.OnIrAtras += ctlCubrirAusencias1_OnIrAtras;
         }
 
         #endregion
@@ -132,6 +128,31 @@ namespace Coordinadores_de_Edad.Controles
 
             CargarDatosColaborador();
             CargarFotografiaColaborador();
+            CargarAulas();
+        }
+
+        private void CargarAulas()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_aulas ()";
+            PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            
+
+            try
+            {
+                dsVistas1.dtAulas.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtAulas);
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "MarcarAsistencia");
+                        
+            }
+
         }
 
         private int MarcarAsistencia(int pID_Colaborador,bool pGenerarEvento = true)
@@ -150,7 +171,8 @@ namespace Coordinadores_de_Edad.Controles
                                                                                           :p_usando_carnet,
                                                                                           :p_id_actividad,
                                                                                           :p_motivo_inasistencia,
-                                                                                          :p_observaciones                                                                                        
+                                                                                          :p_observaciones, 
+                                                                                          :p_aula
                                                                                         )";
 
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
@@ -161,6 +183,7 @@ namespace Coordinadores_de_Edad.Controles
             pgComando.Parameters.Add("p_id_actividad", PgSqlType.Int).Value = Pro_ID_Actividad;
             pgComando.Parameters.Add("p_motivo_inasistencia", PgSqlType.VarChar).Value = v_motivo_inasistencia;
             pgComando.Parameters.Add("p_observaciones", PgSqlType.VarChar).Value = memoObservacionesInasistencia.Text;
+            pgComando.Parameters.Add("p_aula", PgSqlType.Int).Value = glAula.EditValue;
          
             try
             {
@@ -177,7 +200,7 @@ namespace Coordinadores_de_Edad.Controles
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "MarcarAsistencia");
-                MessageBox.Show("Algo salió mal mientras se marcaba asistencia del colaborador en la lista.");
+               
                 return 0;
             }
 
@@ -212,7 +235,7 @@ namespace Coordinadores_de_Edad.Controles
             catch (Exception Exc)
             {
                 Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarDatosColaborador");
-                MessageBox.Show("Algo salió mal mientras se cargaba detalles de asistencia.");
+               
             }
         }
 
@@ -374,8 +397,15 @@ namespace Coordinadores_de_Edad.Controles
 
         #endregion
 
+        #region EVENTOS
+
         public event EventHandler OnAsistenciaIngresada;
 
+        #endregion
+
+        #region EVENTOS CONTROLES
+
+  
         private void CmdGuardarAsistencia_Click(object sender, EventArgs e)
         {
             MarcarAsistencia(Pro_ID_Colaborador);
@@ -410,5 +440,18 @@ namespace Coordinadores_de_Edad.Controles
             v_motivo_inasistencia = v_radio.Text;
             
         }
+
+        private void ctlCubrirAusencias1_OnIrAtras(object sender, EventArgs e)
+        {
+            NavigationPrincipal.SelectedPage = PageDetalles;
+        }
+
+        private void ctlCubrirAusencias1_OnCubrirAusenciaIngresada(object sender, EventArgs e)
+        {
+            OnAsistenciaIngresada?.Invoke(new object(), new EventArgs());
+        }
+
+        #endregion
+
     }
 }

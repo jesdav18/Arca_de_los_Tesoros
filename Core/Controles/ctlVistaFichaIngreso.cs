@@ -259,11 +259,11 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_id_tipo_sangre", PgSqlType.Int).Value = !string.IsNullOrEmpty(glTipoSangre.Text) ? glTipoSangre.EditValue : Pro_ID_TipoSangre;
             pgComando.Parameters.Add("p_estado_profesional", PgSqlType.VarChar).Value = txtEstadoProfesional.Text;
             pgComando.Parameters.Add("p_nivel_educativo", PgSqlType.VarChar).Value = txtNivelEducativo.Text;
-            pgComando.Parameters.Add("p_fecha_ingreso_iglesia", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaIngresoIglesia.EditValue.ToString()) ? dateFechaIngresoIglesia.EditValue : DBNull.Value;
-            pgComando.Parameters.Add("p_fecha_cobertura", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaCobertua.EditValue.ToString()) ? dateFechaCobertua.EditValue : DBNull.Value;
-            pgComando.Parameters.Add("p_fecha_reconciliacion", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaReconciliacion.EditValue.ToString()) ? dateFechaReconciliacion.EditValue : DBNull.Value;
-            pgComando.Parameters.Add("p_fecha_bautismo_agua", PgSqlType.Date).Value = !string.IsNullOrEmpty(datFechaBautismoAgua.EditValue.ToString()) ? datFechaBautismoAgua.EditValue : DBNull.Value;
-            pgComando.Parameters.Add("p_fecha_conversion", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaConversion.EditValue.ToString()) ? dateFechaConversion.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_ingreso_iglesia", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaIngresoIglesia.Text) ? dateFechaIngresoIglesia.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_cobertura", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaCobertua.Text) ? dateFechaCobertua.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_reconciliacion", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaReconciliacion.Text) ? dateFechaReconciliacion.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_bautismo_agua", PgSqlType.Date).Value = !string.IsNullOrEmpty(datFechaBautismoAgua.Text) ? datFechaBautismoAgua.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_conversion", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaConversion.Text) ? dateFechaConversion.EditValue : DBNull.Value;
             pgComando.Parameters.Add("p_bautismo_espiritu", PgSqlType.Boolean).Value = toggleBautismoEspiritu.IsOn;
             pgComando.Parameters.Add("p_otros_equipos_privilegio", PgSqlType.VarChar).Value = txtOtrosEquiposPriviliegio.Text;
             pgComando.Parameters.Add("p_id_estatus_doctrinal", PgSqlType.Int).Value = !string.IsNullOrEmpty(glEstatusDoctrinal.Text) ? glEstatusDoctrinal.EditValue : Pro_ID_EstatusDoctrinal;
@@ -290,7 +290,7 @@ namespace Core.Controles
             pgComando.Parameters.Add("p_segundo_apellido", PgSqlType.VarChar).Value = txtEditarSegundoApellido.Text;
             pgComando.Parameters.Add("p_telefono_empresa", PgSqlType.VarChar).Value = txtTelefonoEmpresa.Text;
             pgComando.Parameters.Add("p_celular", PgSqlType.VarChar).Value = txtCelular.Text;
-            pgComando.Parameters.Add("p_fecha_inicio_privilegio", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaInicioPrivilegio.EditValue.ToString()) ? dateFechaInicioPrivilegio.EditValue : DBNull.Value;
+            pgComando.Parameters.Add("p_fecha_inicio_privilegio", PgSqlType.Date).Value = !string.IsNullOrEmpty(dateFechaInicioPrivilegio.Text) ? dateFechaInicioPrivilegio.EditValue : DBNull.Value;
             pgComando.Parameters.Add("p_ruta_fotografia", PgSqlType.VarChar).Value = v_ruta_fotografia;
 
             PgSqlTransaction pgTrans = Pro_Conexion.BeginTransaction();
@@ -371,8 +371,7 @@ namespace Core.Controles
 
                 pageToken = null;
                 service = null;
-                Console.WriteLine("Done");
-                Console.Read();
+               
             
         }
 
@@ -520,13 +519,13 @@ namespace Core.Controles
                 {
                     case Google.Apis.Download.DownloadStatus.Downloading:
                         {
-                            Console.WriteLine(progress.BytesDownloaded);
+                           //Console.WriteLine(progress.BytesDownloaded);
                             break;
                         }
                     case Google.Apis.Download.DownloadStatus.Completed:
                         {
                             {
-                                Console.WriteLine("Download complete.");
+                                //Console.WriteLine("Download complete.");
 
                                 GuardarStreaming(v_stream, pArchivo + ".jpg");
                                 break;
@@ -534,7 +533,7 @@ namespace Core.Controles
                         }
                     case Google.Apis.Download.DownloadStatus.Failed:
                         {
-                            Console.WriteLine("Download failed.");
+                         //   Console.WriteLine("Download failed.");
                             break;
                         }
                 }
@@ -960,6 +959,7 @@ namespace Core.Controles
         {
             popupCreacionUsuario.HidePopup();
             this.ParentForm.BringToFront();
+            CmdActualizar_Click(sender, e);
         }
 
         private void PicAtras_Click(object sender, EventArgs e)

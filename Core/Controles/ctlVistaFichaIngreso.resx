@@ -807,6 +807,9 @@
         Fq/Ja/MevBfvyXvzGXDN85n4bKsKPiuf2cl3ltVYTZr0/wO2agWudh0lAQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="bsEmpresa.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>781, 17</value>
+  </metadata>
   <metadata name="bsAreasAtencion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>407, 17</value>
   </metadata>
@@ -833,9 +836,6 @@
   </metadata>
   <metadata name="bsEquipoArcaTesoros.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>578, 17</value>
-  </metadata>
-  <metadata name="bsEmpresa.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>781, 17</value>
   </metadata>
   <data name="cmdEditarNombre.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

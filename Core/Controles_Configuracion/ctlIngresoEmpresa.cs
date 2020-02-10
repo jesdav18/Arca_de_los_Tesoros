@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using Core.Clases;
 using Devart.Data.PostgreSql;
 
 namespace Core.Controles_Configuracion
@@ -66,7 +67,7 @@ namespace Core.Controles_Configuracion
             }
             catch (Exception Exc)
             {
-      
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "Algo salió mal en el momento de registrar la empresa. ",Utilidades.BotonesDialogo.Ok);
             }
 
         }
