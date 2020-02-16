@@ -102,7 +102,8 @@ namespace Core.Controles
             }
             else
             {
-                MessageBox.Show("Por favor ingrese un filtro para realizar la busqueda");
+                Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "Por favor ingrese un filtro para realizar la busqueda", Utilidades.BotonesDialogo.Ok);
+             
             }
 
         }

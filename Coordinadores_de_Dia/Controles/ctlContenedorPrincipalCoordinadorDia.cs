@@ -231,5 +231,24 @@ namespace Coordinadores_de_Dia.Controles
             NavegacionPrincipal.SelectedPage = PageIndicadores;
             ctlIndicadores1.ConstruirControl(Pro_Conexion);
         }
+
+        private void PnlAgregarFicha_Click(object sender, EventArgs e)
+        {
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+            NavegacionPrincipal.SelectedPage = pageIngresoFicha;
+            ctlIngresoFicha1.ConstruirControl(Pro_Conexion, Pro_Usuario.Pro_Usuario);
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+          
+
+        }
     }
 }

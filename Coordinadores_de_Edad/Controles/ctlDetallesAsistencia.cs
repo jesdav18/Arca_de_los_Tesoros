@@ -125,6 +125,8 @@ namespace Coordinadores_de_Edad.Controles
             Pro_Presente = pPresente;
             Pro_Usuario = pUsuario;
             Pro_ID_AreaAtencion = pID_AreaAtencion;
+            Pro_Carnet = false;
+            Pro_Uniforme = false;
 
             CargarDatosColaborador();
             CargarFotografiaColaborador();

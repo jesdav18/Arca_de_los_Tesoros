@@ -143,6 +143,16 @@ namespace Coordinadores_de_Dia.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_nuevo_usuario_negro_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_nuevo_usuario_negro_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_refrescar {
             get {
                 object obj = ResourceManager.GetObject("icon_refrescar", resourceCulture);
