@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -43,6 +38,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -58,7 +58,22 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
+            this.pnlRefrescar = new System.Windows.Forms.Panel();
+            this.cmdRefrescar = new DevExpress.XtraEditors.ButtonEdit();
+            this.pnlCumpleanios = new System.Windows.Forms.Panel();
+            this.fusibleCumpleanios = new Core.Controles.ctlFusible();
+            this.cmdCumpleanios = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.cmdCerrarSesion = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlEnvioSolicitudes = new System.Windows.Forms.Panel();
@@ -95,7 +110,14 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Edad.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
+            this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
+            this.PageCumpleanieros = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlContenedorCumpleanieros1 = new Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
+            this.pnlRefrescar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdRefrescar.Properties)).BeginInit();
+            this.pnlCumpleanios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCumpleanios.Properties)).BeginInit();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).BeginInit();
             this.pnlEnvioSolicitudes.SuspendLayout();
@@ -119,11 +141,14 @@
             this.PageMiEquipo.SuspendLayout();
             this.pagePlanificadorActividades.SuspendLayout();
             this.PageAsistencia.SuspendLayout();
+            this.PageCumpleanieros.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEncabezadoCoordinadoresEdad
             // 
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlCerrarSesion);
+            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlRefrescar);
+            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlCumpleanios);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlEnvioSolicitudes);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlMiEquipo);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlListaAsistencia);
@@ -132,14 +157,85 @@
             this.pnlEncabezadoCoordinadoresEdad.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlEncabezadoCoordinadoresEdad.Location = new System.Drawing.Point(3, 3);
             this.pnlEncabezadoCoordinadoresEdad.Name = "pnlEncabezadoCoordinadoresEdad";
-            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(558, 96);
+            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(771, 96);
             this.pnlEncabezadoCoordinadoresEdad.TabIndex = 2;
+            // 
+            // pnlRefrescar
+            // 
+            this.pnlRefrescar.Controls.Add(this.cmdRefrescar);
+            this.pnlRefrescar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlRefrescar.Location = new System.Drawing.Point(578, 0);
+            this.pnlRefrescar.Name = "pnlRefrescar";
+            this.pnlRefrescar.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlRefrescar.Size = new System.Drawing.Size(90, 96);
+            this.pnlRefrescar.TabIndex = 7;
+            this.pnlRefrescar.Click += new System.EventHandler(this.PnlRefrescar_Click);
+            // 
+            // cmdRefrescar
+            // 
+            this.cmdRefrescar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdRefrescar.Location = new System.Drawing.Point(5, 5);
+            this.cmdRefrescar.Name = "cmdRefrescar";
+            this.cmdRefrescar.Properties.AutoHeight = false;
+            this.cmdRefrescar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            editorButtonImageOptions2.Image = global::Coordinadores_de_Edad.Resources.icon_refrescar;
+            this.cmdRefrescar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdRefrescar.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdRefrescar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdRefrescar.Size = new System.Drawing.Size(80, 86);
+            this.cmdRefrescar.TabIndex = 7;
+            this.cmdRefrescar.Click += new System.EventHandler(this.PnlRefrescar_Click);
+            // 
+            // pnlCumpleanios
+            // 
+            this.pnlCumpleanios.Controls.Add(this.fusibleCumpleanios);
+            this.pnlCumpleanios.Controls.Add(this.cmdCumpleanios);
+            this.pnlCumpleanios.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlCumpleanios.Location = new System.Drawing.Point(455, 0);
+            this.pnlCumpleanios.Name = "pnlCumpleanios";
+            this.pnlCumpleanios.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlCumpleanios.Size = new System.Drawing.Size(123, 96);
+            this.pnlCumpleanios.TabIndex = 6;
+            this.pnlCumpleanios.Click += new System.EventHandler(this.PnlCumpleanios_Click);
+            // 
+            // fusibleCumpleanios
+            // 
+            this.fusibleCumpleanios.BackColor = System.Drawing.Color.Transparent;
+            this.fusibleCumpleanios.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fusibleCumpleanios.Location = new System.Drawing.Point(56, 5);
+            this.fusibleCumpleanios.MaximumSize = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.MinimumSize = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.Name = "fusibleCumpleanios";
+            this.fusibleCumpleanios.Pro_EsSecundario = false;
+            this.fusibleCumpleanios.Pro_TipoColor = Core.Controles.ctlFusible.FUSIBLE_COLOR.DEFAULT;
+            this.fusibleCumpleanios.Pro_Valor = 99;
+            this.fusibleCumpleanios.Size = new System.Drawing.Size(62, 57);
+            this.fusibleCumpleanios.TabIndex = 6;
+            this.fusibleCumpleanios.Click += new System.EventHandler(this.PnlCumpleanios_Click);
+            // 
+            // cmdCumpleanios
+            // 
+            this.cmdCumpleanios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdCumpleanios.Location = new System.Drawing.Point(5, 5);
+            this.cmdCumpleanios.Name = "cmdCumpleanios";
+            this.cmdCumpleanios.Properties.AutoHeight = false;
+            this.cmdCumpleanios.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            editorButtonImageOptions3.Image = global::Coordinadores_de_Edad.Resources.icon_Cumpleanieros;
+            editorButtonImageOptions3.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.cmdCumpleanios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdCumpleanios.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdCumpleanios.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdCumpleanios.Size = new System.Drawing.Size(113, 86);
+            this.cmdCumpleanios.TabIndex = 9;
+            this.cmdCumpleanios.Click += new System.EventHandler(this.PnlCumpleanios_Click);
             // 
             // pnlCerrarSesion
             // 
             this.pnlCerrarSesion.Controls.Add(this.cmdCerrarSesion);
             this.pnlCerrarSesion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCerrarSesion.Location = new System.Drawing.Point(455, 0);
+            this.pnlCerrarSesion.Location = new System.Drawing.Point(668, 0);
             this.pnlCerrarSesion.Name = "pnlCerrarSesion";
             this.pnlCerrarSesion.Padding = new System.Windows.Forms.Padding(5);
             this.pnlCerrarSesion.Size = new System.Drawing.Size(90, 96);
@@ -178,9 +274,9 @@
             this.cmdIngresarSolicitudes.Name = "cmdIngresarSolicitudes";
             this.cmdIngresarSolicitudes.Properties.AutoHeight = false;
             this.cmdIngresarSolicitudes.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions2.Image = global::Coordinadores_de_Edad.Resources.icon_ingresar_solicitudes_64;
+            editorButtonImageOptions4.Image = global::Coordinadores_de_Edad.Resources.icon_ingresar_solicitudes_64;
             this.cmdIngresarSolicitudes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdIngresarSolicitudes.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdIngresarSolicitudes.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdIngresarSolicitudes.Size = new System.Drawing.Size(80, 86);
@@ -204,9 +300,9 @@
             this.cmdMiEquipo.Name = "cmdMiEquipo";
             this.cmdMiEquipo.Properties.AutoHeight = false;
             this.cmdMiEquipo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions3.Image = global::Coordinadores_de_Edad.Resources.icon_equipo;
+            editorButtonImageOptions5.Image = global::Coordinadores_de_Edad.Resources.icon_equipo;
             this.cmdMiEquipo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdMiEquipo.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdMiEquipo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdMiEquipo.Size = new System.Drawing.Size(80, 86);
@@ -230,9 +326,9 @@
             this.cmdListaAsistencia.Name = "cmdListaAsistencia";
             this.cmdListaAsistencia.Properties.AutoHeight = false;
             this.cmdListaAsistencia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions4.Image = global::Coordinadores_de_Edad.Resources.iconListaAsistencia_64;
+            editorButtonImageOptions6.Image = global::Coordinadores_de_Edad.Resources.iconListaAsistencia_64;
             this.cmdListaAsistencia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdListaAsistencia.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdListaAsistencia.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdListaAsistencia.Size = new System.Drawing.Size(80, 86);
@@ -256,9 +352,9 @@
             this.cmdOrganizadorActividades.Name = "cmdOrganizadorActividades";
             this.cmdOrganizadorActividades.Properties.AutoHeight = false;
             this.cmdOrganizadorActividades.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions5.Image = global::Coordinadores_de_Edad.Resources.icon_calendario_64;
+            editorButtonImageOptions7.Image = global::Coordinadores_de_Edad.Resources.icon_calendario_64;
             this.cmdOrganizadorActividades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdOrganizadorActividades.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdOrganizadorActividades.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdOrganizadorActividades.Size = new System.Drawing.Size(80, 86);
@@ -282,9 +378,9 @@
             this.picAgregarUsuario.Name = "picAgregarUsuario";
             this.picAgregarUsuario.Properties.AutoHeight = false;
             this.picAgregarUsuario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions6.Image = global::Coordinadores_de_Edad.Resources.icon_nuevo_usuario_negro_64;
+            editorButtonImageOptions8.Image = global::Coordinadores_de_Edad.Resources.icon_nuevo_usuario_negro_64;
             this.picAgregarUsuario.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.picAgregarUsuario.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.picAgregarUsuario.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.picAgregarUsuario.Size = new System.Drawing.Size(85, 86);
@@ -308,12 +404,12 @@
             // 
             this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
             this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlEncabezado1.Location = new System.Drawing.Point(561, 3);
+            this.ctlEncabezado1.Location = new System.Drawing.Point(774, 3);
             this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(0, 95);
             this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 95);
             this.ctlEncabezado1.Name = "ctlEncabezado1";
             this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(704, 95);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(491, 95);
             this.ctlEncabezado1.TabIndex = 10;
             // 
             // panel4
@@ -365,6 +461,7 @@
             this.NavigationCoordinadorEdad.Controls.Add(this.PageMiEquipo);
             this.NavigationCoordinadorEdad.Controls.Add(this.pagePlanificadorActividades);
             this.NavigationCoordinadorEdad.Controls.Add(this.PageAsistencia);
+            this.NavigationCoordinadorEdad.Controls.Add(this.PageCumpleanieros);
             this.NavigationCoordinadorEdad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationCoordinadorEdad.Location = new System.Drawing.Point(3, 2);
             this.NavigationCoordinadorEdad.Name = "NavigationCoordinadorEdad";
@@ -374,7 +471,8 @@
             this.pageIngresoSolicitudes,
             this.PageMiEquipo,
             this.pagePlanificadorActividades,
-            this.PageAsistencia});
+            this.PageAsistencia,
+            this.PageCumpleanieros});
             this.NavigationCoordinadorEdad.SelectedPage = this.PageInicial;
             this.NavigationCoordinadorEdad.Size = new System.Drawing.Size(1262, 791);
             this.NavigationCoordinadorEdad.TabIndex = 12;
@@ -542,6 +640,30 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
+            // bgObtenerFusibles
+            // 
+            this.bgObtenerFusibles.WorkerSupportsCancellation = true;
+            this.bgObtenerFusibles.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgObtenerFusibles_DoWork);
+            this.bgObtenerFusibles.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgObtenerFusibles_RunWorkerCompleted);
+            // 
+            // PageCumpleanieros
+            // 
+            this.PageCumpleanieros.Controls.Add(this.ctlContenedorCumpleanieros1);
+            this.PageCumpleanieros.Name = "PageCumpleanieros";
+            this.PageCumpleanieros.Size = new System.Drawing.Size(1262, 791);
+            // 
+            // ctlContenedorCumpleanieros1
+            // 
+            this.ctlContenedorCumpleanieros1.BackColor = System.Drawing.Color.White;
+            this.ctlContenedorCumpleanieros1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlContenedorCumpleanieros1.Location = new System.Drawing.Point(0, 0);
+            this.ctlContenedorCumpleanieros1.Name = "ctlContenedorCumpleanieros1";
+            this.ctlContenedorCumpleanieros1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlContenedorCumpleanieros1.Pro_Conexion = null;
+            this.ctlContenedorCumpleanieros1.Pro_Dia = null;
+            this.ctlContenedorCumpleanieros1.Size = new System.Drawing.Size(1262, 791);
+            this.ctlContenedorCumpleanieros1.TabIndex = 0;
+            // 
             // ctlContenedorPrincipalCoordinadorEdad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -553,6 +675,10 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1278, 905);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
+            this.pnlRefrescar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdRefrescar.Properties)).EndInit();
+            this.pnlCumpleanios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCumpleanios.Properties)).EndInit();
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).EndInit();
             this.pnlEnvioSolicitudes.ResumeLayout(false);
@@ -576,6 +702,7 @@
             this.PageMiEquipo.ResumeLayout(false);
             this.pagePlanificadorActividades.ResumeLayout(false);
             this.PageAsistencia.ResumeLayout(false);
+            this.PageCumpleanieros.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -618,5 +745,13 @@
         private Core.Controles.ctlEncabezado ctlEncabezado1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlRefrescar;
+        private DevExpress.XtraEditors.ButtonEdit cmdRefrescar;
+        private System.Windows.Forms.Panel pnlCumpleanios;
+        private Core.Controles.ctlFusible fusibleCumpleanios;
+        private DevExpress.XtraEditors.ButtonEdit cmdCumpleanios;
+        private System.ComponentModel.BackgroundWorker bgObtenerFusibles;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageCumpleanieros;
+        private Core.Controles.Cumpleanieros.ctlContenedorCumpleanieros ctlContenedorCumpleanieros1;
     }
 }

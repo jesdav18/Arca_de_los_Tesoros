@@ -140,8 +140,9 @@ namespace Coordinadores_de_Edad.Controles
                 Pro_Conexion.Open();
             }
 
-            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_aulas ()";
+            string sentencia = @"SELECT * FROM arca_tesoros.ft_view_aulas (:p_id_area_atencion)";
             PgSqlCommand pgComando = new PgSqlCommand(sentencia, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_area_atencion", PgSqlType.Int).Value = Pro_ID_AreaAtencion;
             
 
             try
@@ -378,9 +379,9 @@ namespace Coordinadores_de_Edad.Controles
         {
             UserCredential credential;
 
-            using (var stream = new FileStream(@"C:\credentials.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(@"credentials.json", FileMode.Open, FileAccess.Read))
             {
-                string credPath = @"C:\";
+                string credPath = Path.Combine(Application.StartupPath);
 
                 credPath = Path.Combine(credPath, ".credentials/drive-dotnet-quickstart.json");
 
@@ -402,6 +403,7 @@ namespace Coordinadores_de_Edad.Controles
         #region EVENTOS
 
         public event EventHandler OnAsistenciaIngresada;
+        public event EventHandler OnIrAtras;
 
         #endregion
 
@@ -455,5 +457,9 @@ namespace Coordinadores_de_Edad.Controles
 
         #endregion
 
+        private void CmdAtras_Click(object sender, EventArgs e)
+        {
+            OnIrAtras?.Invoke(sender, e);
+        }
     }
 }

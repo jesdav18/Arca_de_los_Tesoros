@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctlDetallesAsistencia));
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -69,6 +70,7 @@
             this.ctlCubrirAusencias1 = new Coordinadores_de_Edad.Controles.ctlCubrirAusencias();
             this.PageDetalles = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Edad.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
+            this.cmdAtras = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado.SuspendLayout();
             this.pnlDatosColaborador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtFuerzasEspeciales.Properties)).BeginInit();
@@ -93,10 +95,12 @@
             this.NavigationPrincipal.SuspendLayout();
             this.PageCubrirAusencia.SuspendLayout();
             this.PageDetalles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAtras.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
             // 
+            this.pnlEncabezado.Controls.Add(this.cmdAtras);
             this.pnlEncabezado.Controls.Add(this.lblEncabezado);
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
@@ -575,6 +579,20 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
+            // cmdAtras
+            // 
+            this.cmdAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cmdAtras.EditValue = ((object)(resources.GetObject("cmdAtras.EditValue")));
+            this.cmdAtras.Location = new System.Drawing.Point(0, 0);
+            this.cmdAtras.Name = "cmdAtras";
+            this.cmdAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdAtras.Properties.NullText = "   ";
+            this.cmdAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdAtras.Size = new System.Drawing.Size(63, 53);
+            this.cmdAtras.TabIndex = 32;
+            this.cmdAtras.Click += new System.EventHandler(this.CmdAtras_Click);
+            // 
             // ctlDetallesAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -609,6 +627,7 @@
             this.NavigationPrincipal.ResumeLayout(false);
             this.PageCubrirAusencia.ResumeLayout(false);
             this.PageDetalles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAtras.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -655,5 +674,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colaula;
         private DevExpress.XtraGrid.Columns.GridColumn colarea_atencion;
         private DevExpress.XtraGrid.Columns.GridColumn colid_aula;
+        private DevExpress.XtraEditors.PictureEdit cmdAtras;
     }
 }

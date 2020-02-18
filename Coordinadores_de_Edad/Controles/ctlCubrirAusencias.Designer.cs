@@ -115,7 +115,6 @@
             this.picAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.picAtras.Size = new System.Drawing.Size(49, 45);
             this.picAtras.TabIndex = 35;
-            this.picAtras.Visible = false;
             this.picAtras.Click += new System.EventHandler(this.PicAtras_Click);
             // 
             // panel4

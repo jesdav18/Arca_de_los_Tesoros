@@ -149,5 +149,10 @@ namespace Core.Controles
         {
 
         }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            gvVistasFichaIngreso.FindFilterText = "\"" + txtBuscar.Text + "\"";
+        }
     }
 }

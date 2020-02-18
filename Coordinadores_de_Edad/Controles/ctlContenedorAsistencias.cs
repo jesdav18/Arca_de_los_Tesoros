@@ -17,6 +17,12 @@ namespace Coordinadores_de_Edad.Controles
             ctlListaAsistencia1.OnMarcarAsistencia += ctlListaAsistencia1_OnMarcarAsistencia;
 
             ctlDetallesAsistencia1.OnAsistenciaIngresada += ctlDetallesAsistencia1_OnAsistenciaIngresada;
+            ctlDetallesAsistencia1.OnIrAtras += ctlDetallesAsistencia1_OnIrAtras;
+        }
+
+        private void ctlDetallesAsistencia1_OnIrAtras(object sender, EventArgs e)
+        {
+            NavegacionAsistencias.SelectedPage = PageListaAsistencia;
         }
 
         #endregion

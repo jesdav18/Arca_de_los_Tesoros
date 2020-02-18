@@ -64,6 +64,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.PageFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlVistaFichaIngreso1 = new Core.Controles.ctlVistaFichaIngreso();
+            this.colcargo_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtBuscar = new DevExpress.XtraEditors.TextEdit();
+            this.cmdGuardarSolicitud = new DevExpress.XtraEditors.PictureEdit();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavigationBusqueda)).BeginInit();
             this.NavigationBusqueda.SuspendLayout();
@@ -83,6 +86,8 @@
             this.NavegacionPrincipal.SuspendLayout();
             this.PageBusquedas.SuspendLayout();
             this.PageFichaIngreso.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBuscar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -236,6 +241,7 @@
             this.gvVistasFichaIngreso.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid_colaborador,
             this.colnombre_colaborador,
+            this.colcargo_colaborador,
             this.colnumero_identidad,
             this.colcelular,
             this.colBusqueda});
@@ -265,7 +271,7 @@
             this.colnombre_colaborador.OptionsColumn.ReadOnly = true;
             this.colnombre_colaborador.Visible = true;
             this.colnombre_colaborador.VisibleIndex = 0;
-            this.colnombre_colaborador.Width = 421;
+            this.colnombre_colaborador.Width = 316;
             // 
             // colnumero_identidad
             // 
@@ -278,7 +284,7 @@
             this.colnumero_identidad.OptionsColumn.ReadOnly = true;
             this.colnumero_identidad.Visible = true;
             this.colnumero_identidad.VisibleIndex = 1;
-            this.colnumero_identidad.Width = 218;
+            this.colnumero_identidad.Width = 235;
             // 
             // colcelular
             // 
@@ -290,8 +296,8 @@
             this.colcelular.OptionsColumn.AllowFocus = false;
             this.colcelular.OptionsColumn.ReadOnly = true;
             this.colcelular.Visible = true;
-            this.colcelular.VisibleIndex = 2;
-            this.colcelular.Width = 273;
+            this.colcelular.VisibleIndex = 3;
+            this.colcelular.Width = 159;
             // 
             // colBusqueda
             // 
@@ -300,8 +306,8 @@
             this.colBusqueda.MinWidth = 25;
             this.colBusqueda.Name = "colBusqueda";
             this.colBusqueda.Visible = true;
-            this.colBusqueda.VisibleIndex = 3;
-            this.colBusqueda.Width = 71;
+            this.colBusqueda.VisibleIndex = 4;
+            this.colBusqueda.Width = 61;
             // 
             // cmdVerFicha
             // 
@@ -315,6 +321,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.txtBuscar);
+            this.panel4.Controls.Add(this.cmdGuardarSolicitud);
             this.panel4.Controls.Add(this.cmdAtras);
             this.panel4.Controls.Add(this.flowLayoutPanel1);
             this.panel4.Controls.Add(this.panel5);
@@ -448,6 +456,41 @@
             this.ctlVistaFichaIngreso1.Size = new System.Drawing.Size(988, 772);
             this.ctlVistaFichaIngreso1.TabIndex = 0;
             // 
+            // colcargo_colaborador
+            // 
+            this.colcargo_colaborador.Caption = "Cargo";
+            this.colcargo_colaborador.FieldName = "cargo_colaborador";
+            this.colcargo_colaborador.MinWidth = 25;
+            this.colcargo_colaborador.Name = "colcargo_colaborador";
+            this.colcargo_colaborador.Visible = true;
+            this.colcargo_colaborador.VisibleIndex = 2;
+            this.colcargo_colaborador.Width = 215;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtBuscar.Location = new System.Drawing.Point(282, 23);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Properties.Appearance.Options.UseFont = true;
+            this.txtBuscar.Properties.AutoHeight = false;
+            this.txtBuscar.Size = new System.Drawing.Size(643, 48);
+            this.txtBuscar.TabIndex = 32;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
+            // 
+            // cmdGuardarSolicitud
+            // 
+            this.cmdGuardarSolicitud.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdGuardarSolicitud.EditValue = global::Core.Properties.Resources.iconFiltro_64;
+            this.cmdGuardarSolicitud.Location = new System.Drawing.Point(925, 23);
+            this.cmdGuardarSolicitud.Name = "cmdGuardarSolicitud";
+            this.cmdGuardarSolicitud.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdGuardarSolicitud.Properties.NullText = "   ";
+            this.cmdGuardarSolicitud.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdGuardarSolicitud.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.cmdGuardarSolicitud.Size = new System.Drawing.Size(63, 48);
+            this.cmdGuardarSolicitud.TabIndex = 33;
+            // 
             // ctlBusquedaFichasIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -476,6 +519,8 @@
             this.NavegacionPrincipal.ResumeLayout(false);
             this.PageBusquedas.ResumeLayout(false);
             this.PageFichaIngreso.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtBuscar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGuardarSolicitud.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,5 +557,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public ctlVistaFichaIngreso ctlVistaFichaIngreso1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcargo_colaborador;
+        private DevExpress.XtraEditors.TextEdit txtBuscar;
+        private DevExpress.XtraEditors.PictureEdit cmdGuardarSolicitud;
     }
 }

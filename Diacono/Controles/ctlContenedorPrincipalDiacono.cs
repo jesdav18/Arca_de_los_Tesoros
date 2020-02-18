@@ -186,6 +186,7 @@ namespace Diacono.Controles
             {
                 bgObtenerFusibles.RunWorkerAsync();
             }
+
         }
     }
 }
