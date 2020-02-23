@@ -365,6 +365,8 @@
     <None Include="Resources\icon_Cumpleanieros.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\iconCerrar_32.png" />
+    <None Include="Resources\icon_mas_64.png" />
     <Content Include="Resources\icon_refrescar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

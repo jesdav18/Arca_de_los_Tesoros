@@ -188,5 +188,11 @@ namespace Diacono.Controles
             }
 
         }
+
+        private void PnlDashboard_Click(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = pageDashboard;
+            ctlIndicadores1.ConstruirControl(Pro_Conexion);
+        }
     }
 }

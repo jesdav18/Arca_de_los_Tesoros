@@ -111,6 +111,7 @@ namespace Core.Controles
             if (v_fila != null)
             {
                 RegistrarEstadoSolicitud(v_fila.id_colaborador_solicitud, ESTADOS_SOLICITUD.APROBADA);
+                CargarDatos();
             }
         }
 
@@ -124,7 +125,9 @@ namespace Core.Controles
                 {
                     RegistrarEstadoSolicitud(v_fila.id_colaborador_solicitud, ESTADOS_SOLICITUD.RECHAZADA);
                     popupIngresoMotivoRechazo.HidePopup();
-                    this.Parent.BringToFront();
+                    this.ParentForm.BringToFront();
+                    CargarDatos();
+                    
                 }
                 else
                 {

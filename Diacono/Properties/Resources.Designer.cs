@@ -103,6 +103,16 @@ namespace Diacono.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_dashboard_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_dashboard_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icon_equipo {
             get {
                 object obj = ResourceManager.GetObject("icon_equipo", resourceCulture);

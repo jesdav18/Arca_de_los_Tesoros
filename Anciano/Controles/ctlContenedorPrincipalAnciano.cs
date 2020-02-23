@@ -175,5 +175,11 @@ namespace Anciano.Controles
                 bgObtenerFusibles.RunWorkerAsync();
             }
         }
+
+        private void PnlDashboard_Click(object sender, EventArgs e)
+        {
+            NavegacionPrincipal.SelectedPage = pageDshboard;
+            ctlIndicadores1.ConstruirControl(Pro_Conexion);
+        }
     }
 }

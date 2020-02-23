@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -71,6 +76,8 @@
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
+            this.pnlDashboard = new System.Windows.Forms.Panel();
+            this.picDashboard = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.cmdCerrarSesion = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlRefrescar = new System.Windows.Forms.Panel();
@@ -112,8 +119,12 @@
             this.PageCrearFichaIngreso = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlIngresoFicha1 = new Core.Controles.ctlIngresoFicha();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Diacono.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
+            this.pageDashboard = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlIndicadores1 = new Core.Controles.ctlIndicadores();
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
+            this.pnlDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDashboard.Properties)).BeginInit();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).BeginInit();
             this.pnlRefrescar.SuspendLayout();
@@ -141,6 +152,7 @@
             this.pageBusqueda.SuspendLayout();
             this.PageSolicitudes.SuspendLayout();
             this.PageCrearFichaIngreso.SuspendLayout();
+            this.pageDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -161,17 +173,18 @@
             // 
             this.ctlEncabezado1.BackColor = System.Drawing.Color.White;
             this.ctlEncabezado1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctlEncabezado1.Location = new System.Drawing.Point(874, 3);
+            this.ctlEncabezado1.Location = new System.Drawing.Point(1041, 3);
             this.ctlEncabezado1.MaximumSize = new System.Drawing.Size(0, 82);
             this.ctlEncabezado1.MinimumSize = new System.Drawing.Size(0, 82);
             this.ctlEncabezado1.Name = "ctlEncabezado1";
             this.ctlEncabezado1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctlEncabezado1.Size = new System.Drawing.Size(439, 82);
+            this.ctlEncabezado1.Size = new System.Drawing.Size(272, 82);
             this.ctlEncabezado1.TabIndex = 10;
             // 
             // pnlEncabezadoCoordinadoresEdad
             // 
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlCerrarSesion);
+            this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlDashboard);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlRefrescar);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlBusqueda);
             this.pnlEncabezadoCoordinadoresEdad.Controls.Add(this.pnlAgregarFicha);
@@ -182,14 +195,41 @@
             this.pnlEncabezadoCoordinadoresEdad.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlEncabezadoCoordinadoresEdad.Location = new System.Drawing.Point(3, 3);
             this.pnlEncabezadoCoordinadoresEdad.Name = "pnlEncabezadoCoordinadoresEdad";
-            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(871, 94);
+            this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(1038, 94);
             this.pnlEncabezadoCoordinadoresEdad.TabIndex = 2;
+            // 
+            // pnlDashboard
+            // 
+            this.pnlDashboard.Controls.Add(this.picDashboard);
+            this.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlDashboard.Location = new System.Drawing.Point(756, 0);
+            this.pnlDashboard.Name = "pnlDashboard";
+            this.pnlDashboard.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlDashboard.Size = new System.Drawing.Size(104, 94);
+            this.pnlDashboard.TabIndex = 8;
+            this.pnlDashboard.Click += new System.EventHandler(this.PnlDashboard_Click);
+            // 
+            // picDashboard
+            // 
+            this.picDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picDashboard.Location = new System.Drawing.Point(5, 5);
+            this.picDashboard.Name = "picDashboard";
+            this.picDashboard.Properties.AutoHeight = false;
+            this.picDashboard.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            editorButtonImageOptions10.Image = global::Diacono.Properties.Resources.icon_dashboard_64;
+            this.picDashboard.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.picDashboard.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.picDashboard.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.picDashboard.Size = new System.Drawing.Size(94, 84);
+            this.picDashboard.TabIndex = 13;
+            this.picDashboard.Click += new System.EventHandler(this.PnlDashboard_Click);
             // 
             // pnlCerrarSesion
             // 
             this.pnlCerrarSesion.Controls.Add(this.cmdCerrarSesion);
             this.pnlCerrarSesion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCerrarSesion.Location = new System.Drawing.Point(756, 0);
+            this.pnlCerrarSesion.Location = new System.Drawing.Point(860, 0);
             this.pnlCerrarSesion.Name = "pnlCerrarSesion";
             this.pnlCerrarSesion.Padding = new System.Windows.Forms.Padding(5);
             this.pnlCerrarSesion.Size = new System.Drawing.Size(104, 94);
@@ -203,9 +243,9 @@
             this.cmdCerrarSesion.Name = "cmdCerrarSesion";
             this.cmdCerrarSesion.Properties.AutoHeight = false;
             this.cmdCerrarSesion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions1.Image = global::Diacono.Properties.Resources.icon_cerrar_sesion_64;
+            editorButtonImageOptions2.Image = global::Diacono.Properties.Resources.icon_cerrar_sesion_64;
             this.cmdCerrarSesion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdCerrarSesion.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdCerrarSesion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdCerrarSesion.Size = new System.Drawing.Size(94, 84);
@@ -230,9 +270,9 @@
             this.cmdRefrescar.Name = "cmdRefrescar";
             this.cmdRefrescar.Properties.AutoHeight = false;
             this.cmdRefrescar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions2.Image = global::Diacono.Properties.Resources.icon_refrescar;
+            editorButtonImageOptions1.Image = global::Diacono.Properties.Resources.icon_refrescar;
             this.cmdRefrescar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdRefrescar.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmdRefrescar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdRefrescar.Size = new System.Drawing.Size(89, 84);
@@ -486,6 +526,7 @@
             this.NavegacionPrincipal.Controls.Add(this.pageBusqueda);
             this.NavegacionPrincipal.Controls.Add(this.PageSolicitudes);
             this.NavegacionPrincipal.Controls.Add(this.PageCrearFichaIngreso);
+            this.NavegacionPrincipal.Controls.Add(this.pageDashboard);
             this.NavegacionPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavegacionPrincipal.Location = new System.Drawing.Point(5, 105);
             this.NavegacionPrincipal.Name = "NavegacionPrincipal";
@@ -496,7 +537,8 @@
             this.pageMiEquipo,
             this.pageBusqueda,
             this.PageSolicitudes,
-            this.PageCrearFichaIngreso});
+            this.PageCrearFichaIngreso,
+            this.pageDashboard});
             this.NavegacionPrincipal.SelectedPage = this.PageInicial;
             this.NavegacionPrincipal.Size = new System.Drawing.Size(1316, 548);
             this.NavegacionPrincipal.TabIndex = 6;
@@ -693,6 +735,23 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
+            // pageDashboard
+            // 
+            this.pageDashboard.Controls.Add(this.ctlIndicadores1);
+            this.pageDashboard.Name = "pageDashboard";
+            this.pageDashboard.Size = new System.Drawing.Size(1316, 548);
+            // 
+            // ctlIndicadores1
+            // 
+            this.ctlIndicadores1.BackColor = System.Drawing.Color.White;
+            this.ctlIndicadores1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlIndicadores1.Location = new System.Drawing.Point(0, 0);
+            this.ctlIndicadores1.Name = "ctlIndicadores1";
+            this.ctlIndicadores1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlIndicadores1.Pro_Conexion = null;
+            this.ctlIndicadores1.Size = new System.Drawing.Size(1316, 548);
+            this.ctlIndicadores1.TabIndex = 0;
+            // 
             // ctlContenedorPrincipalDiacono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -705,6 +764,8 @@
             this.Size = new System.Drawing.Size(1326, 658);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
+            this.pnlDashboard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picDashboard.Properties)).EndInit();
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdCerrarSesion.Properties)).EndInit();
             this.pnlRefrescar.ResumeLayout(false);
@@ -732,6 +793,7 @@
             this.pageBusqueda.ResumeLayout(false);
             this.PageSolicitudes.ResumeLayout(false);
             this.PageCrearFichaIngreso.ResumeLayout(false);
+            this.pageDashboard.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -782,5 +844,9 @@
         private System.Windows.Forms.Panel pnlRefrescar;
         private DevExpress.XtraEditors.ButtonEdit cmdRefrescar;
         public Core.Controles.ctlBusquedaFichasIngreso ctlBusquedaFichasIngreso1;
+        private System.Windows.Forms.Panel pnlDashboard;
+        private DevExpress.XtraEditors.ButtonEdit picDashboard;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageDashboard;
+        private Core.Controles.ctlIndicadores ctlIndicadores1;
     }
 }

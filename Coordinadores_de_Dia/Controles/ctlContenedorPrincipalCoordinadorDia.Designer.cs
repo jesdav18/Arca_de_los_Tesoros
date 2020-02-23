@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -48,6 +43,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -76,14 +76,14 @@
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.ctlEncabezado1 = new Core.Controles.ctlEncabezado();
             this.pnlEncabezadoCoordinadoresEdad = new System.Windows.Forms.Panel();
-            this.pnlAgregarFicha = new System.Windows.Forms.Panel();
-            this.cmdAgregarFicha = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.cmdSalir = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlActualizarFusibles = new System.Windows.Forms.Panel();
             this.cmdActualizar = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
             this.cmdBusqueda = new DevExpress.XtraEditors.ButtonEdit();
+            this.pnlAgregarFicha = new System.Windows.Forms.Panel();
+            this.cmdAgregarFicha = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlIndicadores = new System.Windows.Forms.Panel();
             this.cmdIndicadores = new DevExpress.XtraEditors.ButtonEdit();
             this.pnlMiEquipo = new System.Windows.Forms.Panel();
@@ -115,20 +115,20 @@
             this.ctlVistaSolicitudes1 = new Core.Controles.ctlVistaSolicitudes();
             this.PageIndicadores = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlIndicadores1 = new Core.Controles.ctlIndicadores();
-            this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
-            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Dia.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pageIngresoFicha = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlIngresoFicha1 = new Core.Controles.ctlIngresoFicha();
+            this.bgObtenerFusibles = new System.ComponentModel.BackgroundWorker();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Coordinadores_de_Dia.Pantallas.frmEspera), true, true, typeof(System.Windows.Forms.UserControl));
             this.pnlEncabezado.SuspendLayout();
             this.pnlEncabezadoCoordinadoresEdad.SuspendLayout();
-            this.pnlAgregarFicha.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarFicha.Properties)).BeginInit();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdSalir.Properties)).BeginInit();
             this.pnlActualizarFusibles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).BeginInit();
             this.pnlBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdBusqueda.Properties)).BeginInit();
+            this.pnlAgregarFicha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarFicha.Properties)).BeginInit();
             this.pnlIndicadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdIndicadores.Properties)).BeginInit();
             this.pnlMiEquipo.SuspendLayout();
@@ -194,33 +194,6 @@
             this.pnlEncabezadoCoordinadoresEdad.Name = "pnlEncabezadoCoordinadoresEdad";
             this.pnlEncabezadoCoordinadoresEdad.Size = new System.Drawing.Size(964, 94);
             this.pnlEncabezadoCoordinadoresEdad.TabIndex = 2;
-            // 
-            // pnlAgregarFicha
-            // 
-            this.pnlAgregarFicha.Controls.Add(this.cmdAgregarFicha);
-            this.pnlAgregarFicha.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAgregarFicha.Location = new System.Drawing.Point(544, 0);
-            this.pnlAgregarFicha.Name = "pnlAgregarFicha";
-            this.pnlAgregarFicha.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlAgregarFicha.Size = new System.Drawing.Size(102, 94);
-            this.pnlAgregarFicha.TabIndex = 8;
-            this.pnlAgregarFicha.Click += new System.EventHandler(this.PnlAgregarFicha_Click);
-            // 
-            // cmdAgregarFicha
-            // 
-            this.cmdAgregarFicha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdAgregarFicha.Location = new System.Drawing.Point(5, 5);
-            this.cmdAgregarFicha.Name = "cmdAgregarFicha";
-            this.cmdAgregarFicha.Properties.AutoHeight = false;
-            this.cmdAgregarFicha.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions4.Image = global::Coordinadores_de_Dia.Properties.Resources.icon_nuevo_usuario_negro_64;
-            this.cmdAgregarFicha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdAgregarFicha.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmdAgregarFicha.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdAgregarFicha.Size = new System.Drawing.Size(92, 84);
-            this.cmdAgregarFicha.TabIndex = 15;
-            this.cmdAgregarFicha.Click += new System.EventHandler(this.PnlAgregarFicha_Click);
             // 
             // pnlCerrarSesion
             // 
@@ -302,6 +275,33 @@
             this.cmdBusqueda.TabIndex = 13;
             this.cmdBusqueda.Click += new System.EventHandler(this.CmdBusqueda_Click);
             // 
+            // pnlAgregarFicha
+            // 
+            this.pnlAgregarFicha.Controls.Add(this.cmdAgregarFicha);
+            this.pnlAgregarFicha.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlAgregarFicha.Location = new System.Drawing.Point(544, 0);
+            this.pnlAgregarFicha.Name = "pnlAgregarFicha";
+            this.pnlAgregarFicha.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlAgregarFicha.Size = new System.Drawing.Size(102, 94);
+            this.pnlAgregarFicha.TabIndex = 8;
+            this.pnlAgregarFicha.Click += new System.EventHandler(this.PnlAgregarFicha_Click);
+            // 
+            // cmdAgregarFicha
+            // 
+            this.cmdAgregarFicha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdAgregarFicha.Location = new System.Drawing.Point(5, 5);
+            this.cmdAgregarFicha.Name = "cmdAgregarFicha";
+            this.cmdAgregarFicha.Properties.AutoHeight = false;
+            this.cmdAgregarFicha.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            editorButtonImageOptions4.Image = global::Coordinadores_de_Dia.Properties.Resources.icon_nuevo_usuario_negro_64;
+            this.cmdAgregarFicha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdAgregarFicha.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdAgregarFicha.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdAgregarFicha.Size = new System.Drawing.Size(92, 84);
+            this.cmdAgregarFicha.TabIndex = 15;
+            this.cmdAgregarFicha.Click += new System.EventHandler(this.PnlAgregarFicha_Click);
+            // 
             // pnlIndicadores
             // 
             this.pnlIndicadores.Controls.Add(this.cmdIndicadores);
@@ -320,7 +320,7 @@
             this.cmdIndicadores.Name = "cmdIndicadores";
             this.cmdIndicadores.Properties.AutoHeight = false;
             this.cmdIndicadores.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            editorButtonImageOptions5.Image = global::Coordinadores_de_Dia.Properties.Resources.iconDashboard_64;
+            editorButtonImageOptions5.Image = global::Coordinadores_de_Dia.Properties.Resources.icon_dashboard_64;
             this.cmdIndicadores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdIndicadores.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -670,17 +670,9 @@
             this.ctlIndicadores1.Size = new System.Drawing.Size(1351, 548);
             this.ctlIndicadores1.TabIndex = 0;
             // 
-            // bgObtenerFusibles
-            // 
-            this.bgObtenerFusibles.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgObtenerFusibles_DoWork);
-            this.bgObtenerFusibles.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgObtenerFusibles_RunWorkerCompleted);
-            // 
-            // splashScreenManager1
-            // 
-            this.splashScreenManager1.ClosingDelay = 500;
-            // 
             // pageIngresoFicha
             // 
+            this.pageIngresoFicha.Caption = "pageIngresoFicha";
             this.pageIngresoFicha.Controls.Add(this.ctlIngresoFicha1);
             this.pageIngresoFicha.Name = "pageIngresoFicha";
             this.pageIngresoFicha.Size = new System.Drawing.Size(1351, 548);
@@ -696,6 +688,15 @@
             this.ctlIngresoFicha1.Size = new System.Drawing.Size(1351, 548);
             this.ctlIngresoFicha1.TabIndex = 0;
             // 
+            // bgObtenerFusibles
+            // 
+            this.bgObtenerFusibles.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgObtenerFusibles_DoWork);
+            this.bgObtenerFusibles.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgObtenerFusibles_RunWorkerCompleted);
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // ctlContenedorPrincipalCoordinadorDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -708,14 +709,14 @@
             this.Size = new System.Drawing.Size(1361, 658);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezadoCoordinadoresEdad.ResumeLayout(false);
-            this.pnlAgregarFicha.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarFicha.Properties)).EndInit();
             this.pnlCerrarSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdSalir.Properties)).EndInit();
             this.pnlActualizarFusibles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdActualizar.Properties)).EndInit();
             this.pnlBusqueda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdBusqueda.Properties)).EndInit();
+            this.pnlAgregarFicha.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarFicha.Properties)).EndInit();
             this.pnlIndicadores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdIndicadores.Properties)).EndInit();
             this.pnlMiEquipo.ResumeLayout(false);

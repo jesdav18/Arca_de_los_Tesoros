@@ -163,6 +163,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dtMisSolicitudes" msprop:Generator_TableClassName="dtMisSolicitudesDataTable" msprop:Generator_TableVarName="tabledtMisSolicitudes" msprop:Generator_RowChangedName="dtMisSolicitudesRowChanged" msprop:Generator_TablePropName="dtMisSolicitudes" msprop:Generator_RowDeletingName="dtMisSolicitudesRowDeleting" msprop:Generator_RowChangingName="dtMisSolicitudesRowChanging" msprop:Generator_RowEvHandlerName="dtMisSolicitudesRowChangeEventHandler" msprop:Generator_RowDeletedName="dtMisSolicitudesRowDeleted" msprop:Generator_RowClassName="dtMisSolicitudesRow" msprop:Generator_UserTableName="dtMisSolicitudes" msprop:Generator_RowEvArgName="dtMisSolicitudesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipo_solicitud" msprop:Generator_ColumnVarNameInTable="columntipo_solicitud" msprop:Generator_ColumnPropNameInRow="tipo_solicitud" msprop:Generator_ColumnPropNameInTable="tipo_solicitudColumn" msprop:Generator_UserColumnName="tipo_solicitud" type="xs:string" minOccurs="0" />
+              <xs:element name="observaciones" msprop:Generator_ColumnVarNameInTable="columnobservaciones" msprop:Generator_ColumnPropNameInRow="observaciones" msprop:Generator_ColumnPropNameInTable="observacionesColumn" msprop:Generator_UserColumnName="observaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_solicitud" msprop:Generator_ColumnVarNameInTable="columnfecha_solicitud" msprop:Generator_ColumnPropNameInRow="fecha_solicitud" msprop:Generator_ColumnPropNameInTable="fecha_solicitudColumn" msprop:Generator_UserColumnName="fecha_solicitud" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="observaciones_rechazo" msprop:Generator_ColumnVarNameInTable="columnobservaciones_rechazo" msprop:Generator_ColumnPropNameInRow="observaciones_rechazo" msprop:Generator_ColumnPropNameInTable="observaciones_rechazoColumn" msprop:Generator_UserColumnName="observaciones_rechazo" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_ejecucion" msprop:Generator_ColumnVarNameInTable="columnfecha_ejecucion" msprop:Generator_ColumnPropNameInRow="fecha_ejecucion" msprop:Generator_ColumnPropNameInTable="fecha_ejecucionColumn" msprop:Generator_UserColumnName="fecha_ejecucion" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1">

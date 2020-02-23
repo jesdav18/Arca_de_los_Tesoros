@@ -36,8 +36,50 @@ namespace Coordinadores_de_Edad.Controles
             CargarDatosTipoSolicitud();
             LimpiarCajasTexto();
 
-            glTipoSolicitud.Focus();
+            CargarMisSolicitudes();
+
         }
+
+        private void CargarMisSolicitudes()
+        {
+            if (Pro_Conexion.State != ConnectionState.Open)
+            {
+                Pro_Conexion.Open();
+            }
+
+            if (!splashScreenManager1.IsSplashFormVisible)
+            {
+                splashScreenManager1.ShowWaitForm();
+            }
+
+
+            string sql = @"SELECT * FROM arca_tesoros.ft_view_mis_solicitudes (
+                                                                                  :p_id_colaborador
+                                                                                )";
+            PgSqlCommand pgComando = new PgSqlCommand(sql, Pro_Conexion);
+            pgComando.Parameters.Add("p_id_colaborador", PgSqlType.Int).Value = Pro_ID_Colaborador;
+
+            try
+            {
+                dsVistas1.dtMisSolicitudes.Clear();
+                new PgSqlDataAdapter(pgComando).Fill(dsVistas1.dtMisSolicitudes);
+
+
+            }
+            catch (Exception Exc)
+            {
+                Log_Excepciones.CapturadorExcepciones(Exc, this.Name, "CargarMisSolicitudes");
+
+            }
+
+
+            if (splashScreenManager1.IsSplashFormVisible)
+            {
+
+                splashScreenManager1.CloseWaitForm();
+            }
+        }
+
 
         private void CargarDatosTipoSolicitud()
         {
@@ -136,7 +178,8 @@ namespace Coordinadores_de_Edad.Controles
                 LimpiarCajasTexto();
 
                 Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La solicitud fue enviada al coordinador de día!", Utilidades.BotonesDialogo.Ok);
-
+                popupIngresarSolicitudes.HidePopup();
+                CargarMisSolicitudes();
              
             }
             catch (Exception Exc)
@@ -169,11 +212,29 @@ namespace Coordinadores_de_Edad.Controles
 
         private void CmdGuardarSolicitud_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             GuardarSolicitud();
+
+            Cursor.Current = Cursors.Arrow;
         }
 
-       
+
         #endregion
 
+        private void PicCerrarPopup_Click(object sender, EventArgs e)
+        {
+            popupIngresarSolicitudes.HidePopup();
+        }
+
+        private void PopupIngresarSolicitudes_Hidden(object sender, DevExpress.Utils.FlyoutPanelEventArgs e)
+        {
+            this.ParentForm.BringToFront();
+        }
+
+        private void CmdAgregarSolicitud_Click(object sender, EventArgs e)
+        {
+            popupIngresarSolicitudes.ShowPopup();
+            glTipoSolicitud.Focus();
+        }
     }
 }
