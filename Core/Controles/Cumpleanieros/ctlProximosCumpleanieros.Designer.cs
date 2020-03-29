@@ -88,6 +88,7 @@
             // 
             // tileProximosCumpleanieros
             // 
+            this.tileProximosCumpleanieros.AutoScroll = true;
             this.tileProximosCumpleanieros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tileProximosCumpleanieros.Location = new System.Drawing.Point(5, 122);
             this.tileProximosCumpleanieros.Name = "tileProximosCumpleanieros";

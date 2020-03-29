@@ -116,12 +116,6 @@
     <Compile Include="Controles\ctlDetallesAsistencia.Designer.cs">
       <DependentUpon>ctlDetallesAsistencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controles\ctlDiasTrimestre.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controles\ctlDiasTrimestre.Designer.cs">
-      <DependentUpon>ctlDiasTrimestre.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controles\ctlIngresoSolicitudesCordinadorEdad.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,35 +133,6 @@
     </Compile>
     <Compile Include="Controles\ctlListaAsistencia.Designer.cs">
       <DependentUpon>ctlListaAsistencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controles\ctlngresoActividad.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controles\ctlngresoActividad.Designer.cs">
-      <DependentUpon>ctlngresoActividad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.Designer.cs">
-      <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controles\ctlSeleccionAyuda.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controles\ctlSeleccionAyuda.Designer.cs">
-      <DependentUpon>ctlSeleccionAyuda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.Designer.cs">
-      <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\dsCoordinadoresEdad.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmCoordinadorEdad.cs">
       <SubType>Form</SubType>
@@ -201,9 +166,6 @@
     <EmbeddedResource Include="Controles\ctlDetallesAsistencia.resx">
       <DependentUpon>ctlDetallesAsistencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controles\ctlDiasTrimestre.resx">
-      <DependentUpon>ctlDiasTrimestre.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlIngresoSolicitudesCordinadorEdad.resx">
       <DependentUpon>ctlIngresoSolicitudesCordinadorEdad.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,18 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlListaAsistencia.resx">
       <DependentUpon>ctlListaAsistencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controles\ctlngresoActividad.resx">
-      <DependentUpon>ctlngresoActividad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.resx">
-      <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controles\ctlSeleccionAyuda.resx">
-      <DependentUpon>ctlSeleccionAyuda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controles\ctlSeleccionMaestros_Ayudas.resx">
-      <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmCoordinadorEdad.resx">
       <DependentUpon>frmCoordinadorEdad.cs</DependentUpon>
@@ -248,17 +198,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSet\dsCoordinadoresEdad.xsc">
-      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\dsCoordinadoresEdad.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCoordinadoresEdad.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet\dsCoordinadoresEdad.xss">
-      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Resources\icon_nuevo_usuario_negro_64.png" />
   </ItemGroup>
@@ -369,5 +308,6 @@
     <None Include="Resources\icon_mas_64.png" />
     <Content Include="Resources\icon_refrescar.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

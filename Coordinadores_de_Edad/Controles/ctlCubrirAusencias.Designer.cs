@@ -1,4 +1,6 @@
-﻿namespace Coordinadores_de_Edad.Controles
+﻿using Core.Controles;
+
+namespace Coordinadores_de_Edad.Controles
 {
     partial class ctlCubrirAusencias
     {
@@ -46,7 +48,7 @@
             this.picReemplazar = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ctlSeleccionMaestros_Ayudas1 = new Coordinadores_de_Edad.Controles.ctlSeleccionMaestros_Ayudas();
+            this.ctlSeleccionMaestros_Ayudas1 = new Core.Controles.ctlSeleccionMaestros_Ayudas();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnlEncabezado.SuspendLayout();

@@ -4,7 +4,7 @@ using Devart.Data.PostgreSql;
 using Core.Clases;
 using System.Data;
 
-namespace Coordinadores_de_Edad.Controles
+namespace Core.Controles
 {
     public partial class ctlDiasTrimestre : UserControl
     {

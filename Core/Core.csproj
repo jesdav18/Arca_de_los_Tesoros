@@ -137,6 +137,12 @@
     <Compile Include="Controles\ctlCrearUsuario.Designer.cs">
       <DependentUpon>ctlCrearUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlDiasTrimestre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlDiasTrimestre.Designer.cs">
+      <DependentUpon>ctlDiasTrimestre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlEncabezado.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     <Compile Include="Controles\ctlIngresoFicha.Designer.cs">
       <DependentUpon>ctlIngresoFicha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlItemDiaTrabajo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlItemDiaTrabajo.Designer.cs">
+      <DependentUpon>ctlItemDiaTrabajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +185,12 @@
     <Compile Include="Controles\ctlMiEquipo.Designer.cs">
       <DependentUpon>ctlMiEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ctlngresoActividad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlngresoActividad.Designer.cs">
+      <DependentUpon>ctlngresoActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ctlPlanificadorActividades.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +202,30 @@
     </Compile>
     <Compile Include="Controles\ctlAsistenciaEquipos.designer.cs">
       <DependentUpon>ctlAsistenciaEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.Designer.cs">
+      <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionAreaAtencion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionAreaAtencion.Designer.cs">
+      <DependentUpon>ctlSeleccionAreaAtencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionAyuda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionAyuda.Designer.cs">
+      <DependentUpon>ctlSeleccionAyuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ctlSeleccionMaestros_Ayudas.Designer.cs">
+      <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\ctlVistaFichaIngreso.cs">
       <SubType>UserControl</SubType>
@@ -241,6 +283,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsConfiguracion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\dsCoordinadoresEdad.cs">
+      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsCoordinadoresEdad.Designer.cs">
+      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="DataSets\dsVistas.cs">
       <DependentUpon>dsVistas.xsd</DependentUpon>
     </Compile>
@@ -275,6 +325,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSets\dsCoordinadoresEdad.xsc">
+      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsCoordinadoresEdad.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCoordinadoresEdad.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsCoordinadoresEdad.xss">
+      <DependentUpon>dsCoordinadoresEdad.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\dsVistas.xsc">
       <DependentUpon>dsVistas.xsd</DependentUpon>
     </None>
@@ -302,6 +363,9 @@
     <EmbeddedResource Include="Controles\ctlCrearUsuario.resx">
       <DependentUpon>ctlCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlDiasTrimestre.resx">
+      <DependentUpon>ctlDiasTrimestre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlEncabezado.resx">
       <DependentUpon>ctlEncabezado.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,14 +378,32 @@
     <EmbeddedResource Include="Controles\ctlIngresoFicha.resx">
       <DependentUpon>ctlIngresoFicha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlItemDiaTrabajo.resx">
+      <DependentUpon>ctlItemDiaTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlLogin.resx">
       <DependentUpon>ctlLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlMiEquipo.resx">
       <DependentUpon>ctlMiEquipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlngresoActividad.resx">
+      <DependentUpon>ctlngresoActividad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlPlanificadorActividades.resx">
       <DependentUpon>ctlPlanificadorActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlPlanificadorTrimestralCoordinadorEdad.resx">
+      <DependentUpon>ctlPlanificadorTrimestralCoordinadorEdad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlSeleccionAreaAtencion.resx">
+      <DependentUpon>ctlSeleccionAreaAtencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlSeleccionAyuda.resx">
+      <DependentUpon>ctlSeleccionAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ctlSeleccionMaestros_Ayudas.resx">
+      <DependentUpon>ctlSeleccionMaestros_Ayudas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\ctlVistaFichaIngreso.resx">
       <DependentUpon>ctlVistaFichaIngreso.cs</DependentUpon>
@@ -477,6 +559,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_guardar_negro_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_hoy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCheckVerde_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMaloRojo_241.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

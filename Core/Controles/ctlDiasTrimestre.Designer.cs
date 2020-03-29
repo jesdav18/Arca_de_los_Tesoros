@@ -1,4 +1,4 @@
-﻿namespace Coordinadores_de_Edad.Controles
+﻿namespace Core.Controles
 {
     partial class ctlDiasTrimestre
     {
@@ -106,7 +106,7 @@
             // cmCrearActividadHoy
             // 
             this.cmCrearActividadHoy.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cmCrearActividadHoy.EditValue = global::Coordinadores_de_Edad.Resources.icon_hoy;
+            this.cmCrearActividadHoy.EditValue = global::Core.Properties.Resources.icon_hoy;
             this.cmCrearActividadHoy.Location = new System.Drawing.Point(1027, 0);
             this.cmCrearActividadHoy.Name = "cmCrearActividadHoy";
             this.cmCrearActividadHoy.Properties.AllowFocused = false;

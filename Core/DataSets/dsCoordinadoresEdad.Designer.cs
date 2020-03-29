@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Coordinadores_de_Edad.DataSet {
+namespace Core.DataSet {
     
     
     /// <summary>

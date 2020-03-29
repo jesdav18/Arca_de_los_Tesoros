@@ -131,6 +131,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.popupModificarNombre = new DevExpress.Utils.FlyoutPanel();
             this.flyoutPanelControl2 = new DevExpress.Utils.FlyoutPanelControl();
+            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.cmdGuardarCambios = new DevExpress.XtraEditors.SimpleButton();
             this.txtEditarSegundoApellido = new DevExpress.XtraEditors.TextEdit();
             this.txtEditarPrimerApellido = new DevExpress.XtraEditors.TextEdit();
@@ -145,7 +146,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtEditarPrimerNombre = new DevExpress.XtraEditors.TextEdit();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.panel41 = new System.Windows.Forms.Panel();
             this.txtEstatusDoctrinal = new DevExpress.XtraEditors.TextEdit();
             this.glEstatusDoctrinal = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -1701,6 +1701,15 @@
             this.flyoutPanelControl2.Size = new System.Drawing.Size(667, 454);
             this.flyoutPanelControl2.TabIndex = 0;
             // 
+            // documentViewer1
+            // 
+            this.documentViewer1.IsMetric = true;
+            this.documentViewer1.Location = new System.Drawing.Point(602, 181);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(493, 349);
+            this.documentViewer1.TabIndex = 31;
+            this.documentViewer1.Visible = false;
+            // 
             // cmdGuardarCambios
             // 
             this.cmdGuardarCambios.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
@@ -1890,15 +1899,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(549, 254);
             this.panel8.TabIndex = 21;
-            // 
-            // documentViewer1
-            // 
-            this.documentViewer1.IsMetric = true;
-            this.documentViewer1.Location = new System.Drawing.Point(602, 181);
-            this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(493, 349);
-            this.documentViewer1.TabIndex = 31;
-            this.documentViewer1.Visible = false;
             // 
             // panel41
             // 

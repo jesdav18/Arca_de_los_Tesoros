@@ -47,7 +47,7 @@
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageListaAsistencia = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.gcMaestrosDisponibles = new DevExpress.XtraGrid.GridControl();
-            this.dsCoordinadoresEdad1 = new Coordinadores_de_Edad.DataSet.dsCoordinadoresEdad();
+            this.dsCoordinadoresEdad1 = new Core.DataSet.dsCoordinadoresEdad();
             this.gvListaAsistencia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_colaborador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -648,7 +648,7 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.GridControl gcMaestrosDisponibles;
         private DevExpress.XtraGrid.Views.Grid.GridView gvListaAsistencia;
-        private DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
+        private Core.DataSet.dsCoordinadoresEdad dsCoordinadoresEdad1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_colaborador;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre;
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad;

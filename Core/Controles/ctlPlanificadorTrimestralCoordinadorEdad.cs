@@ -4,7 +4,7 @@ using Devart.Data.PostgreSql;
 using Core.Clases;
 
 
-namespace Coordinadores_de_Edad.Controles
+namespace Core.Controles
 {
     public partial class ctlPlanificadorTrimestralCoordinadorEdad : UserControl
     {
@@ -33,7 +33,8 @@ namespace Coordinadores_de_Edad.Controles
         public string Pro_Anio { get; set; }
         public int Pro_ID_AreaAtencion { get; set; }
         public int Pro_Trimestre { get; set; }
-       
+        public bool Pro_EsCoordinador { get; set; }
+
 
         #endregion
 
@@ -47,20 +48,33 @@ namespace Coordinadores_de_Edad.Controles
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                      string pUsuario,
-                                     int pID_AreaAtencion)
+                                     int pID_AreaAtencion,
+                                     bool pEsCoordinador = false)
         {
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
             Pro_ID_AreaAtencion = pID_AreaAtencion;
             Pro_Anio = Utilidades.ObtenerAnioServidor(Pro_Conexion);
-            lblEncabezado.Text = "Planificador Trimestral Año " + Pro_Anio;
-         
+            Pro_EsCoordinador = pEsCoordinador;
+
+
+            if (Pro_EsCoordinador)
+            {
+                pnlEncabezado.Visible = false;
+                picAtras.Visible = false;
+                picSiguiente.Visible = false;
+            }
+            else
+            {
+                lblEncabezado.Text = "Planificador Trimestral Año " + Pro_Anio;
+            }
+
+
+
             NavigationPrincipal.SelectedPage = PageTrimestres;
             pnlDesplazamiento.Visible = false;
            
         }
-
-
 
         private void IrAtras()
         {
@@ -83,50 +97,76 @@ namespace Coordinadores_de_Edad.Controles
         }
 
         private void IrAdelante()
-        {      
-            if (NavigationPrincipal.SelectedPage == pageSeleccionMaestros)
-            {
-                NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
-                ctlSeleccionAyuda1.ConstruirControl(Pro_Conexion,
-                                                    Pro_Usuario,
-                                                    ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
-                                                    Pro_ID_AreaAtencion
-                                                    );
+        {
 
-            }   
-            else if (NavigationPrincipal.SelectedPage == pageSeleccionAyuda)
+            if (Pro_EsCoordinador)
             {
-               
                 NavigationPrincipal.SelectedPage = PageIngresoActividades;
                 ctlngresoActividad1.ConstruirControl(Pro_Conexion,
-                                                     ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
-                                                     v_dia_seleccionado,
-                                                     Pro_Usuario);
+                                                         ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
+                                                         v_dia_seleccionado,
+                                                         Pro_Usuario,
+                                                         true);
                 if (Utilidades.ObtenerHoraServidor(Pro_Conexion).Date > ctlngresoActividad1.Pro_FechaActividad)
                 {
                     NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
                     Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La actividad ya fue finalizada!", Utilidades.BotonesDialogo.Ok);
-                    
+
                 }
-            }         
+            }
+            else
+            {
+                if (NavigationPrincipal.SelectedPage == pageSeleccionMaestros)
+                {
+                    NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
+                    ctlSeleccionAyuda1.ConstruirControl(Pro_Conexion,
+                                                        Pro_Usuario,
+                                                        ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
+                                                        Pro_ID_AreaAtencion
+                                                        );
+
+                }
+                else if (NavigationPrincipal.SelectedPage == pageSeleccionAyuda)
+                {
+
+                    NavigationPrincipal.SelectedPage = PageIngresoActividades;
+                    ctlngresoActividad1.ConstruirControl(Pro_Conexion,
+                                                         ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
+                                                         v_dia_seleccionado,
+                                                         Pro_Usuario,
+                                                         true);
+                    if (Utilidades.ObtenerHoraServidor(Pro_Conexion).Date > ctlngresoActividad1.Pro_FechaActividad)
+                    {
+                        NavigationPrincipal.SelectedPage = pageSeleccionAyuda;
+                        Utilidades.MostrarDialogo(FindForm(), "Arca de los Tesoros", "¡La actividad ya fue finalizada!", Utilidades.BotonesDialogo.Ok);
+
+                    }
+                }
+            }       
         }
 
         #endregion
 
         #region EVENTOS CONTROLES
 
-      
-
         private void ctlDiasTrimestre1_OnSeleccionaDia(object sender, EventArgs e)
         {
             v_dia_seleccionado = (string)sender;
 
-            NavigationPrincipal.SelectedPage = pageSeleccionMaestros;
-            ctlSeleccionMaestros_Ayudas1.ConstruirControl(Pro_Conexion,
-                                                          Pro_Usuario,
-                                                          v_dia_seleccionado,
-                                                          ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
-                                                          Pro_ID_AreaAtencion);
+            if (Pro_EsCoordinador)
+            {
+                NavigationPrincipal.SelectedPage = PageIngresoActividades;
+                ctlngresoActividad1.ConstruirControl(Pro_Conexion, ctlDiasTrimestre1.Pro_ID_Actividad_Generado, v_dia_seleccionado, Pro_Usuario);
+            }
+            else
+            {
+                NavigationPrincipal.SelectedPage = pageSeleccionMaestros;
+                ctlSeleccionMaestros_Ayudas1.ConstruirControl(Pro_Conexion,
+                                                              Pro_Usuario,
+                                                              v_dia_seleccionado,
+                                                              ctlDiasTrimestre1.Pro_ID_Actividad_Generado,
+                                                              Pro_ID_AreaAtencion);
+            }   
         }
 
         private void CmdPrimerTrimestre_Click(object sender, EventArgs e)

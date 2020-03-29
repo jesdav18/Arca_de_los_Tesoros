@@ -5,7 +5,7 @@ using DevExpress.XtraScheduler;
 using Core.DataSets;
 using Devart.Data.PostgreSql;
 using Core.Clases;
-using System.Drawing;
+
 
 namespace Core.Controles
 {
@@ -17,6 +17,21 @@ namespace Core.Controles
         public ctlPlanificadorActividades()
         {
             InitializeComponent();
+            ctlSeleccionAreaAtencion1.OnSeleccionaAreaAtencion += ctlSeleccionAreaAtencion1_OnSeleccionaAreaAtencion;
+        }
+
+        private void ctlSeleccionAreaAtencion1_OnSeleccionaAreaAtencion(object sender, EventArgs e)
+        {
+            dsVistas.dtAreasAtencionRow v_fila = (dsVistas.dtAreasAtencionRow)sender;
+
+            lblEncabezado.Text = "Planificador de Actividades " + v_fila.descripcion;
+            cmdPlanificadorEquipos.Visible = false;
+            cmdIrAtras.Visible = true;
+
+            NavegacionPrincipal.SelectedPage = pagePlanificadorEquipos;
+            ctlPlanificadorTrimestralCoordinadorEdad1.ConstruirControl(Pro_Conexion, Pro_Usuario,v_fila.id_area_atencion,true);
+
+            popupSeleccionarEdad.HidePopup();
         }
 
         #endregion
@@ -36,7 +51,7 @@ namespace Core.Controles
             Pro_Conexion = pConexion;
             Pro_Usuario = pUsuario;
 
-
+            NavegacionPrincipal.SelectedPage = pageCalendario;
 
             schedulerControl1.GoToDate(Utilidades.ObtenerHoraServidor(Pro_Conexion));
 
@@ -283,15 +298,12 @@ namespace Core.Controles
         {
             NavegacionPrincipal.SelectedPage = PageVistaCitas;
 
-
             lblSubtitulo.Text = "Crear cita para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.Date.ToShortDateString();
             ltlTituloCitas.Text = "Citas Programadas para el día " + schedulerControl1.ActiveView.SelectedInterval.Start.Date.ToShortDateString();
             ProFechaSeleccionada = schedulerControl1.ActiveView.SelectedInterval.Start;
             timeHoraInicio.Time = timeHoraFin.Time = ProFechaSeleccionada;
 
             CargarDatosCitasActividadesPorFecha();
-
-
         }
 
         private void PicIrAtras_Click(object sender, EventArgs e)
@@ -322,7 +334,6 @@ namespace Core.Controles
                 return;
             }
 
-
             InsertarCita();
         }
 
@@ -330,12 +341,8 @@ namespace Core.Controles
         {
             if (e.Column.FieldName == "boton_color")
             {
-
                 var v_fila = (dsVistas.dtColoresRow)gvColor.GetDataRow(e.RowHandle);
-
-
                 e.Appearance.BackColor = System.Drawing.ColorTranslator.FromHtml(v_fila.argb);
-
             }
         }
 
@@ -374,16 +381,50 @@ namespace Core.Controles
             if (v_fila != null)
             {
                 EliminarCita(v_fila.id_cita_actividad);
-            }
-
-           
+            }      
         }
 
         private void GvActivdades_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+            gvActivdades.SetMasterRowExpanded(e.RowHandle, !gvActivdades.GetMasterRowExpanded(e.RowHandle));       
+        }
 
-            gvActivdades.SetMasterRowExpanded(e.RowHandle, !gvActivdades.GetMasterRowExpanded(e.RowHandle));
-        
+        private void CmdPlanificadorEquipos_Click(object sender, EventArgs e)
+        {
+            popupSeleccionarEdad.ShowPopup();
+            ctlSeleccionAreaAtencion1.ConstruirControl(Pro_Conexion);
+        }
+
+        private void CmdCerrar_Click(object sender, EventArgs e)
+        {
+            popupSeleccionarEdad.HidePopup();
+        }
+
+        private void PopupSeleccionarEdad_Hidden(object sender, DevExpress.Utils.FlyoutPanelEventArgs e)
+        {
+            this.Parent.BringToFront();
+        }
+
+        private void CmdIrAtras_Click(object sender, EventArgs e)
+        {
+            if (ctlPlanificadorTrimestralCoordinadorEdad1.NavigationPrincipal.SelectedPage == ctlPlanificadorTrimestralCoordinadorEdad1.PageTrimestres)
+            {
+                NavegacionPrincipal.SelectedPage = pageCalendario;
+                cmdPlanificadorEquipos.Visible = true;
+                cmdIrAtras.Visible = false;
+                lblEncabezado.Text = "Planificador de Actividades";
+            }
+            else if (ctlPlanificadorTrimestralCoordinadorEdad1.NavigationPrincipal.SelectedPage == ctlPlanificadorTrimestralCoordinadorEdad1.pageDias)
+            {
+                ctlPlanificadorTrimestralCoordinadorEdad1.NavigationPrincipal.SelectedPage = ctlPlanificadorTrimestralCoordinadorEdad1.PageTrimestres;
+            }
+            else if (ctlPlanificadorTrimestralCoordinadorEdad1.NavigationPrincipal.SelectedPage == ctlPlanificadorTrimestralCoordinadorEdad1.PageIngresoActividades)
+            {
+                ctlPlanificadorTrimestralCoordinadorEdad1.NavigationPrincipal.SelectedPage = ctlPlanificadorTrimestralCoordinadorEdad1.pageDias;
+            }
+
+
+            
         }
     }
 }

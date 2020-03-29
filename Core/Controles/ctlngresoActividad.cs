@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using Core.Clases;
 
-namespace Coordinadores_de_Edad.Controles
+namespace Core.Controles
 {
     public partial class ctlngresoActividad : UserControl
     {
@@ -24,14 +18,38 @@ namespace Coordinadores_de_Edad.Controles
         public string Pro_Fecha { get; set; }
         public string Pro_Usuario { get; set; }
         public DateTime Pro_FechaActividad { get; set; }
+        public bool Pro_EsVista {
+            get
+            {
+                return v_es_vista;
+            }
+            set
+            {
+                v_es_vista = value;
+                if (v_es_vista)
+                {
+                    lblEncabezado.Text = "Detalles de Actividad";
+                    txtClase.ReadOnly = true;
+                    txtVersiculo.ReadOnly = true;
+                    memoTema.ReadOnly = true;
+                    cmdGuardarPlanificacion.Visible = false;
+                }
+                else
+                {
+                    lblEncabezado.Text = "Ingrese información para la actividad del día " + Pro_Fecha;
+                }
+            }
+        }
 
+        private bool v_es_vista;
         public event EventHandler OnIngresoActividad;
 
 
         public void ConstruirControl(PgSqlConnection pConexion,
                                      int pID_Actividad, 
                                      string pFecha,
-                                     string pUsuario)
+                                     string pUsuario,
+                                     bool pEsVista = false)
         {
             Pro_Conexion = pConexion;
             Pro_ID_Actividad = pID_Actividad;
@@ -39,7 +57,8 @@ namespace Coordinadores_de_Edad.Controles
             Pro_Usuario = pUsuario;
             CargarDatosActividad();
 
-            lblEncabezado.Text = "Ingrese información para la actividad del día " + Pro_Fecha;
+            Pro_EsVista = pEsVista;
+
 
         }
 

@@ -101,6 +101,7 @@
             this.memoEmpresa.Name = "memoEmpresa";
             this.memoEmpresa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoEmpresa.Properties.Appearance.Options.UseFont = true;
+            this.memoEmpresa.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.memoEmpresa.Size = new System.Drawing.Size(375, 117);
             this.memoEmpresa.TabIndex = 45;
             // 

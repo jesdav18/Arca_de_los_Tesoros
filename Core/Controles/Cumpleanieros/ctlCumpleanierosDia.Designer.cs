@@ -39,6 +39,7 @@
             // 
             // tileCumpleanierosDia
             // 
+            this.tileCumpleanierosDia.AutoScroll = true;
             this.tileCumpleanierosDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tileCumpleanierosDia.Location = new System.Drawing.Point(5, 122);
             this.tileCumpleanierosDia.Name = "tileCumpleanierosDia";

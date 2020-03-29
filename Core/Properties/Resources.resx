@@ -226,4 +226,13 @@
   <data name="icon_guardar_negro_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_guardar_negro_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_hoy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_hoy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconCheckVerde_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconCheckVerde_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconMaloRojo_241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconMaloRojo_241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

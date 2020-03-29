@@ -1,4 +1,6 @@
-﻿namespace Coordinadores_de_Edad.Controles
+﻿using Core.Controles;
+
+namespace Coordinadores_de_Edad.Controles
 {
     partial class ctlContenedorPrincipalCoordinadorEdad
     {
@@ -102,7 +104,7 @@
             this.PageMiEquipo = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlMiEquipo1 = new Core.Controles.ctlMiEquipo();
             this.pagePlanificadorActividades = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.ctlPlanificadorTrimestralCoordinadorEdad1 = new Coordinadores_de_Edad.Controles.ctlPlanificadorTrimestralCoordinadorEdad();
+            this.ctlPlanificadorTrimestralCoordinadorEdad1 = new Core.Controles.ctlPlanificadorTrimestralCoordinadorEdad();
             this.PageAsistencia = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ctlContenedorAsistencias1 = new Coordinadores_de_Edad.Controles.ctlContenedorAsistencias();
             this.PageCumpleanieros = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -573,6 +575,7 @@
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Padding = new System.Windows.Forms.Padding(5);
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Anio = null;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Conexion = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_EsCoordinador = false;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_ID_AreaAtencion = 0;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Trimestre = 0;
             this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Usuario = null;

@@ -63,6 +63,7 @@
             this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdColor = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
+            this.cmdPlanificadorEquipos = new DevExpress.XtraEditors.PictureEdit();
             this.lblEncabezado = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,6 +71,13 @@
             this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
             this.NavegacionPrincipal = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.pageCalendario = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.popupSeleccionarEdad = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
+            this.ctlSeleccionAreaAtencion1 = new Core.Controles.ctlSeleccionAreaAtencion();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdCerrar = new DevExpress.XtraEditors.PictureEdit();
             this.PageIngresoCita = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.timeHoraFin = new DevExpress.XtraEditors.TimeEdit();
             this.timeHoraInicio = new DevExpress.XtraEditors.TimeEdit();
@@ -104,6 +112,9 @@
             this.ltlTituloCitas = new DevExpress.XtraEditors.LabelControl();
             this.cmdAgregarCita = new DevExpress.XtraEditors.PictureEdit();
             this.cmdIrAtrasCitas = new DevExpress.XtraEditors.PictureEdit();
+            this.pagePlanificadorEquipos = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ctlPlanificadorTrimestralCoordinadorEdad1 = new Core.Controles.ctlPlanificadorTrimestralCoordinadorEdad();
+            this.cmdIrAtras = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gvListaAsistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMaestrosDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsVistas1)).BeginInit();
@@ -114,11 +125,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdColor)).BeginInit();
             this.pnlEncabezado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdPlanificadorEquipos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionPrincipal)).BeginInit();
             this.NavegacionPrincipal.SuspendLayout();
             this.pageCalendario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupSeleccionarEdad)).BeginInit();
+            this.popupSeleccionarEdad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
+            this.flyoutPanelControl1.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCerrar.Properties)).BeginInit();
             this.PageIngresoCita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeHoraFin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeHoraInicio.Properties)).BeginInit();
@@ -139,6 +157,8 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarCita.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtrasCitas.Properties)).BeginInit();
+            this.pagePlanificadorEquipos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtras.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gvListaAsistencia
@@ -450,12 +470,31 @@
             // 
             // pnlEncabezado
             // 
+            this.pnlEncabezado.Controls.Add(this.cmdIrAtras);
+            this.pnlEncabezado.Controls.Add(this.cmdPlanificadorEquipos);
             this.pnlEncabezado.Controls.Add(this.lblEncabezado);
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(5, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
             this.pnlEncabezado.Size = new System.Drawing.Size(1039, 43);
             this.pnlEncabezado.TabIndex = 17;
+            // 
+            // cmdPlanificadorEquipos
+            // 
+            this.cmdPlanificadorEquipos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdPlanificadorEquipos.EditValue = global::Core.Properties.Resources.icon_calendario_64;
+            this.cmdPlanificadorEquipos.Location = new System.Drawing.Point(995, 0);
+            this.cmdPlanificadorEquipos.Name = "cmdPlanificadorEquipos";
+            this.cmdPlanificadorEquipos.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdPlanificadorEquipos.Properties.NullText = "   ";
+            this.cmdPlanificadorEquipos.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdPlanificadorEquipos.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.cmdPlanificadorEquipos.Size = new System.Drawing.Size(44, 43);
+            this.cmdPlanificadorEquipos.TabIndex = 33;
+            this.cmdPlanificadorEquipos.ToolTip = "Planificador de Equipos\r\n";
+            this.cmdPlanificadorEquipos.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdPlanificadorEquipos.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdPlanificadorEquipos.Click += new System.EventHandler(this.CmdPlanificadorEquipos_Click);
             // 
             // lblEncabezado
             // 
@@ -529,13 +568,15 @@
             this.NavegacionPrincipal.Controls.Add(this.pageCalendario);
             this.NavegacionPrincipal.Controls.Add(this.PageIngresoCita);
             this.NavegacionPrincipal.Controls.Add(this.PageVistaCitas);
+            this.NavegacionPrincipal.Controls.Add(this.pagePlanificadorEquipos);
             this.NavegacionPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavegacionPrincipal.Location = new System.Drawing.Point(5, 79);
             this.NavegacionPrincipal.Name = "NavegacionPrincipal";
             this.NavegacionPrincipal.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.pageCalendario,
             this.PageIngresoCita,
-            this.PageVistaCitas});
+            this.PageVistaCitas,
+            this.pagePlanificadorEquipos});
             this.NavegacionPrincipal.SelectedPage = this.pageCalendario;
             this.NavegacionPrincipal.Size = new System.Drawing.Size(1039, 581);
             this.NavegacionPrincipal.TabIndex = 21;
@@ -546,9 +587,100 @@
             // pageCalendario
             // 
             this.pageCalendario.Caption = "pageCalendario";
+            this.pageCalendario.Controls.Add(this.popupSeleccionarEdad);
             this.pageCalendario.Controls.Add(this.schedulerControl1);
             this.pageCalendario.Name = "pageCalendario";
             this.pageCalendario.Size = new System.Drawing.Size(1039, 581);
+            // 
+            // popupSeleccionarEdad
+            // 
+            this.popupSeleccionarEdad.Appearance.BackColor = System.Drawing.Color.White;
+            this.popupSeleccionarEdad.Appearance.Options.UseBackColor = true;
+            this.popupSeleccionarEdad.Controls.Add(this.flyoutPanelControl1);
+            this.popupSeleccionarEdad.Location = new System.Drawing.Point(223, 303);
+            this.popupSeleccionarEdad.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.popupSeleccionarEdad.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.popupSeleccionarEdad.Name = "popupSeleccionarEdad";
+            this.popupSeleccionarEdad.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Center;
+            this.popupSeleccionarEdad.Options.AnimationType = DevExpress.Utils.Win.PopupToolWindowAnimation.Fade;
+            this.popupSeleccionarEdad.OptionsBeakPanel.BackColor = System.Drawing.Color.White;
+            this.popupSeleccionarEdad.OwnerControl = this;
+            this.popupSeleccionarEdad.Size = new System.Drawing.Size(554, 396);
+            this.popupSeleccionarEdad.TabIndex = 0;
+            this.popupSeleccionarEdad.Hidden += new DevExpress.Utils.FlyoutPanelEventHandler(this.PopupSeleccionarEdad_Hidden);
+            // 
+            // flyoutPanelControl1
+            // 
+            this.flyoutPanelControl1.Controls.Add(this.ctlSeleccionAreaAtencion1);
+            this.flyoutPanelControl1.Controls.Add(this.panel9);
+            this.flyoutPanelControl1.Controls.Add(this.panel8);
+            this.flyoutPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl1.FlyoutPanel = this.popupSeleccionarEdad;
+            this.flyoutPanelControl1.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl1.Name = "flyoutPanelControl1";
+            this.flyoutPanelControl1.Size = new System.Drawing.Size(554, 396);
+            this.flyoutPanelControl1.TabIndex = 0;
+            // 
+            // ctlSeleccionAreaAtencion1
+            // 
+            this.ctlSeleccionAreaAtencion1.BackColor = System.Drawing.Color.White;
+            this.ctlSeleccionAreaAtencion1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlSeleccionAreaAtencion1.Location = new System.Drawing.Point(3, 44);
+            this.ctlSeleccionAreaAtencion1.Name = "ctlSeleccionAreaAtencion1";
+            this.ctlSeleccionAreaAtencion1.Pro_Conexion = null;
+            this.ctlSeleccionAreaAtencion1.Size = new System.Drawing.Size(548, 349);
+            this.ctlSeleccionAreaAtencion1.TabIndex = 20;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(82)))), ((int)(((byte)(153)))));
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(3, 42);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(548, 2);
+            this.panel9.TabIndex = 19;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.labelControl7);
+            this.panel8.Controls.Add(this.cmdCerrar);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(548, 39);
+            this.panel8.TabIndex = 0;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl7.Location = new System.Drawing.Point(0, 0);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(505, 39);
+            this.labelControl7.TabIndex = 10;
+            this.labelControl7.Text = "Seleccione Edad";
+            // 
+            // cmdCerrar
+            // 
+            this.cmdCerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmdCerrar.EditValue = global::Core.Properties.Resources.iconCerrar_32;
+            this.cmdCerrar.Location = new System.Drawing.Point(505, 0);
+            this.cmdCerrar.Name = "cmdCerrar";
+            this.cmdCerrar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdCerrar.Properties.NullText = "   ";
+            this.cmdCerrar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdCerrar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.cmdCerrar.Size = new System.Drawing.Size(43, 39);
+            this.cmdCerrar.TabIndex = 34;
+            this.cmdCerrar.ToolTip = "Planificador de Equipos\r\n";
+            this.cmdCerrar.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdCerrar.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdCerrar.Click += new System.EventHandler(this.CmdCerrar_Click);
             // 
             // PageIngresoCita
             // 
@@ -996,6 +1128,46 @@
             this.cmdIrAtrasCitas.TabIndex = 31;
             this.cmdIrAtrasCitas.Click += new System.EventHandler(this.CmdIrAtrasCitas_Click);
             // 
+            // pagePlanificadorEquipos
+            // 
+            this.pagePlanificadorEquipos.Caption = "pagePlanificadorEquipos";
+            this.pagePlanificadorEquipos.Controls.Add(this.ctlPlanificadorTrimestralCoordinadorEdad1);
+            this.pagePlanificadorEquipos.Name = "pagePlanificadorEquipos";
+            this.pagePlanificadorEquipos.Size = new System.Drawing.Size(1039, 581);
+            // 
+            // ctlPlanificadorTrimestralCoordinadorEdad1
+            // 
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.BackColor = System.Drawing.Color.White;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Location = new System.Drawing.Point(0, 0);
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Name = "ctlPlanificadorTrimestralCoordinadorEdad1";
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Padding = new System.Windows.Forms.Padding(5);
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Anio = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Conexion = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_EsCoordinador = false;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_ID_AreaAtencion = 0;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Trimestre = 0;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Pro_Usuario = null;
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.Size = new System.Drawing.Size(1039, 581);
+            this.ctlPlanificadorTrimestralCoordinadorEdad1.TabIndex = 0;
+            // 
+            // cmdIrAtras
+            // 
+            this.cmdIrAtras.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cmdIrAtras.EditValue = global::Core.Properties.Resources.icon_atras_64;
+            this.cmdIrAtras.Location = new System.Drawing.Point(0, 0);
+            this.cmdIrAtras.Name = "cmdIrAtras";
+            this.cmdIrAtras.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmdIrAtras.Properties.NullText = "   ";
+            this.cmdIrAtras.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.cmdIrAtras.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.cmdIrAtras.Size = new System.Drawing.Size(44, 43);
+            this.cmdIrAtras.TabIndex = 34;
+            this.cmdIrAtras.ToolTip = "Planificador de Equipos\r\n";
+            this.cmdIrAtras.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.cmdIrAtras.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.cmdIrAtras.Click += new System.EventHandler(this.CmdIrAtras_Click);
+            // 
             // ctlPlanificadorActividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1018,11 +1190,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdColor)).EndInit();
             this.pnlEncabezado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdPlanificadorEquipos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NavegacionPrincipal)).EndInit();
             this.NavegacionPrincipal.ResumeLayout(false);
             this.pageCalendario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.popupSeleccionarEdad)).EndInit();
+            this.popupSeleccionarEdad.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).EndInit();
+            this.flyoutPanelControl1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCerrar.Properties)).EndInit();
             this.PageIngresoCita.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.timeHoraFin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeHoraInicio.Properties)).EndInit();
@@ -1043,6 +1222,8 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdAgregarCita.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtrasCitas.Properties)).EndInit();
+            this.pagePlanificadorEquipos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdIrAtras.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1114,5 +1295,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid_colaborador;
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_identidad;
         private DevExpress.XtraGrid.Columns.GridColumn colcargo;
+        private DevExpress.XtraEditors.PictureEdit cmdPlanificadorEquipos;
+        private DevExpress.XtraBars.Navigation.NavigationPage pagePlanificadorEquipos;
+        private ctlPlanificadorTrimestralCoordinadorEdad ctlPlanificadorTrimestralCoordinadorEdad1;
+        private DevExpress.Utils.FlyoutPanel popupSeleccionarEdad;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl1;
+        private System.Windows.Forms.Panel panel8;
+        private DevExpress.XtraEditors.PictureEdit cmdCerrar;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private System.Windows.Forms.Panel panel9;
+        private ctlSeleccionAreaAtencion ctlSeleccionAreaAtencion1;
+        private DevExpress.XtraEditors.PictureEdit cmdIrAtras;
     }
 }
